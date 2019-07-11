@@ -26,6 +26,17 @@ function collect(connect, monitor) {
 
 class CollectionCard extends React.Component {
   render() {
+    console.log(this.props.faction);
+    var charCard = this.props.type;
+    var influenceCost = false;
+    var stormlightCost = false;
+    if(charCard === "character" || charCard === "support"){
+      influenceCost = true;
+    }else if(charCard === "stormlight"){
+      stormlightCost = true;
+    }else{
+
+    }
     const { isDragging, connectDragSource, item } = this.props;
     const opacity = isDragging ? 0 : 1;
 
@@ -36,6 +47,18 @@ class CollectionCard extends React.Component {
         </div>
         <div className="row cardName">{this.props.name}</div>
         <div className="row cardText">{this.props.text}</div>
+        { influenceCost === true &&
+          <div className="row bottomRow">
+            <div className="col-xs-4 influenceCost">{this.props.cost}</div>
+            <div className="col-xs-offset-4 col-xs-4"><img className="factionImg" src={this.props.faction} alt="faction" /></div>
+          </div>
+        }
+        { stormlightCost === true &&
+          <div className="row bottomRow">
+            <div className="col-xs-4 stormlightCost">{this.props.cost}</div>
+            <div className="col-xs-offset-4 col-xs-4"><img className="factionImg" src={this.props.faction} alt="faction" /></div>
+          </div>
+        }
       </div>
     )
   }

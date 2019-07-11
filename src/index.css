@@ -4,14 +4,100 @@ body {
 
 #root {
 	background: lightblue;
+	background-image: url();
+	background-repeat: no-repeat;
 }
 
 #topRow {
 	margin-bottom: 40px;
+	margin-top: 15px;
 }
 
 #tabIndex:focus {
 	outline: none;
+}
+
+#stormlightOrb {
+	width: 50px;
+	background: yellow;
+	text-align: center;
+	border-radius: 50%; 
+	font-size: 25px;
+	padding: 5px;
+	font-family: 'Metamorphous', cursive;
+	background: radial-gradient(270deg, #ffeb00, black);
+	background-size: 300% 300%;
+	-webkit-animation: CardCostAnimation 8s ease infinite;
+	-moz-animation: CardCostAnimation 8s ease infinite;
+	animation: CardCostAnimation 8s ease infinite;
+}
+
+.stormlightOn {
+	box-shadow: 0px 0px 10px 15px red;
+}
+
+.spren {
+	background: grey;
+	border-radius: 5px;
+	border-color: white;
+	border-width: 3px;
+	border-style: solid;
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+	font-family: 'Metamorphous', cursive;
+}
+
+.sprenPower {
+	color: white;
+	background: navy;
+	margin: 5px;
+	padding: 0px;
+	border-style: solid;
+	border-color: black;
+	border-width: 3px;
+	border-radius: 75px 75px 15px 15px;
+	text-align: center;
+	font-size: 30px;
+	box-shadow: 2px 2px 3px black;
+}
+
+.createTitle {
+	text-align: center;
+	font-size: 24px;
+	font-family: 'Metamorphous', cursive;
+}
+
+.createScale {
+	text-align: center;
+	font-size: 24px;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	font-weight: bolder;
+	font-family: 'Metamorphous', cursive;
+}
+
+.createMinus {
+	border-style: solid;
+	border-width: 5px;
+	border-color: black;
+}
+
+.createPlus {
+	border-style: solid;
+	border-width: 5px;
+	border-color: black;
+}
+
+#createName {
+	font-size: 24px;
+	font-family: 'Metamorphous', cursive;
+	text-align: center;
+	margin-top: 25px;
+}
+
+input {
+	text-align: center;
 }
 
 .heartIcon {
@@ -23,6 +109,24 @@ body {
 	margin-top: 0px;
 	padding: 0px;
 	width: auto;
+}
+
+.campButton {
+	font-size: 30px;
+	font-family: 'Metamorphous', cursive;
+	width: 75%;
+	margin-left: 12.5%;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	background: #b35b23;
+	border-color: black;
+	border-width: 6px;
+	border-style: solid;
+	border-radius: 15px;
+}
+
+.campButton:hover {
+	background: grey;
 }
 
 @-webkit-keyframes heartPulse {
@@ -80,14 +184,18 @@ body {
 .powerIcon {
 	height: 30px;
 	padding: 0px;
-	margin-top: 5px;
-	margin-bottom: 5px;
 }
 
 .shieldIcon {
 	margin-top: -5px;
 	height: 35px;
 	padding: 0px;
+}
+
+.intIcon {
+	height: 30px;
+	padding: 0px;
+	width: 15%;
 }
 
 .chooseTitle {
@@ -98,7 +206,12 @@ body {
 
 .hpSpan {
 	font-size: 24px;
-	margin-top: 10px;
+	margin-top: 5px;
+}
+
+.intSpan {
+	font-size: 24px;
+	margin-top: 5px;
 }
 
 .target {
@@ -134,11 +247,12 @@ body {
 	width: 180px;
 	margin: 4px;
 	text-align: center;
-	-webkit-transition: border-color .3s ease-in;
+	-webkit-transition: transform .15s ease-in, border-color .3s ease-in;
 }
 
 .enemy:hover {
-	border-color: yellow blue;
+	transform: scale(1.3);
+	z-index: 2;
 }
 
 .fadeOut {
@@ -148,39 +262,65 @@ body {
 
 
 .hero {
-	background: linear-gradient(to bottom right, #00ffff, #074a5f);
-	border-style: solid;
-	border-color: blue yellow;
+	background: linear-gradient(to bottom right, #138888, #000000);
+	border-style: inset;
+	border-color: blue;
+	color: white;
 	border-width: 6px;
 	border-radius: 30px 5px;
 	box-shadow: 4px 0px 2px black;
 	float: left;
-	height: 195px;
-	width: 175px;
+	height: 215px;
+	width: 185px;
 	margin: 3px;
 	text-align: center;
-	-webkit-transition: border-color .3s ease-in;
+	-webkit-transition: transform .1s ease-in, border-color .2s ease-in;
 }
 
 .hero:hover {
-	border-color: yellow blue;
+	transform:  scale(1.3);
+	z-index: 2;
 }
 
-.cardCost {
-	margin-left: 5px;
-	margin-top: 5px;
+.influenceCost {
 	border-style: solid;
 	border-color: black;
 	border-width: 3px;
-	border-radius: 50%;
+	border-radius: 3px;
 	text-align: center;
 	font-size: 20px;
-	box-shadow: 2px 2px 3px black;
-	background: radial-gradient(270deg, #fff580, white);
-	background-size: 300% 300%;
-	-webkit-animation: CardCostAnimation 8s ease infinite;
-	-moz-animation: CardCostAnimation 8s ease infinite;
-	animation: CardCostAnimation 8s ease infinite;
+	font-weight: bold;
+	background: gold;
+	color: black;
+	font-family: 'Metamorphous', cursive;
+}
+
+.stormlightCost {
+	border-style: solid;
+	border-color: black;
+	border-width: 3px;
+	border-radius: 25px;
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+	background: silver;
+	color: black;
+	font-family: 'Metamorphous', cursive;
+}
+
+.factionImg {
+	height: 35px;
+	border-radius: 25px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    box-shadow: 0px 0px 12px 0px white;
+}
+
+.bottomRow {
+	position: absolute;
+	bottom: 2px;
+	width: 100%;
 }
 
 @-webkit-keyframes CardCostAnimation {
@@ -238,6 +378,10 @@ body {
 
 .cardText {
 	font-size: 16px;
+	background: #54ebef9c;
+	margin: 0px 2px 0px 2px;
+	box-shadow: 0px 0px 15px 4px #9df6ff;
+	color: black;
 }
 
 .characterBox {
@@ -252,13 +396,14 @@ body {
 }
 
 .characterImage2 {
-	width: 50%;
-	margin-top: 15px;
-	margin-left: 20px;
+	width: 75%;
+	margin-top: 10px;
+	margin-left: 10px;
 	padding: 0px;
 	border-color: #5a5a5a;
 	border-width: 3px;
 	border-style: outset;
+	border-radius: 60px 0px;
 }
 
 .orb {
@@ -275,9 +420,10 @@ body {
 	border-style: solid;
 	border-color: black;
 	border-width: 2px;
-	height: 210px;
 	background: white;
 	font-family: 'Metamorphous', cursive;
+	border-radius: 75px 0px;
+	margin-top: 5px;
 }
 
 .heroSelect {
@@ -293,10 +439,10 @@ body {
 	-webkit-transition: transform .15s ease-in, border-color .15s ease-in;
 }
 
-.heroSelect:hover {
+/*.heroSelect:hover {
 	border-color: yellow;
 	transform: scale(1.1);
-}
+}*/
 
 .heroDamageIndicator {
 	color: red;
@@ -313,7 +459,8 @@ body {
 }
 
 .characterName {
-	margin-left: 15%;
+	margin-left: 10px;
+	font-size: 30px;
 }
 
 .heroSideSlot {
@@ -326,13 +473,21 @@ body {
 }
 
 .heroSelectName {
-	margin-top: 15%;
+	margin-top: 5%;
 }
 
 #stageName {
 	text-align: center;
 	font-size: 36px;
 	font-family: 'Metamorphous', cursive;
+}
+
+.statIcon {
+	margin-top: 5px;
+}
+
+#statCol {
+	margin-top: 10px;
 }
 
 .itemBox {
@@ -353,6 +508,12 @@ body {
 
 .equippedItem {
 	border-color: green;
+}
+
+.equipmentTitle {
+	font-size: 24px;
+	font-family: 'Metamorphous', cursive;
+	text-align: center;
 }
 
 .itemRow {
@@ -405,7 +566,11 @@ body {
 }
 
 #sabColumn {
-	padding-top: 10px;
+	padding: 10px 0px 0px 0px;
+}
+
+.stunned {
+	background: yellow;
 }
 
 @-webkit-keyframes pusate {
