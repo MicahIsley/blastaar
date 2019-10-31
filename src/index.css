@@ -1,9 +1,42 @@
 body {
-	background: lightblue;
+	background: #08b6ef;
+}
+
+.testGif {
+	height: 300px;
+}
+
+.miner {
+	position: absolute;
+}
+
+#miningGif {
+	height: 90px;
+}
+
+#groundLayer {
+	height: 124px;
+}
+
+#dirtLayer {
+	margin-left: -128px;
+	margin-right: -128px;
+}
+
+.dirtBlock {
+	height: 100px;
+	background: #693b1a;
+	border-width: 1px;
+	border-color: black;
+	border-style: solid;
+}
+
+.true {
+	background: whitel;
 }
 
 #root {
-	background: lightblue;
+	background: #08b6ef;
 	background-image: url();
 	background-repeat: no-repeat;
 }
@@ -19,6 +52,16 @@ body {
 
 #stormlightOrb {
 	width: 50px;
+	background: white;
+	text-align: center;
+	border-radius: 50%; 
+	font-size: 25px;
+	padding: 5px;
+	font-family: 'Metamorphous', cursive;
+}
+
+#influenceOrb {
+	width: 50px;
 	background: yellow;
 	text-align: center;
 	border-radius: 50%; 
@@ -30,6 +73,15 @@ body {
 	-webkit-animation: CardCostAnimation 8s ease infinite;
 	-moz-animation: CardCostAnimation 8s ease infinite;
 	animation: CardCostAnimation 8s ease infinite;
+}
+
+#scoreDisplay {
+	font-size: 28px;
+	font-family: 'Metamorphous', cursive;
+}
+
+#playArea {
+	height: 200px;
 }
 
 .stormlightOn {
@@ -102,12 +154,7 @@ input {
 
 .heartIcon {
 	height: 30px;
-	z-index: 2;
-	position: absolute;
 	animation: heartPulse ease .8s infinite;
-	margin-left: 0px;
-	margin-top: 0px;
-	padding: 0px;
 	width: auto;
 }
 
@@ -137,7 +184,7 @@ input {
     }
     50%{
     	height: 32px;
-    	margin-left: -1px;
+    	margin-left: -2px;
     	margin-top: -2px;
     }
     100%{
@@ -154,7 +201,7 @@ input {
     }
     50%{
     	height: 32px;
-    	margin-left: -1px;
+    	margin-left: -2px;
     	margin-top: -2px;
     }
     100%{
@@ -171,7 +218,7 @@ input {
     }
     50%{
     	height: 32px;
-    	margin-left: -1px;
+    	margin-left: -2px;
     	margin-top: -2px;
     }
     100%{
@@ -181,21 +228,17 @@ input {
    	}
 }
 
-.powerIcon {
+.statIcon {
 	height: 30px;
-	padding: 0px;
+	border-color: grey;
+	border-style: solid;
+	border-width: 1px 1px 1px 1px;
 }
 
-.shieldIcon {
-	margin-top: -5px;
-	height: 35px;
-	padding: 0px;
-}
-
-.intIcon {
-	height: 30px;
-	padding: 0px;
-	width: 15%;
+.statNum {
+	border-color: grey;
+	border-style: solid;
+	border-width: 0px 1px 1px 1px;
 }
 
 .chooseTitle {
@@ -211,7 +254,7 @@ input {
 
 .intSpan {
 	font-size: 24px;
-	margin-top: 5px;
+	text-align: center;
 }
 
 .target {
@@ -227,11 +270,12 @@ input {
 #cardBox {
 	border-style: solid;
 	border-color: black;
-	border-width: 3px;
+	border-width: 2px;
 	position: fixed;
 	z-index: 3;
 	background: white;
-	padding: 10px;
+	padding: 5px;
+	border-radius: 10px;
 }
 
 .enemy {
@@ -262,9 +306,7 @@ input {
 
 
 .hero {
-	background: linear-gradient(to bottom right, #138888, #000000);
 	border-style: inset;
-	border-color: blue;
 	color: white;
 	border-width: 6px;
 	border-radius: 30px 5px;
@@ -280,6 +322,78 @@ input {
 .hero:hover {
 	transform:  scale(1.3);
 	z-index: 2;
+}
+
+.neutral {
+	background: radial-gradient(#5fffff, #000000);
+	border-color: blue;
+}
+
+.alethi {
+	background: radial-gradient(#ff5151, #000000);
+	border-color: #fffa68;
+}
+
+.elsecaller {
+	background: radial-gradient(black, #000000);
+	border-color: blue;
+}
+
+.windrunner {
+	background: radial-gradient(#00c1ff, white);
+	border-color: black;
+}
+
+.lightweaver {
+	background: radial-gradient(#bbbb00, white);
+	border-color: black;
+}
+
+.sphere {
+	background: radial-gradient(grey, #000000);
+	border-style: inset;
+	border-color: white;
+	color: white;
+	border-width: 6px;
+	border-radius: 30px 5px;
+	box-shadow: 4px 0px 2px black;
+	float: left;
+	height: 215px;
+	width: 185px;
+	margin: 3px;
+	text-align: center;
+	-webkit-transition: transform .1s ease-in, border-color .2s ease-in;
+}
+
+.sphere:hover {
+	transform:  scale(1.3);
+	z-index: 2;
+}
+
+.sphereIcon {
+	height: 60px;
+	border-radius: 30px;
+	margin-top: 35px;
+}
+
+.diamond {
+	background: white;
+	box-shadow: 0px 0px 20px white;
+}
+
+.garnet {
+	background: darkred;
+	box-shadow: 0px 0px 20px darkred;
+}
+
+.ruby {
+	background: red;
+	box-shadow: 0px 0px 20px red;
+}
+
+.emerald {
+	background: green;
+	box-shadow: 0px 0px 20px green;
 }
 
 .influenceCost {
@@ -308,7 +422,7 @@ input {
 	font-family: 'Metamorphous', cursive;
 }
 
-.factionImg {
+.iconImg {
 	height: 35px;
 	border-radius: 25px;
     border-color: black;
@@ -378,10 +492,11 @@ input {
 
 .cardText {
 	font-size: 16px;
-	background: #54ebef9c;
+	background: #ffffff59;
 	margin: 0px 2px 0px 2px;
 	box-shadow: 0px 0px 15px 4px #9df6ff;
 	color: black;
+	padding: 2px;
 }
 
 .characterBox {
@@ -396,33 +511,33 @@ input {
 }
 
 .characterImage2 {
-	width: 75%;
-	margin-top: 10px;
-	margin-left: 10px;
-	padding: 0px;
-	border-color: #5a5a5a;
-	border-width: 3px;
-	border-style: outset;
-	border-radius: 60px 0px;
+	height: 130px;
+	width: 130px;
+}
+
+.characterItem {
+	font-size: 24px;
+	text-align: center;
+}
+
+.sabRow {
+	height: 30px;
 }
 
 .orb {
-	border-radius: 50px;
-	background: radial-gradient(circle at 2px 8px, #c61dfd, #000);
-	height: 35px;
-	width: 35px;
+	background: #c61dfd;
+	height: 30px;
+	width: 10px;
 	float: left;
-  	margin-bottom: 2px;
-  	box-shadow: 3px 2px 5px grey;
+	transform: skew(-20deg);
+	border-color: black;
+	border-width: 1px;
+	border-style: solid;
+  	margin-right: 3px;
 }
 
 .enemyCharacterBox {
-	border-style: solid;
-	border-color: black;
-	border-width: 2px;
-	background: white;
 	font-family: 'Metamorphous', cursive;
-	border-radius: 75px 0px;
 	margin-top: 5px;
 }
 
@@ -452,6 +567,7 @@ input {
 .shieldSpan {
 	color: black;
 	font-size: 24px;
+	text-align: center;
 }
 
 .highlightedHero {
@@ -459,16 +575,20 @@ input {
 }
 
 .characterName {
-	margin-left: 10px;
-	font-size: 30px;
+	font-size: 22px;
+	padding-left: 15px;
+}
+
+.enemyInfo {
+	border-color: black;
+	border-style: solid;
+	border-radius: 5px;
+	padding-bottom: 3px;
+	background: #ffffff9e;
 }
 
 .heroSideSlot {
-	border-width: 2px;
-	border-style: solid;
-	border-color: black;
 	height: 210px;
-	background: white;
 	font-family: 'Metamorphous', cursive;
 }
 
@@ -478,7 +598,7 @@ input {
 
 #stageName {
 	text-align: center;
-	font-size: 36px;
+	font-size: 28px;
 	font-family: 'Metamorphous', cursive;
 }
 
@@ -522,8 +642,9 @@ input {
 
 .targetedEnemy {
 	border-style: solid;
-	border-color: orange;
+	border-color: red;
 	border-width: 2px;
+	border-radius: 25px;
 	box-shadow: inset 0 0 10px red;
     -webkit-animation: pusate 1s infinite alternate;
     -moz-animation: pusate 1s infinite alternate;
@@ -565,25 +686,21 @@ input {
 	outline: none;
 }
 
-#sabColumn {
-	padding: 10px 0px 0px 0px;
-}
-
 .stunned {
 	background: yellow;
 }
 
 @-webkit-keyframes pusate {
-    from { box-shadow: inset 0 0 10px orange; }
-    to { box-shadow: inset 0 0 30px orange; }
+    from { box-shadow: inset 0 0 10px red; }
+    to { box-shadow: inset 0 0 30px red; }
 }
 @-moz-keyframes pusate {
-    from { box-shadow: inset 0 0 10px orange; }
-    to { box-shadow: inset 0 0 30px orange; }
+    from { box-shadow: inset 0 0 10px red; }
+    to { box-shadow: inset 0 0 30px red; }
 }
 @keyframes pusate {
-    from { box-shadow: inset 0 0 10px orange; }
-    to { box-shadow: inset 0 0 30px orange; }
+    from { box-shadow: inset 0 0 10px red; }
+    to { box-shadow: inset 0 0 30px red; }
 }
 
 .deadEnemy {
