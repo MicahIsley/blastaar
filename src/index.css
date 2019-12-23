@@ -2,8 +2,160 @@ body {
 	background: #08b6ef;
 }
 
+.container {
+	width: auto;
+}
+
+.infoRow {
+	background: grey;
+}
+
+#shopPoints {
+	font-size: 20px;
+	margin-bottom: 15px;
+}
+
+.craftingButtonRow {
+	margin-left: 33%;
+}
+
+.packOption {
+	text-align: center;
+	font-size: 24px;
+	font-family: 'Metamorphous', cursive;
+	border-style: solid;
+	border-color: black;
+	border-width: 3px;
+	margin-bottom: 15px;
+}
+
+.packOption:hover {
+	border-color: white;
+}
+
+#newCardDisplay {
+	height: 500px;
+	background: darkblue;
+}
+
+#tutorialMessageBox {
+	display: none;
+	position: absolute;
+	left: 25%;
+	top: 15%;
+	z-index: 4;
+	height: 400px;
+	width: 600px;
+	border-style: solid;
+	border-color: black;
+	border-width: 3px;
+	background: white;
+}
+
+#tutorialMessageCol {
+	height: 400px;
+}
+
+#tutorialButtonRow {
+	position: absolute;
+	bottom: 10px;
+	width: 600px;
+}
+
+#tutorialMessageButton {
+	margin-left: 33%;
+	font-size: 35px;
+	text-align: center;
+}
+
 .testGif {
 	height: 300px;
+}
+
+.supportCard {
+	text-align: center;
+	background: grey;
+	height: 200px;
+	border-style: solid;
+	border-color: gold;
+	border-width: 3px;
+	border-radius: 5px;
+}
+
+.supportName {
+	font-size: 35px;
+	font-weight: bold;
+}
+
+.supportText {
+	font-size: 25px;
+}
+
+#craftingArea {
+	border-width: 3px;
+	border-color: black;
+	border-style: solid;
+	height: 506px;
+	width: 401px;
+}
+
+.craftCard {
+	height: 500px;
+	width: 395px;
+}
+
+.craftingCardName {
+	font-size: 40px;
+	font-family: 'Metamorphous', cursive;
+	text-align: center;
+}
+
+.elementTarget {
+	border-radius: 30px;
+	border-color: black;
+	border-style: solid;
+	border-width: 2px;
+	padding: 0px;
+}
+
+#mainCraftingTitle {
+	margin-left: 9%;
+}
+
+.elementOrb {
+}
+
+.eleOrbImg {
+	height: 50px;
+	width: 63px;
+	border-radius: 30px;
+}
+
+#frameList {
+    overflow: scroll;
+    height: 475px;
+    border-color: black;
+    border-width: 3px;
+    border-style: solid;
+    padding-left: 9%;
+}
+
+.abilityBox {
+	border-color: black;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 30px;
+	text-align: center;
+	font-size: 24px;
+	float: left;
+}
+
+#abilityTarget {
+	height: 250px;
+	font-size: 30px;
+	font-family: 'Metamorphous', cursive;
+	text-align: center;
+	padding-top: 30px;
 }
 
 .miner {
@@ -31,18 +183,31 @@ body {
 	border-style: solid;
 }
 
+.supportCol {
+	background: #ffffff2b;
+	height: 210px;
+	border-color: grey;
+	border-width: .2px;
+	border-style: solid;
+	border-radius: 35px;
+}
+
 .true {
-	background: whitel;
+	background: white;
 }
 
 #root {
 	background: #08b6ef;
-	background-image: url();
+	padding: 0px;
+}
+
+#gameScreenBackground {
+	background-image: url('assets/backgroundTree.png'), url('assets/grassBackground.png');
 	background-repeat: no-repeat;
 }
 
 #topRow {
-	margin-bottom: 40px;
+	margin-bottom: 20px;
 	margin-top: 15px;
 }
 
@@ -81,7 +246,7 @@ body {
 }
 
 #playArea {
-	height: 200px;
+	height: 195px;
 }
 
 .stormlightOn {
@@ -158,6 +323,10 @@ input {
 	width: auto;
 }
 
+#heartStatIcon {
+	margin-left: 4%;
+}
+
 .campButton {
 	font-size: 30px;
 	font-family: 'Metamorphous', cursive;
@@ -228,11 +397,18 @@ input {
    	}
 }
 
+.deckTitle {
+	font-size: 35px;
+	text-align: center;
+	font-family: 'Metamorphous', cursive;
+}
+
 .statIcon {
-	height: 30px;
-	border-color: grey;
-	border-style: solid;
-	border-width: 1px 1px 1px 1px;
+}
+
+.mainStat {
+	padding-top: 10px;
+    font-size: 28px;
 }
 
 .statNum {
@@ -257,10 +433,6 @@ input {
 	text-align: center;
 }
 
-.target {
-	height: 200px;
-}
-
 #deckRow {
 	border-color: black;
 	border-width: 3px;
@@ -271,6 +443,7 @@ input {
 	border-style: solid;
 	border-color: black;
 	border-width: 2px;
+	left: 25%;
 	position: fixed;
 	z-index: 3;
 	background: white;
@@ -280,16 +453,16 @@ input {
 
 .enemy {
 	color: white;
-	background: linear-gradient(to bottom right, #cc2525, #000000);
-	border-style: solid;
-	border-color: #380458 #8b578e;
-	border-width: 8px;
+	background: black;
+	border-style: inset;
+	border-color: #7b7b7b;
+	border-width: 6px;
 	border-radius: 30px 5px;
 	box-shadow: 4px 0px 2px black;
 	float: left;
-	height: 200px;
-	width: 180px;
-	margin: 4px;
+	height: 215px;
+	width: 178px;
+	margin: 5px;
 	text-align: center;
 	-webkit-transition: transform .15s ease-in, border-color .3s ease-in;
 }
@@ -313,8 +486,8 @@ input {
 	box-shadow: 4px 0px 2px black;
 	float: left;
 	height: 215px;
-	width: 185px;
-	margin: 3px;
+	width: 178px;
+	margin: 5px;
 	text-align: center;
 	-webkit-transition: transform .1s ease-in, border-color .2s ease-in;
 }
@@ -324,28 +497,70 @@ input {
 	z-index: 2;
 }
 
+.hero2 {
+	border-style: inset;
+	color: white;
+	border-width: 6px;
+	border-radius: 30px 5px;
+	text-align: center;
+}
+
+.expandedCard {
+	margin-top: 8px;
+}
+
 .neutral {
+	background: radial-gradient(#03ce54, #000000);
+	border-color: #1d9a07;
+}
+
+.fire {
+	background: radial-gradient(#ff0000, #000000);
+	border-color: red;
+}
+
+.earth {
+	background: radial-gradient(#ab764a, #000000);
+	border-color: tan;
+}
+
+.water {
+	background: radial-gradient(#865fff, #000000);
+	border-color: darkblue;
+}
+
+.wind {
 	background: radial-gradient(#5fffff, #000000);
-	border-color: blue;
+	border-color: lightblue;
 }
 
-.alethi {
-	background: radial-gradient(#ff5151, #000000);
-	border-color: #fffa68;
+.lava {
+	background: radial-gradient(#ff6a00, #ff6a00);
+	border-color: orange;
 }
 
-.elsecaller {
-	background: radial-gradient(black, #000000);
-	border-color: blue;
+.storm {
+	background: radial-gradient(#02115d, #000000);
+	border-color: grey;
 }
 
-.windrunner {
-	background: radial-gradient(#00c1ff, white);
-	border-color: black;
+.desert {
+	background: radial-gradient(#ffe000, #000000);
+	border-color: yellow;
 }
 
-.lightweaver {
-	background: radial-gradient(#bbbb00, white);
+.mud {
+	background: radial-gradient(#8e462b, #000000);
+	border-color: #501c09;
+}
+
+.awe {
+	background: radial-gradient(white, #000000);
+	border-color: white;
+}
+
+.spooky {
+	background: radial-gradient(black, white);
 	border-color: black;
 }
 
@@ -437,6 +652,10 @@ input {
 	width: 100%;
 }
 
+.hoverBottomRow {
+	margin-top: 10px;
+}
+
 @-webkit-keyframes CardCostAnimation {
     0%{background-position:0% 50%}
     50%{background-position:100% 50%}
@@ -468,6 +687,24 @@ input {
 	animation-name: color;
   	animation-duration: 2s;
   	animation-iteration-count: infinite;
+}
+
+.deckCardPower {
+	color: white;
+	background: red;
+	margin-top: 0px;
+	padding: 0px;
+	border-style: solid;
+	border-color: black;
+	border-width: 3px;
+	border-radius: 75px 75px 15px 15px;
+	text-align: center;
+	font-size: 25px;
+	box-shadow: 2px 2px 3px black;
+}
+
+.deckCardName {
+	font-size: 15px;
 }
 
 @keyframes color {
@@ -584,12 +821,15 @@ input {
 	border-style: solid;
 	border-radius: 5px;
 	padding-bottom: 3px;
-	background: #ffffff9e;
+	background: #ffffffcf;
 }
 
 .heroSideSlot {
+	padding-left: 20px;
 	height: 210px;
 	font-family: 'Metamorphous', cursive;
+	background: #ffffffad;
+	border-radius: 15px;
 }
 
 .heroSelectName {
@@ -600,10 +840,6 @@ input {
 	text-align: center;
 	font-size: 28px;
 	font-family: 'Metamorphous', cursive;
-}
-
-.statIcon {
-	margin-top: 5px;
 }
 
 #statCol {

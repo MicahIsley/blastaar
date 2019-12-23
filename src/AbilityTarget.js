@@ -9,17 +9,17 @@ function collect(connect, monitor) {
   }
 }
 
-class Target extends Component {
+class AbilityTarget extends Component {
   render() {
     const { connectDropTarget, hovered, item } = this.props;
-    const backgroundColor = hovered ? 'white' : 'lightgreen';
+    const backgroundColor = hovered ? 'white' : 'lightblue';
 
     return connectDropTarget(
-      <div className="col-xs-10 target" style={{ background: backgroundColor }}>
-        {this.props.listCollection()}
+      <div className="col-xs-12" id="abilityTarget" style={{ background: backgroundColor }}>
+        {this.props.text}
       </div>
     );
   }
 }
 
-export default DropTarget('card2', {}, collect)(Target);
+export default DropTarget('cardAbility', {}, collect)(AbilityTarget);

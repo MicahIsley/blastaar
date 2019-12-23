@@ -15,11 +15,11 @@ class Target extends Component {
     const backgroundColor = hovered ? 'white' : 'lightgreen';
 
     return connectDropTarget(
-      <div className="col-xs-10 target" style={{ background: backgroundColor }}>
-        {this.props.listCollection()}
+      <div className="col-xs-2 target" id="deckRow" style={{ background: backgroundColor }}>
+        {this.props.listCurrentDeck()}
       </div>
     );
   }
 }
 
-export default DropTarget('card2', {}, collect)(Target);
+export default DropTarget('card', {}, collect)(Target);

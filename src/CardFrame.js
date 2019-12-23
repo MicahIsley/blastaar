@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { DragSource } from 'react-dnd';
+import AbilityTarget from './AbilityTarget';
+import ElementTarget from './ElementTarget';
 
 const itemSource = {
   beginDrag(props) {
-    console.log(props.power);
+    console.log(props);
     console.log('dragging');
     return props;
   },
@@ -12,7 +14,7 @@ const itemSource = {
       return;
     }
 
-    return props.handleDrop(props.id);
+    return props.handleDrop(props);
   }
 }
 
@@ -24,7 +26,7 @@ function collect(connect, monitor) {
   }
 }
 
-class CollectionCard extends React.Component {
+class CardFrame extends React.Component {
   render() {
     var charCard = this.props.type;
     var influenceCost = false;
@@ -37,6 +39,7 @@ class CollectionCard extends React.Component {
     }else if(charCard === "sphere"){
       sphereCard = true;
     }
+    console.log(this.props);
     const { isDragging, connectDragSource, item } = this.props;
     const opacity = isDragging ? 0 : 1;
 
@@ -72,4 +75,4 @@ class CollectionCard extends React.Component {
   }
 }
 
-export default DragSource('card', itemSource, collect)(CollectionCard);
+export default DragSource('cardFrame', itemSource, collect)(CardFrame);
