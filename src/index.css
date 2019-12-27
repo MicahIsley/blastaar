@@ -472,6 +472,11 @@ input {
 	z-index: 2;
 }
 
+.enemyHoverCard {
+	position: absolute;
+	z-index: 2;
+}
+
 .fadeOut {
 	opacity:0;
 	transition: opacity 0.5s;

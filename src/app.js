@@ -60,13 +60,16 @@ var enemy1Slot = {};
 var enemy2Slot = {};
 var createEnemy;
 
+var sabotoge1 = new CardCon("Too Wobbly", 0, -2, "Off Balance", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "neutral");
+
 const wobbledukStats = {
 	name: "Wobbleduk",
 	hp: 1,
 	attack: 3,
-	sabotoge: 0,
+	sabotoge: 1,
 	pointValue: 50,
-	image: wobbleduk
+	image: wobbleduk,
+	sabCard: sabotoge1
 };
 
 const angryWobbledukStats = {
@@ -75,7 +78,8 @@ const angryWobbledukStats = {
 	attack: 3,
 	sabotoge: 1,
 	pointValue: 50,
-	image: wobbleduk
+	image: wobbleduk,
+	sabCard: sabotoge1
 };
 
 const budleFairyStats = {
@@ -84,7 +88,8 @@ const budleFairyStats = {
 	attack: 8,
 	sabotoge: 4,
 	pointValue: 500,
-	image: budleFairy
+	image: budleFairy,
+	sabCard: sabotoge1
 };
 
 const madnadoStats = {
@@ -93,7 +98,8 @@ const madnadoStats = {
 	attack: 4,
 	sabotoge: 2,
 	pointValue: 250,
-	image: madnado
+	image: madnado,
+	sabCard: sabotoge1
 };
 
 const morpStats = {
@@ -102,7 +108,8 @@ const morpStats = {
 	attack: 3,
 	sabotoge: 1,
 	pointValue: 100,
-	image: morp
+	image: morp,
+	sabCard: sabotoge1
 };
 
 const primtreeStats = {
@@ -111,7 +118,8 @@ const primtreeStats = {
 	attack: 5,
 	sabotoge: 1,
 	pointValue: 150,
-	image: primtree
+	image: primtree,
+	sabCard: sabotoge1
 };
 
 const borgusStats = {
@@ -120,7 +128,8 @@ const borgusStats = {
 	attack: 5,
 	sabotoge: 2,
 	pointValue: 200,
-	image: borgus
+	image: borgus,
+	sabCard: sabotoge1
 };
 
 const kingBorgusStats = {
@@ -129,7 +138,8 @@ const kingBorgusStats = {
 	attack: 4,
 	sabotoge: 5,
 	pointValue: 200,
-	image: borgus
+	image: borgus,
+	sabCard: sabotoge1
 };
 
 const gangOfFleebsStats = {
@@ -138,7 +148,8 @@ const gangOfFleebsStats = {
 	attack: 7,
 	sabotoge: 1,
 	pointValue: 250,
-	image: gangOfFleebs
+	image: gangOfFleebs,
+	sabCard: sabotoge1
 };
 
 const maclawStats = {
@@ -147,7 +158,8 @@ const maclawStats = {
 	attack: 6,
 	sabotoge: 3,
 	pointValue: 300,
-	image: maclaw
+	image: maclaw,
+	sabCard: sabotoge1
 };
 
 const banditStats = {
@@ -156,7 +168,8 @@ const banditStats = {
 	attack: 4,
 	sabotoge: 2,
 	pointValue: 300,
-	image: placeholderImg
+	image: placeholderImg,
+	sabCard: sabotoge1
 };
 
 const kingWobbledukStats = {
@@ -165,7 +178,8 @@ const kingWobbledukStats = {
 	attack: 5,
 	sabotoge: 3,
 	pointValue: 700,
-	image: kingWobbleduk
+	image: kingWobbleduk,
+	sabCard: sabotoge1
 };
 
 const kingBudleFairyStats = {
@@ -174,7 +188,8 @@ const kingBudleFairyStats = {
 	attack: 6,
 	sabotoge: 4,
 	pointValue: 700,
-	image: budleFairy
+	image: budleFairy,
+	sabCard: sabotoge1
 };
 
 var numberOfEnemies = 1;
@@ -277,13 +292,14 @@ function levelTwoDistribution(){
 	}
 }
 
-function EnemyCon(name, hp, attack, sabotoge, pointValue, image){
+function EnemyCon(name, hp, attack, sabotoge, pointValue, image, sabCard){
 	this.name = name;
 	this.hp = hp;
 	this.attack = attack;
 	this.sabotoge = sabotoge;
 	this.pointValue = pointValue;
 	this.image = image;
+	this.sabCard = sabCard;
 }
 
 function ItemCon(name, power, type, cost, unlocked, purchased){
@@ -378,12 +394,10 @@ var basic33 = new CardCon("Wobble Smash", 0, 4, "Dodge and Shield 3", "hero", 0,
 
 var addCard1 = new CardCon("Roast", 0, 8, "Deal 8", "hero", 0, "remove", "", false, "stormlight", placeholderImg, fire, "fire");
 
-
-
 var currentEnemy = 4;
 var playerHero = new HeroCon("Youber", 50, 1, 3, 0, youber, true);
 var gameMode = "marathon";
-var level = 1;
+var level = 0;
 var stageComplete = 0;
 var currentHeroPostion = 0;
 var enemyNumber = 0;
@@ -394,7 +408,7 @@ var cardArray = [basic1, basic2];
 var recruitArray = [];
 var collectionArray = [];
 var cardFrames = [basic1, basic2, basic3, basic4];
-var elementOrbs = [fire, wind, earth, water];
+var elementOrbs = [];
 var abilityCollection = [{level: 1, text: "Spell"}, {level: 2, text: "Spell"}, {level: 3, text: "Spell"}];
 const levelOneAbilities = [{ability: "shield 2", type: earth, text: "Shield 2", name: "Granite Armor"}, {ability: "damage 2", type: "all", text: "Right to the face!", name: "element Blast"}, {ability: "research 2", type: wind, text: "Research 2", name: "Change in the Winds"}];
 const levelTwoAbilities = [{ability: "purge", type: fire}, {ability: "damage 4", type: "all"}, {ability: "stun", type: water}];
@@ -424,7 +438,7 @@ class GameScreenHub extends React.Component {
 			heroShield: 2,
 			equipment: null,
 			score: 100,
-			heroHp: 30,
+			heroHp: 10,
 			stormCounter: 100,
 			enemyArray: [enemyArray[0], enemyArray[1], enemyArray[2]],
 			sphereCount: 0,
@@ -460,6 +474,9 @@ class GameScreenHub extends React.Component {
 		this.setState({
 			heroHp: newHp
 		});
+		if(newHp === 0){
+			this.goToCharacterScreen();
+		}
 	}
 	changeHeroAttack(newAttack){
 		this.setState({
@@ -636,7 +653,8 @@ class GameScreenHub extends React.Component {
 			var eSabotoge = selected.sabotoge;
 			var ePointValue = selected.pointValue;
 			var eImage = selected.image;
-			var newEnemy = new EnemyCon(eName, eHp, eAttack, eSabotoge, ePointValue, eImage);
+			var eSabCard = selected.sabCard;
+			var newEnemy = new EnemyCon(eName, eHp, eAttack, eSabotoge, ePointValue, eImage, eSabCard);
 			enemyArray.push(newEnemy);
 			createEnemyNum ++;
 		}
@@ -646,7 +664,7 @@ class GameScreenHub extends React.Component {
 	}
 	tutorialActions(){
 		if(stageComplete === 1){
-			cardArray = [basic17, basic18];
+			cardArray = [basic21, basic22];
 			document.getElementById("tutorialMessage").innerHTML=" ";
 			document.getElementById("tutorialMessageBox").style.display="inline";
 			document.getElementById("tutorialMessage").append("Well done, I think you could use a bigger rock");
@@ -739,7 +757,7 @@ class GameScreenHub extends React.Component {
 			<div>
 			{this.state.createScreen ? <CreateCharacter createNewCharacter={this.createNewCharacter} /> : null }
 			{this.state.characterSelectScreen ? <CharacterSelectScreen score={this.state.score} createNewCharacter={this.createNewCharacter} influence={this.state.influence} shield={this.state.heroShield} spheres={this.state.sphereCount} attack={this.state.attack} playerHero={playerHero} switchEnemyArray={this.switchEnemyArray} goToEquipmentScreen={this.goToEquipmentScreen} heroHp={this.state.heroHp} showCollection={this.showCollection} changeHero={this.changeHero} goToGameScreen={this.goToGameScreen} /> : null }
-			{this.state.gameScreen ? <GameScreen changeHeroShield={this.changeHeroShield} changeHeroAttack={this.changeHeroAttack} changeInfluence={this.changeInfluence} influence={this.state.influence} int={this.state.heroSelect.intelligence} shield={this.state.heroShield} switchEnemyArray={this.switchEnemyArray} increaseStormCounter={this.increaseStormCounter} decreaseStormCounter={this.decreaseStormCounter} stormCounter={this.state.stormCounter} changeHeroHp={this.changeHeroHp} heroHp={this.state.heroHp} score={this.state.score} changeScore={this.changeScore} aux={this.auxilaryScreen} heroSelect={this.state.heroSelect} attack={this.state.attack} equipment={this.state.equipment} enemyArray={this.state.enemyArray} /> : null }
+			{this.state.gameScreen ? <GameScreen characterScreen={this.goToCharacterScreen} changeHeroShield={this.changeHeroShield} changeHeroAttack={this.changeHeroAttack} changeInfluence={this.changeInfluence} influence={this.state.influence} int={this.state.heroSelect.intelligence} shield={this.state.heroShield} switchEnemyArray={this.switchEnemyArray} increaseStormCounter={this.increaseStormCounter} decreaseStormCounter={this.decreaseStormCounter} stormCounter={this.state.stormCounter} changeHeroHp={this.changeHeroHp} heroHp={this.state.heroHp} score={this.state.score} changeScore={this.changeScore} aux={this.auxilaryScreen} heroSelect={this.state.heroSelect} attack={this.state.attack} equipment={this.state.equipment} enemyArray={this.state.enemyArray} /> : null }
 			{this.state.auxilaryScreen ? <AuxilaryScreen changeInfluence={this.changeInfluence} influence={this.state.influence} setSphereCount={this.setSphereCount} score={this.state.score} resetStormCounter={this.resetStormCounter} goToCharacterScreen={this.goToCharacterScreen} /> : null }
 			{this.state.collectionScreen ? <CollectionScreen goToCraftingScreen={this.goToCraftingScreen} checkDeckContents={this.checkDeckContents} /> : null }
 			{this.state.equipmentScreen ? <EquipmentScreen changeScore={this.changeScore} score={this.state.score} itemArray={this.state.itemArray} heroShield={this.state.heroShield} spheres={this.state.sphereCount} setSphereCount={this.setSphereCount} playerHero={playerHero} chooseItemAction={this.chooseItemAction} attack={this.state.attack} goToCharacterScreen={this.goToCharacterScreen} /> : null }
@@ -794,10 +812,10 @@ class EquipmentScreen extends React.Component {
 		shuffle(collectionArray);
 		var newCards = [];
 		if(type === "basic"){
-			if(this.props.score < 100){
+			if(this.props.spheres < 2){
 				console.log("Not Enough");
 			}else{
-				this.props.changeScore(-100);
+				this.props.setSphereCount(-2);
 				for(var i=0; i<3; i++){
 					newCards.push(collectionArray[i]);
 					collectionArray[i].unlocked = true;
@@ -807,10 +825,10 @@ class EquipmentScreen extends React.Component {
 				});
 			}
 		}else if(type === "super"){
-			if(this.props.score < 600){
+			if(this.props.spheres < 5){
 				console.log('Not Enough');
 			}else{
-				this.props.changeScore(-600);
+				this.props.setSphereCount(-5);
 				for(var i=0; i<5; i++){
 					newCards.push(collectionArray[i]);
 					collectionArray[i].unlocked = true;
@@ -820,10 +838,10 @@ class EquipmentScreen extends React.Component {
 				});
 			}
 		}else if(type === "extreme"){
-			if(this.props.score < 1500){
+			if(this.props.spheres < 9){
 				console.log("Not Enough");
 			}else{
-				this.props.changeScore(-1500);
+				this.props.setSphereCount(-9);
 				for(var i=0; i<7; i++){
 					newCards.push(collectionArray[i]);
 					collectionArray[i].unlocked = true;
@@ -844,7 +862,7 @@ class EquipmentScreen extends React.Component {
 					<div className="row">
 						<div className="col-xs-3"><button className="coolButton" onClick={this.props.goToCharacterScreen}>Back</button></div>
 						<div className="col-xs-offset-6 col-xs-3" id="shopPoints">
-							Points: {this.props.score}
+							Points: {this.props.spheres}
 						</div>
 					</div>
 					<div className="row">
@@ -887,7 +905,7 @@ class CharacterSelectScreen extends React.Component {
 						</div>
 						<div className="col-xs-3">
 							<div>Total Score: {this.props.score}</div>
-							<div>Points: {this.props.score}</div>
+							<div>Points: {this.props.spheres}</div>
 						</div>
 					</div>
 					<div className="row">
@@ -1290,6 +1308,10 @@ class GameScreen extends React.Component {
 				var heroAttack = newAttack;
 			}
 			var enemyHp = enemyHealth - heroAttack;
+			if(enemyHealth === heroAttack){
+				console.log("exact damage");
+				this.props.changeScore(200);
+			}else{}
 			document.getElementsByClassName("heroDamageIndicator")[(currentEnemy)].append("-" + heroAttack);
 			document.getElementsByClassName("heroDamageIndicator")[(currentEnemy)].style.display="inline";
 			setTimeout(() => { 
@@ -1334,6 +1356,9 @@ class GameScreen extends React.Component {
 		}else{
 			console.log('no more actions');
 		}
+	}
+	triggerPlayerDeath() {
+		this.props.characterScreen();
 	}
 	triggerEnemyDeath(enemy) {
 		var deadEnemy = document.getElementById(enemy);
@@ -1494,31 +1519,35 @@ class GameScreen extends React.Component {
 			}
 		}
 		setTimeout(() => {
-			currentEnemy = 4;
-			document.getElementById(enemyNumber).classList.remove("attackingEnemy");
-			document.getElementById(enemyNumber).classList.remove("stunned");
-			for (var i=0; i < x.length; i ++ ){
-			x[i].style.borderColor="black";
-			}
-			if(enemyNumber < (enemyArray.length - 1)){
-				enemyNumber ++;
-				this.enemyAttackAction(enemyNumber);
-			}else if(enemyNumber === (enemyArray.length - 1)){
-				if(this.state.exhausted === true){
-					this.enemyAttackAction(0);
-					this.setState({
-						exhausted: false
-					});
-				}else{
-					this.setState({
-						playerShield: this.props.shield,
-						cardAbility: true,
-						decoy: false
-					}, () => {
-						this.props.decreaseStormCounter();
-					});
+			if(this.props.heroHp === 0){
+				this.triggerPlayerDeath();
+			}else{
+				currentEnemy = 4;
+				document.getElementById(enemyNumber).classList.remove("attackingEnemy");
+				document.getElementById(enemyNumber).classList.remove("stunned");
+				for (var i=0; i < x.length; i ++ ){
+				x[i].style.borderColor="black";
 				}
-			}else{}
+				if(enemyNumber < (enemyArray.length - 1)){
+					enemyNumber ++;
+					this.enemyAttackAction(enemyNumber);
+				}else if(enemyNumber === (enemyArray.length - 1)){
+					if(this.state.exhausted === true){
+						this.enemyAttackAction(0);
+						this.setState({
+							exhausted: false
+						});
+					}else{
+						this.setState({
+							playerShield: this.props.shield,
+							cardAbility: true,
+							decoy: false
+						}, () => {
+							this.props.decreaseStormCounter();
+						});
+					}
+				}else{}
+			}
 		}, 1000);
 	}
 	deadRecruit(name){
@@ -1702,8 +1731,9 @@ class Card extends React.Component {
 class EnemySide extends React.Component {
 	listBadGuys () {
 		const numberOfBadGuys = enemyArray;
+		console.log(enemyArray);
 		const listItems = numberOfBadGuys.map((badGuy, index) =>
-			<Enemy key={index} id={index} name={badGuy.name} eHp={badGuy.hp} updateEnemySab={this.props.updateEnemySab} sab={this.props.sab[index]} image={badGuy.image} />
+			<Enemy key={index} id={index} name={badGuy.name} eHp={badGuy.hp} updateEnemySab={this.props.updateEnemySab} sab={this.props.sab[index]} sabCard={badGuy.sabCard} image={badGuy.image} />
 		);
 		return (
 			<div className="row">{listItems}</div>
@@ -1928,6 +1958,25 @@ class HeroItem extends React.Component {
 }
 
 class Enemy extends React.Component {
+	constructor(props) {
+	    super(props);
+	    this.state = {
+	      hover: false
+	    }
+	    this.handleMouseEnter = this.handleMouseEnter.bind(this);
+	    this.handleMouseLeave = this.handleMouseLeave.bind(this);
+	}
+	handleMouseEnter(){
+	    this.setState({
+	      hover: true
+	    });
+	    console.log("enter");
+	}
+	handleMouseLeave(){
+	    this.setState({
+	      hover: false
+	    });
+	}
 	componentDidMount(){
 		this.props.updateEnemySab();
 	}
@@ -1939,7 +1988,6 @@ class Enemy extends React.Component {
 		document.getElementById(id + 'image').classList.add("targetedEnemy");
 		currentEnemy = id;
 	}
-
 	render() {
 		return (
 			<div className="col-xs-4 enemyCharacterBox" id={this.props.id} onClick={() => {this.selectEnemyToAttack(this.props.id)}}>
@@ -1949,13 +1997,14 @@ class Enemy extends React.Component {
 						<HPSpan hp={this.props.eHp} />
 						<div className="row sabRow">
 							<div className="col-xs-2">Sab</div>
-							<div className="col-xs-9"><Sabotoge sab={this.props.sab} /></div>
+							<div className="col-xs-9"><Sabotoge mouseEnter={this.handleMouseEnter} mouseLeave={this.handleMouseLeave} sab={this.props.sab} /></div>
 						</div>
 					</div>
 				</div>
 				<div className="row">
 					<div className="col-xs-offset-2 col-xs-8">
 						<CharacterImage image={this.props.image} id={this.props.id} />
+						{this.state.hover ? <EnemySabCard sabCard={this.props.sabCard}/> : null }
 					</div>
 				</div>
 			</div>
@@ -1963,11 +2012,29 @@ class Enemy extends React.Component {
 	}
 };
 
+class EnemySabCard extends React.Component {
+	render() {
+		console.log(this.props);
+		return (
+			<div className="col-xs-12 enemy enemyHoverCard">
+		          <div className="row">
+		            <div className="col-xs-offset-4 col-xs-4 cardPower">{this.props.sabCard.power}</div>
+		          </div>
+		        <div className="row cardName">{this.props.sabCard.name}</div>
+		        <div className="row cardText">{this.props.sabCard.text}</div>
+		        <div className="row bottomRow">
+	        		<div className="col-xs-offset-8 col-xs-4"><img className="iconImg" src={this.props.sabCard.icon} alt="icon" /></div>
+		        </div>
+			</div>
+		)
+	}
+}
+
 class Sabotoge extends React.Component {
 	render() {
 		var orbs = [];
 		for (var i = 0; i < this.props.sab; i++) {
-	  		orbs.push(<div className='orb' key={i}></div>);
+	  		orbs.push(<div className='orb' key={i} onMouseEnter={this.props.mouseEnter} onMouseLeave={this.props.mouseLeave}></div>);
 		}
 		return orbs;
 	}
@@ -1977,11 +2044,13 @@ class AuxilaryScreen extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			rewardCards: [basic1]
+			rewardCards: [basic1],
+			rewardGems: []
 
 		}
 	this.levelRewards = this.levelRewards.bind(this);
 	this.listCardRewards = this.listCardRewards.bind(this);
+	this.listGemRewards = this.listGemRewards.bind(this);
 	}
 	componentDidMount(){
 		this.levelRewards();
@@ -2000,14 +2069,24 @@ class AuxilaryScreen extends React.Component {
 		cardArray.splice(0, enemyCardNum);
 	}
 	levelRewards(){
-		console.log(level);
+		var levelCard;
+		var levelGems;
+		var levelPoints;
 		if(level === 0){
-			this.setState({
-				rewardCards: [basic33]
-			});
-			collectionArray.push(basic33);
-			basic33.unlocked = true
+			levelGems = [fire, earth, fire];
+			levelCard = [basic33];
+			levelPoints = 1;
+		}else{}
+		for(var i=0; i<levelGems.length; i++){
+			elementOrbs.push(levelGems[i]);
 		}
+		this.props.setSphereCount(levelPoints);
+		this.setState({
+			rewardCards: levelCard,
+			rewardGems: levelGems
+		});
+		collectionArray.push(levelCard);
+		basic33.unlocked = true
 	}
 	listCardRewards(){
 		var cards = this.state.rewardCards;
@@ -2020,7 +2099,13 @@ class AuxilaryScreen extends React.Component {
 		)
 	}
 	listGemRewards(){
-
+		var gemRewards = this.state.rewardGems;
+		const listGemRewards = gemRewards.map((orb, index) =>
+			<Element  key={index} element={orb} handleDrop={(element) => this.orbDrop(orb)} />
+		);
+		return (
+			<div>{listGemRewards}</div>
+		)
 	}
 	render() {
 		return (
@@ -2029,6 +2114,9 @@ class AuxilaryScreen extends React.Component {
 				<div className="row" id="rewardsDescription">Score: {this.props.score}</div>
 				<div className="row">
 					{this.listCardRewards()}
+				</div>
+				<div className="row">
+					{this.listGemRewards()}
 				</div>
 				<div className="row">
 					<button className="coolButton col-xs-offset-4 col-xs-4" onClick={this.props.goToCharacterScreen}>Return</button>
