@@ -5,7 +5,6 @@ import ElementTarget from './ElementTarget';
 
 const itemSource = {
   beginDrag(props) {
-    console.log(props);
     console.log('dragging');
     return props;
   },
@@ -39,7 +38,6 @@ class CardFrame extends React.Component {
     }else if(charCard === "sphere"){
       sphereCard = true;
     }
-    console.log(this.props);
     const { isDragging, connectDragSource, item } = this.props;
     const opacity = isDragging ? 0 : 1;
 
