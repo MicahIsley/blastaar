@@ -19,6 +19,13 @@ body {
 	margin-left: 33%;
 }
 
+.levelChoice {
+	background: brown;
+	font-size: 36px;
+	margin: 5px;
+	text-align: center;
+}
+
 .packOption {
 	text-align: center;
 	font-size: 24px;
@@ -929,6 +936,10 @@ input {
 
 .stunned {
 	background: yellow;
+}
+
+.confused {
+	background: purple;
 }
 
 @-webkit-keyframes pusate {
