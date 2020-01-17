@@ -19,11 +19,41 @@ body {
 	margin-left: 33%;
 }
 
+.mainScore {
+	font-family: 'Metamorphous', cursive;
+	font-size: 24px;
+}
+
 .levelChoice {
-	background: brown;
+	background: #b1875c;
 	font-size: 36px;
-	margin: 5px;
 	text-align: center;
+	border-style: solid;
+	border-width: 3px;
+	border-color: #b1875c;
+	border-radius: 5px;
+	font-family: 'Metamorphous', cursive;
+}
+
+.levelChoice:hover {
+	border-color: black;
+}
+
+.levelChoiceRow {
+	margin-top: 5px;
+}
+
+#levelChoiceTitle {
+	text-align: center;
+	font-size: 24px;
+	font-family: 'Metamorphous', cursive;
+}
+
+.selectedLevel {
+	border-style: solid;
+	border-color: black;
+	border-width: 3px;
+	background: grey;
 }
 
 .packOption {
@@ -133,9 +163,15 @@ body {
 }
 
 .eleOrbImg {
-	height: 50px;
-	width: 63px;
-	border-radius: 30px;
+	margin: 8px;
+    background: brown;
+    height: 63px;
+    width: 63px;
+    border-radius: 30px;
+    border-style: inset;
+    border-width: 2px;
+    border-color: #6b6a6a;
+    box-shadow: 0px 0px 15px 5px white;
 }
 
 #frameList {
@@ -450,7 +486,8 @@ input {
 	border-style: solid;
 	border-color: black;
 	border-width: 2px;
-	left: 25%;
+	left: 7%;
+	top: 34%;
 	position: fixed;
 	z-index: 3;
 	background: white;
@@ -634,6 +671,12 @@ input {
 	background: gold;
 	color: black;
 	font-family: 'Metamorphous', cursive;
+}
+
+.influenceGlow {
+	-webkit-animation: stormPusate 1s infinite alternate;
+    -moz-animation: stormPusate 1s infinite alternate;
+    -animation: stormPusate 1s infinite alternate;
 }
 
 .stormlightCost {
@@ -899,6 +942,13 @@ input {
     -animation: pusate 1s infinite alternate;
 }
 
+.fullScheme {
+	box-shadow: inset 0 0 10px red;
+    -webkit-animation: pusate 1s infinite alternate;
+    -moz-animation: pusate 1s infinite alternate;
+    -animation: pusate 1s infinite alternate;
+}
+
 .attackingEnemy {
 	background: red;	
 }
@@ -916,6 +966,16 @@ input {
 	border-style: solid;
 	border-color: black;
 	border-width: 3px;
+	font-family: 'Metamorphous', cursive;
+}
+
+#cardRewardRow {
+	
+}
+
+#gemRewardRow {
+	margin-top: 25px;
+	margin-bottom: 50px;
 }
 
 .coolButton {
@@ -923,7 +983,6 @@ input {
 	padding: 10px;
 	background: orange;
 	box-shadow: 2px 2px 5px grey;
-	margin: 5px;
 }
 
 .coolButton:hover {
@@ -932,6 +991,21 @@ input {
 
 .coolButton:focus {
 	outline: none;
+}
+
+#levelButton {
+	font-size: 36px;
+	margin-top: 40px;
+	border-radius: 5px;
+	padding: 10px;
+	background: orange;
+	box-shadow: 2px 2px 5px grey;
+	text-align: center;
+	font-family: 'Metamorphous', cursive;
+}
+
+#levelButton:hover {
+	background: #fdc96a;
 }
 
 .stunned {
@@ -953,6 +1027,19 @@ input {
 @keyframes pusate {
     from { box-shadow: inset 0 0 10px red; }
     to { box-shadow: inset 0 0 30px red; }
+}
+
+@-webkit-keyframes stormPusate {
+    from { box-shadow: 0 0 0 0 0px blue; }
+    to { box-shadow: 0px 0px 15px 10px blue; }
+}
+@-moz-keyframes stormPusate {
+    from { box-shadow: 0 0 0 0 0px blue; }
+    to { box-shadow: 0px 0px 15px 10px blue; }
+}
+@keyframes stormPusate {
+    from { box-shadow: 0 0 0 0 0px blue; }
+    to { box-shadow: 0px 0px 15px 10px blue; }
 }
 
 .deadEnemy {

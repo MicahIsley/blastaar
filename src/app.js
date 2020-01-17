@@ -32,10 +32,19 @@ import budleFairy from './assets/budleFairy.gif';
 import madnado from './assets/madnado.gif';
 import morp from './assets/morp.gif';
 import primtree from './assets/primtree.gif';
+import queenPrimtree from './assets/queenPrimtree.png';
 import borgus from './assets/borgus.gif';
 import gangOfFleebs from './assets/gangOfFleebs.gif';
 import kingWobbleduk from './assets/kingWobbleduk.gif';
 import maclaw from './assets/maclaw.gif';
+import ghostShark from './assets/ghostShark.png';
+import kragmup from './assets/kragmup.png';
+import purpleKreep from './assets/purpleKreep.gif';
+import shockShark from './assets/shockShark.gif';
+import steed from './assets/steed.png';
+import tipper from './assets/tipper.png';
+import rockFairy from './assets/rockFairy.gif';
+import windleFairy from './assets/windleFairy.png';
 import youber from './assets/youber.gif';
 import awe from './assets/awe.png';
 import earth from './assets/earth.png';
@@ -52,6 +61,10 @@ import walkLeft from './assets/walkLeft.gif';
 import walkRight from './assets/walkRight.gif';
 import walkUp from './assets/walkUp.png';
 import tree from './assets/backgroundTree.png';
+import fireBackground from './assets/fireBackground.png';
+import grassBackground from './assets/grassBackground.png';
+import waterBackground from './assets/waterBackground.png';
+import windBackground from './assets/windBackground.png';
 import './index.css';
 
 var player;
@@ -61,12 +74,15 @@ var enemy2Slot = {};
 var createEnemy;
 
 var sabotoge1 = new CardCon("Too Wobbly", 0, -2, "Off Balance", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 0);
+var sabotoge2 = new CardCon("Budle Charm", 0, -3, "Woozy", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 0);
+var sabotoge3 = new CardCon("Raging Storm", 0, -4, "So Fierce", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 0);
+var sabotoge4 = new CardCon("Steamed", 0, -5, "Super way too hot", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 0);
 
 const wobbledukStats = {
 	name: "Wobbleduk",
-	hp: 15,
+	hp: 6,
 	attack: 3,
-	sabotoge: 3,
+	sabotoge: 0,
 	pointValue: 50,
 	image: wobbleduk,
 	sabCard: sabotoge1,
@@ -102,7 +118,7 @@ const budleFairyStats = {
 	sabotoge: 4,
 	pointValue: 500,
 	image: budleFairy,
-	sabCard: sabotoge1,
+	sabCard: sabotoge2,
 	element: water
 };
 
@@ -113,7 +129,7 @@ const kingBudleFairyStats = {
 	sabotoge: 4,
 	pointValue: 700,
 	image: budleFairy,
-	sabCard: sabotoge1,
+	sabCard: sabotoge3,
 	element: water
 };
 
@@ -124,7 +140,7 @@ const madnadoStats = {
 	sabotoge: 2,
 	pointValue: 250,
 	image: madnado,
-	sabCard: sabotoge1,
+	sabCard: sabotoge3,
 	element: wind
 };
 
@@ -135,7 +151,7 @@ const kingMadnadoStats = {
 	sabotoge: 2,
 	pointValue: 250,
 	image: madnado,
-	sabCard: sabotoge1,
+	sabCard: sabotoge3,
 	element: wind
 };
 
@@ -146,7 +162,7 @@ const morpStats = {
 	sabotoge: 1,
 	pointValue: 100,
 	image: morp,
-	sabCard: sabotoge1,
+	sabCard: sabotoge4,
 	element: fire
 };
 
@@ -157,15 +173,15 @@ const kingMorpStats = {
 	sabotoge: 1,
 	pointValue: 100,
 	image: morp,
-	sabCard: sabotoge1,
+	sabCard: sabotoge4,
 	element: fire
 };
 
 const primtreeStats = {
 	name: "Primtree",
-	hp: 10,
-	attack: 5,
-	sabotoge: 1,
+	hp: 5,
+	attack: 3,
+	sabotoge: 0,
 	pointValue: 150,
 	image: primtree,
 	sabCard: sabotoge1,
@@ -178,7 +194,7 @@ const kingPrimtreeStats = {
 	attack: 5,
 	sabotoge: 1,
 	pointValue: 150,
-	image: primtree,
+	image: queenPrimtree,
 	sabCard: sabotoge1,
 	element: earth
 };
@@ -447,7 +463,7 @@ var water7 = new CardCon("Draw Deep", 0, 0, "Shuffle 3 Drain's into your deck", 
 var water8 = new CardCon("Tidal Wave", 0, 7, "Splash", "hero", 0, "", "", false, "stormlight", placeholderImg, water, "water", 0);
 var water9 = new CardCon("Ice Cold", 0, 2, "Weaken 2", "hero", 0, "weaken 2", "", false, "stormlight", placeholderImg, water, "water", 0);
 var water10 = new CardCon("Just Keep Looking", 0, 3, "Rummage 3 and heal 3", "hero", 0, "heal 3", "research 3", true, "stormlight", placeholderImg, water, "water", 0);
-var basic41 = new CardCon("Small Rock", 0, 2, "It's pretty small", "hero", 0, "scheme fire", "", true, "support", placeholderImg, placeholderImg, "neutral", 1);
+var basic41 = new CardCon("Small Rock", 0, 2, "It's pretty small", "hero", 0, "scheme neutral 3", "10", true, "support", placeholderImg, placeholderImg, "neutral", 1);
 var basic42 = new CardCon("Big Rock", 0, 4, "It's pretty big", "hero", 0, "", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 2);
 var basic43 = new CardCon("Focus", 0, 1,"Next Spell +3", "hero", 0, "next 3", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 3);
 var basic44 = new CardCon("Thick Skin", 0, 2, "Shield 2", "hero", 0, "shield 2", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 4);
@@ -495,7 +511,7 @@ var cardArray = [basic41, basic42, basic43];
 var recruitArray = [];
 var collectionArray = [];
 var cardFrames = [];
-var elementOrbs = [earth, wind, fire, water];
+var elementOrbs = [];
 var abilityCollection = [{level: 1, text: "Spell"}, {level: 2, text: "Spell"}, {level: 3, text: "Spell"}];
 const levelOneAbilities = [{ability: "shield 2", type: earth, text: "Shield 2", name: "Granite Armor"}, {ability: "damage 2", type: "all", text: "Right to the face!", name: "element Blast"}, {ability: "research 2", type: wind, text: "Research 2", name: "Change in the Winds"}];
 const levelTwoAbilities = [{ability: "purge", type: fire}, {ability: "damage 4", type: "all"}, {ability: "stun", type: water}];
@@ -734,7 +750,6 @@ class GameScreenHub extends React.Component {
 	}
 	createEnemies() {
 		enemyArray = [];
-		console.log(level);
 		for(var i=0; i<numberOfEnemies; i++){
 			if(level === 0){
 				tutorialLevels();
@@ -794,7 +809,6 @@ class GameScreenHub extends React.Component {
 			document.getElementById("confused").classList.remove("confused");
 		}
 		if(gameMode === "marathon"){
-			stageComplete ++;
 			if(level === 0){
 				this.tutorialActions();
 			}
@@ -882,17 +896,32 @@ class LevelSelectScreen extends React.Component {
 	}
 	selectLevel(choice){
 		level = choice;
-		console.log(level);
 		this.props.switchEnemyArray();
+		const x = document.getElementsByClassName("levelChoice");
+		for (var i=0; i < x.length; i ++ ){
+			x[i].classList.remove("selectedLevel");
+		}
+		document.getElementById(choice).classList.add("selectedLevel");
 	}
 	render() {
 		return (
-			<div>
-				<div className="levelChoice" id="earth" onClick={() => {this.selectLevel("earth")}}>Mountain Pass</div>
-				<div className="levelChoice" id="fire" onClick={() => {this.selectLevel("fire")}}>Fire Fields</div>
-				<div className="levelChoice" id="water" onClick={() => {this.selectLevel("water")}}>Islands of Ruu</div>
-				<div className="levelChoice" id="wind" onClick={() => {this.selectLevel("wind")}}>Howling Caverns</div>
-				<div className="coolButton" onClick={this.props.goToGameScreen}>Confirm</div>
+			<div className="row">
+				<div className="col-xs-12">
+					<div className="row" id="levelChoiceTitle">
+						<div className="col-xs-offset-2 col-xs-8">Choose a level</div>
+					</div>
+					<div className="row levelChoiceRow">
+						<div className="col-xs-offset-1 col-xs-4 levelChoice" id="earth" onClick={() => {this.selectLevel("earth")}}>Mountain Pass</div>
+						<div className="col-xs-offset-2 col-xs-4 levelChoice" id="fire" onClick={() => {this.selectLevel("fire")}}>Fire Fields</div>
+					</div>
+					<div className="row levelChoiceRow">
+						<div className="col-xs-offset-1 col-xs-4 levelChoice" id="water" onClick={() => {this.selectLevel("water")}}>Islands of Ruu</div>
+						<div className="col-xs-offset-2 col-xs-4 levelChoice" id="wind" onClick={() => {this.selectLevel("wind")}}>Howling Caverns</div>
+					</div>
+					<div className="row">
+						<div className="col-xs-offset-3 col-xs-6" id="levelButton" onClick={this.props.goToGameScreen}>Play</div>
+					</div>
+				</div>
 			</div>
 		)
 	}
@@ -1017,7 +1046,7 @@ class CharacterSelectScreen extends React.Component {
 			var card = eval(`basic${i}`);
 			collectionArray.push(card);
 		}
-		stageComplete = -1;
+		stageComplete = 0;
 		this.props.switchEnemyArray();
 		this.props.createNewCharacter();
 	}
@@ -1034,8 +1063,8 @@ class CharacterSelectScreen extends React.Component {
 							{ dalinarH.unlocked ? <HeroSelectOption name="Dalinar" stats={dalinarH} image={dalinar} id="dalinarH" changeHero={this.props.changeHero} /> : null */}
 						</div>
 						<div className="col-xs-3">
-							<div>Total Score: {this.props.score}</div>
-							<div>Points: {this.props.spheres}</div>
+							<div className="row mainScore">Total Score: {this.props.score}</div>
+							<div className="row mainScore">Points: {this.props.spheres}</div>
 						</div>
 					</div>
 					<div className="row">
@@ -1129,6 +1158,16 @@ class GameScreen extends React.Component {
 		this.supportAction = this.supportAction.bind(this);
 	}
 	componentDidMount() {
+		console.log(level);
+		if(level === "fire"){
+			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + fireBackground + ")";
+		}else if(level === "earth"){
+			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + grassBackground + ")";
+		}else if(level === "water"){
+			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + waterBackground + ")";
+		}else if(level === "wind"){
+			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + windBackground + ")";
+		}
 		var enemySabs = [];
 		var nullHp1 = null;
 		var nullHp2 = null;
@@ -1177,7 +1216,8 @@ class GameScreen extends React.Component {
 			this.scheme(card);
 		}else{
 			this.setState({
-				cardDisplay: false
+				cardDisplay: false,
+				recruit: false
 			}, () => {
 				this.checkSupportAbility(card);
 			    const x = document.getElementsByClassName("characterImage2");
@@ -1189,16 +1229,27 @@ class GameScreen extends React.Component {
 		}
 	}
 	scheme(card) {
-		console.log(card);
-		var schemeCards = this.state.cards;
-		schemeCards.splice(schemeCards.indexOf(card), 1);
-		var advanceScheme = this.state.supportSlot1;
-		advanceScheme.power ++;
-		this.setState({
-			cards: schemeCards,
-			scheming: false,
-			supportSlot1: advanceScheme
-		});
+		console.log(this.state.supportSlot1);
+		if(this.state.supportSlot1.ability1.indexOf(card.faction) >= 0){
+			console.log("dfowiejof");
+			var schemeCards = this.state.cards;
+			schemeCards.splice(schemeCards.indexOf(card), 1);
+			var advanceScheme = this.state.supportSlot1;
+			advanceScheme.power ++;
+			this.setState({
+				cards: schemeCards,
+				scheming: false,
+				supportSlot1: advanceScheme
+			});
+			if(advanceScheme.power === parseInt(advanceScheme.ability1.split(/[ ,]+/)[2])){
+				document.getElementById("supSlot1").classList.add("fullScheme");
+			}else{}
+		}else{
+			console.log("wrongtype");
+			this.setState({
+				scheming: false
+			});
+		}
 	}
 	chooseResearch(card) {
 		cardArray.push(cardArray.splice(cardArray.indexOf(card), 1)[0]);
@@ -1230,15 +1281,32 @@ class GameScreen extends React.Component {
 					recruit: false
 				});
 				document.getElementById("influenceOrb").classList.remove("stormlightOn");
+				var x = document.getElementsByClassName("hero");
+				for(var i=0; i < x.length; i++){
+					x[i].classList.remove("influenceGlow");
+				}
 			}else if(this.state.recruit === false){
 				this.setState({
 					recruit: true
 				});
 				document.getElementById("influenceOrb").classList.add("stormlightOn");
+				var recruitCards = this.state.cards;
+				for(var i=0; i<recruitCards.length; i++){
+					console.log(recruitCards[i]);
+					if(recruitCards[i].type === "support"){
+						if(recruitCards[i].cost <= this.props.influence){
+							document.getElementById(i+"card").classList.add("influenceGlow");
+						}else{}
+					}else{}
+				}
 			}
 		}else{}
 	}
 	recruitCharacter(card){
+		var x = document.getElementsByClassName("hero");
+		for(var i=0; i < x.length; i++){
+			x[i].classList.remove("influenceGlow");
+		}
 		console.log(this.state.cards);
 		if(card.type === "character"){
 			if(this.props.influence >= card.cost){
@@ -1547,9 +1615,13 @@ class GameScreen extends React.Component {
 	}
 	supportAction(support){
 		console.log(support);
+		var schemeNum = parseInt(support.ability1.split(/[ ,]+/)[2]);
+		console.log(schemeNum);
 		if(support.ability1.indexOf("scheme") >= 0){
-			if(support.power === 3){
-				console.log("unleash!!");
+			if(support.power === schemeNum){
+				console.log("unleash!");
+				var schemeAttack = parseInt(support.ability2);
+				this.playerAttack(schemeAttack);
 			}else{
 				this.setState({
 					scheming: true
@@ -1585,6 +1657,7 @@ class GameScreen extends React.Component {
 					this.setState({
 						playerShield: this.props.shield
 					});
+					stageComplete ++;
 					this.props.switchEnemyArray();
 					this.updateEnemySab();
 				}
@@ -1937,7 +2010,7 @@ class Card extends React.Component {
     		normal = true;
     	}
 		return (
-			<div className={`col-xs-12 ${this.props.className} ${this.props.faction}`} onClick={() => this.props.chooseCard(this.props.card)}>
+			<div className={`col-xs-12 ${this.props.className} ${this.props.faction}`} id={`${this.props.id}card`} onClick={() => this.props.chooseCard(this.props.card)}>
 				{ sphereCard === false &&
 		          <div className="row">
 		            <div className="col-xs-offset-4 col-xs-4 cardPower">{this.props.power}</div>
@@ -1996,11 +2069,11 @@ class Character extends React.Component {
 				<div className="col-xs-12">
 					<div className="row" id="heroSlot1">
 						<div className="col-xs-4 supportCol">
-							{ this.props.supportSlot1 ? <SupportSlot supportAction={this.props.supportAction} card={this.props.supportSlot1}  /> : null }
+							{ this.props.supportSlot1 ? <SupportSlot supSlot={"supSlot1"} supportAction={this.props.supportAction} card={this.props.supportSlot1}  /> : null }
 						</div>
 						<HeroSideSlot int={this.props.int} attack={this.props.attack} playerShield={this.props.playerShield} heroHp={this.props.heroHp} name={player.name} image={player.image} hp={player.hp} equipItem={this.props.equipItem} heroDraw={this.props.heroDraw} equipment={this.props.equipment} stormlight={this.props.stormlight} toggleRecruitState={this.props.toggleRecruitState} influence={this.props.influence} />
 						<div className="col-xs-4 supportCol">
-							{ this.props.supportSlot2 ? <SupportSlot supportAction={this.props.supportAction} card={this.props.supportSlot2} /> : null }
+							{ this.props.supportSlot2 ? <SupportSlot supSlot={"supSlot2"} supportAction={this.props.supportAction} card={this.props.supportSlot2} /> : null }
 						</div>
 					</div>
 				</div>
@@ -2017,7 +2090,7 @@ class SupportSlot extends React.Component {
 		}else{}
 		return (
 			<div className="row supportSlot">	
-				<div className="col-xs-offset-2 col-xs-8 supportCard">
+				<div className="col-xs-offset-2 col-xs-8 supportCard" id={this.props.supSlot}>
 					<div className="row supportName">
 						{this.props.card.name}
 					</div>
@@ -2028,7 +2101,7 @@ class SupportSlot extends React.Component {
 						<div className="row">
 							<div className="col-xs-12">
 								<div className="row schemeCounter">
-									{this.props.card.power}/6
+									{this.props.card.power}/{parseInt(this.props.card.ability1.split(/[ ,]+/)[2])}
 								</div>
 								<div className="row">
 									<div className="col-xs-offset-3 col-xs-3 coolButton supportActionButton" onClick={() => this.props.supportAction(this.props.card)}>Action</div>
@@ -2330,19 +2403,19 @@ class AuxilaryScreen extends React.Component {
 		var levelPoints;
 		if(level === "earth"){
 			levelGems = [earth, earth, earth];
-			levelCard = basic51;
+			levelCard = [basic51];
 			levelPoints = 1;
 		}else if(level === "fire"){
 			levelGems = [fire, fire, fire];
-			levelCard = basic51;
+			levelCard = [basic54];
 			levelPoints = 1;
 		}else if(level === "water"){
 			levelGems = [water, water, water];
-			levelCard = basic51;
+			levelCard = [basic52];
 			levelPoints = 1;
 		}else if(level === "wind"){
 			levelGems = [wind, wind, wind];
-			levelCard = basic51;
+			levelCard = [basic53];
 			levelPoints = 1;
 		}
 		for(var i=0; i<levelGems.length; i++){
@@ -2358,7 +2431,6 @@ class AuxilaryScreen extends React.Component {
 	}
 	listCardRewards(){
 		var cards = this.state.rewardCards;
-		console.log(cards);
 		const listCardRewards = cards.map((card, index) =>
 			<CollectionCard className={card.alignment} key={index} id={index} ability={card.ability1} icon={card.icon} faction={card.faction} name={card.name} type={card.type} cost={card.cost} power={card.power} text={card.text} handleDrop={(name) => this.addToDeck(card.name)} />
 		);
@@ -2368,8 +2440,9 @@ class AuxilaryScreen extends React.Component {
 	}
 	listGemRewards(){
 		var gemRewards = this.state.rewardGems;
+		console.log(gemRewards);
 		const listGemRewards = gemRewards.map((orb, index) =>
-			<Element  key={index} element={orb} handleDrop={(element) => this.orbDrop(orb)} />
+			<Element  key={index} element={orb} />
 		);
 		return (
 			<div>{listGemRewards}</div>
@@ -2381,10 +2454,14 @@ class AuxilaryScreen extends React.Component {
 				<div className="row" id="rewardsMessage">Congratulations! Claim your rewards!</div>
 				<div className="row" id="rewardsDescription">Score: {this.props.score}</div>
 				<div className="row">
-					{this.listCardRewards()}
+					<div className="col-xs-offset-4 col-xs-4" id="cardRewardRow">
+						{this.listCardRewards()}
+					</div>
 				</div>
 				<div className="row">
-					{this.listGemRewards()}
+					<div className="col-xs-offset-4 col-xs-4" id="gemRewardRow">
+						{this.listGemRewards()}
+					</div>
 				</div>
 				<div className="row">
 					<button className="coolButton col-xs-offset-4 col-xs-4" onClick={this.props.goToCharacterScreen}>Return</button>
@@ -2518,26 +2595,30 @@ class CraftingScreen extends React.Component {
 		this.handleCraftClick = this.handleCraftClick.bind(this);
 	}
 	handleCraftClick(){
-		var craftedCard = this.state.card;
-		if(craftedCard.craft > 0){
-			craftedCard.icon = this.state.element[0];
-			craftedCard.faction = this.state.element[1];
-			var newCard = eval(craftedCard.faction + craftedCard.craft);
-			var a = collectionArray.findIndex(x => x.name === this.state.card.name);
-			collectionArray.splice(a, 1);
-			collectionArray.push(newCard);
-			newCard.unlocked = true;
-			var b = cardArray.findIndex(x => x.name === this.state.card.name);
-			cardArray.splice(a, 1);
-			cardArray.push(newCard);
-			var usedElement = elementOrbs.indexOf(newCard.icon);
-			elementOrbs.splice(usedElement, 1);
-			this.setState({
-				card: newCard,
-				element: [newCard.icon, newCard.faction],
-				elementOrbs: elementOrbs
-			});
-		}else{}
+		if(this.state.element[1] === "neutral"){
+
+		}else{
+			var craftedCard = this.state.card;
+			if(craftedCard.craft > 0){
+				craftedCard.icon = this.state.element[0];
+				craftedCard.faction = this.state.element[1];
+				var newCard = eval(craftedCard.faction + craftedCard.craft);
+				var a = collectionArray.findIndex(x => x.name === this.state.card.name);
+				collectionArray.splice(a, 1);
+				collectionArray.push(newCard);
+				newCard.unlocked = true;
+				var b = cardArray.findIndex(x => x.name === this.state.card.name);
+				cardArray.splice(a, 1);
+				cardArray.push(newCard);
+				var usedElement = elementOrbs.indexOf(newCard.icon);
+				elementOrbs.splice(usedElement, 1);
+				this.setState({
+					card: newCard,
+					element: [newCard.icon, newCard.faction],
+					elementOrbs: elementOrbs
+				});
+			}else{}
+		}
 	}
 	handleResetClick(){
 		console.log(this.state.card.icon + " " + this.state.card.faction);
