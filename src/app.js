@@ -65,6 +65,7 @@ import fireBackground from './assets/fireBackground.png';
 import grassBackground from './assets/grassBackground.png';
 import waterBackground from './assets/waterBackground.png';
 import windBackground from './assets/windBackground.png';
+import neutralCard from './assets/neutralCard.png';
 import './index.css';
 
 var player;
@@ -73,7 +74,7 @@ var enemy1Slot = {};
 var enemy2Slot = {};
 var createEnemy;
 
-var sabotoge1 = new CardCon("Too Wobbly", 0, -2, "Off Balance", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 0);
+var sabotoge1 = new CardCon("Tripped Up", 0, -2, "Hit the ground", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 0);
 var sabotoge2 = new CardCon("Budle Charm", 0, -3, "Woozy", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 0);
 var sabotoge3 = new CardCon("Raging Storm", 0, -4, "So Fierce", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 0);
 var sabotoge4 = new CardCon("Steamed", 0, -5, "Super way too hot", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 0);
@@ -188,7 +189,40 @@ const primtreeStats = {
 	element: earth
 };
 
-const kingPrimtreeStats = {
+const primtree2Stats = {
+	name: "Primtree Defender",
+	hp: 10,
+	attack: 3,
+	sabotoge: 1,
+	pointValue: 150,
+	image: primtree,
+	sabCard: sabotoge1,
+	element: earth
+};
+
+const primtree3Stats = {
+	name: "Primtree Royal Guard",
+	hp: 15,
+	attack: 5,
+	sabotoge: 1,
+	pointValue: 150,
+	image: primtree,
+	sabCard: sabotoge1,
+	element: earth
+};
+
+const primtree4Stats = {
+	name: "Root Caster",
+	hp: 10,
+	attack: 5,
+	sabotoge: 3,
+	pointValue: 150,
+	image: primtree,
+	sabCard: sabotoge1,
+	element: earth
+};
+
+const queenPrimtreeStats = {
 	name: "Queen Primtree",
 	hp: 1,
 	attack: 5,
@@ -257,6 +291,7 @@ const banditStats = {
 var numberOfEnemies = 1;
 var createEnemyNum = 0;
 var numberOfStages;
+var earthStage = 0;
 
 function tutorialLevels(){
 	numberOfStages = 4;
@@ -296,7 +331,7 @@ function levelWaterDistribution(){
 	}
 }
 
-function levelEarthDistribution(){
+function levelEarthOneDistribution(){
 	numberOfStages = 4;
 	if(stageComplete === 0){
 		numberOfEnemies = 2;
@@ -313,7 +348,57 @@ function levelEarthDistribution(){
 		}
 	}else if(stageComplete === 3){
 		numberOfEnemies = 1;
-		createEnemy = kingPrimtreeStats;
+		createEnemy = primtree4Stats;
+	}
+}
+
+function levelEarthTwoDistribution(){
+	numberOfStages = 4;
+	if(stageComplete === 0){
+		numberOfEnemies = 3;
+		if(createEnemy === 1){
+			createEnemy = primtree2Stats;
+		}
+		createEnemy = primtreeStats;
+	}else if(stageComplete === 1){
+		numberOfEnemies = 3;
+		if(createEnemy === 2){
+			createEnemy = gangOfFleebsStats;
+		}else{
+			createEnemy = primtree2Stats;
+		}
+	}else if(stageComplete === 2){
+		numberOfEnemies = 3;
+		if(createEnemyNum === 2){
+			createEnemy = primtree4Stats;
+		}else{
+			createEnemy = primtree2Stats;
+		}
+	}else if(stageComplete === 3){
+		numberOfEnemies = 2;
+		createEnemy = primtree3Stats;
+	}
+}
+
+
+function levelEarthThreeDistribution(){
+	numberOfStages = 4;
+	if(stageComplete === 0){
+		numberOfEnemies = 2;
+		createEnemy = primtree3Stats;
+	}else if(stageComplete === 1){
+		numberOfEnemies = 2;
+		createEnemy = primtree3Stats;
+	}else if(stageComplete === 2){
+		numberOfEnemies = 2;
+		if(createEnemy < 2){
+			createEnemy = primtree3Stats;
+		}else{
+			createEnemy = primtree4Stats;
+		}
+	}else if(stageComplete === 3){
+		numberOfEnemies = 1;
+		createEnemy = queenPrimtreeStats;
 	}
 }
 
@@ -463,7 +548,7 @@ var water7 = new CardCon("Draw Deep", 0, 0, "Shuffle 3 Drain's into your deck", 
 var water8 = new CardCon("Tidal Wave", 0, 7, "Splash", "hero", 0, "", "", false, "stormlight", placeholderImg, water, "water", 0);
 var water9 = new CardCon("Ice Cold", 0, 2, "Weaken 2", "hero", 0, "weaken 2", "", false, "stormlight", placeholderImg, water, "water", 0);
 var water10 = new CardCon("Just Keep Looking", 0, 3, "Rummage 3 and heal 3", "hero", 0, "heal 3", "research 3", true, "stormlight", placeholderImg, water, "water", 0);
-var basic41 = new CardCon("Small Rock", 0, 2, "It's pretty small", "hero", 0, "scheme neutral 3", "10", true, "support", placeholderImg, placeholderImg, "neutral", 1);
+var basic41 = new CardCon("Small Rock", 0, 2, "It's pretty small", "hero", 0, "scheme neutral 2", "10", true, "support", placeholderImg, placeholderImg, "neutral", 1);
 var basic42 = new CardCon("Big Rock", 0, 4, "It's pretty big", "hero", 0, "", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 2);
 var basic43 = new CardCon("Focus", 0, 1,"Next Spell +3", "hero", 0, "next 3", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 3);
 var basic44 = new CardCon("Thick Skin", 0, 2, "Shield 2", "hero", 0, "shield 2", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 4);
@@ -511,7 +596,7 @@ var cardArray = [basic41, basic42, basic43];
 var recruitArray = [];
 var collectionArray = [];
 var cardFrames = [];
-var elementOrbs = [];
+var elementOrbs = [earth];
 var abilityCollection = [{level: 1, text: "Spell"}, {level: 2, text: "Spell"}, {level: 3, text: "Spell"}];
 const levelOneAbilities = [{ability: "shield 2", type: earth, text: "Shield 2", name: "Granite Armor"}, {ability: "damage 2", type: "all", text: "Right to the face!", name: "element Blast"}, {ability: "research 2", type: wind, text: "Research 2", name: "Change in the Winds"}];
 const levelTwoAbilities = [{ability: "purge", type: fire}, {ability: "damage 4", type: "all"}, {ability: "stun", type: water}];
@@ -754,7 +839,13 @@ class GameScreenHub extends React.Component {
 			if(level === 0){
 				tutorialLevels();
 			}else if(level === "earth"){
-				levelEarthDistribution();
+				if(earthStage === 0){
+					levelEarthOneDistribution();
+				}else if(earthStage === 1){
+					levelEarthTwoDistribution();
+				}else if(earthStage === 2){
+					levelEarthThreeDistribution();
+				}
 			}else if(level === "fire"){
 				levelFireDistribution();
 			}else if(level === "water"){
@@ -1134,10 +1225,12 @@ class GameScreen extends React.Component {
 			exhausted: false,
 			supportSlot1: null,
 			supportSlot2: null,
+			supportAction: true,
 			nextSpellBonus: 0,
 			extraAttacks: 0,
 			enemiesAttacking: false,
-			scheming: false
+			scheming: false,
+			schemePower: 0
 
 		}
 		this.playerAttack = this.playerAttack.bind(this);
@@ -1213,11 +1306,16 @@ class GameScreen extends React.Component {
 		}else if(this.state.research === true){
 			this.chooseResearch(card);
 		}else if(this.state.scheming === true){
+			const x = document.getElementsByClassName("hero");
+				for (var i=0; i < x.length; i ++ ){
+					x[i].classList.remove("influenceGlow");
+				}
 			this.scheme(card);
 		}else{
 			this.setState({
 				cardDisplay: false,
-				recruit: false
+				recruit: false,
+				supportAction: true
 			}, () => {
 				this.checkSupportAbility(card);
 			    const x = document.getElementsByClassName("characterImage2");
@@ -1234,16 +1332,16 @@ class GameScreen extends React.Component {
 			console.log("dfowiejof");
 			var schemeCards = this.state.cards;
 			schemeCards.splice(schemeCards.indexOf(card), 1);
-			var advanceScheme = this.state.supportSlot1;
-			advanceScheme.power ++;
+			var schemePower = this.state.schemePower + 1;
 			this.setState({
 				cards: schemeCards,
 				scheming: false,
-				supportSlot1: advanceScheme
+				schemePower: schemePower
+			}, () => {
+				if(this.state.schemePower === parseInt(this.state.supportSlot1.ability1.split(/[ ,]+/)[2])){
+					document.getElementById("supSlot1").classList.add("fullScheme");
+				}else{}
 			});
-			if(advanceScheme.power === parseInt(advanceScheme.ability1.split(/[ ,]+/)[2])){
-				document.getElementById("supSlot1").classList.add("fullScheme");
-			}else{}
 		}else{
 			console.log("wrongtype");
 			this.setState({
@@ -1535,16 +1633,6 @@ class GameScreen extends React.Component {
 			});
 		}
 	}
-	attackAllEnemies() {
-		this.setState({
-			0: 0,
-			1: 0,
-			2: 0
-		}, () => {
-			this.checkEnemyDeath();
-		});
-
-	}
 	playerAttack(newAttack) {
 		if(enemyArray[currentEnemy].hp <= 0){
 		console.log("He's dead, pick another target.");
@@ -1617,17 +1705,31 @@ class GameScreen extends React.Component {
 		console.log(support);
 		var schemeNum = parseInt(support.ability1.split(/[ ,]+/)[2]);
 		console.log(schemeNum);
-		if(support.ability1.indexOf("scheme") >= 0){
-			if(support.power === schemeNum){
-				console.log("unleash!");
-				var schemeAttack = parseInt(support.ability2);
-				this.playerAttack(schemeAttack);
-			}else{
-				this.setState({
-					scheming: true
-				});
-			}
-		}else{}
+		if(this.state.supportAction === true){
+			if(support.ability1.indexOf("scheme") >= 0){
+				if(this.state.schemePower === schemeNum){
+					var schemeAttack = parseInt(support.ability2);
+					this.playerAttack(schemeAttack);
+					cardArray.push(support);
+					this.setState({
+						cardDisplay: false,
+						supportSlot1: null,
+						schemePower: 0
+					});
+				}else{
+					this.setState({
+						scheming: true,
+						supportAction: false
+					});
+					var x = document.getElementsByClassName("hero");
+					for(var i=0; i < x.length; i++){
+						x[i].classList.add("influenceGlow");
+					}
+				}
+			}else{}
+		}else{
+			console.log("You've already used this once");
+		}
 	}
 	triggerPlayerDeath() {
 		this.props.characterScreen();
@@ -1651,7 +1753,7 @@ class GameScreen extends React.Component {
 				//this.props.aux();
 				//stageComplete ++;
 				if(stageComplete === numberOfStages - 1){
-					console.log("Level 1 Complete");
+					console.log()
 					this.props.aux();
 				}else{
 					this.setState({
@@ -1687,7 +1789,7 @@ class GameScreen extends React.Component {
 		if(document.getElementById(enemyNumber).classList.contains("stunned")){
 			console.log("too stunned to attack");
 		}else{
-			document.getElementById(enemyNumber).classList.add("attackingEnemy");
+			document.getElementById(enemyNumber + "image").classList.add("attackingEnemy");
 			if(document.getElementById(enemyNumber).classList.contains("confused") && enemyArray.length > 1){
 				var enemyNumArray = [];
 				for(var i=0; i<enemyArray.length; i++){
@@ -1835,7 +1937,7 @@ class GameScreen extends React.Component {
 				this.triggerPlayerDeath();
 			}else{
 				currentEnemy = 4;
-				document.getElementById(enemyNumber).classList.remove("attackingEnemy");
+				document.getElementById(enemyNumber + "image").classList.remove("attackingEnemy");
 				document.getElementById(enemyNumber).classList.remove("stunned");
 				document.getElementById(enemyNumber).classList.remove("confused");
 				for (var i=0; i < x.length; i ++ ){
@@ -1931,7 +2033,7 @@ class GameScreen extends React.Component {
 						</div>
 						<div className="row" id="characterSide tabIndex" onKeyDown={this.handleKeyPress}>
 							<div className="col-xs-12">
-								<Character supportAction={this.supportAction} supportSlot1={this.state.supportSlot1} supportSlot2={this.state.supportSlot2} toggleRecruitState={this.toggleRecruitState} influence={this.props.influence} stormlight={this.state.stormlight} recruitAction={this.recruitAction} attack={this.props.attack} int={this.state.playerInt} playerShield={this.state.playerShield} heroHp={this.props.heroHp} equipItem={this.equipItem} heroDraw={this.heroDraw} heroPosition={this.state.heroPosition} cards={this.state.cards} chooseCard={this.chooseCard} equipment={this.props.equipment} cardDisplay={this.state.cardDisplay} />
+								<Character supportAction={this.supportAction} schemePower={this.state.schemePower} supportSlot1={this.state.supportSlot1} supportSlot2={this.state.supportSlot2} toggleRecruitState={this.toggleRecruitState} influence={this.props.influence} stormlight={this.state.stormlight} recruitAction={this.recruitAction} attack={this.props.attack} int={this.state.playerInt} playerShield={this.state.playerShield} heroHp={this.props.heroHp} equipItem={this.equipItem} heroDraw={this.heroDraw} heroPosition={this.state.heroPosition} cards={this.state.cards} chooseCard={this.chooseCard} equipment={this.props.equipment} cardDisplay={this.state.cardDisplay} />
 							</div>
 						</div>
 					</div>
@@ -2069,11 +2171,11 @@ class Character extends React.Component {
 				<div className="col-xs-12">
 					<div className="row" id="heroSlot1">
 						<div className="col-xs-4 supportCol">
-							{ this.props.supportSlot1 ? <SupportSlot supSlot={"supSlot1"} supportAction={this.props.supportAction} card={this.props.supportSlot1}  /> : null }
+							{ this.props.supportSlot1 ? <SupportSlot supSlot={"supSlot1"} schemePower={this.props.schemePower} supportAction={this.props.supportAction} card={this.props.supportSlot1}  /> : null }
 						</div>
 						<HeroSideSlot int={this.props.int} attack={this.props.attack} playerShield={this.props.playerShield} heroHp={this.props.heroHp} name={player.name} image={player.image} hp={player.hp} equipItem={this.props.equipItem} heroDraw={this.props.heroDraw} equipment={this.props.equipment} stormlight={this.props.stormlight} toggleRecruitState={this.props.toggleRecruitState} influence={this.props.influence} />
 						<div className="col-xs-4 supportCol">
-							{ this.props.supportSlot2 ? <SupportSlot supSlot={"supSlot2"} supportAction={this.props.supportAction} card={this.props.supportSlot2} /> : null }
+							{ this.props.supportSlot2 ? <SupportSlot supSlot={"supSlot2"} schemePower={this.props.schemePower} supportAction={this.props.supportAction} card={this.props.supportSlot2} /> : null }
 						</div>
 					</div>
 				</div>
@@ -2090,7 +2192,7 @@ class SupportSlot extends React.Component {
 		}else{}
 		return (
 			<div className="row supportSlot">	
-				<div className="col-xs-offset-2 col-xs-8 supportCard" id={this.props.supSlot}>
+				<div className="col-xs-12 supportCard" id={this.props.supSlot}>
 					<div className="row supportName">
 						{this.props.card.name}
 					</div>
@@ -2101,10 +2203,10 @@ class SupportSlot extends React.Component {
 						<div className="row">
 							<div className="col-xs-12">
 								<div className="row schemeCounter">
-									{this.props.card.power}/{parseInt(this.props.card.ability1.split(/[ ,]+/)[2])}
+									{this.props.schemePower}/{parseInt(this.props.card.ability1.split(/[ ,]+/)[2])}
 								</div>
 								<div className="row">
-									<div className="col-xs-offset-3 col-xs-3 coolButton supportActionButton" onClick={() => this.props.supportAction(this.props.card)}>Action</div>
+									<div className="col-xs-offset-4 col-xs-4 coolButton supportActionButton" onClick={() => this.props.supportAction(this.props.card)}>Action</div>
 								</div>
 							</div>
 						</div>
@@ -2383,6 +2485,9 @@ class AuxilaryScreen extends React.Component {
 	}
 	componentDidMount(){
 		this.levelRewards();
+		if(level === "earth"){
+			earthStage ++;
+		}
 		level ++;
 		cardArray.sort(function(a, b){
 		    if(a.alignment < b.alignment) { return -1; }
@@ -2402,9 +2507,15 @@ class AuxilaryScreen extends React.Component {
 		var levelGems;
 		var levelPoints;
 		if(level === "earth"){
-			levelGems = [earth, earth, earth];
-			levelCard = [basic51];
-			levelPoints = 1;
+			if(earthStage === 0){
+				levelGems = [earth, earth];
+				levelCard = [basic51];
+				levelPoints = 1;
+			}else if(earthStage === 1){
+				levelGems = [earth, earth, earth];
+				levelCard = [basic51];
+				levelPoints = 1;
+			}
 		}else if(level === "fire"){
 			levelGems = [fire, fire, fire];
 			levelCard = [basic54];
@@ -2488,15 +2599,14 @@ class CollectionScreen extends React.Component {
 	}
 
 	addToDeck(name) {
-		var found = false;
+		var found = 0;
 		if(cardArray.length > 0){
 			for(var i=0; i < cardArray.length; i++){
 				if(name === cardArray[i].name){
-					found = true;
-					break;
+					found ++;
 				}else{}
 			}
-			if(found === false){
+			if(found < 4){
 				for(var j=0; j < collectionArray.length; j++){
 					if(name === collectionArray[j].name){
 						var oldDeck = [...this.state.currentDeck];
@@ -2532,6 +2642,7 @@ class CollectionScreen extends React.Component {
 				this.setState({
 					currentDeck: cardArray
 				});
+				break;
 			}
 		}
 	}
@@ -2600,9 +2711,7 @@ class CraftingScreen extends React.Component {
 		}else{
 			var craftedCard = this.state.card;
 			if(craftedCard.craft > 0){
-				craftedCard.icon = this.state.element[0];
-				craftedCard.faction = this.state.element[1];
-				var newCard = eval(craftedCard.faction + craftedCard.craft);
+				var newCard = eval(this.state.element[1] + craftedCard.craft);
 				var a = collectionArray.findIndex(x => x.name === this.state.card.name);
 				collectionArray.splice(a, 1);
 				collectionArray.push(newCard);
@@ -2631,7 +2740,7 @@ class CraftingScreen extends React.Component {
 		}
 	}
 	listCardFrames() {
-		const listFrames = collectionArray.map((card, index) => {
+		const listFrames = cardArray.map((card, index) => {
 			if(card.unlocked === true) {
 				return <CardFrame handleDrop={(stats) => this.frameDrop(card)} className={card.alignment} key={index} id={index} ability={card.ability1} icon={card.icon} faction={card.faction} name={card.name} type={card.type} cost={card.cost} power={card.power} text={card.text} />
 			}

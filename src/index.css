@@ -24,6 +24,12 @@ body {
 	font-size: 24px;
 }
 
+.schemeCounter {
+	font-size: 24px;
+    margin-bottom: 10px;
+    font-family: 'Metamorphous', cursive;
+}
+
 .levelChoice {
 	background: #b1875c;
 	font-size: 36px;
@@ -111,21 +117,25 @@ body {
 
 .supportCard {
 	text-align: center;
-	background: grey;
+	background: #cecece;
 	height: 200px;
 	border-style: solid;
-	border-color: gold;
+	border-color: black;
 	border-width: 3px;
-	border-radius: 5px;
+	border-radius: 35px;
 }
 
 .supportName {
-	font-size: 35px;
+	font-size: 30px;
 	font-weight: bold;
+	font-family: 'Metamorphous', cursive;
 }
 
 .supportText {
-	font-size: 25px;
+	font-size: 20px;
+	font-family: 'Metamorphous', cursive;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 #craftingArea {
@@ -228,7 +238,7 @@ body {
 
 .supportCol {
 	background: #ffffff2b;
-	height: 210px;
+	height: 200px;
 	border-color: grey;
 	border-width: .2px;
 	border-style: solid;
@@ -559,27 +569,27 @@ input {
 }
 
 .neutral {
-	background: radial-gradient(#03ce54, #000000);
+	background-image: url('assets/neutralCard2.png');
 	border-color: #1d9a07;
 }
 
 .fire {
-	background: radial-gradient(#ff0000, #000000);
+	background-image: url('assets/fireCard.png');
 	border-color: red;
 }
 
 .earth {
-	background: radial-gradient(#ab764a, #000000);
+	background-image: url('assets/earthCard.png');
 	border-color: tan;
 }
 
 .water {
-	background: radial-gradient(#865fff, #000000);
+	background-image: url('assets/waterCard.png');
 	border-color: darkblue;
 }
 
 .wind {
-	background: radial-gradient(#5fffff, #000000);
+	background-image: url('assets/windCard.png');
 	border-color: lightblue;
 }
 
@@ -950,7 +960,17 @@ input {
 }
 
 .attackingEnemy {
-	background: red;	
+	background: red;
+	border-radius: 15px;	
+}
+
+.supportActionButton {
+	font-weight: bolder;
+	font-family: 'Metamorphous', cursive;
+}
+
+.supportActionButton:hover {
+	background: yellow;
 }
 
 #rewardsMessage {

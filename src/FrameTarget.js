@@ -13,7 +13,6 @@ function collect(connect, monitor) {
 
 class FrameTarget extends Component {
   render() {
-    console.log(this.props.power);
     const { connectDropTarget, hovered, item } = this.props;
     return connectDropTarget(
       <div className={`col-xs-12 craftCard ${this.props.faction}`}>
