@@ -62,8 +62,9 @@ class CollectionCard2 extends React.Component {
       <div className={`row ${this.props.className} ${this.props.faction}`} style={{ opacity }} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
         <div className="col-xs-12">
           <div className="row">
-            <div className="col-xs-4 deckCardPower">{this.props.power}</div>
-            <div className="col-xs-8 deckCardName">{this.props.name}</div>
+            <div className="col-xs-3 deckCardPower">{this.props.power}</div>
+            <div className="col-xs-7 deckCardName">{this.props.name}</div>
+            <div className="col-xs-2 deckCardNum">{this.props.deckNum}</div>
           </div>
         </div>
         { this.state.hover === true &&

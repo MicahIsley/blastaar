@@ -16,7 +16,7 @@ class ElementTarget extends Component {
     const backgroundColor = hovered ? 'white' : 'lightblue';
 
     return connectDropTarget(
-      <div className="col-xs-offset-4 col-xs-8 elementTarget" style={{ background: backgroundColor }}>
+      <div className="col-xs-12 elementTarget">
         <img src={this.props.element} alt="orb" className="eleOrbImg" />
       </div>  
     );

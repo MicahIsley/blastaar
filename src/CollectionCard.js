@@ -45,6 +45,7 @@ class CollectionCard extends React.Component {
         { sphereCard === false &&
           <div className="row">
             <div className="col-xs-offset-4 col-xs-4 cardPower">{this.props.power}</div>
+            <div className="col-xs-3 numberOwned">{this.props.numberOwned}</div>
           </div>
         }
         <div className="row cardName">{this.props.name}</div>

@@ -2,6 +2,37 @@ body {
 	background: #08b6ef;
 }
 
+.saveButton {
+	margin-top: 15px;
+	background: black;
+	color: white;
+	font-size: 24px;
+}
+
+.saveButton:hover {
+	background: white;
+	color: black;
+}
+
+#saveName {
+	margin-top: 20px;
+}
+
+.numberOwned {
+	font-size: 16px;
+	background: black;
+	border-radius: 25px;
+	text-align: center;
+	margin-left: 10px;
+}
+
+.deckCardNum {
+	font-size: 16px;
+	background: black;
+	border-radius: 25px;
+	text-align: center;
+}
+
 .container {
 	width: auto;
 }
@@ -158,11 +189,7 @@ body {
 }
 
 .elementTarget {
-	border-radius: 30px;
-	border-color: black;
-	border-style: solid;
-	border-width: 2px;
-	padding: 0px;
+	
 }
 
 #mainCraftingTitle {
@@ -689,6 +716,12 @@ input {
     -animation: stormPusate 1s infinite alternate;
 }
 
+.researchGlow {
+	-webkit-animation: stormPusate 1s infinite alternate;
+    -moz-animation: stormPusate 1s infinite alternate;
+    -animation: stormPusate 1s infinite alternate;
+}
+
 .stormlightCost {
 	border-style: solid;
 	border-color: black;
@@ -704,6 +737,7 @@ input {
 
 .iconImg {
 	height: 35px;
+	background: black;
 	border-radius: 25px;
     border-color: black;
     border-width: 2px;
