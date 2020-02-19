@@ -379,7 +379,6 @@ const banditStats = {
 };
 
 var numberOfEnemies = 1;
-var createEnemyNum = 0;
 var numberOfStages;
 var earthStage = 0;
 var waterStage = 0;
@@ -443,7 +442,7 @@ function levelWaterDistribution(randEnemyNum){
 }
 
 function levelEarthDistribution(randEnemyNum){
-	numberOfStages = 1;
+	numberOfStages = 4;
 	if(stageComplete < 3){
 		numberOfEnemies = 2;
 		if(randEnemyNum < 180){
@@ -644,8 +643,8 @@ var fire14 = new CardCon("Fuel", 0, 1, "Gain 4 energy", "hero", 0, "energy 3", "
 var fire15 = new CardCon("Suffocating Smoke", 0, 3, "Weaken 2", "hero", 0, "weaken 2", "", false, "stormlight", placeholderImg, fire, "fire", 15, 1, 0);
 var fire16 = new CardCon("Extra Sticks", 2, 0, "Fire cards get +1 power", "hero", 0, "boost fire 1", "", false, "support", placeholderImg, fire, "fire", 16, 1, 0);
 var fire17 = new CardCon("Hot Hands", 0, 1, "Shuffle 3 Roasts into your deck", "hero", 0, "addCard 1 3", "", false, "stormlight", placeholderImg, fire, "fire", 17, 1, 0);
-var fire18 = new CardCon("Encirle", 1, 0, "Fire Scheme 2/6", "hero", 0, "scheme fire 2", "6", false, "stormlight", placeholderImg, fire, "fire", 18, 1, 0);
-var fire19 = new CardCon("Cooked Alive", 3, 0, "Fire Scheme 5/20", "hero", 0, "scheme fire 5", "20", false, "stormlight", placeholderImg, fire, "fire", 19, 1, 0);
+var fire18 = new CardCon("Encirle", 1, 0, "Fire Scheme 2/6", "hero", 0, "scheme fire 2", 6, false, "stormlight", placeholderImg, fire, "fire", 18, 1, 0);
+var fire19 = new CardCon("Cooked Alive", 3, 0, "Fire Scheme 3/Purge", "hero", 0, "scheme fire 3", "purge", false, "stormlight", placeholderImg, fire, "fire", 19, 1, 0);
 var fire20 = new CardCon("Fire...Everywhere!", 0, 15, "", "hero", 0, "", "", false, "stormlight", placeholderImg, fire, "fire", 20, 1, 0);
 var earth1 = new CardCon("Rock Skin", 0, 2, "Shield 6", "hero", 0, "shield 6", "", false, "stormlight", placeholderImg, earth, "earth", 1, 1, 0);
 var earth2 = new CardCon("Boulder Trap", 0, 6, "", "hero", 0, "", "", false, "stormlight", placeholderImg, earth, "earth", 2, 1, 0);
@@ -664,8 +663,8 @@ var earth14 = new CardCon("Power Crystal", 0, 1, "Energy 3", "hero", 0, "energy 
 var earth15 = new CardCon("Break Bones", 0, 6, "Weaken 3", "hero", 0, "weaken 3", "", false, "stormlight", placeholderImg, earth, "earth", 15, 1, 0);
 var earth16 = new CardCon("Power Quarry", 2, 0, "Earth cards get +1 power", "hero", 0, "boost earth 1", "", false, "support", placeholderImg, earth, "earth", 16, 1, 0);
 var earth17 = new CardCon("Rock Buds", 0, 0, "Shuffle 3 Earth Shields into your deck", "hero", 0, "addCard 2 3", "", false, "stormlight", placeholderImg, earth, "earth", 17, 1, 0);
-var earth18 = new CardCon("Rock Scheme", 2, 0, "Earth Scheme 2/5", "hero", 0, "scheme earth 2", "5", false, "stormlight", placeholderImg, earth, "earth", 18, 1, 0);
-var earth19 = new CardCon("Strong Rock Scheme", 5, 0, "Earth Scheme 7/22", "hero", 0, "scheme earth 7", "22", false, "stormlight", placeholderImg, earth, "earth", 19, 1, 0);
+var earth18 = new CardCon("Rock Scheme", 2, 0, "Earth Scheme 2/5", "hero", 0, "scheme earth 2", 5, false, "stormlight", placeholderImg, earth, "earth", 18, 1, 0);
+var earth19 = new CardCon("Strong Rock Scheme", 5, 0, "Earth Scheme 7/22", "hero", 0, "scheme earth 7", 22, false, "stormlight", placeholderImg, earth, "earth", 19, 1, 0);
 var earth20 = new CardCon("Crush", 0, 1, "Grow 3", "hero", 0, "grow 3 31", "", false, "stormlight", earth, "earth", 20, 1, 0);
 var wind1 = new CardCon("Wind Blessing",0, 0, "Wind cards get +1 power", "hero", 0, "boost wind 1", "", false, "support", placeholderImg, wind, "wind", 0, 1);
 var wind2 = new CardCon("Like the Wind", 0, 2, "Avoid all sabotoges this turn", "hero", 0, "decoy", "", false, "stormlight", placeholderImg, wind, "wind", 0, 1);
@@ -687,7 +686,7 @@ var water7 = new CardCon("Draw Deep", 0, 0, "Shuffle 3 Drain's into your deck", 
 var water8 = new CardCon("Tidal Wave", 0, 7, "Splash", "hero", 0, "", "", false, "stormlight", placeholderImg, water, "water", 0, 1);
 var water9 = new CardCon("Ice Cold", 0, 2, "Weaken 2", "hero", 0, "weaken 2", "", false, "stormlight", placeholderImg, water, "water", 0, 1);
 var water10 = new CardCon("Just Keep Looking", 0, 3, "Rummage 3 and heal 3", "hero", 0, "heal 3", "research 3", true, "stormlight", placeholderImg, water, "water", 0, 1);
-var basic1 = new CardCon("Small Rock", 0, 2, "It's pretty small", "hero", 1, "", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 1, 4, 1);
+var basic1 = new CardCon("Small Rock", 0, 2, "It's pretty small", "hero", 1, "", "", true, "stormlight", coralThump, placeholderImg, "neutral", 1, 4, 1);
 var basic2 = new CardCon("Big Rock", 0, 4, "It's pretty big", "hero", 1, "", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 2, 2, 1);
 var basic3 = new CardCon("Biggest Blast", 0, 6, "Whaaam!", "hero", 2, "", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 3, 1, 0); 
 var basic4 = new CardCon("Thick Skin", 0, 2, "Shield 2", "hero", 1, "shield 2", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 4, 1, 1);
@@ -704,8 +703,8 @@ var basic14 = new CardCon("Store Energy", 0, 3, "Gain 2 Energy", "hero", 1, "ene
 var basic15 = new CardCon("Crippling Shot", 0, 1, "Weaken 1", "hero", 1, "weaken 1", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 15, 1, 0);
 var basic16 = new CardCon("Something", 0, 3, "", "hero", 1, "", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 16, 1, 0);
 var basic17 = new CardCon("Add Some More", 0, 0, "Add 3 Energy Blast's to your deck", "hero", 3, "addCard 5 3", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 17, 1, 0);
-var basic18 = new CardCon("Plot", 1, 0, "Neutral Scheme 2/4", "hero", 2, "scheme neutral 2", "4", true, "support", placeholderImg, placeholderImg, "neutral", 18, 1, 0);
-var basic19 = new CardCon("Master Scheme", 4, 0, "Neutral Scheme 5/8", "hero", 3, "scheme neutral 5", "8", true, "support", placeholderImg, placeholderImg, "neutral", 19, 1, 0);
+var basic18 = new CardCon("Plot", 1, 0, "Neutral Scheme 2/4", "hero", 2, "scheme neutral 2 4", 1, true, "support", placeholderImg, placeholderImg, "neutral", 18, 1, 1);
+var basic19 = new CardCon("Master Scheme", 4, 0, "Neutral Scheme 5/8", "hero", 3, "scheme neutral 5", 8, true, "support", placeholderImg, placeholderImg, "neutral", 19, 1, 0);
 var basic20 = new CardCon("Magic Rock", 0, 3, "Looks like it should turn into something", "hero", 3, "", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 20, 1, 0);
 
 
@@ -748,16 +747,14 @@ var enemyNumber = 0;
 var cardAbilityNum = 1;
 var itemArray = [rustySword, battleSpear, shardblade, leatherPads, parshendiCarapace, shardplate];
 var enemyArray = [];
-var cardArray = [basic1, basic2, basic4, basic6, basic7, basic8];
+var cardArray = [basic1, basic2, basic18];
 var cardArray2 = [];
 var recruitArray = [];
 var collectionArray = [basic1, basic2, basic4, basic6, basic7, basic8];
 var cardFrames = [];
 var elementOrbs = [];
-var abilityCollection = [{level: 1, text: "Spell"}, {level: 2, text: "Spell"}, {level: 3, text: "Spell"}];
-const levelOneAbilities = [{ability: "shield 2", type: earth, text: "Shield 2", name: "Granite Armor"}, {ability: "damage 2", type: "all", text: "Right to the face!", name: "element Blast"}, {ability: "research 2", type: wind, text: "Research 2", name: "Change in the Winds"}];
-const levelTwoAbilities = [{ability: "purge", type: fire}, {ability: "damage 4", type: "all"}, {ability: "stun", type: water}];
 var multiplier = 1;
+var allies = [];
 
 function shuffle(a) {
     for (let i = a.length; i; i--) {
@@ -1035,33 +1032,37 @@ class GameScreenHub extends React.Component {
 	}
 	createEnemies() {
 		enemyArray = [];
-		for(var i=0; i<numberOfEnemies; i++){
-			var randEnemyNum = Math.floor(Math.random() * 501);
-			if(level === 0){
-				tutorialLevels();
-			}else if(level === "earth"){
-				levelEarthDistribution(randEnemyNum);
-			}else if(level === "fire"){
-				levelFireDistribution(randEnemyNum);
-			}else if(level === "water"){
-				levelWaterDistribution(randEnemyNum);
-			}else if(level === "wind"){
-				levelWindDistribution(randEnemyNum);
-			}else if(level === "tower"){
-				levelTowerDistribution(randEnemyNum);
+		for(var i=0; i < 3; i++){
+			if(i >= numberOfEnemies){
+				var newEnemy = new EnemyCon("", 0, 0, 0, 0, null, null, null);
+				enemyArray.push(newEnemy);
+			}else{
+				var randEnemyNum = Math.floor(Math.random() * 501);
+				if(level === 0){
+					tutorialLevels();
+				}else if(level === "earth"){
+					levelEarthDistribution(randEnemyNum);
+				}else if(level === "fire"){
+					levelFireDistribution(randEnemyNum);
+				}else if(level === "water"){
+					levelWaterDistribution(randEnemyNum);
+				}else if(level === "wind"){
+					levelWindDistribution(randEnemyNum);
+				}else if(level === "tower"){
+					levelTowerDistribution(randEnemyNum);
+				}
+				var selected = createEnemy;
+				var eName = selected.name;
+				var eHp = selected.hp;
+				var eAttack = selected.attack;
+				var eSabotoge = selected.sabotoge;
+				var ePointValue = selected.pointValue;
+				var eImage = selected.image;
+				var eSabCard = selected.sabCard;
+				var eElement = selected.element;
+				var newEnemy = new EnemyCon(eName, eHp, eAttack, eSabotoge, ePointValue, eImage, eSabCard, eElement);
+				enemyArray.push(newEnemy);
 			}
-			var selected = createEnemy;
-			var eName = selected.name;
-			var eHp = selected.hp;
-			var eAttack = selected.attack;
-			var eSabotoge = selected.sabotoge;
-			var ePointValue = selected.pointValue;
-			var eImage = selected.image;
-			var eSabCard = selected.sabCard;
-			var eElement = selected.element;
-			var newEnemy = new EnemyCon(eName, eHp, eAttack, eSabotoge, ePointValue, eImage, eSabCard, eElement);
-			enemyArray.push(newEnemy);
-			createEnemyNum ++;
 		}
 		this.setState({
 			enemyArray: enemyArray
@@ -1087,7 +1088,6 @@ class GameScreenHub extends React.Component {
 		}
 	}
 	switchEnemyArray() {
-		console.log(level);
 		if(document.getElementById("stunned") === null){
 		}else{
 			document.getElementById("stunned").classList.remove("stunned");
@@ -1241,8 +1241,7 @@ class EquipmentScreen extends React.Component {
 			if(item.unlocked === true && item.type === "weapon") {
 				return <HeroItem key={index} id={index} chooseItemAction={this.props.chooseItemAction} itemName={item.name} type={item.type} power={item.power} cost={item.cost} purchased={item.purchased} />
 			}
-		}
-		);
+		});
 		return (
 			<div>{listItems}</div>
 		)
@@ -1416,9 +1415,8 @@ class GameScreen extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			0: null,
-			1: null,
-			2: null,
+			enemyHpArray: [0,0,0],
+			endOfTurnDmg: [1,1,0],
 			currentItem: 0,
 			heroPosition: [true,false,false],
 			cards: [],
@@ -1460,9 +1458,9 @@ class GameScreen extends React.Component {
 		this.enemyCleanUp = this.enemyCleanUp.bind(this);
 		this.scheme = this.scheme.bind(this);
 		this.supportAction = this.supportAction.bind(this);
+		this.endOfTurnDmg = this.endOfTurnDmg.bind(this);
 	}
 	componentDidMount() {
-		console.log(level);
 		if(level === "fire"){
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + fireBackground + ")";
 		}else if(level === "earth"){
@@ -1490,7 +1488,8 @@ class GameScreen extends React.Component {
 			enemySab: enemySabs,
 			0: enemyArray[0].hp,
 			1: nullHp1,
-			2: nullHp2
+			2: nullHp2,
+			enemyHpArray: [enemyArray[0].hp, nullHp1, nullHp2]
 		});
 	}
 	handleTutorialClick() {
@@ -1540,7 +1539,6 @@ class GameScreen extends React.Component {
 	scheme(card) {
 		console.log(this.state.supportSlot1);
 		if(this.state.supportSlot1.ability1.indexOf(card.faction) >= 0){
-			console.log("dfowiejof");
 			var schemeCards = this.state.cards;
 			schemeCards.splice(schemeCards.indexOf(card), 1);
 			var schemePower = this.state.schemePower + 1;
@@ -1550,7 +1548,7 @@ class GameScreen extends React.Component {
 				schemePower: schemePower
 			}, () => {
 				if(this.state.schemePower === parseInt(this.state.supportSlot1.ability1.split(/[ ,]+/)[2])){
-					document.getElementById("supSlot1").classList.add("fullScheme");
+					document.getElementById("supportSlot1").classList.add("fullScheme");
 				}else{}
 			});
 		}else{
@@ -1616,20 +1614,7 @@ class GameScreen extends React.Component {
 			x[i].classList.remove("influenceGlow");
 		}
 		console.log(this.state.cards);
-		if(card.type === "character"){
-			if(this.props.influence >= card.cost){
-				var recruitedChar = new HeroCon(card.name, (card.cost * 10), card.power, 0, 4, card.image, true, 3);
-				recruitArray.push(recruitedChar);
-				var newInfluence = this.props.influence - card.cost;
-				this.props.changeInfluence(newInfluence);
-				var removeRecruit = this.state.cards;
-				this.setState({
-					recruitArray: recruitArray
-				});
-			}else{
-				console.log("not enough influence");
-			}
-		}else if(card.type === "support"){
+		if(card.type === "support"){
 			if(this.state.supportSlot1 === null){
 				this.setState({
 					supportSlot1: card
@@ -1641,7 +1626,7 @@ class GameScreen extends React.Component {
 			}else{
 				console.log("Already have 2 supports");
 			}
-		}
+		}else{}
 		var removeRecruit = this.state.cards;
 		var a = cardArray.findIndex(x => x.name === card.name);
 		cardArray.splice(a, 1);
@@ -1687,148 +1672,154 @@ class GameScreen extends React.Component {
 		}else if(cardAbilityNum === 2){
 			checkAbility = card.ability2;
 		}
-		if(checkAbility.indexOf("shield") >= 0){
-		 	var thenum = parseInt(checkAbility.match(/\d+/)[0]);
-		 	var boostedShield = this.state.playerShield + thenum
-		 	this.setState({
-		 		playerShield: boostedShield
-		 	});
-		}else if(checkAbility.indexOf("grow") >=0){
-			var splitAbility = checkAbility.split(" ");
-			var growNum = parseInt(splitAbility[1]);
-			var growNum2 = parseInt(splitAbility[2]);
-			if(card.power < growNum2){
-				card.power = card.power + growNum;
-			}else{}
-		}else if(checkAbility.indexOf("purge") >=0){
-			shuffle(cardArray);
-			for(var i=0; i < cardArray.length; i++){
-				if(cardArray[i].alignment === "enemy"){
-					cardArray.splice(i, 1);
-					break;
-				}else{
-					console.log("no enemy cards");
+		if(card.ability1.indexOf("scheme") >=0){
+			this.playerAttack(newAttack);
+		}else{
+			if(checkAbility.indexOf("shield") >= 0){
+			 	var thenum = parseInt(checkAbility.match(/\d+/)[0]);
+			 	var boostedShield = this.state.playerShield + thenum
+			 	this.setState({
+			 		playerShield: boostedShield
+			 	});
+			}else if(checkAbility.indexOf("grow") >=0){
+				var splitAbility = checkAbility.split(" ");
+				var growNum = parseInt(splitAbility[1]);
+				var growNum2 = parseInt(splitAbility[2]);
+				if(card.power < growNum2){
+					card.power = card.power + growNum;
+				}else{}
+			}else if(checkAbility.indexOf("purge") >=0){
+				shuffle(cardArray);
+				for(var i=0; i < cardArray.length; i++){
+					if(cardArray[i].alignment === "enemy"){
+						cardArray.splice(i, 1);
+						break;
+					}else{
+						console.log("no enemy cards");
+					}
 				}
-			}
-		}else if(checkAbility.indexOf("multiply") >=0) {
-			multiplier = 2;
-		}else if(checkAbility.indexOf("stun") >=0) {
-			document.getElementById(currentEnemy).classList.add("stunned");
-		}else if(checkAbility.indexOf("speed") >=0) {
-			var speedNum = parseInt(checkAbility.match(/\d+/)[0]);
-			this.props.increaseStormCounter(speedNum);
-		}else if(checkAbility.indexOf("research") >=0) {
-			var researchNum = parseInt(checkAbility.match(/\d+/)[0]);
-			if(this.state.cardAbility === true){
+			}else if(checkAbility.indexOf("multiply") >=0) {
+				multiplier = 2;
+			}else if(checkAbility.indexOf("stun") >=0) {
+				document.getElementById(currentEnemy).classList.add("stunned");
+			}else if(checkAbility.indexOf("speed") >=0) {
+				var speedNum = parseInt(checkAbility.match(/\d+/)[0]);
+				this.props.increaseStormCounter(speedNum);
+			}else if(checkAbility.indexOf("research") >=0) {
+				var researchNum = parseInt(checkAbility.match(/\d+/)[0]);
+				if(this.state.cardAbility === true){
+					this.setState({
+						research: true,
+						cardDisplay: true,
+						researchNum: researchNum
+					});
+					cardAbilityNum = 1;
+					return;
+				}else{}
+			}else if(checkAbility.indexOf("decoy") >=0) {
 				this.setState({
-					research: true,
-					cardDisplay: true,
-					researchNum: researchNum
+					decoy: true
 				});
-				cardAbilityNum = 1;
+			}else if(checkAbility.indexOf("recharge") >=0) {
+				var stormlightNum = parseInt(checkAbility.match(/\d+/)[0]);
+				this.setState({
+					stormlight: this.state.stormlight + stormlightNum
+				});
+			}else if(checkAbility.indexOf("heal") >=0) {
+				var healNum = parseInt(checkAbility.match(/\d+/)[0]);
+				var newHp = this.props.heroHp + healNum;
+				this.props.changeHeroHp(newHp);
+			}else if(checkAbility.indexOf("exhausted") >=0) {
+				this.setState({
+					exhausted: true
+				});
+			}else if(checkAbility.indexOf("energy") >= 0) {
+				var energyNum = parseInt(checkAbility.match(/\d+/)[0]);
+				var newEnergy = this.props.influence + energyNum;
+				this.props.changeInfluence(newEnergy);
+			}else if(checkAbility.indexOf("int") >= 0) {
+				var intNum = parseInt(checkAbility.match(/\d+/)[0]);
+				var currentInt = this.state.playerInt;
+				this.setState({
+					playerInt: currentInt + intNum
+				});
+			}else if(checkAbility.indexOf("str") >= 0) {
+				var strNum = parseInt(checkAbility.match(/\d+/)[0]);
+				var newStr = this.props.attack + strNum
+				this.props.changeHeroAttack(newStr);
+			}else if(checkAbility.indexOf("def") >= 0) {
+				var defNum = parseInt(checkAbility.match(/\d+/)[0]);
+				var newDef = this.props.shield + defNum
+				this.props.changeHeroShield(newDef);
+				this.setState({
+					playerShield: newDef
+				});
+			}else if(checkAbility.indexOf("next") >=0) {
+				var nextNum = parseInt(checkAbility.match(/\d+/)[0]);
+				console.log(nextNum);
+				this.setState({
+					nextSpellBonus: nextNum
+				});
+			}else if(checkAbility.indexOf("addCard") >=0) {
+				var splitAbility = checkAbility.split(" ");
+				var addCardNum = parseInt(splitAbility[1]);
+				var addCardNum2 = parseInt(splitAbility[2]);
+				var newCards = eval(`addCard${addCardNum}`);
+				for(var i=0; i< addCardNum2; i++){
+					cardArray.push(newCards);
+				}
+			}else if(checkAbility.indexOf("remove") >=0) {
+				var removeIndex = cardArray.findIndex(x => x.name ===card.name);
+				cardArray.splice(removeIndex, 1);
+			}else if(checkAbility.indexOf("shapeshift") >=0) {
+				var shapeshiftNum = parseInt(checkAbility.match(/\d+/)[0]);
+				playerHero = eval(`shapeshift${shapeshiftNum}`);
+				player = playerHero;
+				this.setState({
+					playerInt: playerHero.intelligence
+				});
+				this.props.changeHeroAttack(playerHero.attack);
+				this.props.changeHeroShield(playerHero.shield);
+			}else if(checkAbility.indexOf("extra") >=0) {
+				var extraNum = parseInt(checkAbility.match(/\d+/)[0]);
+				this.setState({
+					extraAttacks: extraNum
+				});
+			}else if(checkAbility.indexOf("deplete") >=0) {
+				enemyArray[enemyNumber].sabotoge --;
+				var currentSabArray = [];
+				for(i=0; i < enemyArray.length; i++){
+					currentSabArray.push(enemyArray[i].sabotoge);
+				}
+				this.setState({
+					enemySab: currentSabArray
+				});
+			}else if(checkAbility.indexOf("weaken") >=0){
+				var weakenNum = parseInt(checkAbility.match(/\d+/)[0]);
+				enemyArray[currentEnemy].attack = enemyArray[currentEnemy].attack - weakenNum;
+			}else if(checkAbility.indexOf("reclaim") >=0){
+				var reclaimNum = parseInt(checkAbility.match(/\d+/)[0]);
+				for(var i=0; i<cardArray.length; i++){
+					if(cardArray[i].faction === "sabotogeCard"){
+						cardArray[i].power = cardArray[i].power + reclaimNum
+					}else{}
+				}
+			}else if(checkAbility.indexOf("confuse") >=0){
+				document.getElementById(currentEnemy).classList.add("confused");
+			}else if(checkAbility.indexOf("all") >=0){
+				this.playerAttackAll(newAttack);
 				return;
 			}else{}
-		}else if(checkAbility.indexOf("decoy") >=0) {
-			this.setState({
-				decoy: true
-			});
-		}else if(checkAbility.indexOf("recharge") >=0) {
-			var stormlightNum = parseInt(checkAbility.match(/\d+/)[0]);
-			this.setState({
-				stormlight: this.state.stormlight + stormlightNum
-			});
-		}else if(checkAbility.indexOf("heal") >=0) {
-			var healNum = parseInt(checkAbility.match(/\d+/)[0]);
-			var newHp = this.props.heroHp + healNum;
-			this.props.changeHeroHp(newHp);
-		}else if(checkAbility.indexOf("exhausted") >=0) {
-			this.setState({
-				exhausted: true
-			});
-		}else if(checkAbility.indexOf("energy") >= 0) {
-			var energyNum = parseInt(checkAbility.match(/\d+/)[0]);
-			var newEnergy = this.props.influence + energyNum;
-			this.props.changeInfluence(newEnergy);
-		}else if(checkAbility.indexOf("int") >= 0) {
-			var intNum = parseInt(checkAbility.match(/\d+/)[0]);
-			var currentInt = this.state.playerInt;
-			this.setState({
-				playerInt: currentInt + intNum
-			});
-		}else if(checkAbility.indexOf("str") >= 0) {
-			var strNum = parseInt(checkAbility.match(/\d+/)[0]);
-			var newStr = this.props.attack + strNum
-			this.props.changeHeroAttack(newStr);
-		}else if(checkAbility.indexOf("def") >= 0) {
-			var defNum = parseInt(checkAbility.match(/\d+/)[0]);
-			var newDef = this.props.shield + defNum
-			this.props.changeHeroShield(newDef);
-			this.setState({
-				playerShield: newDef
-			});
-		}else if(checkAbility.indexOf("next") >=0) {
-			var nextNum = parseInt(checkAbility.match(/\d+/)[0]);
-			console.log(nextNum);
-			this.setState({
-				nextSpellBonus: nextNum
-			});
-		}else if(checkAbility.indexOf("addCard") >=0) {
-			var splitAbility = checkAbility.split(" ");
-			var addCardNum = parseInt(splitAbility[1]);
-			var addCardNum2 = parseInt(splitAbility[2]);
-			var newCards = eval(`addCard${addCardNum}`);
-			for(var i=0; i< addCardNum2; i++){
-				cardArray.push(newCards);
+			if(cardAbilityNum === 2){
+				this.playerAttack(newAttack);
+				cardAbilityNum = 1;
+			}else{
+				cardAbilityNum ++;
+				this.checkCardAbility(card, boost, num);
 			}
-		}else if(checkAbility.indexOf("remove") >=0) {
-			var removeIndex = cardArray.findIndex(x => x.name ===card.name);
-			cardArray.splice(removeIndex, 1);
-		}else if(checkAbility.indexOf("shapeshift") >=0) {
-			var shapeshiftNum = parseInt(checkAbility.match(/\d+/)[0]);
-			playerHero = eval(`shapeshift${shapeshiftNum}`);
-			player = playerHero;
-			this.setState({
-				playerInt: playerHero.intelligence
-			});
-			this.props.changeHeroAttack(playerHero.attack);
-			this.props.changeHeroShield(playerHero.shield);
-		}else if(checkAbility.indexOf("extra") >=0) {
-			var extraNum = parseInt(checkAbility.match(/\d+/)[0]);
-			this.setState({
-				extraAttacks: extraNum
-			});
-		}else if(checkAbility.indexOf("deplete") >=0) {
-			enemyArray[enemyNumber].sabotoge --;
-			var currentSabArray = [];
-			for(i=0; i < enemyArray.length; i++){
-				currentSabArray.push(enemyArray[i].sabotoge);
-			}
-			this.setState({
-				enemySab: currentSabArray
-			});
-		}else if(checkAbility.indexOf("weaken") >=0){
-			var weakenNum = parseInt(checkAbility.match(/\d+/)[0]);
-			enemyArray[currentEnemy].attack = enemyArray[currentEnemy].attack - weakenNum;
-		}else if(checkAbility.indexOf("reclaim") >=0){
-			var reclaimNum = parseInt(checkAbility.match(/\d+/)[0]);
-			for(var i=0; i<cardArray.length; i++){
-				if(cardArray[i].faction === "sabotogeCard"){
-					cardArray[i].power = cardArray[i].power + reclaimNum
-				}else{}
-			}
-		}else if(checkAbility.indexOf("confuse") >=0){
-			document.getElementById(currentEnemy).classList.add("confused");
-		}else{}
-		if(cardAbilityNum === 2){
-			this.playerAttack(newAttack);
-			cardAbilityNum = 1;
-		}else{
-			cardAbilityNum ++;
-			this.checkCardAbility(card, boost, num);
 		}
 	}
 	heroDraw() {
-		console.log(cardArray);
 		if( currentEnemy === 4 ){
 			console.log("Select an enemy to attack!");
 		}else{
@@ -1840,7 +1831,8 @@ class GameScreen extends React.Component {
 			}, () =>{
 				this.setState({
 				cardDisplay: true,
-				cards: selectedCards
+				cards: selectedCards,
+				enemiesAttacking: false
 				});
 			});
 		}
@@ -1861,21 +1853,23 @@ class GameScreen extends React.Component {
 				console.log("exact damage");
 				this.props.setSpheres(1);
 			}else{}
-			document.getElementsByClassName("heroDamageIndicator")[(currentEnemy)].append("-" + heroAttack);
-			document.getElementsByClassName("heroDamageIndicator")[(currentEnemy)].style.display="inline";
+			console.log("badGuy" + (currentEnemy));
+			document.getElementById("badGuy" + (currentEnemy)).append("-" + heroAttack);
+			document.getElementById("badGuy" + (currentEnemy)).style.display="inline";
 			setTimeout(() => { 
-				document.getElementsByClassName("heroDamageIndicator")[(currentEnemy)].innerHTML="";
-				document.getElementsByClassName("heroDamageIndicator")[(currentEnemy)].style.display="none";
+				console.log(document.getElementById("badGuy" + (currentEnemy)));
+				document.getElementById("badGuy" + (currentEnemy)).innerHTML="";
+				document.getElementById("badGuy" + (currentEnemy)).style.display="none";
 				if(enemyHp <= 0){
 					enemyArray[currentEnemy].hp = 0;
 					this.setState({
-						[currentEnemy]: 0
+						enemyHpArray: [enemyArray[0].hp, enemyArray[1].hp, enemyArray[2].hp]
 					});
-					this.triggerEnemyDeath(currentEnemy);
+					this.triggerEnemyDeath();
 				}else{
 					enemyArray[currentEnemy].hp = enemyHp;
 					this.setState({
-						[currentEnemy]: enemyHp
+						enemyHpArray: [enemyArray[0].hp, enemyArray[1].hp, enemyArray[2].hp]
 					}, () => {
 						if(this.state.extraAttacks === 0){
 							this.enemyAttackAction(0);
@@ -1889,6 +1883,57 @@ class GameScreen extends React.Component {
 				}
 			}, 500);
 		}
+	}
+	playerAttackAll(newAttack) {
+		var heroAttack;
+		if(newAttack < 0){
+			heroAttack = 0;
+		}else{
+			heroAttack = newAttack;
+		}
+		for(var i = 0; i<enemyArray.length; i++){
+			if(enemyArray[i].hp > 0){
+				document.getElementById("badGuy" + (i)).append("-" + heroAttack);
+				document.getElementById("badGuy" + (i)).style.display="inline";
+			}else{}
+			if(enemyArray[i].hp === heroAttack){
+				this.props.setSpheres(1);
+			}
+		}
+		setTimeout(() => { 
+			for(var i = 0; i<enemyArray.length; i++){
+				if(enemyArray[i].hp > 0){
+					document.getElementById("badGuy" + (i)).innerHTML="";
+					document.getElementById("badGuy" + (i)).style.display="none";
+					if(enemyArray[i].hp - heroAttack <= 0){
+						enemyArray[i].hp = 0;
+					}else{
+						enemyArray[i].hp = enemyArray[i].hp - heroAttack;
+					}
+				}else{}
+			}
+			this.setState({
+				enemyHpArray: [enemyArray[0].hp, enemyArray[1].hp, enemyArray[2].hp]
+			}, () => {
+				this.triggerEnemyDeath();
+				var enemiesAlive = 0;
+				for(var i=0; i<enemyArray.length; i++){
+					if(enemyArray[i].hp > 0){
+						enemiesAlive ++;
+					}else{}
+				}
+				if(enemiesAlive > 0){
+					if(this.state.extraAttacks === 0){
+						this.enemyAttackAction(0);
+					}else{
+						var attacksLeft = this.state.extraAttacks - 1;
+						this.setState({
+							extraAttacks: attacksLeft
+						});
+					}
+				}else{}
+			});
+		}, 500);
 	}
 	recruitAction(recruit) {
 		if(recruit.counter > 0){
@@ -1913,21 +1958,41 @@ class GameScreen extends React.Component {
 			console.log('no more actions');
 		}
 	}
-	supportAction(support){
-		console.log(support);
+	supportAction(support, supSlot){
 		var schemeNum = parseInt(support.ability1.split(/[ ,]+/)[2]);
-		console.log(schemeNum);
+		var usedSupport = support;
 		if(this.state.supportAction === true){
 			if(support.ability1.indexOf("scheme") >= 0){
 				if(this.state.schemePower === schemeNum){
-					var schemeAttack = parseInt(support.ability2);
-					this.playerAttack(schemeAttack);
-					cardArray.push(support);
-					this.setState({
-						cardDisplay: false,
-						supportSlot1: null,
-						schemePower: 0
-					});
+					if(Number.isInteger(parseInt(support.ability1.split(/[ ,]+/)[3]))){
+						var schemeAttack = parseInt(support.ability1.split(/[ ,]+/)[3]);
+						this.playerAttack(schemeAttack);
+						usedSupport.ability2 --;
+						this.setState({
+							cardDisplay: false,
+							schemePower: 0
+						});
+					}else if(support.ability1.split(/[ ,]+/)[3] === "purge"){
+						shuffle(cardArray);
+						for(var i=0; i < cardArray.length; i++){
+							if(cardArray[i].alignment === "enemy"){
+								cardArray.splice(i, 1);
+								usedSupport.ability2 --;
+								break;
+							}else{
+								console.log("no enemy cards");
+							}
+						}
+					}else if(support.ability2 === "confuse"){
+						document.getElementById(currentEnemy).classList.add("confused");
+					}else if(support.ability2 === "extra"){
+						var extraNum = parseInt(support.ability2.match(/\d+/)[0]);
+						this.setState({
+							extraAttacks: extraNum
+						});
+					}else if(support.ability2 === "stun"){
+						document.getElementById(currentEnemy).classList.add("stunned");
+					}
 				}else{
 					this.setState({
 						scheming: true,
@@ -1938,7 +2003,20 @@ class GameScreen extends React.Component {
 						x[i].classList.add("influenceGlow");
 					}
 				}
-			}else{}
+			}
+			if(usedSupport.ability2 === 0){
+				cardArray.push(support);
+				var newArray = this.state.cards;
+				newArray.push(support);
+				this.setState({
+					[supSlot]: null,
+					cards: newArray
+				});
+			}else{
+				this.setState({
+					[supSlot]: usedSupport
+				});
+			}
 		}else{
 			console.log("You've already used this once");
 		}
@@ -1953,26 +2031,23 @@ class GameScreen extends React.Component {
 		}
 		cardArray.splice(0, enemyCardNum);
 	}
-	triggerEnemyDeath(enemy) {
-		var deadEnemy = document.getElementById(enemy);
-		deadEnemy.classList.remove("stunned");
-		deadEnemy.classList.remove("confused");
-		deadEnemy.classList.add("fadeOut");
-		var pointValue = enemyArray[enemy].pointValue;
+	triggerEnemyDeath() {
+		for(var i=0; i<enemyArray.length; i++){
+			if(enemyArray[i].hp === 0){
+			var pointValue = enemyArray[i].pointValue;
+			this.props.changeScore(pointValue);
+			}else{}
+		}
 		setTimeout(() => {
-			//this.props.changeScore(pointValue);
-			deadEnemy.classList.remove("fadeOut");
-			enemyArray.splice(deadEnemy.id, 1);
 			this.enemyCleanUp();
 		}, 500);
 	}
 	enemyCleanUp() {
-		if(enemyArray.length === 0){
+		if(enemyArray[0].hp === 0 && enemyArray[1].hp === 0 && enemyArray[2].hp === 0){
 				console.log("They're all dead. You win!");
 				//this.props.aux();
 				//stageComplete ++;
 				if(stageComplete === numberOfStages - 1){
-					console.log()
 					this.props.aux();
 				}else{
 					this.setState({
@@ -1997,88 +2072,68 @@ class GameScreen extends React.Component {
 		}
 	}
 	enemyAttackAction(enemyNumber) {
-		console.log(enemyNumber);
 		this.setState({
 			enemiesAttacking: true
 		});
-		const x = document.getElementsByClassName("enemyCharacterBox");
-		for (var i=0; i < x.length; i ++ ){
-			x[i].style.borderColor="black";
-		}
-		if(document.getElementById(enemyNumber).classList.contains("stunned")){
-			console.log("too stunned to attack");
-		}else{
-			document.getElementById(enemyNumber + "image").classList.add("attackingEnemy");
-			if(document.getElementById(enemyNumber).classList.contains("confused") && enemyArray.length > 1){
-				var enemyNumArray = [];
-				for(var i=0; i<enemyArray.length; i++){
-					if(i === currentEnemy){
-						console.log("can't attack yourself");
-					}else{
-						enemyNumArray.push(i);
-					}
-
+		if(enemyArray[enemyNumber].hp === 0){
+			if(enemyNumber < (enemyArray.length - 1)){
+				enemyNumber ++;
+				this.enemyAttackAction(enemyNumber);
+			}else if(enemyNumber === (enemyArray.length - 1)){
+				if(this.state.exhausted === true){
+					this.enemyAttackAction(0);
+					this.setState({
+						exhausted: false
+					});
+				}else{
+					this.setState({
+						playerShield: this.props.shield,
+						cardAbility: true,
+						decoy: false
+					}, () => {
+						this.props.decreaseStormCounter();
+						this.endOfTurnDmg();
+					});
 				}
-				var selectedEnemy = enemyNumArray[Math.floor(Math.random()*enemyNumArray.length)];
-				var enemyHp = enemyArray[selectedEnemy].hp - enemyArray[currentEnemy].attack;
-				document.getElementsByClassName("heroDamageIndicator")[(selectedEnemy)].append("-" + enemyArray[currentEnemy].attack);
-				document.getElementsByClassName("heroDamageIndicator")[(selectedEnemy)].style.display="inline";
-				setTimeout(() => { 
-					document.getElementsByClassName("heroDamageIndicator")[(selectedEnemy)].innerHTML="";
-					document.getElementsByClassName("heroDamageIndicator")[(selectedEnemy)].style.display="none";
-					if(enemyHp <= 0){
-						enemyArray[selectedEnemy].hp = 0;
-						this.setState({
-							[selectedEnemy]: 0
-						});
-						this.triggerEnemyDeath(selectedEnemy);
-					}else{
-						enemyArray[selectedEnemy].hp = enemyHp;
-						this.setState({
-							[selectedEnemy]: enemyHp
-						});
-					}
-				}, 500);
+			}else{}
+		}else{
+			const x = document.getElementsByClassName("enemyCharacterBox");
+			for (var i=0; i < x.length; i ++ ){
+				x[i].style.borderColor="black";
+			}
+			if(document.getElementById(enemyNumber).classList.contains("stunned")){
+				console.log("too stunned to attack");
 			}else{
-				if(this.state.recruitArray.length >= 100){
-					var allyChar = (this.state.recruitArray[0]);
-					let enemyAttack = enemyArray[enemyNumber].attack;
-					if(this.state.playerShield > 0){
-						let playerShield = this.state.playerShield;
-						const shieldDamage = playerShield - enemyAttack;
-						if(shieldDamage < 0){
-							var allyChar = (this.state.recruitArray[0]);
-							allyChar.hp = allyChar.hp + shieldDamage;
-							recruitArray = [allyChar];
-							this.setState({
-								playerShield: 0,
-								recruitArray: recruitArray
-							});
-							document.getElementsByClassName("shieldIcon")[0].style.background="blue";
-							document.getElementsByClassName("heroDamageIndicator")[1].append(shieldDamage);
-							document.getElementsByClassName("heroDamageIndicator")[1].style.display="inline";
+				document.getElementById(enemyNumber + "image").classList.add("attackingEnemy");
+				if(document.getElementById(enemyNumber).classList.contains("confused") && enemyArray.length > 1){
+					var enemyNumArray = [];
+					for(var i=0; i<enemyArray.length; i++){
+						if(i === currentEnemy){
+							console.log("can't attack yourself");
 						}else{
+							enemyNumArray.push(i);
+						}
+
+					}
+					var selectedEnemy = enemyNumArray[Math.floor(Math.random()*enemyNumArray.length)];
+					var enemyHp = enemyArray[selectedEnemy].hp - enemyArray[currentEnemy].attack;
+					document.getElementsByClassName("heroDamageIndicator")[(selectedEnemy)].append("-" + enemyArray[currentEnemy].attack);
+					document.getElementsByClassName("heroDamageIndicator")[(selectedEnemy)].style.display="inline";
+					setTimeout(() => { 
+						document.getElementsByClassName("heroDamageIndicator")[(selectedEnemy)].innerHTML="";
+						document.getElementsByClassName("heroDamageIndicator")[(selectedEnemy)].style.display="none";
+						if(enemyHp <= 0){
+							enemyArray[selectedEnemy].hp = 0;
 							this.setState({
-								playerShield: shieldDamage
+								enemyHpArray: [enemyArray[0].hp, enemyArray[1].hp, enemyArray[2].hp]
+							});
+							this.triggerEnemyDeath();
+						}else{
+							enemyArray[selectedEnemy].hp = enemyHp;
+							this.setState({
+								enemyHpArray: [enemyArray[0].hp, enemyArray[1].hp, enemyArray[2].hp]
 							});
 						}
-					}else{
-						allyChar.hp = allyChar.hp - enemyAttack;
-						recruitArray = [allyChar];
-						this.setState({
-							recruitArray: recruitArray
-						});
-						document.getElementsByClassName("heroDamageIndicator")[1].append("-" + enemyAttack);
-						document.getElementsByClassName("heroDamageIndicator")[1].style.display="inline";
-					}
-					setTimeout(() => {
-						document.getElementsByClassName("shieldIcon")[0].style.background="none";
-						document.getElementsByClassName("heroDamageIndicator")[1].innerHTML="";
-						document.getElementsByClassName("heroDamageIndicator")[1].style.display="none";
-						if(allyChar.hp <= 0){
-							console.log("Recruit Died");
-							this.deadRecruit();
-						}else{}
 					}, 500);
 				}else{
 					if(this.state.playerShield > 0){
@@ -2086,11 +2141,11 @@ class GameScreen extends React.Component {
 						let enemyAttack = enemyArray[enemyNumber].attack;
 						const shieldDamage = playerShield - enemyAttack;
 						document.getElementsByClassName("shieldIcon")[0].style.background="blue";
-						document.getElementsByClassName("heroDamageIndicator")[enemyArray.length].append("-" + enemyAttack);
-						document.getElementsByClassName("heroDamageIndicator")[enemyArray.length].style.display="inline";
+						document.getElementsByClassName("heroDamageIndicator2")[0].append("-" + enemyAttack);
+						document.getElementsByClassName("heroDamageIndicator2")[0].style.display="inline";
 						setTimeout(() => {
 							document.getElementsByClassName("shieldIcon")[0].style.background="none";
-							document.getElementsByClassName("heroDamageIndicator")[enemyArray.length].innerHTML="";
+							document.getElementsByClassName("heroDamageIndicator2")[0].innerHTML="";
 							document.getElementsByClassName("heroDamageIndicator")[0].style.display="none";
 						}, 500);
 						if(shieldDamage < 0){
@@ -2141,11 +2196,11 @@ class GameScreen extends React.Component {
 									enemySab: currentSabArray
 								});
 						}else{}
-						document.getElementsByClassName("heroDamageIndicator")[enemyArray.length].append("-" + enemyAttack);
-						document.getElementsByClassName("heroDamageIndicator")[enemyArray.length].style.display="inline";
+						document.getElementsByClassName("heroDamageIndicator2")[0].append("-" + enemyAttack);
+						document.getElementsByClassName("heroDamageIndicator2")[0].style.display="inline";
 						setTimeout(() => { 
-							document.getElementsByClassName("heroDamageIndicator")[enemyArray.length].innerHTML="";
-							document.getElementsByClassName("heroDamageIndicator")[enemyArray.length].style.display="none";
+							document.getElementsByClassName("heroDamageIndicator2")[0].innerHTML="";
+							document.getElementsByClassName("heroDamageIndicator2")[0].style.display="none";
 							if(playerHp <= 0){
 								this.props.changeHeroHp(0);
 							}else{
@@ -2155,40 +2210,59 @@ class GameScreen extends React.Component {
 					}
 				}
 			}
-		}
-		setTimeout(() => {
-			if(this.props.heroHp === 0){
-				this.triggerPlayerDeath();
-			}else{
-				currentEnemy = 4;
-				document.getElementById(enemyNumber + "image").classList.remove("attackingEnemy");
-				document.getElementById(enemyNumber).classList.remove("stunned");
-				document.getElementById(enemyNumber).classList.remove("confused");
-				for (var i=0; i < x.length; i ++ ){
-				x[i].style.borderColor="black";
-				}
-				if(enemyNumber < (enemyArray.length - 1)){
-					enemyNumber ++;
-					this.enemyAttackAction(enemyNumber);
-				}else if(enemyNumber === (enemyArray.length - 1)){
-					if(this.state.exhausted === true){
-						this.enemyAttackAction(0);
-						this.setState({
-							exhausted: false
-						});
-					}else{
-						this.setState({
-							playerShield: this.props.shield,
-							cardAbility: true,
-							decoy: false,
-							enemiesAttacking: false
-						}, () => {
-							this.props.decreaseStormCounter();
-						});
+			setTimeout(() => {
+				if(this.props.heroHp === 0){
+					this.triggerPlayerDeath();
+				}else{
+					currentEnemy = 4;
+					document.getElementById(enemyNumber + "image").classList.remove("attackingEnemy");
+					document.getElementById(enemyNumber).classList.remove("stunned");
+					document.getElementById(enemyNumber).classList.remove("confused");
+					for (var i=0; i < x.length; i ++ ){
+					x[i].style.borderColor="black";
 					}
+					console.log(enemyNumber);
+					if(enemyNumber < (enemyArray.length - 1)){
+						enemyNumber ++;
+						this.enemyAttackAction(enemyNumber);
+					}else if(enemyNumber === (enemyArray.length - 1)){
+						if(this.state.exhausted === true){
+							this.enemyAttackAction(0);
+							this.setState({
+								exhausted: false
+							});
+						}else{
+							this.setState({
+								playerShield: this.props.shield,
+								cardAbility: true,
+								decoy: false
+							}, () => {
+								this.props.decreaseStormCounter();
+								this.endOfTurnDmg();
+							});
+						}
+					}else{}
+				}
+			}, 1000);
+		}
+	}
+	endOfTurnDmg(){
+		for(var i=0; i < enemyArray.length; i++){
+			if(enemyArray[i].hp > 0){
+				enemyArray[i].hp = enemyArray[i].hp - this.state.endOfTurnDmg[i];
+				document.getElementById("badGuy" + (i)).append("-" + this.state.endOfTurnDmg[i]);
+				document.getElementById("badGuy" + (i)).style.display="inline";
+			}else{}
+		};
+		setTimeout(() => {
+			for(var i=0; i < enemyArray.length; i++){
+				if(enemyArray[i].hp > 0){
+					document.getElementById("badGuy" + (i)).innerHTML="";
+					document.getElementById("badGuy" + (i)).style.display="none";
 				}else{}
 			}
-		}, 1000);
+			this.triggerEnemyDeath();
+		}, 500);
 	}
 	deadRecruit(name){
 		recruitArray.splice(0, 1);
@@ -2253,7 +2327,14 @@ class GameScreen extends React.Component {
 							</div>
 						</div>
 						<div className="row" id="playArea">
-							{this.state.cardDisplay ? <CardDisplayBox chooseCard={this.chooseCard} cards={this.state.cards} /> : null }
+							<div className="col-xs-12">
+								{this.state.cardDisplay ? <CardDisplayBox chooseCard={this.chooseCard} cards={this.state.cards} /> : null }
+								<div className="row">
+									<div className="col-xs-offset-4 col-xs-4">
+										<AllyDisplay />
+									</div>
+								</div>
+							</div>
 						</div>
 						<div className="row" id="characterSide tabIndex" onKeyDown={this.handleKeyPress}>
 							<div className="col-xs-12">
@@ -2263,6 +2344,37 @@ class GameScreen extends React.Component {
 					</div>
 				</div>
 			</div>
+		)
+	}
+}
+
+class AllyDisplay extends React.Component {
+	listAllies () {
+		const numberOfAllies = allies;
+		const listAllies = numberOfAllies.map((ally, index) =>
+			<Ally key={index} image={ally.image} />
+		);
+		return (
+			<div className="row">{listAllies}</div>
+		)
+	}
+	render() {
+		return (
+			<div className="col-xs-12"> 
+				<div className="row allyRow">
+					{this.listAllies()}
+				</div>
+			</div>
+		)
+	}
+}
+
+class Ally extends React.Component {
+	render() {
+		return (
+			<div className="col-xs-3">
+				<img className="allyImage" src={this.props.image} />
+			</div> 
 		)
 	}
 }
@@ -2371,18 +2483,30 @@ class Card extends React.Component {
 class EnemySide extends React.Component {
 	listBadGuys () {
 		const numberOfBadGuys = enemyArray;
-		const listItems = numberOfBadGuys.map((badGuy, index) =>
-			<Enemy key={index} id={index} name={badGuy.name} eHp={badGuy.hp} updateEnemySab={this.props.updateEnemySab} sab={this.props.sab[index]} sabCard={badGuy.sabCard} image={badGuy.image} />
-		);
+		const listItems = numberOfBadGuys.map((badGuy, index) => {
+			if(badGuy.hp > 0){
+				return <Enemy key={index} id={index} enemyId={"badGuy" + index} name={badGuy.name} eHp={badGuy.hp} updateEnemySab={this.props.updateEnemySab} sab={this.props.sab[index]} sabCard={badGuy.sabCard} image={badGuy.image} />
+			}else{
+				return <Placeholder key={index} id={index} />
+			}
+		});
 		return (
 			<div className="row">{listItems}</div>
 		)
 	}
-
 	render() {
 		return (
 			<div className="col-xs-12">
 				{this.listBadGuys()}
+			</div>
+		)
+	}
+}
+
+class Placeholder extends React.Component {
+	render(){
+		return (
+			<div className="col-xs-4 placeholderDiv">
 			</div>
 		)
 	}
@@ -2395,11 +2519,11 @@ class Character extends React.Component {
 				<div className="col-xs-12">
 					<div className="row" id="heroSlot1">
 						<div className="col-xs-4 supportCol">
-							{ this.props.supportSlot1 ? <SupportSlot supSlot={"supSlot1"} schemePower={this.props.schemePower} supportAction={this.props.supportAction} card={this.props.supportSlot1}  /> : null }
+							{ this.props.supportSlot1 ? <SupportSlot supSlot={"supportSlot1"} schemePower={this.props.schemePower} supportAction={this.props.supportAction} card={this.props.supportSlot1}  /> : null }
 						</div>
 						<HeroSideSlot int={this.props.int} attack={this.props.attack} playerShield={this.props.playerShield} heroHp={this.props.heroHp} name={player.name} image={player.image} hp={player.hp} equipItem={this.props.equipItem} heroDraw={this.props.heroDraw} equipment={this.props.equipment} stormlight={this.props.stormlight} toggleRecruitState={this.props.toggleRecruitState} influence={this.props.influence} />
 						<div className="col-xs-4 supportCol">
-							{ this.props.supportSlot2 ? <SupportSlot supSlot={"supSlot2"} schemePower={this.props.schemePower} supportAction={this.props.supportAction} card={this.props.supportSlot2} /> : null }
+							{ this.props.supportSlot2 ? <SupportSlot supSlot={"supportSlot2"} schemePower={this.props.schemePower} supportAction={this.props.supportAction} card={this.props.supportSlot2} /> : null }
 						</div>
 					</div>
 				</div>
@@ -2430,7 +2554,7 @@ class SupportSlot extends React.Component {
 									{this.props.schemePower}/{parseInt(this.props.card.ability1.split(/[ ,]+/)[2])}
 								</div>
 								<div className="row">
-									<div className="col-xs-offset-4 col-xs-4 coolButton supportActionButton" onClick={() => this.props.supportAction(this.props.card)}>Action</div>
+									<div className="col-xs-offset-4 col-xs-4 coolButton supportActionButton" onClick={() => this.props.supportAction(this.props.card, this.props.supSlot)}>Action</div>
 								</div>
 							</div>
 						</div>
@@ -2495,7 +2619,7 @@ class HeroSideSlot extends React.Component {
 						</div>
 					</div>
 					<div className="col-xs-6">
-						<HPSpan hp={this.props.heroHp} />
+						<HPSpan hp={this.props.heroHp} hero={"heroDamageIndicator2"} enemyId={"hero"} />
 						<div className="row">
 							<div className="col-xs-6">
 								{/*<StormlightCounter stormlight={this.props.stormlight} /> */}
@@ -2578,7 +2702,7 @@ class HPSpan extends React.Component {
 			<div className="row hpSpan">
 				<img className="col-xs-4 heartIcon" src={heart} /> 
 				<span className="col-xs-3">{this.props.hp}</span>
-				<span className="col-xs-2 heroDamageIndicator"></span>
+				<span className={`col-xs-2 ${this.props.hero}`} id={this.props.enemyId}></span>
 			</div>
 		);
 	}
@@ -2649,7 +2773,7 @@ class Enemy extends React.Component {
 				<div className="row">
 					<div className="col-xs-offset-2 col-xs-8 enemyInfo">
 						<CharacterName name={this.props.name} />
-						<HPSpan hp={this.props.eHp} />
+						<HPSpan hp={this.props.eHp} enemyId={this.props.enemyId} hero={"heroDamageIndicator"} />
 						<div className="row sabRow">
 							<div className="col-xs-2">Sab</div>
 							<div className="col-xs-9"><Sabotoge mouseEnter={this.handleMouseEnter} mouseLeave={this.handleMouseLeave} sab={this.props.sab} /></div>
@@ -2669,7 +2793,6 @@ class Enemy extends React.Component {
 
 class EnemySabCard extends React.Component {
 	render() {
-		console.log(this.props);
 		return (
 			<div className="col-xs-12 enemy enemyHoverCard">
 		          <div className="row">
@@ -2742,7 +2865,6 @@ class AuxilaryScreen extends React.Component {
 		}
 		shuffle(basicCards);
 		var randNum = Math.floor(Math.random() * 101);
-		console.log(randNum);
 		for(var i=0; i<basicCards.length; i++){
 			if(randNum < 70){
 				if(basicCards[i].rarity === 1){
@@ -2811,7 +2933,6 @@ class AuxilaryScreen extends React.Component {
 	}
 	listGemRewards(){
 		var gemRewards = this.state.rewardGems;
-		console.log(gemRewards);
 		const listGemRewards = gemRewards.map((orb, index) =>
 			<Element  key={index} element={orb} />
 		);
@@ -2904,9 +3025,7 @@ class CollectionScreen extends React.Component {
 			for(var i=0; i < cardArray.length; i++){
 				if(card.name === cardArray[i].name){
 					card.deckNum = 0;
-					console.log(card.deckNum);
 					cardArray.splice(i, 1);
-					console.log("about to setState");
 					this.setState({
 						currentDeck: cardArray
 					});

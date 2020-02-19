@@ -18,6 +18,19 @@ body {
 	margin-top: 20px;
 }
 
+.allyImage {
+	height: 70px;
+}
+
+.allyRow {
+	position: relative;
+    top: 115px;
+}
+
+.placeholderDiv {
+	height: 244px;
+}
+
 .numberOwned {
 	font-size: 16px;
 	background: black;
@@ -711,12 +724,6 @@ input {
 }
 
 .influenceGlow {
-	-webkit-animation: stormPusate 1s infinite alternate;
-    -moz-animation: stormPusate 1s infinite alternate;
-    -animation: stormPusate 1s infinite alternate;
-}
-
-.researchGlow {
 	-webkit-animation: stormPusate 1s infinite alternate;
     -moz-animation: stormPusate 1s infinite alternate;
     -animation: stormPusate 1s infinite alternate;
