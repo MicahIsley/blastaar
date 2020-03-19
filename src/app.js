@@ -4,7 +4,7 @@ import Firebase from 'firebase';
 import config from "./config";
 import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
-import placeholderImg from './assets/awe.png';
+import placeholderImg from './assets/icons/awe.png';
 import Target from './Target';
 import Target2 from './Target2';
 import Ability from './Ability';
@@ -17,66 +17,121 @@ import CollectionCard from './CollectionCard';
 import CollectionCard2 from './CollectionCard2';
 import CreateCharacter from './CreateCharacter';
 import DeleteZone from './deleteZone.js';
-import heart from './assets/heart.png';
-import shield from './assets/shield.png';
-import power from './assets/power.png';
-import int from './assets/int.png';
-import wobbleduk from './assets/wobbleduk.gif';
-import budleFairy from './assets/budleFairy.gif';
-import madnado from './assets/madnado.gif';
-import empressMadnado from './assets/empressMadnado.png';
-import morp from './assets/morp.gif';
-import primtree from './assets/primtree.gif';
-import toughPrimtree from './assets/toughPrimtree.gif';
-import jewelPrimtree from './assets/jewelPrimtree.gif';
-import queenPrimtree from './assets/queenPrimtree.png';
-import borgus from './assets/borgus.gif';
-import misterBorgus from './assets/misterBorgus.gif';
-import gangOfFleebs from './assets/gangOfFleebs.gif';
-import kingWobbleduk from './assets/kingWobbleduk.gif';
-import maclaw from './assets/maclaw.gif';
-import ghostShark from './assets/ghostShark.png';
-import marshSlapper from './assets/marshSlapper.gif';
-import albinoSlapper from './assets/albinoSlapper.gif';
-import kingSlapper from './assets/kingSlapper.png';
-import trenchThump from './assets/trenchThump.gif';
-import caveThump from './assets/caveThump.gif';
-import coralThump from './assets/coralThump.gif';
-import kragmup from './assets/kragmup.png';
-import purpleKreep from './assets/purpleKreep.gif';
-import shockShark from './assets/shockShark.gif';
-import steed from './assets/steed.png';
-import tipper from './assets/tipper.png';
-import grandTipper from './assets/grandTipper.gif';
-import flameCrawler from './assets/flameCrawler.gif';
-import flameScrabler from './assets/flameScrabler.gif';
-import emberAdder from './assets/emberAdder.gif';
-import rockFairy from './assets/rockFairy.gif';
-import windleFairy from './assets/windleFairy.png';
-import rundarr from './assets/rundarr.gif';
-import windFlitter from './assets/windFlitter.gif';
-import floofer from './assets/floofer.png';
+import awe from './assets/icons/awe.png';
+import desert from './assets/icons/desert.png';
+import earth from './assets/icons/earth.png';
+import empty from './assets/icons/empty.png';
+import fire from './assets/icons/fire.png';
+import heart from './assets/icons/heart.png';
+import int from './assets/icons/int.png';
+import lava from './assets/icons/lava.png';
+import mud from './assets/icons/mud.png';
+import power from './assets/icons/power.png';
+import shield from './assets/icons/shield.png';
+import spooky from './assets/icons/spooky.png';
+import storm from './assets/icons/storm.png';
+import water from './assets/icons/water.png';
+import wind from './assets/icons/wind.png';
+import mainTitle from './assets/backgrounds/mainTitle.png';
+import tree from './assets/backgrounds/backgroundTree.png';
+import fireBackground from './assets/backgrounds/fireBackground.png';
+import grassBackground from './assets/backgrounds/grassBackground.png';
+import waterBackground from './assets/backgrounds/waterBackground.png';
+import windBackground from './assets/backgrounds/windBackground.png';
+import lavaBackground from './assets/backgrounds/lavaBackground.png';
+import desertBackground from './assets/backgrounds/desertBackground.png';
+import stormBackground from './assets/backgrounds/stormBackground.png';
+import mudBackground from './assets/backgrounds/mudBackground.png';
+import towerBackground from './assets/backgrounds/towerBackground.png';
+import boneStalker from './assets/desert/boneStalker.png';
+import championStalker from './assets/desert/championStalker.png';
+import desertMadnado from './assets/desert/desertMadnado.gif';
+import duneStabber from './assets/desert/duneStabber.png';
+import grumpeel from './assets/desert/grumpeel.png';
+import predatorSnipp from './assets/desert/predatorSnipp.png';
+import sandSnipp from './assets/desert/sandSnipp.gif';
+import stabberConclave from './assets/desert/stabberConclave.png';
+import wanderingRelic from './assets/desert/wanderingRelic.png';
+import jewelPrimtree from './assets/earth/jewelPrimtree.gif';
+import kingWobbleduk from './assets/earth/kingWobbleduk.gif';
+import primtree from './assets/earth/primtree.gif';
+import queenPrimtree from './assets/earth/queenPrimtree.png';
+import rockFairy from './assets/earth/rockFairy.gif';
+import steed from './assets/earth/steed.png';
+import stoneStrider from './assets/earth/stoneStrider.png';
+import toughPrimtree from './assets/earth/toughPrimtree.gif';
+import wobbleduk from './assets/earth/wobbleduk.gif';
+import broodmother from './assets/fire/broodmother.png';
+import emberAdder from './assets/fire/emberAdder.gif';
+import flameCrawler from './assets/fire/flameCrawler.gif';
+import flameScrabler from './assets/fire/flameScrabler.gif';
+import grandTipper from './assets/fire/grandTipper.gif';
+import kragmup from './assets/fire/kragmup.png';
+import morp from './assets/fire/morp.gif';
+import pheonixWyrm from './assets/fire/pheonixWyrm.png';
+import tipper from './assets/fire/tipper.png';
+import emberite from './assets/lava/emberite.png';
+import lavaLordWalker from './assets/lava/lavaLordWalker.png';
+import lavaWalker from './assets/lava/lavaWalker.png';
+import moltasaurus from './assets/lava/moltasaurus.png';
+import moltasaurusRex from './assets/lava/moltasaurusRex.png';
+import nutrite from './assets/lava/nutrite.png';
+import trekapod from './assets/lava/trekapod.png';
+import volcanoTrampler from './assets/lava/volcanoTrampler.png';
+import walkingEruption from './assets/lava/walkingEruption.png';
+import archmageMuckster from './assets/mud/archmageMuckster.png';
+import bogBoar from './assets/mud/bogBoar.png';
+import duchessWarthus from './assets/mud/duchessWarthus.png';
+import greaterGalope from './assets/mud/greaterGalope.png';
+import lesserGalope from './assets/mud/lesserGalope.png';
+import muckster from './assets/mud/muckster.png';
+import sominus from './assets/mud/sominus.png';
+import toxicRoller from './assets/mud/toxicRoller.png';
+import warthus from './assets/mud/warthus.png';
+import enlightenedRainWolf from './assets/storm/enlightenedRainWolf.png';
+import greatShockShark from './assets/storm/greatShockShark.png';
+import lightningBug from './assets/storm/lightningBug.png';
+import rainWolf from './assets/storm/rainWolf.png';
+import scorchedTreeGhast from './assets/storm/scorchedTreeGhast.png';
+import shelterThump from './assets/storm/shelterThump.png';
+import shockShark from './assets/storm/shockShark.gif';
+import staticCatcher from './assets/storm/staticCatcher.png';
+import staticGlider from './assets/storm/staticGlider.gif';
+import borgus from './assets/tower/borgus.gif';
+import gangOfFleebs from './assets/tower/gangOfFleebs.gif';
+import misterBorgus from './assets/tower/misterBorgus.gif';
+import purpleKreep from './assets/tower/purpleKreep.gif';
+import reacher from './assets/tower/reacher.gif';
+import rundarr from './assets/tower/rundarr.gif';
+import sinisterSloop from './assets/tower/sinisterSloop.png';
+import soulShredder from './assets/tower/soulShredder.png';
+import superPincher from './assets/tower/superPincher.png';
+import tooger from './assets/tower/tooger.png';
+import albinoSlapper from './assets/water/albinoSlapper.gif';
+import budleFairy from './assets/water/budleFairy.gif';
+import caveThump from './assets/water/caveThump.gif';
+import coralThump from './assets/water/coralThump.gif';
+import ghostShark from './assets/water/ghostShark.png';
+import kingSlapper from './assets/water/kingSlapper.png';
+import marshSlapper from './assets/water/marshSlapper.gif';
+import superBudleFairy from './assets/water/superBudleFairy.gif';
+import trenchThump from './assets/water/trenchThump.gif';
+import alphaSpookaw from './assets/wind/alphaSpookaw.png';
+import empressMadnado from './assets/wind/empressMadnado.png';
+import floofer from './assets/wind/floofer.png';
+import maclaw from './assets/wind/maclaw.gif';
+import madnado from './assets/wind/madnado.gif';
+import raaHowler from './assets/wind/raaHowler.png';
+import spookaw from './assets/wind/spookaw.gif';
+import windFlitter from './assets/wind/windFlitter.gif';
+import windleFairy from './assets/wind/windleFairy.png';
 import youber from './assets/youber.gif';
-import awe from './assets/awe.png';
-import earth from './assets/earth.png';
-import fire from './assets/fire.png';
-import wind from './assets/wind.png';
-import water from './assets/water.png';
-import lava from './assets/lava.png';
-import desert from './assets/desert.png';
-import mud from './assets/mud.png';
-import storm from './assets/storm.png';
-import spooky from './assets/spooky.png';
-import empty from './assets/empty.png';
 import walkLeft from './assets/walkLeft.gif';
 import walkRight from './assets/walkRight.gif';
 import walkUp from './assets/walkUp.png';
-import tree from './assets/backgroundTree.png';
-import fireBackground from './assets/fireBackground.png';
-import grassBackground from './assets/grassBackground.png';
-import waterBackground from './assets/waterBackground.png';
-import windBackground from './assets/windBackground.png';
-import neutralCard from './assets/neutralCard.png';
+import background from './assets/audio.m4a';
+import click from './assets/click.mp3';
+import attackSound from './assets/attackSound.mp3';
 import './index.css';
 
 var player;
@@ -85,10 +140,10 @@ var enemy1Slot = {};
 var enemy2Slot = {};
 var createEnemy;
 
-var sabotoge1 = new CardCon("Tripped Up", 0, -2, "Hit the ground", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 0);
-var sabotoge2 = new CardCon("Budle Charm", 0, -3, "Woozy", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 0);
-var sabotoge3 = new CardCon("Raging Storm", 0, -4, "So Fierce", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 0);
-var sabotoge4 = new CardCon("Steamed", 0, -5, "Super way too hot", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 0);
+var sabotoge1 = new CardCon("Tripped Up", 0, -2, "Hit the ground", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
+var sabotoge2 = new CardCon("Budle Charm", 0, -3, "Woozy", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
+var sabotoge3 = new CardCon("Raging Storm", 0, -4, "So Fierce", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
+var sabotoge4 = new CardCon("Steamed", 0, -5, "Super way too hot", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
 
 const wobbledukStats = {
 	name: "Wobbleduk",
@@ -123,127 +178,6 @@ const kingWobbledukStats = {
 	element: earth
 };
 
-const budleFairyStats = {
-	name: "Budle Fairy",
-	hp: 5,
-	attack: 8,
-	sabotoge: 4,
-	pointValue: 500,
-	image: budleFairy,
-	sabCard: sabotoge2,
-	element: water
-};
-
-const kingBudleFairyStats = {
-	name: "Super Budle Fairy",
-	hp: 20,
-	attack: 6,
-	sabotoge: 4,
-	pointValue: 700,
-	image: budleFairy,
-	sabCard: sabotoge3,
-	element: water
-};
-
-const madnadoStats = {
-	name: "Madnado",
-	hp: 3,
-	attack: 4,
-	sabotoge: 2,
-	pointValue: 250,
-	image: madnado,
-	sabCard: sabotoge3,
-	element: wind
-};
-
-const empressMadnadoStats = {
-	name: "Empress Madnado",
-	hp: 3,
-	attack: 4,
-	sabotoge: 2,
-	pointValue: 250,
-	image: empressMadnado,
-	sabCard: sabotoge3,
-	element: wind
-};
-
-const shockSharkStats = {
-	name: "Shock Shark",
-	hp: 11,
-	attack: 4,
-	sabotoge: 1,
-	pointValue: 100,
-	image: shockShark,
-	sabCard: sabotoge1,
-	element: wind
-};
-
-const windleFairyStats = {
-	name: "Windle Fairy",
-	hp: 14,
-	attack: 1,
-	sabotoge: 0,
-	pointValue: 100,
-	image: windleFairy,
-	sabCard: sabotoge1,
-	element: wind
-};
-
-const flooferStats = {
-	name: "Floofer",
-	hp: 25,
-	attack: 2,
-	sabotoge: 0,
-	pointValue: 100,
-	image: floofer,
-	sabCard: sabotoge1,
-	element: wind
-};
-
-const rundarrStats = {
-	name: "Rundarr",
-	hp: 16,
-	attack: 3,
-	sabotoge: 1,
-	pointValue: 100,
-	image: rundarr,
-	sabCard: sabotoge1,
-	element: wind
-};
-
-const windFlitterStats = {
-	name: "Wind Flitter",
-	hp: 6,
-	attack: 0,
-	sabotoge: 0,
-	pointValue: 100,
-	image: windleFairy,
-	sabCard: sabotoge1,
-	element: wind
-};
-
-const morpStats = {
-	name: "Morp",
-	hp: 2,
-	attack: 3,
-	sabotoge: 1,
-	pointValue: 100,
-	image: morp,
-	sabCard: sabotoge4,
-	element: fire
-};
-
-const kingMorpStats = {
-	name: "Emperor Morp",
-	hp: 2,
-	attack: 3,
-	sabotoge: 1,
-	pointValue: 100,
-	image: morp,
-	sabCard: sabotoge4,
-	element: fire
-};
-
 const primtreeStats = {
 	name: "Primtree",
 	hp: 2,
@@ -255,9 +189,9 @@ const primtreeStats = {
 	element: earth
 };
 
-const primtree2Stats = {
+const primtreeDefenderStats = {
 	name: "Primtree Defender",
-	hp: 10,
+	hp: 1,
 	attack: 3,
 	sabotoge: 1,
 	pointValue: 150,
@@ -266,24 +200,13 @@ const primtree2Stats = {
 	element: earth
 };
 
-const primtree3Stats = {
+const primtreeRoyalStats = {
 	name: "Primtree Royal Guard",
-	hp: 15,
+	hp: 1,
 	attack: 5,
 	sabotoge: 1,
 	pointValue: 150,
 	image: jewelPrimtree,
-	sabCard: sabotoge1,
-	element: earth
-};
-
-const primtree4Stats = {
-	name: "Root Caster",
-	hp: 10,
-	attack: 5,
-	sabotoge: 3,
-	pointValue: 150,
-	image: primtree,
 	sabCard: sabotoge1,
 	element: earth
 };
@@ -299,50 +222,6 @@ const queenPrimtreeStats = {
 	element: earth
 };
 
-const borgusStats = {
-	name: "Borgus",
-	hp: 2,
-	attack: 5,
-	sabotoge: 2,
-	pointValue: 200,
-	image: borgus,
-	sabCard: sabotoge1,
-	element: earth
-};
-
-const misterBorgusStats = {
-	name: "Mister Borgus",
-	hp: 20,
-	attack: 4,
-	sabotoge: 5,
-	pointValue: 200,
-	image: misterBorgus,
-	sabCard: sabotoge1,
-	element: earth
-};
-
-const gangOfFleebsStats = {
-	name: "Gang of Fleebs",
-	hp: 3,
-	attack: 7,
-	sabotoge: 1,
-	pointValue: 250,
-	image: gangOfFleebs,
-	sabCard: sabotoge1,
-	element: earth
-};
-
-const maclawStats = {
-	name: "Maclaw",
-	hp: 3,
-	attack: 6,
-	sabotoge: 3,
-	pointValue: 300,
-	image: maclaw,
-	sabCard: sabotoge1,
-	element: wind
-};
-
 const rockFairyStats = {
 	name: "Rock Fairy",
 	hp: 15,
@@ -352,6 +231,149 @@ const rockFairyStats = {
 	image: rockFairy,
 	sabCard: sabotoge1,
 	element: earth
+};
+
+const steedStats = {
+	name: "Steed",
+	hp: 15,
+	attack: 2,
+	sabotoge: 1,
+	pointValue: 100,
+	image: steed,
+	sabCard: sabotoge1,
+	element: earth
+};
+
+const stoneStriderStats = {
+	name: "Stone Strider",
+	hp: 15,
+	attack: 2,
+	sabotoge: 1,
+	pointValue: 100,
+	image: stoneStrider,
+	sabCard: sabotoge1,
+	element: earth
+}
+
+const morpStats = {
+	name: "Morp",
+	hp: 2,
+	attack: 3,
+	sabotoge: 1,
+	pointValue: 100,
+	image: morp,
+	sabCard: sabotoge4,
+	element: fire
+};
+
+const emberAdderStats = {
+	name: "Ember Adder",
+	hp: 8,
+	attack: 2,
+	sabotoge: 1,
+	pointValue: 100,
+	image: emberAdder,
+	sabCard: sabotoge1,
+	element: fire
+};
+
+const flameCrawlerStats = {
+	name: "Flame Crawler",
+	hp: 12,
+	attack: 2,
+	sabotoge: 0,
+	pointValue: 100,
+	image: flameCrawler,
+	sabCard: sabotoge1,
+	element: fire
+};
+
+const flameScrablerStats = {
+	name: "Flame Scrabler",
+	hp: 15,
+	attack: 4,
+	sabotoge: 1,
+	pointValue: 100,
+	image: flameScrabler,
+	sabCard: sabotoge1,
+	element: fire
+};
+
+const tipperStats = {
+	name: "Tipper",
+	hp: 10,
+	attack: 5,
+	sabotoge: 1,
+	pointValue: 100,
+	image: tipper,
+	sabCard: sabotoge1,
+	element: fire
+};
+
+const grandTipperStats = {
+	name: "Grand Tipper",
+	hp: 20,
+	attack: 6,
+	sabotoge: 3,
+	pointValue: 100,
+	image: grandTipper,
+	sabCard: sabotoge1,
+	element: fire
+};
+
+const kragmupStats = {
+	name: "kragmup",
+	hp: 6,
+	attack: 2,
+	sabotoge: 2,
+	pointValue: 100,
+	image: kragmup,
+	sabCard: sabotoge1,
+	element: fire
+};
+
+const broodmotherStats = {
+	name: "Broodmother",
+	hp: 6,
+	attack: 2,
+	sabotoge: 2,
+	pointValue: 100,
+	image: broodmother,
+	sabCard: sabotoge1,
+	element: fire
+};
+
+const pheonixWyrmStats = {
+	name: "Pheonix Wyrm",
+	hp: 6,
+	attack: 2,
+	sabotoge: 2,
+	pointValue: 100,
+	image: pheonixWyrm,
+	sabCard: sabotoge1,
+	element: fire
+};
+
+const budleFairyStats = {
+	name: "Budle Fairy",
+	hp: 5,
+	attack: 8,
+	sabotoge: 4,
+	pointValue: 500,
+	image: budleFairy,
+	sabCard: sabotoge2,
+	element: water
+};
+
+const superBudleFairyStats = {
+	name: "Super Budle Fairy",
+	hp: 20,
+	attack: 6,
+	sabotoge: 4,
+	pointValue: 700,
+	image: superBudleFairy,
+	sabCard: sabotoge3,
+	element: water
 };
 
 const ghostSharkStats = {
@@ -429,83 +451,611 @@ const coralThumpStats = {
 	image: coralThump,
 	sabCard: sabotoge1,
 	element: water
-}
-
-const banditStats = {
-	name: "Bandit",
-	hp: 1,
-	attack: 4,
-	sabotoge: 2,
-	pointValue: 300,
-	image: placeholderImg,
-	sabCard: sabotoge1,
-	element: earth
 };
 
-const emberAdderStats = {
-	name: "Ember Adder",
-	hp: 8,
-	attack: 2,
-	sabotoge: 1,
-	pointValue: 100,
-	image: emberAdder,
-	sabCard: sabotoge1,
-	element: fire
-}
+const madnadoStats = {
+	name: "Madnado",
+	hp: 3,
+	attack: 4,
+	sabotoge: 2,
+	pointValue: 250,
+	image: madnado,
+	sabCard: sabotoge3,
+	element: wind
+};
 
-const flameCrawlerStats = {
-	name: "Flame Crawler",
-	hp: 12,
+const empressMadnadoStats = {
+	name: "Empress Madnado",
+	hp: 3,
+	attack: 4,
+	sabotoge: 2,
+	pointValue: 250,
+	image: empressMadnado,
+	sabCard: sabotoge3,
+	element: wind
+};
+
+const windleFairyStats = {
+	name: "Windle Fairy",
+	hp: 14,
+	attack: 1,
+	sabotoge: 0,
+	pointValue: 100,
+	image: windleFairy,
+	sabCard: sabotoge1,
+	element: wind
+};
+
+const flooferStats = {
+	name: "Floofer",
+	hp: 25,
 	attack: 2,
 	sabotoge: 0,
 	pointValue: 100,
-	image: flameCrawler,
+	image: floofer,
 	sabCard: sabotoge1,
-	element: fire
-}
+	element: wind
+};
 
-const flameScrablerStats = {
-	name: "Flame Scrabler",
-	hp: 15,
-	attack: 4,
-	sabotoge: 1,
+const windFlitterStats = {
+	name: "Wind Flitter",
+	hp: 6,
+	attack: 0,
+	sabotoge: 0,
 	pointValue: 100,
-	image: flameScrabler,
+	image: windFlitter,
 	sabCard: sabotoge1,
-	element: fire
-}
+	element: wind
+};
 
-const tipperStats = {
-	name: "Tipper",
-	hp: 10,
-	attack: 5,
-	sabotoge: 1,
-	pointValue: 100,
-	image: tipper,
-	sabCard: sabotoge1,
-	element: fire
-}
-
-const grandTipperStats = {
-	name: "Grand Tipper",
-	hp: 20,
+const maclawStats = {
+	name: "Maclaw",
+	hp: 3,
 	attack: 6,
 	sabotoge: 3,
-	pointValue: 100,
-	image: grandTipper,
+	pointValue: 300,
+	image: maclaw,
 	sabCard: sabotoge1,
-	element: fire
-}
+	element: wind
+};
 
-const kragmupStats = {
-	name: "kragmup",
+const spookawStats = {
+	name: "Spookaw",
 	hp: 6,
 	attack: 2,
 	sabotoge: 2,
 	pointValue: 100,
-	image:kragmup,
+	image: spookaw,
 	sabCard: sabotoge1,
-	element: fire
+	element: wind
+};
+
+const alphaSpookawStats = {
+	name: "Alpha Spookaw",
+	hp: 6,
+	attack: 2,
+	sabotoge: 2,
+	pointValue: 100,
+	image: alphaSpookaw,
+	sabCard: sabotoge1,
+	element: wind
+};
+
+const raaHowlerStats = {
+	name: "Raa Howler",
+	hp: 6,
+	attack: 2,
+	sabotoge: 2,
+	pointValue: 100,
+	image: raaHowler,
+	sabCard: sabotoge1,
+	element: wind
+};
+
+const boneStalkerStats = {
+	name: "Bone Stalker",
+	hp: 8,
+	attack: 3,
+	sabotoge: 1,
+	pointValue: 150,
+	image: boneStalker,
+	sabCard: sabotoge1,
+	element: desert
+};
+
+const championStalkerStats = {
+	name: "Champion Stalker",
+	hp: 8,
+	attack: 3,
+	sabotoge: 1,
+	pointValue: 150,
+	image: championStalker,
+	sabCard: sabotoge1,
+	element: desert
+};
+
+const desertMadnadoStats = {
+	name: "Desert Madnado",
+	hp: 8,
+	attack: 3,
+	sabotoge: 1,
+	pointValue: 150,
+	image: desertMadnado,
+	sabCard: sabotoge1,
+	element: desert
+};
+
+const sandSnippStats = {
+	name: "Sand Snipp",
+	hp: 8,
+	attack: 3,
+	sabotoge: 1,
+	pointValue: 150,
+	image: sandSnipp,
+	sabCard: sabotoge1,
+	element: desert
+};
+
+const predatorSnippStats = {
+	name: "Sand Snipp",
+	hp: 8,
+	attack: 3,
+	sabotoge: 1,
+	pointValue: 150,
+	image: predatorSnipp,
+	sabCard: sabotoge1,
+	element: desert
+};
+
+const grumpeelStats = {
+	name: "Grumpeel",
+	hp: 8,
+	attack: 3,
+	sabotoge: 1,
+	pointValue: 150,
+	image: grumpeel,
+	sabCard: sabotoge1,
+	element: desert
+};
+
+const duneStabberStats = {
+	name: "Dune Stabber",
+	hp: 6,
+	attack: 2,
+	sabotoge: 2,
+	pointValue: 100,
+	image: duneStabber,
+	sabCard: sabotoge1,
+	element: desert
+};
+
+const stabberConclaveStats = {
+	name: "Stabber Conclave",
+	hp: 6,
+	attack: 2,
+	sabotoge: 2,
+	pointValue: 100,
+	image: stabberConclave,
+	sabCard: sabotoge1,
+	element: desert
+};
+
+const wanderingRelicStats = {
+	name: "Wandering Relic",
+	hp: 6,
+	attack: 2,
+	sabotoge: 2,
+	pointValue: 100,
+	image: wanderingRelic,
+	sabCard: sabotoge1,
+	element: desert
+};
+
+const emberiteStats = {
+	name: "Emberite",
+	hp: 6,
+	attack: 2,
+	sabotoge: 2,
+	pointValue: 100,
+	image: emberite,
+	sabCard: sabotoge1,
+	element: lava
+};
+
+const nutriteStats = {
+	name: "Nutrite",
+	hp: 6,
+	attack: 2,
+	sabotoge: 2,
+	pointValue: 100,
+	image: nutrite,
+	sabCard: sabotoge1,
+	element: lava
+};
+
+const lavaWalkerStats = {
+	name: "Lava Walker",
+	hp: 6,
+	attack: 2,
+	sabotoge: 2,
+	pointValue: 100,
+	image: lavaWalker,
+	sabCard: sabotoge1,
+	element: lava
+};
+
+const moltasaurusStats = {
+	name: "Moltasaurus",
+	hp: 6,
+	attack: 2,
+	sabotoge: 2,
+	pointValue: 100,
+	image: moltasaurus,
+	sabCard: sabotoge1,
+	element: lava
+};
+
+const moltasaurusRexStats = {
+	name: "Moltasaurus Rex",
+	hp: 6,
+	attack: 2,
+	sabotoge: 2,
+	pointValue: 100,
+	image: moltasaurusRex,
+	sabCard: sabotoge1,
+	element: lava
+};
+
+const lavaLordWalkerStats = {
+	name: "Lava Lord Walker",
+	hp: 6,
+	attack: 2,
+	sabotoge: 2,
+	pointValue: 100,
+	image: lavaLordWalker,
+	sabCard: sabotoge1,
+	element: lava
+};
+
+const trekapodStats = {
+	name: "Trekapod",
+	hp: 6,
+	attack: 2,
+	sabotoge: 2,
+	pointValue: 100,
+	image: trekapod,
+	sabCard: sabotoge1,
+	element: lava
+};
+
+const volcanoTramplerStats = {
+	name: "Volcano Trampler",
+	hp: 6,
+	attack: 2,
+	sabotoge: 2,
+	pointValue: 100,
+	image: volcanoTrampler,
+	sabCard: sabotoge1,
+	element: lava
+};
+
+const walkingEruptionStats = {
+	name: "Walking Eruption",
+	hp: 6,
+	attack: 2,
+	sabotoge: 2,
+	pointValue: 100,
+	image: walkingEruption,
+	sabCard: sabotoge1,
+	element: lava
+};
+
+const bogBoarStats = {
+	name: "Bog Boar",
+	hp: 6,
+	attack: 2,
+	sabotoge: 2,
+	pointValue: 100,
+	image: bogBoar,
+	sabCard: sabotoge1,
+	element: mud
+};
+
+const greaterGalopeStats = {
+	name: "Greater Galope",
+	hp: 6,
+	attack: 2,
+	sabotoge: 2,
+	pointValue: 100,
+	image: greaterGalope,
+	sabCard: sabotoge1,
+	element: mud
+};
+
+const lesserGalopeStats = {
+	name: "Lesser Galope",
+	hp: 6,
+	attack: 2,
+	sabotoge: 2,
+	pointValue: 100,
+	image: lesserGalope,
+	sabCard: sabotoge1,
+	element: mud
+};
+
+const mucksterStats = {
+	name: "Muckster",
+	hp: 6,
+	attack: 2,
+	sabotoge: 2,
+	pointValue: 100,
+	image: muckster,
+	sabCard: sabotoge1,
+	element: mud
+};
+
+const archmageMucksterStats = {
+	name: "Archmage Muckster",
+	hp: 6,
+	attack: 2,
+	sabotoge: 2,
+	pointValue: 100,
+	image: archmageMuckster,
+	sabCard: sabotoge1,
+	element: mud
+};
+
+const sominusStats = {
+	name: "Sominus",
+	hp: 6,
+	attack: 2,
+	sabotoge: 2,
+	pointValue: 100,
+	image: sominus,
+	sabCard: sabotoge1,
+	element: mud
+};
+
+const toxicRollerStats = {
+	name: "Toxic Roller",
+	hp: 6,
+	attack: 2,
+	sabotoge: 2,
+	pointValue: 100,
+	image: toxicRoller,
+	sabCard: sabotoge1,
+	element: mud
+};
+
+const warthusStats = {
+	name: "Warthus",
+	hp: 6,
+	attack: 2,
+	sabotoge: 2,
+	pointValue: 100,
+	image: bogBoar,
+	sabCard: sabotoge1,
+	element: mud
+};
+
+const duchessWarthusStats = {
+	name: "Duchess Warthus",
+	hp: 6,
+	attack: 2,
+	sabotoge: 2,
+	pointValue: 100,
+	image: duchessWarthus,
+	sabCard: sabotoge1,
+	element: mud
+};
+
+const staticGliderStats = {
+	name: "Static Glider",
+	hp: 15,
+	attack: 2,
+	sabotoge: 1,
+	pointValue: 100,
+	image: staticGlider,
+	sabCard: sabotoge1,
+	element: storm
+};
+
+const staticCatcherStats = {
+	name: "Static Catcher",
+	hp: 15,
+	attack: 2,
+	sabotoge: 1,
+	pointValue: 100,
+	image: staticCatcher,
+	sabCard: sabotoge1,
+	element: storm
+};
+
+const shockSharkStats = {
+	name: "Shock Shark",
+	hp: 11,
+	attack: 4,
+	sabotoge: 1,
+	pointValue: 100,
+	image: shockShark,
+	sabCard: sabotoge1,
+	element: storm
+};
+
+const greatShockSharkStats = {
+	name: "Great Shock Shark",
+	hp: 11,
+	attack: 4,
+	sabotoge: 1,
+	pointValue: 100,
+	image: greatShockShark,
+	sabCard: sabotoge1,
+	element: storm
+};
+
+const lightningBugStats = {
+	name: "Lightning Bug",
+	hp: 11,
+	attack: 4,
+	sabotoge: 1,
+	pointValue: 100,
+	image: lightningBug,
+	sabCard: sabotoge1,
+	element: storm
+};
+
+const scorchedTreeGhastStats = {
+	name: "Schorched Tree Ghast",
+	hp: 11,
+	attack: 4,
+	sabotoge: 1,
+	pointValue: 100,
+	image: scorchedTreeGhast,
+	sabCard: sabotoge1,
+	element: storm
+};
+
+const shelterThumpStats = {
+	name: "Shelter Thump",
+	hp: 11,
+	attack: 4,
+	sabotoge: 1,
+	pointValue: 100,
+	image: shelterThump,
+	sabCard: sabotoge1,
+	element: storm
+};
+
+const rainWolfStats = {
+	name: "Rain Wolf",
+	hp: 11,
+	attack: 4,
+	sabotoge: 1,
+	pointValue: 100,
+	image: rainWolf,
+	sabCard: sabotoge1,
+	element: storm
+};
+
+const enlightenedRainWolfStats = {
+	name: "Enlightened Rain Wolf",
+	hp: 11,
+	attack: 4,
+	sabotoge: 1,
+	pointValue: 100,
+	image: enlightenedRainWolf,
+	sabCard: sabotoge1,
+	element: storm
+};
+
+const borgusStats = {
+	name: "Borgus",
+	hp: 2,
+	attack: 5,
+	sabotoge: 2,
+	pointValue: 200,
+	image: borgus,
+	sabCard: sabotoge1,
+	element: spooky
+};
+
+const misterBorgusStats = {
+	name: "Mister Borgus",
+	hp: 20,
+	attack: 4,
+	sabotoge: 5,
+	pointValue: 200,
+	image: misterBorgus,
+	sabCard: sabotoge1,
+	element: spooky
+};
+
+const gangOfFleebsStats = {
+	name: "Gang of Fleebs",
+	hp: 3,
+	attack: 7,
+	sabotoge: 1,
+	pointValue: 250,
+	image: gangOfFleebs,
+	sabCard: sabotoge1,
+	element: spooky
+};
+
+const purpleKreepStats = {
+	name: "Purple Kreep",
+	hp: 8,
+	attack: 3,
+	sabotoge: 1,
+	pointValue: 150,
+	image: purpleKreep,
+	sabCard: sabotoge1,
+	element: spooky
+};
+
+const reacherStats = {
+	name: "Reacher",
+	hp: 8,
+	attack: 3,
+	sabotoge: 1,
+	pointValue: 150,
+	image: reacher,
+	sabCard: sabotoge1,
+	element: spooky
+};
+
+const rundarrStats = {
+	name: "Rundarr",
+	hp: 13,
+	attack: 3,
+	sabotoge: 1,
+	pointValue: 100,
+	image: rundarr,
+	sabCard: sabotoge1,
+	element: spooky
+};
+
+const sinisterSloopStats = {
+	name: "Sinister Sloop",
+	hp: 13,
+	attack: 3,
+	sabotoge: 1,
+	pointValue: 100,
+	image: sinisterSloop,
+	sabCard: sabotoge1,
+	element: spooky
+};
+
+const soulShredderStats = {
+	name: "Soul Shredder",
+	hp: 13,
+	attack: 3,
+	sabotoge: 1,
+	pointValue: 100,
+	image: soulShredder,
+	sabCard: sabotoge1,
+	element: spooky
+}
+
+const superPincherStats = {
+	name: "Super Pincher",
+	hp: 13,
+	attack: 3,
+	sabotoge: 1,
+	pointValue: 100,
+	image: superPincher,
+	sabCard: sabotoge1,
+	element: spooky
+}
+
+const toogerStats = {
+	name: "Tooger",
+	hp: 13,
+	attack: 3,
+	sabotoge: 1,
+	pointValue: 100,
+	image: tooger,
+	sabCard: sabotoge1,
+	element: spooky
 }
 
 var numberOfEnemies = 1;
@@ -529,6 +1079,84 @@ function tutorialLevels(){
 	}else if(stageComplete === 3){
 		numberOfEnemies = 1;
 		createEnemy = kingWobbledukStats;
+	}
+}
+
+function levelEarthDistribution(randEnemyNum){
+	numberOfStages = 4;
+	if(stageComplete < 3){
+		numberOfEnemies = 2;
+		if(randEnemyNum < 180){
+			createEnemy = primtreeStats;
+			return;
+		}else if(randEnemyNum < 255){
+			createEnemy = wobbledukStats;
+			return;
+		}else if(randEnemyNum < 330){
+			createEnemy = primtreeDefenderStats;
+			return;
+		}else if(randEnemyNum < 340){
+			createEnemy = rockFairyStats;
+			return;
+		}else if(randEnemyNum < 380){
+			createEnemy = primtreeRoyalStats;
+			return;
+		}else if(randEnemyNum < 450){
+			createEnemy = stoneStriderStats;
+			return;
+		}else if(randEnemyNum < 497){
+			createEnemy = steedStats;
+			return;
+		}else{
+			createEnemy = gangOfFleebsStats;
+		}
+	}else if(stageComplete === 3){
+		numberOfEnemies = 2;
+		if(randEnemyNum < 250){
+			createEnemy = kingWobbledukStats;
+			return;
+		}else{
+			createEnemy = queenPrimtreeStats;
+		}
+	}
+}
+
+function levelFireDistribution(randEnemyNum){
+	numberOfStages = 4;
+	if(stageComplete < 3){
+		numberOfEnemies = 2;
+		if(randEnemyNum < 180){
+			createEnemy = emberAdderStats;
+			return;
+		}else if(randEnemyNum < 255){
+			createEnemy = kragmupStats;
+			return;
+		}else if(randEnemyNum < 330){
+			createEnemy = flameCrawlerStats;
+			return;
+		}else if(randEnemyNum < 340){
+			createEnemy = flameScrablerStats;
+			return;
+		}else if(randEnemyNum < 380){
+			createEnemy = tipperStats;
+			return;
+		}else if(randEnemyNum < 450){
+			createEnemy = morpStats;
+			return;
+		}else if(randEnemyNum < 497){
+			createEnemy = pheonixWyrmStats;
+			return;
+		}else{
+			createEnemy = gangOfFleebsStats;
+		}
+	}else if(stageComplete === 3){
+		numberOfEnemies = 1;
+		if(randEnemyNum < 250){
+			createEnemy = broodmotherStats;
+			return;
+		}else{
+			createEnemy = grandTipperStats;
+		}
 	}
 }
 
@@ -563,88 +1191,10 @@ function levelWaterDistribution(randEnemyNum){
 	}else if(stageComplete === 3){
 		numberOfEnemies = 1;
 		if(randEnemyNum < 250){
-			createEnemy = kingBudleFairyStats;
+			createEnemy = superBudleFairyStats;
 			return;
 		}else{
 			createEnemy = kingSlapperStats;
-		}
-	}
-}
-
-function levelEarthDistribution(randEnemyNum){
-	numberOfStages = 4;
-	if(stageComplete < 3){
-		numberOfEnemies = 2;
-		if(randEnemyNum < 180){
-			createEnemy = primtreeStats;
-			return;
-		}else if(randEnemyNum < 255){
-			createEnemy = wobbledukStats;
-			return;
-		}else if(randEnemyNum < 330){
-			createEnemy = primtree2Stats;
-			return;
-		}else if(randEnemyNum < 340){
-			createEnemy = rockFairyStats;
-			return;
-		}else if(randEnemyNum < 380){
-			createEnemy = primtree3Stats;
-			return;
-		}else if(randEnemyNum < 450){
-			createEnemy = angryWobbledukStats;
-			return;
-		}else if(randEnemyNum < 497){
-			createEnemy = primtree4Stats;
-			return;
-		}else{
-			createEnemy = gangOfFleebsStats;
-		}
-	}else if(stageComplete === 3){
-		numberOfEnemies = 1;
-		if(randEnemyNum < 250){
-			createEnemy = kingWobbledukStats;
-			return;
-		}else{
-			createEnemy = queenPrimtreeStats;
-		}
-	}
-}
-
-function levelFireDistribution(randEnemyNum){
-	numberOfStages = 4;
-	if(stageComplete < 3){
-		numberOfEnemies = 2;
-		if(randEnemyNum < 180){
-			createEnemy = emberAdderStats;
-			return;
-		}else if(randEnemyNum < 255){
-			createEnemy = kragmupStats;
-			return;
-		}else if(randEnemyNum < 330){
-			createEnemy = flameCrawlerStats;
-			return;
-		}else if(randEnemyNum < 340){
-			createEnemy = flameScrablerStats;
-			return;
-		}else if(randEnemyNum < 380){
-			createEnemy = tipperStats;
-			return;
-		}else if(randEnemyNum < 450){
-			createEnemy = morpStats;
-			return;
-		}else if(randEnemyNum < 497){
-			createEnemy = morpStats;
-			return;
-		}else{
-			createEnemy = gangOfFleebsStats;
-		}
-	}else if(stageComplete === 3){
-		numberOfEnemies = 1;
-		if(randEnemyNum < 250){
-			createEnemy = kingMorpStats;
-			return;
-		}else{
-			createEnemy = grandTipperStats;
 		}
 	}
 }
@@ -669,7 +1219,7 @@ function levelWindDistribution(randEnemyNum){
 			createEnemy = flooferStats;
 			return;
 		}else if(randEnemyNum < 450){
-			createEnemy = shockSharkStats;
+			createEnemy = spookawStats;
 			return;
 		}else if(randEnemyNum < 497){
 			createEnemy = windFlitterStats;
@@ -683,13 +1233,204 @@ function levelWindDistribution(randEnemyNum){
 			createEnemy = empressMadnadoStats;
 			return;
 		}else{
-			createEnemy = misterBorgusStats;
+			createEnemy = alphaSpookawStats;
+		}
+	}
+}
+
+function levelDesertDistribution(randEnemyNum){
+	numberOfStages = 4;
+	if(stageComplete < 3){
+		numberOfEnemies = 2;
+		if(randEnemyNum < 180){
+			createEnemy = sandSnippStats;
+			return;
+		}else if(randEnemyNum < 255){
+			createEnemy = duneStabberStats;
+			return;
+		}else if(randEnemyNum < 330){
+			createEnemy = desertMadnadoStats;
+			return;
+		}else if(randEnemyNum < 340){
+			createEnemy = wanderingRelicStats;
+			return;
+		}else if(randEnemyNum < 380){
+			createEnemy = grumpeelStats;
+			return;
+		}else if(randEnemyNum < 450){
+			createEnemy = boneStalkerStats;
+			return;
+		}else if(randEnemyNum < 497){
+			createEnemy = predatorSnippStats;
+			return;
+		}else{
+			createEnemy = gangOfFleebsStats;
+		}
+	}else if(stageComplete === 3){
+		numberOfEnemies = 1;
+		if(randEnemyNum < 250){
+			createEnemy = championStalkerStats;
+			return;
+		}else{
+			createEnemy = stabberConclaveStats;
+		}
+	}
+}
+
+function levelLavaDistribution(randEnemyNum){
+	numberOfStages = 4;
+	if(stageComplete < 3){
+		numberOfEnemies = 2;
+		if(randEnemyNum < 180){
+			createEnemy = emberiteStats;
+			return;
+		}else if(randEnemyNum < 255){
+			createEnemy = lavaWalkerStats;
+			return;
+		}else if(randEnemyNum < 330){
+			createEnemy = trekapodStats;
+			return;
+		}else if(randEnemyNum < 340){
+			createEnemy = nutriteStats;
+			return;
+		}else if(randEnemyNum < 380){
+			createEnemy = moltasaurusStats;
+			return;
+		}else if(randEnemyNum < 450){
+			createEnemy = volcanoTramplerStats;
+			return;
+		}else if(randEnemyNum < 497){
+			createEnemy = walkingEruptionStats;
+			return;
+		}else{
+			createEnemy = gangOfFleebsStats;
+		}
+	}else if(stageComplete === 3){
+		numberOfEnemies = 1;
+		if(randEnemyNum < 250){
+			createEnemy = lavaLordWalkerStats;
+			return;
+		}else{
+			createEnemy = moltasaurusRexStats;
+		}
+	}
+}
+
+function levelMudDistribution(randEnemyNum){
+	numberOfStages = 4;
+	if(stageComplete < 3){
+		numberOfEnemies = 2;
+		if(randEnemyNum < 180){
+			createEnemy = bogBoarStats;
+			return;
+		}else if(randEnemyNum < 255){
+			createEnemy = toxicRollerStats;
+			return;
+		}else if(randEnemyNum < 330){
+			createEnemy = mucksterStats;
+			return;
+		}else if(randEnemyNum < 340){
+			createEnemy = sominusStats;
+			return;
+		}else if(randEnemyNum < 380){
+			createEnemy = warthusStats;
+			return;
+		}else if(randEnemyNum < 450){
+			createEnemy = greaterGalopeStats;
+			return;
+		}else if(randEnemyNum < 497){
+			createEnemy = lesserGalopeStats;
+			return;
+		}else{
+			createEnemy = gangOfFleebsStats;
+		}
+	}else if(stageComplete === 3){
+		numberOfEnemies = 1;
+		if(randEnemyNum < 250){
+			createEnemy = archmageMucksterStats;
+			return;
+		}else{
+			createEnemy = duchessWarthusStats;
+		}
+	}
+}
+
+function levelStormDistribution(randEnemyNum){
+	numberOfStages = 4;
+	if(stageComplete < 3){
+		numberOfEnemies = 2;
+		if(randEnemyNum < 180){
+			createEnemy = shockSharkStats;
+			return;
+		}else if(randEnemyNum < 255){
+			createEnemy = staticGliderStats;
+			return;
+		}else if(randEnemyNum < 330){
+			createEnemy = lightningBugStats;
+			return;
+		}else if(randEnemyNum < 340){
+			createEnemy = staticCatcherStats;
+			return;
+		}else if(randEnemyNum < 380){
+			createEnemy = shelterThumpStats;
+			return;
+		}else if(randEnemyNum < 450){
+			createEnemy = rainWolfStats;
+			return;
+		}else if(randEnemyNum < 497){
+			createEnemy = scorchedTreeGhastStats;
+			return;
+		}else{
+			createEnemy = gangOfFleebsStats;
+		}
+	}else if(stageComplete === 3){
+		numberOfEnemies = 1;
+		if(randEnemyNum < 250){
+			createEnemy = enlightenedRainWolfStats;
+			return;
+		}else{
+			createEnemy = greatShockSharkStats;
 		}
 	}
 }
 
 function levelTowerDistribution(randEnemyNum){
-
+	numberOfStages = 4;
+	if(stageComplete < 3){
+		numberOfEnemies = 3;
+		if(randEnemyNum < 180){
+			createEnemy = reacherStats;
+			return;
+		}else if(randEnemyNum < 255){
+			createEnemy = borgusStats;
+			return;
+		}else if(randEnemyNum < 330){
+			createEnemy = purpleKreepStats;
+			return;
+		}else if(randEnemyNum < 340){
+			createEnemy = rundarrStats;
+			return;
+		}else if(randEnemyNum < 380){
+			createEnemy = sinisterSloopStats;
+			return;
+		}else if(randEnemyNum < 450){
+			createEnemy = soulShredderStats;
+			return;
+		}else if(randEnemyNum < 497){
+			createEnemy = superPincherStats;
+			return;
+		}else{
+			createEnemy = gangOfFleebsStats;
+		}
+	}else if(stageComplete === 3){
+		numberOfEnemies = 1;
+		if(randEnemyNum < 250){
+			createEnemy = toogerStats;
+			return;
+		}else{
+			createEnemy = misterBorgusStats;
+		}
+	}
 }
 
 function EnemyCon(name, hp, attack, sabotoge, pointValue, image, sabCard, element){
@@ -756,7 +1497,7 @@ const parshendiCarapace = new ItemCon("Parshendi Carapace", 2, "armor", 80, true
 const shardplate = new ItemCon("Shardplate", 3, "armor", 150, true, true);
 
 var crafting1 = new CardCon(" ", 0, 0, " ", "hero", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 0, 1, 0);
-var fire1 = new CardCon("Fireball", 0, 5, "Simple, but effective", "hero", 0, "", "", false, "stormlight", placeholderImg, fire, "fire", 1, 1, 0);
+var fire1 = new CardCon("Fireball", 0, 5, "Simple, but effective", "hero", 0, "", "", true, "stormlight", placeholderImg, fire, "fire", 1, 1, 0);
 var fire2 = new CardCon("Fire Lash", 0, 6, "Weaken 1", "hero", 0, "weaken 1", "", false, "stormlight", placeholderImg, fire, "fire", 2, 1, 0);
 var fire3 = new CardCon("Power of Goordu", 0, 0, "Gain 1 Magic Power and Next Spell +5", "hero", 0, "str 1", "next 5", false, "stormlight", placeholderImg, fire, "fire", 3, 1, 0);
 var fire4 = new CardCon("Burn Bright", 0, 1, "Multiply", "hero", 0, "multiply", "", false, "stormlight", placeholderImg, fire, "fire", 4, 1, 0);
@@ -776,7 +1517,7 @@ var fire17 = new CardCon("Hot Hands", 0, 1, "Shuffle 3 Roasts into your deck", "
 var fire18 = new CardCon("Encirle", 1, 0, "Fire Scheme 2/6", "hero", 0, "scheme fire 2", 6, false, "stormlight", placeholderImg, fire, "fire", 18, 1, 0);
 var fire19 = new CardCon("Cooked Alive", 3, 0, "Fire Scheme 3/Purge", "hero", 0, "scheme fire 3 purge", 2, false, "stormlight", placeholderImg, fire, "fire", 19, 1, 0);
 var fire20 = new CardCon("Fire...Everywhere!", 0, 15, "", "hero", 0, "", "", false, "stormlight", placeholderImg, fire, "fire", 20, 1, 0);
-var earth1 = new CardCon("Rock Skin", 0, 2, "Shield 6", "hero", 0, "shield 6", "", false, "stormlight", placeholderImg, earth, "earth", 1, 1, 0);
+var earth1 = new CardCon("Rock Skin", 0, 2, "Shield 6", "hero", 0, "shield 6", "", true, "stormlight", placeholderImg, earth, "earth", 1, 1, 0);
 var earth2 = new CardCon("Boulder Trap", 0, 6, "", "hero", 0, "", "", false, "stormlight", placeholderImg, earth, "earth", 2, 1, 0);
 var earth3 = new CardCon("Toughen", 0, 5, "Gain +1 Def", "hero", 0, "def 1", "", false, "stormlight", placeholderImg, earth, "earth", 3, 1, 0);
 var earth4 = new CardCon("Stone Bubble", 0, 1, "Shield 9", "hero", 0, "shield 9", "", false, "stormlight", placeholderImg, earth, "earth", 4, 1, 0)
@@ -816,8 +1557,8 @@ var wind17 = new CardCon("Inner Storm", 0, 0, "Shuffle 3 Flurry's into your deck
 var wind18 = new CardCon("Sneaky Vortex", 1, 0, "Wind Scheme 2/7", "hero", 0, "scheme wind 2 7", 1, false, "support", placeholderImg, wind, "wind", 18, 1, 0);
 var wind19 = new CardCon("Ancient Speed", 2, 0, "Wind Scheme 3/Extra", "hero", 0, "scheme wind 3 extra", 1, false, "support", placeholderImg, wind, "wind", 19, 1, 0);
 var wind20 = new CardCon("Surrender to the Gale", 0, 20, "", "hero", 0, "", "", false, "stormlight", placeholderImg, wind, "wind", 20, 1, 0);
-var water1 = new CardCon("Healing Water", 0, 3, "Restore 3 health", "hero", 0, "heal 3", "", false, "stormlight", placeholderImg, water, "water", 1, 1, 0);
-var water2 = new CardCon("Tidal Wave", 0, 7, "Splash", "hero", 0, "", "", false, "stormlight", placeholderImg, water, "water", 2, 1, 0);
+var water1 = new CardCon("Healing Water", 0, 3, "Restore 3 health", "hero", 0, "heal 3", "", true, "stormlight", placeholderImg, water, "water", 1, 1, 0);
+var water2 = new CardCon("Tidal Wave", 0, 7, "Splash", "hero", 0, "", "", true, "stormlight", placeholderImg, water, "water", 2, 1, 0);
 var water3 = new CardCon("Magic Force", 0, 6, "Magic +1", "hero", 0, "int 1", "", false, "stormlight", placeholderImg, water, "water", 3, 1, 0)
 var water4 = new CardCon("Cleanse", 0, 4, "Reclaim 1", "hero", 0, "reclaim 1", "", false, "stormlight", placeholderImg, water, "water", 4, 1, 0);
 var water5 = new CardCon("Assimilate", 0, 3, "Reclaim 2", "hero", 0, "reclaim 2", "", false, "stormlight", placeholderImg, water, "water", 5, 1, 0);
@@ -926,15 +1667,15 @@ var enemyNumber = 0;
 var cardAbilityNum = 1;
 var itemArray = [rustySword, battleSpear, shardblade, leatherPads, parshendiCarapace, shardplate];
 var enemyArray = [];
-var cardArray = [basic1, basic2, basic4, basic6, basic7];
+var cardArray = [basic1, basic2, basic4, basic6, basic7, water1, water2, fire1, earth1];
 var cardArray2 = [];
 var recruitArray = [];
-var collectionArray = [basic1, basic2, basic4, basic6, basic7];
+var collectionArray = [basic1, basic2, basic4, basic6, basic7, water1, water2, fire1, earth1];
 var cardFrames = [];
 var elementOrbs = [];
 var multiplier = 1;
 var allies = [];
-var levelsBeaten = [];
+var levelsBeaten = ["fire", "water", "wind", "earth", "fire"];
 
 function shuffle(a) {
     for (let i = a.length; i; i--) {
@@ -952,6 +1693,7 @@ class GameScreenHub extends React.Component {
 			gameScreen: false,
 			characterSelectScreen: true,
 			auxilaryScreen: false,
+			endingScreen: false,
 			collectionScreen: false,
 			equipmentScreen: false,
 			createScreen: false,
@@ -982,6 +1724,7 @@ class GameScreenHub extends React.Component {
 		this.goToEquipmentScreen = this.goToEquipmentScreen.bind(this);
 		this.goToCraftingScreen = this.goToCraftingScreen.bind(this);
 		this.goToLevelScreen = this.goToLevelScreen.bind(this);
+		this.goToEndingScreen = this.goToEndingScreen.bind(this);
 		this.decreaseStormCounter = this.decreaseStormCounter.bind(this);
 		this.increaseStormCounter = this.increaseStormCounter.bind(this);
 		this.resetStormCounter = this.resetStormCounter.bind(this);
@@ -1201,6 +1944,12 @@ class GameScreenHub extends React.Component {
 			auxilaryScreen: true
 		});
 	}
+	goToEndingScreen(){
+		this.setState({
+			auxilaryScreen: false,
+			endingScreen: true
+		});
+	}
 	showCollection(){
 		this.setState({
 			gameScreen: false,
@@ -1216,6 +1965,10 @@ class GameScreenHub extends React.Component {
 			if(i >= numberOfEnemies){
 				var newEnemy = new EnemyCon("", 0, 0, 0, 0, null, null, null);
 				enemyArray.push(newEnemy);
+			}else if(stageComplete === 3 && i === 0){
+				var newEnemy = new EnemyCon("", 0, 0, 0, 0, null, null, null);
+				enemyArray.push(newEnemy);
+				document.getElementById("playArea").style.height = "75px";
 			}else{
 				var randEnemyNum = Math.floor(Math.random() * 501);
 				if(level === 0){
@@ -1228,6 +1981,14 @@ class GameScreenHub extends React.Component {
 					levelWaterDistribution(randEnemyNum);
 				}else if(level === "wind"){
 					levelWindDistribution(randEnemyNum);
+				}else if(level === "desert"){
+					levelDesertDistribution(randEnemyNum);
+				}else if(level === "lava"){
+					levelLavaDistribution(randEnemyNum);
+				}else if(level === "mud"){
+					levelMudDistribution(randEnemyNum);
+				}else if(level === "storm"){
+					levelStormDistribution(randEnemyNum);
 				}else if(level === "tower"){
 					levelTowerDistribution(randEnemyNum);
 				}
@@ -1343,15 +2104,15 @@ class GameScreenHub extends React.Component {
 	render() {
 		return (
 			<div>
-			
 			{this.state.createScreen ? <CreateCharacter createNewCharacter={this.createNewCharacter} /> : null }
 			{this.state.characterSelectScreen ? <CharacterSelectScreen getUserData={this.getUserData} writeUserData={this.writeUserData} goToLevelScreen={this.goToLevelScreen} score={this.state.score} createNewCharacter={this.createNewCharacter} influence={this.state.influence} shield={this.state.heroShield} spheres={this.state.sphereCount} attack={this.state.attack} playerHero={playerHero} switchEnemyArray={this.switchEnemyArray} goToEquipmentScreen={this.goToEquipmentScreen} heroHp={this.state.heroHp} showCollection={this.showCollection} changeHero={this.changeHero} goToGameScreen={this.goToGameScreen} /> : null }
 			{this.state.levelSelectScreen ? <LevelSelectScreen goToGameScreen={this.goToGameScreen} switchEnemyArray={this.switchEnemyArray} /> : null }
 			{this.state.gameScreen ? <GameScreen characterScreen={this.goToCharacterScreen} changeHeroShield={this.changeHeroShield} changeHeroAttack={this.changeHeroAttack} changeInfluence={this.changeInfluence} influence={this.state.influence} int={this.state.heroSelect.intelligence} shield={this.state.heroShield} switchEnemyArray={this.switchEnemyArray} increaseStormCounter={this.increaseStormCounter} decreaseStormCounter={this.decreaseStormCounter} stormCounter={this.state.stormCounter} changeHeroHp={this.changeHeroHp} heroHp={this.state.heroHp} score={this.state.score} setSpheres={this.setSphereCount} changeScore={this.changeScore} aux={this.auxilaryScreen} heroSelect={this.state.heroSelect} attack={this.state.attack} equipment={this.state.equipment} enemyArray={this.state.enemyArray} /> : null }
-			{this.state.auxilaryScreen ? <AuxilaryScreen changeInfluence={this.changeInfluence} influence={this.state.influence} setSphereCount={this.setSphereCount} score={this.state.score} resetStormCounter={this.resetStormCounter} goToCharacterScreen={this.goToCharacterScreen} /> : null }
+			{this.state.auxilaryScreen ? <AuxilaryScreen goToEndingScreen={this.goToEndingScreen} changeInfluence={this.changeInfluence} influence={this.state.influence} setSphereCount={this.setSphereCount} score={this.state.score} resetStormCounter={this.resetStormCounter} goToCharacterScreen={this.goToCharacterScreen} /> : null }
 			{this.state.collectionScreen ? <CollectionScreen goToCraftingScreen={this.goToCraftingScreen} checkDeckContents={this.checkDeckContents} /> : null }
 			{this.state.equipmentScreen ? <EquipmentScreen changeScore={this.changeScore} score={this.state.score} itemArray={this.state.itemArray} heroShield={this.state.heroShield} spheres={this.state.sphereCount} setSphereCount={this.setSphereCount} playerHero={playerHero} chooseItemAction={this.chooseItemAction} attack={this.state.attack} goToCharacterScreen={this.goToCharacterScreen} /> : null }
 			{this.state.craftingScreen ? <CraftingScreen showCollection={this.showCollection} /> : null}
+			{this.state.endingScreen ? <EndingScreen score={this.state.score} /> : null}
 			{this.state.miningGame ? <MiningGame /> : null }
 			</div>
 		)
@@ -1557,14 +2318,18 @@ class CharacterSelectScreen extends React.Component {
 		return (
 			<div className="row">
 				<div className="col-xs-12">
-					<div className="row chooseTitle"></div>
+					<div className="row chooseTitle">
+						<img src={mainTitle} alt="mainTitle" id="mainTitle" />
+					</div>
 					<div className="row">
-						<div className="col-xs-9">
+						<div className="col-xs-8">
 							<HeroSelectOption stats={this.props.playerHero} shield={this.props.shield} attack={this.props.attack} image={youber} id="playerHero" />
 						</div>
-						<div className="col-xs-3">
-							<div className="row mainScore">Total Score: {this.props.score}</div>
-							<div className="row mainScore">Spheres: {this.props.spheres}</div>
+						<div className="col-xs-4">
+							<div className="row">
+								<div className="col-xs-5 mainScore scoreRow">Score: {this.props.score}</div>
+								<div className="col-xs-5 mainScore scoreRow">Coins: {this.props.spheres}</div>
+							</div>
 						</div>
 					</div>
 					<div className="row">
@@ -1578,7 +2343,7 @@ class CharacterSelectScreen extends React.Component {
 							<button className="campButton" onClick={this.props.goToEquipmentScreen}>Shop</button>
 						</div>
 					</div>
-					<div className="row">
+					{/*<div className="row">
 						<div className="col-xs-offset-4 col-xs-2">
 							<input type="text" id="saveName"></input>
 						</div>
@@ -1588,7 +2353,7 @@ class CharacterSelectScreen extends React.Component {
 						<div className="col-xs-2">
 							<button className="saveButton" onClick={this.props.getUserData}>Load</button>
 						</div>
-					</div>
+					</div>*/}
 				</div>
 			</div>
 		)
@@ -1599,7 +2364,7 @@ class HeroSelectOption extends React.Component {
 	render() {
 		return (
 			<div className="row">
-				<div className="col-xs-offset-5 col-xs-6">
+				<div className="col-xs-offset-6 col-xs-6">
 					<div className="row heroSelect" id={this.props.id}>
 						<div className="col-xs-7">
 							<div className="row">
@@ -1671,6 +2436,8 @@ class GameScreen extends React.Component {
 		this.endOfTurnDmg = this.endOfTurnDmg.bind(this);
 	}
 	componentDidMount() {
+		const audioEl = document.getElementsByClassName("audio-element")[0];
+	    //audioEl.play();
 		if(level === "fire"){
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + fireBackground + ")";
 		}else if(level === "earth"){
@@ -1679,6 +2446,16 @@ class GameScreen extends React.Component {
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + waterBackground + ")";
 		}else if(level === "wind"){
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + windBackground + ")";
+		}else if(level === "lava"){
+			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + lavaBackground + ")";
+		}else if(level === "storm"){
+			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + stormBackground + ")";
+		}else if(level === "mud"){
+			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + mudBackground + ")";
+		}else if(level === "desert"){
+			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + desertBackground + ")";
+		}else if(level === "tower"){
+			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + towerBackground + ")";
 		}
 		var enemySabs = [];
 		var nullHp1 = null;
@@ -1719,6 +2496,9 @@ class GameScreen extends React.Component {
 		});
 	}
 	chooseCard(card) {
+		this.setState({
+			enemiesAttacking: false
+		});
 		multiplier = 1;
 		if(this.state.recruit === true && card.type === "support"){
 			console.log("going to recruit");
@@ -2052,6 +2832,8 @@ class GameScreen extends React.Component {
 		}
 	}
 	heroDraw() {
+		const audioEl = document.getElementsByClassName("clickSound")[0];
+	    audioEl.play();
 		if( currentEnemy === 4 ){
 			console.log("Select an enemy to attack!");
 		}else{
@@ -2064,12 +2846,13 @@ class GameScreen extends React.Component {
 				this.setState({
 				cardDisplay: true,
 				cards: selectedCards,
-				enemiesAttacking: false
 				});
 			});
 		}
 	}
 	playerAttack(newAttack) {
+		const audioEl = document.getElementsByClassName("clickSound")[0];
+	    audioEl.play();
 		console.log(currentEnemy);
 		if(enemyArray[currentEnemy].hp <= 0){
 		console.log("He's dead, pick another target.");
@@ -2275,6 +3058,7 @@ class GameScreen extends React.Component {
 		console.log(cardArray);
 	}
 	triggerEnemyDeath() {
+		console.log("triggerEnemyDeath");
 		var removeEndDmg = this.state.endOfTurnDmg;
 		for(var i=0; i<enemyArray.length; i++){
 			if(enemyArray[i].hp === 0){
@@ -2288,9 +3072,10 @@ class GameScreen extends React.Component {
 		});
 		setTimeout(() => {
 			this.enemyCleanUp();
-		}, 500);
+		}, 100);
 	}
 	enemyCleanUp() {
+		console.log('enemyCleanup');
 		if(enemyArray[0].hp === 0 && enemyArray[1].hp === 0 && enemyArray[2].hp === 0){
 				console.log("They're all dead. You win!");
 				//this.props.aux();
@@ -2314,6 +3099,7 @@ class GameScreen extends React.Component {
 				enemySab: currentSabArray
 			}, () => {
 				if(this.state.enemiesAttacking === false){
+					console.log("clean up attack");
 					this.enemyAttackAction(0);
 				}else{}
 			});
@@ -2408,7 +3194,7 @@ class GameScreen extends React.Component {
 								playerShield: 0
 							});
 							if(enemyArray[enemyNumber].sabotoge > 0){
-								var enemyCard = new CardCon(enemyArray[enemyNumber].name, 0, -(enemyArray[enemyNumber].attack), "Bad Card", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "sabotogeCard");
+								var enemyCard = enemyArray[enemyNumber].sabCard;
 								if(this.state.decoy === false){
 									cardArray.push(enemyCard);
 								}else{}
@@ -2431,7 +3217,7 @@ class GameScreen extends React.Component {
 						let enemyAttack = enemyArray[enemyNumber].attack;
 						const playerHp = playerHealth - enemyAttack;
 						if(enemyArray[enemyNumber].sabotoge > 0){
-							var enemyCard2 = new CardCon(enemyArray[enemyNumber].name, 0, -(enemyArray[enemyNumber].attack), "Bad Card", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "sabotogeCard");
+							var enemyCard2 = enemyArray[enemyNumber].sabCard;
 							if(this.state.decoy === false){
 								cardArray.push(enemyCard2);
 							}else{}
@@ -2468,14 +3254,13 @@ class GameScreen extends React.Component {
 					for (var i=0; i < x.length; i ++ ){
 					x[i].style.borderColor="black";
 					}
-					console.log(enemyNumber);
-					console.log(enemyArray.length);
 					if(enemyNumber < (enemyArray.length - 1)){
 						enemyNumber ++;
-						console.log(enemyNumber);
+						console.log("normal attack");
 						this.enemyAttackAction(enemyNumber);
 					}else if(enemyNumber === (enemyArray.length - 1)){
 						if(this.state.exhausted === true){
+							console.log("exhausted attack");
 							this.enemyAttackAction(0);
 							this.setState({
 								exhausted: false
@@ -2496,6 +3281,7 @@ class GameScreen extends React.Component {
 		}
 	}
 	endOfTurnDmg(){
+		console.log("end of turn dmg");
 		for(var i=0; i < enemyArray.length; i++){
 			if(enemyArray[i].hp > 0 && this.state.endOfTurnDmg[i] > 0){
 				enemyArray[i].hp = enemyArray[i].hp - this.state.endOfTurnDmg[i];
@@ -2556,6 +3342,15 @@ class GameScreen extends React.Component {
 	render() {
 		return (
 			<div className="col-xs-12" id="gameScreenBackground">
+				<audio className="audio-element">
+		          <source src={background}></source>
+		        </audio>
+		        <audio className="attackSound">
+		          <source src={attackSound}></source>
+		        </audio>
+		        <audio className="perfectHit">
+		          <source src="https://api.coderrocketfuel.com/assets/pomodoro-times-up.mp3"></source>
+		        </audio>
 				<div className="row infoRow">
 					<div className="col-xs-offset-3 col-xs-5" id="stageName">Stage {stageComplete + 1}</div>
 					<div className="col-xs-4">	
@@ -2904,6 +3699,9 @@ class CharacterActions extends React.Component {
 	render() {
 		return (
 			<div className="row actionRow">
+				<audio className="clickSound">
+		          <source src={click}></source>
+		        </audio>
 				<button className="coolButton" onClick={this.props.heroDraw}>Attack</button>
 			</div>
 		);
@@ -2939,7 +3737,7 @@ class CharacterImage extends React.Component {
 	render() {
 		return (
 			<div className="row">
-				<img className="characterImage2 col-xs-offset-1 col-xs-8" id={this.props.id + 'image'} src={this.props.image} alt={this.props.name} />
+				<img className={`characterImage2 col-xs-offset-1 col-xs-8 ${this.props.boss}`} id={this.props.id + 'image'} src={this.props.image} alt={this.props.name} />
 			</div>
 		);
 	}
@@ -3002,11 +3800,21 @@ class Enemy extends React.Component {
 	}
 	handleMouseLeave(){
 	    this.setState({
-	      hover: false
+	      hover: false,
+	      boss: null
 	    });
 	}
 	componentDidMount(){
 		this.props.updateEnemySab();
+		var newId;
+		if(stageComplete === 3){
+			newId = "boss"
+		}else{
+			newId = " "
+		}
+		this.setState({
+			boss: newId
+		});
 	}
 	selectEnemyToAttack(id) {
 		const x = document.getElementsByClassName("characterImage2");
@@ -3031,7 +3839,7 @@ class Enemy extends React.Component {
 				</div>
 				<div className="row">
 					<div className="col-xs-offset-2 col-xs-8">
-						<CharacterImage image={this.props.image} id={this.props.id} />
+						<CharacterImage image={this.props.image} boss={this.state.boss} id={this.props.id} />
 						{this.state.hover ? <EnemySabCard sabCard={this.props.sabCard}/> : null }
 					</div>
 				</div>
@@ -3080,31 +3888,35 @@ class AuxilaryScreen extends React.Component {
 	this.listGemRewards = this.listGemRewards.bind(this);
 	}
 	componentDidMount(){
-		levelsBeaten.push(level);
-		cardArray = cardArray2;
-		this.levelRewards();
-		if(level === "earth"){
-			earthStage ++;
-		}else if(level === "fire"){
-			fireStage ++;
-		}else if(level === "water"){
-			waterStage ++;
-		}else if(level === "wind"){
-			windStage ++;
+		if(level === "tower"){
+			this.props.goToEndingScreen();
+		}else{
+			levelsBeaten.push(level);
+			cardArray = cardArray2;
+			this.levelRewards();
+			if(level === "earth"){
+				earthStage ++;
+			}else if(level === "fire"){
+				fireStage ++;
+			}else if(level === "water"){
+				waterStage ++;
+			}else if(level === "wind"){
+				windStage ++;
+			}
+			level ++;
+			cardArray.sort(function(a, b){
+			    if(a.alignment < b.alignment) { return -1; }
+			    if(a.alignment > b.alignment) { return 1; }
+			    return 0;
+			});
+			var enemyCardNum = 0;
+			for(var i=0; i < cardArray.length; i++){
+				if(cardArray[i].alignment === "enemy"){
+					enemyCardNum ++;
+				}else{}
+			}
+			cardArray.splice(0, enemyCardNum);
 		}
-		level ++;
-		cardArray.sort(function(a, b){
-		    if(a.alignment < b.alignment) { return -1; }
-		    if(a.alignment > b.alignment) { return 1; }
-		    return 0;
-		});
-		var enemyCardNum = 0;
-		for(var i=0; i < cardArray.length; i++){
-			if(cardArray[i].alignment === "enemy"){
-				enemyCardNum ++;
-			}else{}
-		}
-		cardArray.splice(0, enemyCardNum);
 	}
 	levelRewards(){
 		var levelCard = [];
@@ -3196,7 +4008,7 @@ class AuxilaryScreen extends React.Component {
 				<div className="row" id="rewardsMessage">Congratulations! Claim your rewards!</div>
 				<div className="row" id="rewardsDescription">Score: {this.props.score}</div>
 				<div className="row">
-					<div className="col-xs-offset-4 col-xs-4" id="cardRewardRow">
+					<div className="col-xs-offset-5 col-xs-4" id="cardRewardRow">
 						{this.listCardRewards()}
 					</div>
 				</div>
@@ -3320,12 +4132,8 @@ class CollectionScreen extends React.Component {
 		return (
 			<div className="col-xs-12">
 				<div className="row">
-					<div className="col-xs-2">
-						<button className="coolButton" onClick={this.props.checkDeckContents}>Back</button>
-					</div>
-					<div className="col-xs-2">
-						<button className="coolButton" onClick={this.props.goToCraftingScreen}>Crafting</button>
-					</div>
+					<button className="col-xs-1 coolButton goBackButton" onClick={this.props.checkDeckContents}>Back</button>
+					<button className="col-xs-1 coolButton" onClick={this.props.goToCraftingScreen}>Crafting</button>
 				</div>
 				<div className="row">
 					<div className="col-xs-10 deckTitle">Collection</div>
@@ -3521,14 +4329,14 @@ class CraftingScreen extends React.Component {
 			<div className="row">
 				<div className="col-xs-12">
 					<div className="row">
-						<button className="col-xs-2 coolButton" onClick={this.props.showCollection}>Back</button>
+						<button className="col-xs-1 coolButton goBackButton" onClick={this.props.showCollection}>Back</button>
 					</div>
 					<div className="row">
-						<div className="col-xs-3">
+						<div className="col-xs-offset-1 col-xs-3">
 							<div className="row createTitle">Card Frames</div>
 							{this.listCardFrames()}
 						</div>
-						<div className="col-xs-offset-1 col-xs-5" id="craftingArea">
+						<div className="col-xs-5" id="craftingArea">
 							<div className="row">
 								<FrameTarget className={this.state.card.alignment} faction={this.state.element[1]} name={this.state.card.name} text={this.state.card.text} power={this.state.card.power} element={this.state.element[0]} />
 							</div>
@@ -3539,7 +4347,30 @@ class CraftingScreen extends React.Component {
 						</div>
 					</div>
 					<div className="row craftingButtonRow">
-						<button className="col-xs-3 coolButton" onClick={this.handleCraftClick}>Craft</button><button className="col-xs-3 coolButton" onClick={this.handleResetClick}>Reset</button>
+						<button className="col-xs-6 coolButton" onClick={this.handleCraftClick}>Craft</button><button className="col-xs-6 coolButton" onClick={this.handleResetClick}>Reset</button>
+					</div>
+				</div>
+			</div>
+		)
+	}
+}
+
+class EndingScreen extends React.Component {
+	render() {
+		return (
+			<div className="row">
+				<div className="col-xs-12">
+					<div className="row endingText">
+						You Have Saved Your Family
+					</div>
+					<div className="row endingText">
+						Final Score: {this.props.score}
+					</div>
+					<div className="row" id="youberRow">
+						<img  id="endingYouber0" src={youber} alt="youber" />
+						<img  id="endingYouber1" src={youber} alt="youber" />
+						<img  id="endingYouber2" src={youber} alt="youber" />
+						<img  id="endingYouber3" src={youber} alt="youber" />
 					</div>
 				</div>
 			</div>

@@ -1,5 +1,33 @@
 body {
-	background: #08b6ef;
+	background: #232323;
+}
+
+.endingText {
+	color: white;
+	font-family: 'Metamorphous', cursive;
+	font-size: 36px;
+	text-align: center;
+	margin-top: 100px;
+}
+
+#youberRow {
+	text-align: center;
+}
+
+#endingYouber0{
+	height: 125px;
+}
+
+#endingYouber1{
+	height: 90px;
+}
+
+#endingYouber2{
+	height: 100px;
+}
+
+#endingYouber3{
+	height: 110px;
 }
 
 .saveButton {
@@ -57,15 +85,35 @@ body {
 #shopPoints {
 	font-size: 20px;
 	margin-bottom: 15px;
+	color: white;
 }
 
 .craftingButtonRow {
 	margin-left: 33%;
+	width: 401px;
+}
+
+.goBackButton {
+	margin-left: 25px;
+	margin-bottom: 15px;
+}
+
+.scoreRow {
+	background: white;
+	border-style: solid;
+	border-color: #a70e0e;
+	border-width: 3px;
+	border-radius: 15px;
+}
+
+#mainTitle {
+	height: 250px;
+    width: 400px;
 }
 
 .mainScore {
 	font-family: 'Metamorphous', cursive;
-	font-size: 24px;
+	font-size: 20px;
 }
 
 .schemeCounter {
@@ -75,7 +123,7 @@ body {
 }
 
 #levelSelectScreen {
-	background-image: url('assets/levelScreen.png');
+	background-image: url('assets/backgrounds/levelScreen.png');
 	background-repeat: no-repeat; 
 	margin-left: 9%;
 	margin-right: 9%;
@@ -173,6 +221,7 @@ body {
 	border-color: black;
 	border-width: 3px;
 	margin-bottom: 15px;
+	color: white;
 }
 
 .packOption:hover {
@@ -349,12 +398,12 @@ body {
 }
 
 #root {
-	background: #08b6ef;
+	background: #232323;
 	padding: 0px;
 }
 
 #gameScreenBackground {
-	background-image: url('assets/backgroundTree.png'), url('assets/grassBackground.png');
+	background-image: url('assets/backgrounds/backgroundTree.png'), url('assets/backgrounds/grassBackground.png');
 	background-repeat: no-repeat;
 }
 
@@ -435,6 +484,7 @@ body {
 	text-align: center;
 	font-size: 24px;
 	font-family: 'Metamorphous', cursive;
+	color: white;
 }
 
 .createScale {
@@ -487,9 +537,9 @@ input {
 	padding-top: 25px;
 	padding-bottom: 25px;
 	background: #b35b23;
-	border-color: black;
+	border-color: #a70e0e;
 	border-width: 6px;
-	border-style: solid;
+	border-style: ridge;
 	border-radius: 15px;
 }
 
@@ -553,6 +603,7 @@ input {
 	font-size: 35px;
 	text-align: center;
 	font-family: 'Metamorphous', cursive;
+	color: white;
 }
 
 .statIcon {
@@ -573,6 +624,7 @@ input {
 	font-size: 35px;
 	text-align: center;
 	font-family: 'Metamorphous', cursive;
+	color: white;
 }
 
 .hpSpan {
@@ -668,27 +720,27 @@ input {
 }
 
 .neutral {
-	background-image: url('assets/neutralCard2.png');
-	border-color: #1d9a07;
+	background-image: url('assets/cards/neutralCard3.png');
+	border-color: grey;
 }
 
 .fire {
-	background-image: url('assets/fireCard.png');
+	background-image: url('assets/cards/fireCard.png');
 	border-color: red;
 }
 
 .earth {
-	background-image: url('assets/earthCard.png');
+	background-image: url('assets/cards/earthCard.png');
 	border-color: tan;
 }
 
 .water {
-	background-image: url('assets/waterCard.png');
+	background-image: url('assets/cards/waterCard.png');
 	border-color: darkblue;
 }
 
 .wind {
-	background-image: url('assets/windCard.png');
+	background-image: url('assets/cards/windCard.png');
 	border-color: lightblue;
 }
 
@@ -917,6 +969,11 @@ input {
 	width: 130px;
 }
 
+.boss {
+	height: 250px;
+	width: 250px;
+}
+
 .characterItem {
 	font-size: 24px;
 	text-align: center;
@@ -1076,6 +1133,7 @@ input {
 #rewardsMessage {
 	text-align: center;
 	font-size: 36px;
+	color: white;
 }
 
 #rewardsDescription {
@@ -1087,6 +1145,7 @@ input {
 	border-color: black;
 	border-width: 3px;
 	font-family: 'Metamorphous', cursive;
+	color: white;
 }
 
 #cardRewardRow {
@@ -1096,6 +1155,7 @@ input {
 #gemRewardRow {
 	margin-top: 25px;
 	margin-bottom: 50px;
+	text-align: center;
 }
 
 .coolButton {
