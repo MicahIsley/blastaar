@@ -48,10 +48,17 @@ class CollectionCard2 extends React.Component {
     var influenceCost = false;
     var stormlightCost = false;
     var sphereCard = false;
+    var cardStyle = "neutral";
+    var schemeReq = 0;
+    var schemePower = 0;
     if(charCard === "character" || charCard === "support"){
       influenceCost = true;
+      cardStyle = this.props.faction + "Support";
+      schemeReq = parseInt(this.props.ability.split(/[ ,]+/)[2]);
+      schemePower = this.props.ability.split(/[ ,]+/)[3];
     }else if(charCard === "stormlight"){
       stormlightCost = true;
+      cardStyle = this.props.faction;
     }else if(charCard === "sphere"){
       sphereCard = true;
     }
@@ -59,7 +66,7 @@ class CollectionCard2 extends React.Component {
     const opacity = isDragging ? 0 : 1;
 
     return connectDragSource(
-      <div className={`row ${this.props.className} ${this.props.faction}`} style={{ opacity }} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
+      <div className={`row ${this.props.className} ${cardStyle}`} style={{ opacity }} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
         <div className="col-xs-12">
           <div className="row">
             <div className="col-xs-3 deckCardPower">{this.props.power}</div>

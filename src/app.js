@@ -132,6 +132,19 @@ import walkUp from './assets/walkUp.png';
 import background from './assets/audio.m4a';
 import click from './assets/click.mp3';
 import attackSound from './assets/attackSound.mp3';
+import meter0 from './assets/spookyMeter/meter0.png';
+import meter1 from './assets/spookyMeter/meter1.png';
+import meter2 from './assets/spookyMeter/meter2.png';
+import meter3 from './assets/spookyMeter/meter3.png';
+import meter4 from './assets/spookyMeter/meter4.png';
+import meter5 from './assets/spookyMeter/meter5.png';
+import meter6 from './assets/spookyMeter/meter6.png';
+import meter7 from './assets/spookyMeter/meter7.png';
+import meter8 from './assets/spookyMeter/meter8.png';
+import meter9 from './assets/spookyMeter/meter9.png';
+import meter10 from './assets/spookyMeter/meter10.png';
+import meter11 from './assets/spookyMeter/meter11.png';
+import meter12 from './assets/spookyMeter/meter12.png';
 import './index.css';
 
 var player;
@@ -1497,7 +1510,7 @@ const parshendiCarapace = new ItemCon("Parshendi Carapace", 2, "armor", 80, true
 const shardplate = new ItemCon("Shardplate", 3, "armor", 150, true, true);
 
 var crafting1 = new CardCon(" ", 0, 0, " ", "hero", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 0, 1, 0);
-var fire1 = new CardCon("Fireball", 0, 5, "Simple, but effective", "hero", 0, "", "", true, "stormlight", placeholderImg, fire, "fire", 1, 1, 0);
+var fire1 = new CardCon("Fireball", 0, 5, "Simple, but effective", "hero", 0, "", "", true, "stormlight", placeholderImg, fire, "fire", 1, 2, 2);
 var fire2 = new CardCon("Fire Lash", 0, 6, "Weaken 1", "hero", 0, "weaken 1", "", false, "stormlight", placeholderImg, fire, "fire", 2, 1, 0);
 var fire3 = new CardCon("Power of Goordu", 0, 0, "Gain 1 Magic Power and Next Spell +5", "hero", 0, "str 1", "next 5", false, "stormlight", placeholderImg, fire, "fire", 3, 1, 0);
 var fire4 = new CardCon("Burn Bright", 0, 1, "Multiply", "hero", 0, "multiply", "", false, "stormlight", placeholderImg, fire, "fire", 4, 1, 0);
@@ -1512,7 +1525,7 @@ var fire12 = new CardCon("Fire Breath", 10, 0, "", 0, "", "", false, "stormlight
 var fire13 = new CardCon("Reckless Flare", 0, 5, "Double this attack. You're exhausted", "hero", 0, "multiply", "exhausted", false, "stormlight", placeholderImg, fire, "fire", 13, 1, 0);
 var fire14 = new CardCon("Fuel", 0, 1, "Gain 4 energy", "hero", 0, "energy 3", "", false, "stormlight", placeholderImg, fire, "fire", 14, 1, 0);
 var fire15 = new CardCon("Suffocating Smoke", 0, 3, "Weaken 2", "hero", 0, "weaken 2", "", false, "stormlight", placeholderImg, fire, "fire", 15, 1, 0);
-var fire16 = new CardCon("Extra Sticks", 2, 0, "Fire cards get +1 power", "hero", 0, "boost fire 1", "", false, "support", placeholderImg, fire, "fire", 16, 1, 0);
+var fire16 = new CardCon("Extra Sticks", 2, 0, "Fire cards get +1 power", "hero", 0, "boost fire 1", "", false, "support", flameCrawler, fire, "fire", 16, 1, 1);
 var fire17 = new CardCon("Hot Hands", 0, 1, "Shuffle 3 Roasts into your deck", "hero", 0, "addCard 1 3", "", false, "stormlight", placeholderImg, fire, "fire", 17, 1, 0);
 var fire18 = new CardCon("Encirle", 1, 0, "Fire Scheme 2/6", "hero", 0, "scheme fire 2", 6, false, "support", placeholderImg, fire, "fire", 18, 1, 0);
 var fire19 = new CardCon("Cooked Alive", 3, 0, "Fire Scheme 3/Purge", "hero", 0, "scheme fire 3 purge", 2, false, "support", placeholderImg, fire, "fire", 19, 1, 0);
@@ -1577,10 +1590,10 @@ var water17 = new CardCon("Draw Deep", 0, 0, "Shuffle 3 Drain's into your deck",
 var water18 = new CardCon("Rising Tide", 1, 0, "Water Scheme 4, 10", "hero", 0, "scheme water 2 10", 1, false, "support", placeholderImg, water, "water", 18, 1, 0);
 var water19 = new CardCon("Doom Puddles", 2, 0, "Water Scheme 2/Stun", "hero", 0, "scheme water 2 stun", 1, false, "support", placeholderImg, water, "water", 19, 1, 0);
 var water20 = new CardCon("Envelop", 0, 6, "Reclaim 3", "hero", 0, "reclaim 3", "", false, "stormlight", placeholderImg, water, "water", 20, 1, 0);
-var basic1 = new CardCon("Small Rock", 0, 2, "It's pretty small", "hero", 1, "", "", true, "stormlight", coralThump, placeholderImg, "neutral", 1, 2, 2);
+var basic1 = new CardCon("Small Rock", 0, 2, "It's pretty small", "hero", 1, "", "", true, "stormlight", coralThump, placeholderImg, "neutral", 1, 2, 0);
 var basic2 = new CardCon("Big Rock", 0, 4, "It's pretty big", "hero", 1, "", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 2, 2, 2);
 var basic3 = new CardCon("Biggest Blast", 0, 6, "Whaaam!", "hero", 2, "", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 3, 1, 0); 
-var basic4 = new CardCon("Thick Skin", 0, 2, "Shield 2", "hero", 1, "shield 2", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 4, 1, 1);
+var basic4 = new CardCon("Thick Skin", 0, 2, "Shield 2", "hero", 1, "shield 2", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 4, 1, 0);
 var basic5 = new CardCon("Protective Bubble", 0, 0, "Shield 4", "hero", 1, "shield 4", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 5, 1, 0);
 var basic6 = new CardCon("Short Rest", 0, 2, "Heal 3", "hero", 1, "heal 3", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 6, 1, 1);
 var basic7 = new CardCon("Focus", 0, 1,"Next Spell +3", "hero", 1, "next 3", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 7, 1, 1);
@@ -1667,16 +1680,16 @@ var enemyNumber = 0;
 var cardAbilityNum = 1;
 var itemArray = [rustySword, battleSpear, shardblade, leatherPads, parshendiCarapace, shardplate];
 var enemyArray = [];
-var cardArray = [basic1, basic2, basic18];
+var cardArray = [basic1, basic2, basic18, fire1, fire16];
 var cardArray2 = [];
 var recruitArray = [];
-var collectionArray = [basic1, basic2, basic18];
+var collectionArray = [basic1, basic2, basic18, fire1, fire16];
 var cardFrames = [];
 var elementOrbs = [];
 var multiplier = 1;
 var allies = [];
 var levelsBeaten = ["fire", "water", "wind", "earth", "fire"];
-var keyWordList = [{keyword: "Shield", description: "Shield blocks enemy damage and sabotoges."}, {keyword: "Purge", description: "Removes an enemy sabotoge from your deck."}, {keyword: "Weaken", description: "Reduces an enemies strength"}, {keyword: "Exhausted", description: "Enemies attack twice in a row"}, {keyword: "Stun", description: "Stunned enemies miss their next attack"}, {keyword: "Poison", description: "Damage delt at the end of the turn"}, {keyword: "Confuse", description: "Confused enemies attack a random enemy"}, {keyword: "Grow", description: "The card gains power each time it is used"}, {keyword: "Scheme", description: "Schemes are played to one of your support areas and then are charged up over time providing an effect once completed"}, {keyword: "Heal", description: "Restore health to your character"}, {keyword: "Reclaim", description: "Increase the power of all enemy sabotoges in your deck"}, {keyword: "Int", description: "How many cards your draw when attacking"}, {keyword: "Def", description: "The number of shields you have at the start of every turn."}, {keyword: "Str", description: "Added damage to each attack"}, {keyword: "Rummage", description: "Choose a card to be replaced by a random card from your deck."}, {keyword: "Transform", description: "Change your stats into another creatures. Once your hp falls to 0 you regain your previous stats."}];
+var keyWordList = [{keyword: "Shield", description: "Shield blocks enemy damage and sabotoges."}, {keyword: "Purge", description: "Removes an enemy sabotoge from your deck."}, {keyword: "Weaken", description: "Reduces an enemies strength"}, {keyword: "Exhausted", description: "Enemies attack twice in a row"}, {keyword: "Stun", description: "Stunned enemies miss their next attack"}, {keyword: "Poison", description: "Damage delt at the end of the turn"}, {keyword: "Confuse", description: "Confused enemies attack a random enemy"}, {keyword: "Grow", description: "The card gains power each time it is used"}, {keyword: "Scheme", description: "Schemes are played to one of your support areas and then are charged up over time providing an effect once completed"}, {keyword: "Heal", description: "Restore health to your character"}, {keyword: "Reclaim", description: "Increase the power of all enemy sabotoges in your deck"}, {keyword: "Int", description: "How many cards your draw when attacking"}, {keyword: "Def", description: "The number of shields you have at the start of every turn."}, {keyword: "Str", description: "Added damage to each attack"}, {keyword: "Rummage", description: "Choose a card to be replaced by a random card from your deck."}, {keyword: "Transform", description: "Change your stats into another creatures. Once your hp falls to 0 you regain your previous stats."}, {keyword: "multiply", description: "Double the damage you would deal this turn."}, {keyword: "Decoy", description: "Avoid all sabotoges this turn."}, {keyword: "Energy", description: "Gain energy to use for other purposes."}, {keyword: "Next", description: "Add power to the next card you choose."}, {keyword: "Add Card", description: "Shuffle a number of new cards into your deck."}, {keyword: "Remove", description: "The card gets removed from your deck after you select it"}, {keyword: "Extra", description: "Attack again after this one."}, {keyword: "Deplete", description: "Remove a sabotoge from the selected enemy."}, {keyword: "Boost", description: "All card of the selected type gain extra power."}, {keyword: "Spook", description: "The enemy will recieve 1.5x damage while it is spooked."}, {keyword: "Transform", description: "Turn an emeny sabotoge in your deck into another card."}, {keyword: "All", description: "Deal damage to all enemies."}];
 
 function shuffle(a) {
     for (let i = a.length; i; i--) {
@@ -1710,7 +1723,7 @@ class GameScreenHub extends React.Component {
 			stormCounter: 100,
 			enemyArray: [enemyArray[0], enemyArray[1], enemyArray[2]],
 			sphereCount: 0,
-			influence: 0,
+			influence: 10,
 			itemArray: itemArray,
 			developers: []
 		}
@@ -1983,7 +1996,7 @@ class GameScreenHub extends React.Component {
 			}else if(stageComplete === 3 && i === 0){
 				var newEnemy = new EnemyCon("", 0, 0, 0, 0, null, null, null);
 				enemyArray.push(newEnemy);
-				document.getElementById("playArea").style.height = "75px";
+				document.getElementById("playArea").style.height = "0px";
 			}else{
 				var randEnemyNum = Math.floor(Math.random() * 501);
 				if(level === 0){
@@ -2119,14 +2132,14 @@ class GameScreenHub extends React.Component {
 	render() {
 		return (
 			<div className="col-xs-12">
-				<div className="row">
+				{this.state.characterSelectScreen ? <div className="row">
 					<div className="col-xs-offset-11 col-xs-1 infoButton" id="infoButton" onClick={this.toggleInfoScreen}>?</div>
-				</div>
+				</div> : null }
 			{this.state.infoScreen ? <InfoScreen toggleInfoScreen={this.toggleInfoScreen} /> : null }
 			{this.state.createScreen ? <CreateCharacter createNewCharacter={this.createNewCharacter} /> : null }
 			{this.state.characterSelectScreen ? <CharacterSelectScreen getUserData={this.getUserData} writeUserData={this.writeUserData} goToLevelScreen={this.goToLevelScreen} score={this.state.score} createNewCharacter={this.createNewCharacter} influence={this.state.influence} shield={this.state.heroShield} spheres={this.state.sphereCount} attack={this.state.attack} playerHero={playerHero} switchEnemyArray={this.switchEnemyArray} goToEquipmentScreen={this.goToEquipmentScreen} heroHp={this.state.heroHp} showCollection={this.showCollection} changeHero={this.changeHero} goToGameScreen={this.goToGameScreen} /> : null }
 			{this.state.levelSelectScreen ? <LevelSelectScreen goToGameScreen={this.goToGameScreen} switchEnemyArray={this.switchEnemyArray} /> : null }
-			{this.state.gameScreen ? <GameScreen characterScreen={this.goToCharacterScreen} changeHeroShield={this.changeHeroShield} changeHeroAttack={this.changeHeroAttack} changeInfluence={this.changeInfluence} influence={this.state.influence} int={this.state.heroSelect.intelligence} shield={this.state.heroShield} switchEnemyArray={this.switchEnemyArray} increaseStormCounter={this.increaseStormCounter} decreaseStormCounter={this.decreaseStormCounter} stormCounter={this.state.stormCounter} changeHeroHp={this.changeHeroHp} heroHp={this.state.heroHp} score={this.state.score} setSpheres={this.setSphereCount} changeScore={this.changeScore} aux={this.auxilaryScreen} heroSelect={this.state.heroSelect} attack={this.state.attack} equipment={this.state.equipment} enemyArray={this.state.enemyArray} /> : null }
+			{this.state.gameScreen ? <GameScreen toggleInfoScreen={this.toggleInfoScreen} characterScreen={this.goToCharacterScreen} changeHeroShield={this.changeHeroShield} changeHeroAttack={this.changeHeroAttack} changeInfluence={this.changeInfluence} influence={this.state.influence} int={this.state.heroSelect.intelligence} shield={this.state.heroShield} switchEnemyArray={this.switchEnemyArray} increaseStormCounter={this.increaseStormCounter} decreaseStormCounter={this.decreaseStormCounter} stormCounter={this.state.stormCounter} changeHeroHp={this.changeHeroHp} heroHp={this.state.heroHp} score={this.state.score} setSpheres={this.setSphereCount} changeScore={this.changeScore} aux={this.auxilaryScreen} heroSelect={this.state.heroSelect} attack={this.state.attack} equipment={this.state.equipment} enemyArray={this.state.enemyArray} /> : null }
 			{this.state.auxilaryScreen ? <AuxilaryScreen goToEndingScreen={this.goToEndingScreen} changeInfluence={this.changeInfluence} influence={this.state.influence} setSphereCount={this.setSphereCount} score={this.state.score} resetStormCounter={this.resetStormCounter} goToCharacterScreen={this.goToCharacterScreen} /> : null }
 			{this.state.collectionScreen ? <CollectionScreen goToCraftingScreen={this.goToCraftingScreen} checkDeckContents={this.checkDeckContents} /> : null }
 			{this.state.equipmentScreen ? <EquipmentScreen changeScore={this.changeScore} score={this.state.score} itemArray={this.state.itemArray} heroShield={this.state.heroShield} spheres={this.state.sphereCount} setSphereCount={this.setSphereCount} playerHero={playerHero} chooseItemAction={this.chooseItemAction} attack={this.state.attack} goToCharacterScreen={this.goToCharacterScreen} /> : null }
@@ -2158,7 +2171,7 @@ class InfoScreen extends React.Component {
 			<div className="row keyword" key={index} onClick={() => { this.keywordClick(keyword.keyword)}}>{keyword.keyword}</div>
 		);
 		return (
-			<div>{listKeywords}</div>
+			<div id="keywordCol">{listKeywords}</div>
 		)
 	}
 	render() {
@@ -2386,10 +2399,7 @@ class CharacterSelectScreen extends React.Component {
 						<img src={mainTitle} alt="mainTitle" id="mainTitle" />
 					</div>
 					<div className="row">
-						<div className="col-xs-8">
-							<HeroSelectOption stats={this.props.playerHero} shield={this.props.shield} attack={this.props.attack} image={youber} id="playerHero" />
-						</div>
-						<div className="col-xs-4">
+						<div className="col-xs-offset-8 col-xs-4">
 							<div className="row">
 								<div className="col-xs-5 mainScore scoreRow">Score: {this.props.score}</div>
 								<div className="col-xs-5 mainScore scoreRow">Coins: {this.props.spheres}</div>
@@ -2478,7 +2488,8 @@ class GameScreen extends React.Component {
 			extraAttacks: 0,
 			enemiesAttacking: false,
 			scheming: false,
-			schemePower: 0
+			schemePower: 0,
+			boostArray: []
 
 		}
 		this.playerAttack = this.playerAttack.bind(this);
@@ -2668,15 +2679,19 @@ class GameScreen extends React.Component {
 			x[i].classList.remove("influenceGlow");
 		}
 		console.log(this.state.cards);
-		if(card.type === "support"){
+		if(card.type === "support" && card.cost <= this.props.influence){
 			if(this.state.supportSlot1 === null){
 				this.setState({
 					supportSlot1: card
 				});
+				var newInfluence = this.props.influence - card.cost;
+				this.props.changeInfluence(newInfluence);
 			}else if(this.state.supportSlot2 === null){
 				this.setState({
 					supportSlot2: card
 				});
+				var newInfluence = this.props.influence - card.cost;
+				this.props.changeInfluence(newInfluence);
 			}else{
 				console.log("Already have 2 supports");
 			}
@@ -2696,22 +2711,37 @@ class GameScreen extends React.Component {
 	checkSupportAbility(card){
 		var sup1 = this.state.supportSlot1;
 		var sup2 = this.state.supportSlot2;
-		if(sup1 === null){
+		var supArray = [sup1, sup2];
+		if(sup1 === null && sup1 === null){
 			this.checkCardAbility(card);
 		}else{
-			if(sup1.ability1.indexOf("boost") >= 0){
-				var boostType = sup1.ability1.split(/[ ,]+/)[1];
-				var boostNum = parseInt(sup1.ability1.split(/[ ,]+/)[2]);
-				this.checkCardAbility(card, boostType, boostNum);
-			}else{
-				this.checkCardAbility(card, boostType, boostNum);
+			var boostArray = [];
+			console.log(supArray);
+			for(var i=0; i<supArray.length; i++){
+				if(supArray[i] === null){
+				}else{
+					if(supArray[i].ability1.indexOf("boost") >= 0){
+						var boostType = supArray[i].ability1.split(/[ ,]+/)[1];
+						var boostNum = parseInt(supArray[i].ability1.split(/[ ,]+/)[2]);
+						var boostObject = {type: boostType, num: boostNum};
+						boostArray.push(boostObject);
+					}else{}
+				}
 			}
+			this.setState({
+				boostArray: boostArray
+			}, () =>{
+				this.checkCardAbility(card);
+			})
 		}
 	}
-	checkCardAbility(card, boost, num){
+	checkCardAbility(card){
 		var supportMod = 0;
-		if(card.faction === boost){
-			supportMod = num;
+		var boostArray = this.state.boostArray;
+		for(var i=0; i<boostArray.length; i++){
+			if(card.faction === boostArray[i].type){
+				supportMod = supportMod + boostArray[i].num;
+			}else{}
 		}
 		var cardPower = card.power;
 		var newAttack = (this.props.attack + cardPower + this.state.nextSpellBonus + supportMod) * multiplier;
@@ -2891,7 +2921,7 @@ class GameScreen extends React.Component {
 				cardAbilityNum = 1;
 			}else{
 				cardAbilityNum ++;
-				this.checkCardAbility(card, boost, num);
+				this.checkCardAbility(card);
 			}
 		}
 	}
@@ -3418,8 +3448,11 @@ class GameScreen extends React.Component {
 		        </audio>
 				<div className="row infoRow">
 					<div className="col-xs-offset-3 col-xs-5" id="stageName">Stage {stageComplete + 1}</div>
-					<div className="col-xs-4">	
+					<div className="col-xs-3">	
 						<ScoreDisplay score={this.props.score} />
+					</div>
+					<div className="col-xs-1">
+						<div className="infoButton" id="infoButton" onClick={this.props.toggleInfoScreen}>?</div>
 					</div>
 				</div>
 				<div className="row" id="topRow">
@@ -3438,11 +3471,11 @@ class GameScreen extends React.Component {
 						<div className="row" id="playArea">
 							<div className="col-xs-12">
 								{this.state.cardDisplay ? <CardDisplayBox chooseCard={this.chooseCard} cards={this.state.cards} /> : null }
-								<div className="row">
-									<div className="col-xs-offset-4 col-xs-4">
-										<AllyDisplay />
-									</div>
-								</div>
+							</div>
+						</div>
+						<div className="row">
+							<div className="col-xs-offset-4 col-xs-4">
+								<SpookyMeter />
 							</div>
 						</div>
 						<div className="row" id="characterSide tabIndex" onKeyDown={this.handleKeyPress}>
@@ -3457,33 +3490,14 @@ class GameScreen extends React.Component {
 	}
 }
 
-class AllyDisplay extends React.Component {
-	listAllies () {
-		const numberOfAllies = allies;
-		const listAllies = numberOfAllies.map((ally, index) =>
-			<Ally key={index} image={ally.image} />
-		);
-		return (
-			<div className="row">{listAllies}</div>
-		)
-	}
+class SpookyMeter extends React.Component {
 	render() {
 		return (
 			<div className="col-xs-12"> 
-				<div className="row allyRow">
-					{this.listAllies()}
+				<div className="row spookyMeterRow">
+					<img className="spookyMeter" src={meter6} alt="spookyMeter" />
 				</div>
 			</div>
-		)
-	}
-}
-
-class Ally extends React.Component {
-	render() {
-		return (
-			<div className="col-xs-3">
-				<img className="allyImage" src={this.props.image} />
-			</div> 
 		)
 	}
 }
@@ -3501,7 +3515,7 @@ class StormlightCounter extends React.Component {
 class InfluenceCounter extends React.Component {
 	render() {
 		return (
-			<div className="row">
+			<div className="col-xs-12 influenceOrbRow">
 				<div id="influenceOrb" onClick={this.props.toggle}>{this.props.influence}</div>
 			</div>
 		)
@@ -3547,17 +3561,24 @@ class Card extends React.Component {
 		var stormlightCost = false;
 		var sphereCard = false;
 		var normal = false;
+		var cardStyle = "neutral";
+	    var schemeReq = 0;
+	    var schemePower = 0;
 		if(charCard === "character" || charCard === "support"){
 			influenceCost = true;
+			cardStyle = this.props.faction + "Support";
+		    schemeReq = parseInt(this.props.ability.split(/[ ,]+/)[2]);
+		    schemePower = this.props.ability.split(/[ ,]+/)[3];
 		}else if(charCard === "stormlight"){
 			stormlightCost = true;
+			cardStyle = this.props.faction;
 		}else if(charCard === "sphere"){
     	  sphereCard = true;
     	}else{
     		normal = true;
     	}
 		return (
-			<div className={`col-xs-12 ${this.props.className} ${this.props.faction}`} id={`${this.props.id}card`} onClick={() => this.props.chooseCard(this.props.card)}>
+			<div className={`col-xs-12 ${this.props.className} ${cardStyle}`} id={`${this.props.id}card`} onClick={() => this.props.chooseCard(this.props.card)}>
 				{ sphereCard === false &&
 		          <div className="row">
 		            <div className="col-xs-offset-4 col-xs-4 cardPower">{this.props.power}</div>
@@ -3574,8 +3595,16 @@ class Card extends React.Component {
 		        }
 		         <div className="row bottomRow">
 					{ influenceCost === true &&
-		            	<div className="col-xs-4 influenceCost">{this.props.cost}</div>
-		        	}
+			          <div>
+			            <div className="row supportCardText">
+			              <div className="col-xs-6 leftSideSupport">{schemeReq}</div>
+			              <div className="col-xs-6 rightSideSupport">{schemePower}</div>
+			            </div>
+			            <div className="row bottomRow">
+			            	<div className="col-xs-4 influenceCost">{this.props.cost}</div>
+			            </div>
+			          </div>
+			        }
 		        	{ stormlightCost === true &&
 		            	<div className="col-xs-4"></div>
 		        	}
@@ -3657,25 +3686,25 @@ class SupportSlot extends React.Component {
 			actionButton = true;
 		}else{}
 		return (
-			<div className="row supportSlot">	
-				<div className={`col-xs-12 ${cardStyle}`} id={this.props.supSlot}>
-					<div className="row supportName">
-						{this.props.card.name}
-					</div>
+			<div className="row supportSlot">
+				<div className="col-xs-offset-1 col-xs-5">
+					<img className="supportSlotImage" src={this.props.card.image} alt="supportImage" />
+				</div>	
+				<div className={`col-xs-6 ${cardStyle}`} id={this.props.supSlot}>
 					<div className="row supportText">
 						{this.props.card.text}
 					</div>
 					{ actionButton === true &&
-						<div className="row">
-							<div className="col-xs-12">
-								<div className="row schemeCounter">
-									{this.props.schemePower}/{parseInt(this.props.card.ability1.split(/[ ,]+/)[2])}
-								</div>
-								<div className="row">
-									<div className="col-xs-offset-4 col-xs-4 coolButton supportActionButton" onClick={() => this.props.supportAction(this.props.card, this.props.supSlot)}>Action</div>
-								</div>
+					<div className="row">
+						<div className="col-xs-6">
+							<div className="row schemeCounter">
+								{this.props.schemePower}/{parseInt(this.props.card.ability1.split(/[ ,]+/)[2])}
+							</div>
+							<div className="row">
+								<div className="col-xs-offset-2 col-xs-6 coolButton supportActionButton" onClick={() => this.props.supportAction(this.props.card, this.props.supSlot)}>Action</div>
 							</div>
 						</div>
+					</div>
 					}
 				</div>
 			</div>
@@ -3710,7 +3739,7 @@ class RecruitSlot extends React.Component {
 					<div className="col-xs-6">
 						<CharacterImage image={this.props.image} />
 						<div className="row">
-							<CharacterItem attack={this.props.attack} />
+							<PowerSpan attack={this.props.attack} />
 						</div>
 					</div>
 					<div className="col-xs-6">
@@ -3728,23 +3757,18 @@ class HeroSideSlot extends React.Component {
 		return (
 			<div className=" heroSideSlot col-xs-4">
 				<div className="row">
-					<div className="col-xs-6">
-						<CharacterImage image={player.image} />
-						<div className="row">
-							<CharacterItem attack={this.props.attack} equipment={this.props.equipment} />
-							<IntelligenceSpan int={this.props.int} />
-							<ShieldSpan playerShield={this.props.playerShield} />
-						</div>
+					<div className="col-xs-4">
+						<PowerSpan attack={this.props.attack} equipment={this.props.equipment} />
+						<IntelligenceSpan int={this.props.int} />
+						<ShieldSpan playerShield={this.props.playerShield} />
 					</div>
-					<div className="col-xs-6">
+					<div className="col-xs-4">
+						<YouberImage image={player.image} />
+					</div>
+					<div className="col-xs-4">
 						<HPSpan hp={this.props.heroHp} hero={"heroDamageIndicator2"} enemyId={"hero"} />
 						<div className="row">
-							<div className="col-xs-6">
-								{/*<StormlightCounter stormlight={this.props.stormlight} /> */}
-							</div>
-							<div className="col-xs-6">
-								<InfluenceCounter toggle={this.props.toggleRecruitState} influence={this.props.influence} />
-							</div>
+							<InfluenceCounter toggle={this.props.toggleRecruitState} influence={this.props.influence} />
 						</div>
 						<CharacterActions heroDraw={this.props.heroDraw} />
 					</div>
@@ -3757,12 +3781,12 @@ class HeroSideSlot extends React.Component {
 class IntelligenceSpan extends React.Component {
 	render() {
 		return (
-			<div className="col-xs-4 intSpan">
-				<div className="row">	
-					<img className="col-xs-12 statIcon" src={int} />
+			<div className="row intSpan">
+				<div className="col-xs-8">
+					<img className="statIcon" src={int} />
 				</div>
-				<div className="row">
-					<span className="col-xs-12 statNum">{this.props.int}</span>
+				<div className="col-xs-4">
+					<span className="col-xs-4 statNum">{this.props.int}</span>
 				</div>
 			</div>
 		)
@@ -3776,21 +3800,21 @@ class CharacterActions extends React.Component {
 				<audio className="clickSound">
 		          <source src={click}></source>
 		        </audio>
-				<button className="coolButton" onClick={this.props.heroDraw}>Attack</button>
+				<button className="coolButton" id="attackButton" onClick={this.props.heroDraw}>Attack</button>
 			</div>
 		);
 	}
 };
 
-class CharacterItem extends React.Component {
+class PowerSpan extends React.Component {
 	render() {
 		return (
-			<div className="col-xs-4 characterItem">
-				<div className="row">
-					<img className="col-xs-12 statIcon" src={power} />
+			<div className="row powerSpan">
+				<div className="col-xs-8">
+					<img className="statIcon" src={power} />
 				</div>
-				<div className="row">
-					<div className="col-xs-12 statNum">{this.props.attack}</div>
+				<div className="col-xs-4">
+					<div className="statNum">{this.props.attack}</div>
 				</div>
 			</div>
 		)
@@ -3817,6 +3841,16 @@ class CharacterImage extends React.Component {
 	}
 };
 
+class YouberImage extends React.Component {
+	render() {
+		return (
+			<div className="row">
+				<img className="youberImage" id={this.props.id + 'image'} src={this.props.image} alt={this.props.name} />
+			</div>
+		);
+	}
+};
+
 class HPSpan extends React.Component {
 	render() {
 		return (
@@ -3832,14 +3866,12 @@ class HPSpan extends React.Component {
 class ShieldSpan extends React.Component {
 	render() {
 		return (
-			<div className="col-xs-4">
-				<div className="row">
-					<img className="col-xs-12 statIcon shieldIcon" src={shield} />
+			<div className="row shieldSpan">
+				<div className="col-xs-8">
+					<img className="statIcon shieldIcon" src={shield} />
 				</div>
-				<div className="row shieldSpan">
-					<div className="col-xs-12 statNum">
-						{this.props.playerShield}
-					</div>
+				<div className="col-xs-4">
+					<div className="statNum">{this.props.playerShield}</div>
 				</div>
 			</div>
 		);

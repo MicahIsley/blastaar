@@ -10,6 +10,10 @@ body {
 	margin-top: 100px;
 }
 
+.spookyMeter {
+	width: 100%;
+}
+
 #youberRow {
 	text-align: center;
 }
@@ -28,6 +32,11 @@ body {
 
 #endingYouber3{
 	height: 110px;
+}
+
+#keywordCol {
+	height: 550px;
+	overflow: scroll;
 }
 
 .keyword {
@@ -60,7 +69,7 @@ body {
 	border-radius: 25px;
 	font-size: 20px;
 	width: 40px;
-	margin-left: 95%;
+	margin-top: 5px;
 	text-align: center;
 }
 
@@ -110,6 +119,7 @@ body {
 	background: black;
 	border-radius: 25px;
 	text-align: center;
+	padding: 0px;
 }
 
 .container {
@@ -315,10 +325,95 @@ body {
 	border-radius: 35px;
 }
 
+.fireSupportSlot {
+	text-align: center;
+	background: red;
+	background-image: url('assets/fireSupportSlot2.png'); 
+	background-size: cover;
+	height: 200px;
+	border-style: solid;
+	border-color: black;
+	border-width: 3px;
+	border-radius: 35px;
+}
+
+.earthSupportSlot {
+	text-align: center;
+	background: brown;
+	height: 200px;
+	border-style: solid;
+	border-color: black;
+	border-width: 3px;
+	border-radius: 35px;
+}
+
+.waterSupportSlot {
+	text-align: center;
+	background: blue;
+	height: 200px;
+	border-style: solid;
+	border-color: black;
+	border-width: 3px;
+	border-radius: 35px;
+}
+
+.windSupportSlot {
+	text-align: center;
+	background: white;
+	height: 200px;
+	border-style: solid;
+	border-color: black;
+	border-width: 3px;
+	border-radius: 35px;
+}
+
+.lavaSupportSlot {
+	text-align: center;
+	background: orange;
+	height: 200px;
+	border-style: solid;
+	border-color: black;
+	border-width: 3px;
+	border-radius: 35px;
+}
+
+.mudSupportSlot {
+	text-align: center;
+	background: purple;
+	height: 200px;
+	border-style: solid;
+	border-color: black;
+	border-width: 3px;
+	border-radius: 35px;
+}
+
+.desertSupportSlot {
+	text-align: center;
+	background: yellow;
+	height: 200px;
+	border-style: solid;
+	border-color: black;
+	border-width: 3px;
+	border-radius: 35px;
+}
+
+.stormSupportSlot {
+	text-align: center;
+	background: darkgrey;
+	height: 200px;
+	border-style: solid;
+	border-color: black;
+	border-width: 3px;
+	border-radius: 35px;
+}
+
 .supportName {
 	font-size: 30px;
 	font-weight: bold;
 	font-family: 'Metamorphous', cursive;
+	border-color: black;
+    border-style: solid;
+    border-width: 0px 0px 3px 0px;
 }
 
 .supportText {
@@ -446,7 +541,6 @@ body {
 }
 
 #topRow {
-	margin-bottom: 20px;
 	margin-top: 15px;
 }
 
@@ -465,6 +559,7 @@ body {
 }
 
 #influenceOrb {
+	margin-left: 15%;
 	width: 50px;
 	background: yellow;
 	text-align: center;
@@ -479,13 +574,17 @@ body {
 	animation: CardCostAnimation 8s ease infinite;
 }
 
+#influenceOrb:hover {
+	box-shadow: 0px 0px 5px 5px white;
+}
+
 #scoreDisplay {
 	font-size: 28px;
 	font-family: 'Metamorphous', cursive;
 }
 
 #playArea {
-	height: 195px;
+	height: 20px;
 }
 
 .stormlightOn {
@@ -559,6 +658,7 @@ input {
 
 .heartIcon {
 	height: 30px;
+	padding-right: 0px;
 	animation: heartPulse ease .8s infinite;
 	width: auto;
 }
@@ -645,6 +745,7 @@ input {
 }
 
 .statIcon {
+	width: 100%;
 }
 
 .mainStat {
@@ -653,9 +754,13 @@ input {
 }
 
 .statNum {
-	border-color: grey;
-	border-style: solid;
-	border-width: 0px 1px 1px 1px;
+	padding: 0px;
+	padding-top: 35%;
+}
+
+.youberImage {
+	width: 100%;
+	margin-top: 15%;
 }
 
 .chooseTitle {
@@ -666,12 +771,12 @@ input {
 }
 
 .hpSpan {
-	font-size: 24px;
+	font-size: 20px;
 	margin-top: 5px;
 }
 
 .intSpan {
-	font-size: 24px;
+	font-size: 32px;
 	text-align: center;
 }
 
@@ -751,6 +856,7 @@ input {
 	border-width: 6px;
 	border-radius: 30px 5px;
 	text-align: center;
+	width: 178px;
 }
 
 .expandedCard {
@@ -760,6 +866,7 @@ input {
 .neutral {
 	background-image: url('assets/cards/neutralCard3.png');
 	border-color: grey;
+	background-size: cover;
 }
 
 .neutralSupport {
@@ -770,6 +877,7 @@ input {
 .fire {
 	background-image: url('assets/cards/fireCard.png');
 	border-color: red;
+	background-size: cover;
 }
 
 .fireSupport {
@@ -983,7 +1091,10 @@ input {
 }
 
 .deckCardName {
-	font-size: 15px;
+	padding: 0px;
+	font-size: 20px;
+	border-radius: 15px;
+	background: #1b1b1b59;
 }
 
 @keyframes color {
@@ -1049,17 +1160,19 @@ input {
 }
 
 .characterImage2 {
-	height: 130px;
-	width: 130px;
+}
+
+.supportSlotImage {
+	width: 100%;
 }
 
 .boss {
-	height: 250px;
-	width: 250px;
+	height: 230px;
+	width: 230px;
 }
 
-.characterItem {
-	font-size: 24px;
+.powerSpan {
+	font-size: 32px;
 	text-align: center;
 }
 
@@ -1104,12 +1217,22 @@ input {
 
 .heroDamageIndicator {
 	color: red;
-	font-size: 24px;
+	font-size: 20px;
+}
+
+.heroDamageIndicator2 {
+	color: red;
+	font-size: 20px;
+}
+
+.influenceOrbRow {
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 .shieldSpan {
 	color: black;
-	font-size: 24px;
+	font-size: 32px;
 	text-align: center;
 }
 
@@ -1214,6 +1337,11 @@ input {
 	background: yellow;
 }
 
+#attackButton {
+	background: #9a7200;
+	margin-left: 15%;
+}
+
 #rewardsMessage {
 	text-align: center;
 	font-size: 36px;
@@ -1258,10 +1386,9 @@ input {
 }
 
 #levelButton {
-	font-size: 30px;
-	margin-top: 600px;
+	font-size: 25px;
+	margin-top: 595px;
 	border-radius: 5px;
-	padding: 5px;
 	background: orange;
 	box-shadow: 2px 2px 5px grey;
 	text-align: center;
