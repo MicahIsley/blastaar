@@ -1510,7 +1510,7 @@ const parshendiCarapace = new ItemCon("Parshendi Carapace", 2, "armor", 80, true
 const shardplate = new ItemCon("Shardplate", 3, "armor", 150, true, true);
 
 var crafting1 = new CardCon(" ", 0, 0, " ", "hero", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 0, 1, 0);
-var fire1 = new CardCon("Fireball", 0, 5, "Simple, but effective", "hero", 0, "", "", true, "stormlight", placeholderImg, fire, "fire", 1, 2, 2);
+var fire1 = new CardCon("Fireball", 0, 5, "Simple, but effective", "hero", 0, "meter 2", "", true, "stormlight", placeholderImg, fire, "fire", 1, 2, 2);
 var fire2 = new CardCon("Fire Lash", 0, 6, "Weaken 1", "hero", 0, "weaken 1", "", false, "stormlight", placeholderImg, fire, "fire", 2, 1, 0);
 var fire3 = new CardCon("Power of Goordu", 0, 0, "Gain 1 Magic Power and Next Spell +5", "hero", 0, "str 1", "next 5", false, "stormlight", placeholderImg, fire, "fire", 3, 1, 0);
 var fire4 = new CardCon("Burn Bright", 0, 1, "Multiply", "hero", 0, "multiply", "", false, "stormlight", placeholderImg, fire, "fire", 4, 1, 0);
@@ -1688,6 +1688,7 @@ var cardFrames = [];
 var elementOrbs = [];
 var multiplier = 1;
 var allies = [];
+var meterArray = [meter0, meter1, meter2, meter3, meter4, meter5, meter6, meter7, meter8, meter9, meter10, meter11, meter12];
 var levelsBeaten = ["fire", "water", "wind", "earth", "fire"];
 var keyWordList = [{keyword: "Shield", description: "Shield blocks enemy damage and sabotoges."}, {keyword: "Purge", description: "Removes an enemy sabotoge from your deck."}, {keyword: "Weaken", description: "Reduces an enemies strength"}, {keyword: "Exhausted", description: "Enemies attack twice in a row"}, {keyword: "Stun", description: "Stunned enemies miss their next attack"}, {keyword: "Poison", description: "Damage delt at the end of the turn"}, {keyword: "Confuse", description: "Confused enemies attack a random enemy"}, {keyword: "Grow", description: "The card gains power each time it is used"}, {keyword: "Scheme", description: "Schemes are played to one of your support areas and then are charged up over time providing an effect once completed"}, {keyword: "Heal", description: "Restore health to your character"}, {keyword: "Reclaim", description: "Increase the power of all enemy sabotoges in your deck"}, {keyword: "Int", description: "How many cards your draw when attacking"}, {keyword: "Def", description: "The number of shields you have at the start of every turn."}, {keyword: "Str", description: "Added damage to each attack"}, {keyword: "Rummage", description: "Choose a card to be replaced by a random card from your deck."}, {keyword: "Transform", description: "Change your stats into another creatures. Once your hp falls to 0 you regain your previous stats."}, {keyword: "multiply", description: "Double the damage you would deal this turn."}, {keyword: "Decoy", description: "Avoid all sabotoges this turn."}, {keyword: "Energy", description: "Gain energy to use for other purposes."}, {keyword: "Next", description: "Add power to the next card you choose."}, {keyword: "Add Card", description: "Shuffle a number of new cards into your deck."}, {keyword: "Remove", description: "The card gets removed from your deck after you select it"}, {keyword: "Extra", description: "Attack again after this one."}, {keyword: "Deplete", description: "Remove a sabotoge from the selected enemy."}, {keyword: "Boost", description: "All card of the selected type gain extra power."}, {keyword: "Spook", description: "The enemy will recieve 1.5x damage while it is spooked."}, {keyword: "Transform", description: "Turn an emeny sabotoge in your deck into another card."}, {keyword: "All", description: "Deal damage to all enemies."}];
 
@@ -2483,13 +2484,15 @@ class GameScreen extends React.Component {
 			exhausted: false,
 			supportSlot1: null,
 			supportSlot2: null,
+			activeSlot: null,
 			supportAction: true,
 			nextSpellBonus: 0,
 			extraAttacks: 0,
 			enemiesAttacking: false,
 			scheming: false,
 			schemePower: 0,
-			boostArray: []
+			boostArray: [],
+			spookLevel: meter5
 
 		}
 		this.playerAttack = this.playerAttack.bind(this);
@@ -2557,6 +2560,9 @@ class GameScreen extends React.Component {
 	handleTutorialClick() {
 		document.getElementById("tutorialMessageBox").style.display="none";
 	}
+	spookCheck(spook) {
+		
+	}
 	updateEnemySab() {
 		var enemySabs = [];
 		if(enemyArray.length === 1){
@@ -2602,17 +2608,22 @@ class GameScreen extends React.Component {
 		}
 	}
 	scheme(card) {
-		console.log(this.state.supportSlot1);
-		if(this.state.supportSlot1.ability1.indexOf(card.faction) >= 0){
+		var activeSlot = this.state.activeSlot;
+		if(activeSlot.ability1.indexOf(card.faction) >= 0){
 			var schemeCards = this.state.cards;
 			schemeCards.splice(schemeCards.indexOf(card), 1);
 			var schemePower = this.state.schemePower + 1;
+			var schemeGoal = parseInt(activeSlot.ability1.split(/[ ,]+/)[2]);
+			var percentComplete = (schemePower/schemeGoal) * 100;
+			var percentLeft = 100 - percentComplete;
+			document.getElementById("fullMeter").style.height = percentComplete + "%";
+			document.getElementById("emptyMeter").style.height = percentLeft + "%";
 			this.setState({
 				cards: schemeCards,
 				scheming: false,
 				schemePower: schemePower
 			}, () => {
-				if(this.state.schemePower === parseInt(this.state.supportSlot1.ability1.split(/[ ,]+/)[2])){
+				if(this.state.schemePower === parseInt(activeSlot.ability1.split(/[ ,]+/)[2])){
 					document.getElementById("supportSlot1").classList.add("fullScheme");
 				}else{}
 			});
@@ -2915,6 +2926,21 @@ class GameScreen extends React.Component {
 						console.log("no enemy cards");
 					}
 				}
+			}else if(checkAbility.indexOf("meter") >=0){
+				var meterNum = parseInt(checkAbility.match(/\d+/)[0]);
+				var splitMeter = this.state.spookLevel.split("/");
+				var splitMore = splitMeter[3].split(".");
+				var lastSplit = splitMore[0].split("meter");
+				var currentMeterNum = parseInt(lastSplit[1]);
+				var newMeterNum = (currentMeterNum + meterNum);
+				if(newMeterNum < 0){
+					newMeterNum = 0;
+				}else if(newMeterNum > 12){
+					newMeterNum = 12;
+				}
+				this.setState({
+					spookLevel: meterArray[newMeterNum]
+				});
 			}else{}
 			if(cardAbilityNum === 2){
 				this.playerAttack(newAttack);
@@ -2948,7 +2974,6 @@ class GameScreen extends React.Component {
 		console.log(newAttack);
 		const audioEl = document.getElementsByClassName("clickSound")[0];
 	    audioEl.play();
-		console.log(currentEnemy);
 		if(enemyArray[currentEnemy].hp <= 0){
 		console.log("He's dead, pick another target.");
 		}else{
@@ -3109,9 +3134,17 @@ class GameScreen extends React.Component {
 						document.getElementById(currentEnemy).classList.add("stunned");
 					}
 				}else{
+					var activeSlot;
+					if(supSlot === "supportSlot1"){
+						activeSlot = this.state.supportSlot1;
+					}else{
+						activeSlot = this.state.supportSlot2;
+					}
 					this.setState({
 						scheming: true,
-						supportAction: false
+						supportAction: false,
+						activeSlot: activeSlot
+
 					});
 					var x = document.getElementsByClassName("hero");
 					for(var i=0; i < x.length; i++){
@@ -3475,7 +3508,7 @@ class GameScreen extends React.Component {
 						</div>
 						<div className="row">
 							<div className="col-xs-offset-4 col-xs-4">
-								<SpookyMeter />
+								<SpookyMeter spookLevel={this.state.spookLevel} />
 							</div>
 						</div>
 						<div className="row" id="characterSide tabIndex" onKeyDown={this.handleKeyPress}>
@@ -3495,7 +3528,7 @@ class SpookyMeter extends React.Component {
 		return (
 			<div className="col-xs-12"> 
 				<div className="row spookyMeterRow">
-					<img className="spookyMeter" src={meter6} alt="spookyMeter" />
+					<img className="spookyMeter" src={this.props.spookLevel} alt="spookyMeter" />
 				</div>
 			</div>
 		)
@@ -3687,9 +3720,21 @@ class SupportSlot extends React.Component {
 		}else{}
 		return (
 			<div className="row supportSlot">
-				<div className="col-xs-offset-1 col-xs-5">
+				{ actionButton === true &&
+					<div className="col-xs-6">
+						<div className="row">
+							<div className="col-xs-offset-1 col-xs-2 schemeMeter">
+								<div className="row" id="emptyMeter"></div>
+								<div className="row" id="fullMeter"></div>
+							</div>
+						</div>
+					</div>
+				}
+				{ actionButton === false &&
+				<div className="col-xs-6">
 					<img className="supportSlotImage" src={this.props.card.image} alt="supportImage" />
-				</div>	
+				</div>
+				}
 				<div className={`col-xs-6 ${cardStyle}`} id={this.props.supSlot}>
 					<div className="row supportText">
 						{this.props.card.text}

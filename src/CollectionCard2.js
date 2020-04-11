@@ -80,8 +80,14 @@ class CollectionCard2 extends React.Component {
             <div className="row hoverBottomRow">
             { influenceCost === true &&
               <div>
-              <div className="col-xs-4 influenceCost">{this.props.cost}</div>
-              <div className="col-xs-offset-4 col-xs-4"><img className="iconImg" src={this.props.icon} alt="icon" /></div>
+                <div className="row supportCardText">
+                  <div className="col-xs-6 leftSideSupport">{schemeReq}</div>
+                  <div className="col-xs-6 rightSideSupport">{schemePower}</div>
+                </div>
+                <div className="row bottomRow">
+                <div className="col-xs-4 influenceCost">{this.props.cost}</div>
+                  <div className="col-xs-offset-4 col-xs-4"><img className="iconImg" src={this.props.icon} alt="icon" /></div>
+                </div>
               </div>
             }
             { stormlightCost === true &&

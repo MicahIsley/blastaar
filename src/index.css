@@ -318,93 +318,100 @@ body {
 .neutralSupportSlot {
 	text-align: center;
 	background: grey;
-	height: 200px;
 	border-style: solid;
 	border-color: black;
 	border-width: 3px;
-	border-radius: 35px;
+	border-radius: 15px;
 }
 
 .fireSupportSlot {
 	text-align: center;
-	background: red;
-	background-image: url('assets/fireSupportSlot2.png'); 
-	background-size: cover;
-	height: 200px;
+	background: #ff000082;
 	border-style: solid;
 	border-color: black;
 	border-width: 3px;
-	border-radius: 35px;
+	border-radius: 15px;
 }
 
 .earthSupportSlot {
 	text-align: center;
 	background: brown;
-	height: 200px;
 	border-style: solid;
 	border-color: black;
 	border-width: 3px;
-	border-radius: 35px;
+	border-radius: 15px;
 }
 
 .waterSupportSlot {
 	text-align: center;
 	background: blue;
-	height: 200px;
 	border-style: solid;
 	border-color: black;
 	border-width: 3px;
-	border-radius: 35px;
+	border-radius: 15px;
 }
 
 .windSupportSlot {
 	text-align: center;
 	background: white;
-	height: 200px;
 	border-style: solid;
 	border-color: black;
 	border-width: 3px;
-	border-radius: 35px;
+	border-radius: 15px;
 }
 
 .lavaSupportSlot {
 	text-align: center;
 	background: orange;
-	height: 200px;
 	border-style: solid;
 	border-color: black;
 	border-width: 3px;
-	border-radius: 35px;
+	border-radius: 15px;
 }
 
 .mudSupportSlot {
 	text-align: center;
 	background: purple;
-	height: 200px;
 	border-style: solid;
 	border-color: black;
 	border-width: 3px;
-	border-radius: 35px;
+	border-radius: 15px;
 }
 
 .desertSupportSlot {
 	text-align: center;
 	background: yellow;
-	height: 200px;
 	border-style: solid;
 	border-color: black;
 	border-width: 3px;
-	border-radius: 35px;
+	border-radius: 15px;
 }
 
 .stormSupportSlot {
 	text-align: center;
 	background: darkgrey;
-	height: 200px;
 	border-style: solid;
 	border-color: black;
 	border-width: 3px;
-	border-radius: 35px;
+	border-radius: 15px;
+}
+
+.schemeMeter {
+	border-color: black;
+	border-radius: 15px;
+	border-style: solid;
+	border-width: 3px;
+	height: 180px;
+}
+
+#emptyMeter {
+	height: 100%;
+}
+
+#fullMeter {
+	background: blue;
+	height: 0%;
+	border-radius: 12px;
 }
 
 .supportName {
@@ -421,6 +428,7 @@ body {
 	font-family: 'Metamorphous', cursive;
 	margin-top: 5px;
 	margin-bottom: 5px;
+	text-align: center;
 }
 
 #craftingArea {
