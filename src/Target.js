@@ -15,7 +15,7 @@ class Target extends Component {
     const backgroundColor = hovered ? 'white' : 'lightgreen';
 
     return connectDropTarget(
-      <div className="col-xs-10 target" style={{ background: backgroundColor }}>
+      <div className="col-xs-9 target" style={{ background: backgroundColor }}>
         {this.props.listCollection()}
       </div>
     );

@@ -51,7 +51,12 @@ class CollectionCard2 extends React.Component {
     var cardStyle = "neutral";
     var schemeReq = 0;
     var schemePower = 0;
-    if(charCard === "character" || charCard === "support"){
+    var scheme = false;
+    if(charCard === "support"){
+      influenceCost = true;
+      cardStyle = this.props.faction + "Support";
+    }if(charCard === "character"){
+      scheme = true;
       influenceCost = true;
       cardStyle = this.props.faction + "Support";
       schemeReq = parseInt(this.props.ability.split(/[ ,]+/)[2]);
@@ -77,19 +82,21 @@ class CollectionCard2 extends React.Component {
         { this.state.hover === true &&
           <div className="expandedCard col-xs-12">
             <div className="row cardText">{this.props.text}</div>
-            <div className="row hoverBottomRow">
-            { influenceCost === true &&
-              <div>
+            <div className="row">
+              <div className="col-xs-12">
+              { scheme === true &&
                 <div className="row supportCardText">
                   <div className="col-xs-6 leftSideSupport">{schemeReq}</div>
                   <div className="col-xs-6 rightSideSupport">{schemePower}</div>
                 </div>
-                <div className="row bottomRow">
-                <div className="col-xs-4 influenceCost">{this.props.cost}</div>
+              }
+              { influenceCost === true &&
+                <div className="row hoverBottomRow">
+                  <div className="col-xs-4 influenceCost">{this.props.cost}</div>
                   <div className="col-xs-offset-4 col-xs-4"><img className="iconImg" src={this.props.icon} alt="icon" /></div>
                 </div>
+              }
               </div>
-            }
             { stormlightCost === true &&
               <div className="col-xs-offset-8 col-xs-4"><img className="iconImg" src={this.props.icon} alt="icon" /></div>
             }

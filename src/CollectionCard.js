@@ -33,11 +33,16 @@ class CollectionCard extends React.Component {
     var cardStyle = "neutral";
     var schemeReq = 0;
     var schemePower = 0;
-    if(charCard === "character" || charCard === "support"){
+    var scheme = false;
+    if(charCard === "character"){
+      scheme = true;
       influenceCost = true;
       cardStyle = this.props.faction + "Support";
       schemeReq = parseInt(this.props.ability.split(/[ ,]+/)[2]);
       schemePower = this.props.ability.split(/[ ,]+/)[3];
+    }else if(charCard === "support"){
+      influenceCost = true;
+      cardStyle = this.props.faction + "Support";
     }else if(charCard === "stormlight"){
       stormlightCost = true;
       cardStyle = this.props.faction;
@@ -64,23 +69,25 @@ class CollectionCard extends React.Component {
         { sphereCard === false &&
           <div className="row cardText">{this.props.text}</div>
         }
-        { influenceCost === true &&
-          <div>
+        <div className="row schemeRow">
+          <div className="col-xs-12">
+          { scheme === true &&
             <div className="row supportCardText">
               <div className="col-xs-6 leftSideSupport">{schemeReq}</div>
               <div className="col-xs-6 rightSideSupport">{schemePower}</div>
             </div>
-            <div className="row bottomRow">
-            <div className="col-xs-4 influenceCost">{this.props.cost}</div>
-              <div className="col-xs-offset-4 col-xs-4"><img className="iconImg" src={this.props.icon} alt="icon" /></div>
-            </div>
+              }
           </div>
+        </div>
+        <div className="row bottomRow">
+        { influenceCost === true &&
+          <div className="col-xs-4 influenceCost">{this.props.cost}</div>
         }
         { stormlightCost === true &&
-          <div className="row bottomRow">
-            <div className="col-xs-offset-8 col-xs-4"><img className="iconImg" src={this.props.icon} alt="icon" /></div>
-          </div>
+          <div className="col-xs-4"></div>
         }
+          <div className="col-xs-offset-4 col-xs-4"><img className="iconImg" src={this.props.icon} alt="icon" /></div>
+        </div>
       </div>
     )
   }
