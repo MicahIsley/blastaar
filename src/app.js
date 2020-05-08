@@ -158,27 +158,27 @@ var sabotoge2 = new CardCon("Budle Charm", 0, -3, "Woozy", "enemy", 0, "", "", f
 var sabotoge3 = new CardCon("Raging Storm", 0, -4, "So Fierce", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
 var sabotoge4 = new CardCon("Steamed", 0, -5, "Super way too hot", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
 
-var crafting1 = new CardCon(" ", 0, 0, " ", "hero", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 0, 1, 0);
+var crafting1 = new CardCon("------", 0, 0, " ", "hero", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 0, 1, 0);
 var fire1 = new CardCon("Fireball", 0, 5, "Simple, but effective", "hero", 0, "", "", true, "stormlight", placeholderImg, fire, "fire", 1, 1, 0);
-var fire2 = new CardCon("Fire Lash", 0, 6, "Weaken 1", "hero", 0, "weaken 1", "", false, "stormlight", placeholderImg, fire, "fire", 2, 1, 0);
-var fire3 = new CardCon("Power of Goordu", 0, 0, "Gain 1 Magic Power and Next Spell +5", "hero", 0, "str 1", "next 5", false, "stormlight", placeholderImg, fire, "fire", 3, 1, 0);
-var fire4 = new CardCon("Burn Bright", 0, 1, "Multiply", "hero", 0, "multiply", "", false, "stormlight", placeholderImg, fire, "fire", 4, 1, 0);
-var fire5 = new CardCon("Soul Flare", 0, 7, "You're Exhausted", "hero", 0, "", "", false, "stormlight", placeholderImg, fire, "fire", 5, 1, 0);
-var fire6 = new CardCon("Draw Heat", 0, 4, "Heal 2 and Next Spell + 2", "hero", 0, "heal 2", "next 2", false, "stormlight", placeholderImg, fire, "fire", 6, 1, 0);
-var fire7 = new CardCon("Warning Shot", 0, 2, "Next Spell +3", "hero", 0, "next 3", "", false, "stormlight", placeholderImg, fire, "fire", 7, 1, 0);
-var fire8 = new CardCon("Illuminate", 0, 1, "Rummage 1 and give next spell +2", "hero", 0, "next 2", "research 1", false, "stormlight", placeholderImg, fire, "fire", 8, 1, 0);
-var fire9 = new CardCon("Find the source", 0, 3, "Rummage 4", "hero", 0, "research 4", "", false, "stormlight", placeholderImg, fire, "fire", 9, 1, 0);
-var fire10 = new CardCon("Force of Fire", 0, 1, "Gain 2 Magic Power", "hero", 0, "str 2", "", false, "stormlight", placeholderImg, fire, "fire", 10, 1, 0);
-var fire11 = new CardCon("Crown of Flames", 0, 0, "Gain 3 Magic Power, you're exhausted", 0, "str 3", "", false, "stormlight", placeholderImg, fire, "fire", 11, 1, 0);
-var fire12 = new CardCon("Fire Breath", 10, 0, "", 0, "", "", false, "stormlight", placeholderImg, fire, "fire", 12, 1, 0);
-var fire13 = new CardCon("Reckless Flare", 0, 5, "Double this attack. You're exhausted", "hero", 0, "multiply", "exhausted", false, "stormlight", placeholderImg, fire, "fire", 13, 1, 0);
-var fire14 = new CardCon("Fuel", 0, 1, "Gain 4 energy", "hero", 0, "energy 3", "", false, "stormlight", placeholderImg, fire, "fire", 14, 1, 0);
-var fire15 = new CardCon("Suffocating Smoke", 0, 3, "Weaken 2", "hero", 0, "weaken 2", "", false, "stormlight", placeholderImg, fire, "fire", 15, 1, 0);
-var fire16 = new CardCon("Flame Crawler", 2, 0, "Fire cards get +1 power", "hero", 0, "boost fire 1", "", true, "support", flameCrawler, fire, "fire", 0, 1, 0);
-var fire17 = new CardCon("Hot Hands", 0, 1, "Shuffle 3 Roasts into your deck", "hero", 0, "addCard 1 3", "", false, "stormlight", placeholderImg, fire, "fire", 17, 1, 0);
-var fire18 = new CardCon("Encirle", 1, 0, "Fire Scheme 2/6", "hero", 0, "scheme fire 2", 6, false, "character", placeholderImg, fire, "fire", 18, 1, 0);
-var fire19 = new CardCon("Cooked Alive", 3, 0, "Fire Scheme 3/Purge", "hero", 0, "scheme fire 3 purge", 2, false, "character", placeholderImg, fire, "fire", 19, 1, 0);
-var fire20 = new CardCon("Fire...Everywhere!", 0, 15, "", "hero", 0, "", "", false, "stormlight", placeholderImg, fire, "fire", 20, 1, 0);
+var fire2 = new CardCon("Ember Smash", 0, 7, "Exhaust", "hero", 0, "exhaust", "", true, "stormlight", placeholderImg, fire, "fire", 2, 1, 0);
+var fire3 = new CardCon("Pew Pew Pew", 0, 1, "Deal 1 Damage To All Enemies", "hero", 0, "all", "", true, "stormlight", placeholderImg, fire, "fire", 3, 1, 0);
+var fire4 = new CardCon("Burn Bright", 0, 1, "Multiply", "hero", 0, "multiply", "", true, "stormlight", placeholderImg, fire, "fire", 4, 1, 0);
+var fire5 = new CardCon("Frantic Planning", 0, 3, "Draw +1", "hero", 0, "int 1", "", true, "stormlight", placeholderImg, fire, "fire", 5, 1, 0);
+var fire6 = new CardCon("Heat Defense", 0, 1, "Shield 3", "hero", 0, "shield 3", "", true, "stormlight", placeholderImg, fire, "fire", 6, 1, 0);
+var fire7 = new CardCon("Light the Fuse", 0, 0, "Draw +2", "hero", 0, "int 2", "", true, "stormlight", placeholderImg, fire, "fire", 7, 1, 0);
+var fire8 = new CardCon("Illuminate", 0, 4, "Next Spell +2", "hero", 0, "next 2", "", true, "stormlight", placeholderImg, fire, "fire", 8, 1, 0);
+var fire9 = new CardCon("Fuel", 0, 2, "Energy 2", "hero", 0, "energy 2", "", true, "stormlight", placeholderImg, fire, "fire", 9, 1, 0);
+var fire10 = new CardCon("Big Boom", 0, 2, "Spooky 2", "hero", 0, "meter 2", "", true, "stormlight", placeholderImg, fire, "fire", 10, 1, 0);
+var fire11 = new CardCon("Surround By Fire", 2, 0, "Fire Scheme 2/6", 0, "scheme fire 2", 6, true, "character", placeholderImg, fire, "fire", 11, 1, 0);
+var fire12 = new CardCon("Let It Burn", 0, 2, "Multiply", 0, "multiply", "", true, "stormlight", placeholderImg, fire, "fire", 12, 1, 0);
+var fire13 = new CardCon("Soul Flare", 0, 4, "Multiply. Exhaust.", "hero", 0, "multiply", "exhausted", true, "stormlight", placeholderImg, fire, "fire", 13, 1, 0);
+var fire14 = new CardCon("Risky Explosion", 0, 4, "All. Exhaust.", "hero", 0, "all", "exhausted", true, "stormlight", placeholderImg, fire, "fire", 14, 1, 0);
+var fire15 = new CardCon("Fire Ruby", 0, 0, "Multiply. All", "hero", 0, "multiply", "all", true, "stormlight", placeholderImg, fire, "fire", 15, 1, 0);
+var fire16 = new CardCon("Look Into Flame", 0, 6, "Draw +2. Exhaust.", "hero", 0, "int 2", "exhaust", true, "stormlight", placeholderImg, fire, "fire", 16, 1, 0);
+var fire17 = new CardCon("Smoke Monster", 3, 0, "Fire Scheme 4/12", "hero", 0, "scheme fire 4", 12, true, "character", placeholderImg, fire, "fire", 17, 1, 0);
+var fire18 = new CardCon("Spark Spirits", 0, 0, "+1 For Each Fire Card. All.", "hero", 0, "factionBoost 1", "all", true, "stormlight", placeholderImg, fire, "fire", 18, 1, 0);
+var fire19 = new CardCon("Big Fireball", 1, 9, "Whoa", "hero", 0, "", "", true, "stormlight", placeholderImg, fire, "fire", 19, 1, 0);
+var fire20 = new CardCon("Wait For It", 1, 0, "Next +4. Draw +3.", "hero", 0, "next 4", "int 3", true, "stormlight", placeholderImg, fire, "fire", 20, 1, 0);
 var fire21 = new CardCon("Flame Scrabler", 2, 0, "Fire cards get +2 power", "hero", 0, "boost fire 2", "", true, "support", flameScrabler, fire, "fire", 21, 1, 0);
 var fire22 = new CardCon("Broodmother", 2, 0, "Fire cards get +3 power", "hero", 0, "boost fire 3", "", true, "support", broodmother, fire, "fire", 22, 1, 0);
 var fire23 = new CardCon("Morp", 2, 0, "Gain 2 Fire gems", "hero", 0, "supGems 2", "", true, "support", morp, fire, "fire", 22, 1, 0);
@@ -187,97 +187,101 @@ var fire25 = new CardCon("Kragmup", 2, 0, "Enemies take 1 damage each turn", "he
 var fire26 = new CardCon("Tipper", 2, 0, "Fire cards get +3 power", "hero", 0, "boost fire 3", "", true, "support", tipper, fire, "fire", 22, 1, 0);
 var fire27 = new CardCon("Grand Tipper", 2, 0, "Fire cards get +3 power", "hero", 0, "supBurning 3", "", true, "support", grandTipper, fire, "fire", 22, 1, 0);
 var fire28 = new CardCon("Pheonix Wyrm", 2, 0, "Fire cards get +3 power", "hero", 0, "supBurning 2", "", true, "support", pheonixWyrm, fire, "fire", 22, 1, 0);
+var fire29 = new CardCon("Flame Crawler", 2, 0, "Fire cards get +1 power", "hero", 0, "boost fire 1", "", true, "support", flameCrawler, fire, "fire", 0, 1, 0);
 var earth1 = new CardCon("Rock Skin", 0, 2, "Shield 6", "hero", 0, "shield 6", "", true, "stormlight", placeholderImg, earth, "earth", 1, 1, 0);
-var earth2 = new CardCon("Boulder Trap", 0, 6, "", "hero", 0, "", "", false, "stormlight", placeholderImg, earth, "earth", 2, 1, 0);
-var earth3 = new CardCon("Toughen", 0, 5, "Gain +1 Def", "hero", 0, "def 1", "", false, "stormlight", placeholderImg, earth, "earth", 3, 1, 0);
-var earth4 = new CardCon("Stone Bubble", 0, 1, "Shield 9", "hero", 0, "shield 9", "", false, "stormlight", placeholderImg, earth, "earth", 4, 1, 0)
-var earth5 = new CardCon("Head Bash", 0, 4, "Shield 4", "hero", 0, "shield 2", "", false, "stormlight", placeholderImg, earth, "earth", 5, 1, 0);
-var earth6 = new CardCon("Training Grounds", 0, 1, "Grow 1", "hero", 0, "grow 1 10", "", true, "stormlight", placeholderImg, earth, "earth", 6, 1, 0);
-var earth7 = new CardCon("Earthquake", 0, 5, "Deal 5 damage this turn and the next", "hero", 0, "next 5", "", false, "stormlight", placeholderImg, earth, "earth", 7, 1, 0);
-var earth8 = new CardCon("Pile On", 0, 2, "Grow 2", "hero", 0, "grow 2 6", "", false, "stormlight", placeholderImg, earth, "earth", 8, 1, 0);
-var earth9 = new CardCon("Stone Shackles", 0, 3, "Weaken 2", "hero", 0, "weaken 2", "", false, "stormlight", placeholderImg, earth, "earth", 9, 1, 0);
-var earth10 = new CardCon("No Sabotoge!", 0, 1, "Shield 5 and Weaken 5", "hero", 0, "shield 5", "weaken 5", false, "stormlight", placeholderImg, earth, "earth", 10, 1, 0);
-var earth11 = new CardCon("Defences Up", 0, 2, "Gain + 1 Def and Shield 4", "hero", 0, "def 1", "shield 4", false, "stormlight", placeholderImg, earth, "earth", 11, 1, 0);
-var earth12 = new CardCon("Granite Armor", 0, 0, "Gain +2 Def", "hero", 0, "def 2", "", false, "stormlight", placeholderImg, earth, "earth", 12, 1, 0);
-var earth13 = new CardCon("Keep Rolling", 0, 0, "Shield 2. Grow 1", "hero", 0, "shield 1", "grow 1 8", false, "stormlight", placeholderImg, earth, "earth", 13, 1, 0);
-var earth14 = new CardCon("Power Crystal", 0, 1, "Energy 3", "hero", 0, "energy 3", "", false, "stormlight", placeholderImg, earth, "earth", 14, 1, 0);
-var earth15 = new CardCon("Break Bones", 0, 6, "Weaken 3", "hero", 0, "weaken 3", "", false, "stormlight", placeholderImg, earth, "earth", 15, 1, 0);
-var earth16 = new CardCon("Wobbleduk", 2, 0, "Earth cards get +1 power", "hero", 0, "boost earth 1", "", true, "support", wobbleduk, earth, "earth", 0, 1, 0);
-var earth17 = new CardCon("Rock Buds", 0, 0, "Shuffle 3 Earth Shields into your deck", "hero", 0, "addCard 2 3", "", false, "stormlight", placeholderImg, earth, "earth", 17, 1, 0);
-var earth18 = new CardCon("Rock Scheme", 2, 0, "Earth Scheme 2/5", "hero", 0, "scheme earth 2", 5, false, "character", placeholderImg, earth, "earth", 18, 1, 0);
-var earth19 = new CardCon("Strong Rock Scheme", 5, 0, "Earth Scheme 3/Confuse", "hero", 0, "scheme earth 3 confuse", 1, false, "character", placeholderImg, earth, "earth", 19, 1, 0);
-var earth20 = new CardCon("Crush", 0, 1, "Grow 3", "hero", 0, "grow 3 31", "", false, "stormlight", placeholderImg, earth, "earth", 20, 1, 0);
-var earth21 = new CardCon("Rock Fairy", 1, 0, "5 Shield", "hero", 0, "supAbilityBoost heal 1", 9, true, "support", rockFairy, earth, "earth", 21, 1, 1); 
-var earth22 = new CardCon("Primtree", 2, 0, "Earth cards get +2 power", "hero", 0, "boost earth 2 9", 9, true, "support", primtree, earth, "earth", 0, 1, 0);
-var earth23 = new CardCon("King Wobbleduk", 2, 0, "Earth cards get +3 power", "hero", 0, "boost earth 3 9", 9, true, "support", kingWobbleduk, earth, "earth", 0, 1, 0);
-var earth24 = new CardCon("Steed", 2, 0, "Gain 1 Shield Per Turn", "hero", 0, "supShield 1 9", 9, true, "support", steed, earth, "earth", 0, 1, 0);
-var earth25 = new CardCon("Stone Strider", 2, 0, "Gain 2 Shield Per Turn", "hero", 0, "supShield 2 9", 9, true, "support", stoneStrider, earth, "earth", 0, 1, 0);
-var earth26 = new CardCon("Jewel Primtree", 2, 0, "Gain 2 Earth Gems", "hero", 0, "supGems 2 9", 9, true, "support", jewelPrimtree, earth, "earth", 0, 1, 0);
-var earth27 = new CardCon("Queen Primtree", 2, 0, "Enemies have -2 Power", "hero", 0, "supWeaken 2 9", 9, true, "support", queenPrimtree, earth, "earth", 0, 1, 0);
-var earth28 = new CardCon("Tough Primtree", 2, 0, "Gain 3 Shield Per Turn", "hero", 0, "supShield 3 9", 9, true, "support", toughPrimtree, earth, "earth", 0, 1, 0);
-var wind1 = new CardCon("Tornado", 0, 5, "Whoosh!", "hero", 0, "", "", false, "stormlight", placeholderImg, wind, "wind", 1, 1, 0);
-var wind2 = new CardCon("Whirlwind", 0, 4, "Decoy", "hero", 0, "decoy", "", false, "stormlight", placeholderImg, wind, "wind", 2, 1, 0);
-var wind3 = new CardCon("Headwind", 0, 6, "Deplete", "hero", 0, "deplete", "", false, "stormlight", placeholderImg, wind, "wind", 3, 1, 0);
-var wind4 = new CardCon("Like the Wind", 0, 2, "Avoid all sabotoges this turn", "hero", 0, "decoy", "", false, "stormlight", placeholderImg, wind, "wind", 4, 1, 0);
-var wind5 = new CardCon("Fly", 0, 0, "Avoid all sabotoges and the next spell gets +2", "hero", 0, "decoy", "next 2", false, "stormlight", placeholderImg, wind, "wind", 5, 1, 0);
-var wind6 = new CardCon("Strike Will", 0, 4, "Deplete", "hero", 0, "deplete", "", false, "stormlight", placeholderImg, wind, "wind", 6, 1, 0);
-var wind7 = new CardCon("Brewing Storm",0, 2, "Next Spell +6", "hero", 0, "next 6", "", false, "stormlight", placeholderImg, wind, "wind", 7, 1, 0);
-var wind8 = new CardCon("Exploit Weakness", 0, 3, "Deplete and Decoy", "hero", "deplete", "decoy", false, "stormlight", placeholderImg, wind, "wind", 8, 1, 0);
-var wind9 = new CardCon("Piercing Wind", 0, 3, "Ouch", "hero", 0, "", "", false, "stormlight", placeholderImg, wind, "wind", 9, 1, 0);
-var wind10 = new CardCon("On the Horizon", 0, 4, "Next Spell + 4", "hero", 0, "next 4", "", false, "stormlight", placeholderImg, wind, "wind", 10, 1, 0);
-var wind11 = new CardCon("Inner Focus", 0, 1, "Magic and Attack + 1", "hero", 0, "str 1", "int 1", false, "stormlight", placeholderImg, wind, "wind", 11, 1, 0);
-var wind12 = new CardCon("Cloud Sign", 0, 3, "Rummage 3", "hero", 0, "research 3", "", false, "stormlight", placeholderImg, wind, "wind", 12, 1, 0);
-var wind13 = new CardCon("Howling Noise", 0, 2, "Spook the enemy", "hero", 0, "spook", "", false, "stormlight", placeholderImg, wind, "wind", 13, 1, 0);
-var wind14 = new CardCon("Spring Breeze", 0, 2, "Energy 3", "hero", 0, "energy 3", "", false, "stormlight", placeholderImg, wind, "wind", 14, 1, 0);
-var wind15 = new CardCon("Exact Planning", 0, 1, "Spook and Next +5", "hero", 0, "spook", "next 5", false, "stormlight", placeholderImg, wind, "wind", 15, 1, 0);
-var wind16 = new CardCon("Madnado",0, 0, "Wind cards get +1 power", "hero", 0, "boost wind 1", "", false, "support", madnado, wind, "wind", 0, 1, 0);
-var wind17 = new CardCon("Inner Storm", 0, 0, "Shuffle 3 Flurry's into your deck", "hero", 0, "addCard 3 3", "", false, "stormlight", placeholderImg, wind, "wind", 17, 1, 0);
-var wind18 = new CardCon("Sneaky Vortex", 1, 0, "Wind Scheme 2/7", "hero", 0, "scheme wind 2 7", 1, false, "character", placeholderImg, wind, "wind", 18, 1, 0);
-var wind19 = new CardCon("Ancient Speed", 2, 0, "Wind Scheme 3/Extra", "hero", 0, "scheme wind 3 extra", 1, false, "character", placeholderImg, wind, "wind", 19, 1, 0);
-var wind20 = new CardCon("Surrender to the Gale", 0, 20, "", "hero", 0, "", "", false, "stormlight", placeholderImg, wind, "wind", 20, 1, 0);
-var wind21 = new CardCon("Windle Fairy",0, 0, "Wind cards get +2 power", "hero", 0, "boost wind 2", "", false, "support", windleFairy, wind, "wind", 0, 1, 0);
-var wind22 = new CardCon("Empress Madnado",0, 0, "Wind cards get +3 power", "hero", 0, "boost wind 3", "", false, "support", empressMadnado, wind, "wind", 0, 1, 0);
-var wind23 = new CardCon("Wind Flitter",0, 0, "Gain 2 Wind Gems", "hero", 0, "supGems 2", "", false, "support", windFlitter, wind, "wind", 0, 1, 0);
+var earth2 = new CardCon("Falling Rubble", 0, 3, "Shield 4", "hero", 0, "shield", "", true, "stormlight", placeholderImg, earth, "earth", 2, 1, 0);
+var earth3 = new CardCon("Oppressive Flurry", 0, 4, "Weaken 1", "hero", 0, "weaken", "", true, "stormlight", placeholderImg, earth, "earth", 3, 1, 0);
+var earth4 = new CardCon("Sharpen", 0, 0, "Grow 1", "hero", 0, "grow 1 10", "", true, "stormlight", placeholderImg, earth, "earth", 4, 1, 0)
+var earth5 = new CardCon("Pile On", 0, 2, "Grow 2", "hero", 0, "grow 2 6", "", true, "stormlight", placeholderImg, earth, "earth", 5, 1, 0);
+var earth6 = new CardCon("Blessing of Dirt", 0, 5, "Shield 1. Heal 1", "hero", 0, "shield 1", "heal 1", true, "stormlight", placeholderImg, earth, "earth", 6, 1, 0);
+var earth7 = new CardCon("Photosynthesis", 0, 4, "Heal 3", "hero", 0, "heal 3", "", true, "stormlight", placeholderImg, earth, "earth", 7, 1, 0);
+var earth8 = new CardCon("Boulder Trap", 0, 0, "Weaken 3", "hero", 0, "weaken 3", "", true, "stormlight", placeholderImg, earth, "earth", 8, 1, 0);
+var earth9 = new CardCon("Life Pods", 0, 2, "Energy 2", "hero", 0, "energy 2", "", true, "stormlight", placeholderImg, earth, "earth", 9, 1, 0);
+var earth10 = new CardCon("Landslide", 0, 3, "Spooky 1", "hero", 0, "meter 1", "weaken 5", true, "stormlight", placeholderImg, earth, "earth", 10, 1, 0);
+var earth11 = new CardCon("Rumblings From Below", 2, 0, "Earth Scheme 3/7", "hero", 0, "scheme earth 3", 7, true, "character", placeholderImg, earth, "earth", 11, 1, 0);
+var earth12 = new CardCon("Granite Armor", 0, 2, "Defense +1", "hero", 0, "def 1", "", true, "stormlight", placeholderImg, earth, "earth", 12, 1, 0);
+var earth13 = new CardCon("Keep Rolling", 0, 1, "Grow 1. Weaken 1.", "hero", 0, "grow 1 99", "weaken 1", true, "stormlight", placeholderImg, earth, "earth", 13, 1, 0);
+var earth14 = new CardCon("Earth Slam", 0, 2, "Shield 2. All.", "hero", 0, "shield 2", "all", true, "stormlight", placeholderImg, earth, "earth", 14, 1, 0);
+var earth15 = new CardCon("Stone Bubble", 0, 0, "Shield 5. Defense +1.", "hero", 0, "shield 5", "def 1", true, "stormlight", placeholderImg, earth, "earth", 15, 1, 0);
+var earth16 = new CardCon("Targeted Blast", 0, 4, "Shield 4. Weaken 1.", "hero", 0, "shield 4", "weaken 1", true, "stormlight", placeholderImg, earth, "earth", 16, 1, 0);
+var earth17 = new CardCon("Quicksand", 3, 0, "Earth Scheme 5/Confuse", "hero", 0, "scheme earth 5", "confuse", true, "character", placeholderImg, earth, "earth", 17, 1, 0);
+var earth18 = new CardCon("Fast Learning", 0, 3, "Grow 3", "hero", 0, "grow 3 30", "", true, "stormlight", placeholderImg, earth, "earth", 20, 1, 0);
+var earth19 = new CardCon("Super Crash", 1, 6, "+1 For Each Earth Card", "hero", 0, "factionBoost 1", "", true, "stormlight", placeholderImg, earth, "earth", 18, 1, 0);
+var earth20 = new CardCon("Strength Sap", 1, 4, "Weaken 4", "hero", 0, "weaken 4", "", true, "stormlight", placeholderImg, earth, "earth", 19, 1, 0);
+var earth21 = new CardCon("Rock Fairy", 1, 0, "5 Shield", "hero", 0, "supShield 5", "9", true, "support", rockFairy, earth, "earth", 21, 1, 1); 
+var earth22 = new CardCon("Primtree", 2, 0, "Earth cards get +2 power", "hero", 0, "boost earth 2 9", "9", true, "support", primtree, earth, "earth", 0, 1, 0);
+var earth23 = new CardCon("King Wobbleduk", 2, 0, "Earth cards get +3 power", "hero", 0, "boost earth 3 9", "9", true, "support", kingWobbleduk, earth, "earth", 0, 1, 0);
+var earth24 = new CardCon("Steed", 2, 0, "Gain 1 Shield Per Turn", "hero", 0, "supShield 1 9", "9", true, "support", steed, earth, "earth", 0, 1, 0);
+var earth25 = new CardCon("Stone Strider", 2, 0, "Gain 2 Shield Per Turn", "hero", 0, "supShield 2 9", "9", true, "support", stoneStrider, earth, "earth", 0, 1, 0);
+var earth26 = new CardCon("Jewel Primtree", 2, 0, "Gain 2 Earth Gems", "hero", 0, "supGems 2 9", "9", true, "support", jewelPrimtree, earth, "earth", 0, 1, 0);
+var earth27 = new CardCon("Queen Primtree", 2, 0, "Enemies have -2 Power", "hero", 0, "supWeaken 2 9", "9", true, "support", queenPrimtree, earth, "earth", 0, 1, 0);
+var earth28 = new CardCon("Tough Primtree", 2, 0, "Gain 3 Shield Per Turn", "hero", 0, "supShield 3 9", "9", true, "support", toughPrimtree, earth, "earth", 0, 1, 0);
+var earth29 = new CardCon("Wobbleduk", 2, 0, "Earth cards get +1 power", "hero", 0, "boost earth 1", "", true, "support", wobbleduk, earth, "earth", 0, 1, 0);
+var wind1 = new CardCon("Tornado", 0, 1, "Next +5.", "hero", 0, "next 5", "", true, "stormlight", placeholderImg, wind, "wind", 1, 1, 0);
+var wind2 = new CardCon("Whirlwind", 0, 3, "Decoy", "hero", 0, "decoy", "", true, "stormlight", placeholderImg, wind, "wind", 2, 1, 0);
+var wind3 = new CardCon("Headwind", 0, 5, "Deplete", "hero", 0, "deplete", "", true, "stormlight", placeholderImg, wind, "wind", 3, 1, 0);
+var wind4 = new CardCon("Finesse Strike", 0, 2, "Finesse 1", "hero", 0, "finesse 1", "", true, "stormlight", placeholderImg, wind, "wind", 4, 1, 0);
+var wind5 = new CardCon("Plan Ahead", 0, 2, "Next +3", "hero", 0, "next 3", "", true, "stormlight", placeholderImg, wind, "wind", 5, 1, 0);
+var wind6 = new CardCon("Ethereal", 0, 2, "Deplete. Decoy.", "hero", 0, "deplete", "decoy", true, "stormlight", placeholderImg, wind, "wind", 6, 1, 0);
+var wind7 = new CardCon("Brewing Storm",0, 3, "Draw +1", "hero", 0, "int 1", "", true, "stormlight", placeholderImg, wind, "wind", 7, 1, 0);
+var wind8 = new CardCon("Balanced Blow", 0, 5, "Next +1.", "hero", "next 1", "", true, "stormlight", placeholderImg, wind, "wind", 8, 1, 0);
+var wind9 = new CardCon("Rising Wind", 0, 2, "Energy 2", "hero", 0, "energy 2", "", true, "stormlight", placeholderImg, wind, "wind", 9, 1, 0);
+var wind10 = new CardCon("Cloud Sign", 0, 5, "Rummage 1", "hero", 0, "research 1", "", true, "stormlight", placeholderImg, wind, "wind", 10, 1, 0);
+var wind11 = new CardCon("Mysterious Howl", 2, 0, "Wind Scheme 3/6", "hero", 0, "scheme wind 3", 6, true, "character", placeholderImg, wind, "wind", 11, 1, 0);
+var wind12 = new CardCon("Dissolve", 0, 2, "Next +3. Decoy.", "hero", 0, "next 3", "decoy", true, "stormlight", placeholderImg, wind, "wind", 12, 1, 0);
+var wind13 = new CardCon("Momentum", 0, 2, "Next +4. Draw +1.", "hero", 0, "next 4", "int 1", true, "stormlight", placeholderImg, wind, "wind", 13, 1, 0);
+var wind14 = new CardCon("Unfettered Attack", 0, 6, "Finesse 1", "hero", 0, "finesse 1", "", true, "stormlight", placeholderImg, wind, "wind", 14, 1, 0);
+var wind15 = new CardCon("Blow Down", 0, 2, "Deplete 2", "hero", 0, "deplete", "deplete", true, "stormlight", placeholderImg, wind, "wind", 15, 1, 0);
+var wind16 = new CardCon("Death Blow",0, 4, "Finesse 2", "hero", 0, "finesse 2", "", true, "stormlight", placeholderImg, wind, "wind", 16, 1, 0);
+var wind17 = new CardCon("Wind's Fury", 3, 0, "Wind Scheme 4/Extra", "hero", 0, "scheme wind 4", "extra", true, "character", placeholderImg, wind, "wind", 17, 1, 0);
+var wind18 = new CardCon("Relentless Speed", 0, 0, "+1 For Each Wind Card. Next +3", "hero", 0, "factionBoost 1", "next 3", true, "stormlight", placeholderImg, wind, "wind", 18, 1, 0);
+var wind19 = new CardCon("Air Blessing", 1, 1, "Next +10", "hero", 0, "next 10", "", true, "stormlight", placeholderImg, wind, "wind", 19, 1, 0);
+var wind20 = new CardCon("Surrender to the Gale", 2, 5, "Finesse 4", "hero", 0, "finesse 4", "", true, "stormlight", placeholderImg, wind, "wind", 20, 1, 0);
+var wind21 = new CardCon("Windle Fairy",0, 0, "Wind cards get +2 power", "hero", 0, "boost wind 2", "", true, "support", windleFairy, wind, "wind", 0, 1, 0);
+var wind22 = new CardCon("Empress Madnado",0, 0, "Wind cards get +3 power", "hero", 0, "boost wind 3", "", true, "support", empressMadnado, wind, "wind", 0, 1, 0);
+var wind23 = new CardCon("Wind Flitter",0, 0, "Gain 2 Wind Gems", "hero", 0, "supGems 2", "", true, "support", windFlitter, wind, "wind", 0, 1, 0);
 var wind24 = new CardCon("Raa Howler",0, 0, "Gain 1 Wind Card", "hero", 0, "supCards 1", "", false, "support", raaHowler, wind, "wind", 0, 1, 0);
 var wind25 = new CardCon("Alpha Spookaw",0, 0, "Dodge All Sabotoges", "hero", 0, "supDecoy", "", false, "support", alphaSpookaw, wind, "wind", 0, 1, 0);
 var wind26 = new CardCon("Floofer",0, 0, "Gain 1 Energy Per Turn", "hero", 0, "supEnergy 1", "", false, "support", floofer, wind, "wind", 0, 1, 0);
 var wind27 = new CardCon("Maclaw",0, 0, "Gain 2 Energy Per Turn", "hero", 0, "supEnergy 2", "", false, "support", maclaw, wind, "wind", 0, 1, 0);
 var wind28 = new CardCon("Spookaw",0, 0, "Gain 1 Wind Gem", "hero", 0, "supGems 1", "", false, "support", spookaw, wind, "wind", 0, 1, 0);
-var water1 = new CardCon("Healing Water", 0, 3, "Restore 3 health", "hero", 0, "heal 3", "", true, "stormlight", placeholderImg, water, "water", 1, 1, 0);
-var water2 = new CardCon("Tidal Wave", 0, 7, "Splash", "hero", 0, "", "", true, "stormlight", placeholderImg, water, "water", 2, 1, 0);
-var water3 = new CardCon("Magic Force", 0, 6, "Magic +1", "hero", 0, "int 1", "", false, "stormlight", placeholderImg, water, "water", 3, 1, 0)
-var water4 = new CardCon("Cleanse", 0, 4, "Reclaim 1", "hero", 0, "reclaim 1", "", false, "stormlight", placeholderImg, water, "water", 4, 1, 0);
-var water5 = new CardCon("Assimilate", 0, 3, "Reclaim 2", "hero", 0, "reclaim 2", "", false, "stormlight", placeholderImg, water, "water", 5, 1, 0);
-var water6 = new CardCon("Restorative Blast", 0, 5, "Heal 5", "hero", 0, "heal 5", "", false, "stormlight", placeholderImg, water, "water", 6, 1, 0);
-var water7 = new CardCon("Consult the Tides", 0, 2, "Heal 4 and Magic +1", "hero", 0, "heal 4", "int 1", false, "stormlight", placeholderImg, water, "water", 7, 1, 0);
-var water8 = new CardCon("Plague Water", 0, 3, "Poison 2", "hero", 0, "poison 2", "", false, "stormlight", placeholderImg, water, "water", 8, 1, 0);
-var water9 = new CardCon("Water Visions", 0, 1, "Rummage 5", "hero", 0, "research 5", "", false, "stormlight", placeholderImg, water, "water", 9, 1, 0);
-var water10 = new CardCon("Just Keep Looking", 0, 3, "Rummage 3 and heal 3", "hero", 0, "heal 3", "research 3", true, "stormlight", placeholderImg, water, "water", 10, 1, 0);
-var water11 = new CardCon("Imbue power", 0, 0, "Magic +2", "hero", 0, "str 2", "", false, "stormlight", placeholderImg, water, "water", 11, 1, 0);
-var water12 = new CardCon("Dramatic Recovery", 0, 1, "Heal 15", "hero", 0, "heal 15", "", false, "stormlight", placeholderImg, water, "water", 12, 1, 0);
-var water13 = new CardCon("Leeching Cold", 0, 5, "Poison 1", "hero", 0, "poison 1", "", false, "stormlight", placeholderImg, water, "water", 13, 1, 0);
-var water14 = new CardCon("Water Bottle", 0, 2, "Gain 3 Energy and heal 1", "hero", 0, "energy 3", "heal 1", false, "stormlight", placeholderImg, water, "water", 14, 1, 0);
-var water15 = new CardCon("Corrosion", 0, 1, "Poison 4", "hero", 0, "poison 4", "", false, "stormlight", placeholderImg, water, "water", 15, 1, 0);
-var water16 = new CardCon("Cave Thump", 2, 0,"Water cards get +1 power", "hero", 0, "boost water 1", "", false, "support", caveThump, water, "water", 0, 1, 0);
-var water17 = new CardCon("Draw Deep", 0, 0, "Shuffle 3 Drain's into your deck", "hero", 0, "addCard 4 3", "", false, "stormlight", placeholderImg, water, "water", 17, 1, 0);
-var water18 = new CardCon("Rising Tide", 1, 0, "Water Scheme 4, 10", "hero", 0, "scheme water 2 10", 1, false, "character", placeholderImg, water, "water", 18, 1, 0);
-var water19 = new CardCon("Doom Puddles", 2, 0, "Water Scheme 2/Stun", "hero", 0, "scheme water 2 stun", 1, false, "character", placeholderImg, water, "water", 19, 1, 0);
-var water20 = new CardCon("Envelop", 0, 6, "Reclaim 3", "hero", 0, "reclaim 3", "", false, "stormlight", placeholderImg, water, "water", 20, 1, 0);
-var water21 = new CardCon("Coral Thump", 2, 0,"Water cards get +2 power", "hero", 0, "boost water 2", "", false, "support", coralThump, water, "water", 0, 1, 0);
-var water22 = new CardCon("King Slapper", 2, 0,"Water cards get +3 power", "hero", 0, "boost water 3", "", false, "support", kingSlapper, water, "water", 0, 1, 0);
-var water23 = new CardCon("Budle Fairy", 2, 0,"Heal 2 Per Turn", "hero", 0, "supHeal 2", "", false, "support", budleFairy, water, "water", 0, 1, 0);
-var water24 = new CardCon("Albino Slapper", 2, 0,"Heal 4 Per Turn", "hero", 0, "supHeal 4", "", false, "support", albinoSlapper, water, "water", 0, 1, 0);
-var water25 = new CardCon("Super Budle Fairy", 2, 0,"Heal 6 Per Turn", "hero", 0, "supHeal 6", "", false, "support", superBudleFairy, water, "water", 0, 1, 0);
-var water26 = new CardCon("Ghost Shark", 2, 0,"Gain 2 Water Gems", "hero", 0, "supGems 2", "", false, "support", ghostShark, water, "water", 0, 1, 0);
+var wind29 = new CardCon("Madnado",0, 0, "Wind cards get +1 power", "hero", 0, "boost wind 1", "", false, "support", madnado, wind, "wind", 0, 1, 0);
+var water1 = new CardCon("Healing Water", 0, 2, "Heal 8", "hero", 0, "heal 8", "", true, "stormlight", placeholderImg, water, "water", 1, 1, 0);
+var water2 = new CardCon("Assimilate", 0, 3, "Reclaim 1", "hero", 0, "reclaim 1", "", true, "stormlight", placeholderImg, water, "water", 2, 1, 0);
+var water3 = new CardCon("Sickness", 0, 2, "Poison 1", "hero", 0, "poison 1", "", true, "stormlight", placeholderImg, water, "water", 3, 1, 0)
+var water4 = new CardCon("Cleanse", 0, 2, "Reclaim 2", "hero", 0, "reclaim 2", "", true, "stormlight", placeholderImg, water, "water", 4, 1, 0);
+var water5 = new CardCon("Destroy Resistance", 0, 5, "Deplete", "hero", 0, "deplete", "", true, "stormlight", placeholderImg, water, "water", 5, 1, 0);
+var water6 = new CardCon("Restorative Blast", 0, 6, "Reclaim 1", "hero", 0, "reclaim 1", "", true, "stormlight", placeholderImg, water, "water", 6, 1, 0);
+var water7 = new CardCon("Consult the Tides", 0, 3, "Rummage 2", "hero", 0, "research 2", "", true, "stormlight", placeholderImg, water, "water", 7, 1, 0);
+var water8 = new CardCon("Drain Life", 0, 4, "Heal 2. Poison 1.", "hero", 0, "heal 2", "posion 1", true, "stormlight", placeholderImg, water, "water", 8, 1, 0);
+var water9 = new CardCon("Power Water", 0, 2, "Energy 2", "hero", 0, "energy 2", "", true, "stormlight", placeholderImg, water, "water", 9, 1, 0);
+var water10 = new CardCon("Rising Tide", 0, 4, "+1 For Each Water Card", "hero", 0, "factionBoost 1", "", true, "stormlight", placeholderImg, water, "water", 10, 1, 0);
+var water11 = new CardCon("Doom Puddles", 2, 0, "Water Scheme 2/5", "hero", 0, "scheme water 2", 5, true, "character", placeholderImg, water, "water", 11, 1, 0);
+var water12 = new CardCon("Posion Spray", 0, 0, "Poison 3", "hero", 0, "poison 3", "", true, "stormlight", placeholderImg, water, "water", 12, 1, 0);
+var water13 = new CardCon("Ice Hands", 0, 2, "Magic +1", "hero", 0, "str 1", "", true, "stormlight", placeholderImg, water, "water", 13, 1, 0);
+var water14 = new CardCon("Water Gem", 0, 0, "Magic +1. Defense +1", "hero", 0, "str 1", "def 1", true, "stormlight", placeholderImg, water, "water", 14, 1, 0);
+var water15 = new CardCon("Corrosion", 0, 3, "Reclaim 3. Deplete", "hero", 0, "reclaim 3", "deplete", true, "stormlight", placeholderImg, water, "water", 15, 1, 0);
+var water16 = new CardCon("Spreading Sickness", 0, 2, "Posion 1 twice", "hero", 0, "poison 1", "poison 1", true, "stormlight", placeholderImg, water, "water", 16, 1, 0);
+var water17 = new CardCon("Monster In The Deep", 3, 0, "Water Scheme 3/Stun", "hero", 0, "scheme water 3", "stun", true, "character", placeholderImg, water, "water", 17, 1, 0);
+var water18 = new CardCon("Tidal Wave", 0, 2, "+1 For Each Water Card. Heal 4", "hero", 0, "factionBoost 1", "heal 4", true, "stormlight", placeholderImg, water, "water", 18, 1, 0);
+var water19 = new CardCon("Healing Whirpool", 1, 7, "Heal 7", "hero", 0, "heal 7", "", true, "stormlight", placeholderImg, water, "water", 19, 1, 0);
+var water20 = new CardCon("Envelop Darkness", 2, 10, "Reclaim 5", "hero", 0, "reclaim 5", "", true, "stormlight", placeholderImg, water, "water", 20, 1, 0);
+var water21 = new CardCon("Coral Thump", 2, 0,"Water cards get +2 power", "hero", 0, "boost water 2", "", true, "support", coralThump, water, "water", 0, 1, 0);
+var water22 = new CardCon("King Slapper", 2, 0,"Water cards get +3 power", "hero", 0, "boost water 3", "", true, "support", kingSlapper, water, "water", 0, 1, 0);
+var water23 = new CardCon("Budle Fairy", 2, 0,"Heal 2 Per Turn", "hero", 0, "supHeal 2", "", true, "support", budleFairy, water, "water", 0, 1, 0);
+var water24 = new CardCon("Albino Slapper", 2, 0,"Heal 4 Per Turn", "hero", 0, "supHeal 4", "", true, "support", albinoSlapper, water, "water", 0, 1, 0);
+var water25 = new CardCon("Super Budle Fairy", 2, 0,"Heal 6 Per Turn", "hero", 0, "supHeal 6", "", true, "support", superBudleFairy, water, "water", 0, 1, 0);
+var water26 = new CardCon("Ghost Shark", 2, 0,"Gain 2 Water Gems", "hero", 0, "supGems 2", "", true, "support", ghostShark, water, "water", 0, 1, 0);
 var water27 = new CardCon("Marsh Slapper", 2, 0,"Poison 1 to Each Enemy", "hero", 0, "supPoison 1", "", false, "support", marshSlapper, water, "water", 0, 1, 0);
 var water28 = new CardCon("Trench Thump", 2, 0,"Gain 1 Water Card", "hero", 0, "supCards 1", "", false, "support", trenchThump, water, "water", 0, 1, 0);
+var water29 = new CardCon("Cave Thump", 2, 0,"Water cards get +1 power", "hero", 0, "boost water 1", "", false, "support", caveThump, water, "water", 0, 1, 0);
 var basic1 = new CardCon("Small Rock", 0, 2, "It's pretty small", "hero", 1, "", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 1, 2, 2);
-var basic2 = new CardCon("Big Rock", 0, 4, "It's pretty big", "hero", 1, "", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 2, 2, 0);
-var basic3 = new CardCon("Biggest Blast", 0, 6, "Whaaam!", "hero", 2, "", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 3, 1, 0); 
+var basic2 = new CardCon("Big Rock", 0, 4, "It's pretty big", "hero", 1, "", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 2, 2, 2);
+var basic3 = new CardCon("Biggest Blast", 0, 6, "Whaaam!", "hero", 2, "", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 3, 1, 1); 
 var basic4 = new CardCon("Thick Skin", 0, 2, "Shield 2", "hero", 1, "shield 2", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 4, 1, 1);
 var basic5 = new CardCon("Protective Bubble", 0, 0, "Shield 4", "hero", 1, "shield 4", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 5, 1, 1);
 var basic6 = new CardCon("Short Rest", 0, 2, "Heal 3", "hero", 1, "heal 3", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 6, 1, 1);
-var basic7 = new CardCon("Focus", 0, 1,"Next Spell +3", "hero", 1, "next 3", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 7, 1, 0);
+var basic7 = new CardCon("Focus", 0, 1,"Next Spell +3", "hero", 1, "next 3", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 7, 1, 1);
 var basic8 = new CardCon("Reach Back In", 0, 3, "Rummage 2", "hero", 1, "research 2", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 8, 1, 0);
 var basic9 = new CardCon("Thoughful Study", 0, 0, "Rummage 4", "hero", 1, "research 4", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 9, 1, 0);
 var basic10 = new CardCon("More Power", 0, 0, "Increase Attack by 1", "hero", 2, "str 1", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 10, 1, 0);
@@ -302,45 +306,121 @@ var basic57 = new CardCon("Molten Pinch", 0, 5, "Weaken 3", "hero", 0, "weaken 3
 var basic58 = new CardCon("Form of Morp", 2, 0, "Morp form", "hero", 0, "shapeshift4", "", false, "stormlight", placeholderImg, fire, "fire", 0, 1);
 
 var lava1 = new CardCon("Lava Ball", 0, 8, "Wow, duck!", "hero", 0, "", "", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
-var lava2 = new CardCon("Spew Magma", 0, 5, "Weaken 3", "hero", 0, "weaken 3", "", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
-var lava3 = new CardCon("Essence of Volcano", 0, 0, "Gain +2 Str and +2 Def", "hero", 0, "str 2", "def 2", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
-var lava4 = new CardCon("Obsidian Defense", 0, 4, "Gain 10 Shield", "hero", 0, "shield 10", "", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
-var lava5 = new CardCon("Explosion", 0, 7, "Damage all enemies then you're exhausted", "hero", 0, "all", "exhausted", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
-var lava6 = new CardCon("The Summit Trembles", 0, 3, "Grow 2", "hero", 0, "grow 2 20", "", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
-var lava7 = new CardCon("Fire from Below", 0, 4, "Next spell +8", "hero", 0, "next 8", "", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
-var lava8 = new CardCon("Molten Punch", 0, 10, "Shield 4 and purge", "hero", 0, "shield 4", "purge", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
-var lava9 = new CardCon("Magma Trap", 0, 6, "Rummage 4 and weaken 2", "hero", 0, "research 4", "weaken 2", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
-var lava10 = new CardCon("Burn Impurity", 0, 3, "Purge twice", "hero", 0, "purge", "purge", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
-var desert1 = new CardCon("Sand Ball", 0, 4, "Decoy", "hero", 0, "decoy", "", true, "stormlight", placeholderImg, desert, "desert", 0, 1, 0);
-var desert2 = new CardCon("Sap Strength", 0, 3, "Weaken 5", "hero", 0, "weaken 5", "", true, "stormlight", placeholderImg, desert, "desert", 0, 1, 0);
-var desert3 = new CardCon("Steal Power", 0, 2, "Weaken 2 and Str +2", "hero", 0, "weaken 2", "str 2", true, "stormlight", placeholderImg, desert, "desert", 0, 1, 0);
-var desert4 = new CardCon("Dust Rage", 0, 2, "Multiply and decoy", "hero", 0, "multiply", "decoy", true, "stormlight", placeholderImg, desert, "desert", 0, 1, 0);
-var desert5 = new CardCon("Perilous Focus", 0, 0, "Next Spell +16, you're exhausted", "hero", 0, "next 16", "exhausted", true, "stormlight", placeholderImg, desert, "desert", 0, 1, 0);
-var desert6 = new CardCon("Blinding Sand", 0, 5, "Deplete", "hero", 0, "deplete", "", true, "stormlight", placeholderImg, desert, "desert", 0, 1, 0);
-var desert7 = new CardCon("Feint", 0, 2, "Next Spell +10", "hero", 0, "next 10", "", true, "stormlight", placeholderImg, desert, "desert", 0, 1, 0);
-var desert8 = new CardCon("Mirage Attack", 0, 4, "Decoy and attack again", "hero", 0, "decoy", "extra 1", true, "stormlight", placeholderImg, desert, "desert", 0, 1, 0);
-var desert9 = new CardCon("Dune Magic", 0, 2, "Attack 2 more times", "hero", 0, "extra 2", "", true, "stormlight", placeholderImg, desert, "desert", 0, 1, 0);
-var desert10 = new CardCon("Sand Flurry", 0, 3, "Attack all enemies and weaken 2", "hero", 0, "all", "weaken 2", true, "stormlight", placeholderImg, desert, "deset", 0, 1, 0);
-var storm1 = new CardCon("Refreshing Thunder", 0, 4, "Heal 6", "hero", 0, "heal 6", "", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
-var storm2 = new CardCon("Static", 0, 2, "Stun the enemy", "hero", 0, "stun", "", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
-var storm3 = new CardCon("Threatening Clouds", 0, 1, "+2 Int and Next +5", "hero", 0, "int 2", "next 5", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
-var storm4 = new CardCon("Readjust", 0, 2, "Reclaim 2 and decoy", "hero", 0, "reclaim 2", "decoy", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
-var storm5 = new CardCon("Stormfront", 0, 4, "Reclaim 4 and Next Spell +4", "hero", 0, "reclaim 4", "next 4", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
-var storm6 = new CardCon("Howling Gale", 0, 8, "Delpete and Heal 4", "hero", 0, "deplete", "heal 4", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
-var storm7 = new CardCon("Storm Speed", 0, 1, "Int +1 and Stun", "hero", 0, "int 1", "stun", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
-var storm8 = new CardCon("Crushing vortex", 0, 8, "Deplete and Posion 4", "hero", 0, "deplete", "poison 4", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
-var storm9 = new CardCon("Momentary Flash", 0, 3, "Rummage 6 and heal 6", "hero", 0, "research 6", "heal 6", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
-var storm10 = new CardCon("Thunder Punch", 0, 10, "Stun the Enemy", "hero", 0, "stun", "", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
-var mud1 = new CardCon("Mud Bath", 0, 2, "Shield 5 and Heal 5", "hero", 0, "shield 5", "heal 5", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
-var mud2 = new CardCon("Mud Blast", 0, 6, "Poison 2", "hero", 0, "poison 2", "", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
-var mud3 = new CardCon("Absorb Minerals", 0, 0, "Int +2 and Def +2", "hero", 0, "int 2", "def 2", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
-var mud4 = new CardCon("Ambush", 0, 5, "Confuse the enemy", "hero", 0, "confuse", "", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
-var mud5 = new CardCon("Healing Sludge", 0, 3, "Reclaim 3 and Shield 3", "hero", 0, "reclaim 3", "shield 3", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
-var mud6 = new CardCon("Drown in Filth", 0, 2, "Grow 1 and Poison 1", "hero", 0, "grow 1 15", "poison 1", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
-var mud7 = new CardCon("Sink Hole", 0, 5, "Next +5 and Rummage 3", "hero", 0, "next 5", "research 3", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
-var mud8 = new CardCon("Blinding Sickness", 0, 4, "Confuse the enemy and Posion 2", "hero", 0, "confuse", "poison 2", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
-var mud9 = new CardCon("Drain Essence", 0, 4, "Reclaim 4 and Weaken 4", "hero", 0, "reclaim 4", "weaken 4", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
-var mud10 = new CardCon("Swamp Stomp", 0, 8, "Confuse", "hero", 0, "confuse", "", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
+var lava2 = new CardCon("Spew Magma", 0, 4, "Purge", "hero", 0, "purge", "", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
+var lava3 = new CardCon("Everywhere, Lava", 0, 12, "Exhaust", "hero", 0, "exhaust", "", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
+var lava4 = new CardCon("Building Pressure", 0, 2, "Grow 2", "hero", 0, "grow 2 20", "", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 1);
+var lava5 = new CardCon("Smoke Scare", 0, 4, "Spooky 3", "hero", 0, "meter 3", "", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
+var lava6 = new CardCon("The Summit Trembles", 0, 3, "Shield 2. All", "hero", 0, "shield 2", "all", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
+var lava7 = new CardCon("Obsidian Smash", 0, 3, "Shield 6", "hero", 0, "shield 6", "", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
+var lava8 = new CardCon("Molten Punch", 0, 0, "Grow 1. Shield 3", "hero", 0, "grow 1 10", "shield 3", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
+var lava9 = new CardCon("Magma Trap", 0, 2, "Weaken 2. Purge", "hero", 0, "purge", "weaken 2", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
+var lava10 = new CardCon("Furnace", 0, 2, "Energy 4", "hero", 0, "energy 4", "", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
+var lava11 = new CardCon("Monster Tracks", 2, 0, "Lava Scheme 2/Spooky 3", "hero", 0, "scheme lava 2", 3, true, "character", placeholderImg, lava, "lava", 0, 1, 0);
+var lava12 = new CardCon("Eruption", 0, 8, "All. Exhaust.", "hero", 0, "exhaust", "all", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
+var lava13 = new CardCon("Burn Impurity", 0, 1, "Purge twice", "hero", 0, "purge", "purge", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
+var lava14 = new CardCon("The Molten Crown", 0, 3, "Purge. Shield 3", "hero", 0, "purge", "shield 3", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
+var lava15 = new CardCon("Out Of Hand", 0, 4, "Grow 3. Exhaust", "hero", 0, "grow 3 31", "exhaust", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
+var lava16 = new CardCon("Magma Visions", 0, 2, "Purge. Draw +1", "hero", 0, "purge", "int 1", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
+var lava17 = new CardCon("Mountain Treasure", 4, 0, "Lava Scheme 4/Treasure", "hero", 0, "scheme lava 4", 10, true, "character", placeholderImg, lava, "lava", 0, 1, 0);
+var lava18 = new CardCon("Moltify", 0, 4, "All", "hero", 0, "all", "", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
+var lava19 = new CardCon("Constant Spew", 1, 0, "Grow 1", "hero", 0, "grow 1 10", "all", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
+var lava20 = new CardCon("Obsidian Armor", 1, 10, "Defense +2", "hero", 0, "def 2", "", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
+var lava21 = new CardCon("Volcano Trampler", 0, 3, "Purge every turn", "hero", 0, "supPurge", "", true, "support", volcanoTrampler, lava, "lava", 0, 1, 0);
+var lava22 = new CardCon("Lava Walker", 0, 3, "Lava cards +2", "hero", 0, "boost lava 2", "", true, "support", lavaWalker, lava, "lava", 0, 1, 0);
+var lava23 = new CardCon("Moltasaurus", 0, 3, "Lava cards +3", "hero", 0, "boost lava 3", "", true, "support", moltasaurus, lava, "lava", 0, 1, 0);
+var lava24 = new CardCon("Lava Lord Walker", 0, 3, "Lava cards +4", "hero", 0, "boost lava 4", "", true, "support", lavaLordWalker, lava, "lava", 0, 1, 0);
+var lava25 = new CardCon("Emberite", 0, 3, "Gain 2 gems", "hero", 0, "supGems 2", "", true, "support", emberite, lava, "lava", 0, 1, 0);
+var lava26 = new CardCon("Nutrite", 0, 3, "Gain 3 gems", "hero", 0, "supGems 3", "", true, "support", nutrite, lava, "lava", 0, 1, 0);
+var lava27 = new CardCon("Trekapod", 0, 3, "Gain 1 Lava card", "hero", 0, "supCards 1", "", true, "support", trekapod, lava, "lava", 0, 1, 0);
+var lava28 = new CardCon("Moltasaurus Rex", 0, 3, "Deal 3 damage to all enemies each turn", "hero", 0, "supBurning 3", "", true, "support", moltasaurusRex, lava, "lava", 0, 1, 0);
+var lava29 = new CardCon("Walking Eruption", 0, 3, "Exhaust cards deal +5 damage", "hero", 0, "supAbilityBoost exhaust 5", "", true, "support", walkingEruption, lava, "lava", 0, 1, 0);
+var desert1 = new CardCon("Sand Ball", 0, 6, "", "hero", 0, "", "", true, "stormlight", placeholderImg, desert, "desert", 0, 1, 0);
+var desert2 = new CardCon("Save Strength", 0, 0, "Next +10", "hero", 0, "next 10", "", true, "stormlight", placeholderImg, desert, "desert", 0, 1, 0);
+var desert3 = new CardCon("Dune Speed", 0, 3, "Extra", "hero", 0, "extra 1", "", true, "stormlight", placeholderImg, desert, "desert", 0, 1, 0);
+var desert4 = new CardCon("Dust Rage", 0, 5, "Decoy", "hero", 0, "decoy", "", true, "stormlight", placeholderImg, desert, "desert", 0, 1, 0);
+var desert5 = new CardCon("Perilous Focus", 0, 2, "Finesse 1. Next +3", "hero", 0, "finesse 1", "next 3", true, "stormlight", placeholderImg, desert, "desert", 0, 1, 0);
+var desert6 = new CardCon("Changing Sand", 0, 4, "Draw +2", "hero", 0, "int 2", "", true, "stormlight", placeholderImg, desert, "desert", 0, 1, 0);
+var desert7 = new CardCon("Feint", 0, 1, "Extra. Decoy.", "hero", 0, "extra 1", "decoy", true, "stormlight", placeholderImg, desert, "desert", 0, 1, 0);
+var desert8 = new CardCon("Crystals", 0, 3, "Energy 4", "hero", 0, "energy 4", "", true, "stormlight", placeholderImg, desert, "desert", 0, 1, 0);
+var desert9 = new CardCon("Mummy Chase", 0, 3, "Spooky 3", "hero", 0, "meter 3", "", true, "stormlight", placeholderImg, desert, "desert", 0, 1, 0);
+var desert10 = new CardCon("Intense Dodge", 0, 5, "Decoy. Exhaust.", "hero", 0, "decoy", "exhaust", true, "stormlight", placeholderImg, desert, "deset", 0, 1, 0);
+var desert11 = new CardCon("Tomb Treasure", 2, 0, "Desert Scheme 3/Treasure", "hero", 0, "scheme desert 3", 11, true, "character", placeholderImg, desert, "deset", 0, 1, 0);
+var desert12 = new CardCon("Sand Flurry", 0, 3, "Multiply", "hero", 0, "multiply", "", true, "stormlight", placeholderImg, desert, "deset", 0, 1, 0);
+var desert13 = new CardCon("Rush of Magic", 0, 0, "Extra 2.", "hero", 0, "extra 2", "", true, "stormlight", placeholderImg, desert, "deset", 0, 1, 0);
+var desert14 = new CardCon("Desert Wisdom", 0, 2, "Extra. Draw +1.", "hero", 0, "extra 1", "int 1", true, "stormlight", placeholderImg, desert, "deset", 0, 1, 0);
+var desert15 = new CardCon("Mirage", 0, 1, "Multiply. Decoy", "hero", 0, "multiply", "decoy", true, "stormlight", placeholderImg, desert, "deset", 0, 1, 0);
+var desert16 = new CardCon("Delicate Slicing", 0, 2, "Finesse 1. All.", "hero", 0, "finesse 1", "all", true, "stormlight", placeholderImg, desert, "deset", 0, 1, 0);
+var desert17 = new CardCon("Entomb", 4, 0, "Desert Scheme 6/17", "hero", 0, "scheme desert 6", 17, true, "character", placeholderImg, desert, "deset", 0, 1, 0);
+var desert18 = new CardCon("Never Tire", 0, 2, "Extra. Multiply.", "hero", 0, "extra 1", "multiply", true, "stormlight", placeholderImg, desert, "deset", 0, 1, 0);
+var desert19 = new CardCon("Painful Illusion", 2, 2, "Extra 3", "hero", 0, "extra 3", "", true, "stormlight", placeholderImg, desert, "deset", 0, 1, 0);
+var desert20 = new CardCon("Sun Gem", 1, 3, "Draw +3. Next +3", "hero", 0, "int 3", "next 3", true, "stormlight", placeholderImg, desert, "deset", 0, 1, 0);
+var desert21 = new CardCon("Dune Stabber", 0, 3, "Desert Cards +2", "hero", 0, "boost desert 2", "", true, "stormlight", duneStabber, desert, "deset", 0, 1, 0);
+var desert22 = new CardCon("Predator Snipp", 0, 3, "Desert Cards +3", "hero", 0, "boost desert 3", "", true, "stormlight", predatorSnipp, desert, "deset", 0, 1, 0);
+var desert23 = new CardCon("Champion Stalker", 0, 3, "Desert Cards +4", "hero", 0, "boost desert 4", "", true, "stormlight", championStalker, desert, "deset", 0, 1, 0);
+var desert24 = new CardCon("Stabber Conclave", 0, 3, "All enemies get -3 attack", "hero", 0, "supWeaken 3", "", true, "stormlight", stabberConclave, desert, "deset", 0, 1, 0);
+var desert25 = new CardCon("Grumpeel", 0, 3, "Gain 2 gems", "hero", 0, "supGems 2", "", true, "stormlight", grumpeel, desert, "deset", 0, 1, 0);
+var desert26 = new CardCon("Wandering Relic", 0, 3, "Gain 1 Desert Card", "hero", 0, "supCards 1", "", true, "stormlight", wanderingRelic, desert, "deset", 0, 1, 0);
+var desert27 = new CardCon("Desert Madnado", 0, 3, "Your Next spells get +2", "hero", 0, "supAbilityBoost next 2", "", true, "stormlight", desertMadnado, desert, "deset", 0, 1, 0);
+var desert28 = new CardCon("Bone Stalker", 0, 3, "Desert card gain grow 1 when played", "hero", 0, "supGrow desert 1", "", true, "stormlight", boneStalker, desert, "deset", 0, 1, 0);
+var desert29 = new CardCon("Sand Snipp", 0, 3, "Decoy", "hero", 0, "supDecoy", "", true, "stormlight", sandSnipp, desert, "deset", 0, 1, 0);
+var storm1 = new CardCon("Storm Crunch", 0, 6, "", "hero", 0, "", "", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
+var storm2 = new CardCon("Static", 0, 4, "Stun", "hero", 0, "stun", "", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
+var storm3 = new CardCon("Threatening Clouds", 0, 1, "Finesse 2. Deplete.", "hero", 0, "finesse 2", "deplete", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
+var storm4 = new CardCon("Readjust", 0, 3, "Reclaim 2", "hero", 0, "reclaim 2", "", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
+var storm5 = new CardCon("Rejuvination", 0, 0, "Reclaim 5", "hero", 0, "reclaim 5", "", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
+var storm6 = new CardCon("Howling Gale", 0, 3, "Finesse. Reclaim 1.", "hero", 0, "finesse 1", "reclaim 1", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
+var storm7 = new CardCon("Stinging Tide", 0, 1, "Stun. Poison 2.", "hero", 0, "poison 2", "stun", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
+var storm8 = new CardCon("Crushing vortex", 0, 5, "Deplete", "hero", 0, "deplete", "", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
+var storm9 = new CardCon("Lightning Charged", 0, 2, "Energy 5", "hero", 0, "energy 5", "", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
+var storm10 = new CardCon("Thunder Clap", 0, 5, "Spooky 2", "hero", 0, "meter 2", "", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
+var storm11 = new CardCon("Delayed Shock", 1, 0, "Storm Scheme 2/Stun", "hero", 0, "scheme storm 2", "stun", true, "character", placeholderImg, storm, "storm", 0, 1, 0);
+var storm12 = new CardCon("Finishing Blow", 0, 4, "Finesse 3", "hero", 0, "finesse 3", "", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
+var storm13 = new CardCon("Bitter Downpour", 0, 4, "Reclaim 2. Deplete", "hero", 0, "reclaim 2", "deplete", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
+var storm14 = new CardCon("Thunderhead", 0, 2, "Stun. Magic +1", "hero", 0, "stun", "str 1", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
+var storm15 = new CardCon("Recharge", 0, 2, "Decoy. Magic +1", "hero", 0, "decoy", "str 1", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
+var storm16 = new CardCon("Dazed", 0, 3, "Stun. Next +2", "hero", 0, "stun", "next 2", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
+var storm17 = new CardCon("Treasure Storm", 4, 0, "Storm Scheme 4/Treasure", "hero", 0, "scheme storm 4", 10, true, "character", placeholderImg, storm, "storm", 0, 1, 0);
+var storm18 = new CardCon("Thunder Punch", 1, 9, "Stun the Enemy", "hero", 0, "stun", "", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
+var storm19 = new CardCon("Converging Storm", 0, 4, "+2 For Each Storm Card", "hero", 0, "factionBoost 2", "", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
+var storm20 = new CardCon("Hurricane Essence", 1, 1, "Magic +3", "hero", 0, "str 3", "", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
+var storm21 = new CardCon("Lightning Bug", 2, 0, "Boost Storm 2", "hero", 0, "boost storm 2", "", true, "support", lightningBug, storm, "storm", 0, 1, 0);
+var storm22 = new CardCon("Static Glider", 3, 0, "Boost Storm 3", "hero", 0, "boost storm 3", "", true, "support", staticGlider, storm, "storm", 0, 1, 0);
+var storm23 = new CardCon("Great Shock Shark", 4, 0, "Boost Storm 4", "hero", 0, "boost storm 4", "", true, "support", greatShockShark, storm, "storm", 0, 1, 0);
+var storm24 = new CardCon("Shelter Thump", 3, 0, "Gain 2 Gems", "hero", 0, "supGems 2", "", true, "support", shelterThump, storm, "storm", 0, 1, 0);
+var storm25 = new CardCon("Shock Shark", 3, 0, "Gain 1 Storm Cards", "hero", 0, "supCards 1", "", true, "support", placeholderImg, storm, "storm", 0, 1, 0);
+var storm26 = new CardCon("Static Catcher", 5, 0, "Gain 3 Gems", "hero", 0, "supGems 3", "", true, "support", staticCatcher, storm, "storm", 0, 1, 0);
+var storm27 = new CardCon("Rain Wolf", 5, 0, "Gain 2 Energy Per Turn", "hero", 0, "supEnergy 2", "", true, "support", rainWolf, storm, "storm", 0, 1, 0);
+var storm28 = new CardCon("Schorched Tree Ghast", 2, 0, "Reclaim Cards +2", "hero", 0, "supAbilityBoost reclaim 2", "", true, "support", scorchedTreeGhast, storm, "storm", 0, 1, 0);
+var storm29 = new CardCon("Enlightened Rain Wolf", 3, 0, "Add Grow 1 Storm Cards When Played", "hero", 0, "supGrow storm 1", "", true, "support", enlightenedRainWolf, storm, "storm", 0, 1, 0);
+var mud1 = new CardCon("Mud Bath", 0, 6, "Heal 6", "hero", 0, "heal 6", "", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
+var mud2 = new CardCon("Mud Blast", 0, 3, "Confuse", "hero", 0, "confuse", "", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
+var mud3 = new CardCon("Stuck Muck", 0, 6, "Weaken 2", "hero", 0, "weaken 2", "", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
+var mud4 = new CardCon("Tentacle Shackles", 0, 2, "Weaken 3", "hero", 0, "weaken 3", "", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
+var mud5 = new CardCon("Sickening Shot", 0, 2, "Confuse. Poison 2", "hero", 0, "confuse", "poison 2", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
+var mud6 = new CardCon("Drown in Filth", 0, 4, "Poison 3", "hero", 0, "poison 3", "", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
+var mud7 = new CardCon("Sink Hole", 0, 1, "Poison 1. Weaken 1.", "hero", 0, "poison 1", "weaken 1", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
+var mud8 = new CardCon("Magic Mud Helm", 0, 3, "Heal 5. Defense +1.", "hero", 0, "heal 5", "def 1", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
+var mud9 = new CardCon("Murky Whispers", 0, 5, "Rumage 4", "hero", 0, "research 4", "", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
+var mud10 = new CardCon("Glow Minerals", 0, 3, "Energy 4", "hero", 0, "energy 4", "", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
+var mud11 = new CardCon("Fossilized Prize", 2, 0, "Mud Scheme 2/Treasure", "hero", 0, "scheme mud 2", 6, true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
+var mud12 = new CardCon("Spread Filth", 0, 5, "Poison 1 to 2 Enemies", "hero", 0, "poison 1", "poison 1", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
+var mud13 = new CardCon("Swamp Power", 0, 2, "Grow 1. Heal 3", "hero", 0, "grow 1 15", "heal 3", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
+var mud14 = new CardCon("Duck", 0, 0, "Confuse. Magic +1.", "hero", 0, "confuse", "str 1", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
+var mud15 = new CardCon("Transforming Gem", 0, 7, "Reclaim 2", "hero", 0, "reclaim 2", "", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
+var mud16 = new CardCon("Soak Minerals", 0, 2, "Heal 10", "hero", 0, "heal 10", "", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
+var mud17 = new CardCon("Never Escape", 4, 0, "Mud Scheme 5/20", "hero", 0, "scheme mud 5", 20, true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
+var mud18 = new CardCon("Steal Essense", 0, 8, "Poison 1. Heal 4.", "hero", 0, "poison 1", "heal 4", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
+var mud19 = new CardCon("Swamp Stomp", 1, 9, "Confuse", "hero", 0, "confuse", "", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
+var mud20 = new CardCon("Inevitable Decay", 1, 1, "Poison 3. Poison 3", "hero", 0, "poison 3", "poison 3", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
+var mud11 = new CardCon("Warthus", 0, 0, "", "hero", 0, "boost mud 2", "", true, "support", warthus, mud, "mud", 0, 1, 0);
+var mud12 = new CardCon("Muckster", 0, 0, "", "hero", 0, "boost mud 3", "", true, "support", muckster, mud, "mud", 0, 1, 0);
+var mud13 = new CardCon("Archmage Muckster", 0, 0, "", "hero", 0, "boost mud 4", "", true, "support", archmageMuckster, mud, "mud", 0, 1, 0);
+var mud14 = new CardCon("Bog Boar", 0, 0, "", "hero", 0, "supPoison 2", "", true, "support", bogBoar, mud, "mud", 0, 1, 0);
+var mud15 = new CardCon("Toxic Roller", 0, 0, "", "hero", 0, "supPoison 4", "", true, "support", toxicRoller, mud, "mud", 0, 1, 0);
+var mud16 = new CardCon("Lesser Galope", 0, 0, "", "hero", 0, "supGems 2", "", true, "support", lesserGalope, mud, "mud", 0, 1, 0);
+var mud17 = new CardCon("Sominus", 0, 0, "", "hero", 0, "supCards 1", "", true, "support", sominus, mud, "mud", 0, 1, 0);
+var mud10 = new CardCon("Duchess Warthus", 0, 0, "", "hero", 0, "supGrow mud 1", "", true, "support", duchessWarthus, mud, "mud", 0, 1, 0);
+var mud19 = new CardCon("Greater Galope", 0, 0, "", "hero", 0, "supAbilityBoost poison 1", "", true, "support", greaterGalope, mud, "mud", 0, 1, 0);
 
 var addCard1 = new CardCon("Roast", 0, 8, "Deal 8", "hero", 0, "remove", "", false, "stormlight", placeholderImg, fire, "fire", 0);
 var addCard2 = new CardCon("Earth Shield", 0, 3, "Shield 7", "hero", 0, "shield 7", "remove", false, "stormlight", placeholderImg, earth, "earth", 0);
@@ -364,8 +444,8 @@ const wobbledukStats = {
 
 const angryWobbledukStats = {
 	name: "Mean Wobbleduk",
-	hp: 1,
-	attack: 2,
+	hp: 6,
+	attack: 4,
 	sabotoge: 1,
 	pointValue: 50,
 	image: wobbleduk,
@@ -376,8 +456,8 @@ const angryWobbledukStats = {
 
 const kingWobbledukStats = {
 	name: "King Wobbleduk",
-	hp: 3,
-	attack: 5,
+	hp: 20,
+	attack: 4,
 	sabotoge: 3,
 	pointValue: 700,
 	image: kingWobbleduk,
@@ -388,8 +468,8 @@ const kingWobbledukStats = {
 
 const primtreeStats = {
 	name: "Primtree",
-	hp: 2,
-	attack: 3,
+	hp: 8,
+	attack: 2,
 	sabotoge: 0,
 	pointValue: 150,
 	image: primtree,
@@ -400,8 +480,8 @@ const primtreeStats = {
 
 const primtreeDefenderStats = {
 	name: "Primtree Defender",
-	hp: 1,
-	attack: 3,
+	hp: 10,
+	attack: 2,
 	sabotoge: 1,
 	pointValue: 150,
 	image: toughPrimtree,
@@ -412,9 +492,9 @@ const primtreeDefenderStats = {
 
 const primtreeRoyalStats = {
 	name: "Jewel Primtree",
-	hp: 1,
-	attack: 5,
-	sabotoge: 1,
+	hp: 9,
+	attack: 3,
+	sabotoge: 2,
 	pointValue: 150,
 	image: jewelPrimtree,
 	sabCard: sabotoge1,
@@ -424,9 +504,9 @@ const primtreeRoyalStats = {
 
 const queenPrimtreeStats = {
 	name: "Queen Primtree",
-	hp: 1,
-	attack: 5,
-	sabotoge: 1,
+	hp: 20,
+	attack: 4,
+	sabotoge: 4,
 	pointValue: 150,
 	image: queenPrimtree,
 	sabCard: sabotoge1,
@@ -436,8 +516,8 @@ const queenPrimtreeStats = {
 
 const rockFairyStats = {
 	name: "Rock Fairy",
-	hp: 1,
-	attack: 2,
+	hp: 7,
+	attack: 1,
 	sabotoge: 1,
 	pointValue: 100,
 	image: rockFairy,
@@ -448,7 +528,7 @@ const rockFairyStats = {
 
 const steedStats = {
 	name: "Steed",
-	hp: 1,
+	hp: 5,
 	attack: 2,
 	sabotoge: 1,
 	pointValue: 100,
@@ -460,9 +540,9 @@ const steedStats = {
 
 const stoneStriderStats = {
 	name: "Stone Strider",
-	hp: 1,
-	attack: 2,
-	sabotoge: 1,
+	hp: 8,
+	attack: 3,
+	sabotoge: 0,
 	pointValue: 100,
 	image: stoneStrider,
 	sabCard: sabotoge1,
@@ -472,7 +552,7 @@ const stoneStriderStats = {
 
 const morpStats = {
 	name: "Morp",
-	hp: 2,
+	hp: 3,
 	attack: 3,
 	sabotoge: 1,
 	pointValue: 100,
@@ -496,7 +576,7 @@ const emberAdderStats = {
 
 const flameCrawlerStats = {
 	name: "Flame Crawler",
-	hp: 9,
+	hp: 10,
 	attack: 2,
 	sabotoge: 0,
 	pointValue: 100,
@@ -557,7 +637,7 @@ const kragmupStats = {
 
 const broodmotherStats = {
 	name: "Broodmother",
-	hp: 6,
+	hp: 20,
 	attack: 2,
 	sabotoge: 2,
 	pointValue: 100,
@@ -569,7 +649,7 @@ const broodmotherStats = {
 
 const pheonixWyrmStats = {
 	name: "Pheonix Wyrm",
-	hp: 6,
+	hp: 9,
 	attack: 2,
 	sabotoge: 2,
 	pointValue: 100,
@@ -803,7 +883,8 @@ const boneStalkerStats = {
 	pointValue: 150,
 	image: boneStalker,
 	sabCard: sabotoge1,
-	element: desert
+	element: desert,
+	supCard: desert18
 };
 
 const championStalkerStats = {
@@ -814,7 +895,8 @@ const championStalkerStats = {
 	pointValue: 150,
 	image: championStalker,
 	sabCard: sabotoge1,
-	element: desert
+	element: desert,
+	supCard: desert13
 };
 
 const desertMadnadoStats = {
@@ -825,7 +907,8 @@ const desertMadnadoStats = {
 	pointValue: 150,
 	image: desertMadnado,
 	sabCard: sabotoge1,
-	element: desert
+	element: desert,
+	supCard: desert17
 };
 
 const sandSnippStats = {
@@ -836,18 +919,20 @@ const sandSnippStats = {
 	pointValue: 150,
 	image: sandSnipp,
 	sabCard: sabotoge1,
-	element: desert
+	element: desert,
+	supCard: desert19
 };
 
 const predatorSnippStats = {
-	name: "Sand Snipp",
+	name: "Predator Snipp",
 	hp: 8,
 	attack: 3,
 	sabotoge: 1,
 	pointValue: 150,
 	image: predatorSnipp,
 	sabCard: sabotoge1,
-	element: desert
+	element: desert,
+	supCard: desert12
 };
 
 const grumpeelStats = {
@@ -858,7 +943,8 @@ const grumpeelStats = {
 	pointValue: 150,
 	image: grumpeel,
 	sabCard: sabotoge1,
-	element: desert
+	element: desert,
+	supCard: desert15
 };
 
 const duneStabberStats = {
@@ -869,7 +955,8 @@ const duneStabberStats = {
 	pointValue: 100,
 	image: duneStabber,
 	sabCard: sabotoge1,
-	element: desert
+	element: desert,
+	supCard: desert11
 };
 
 const stabberConclaveStats = {
@@ -880,7 +967,8 @@ const stabberConclaveStats = {
 	pointValue: 100,
 	image: stabberConclave,
 	sabCard: sabotoge1,
-	element: desert
+	element: desert,
+	supCard: desert14
 };
 
 const wanderingRelicStats = {
@@ -891,7 +979,8 @@ const wanderingRelicStats = {
 	pointValue: 100,
 	image: wanderingRelic,
 	sabCard: sabotoge1,
-	element: desert
+	element: desert,
+	supCard: desert16
 };
 
 const emberiteStats = {
@@ -902,7 +991,9 @@ const emberiteStats = {
 	pointValue: 100,
 	image: emberite,
 	sabCard: sabotoge1,
-	element: lava
+	element: lava,
+	supCard: lava,
+	supCard: lava15
 };
 
 const nutriteStats = {
@@ -913,7 +1004,8 @@ const nutriteStats = {
 	pointValue: 100,
 	image: nutrite,
 	sabCard: sabotoge1,
-	element: lava
+	element: lava,
+	supCard: lava16
 };
 
 const lavaWalkerStats = {
@@ -924,7 +1016,8 @@ const lavaWalkerStats = {
 	pointValue: 100,
 	image: lavaWalker,
 	sabCard: sabotoge1,
-	element: lava
+	element: lava,
+	supCard: lava12
 };
 
 const moltasaurusStats = {
@@ -935,7 +1028,8 @@ const moltasaurusStats = {
 	pointValue: 100,
 	image: moltasaurus,
 	sabCard: sabotoge1,
-	element: lava
+	element: lava,
+	supCard: lava13
 };
 
 const moltasaurusRexStats = {
@@ -946,7 +1040,8 @@ const moltasaurusRexStats = {
 	pointValue: 100,
 	image: moltasaurusRex,
 	sabCard: sabotoge1,
-	element: lava
+	element: lava,
+	supCard: lava18
 };
 
 const lavaLordWalkerStats = {
@@ -957,7 +1052,8 @@ const lavaLordWalkerStats = {
 	pointValue: 100,
 	image: lavaLordWalker,
 	sabCard: sabotoge1,
-	element: lava
+	element: lava,
+	supCard: lava14
 };
 
 const trekapodStats = {
@@ -968,7 +1064,8 @@ const trekapodStats = {
 	pointValue: 100,
 	image: trekapod,
 	sabCard: sabotoge1,
-	element: lava
+	element: lava,
+	supCard: lava17
 };
 
 const volcanoTramplerStats = {
@@ -979,7 +1076,8 @@ const volcanoTramplerStats = {
 	pointValue: 100,
 	image: volcanoTrampler,
 	sabCard: sabotoge1,
-	element: lava
+	element: lava,
+	supCard: lava11
 };
 
 const walkingEruptionStats = {
@@ -990,7 +1088,8 @@ const walkingEruptionStats = {
 	pointValue: 100,
 	image: walkingEruption,
 	sabCard: sabotoge1,
-	element: lava
+	element: lava,
+	supCard: lava19
 };
 
 const bogBoarStats = {
@@ -1748,12 +1847,13 @@ var stageComplete = 0;
 var currentHeroPostion = 0;
 var enemyNumber = 0;
 var cardAbilityNum = 1;
+var factionBoost = 0;
 var itemArray = [rustySword, battleSpear, shardblade, leatherPads, parshendiCarapace, shardplate];
 var enemyArray = [];
-var cardArray = [basic1, fire16, earth21];
+var cardArray = [basic1, basic2, basic3, basic4, lava5, basic6, basic7];
 var cardArray2 = [];
 var recruitArray = [];
-var collectionArray = [basic1, fire16, earth21];
+var collectionArray = [basic1, basic2, basic3, basic4, lava5, basic6, basic7];
 var cardFrames = [];
 var elementOrbs = [];
 var multiplier = 1;
@@ -1761,6 +1861,7 @@ var allies = [];
 var meterArray = [meter0, meter1, meter2, meter3, meter4, meter5, meter6, meter7, meter8, meter9, meter10, meter11, meter12];
 var levelsBeaten = [];
 var keyWordList = [{keyword: "Shield", description: "Shield blocks enemy damage and sabotoges."}, {keyword: "Purge", description: "Removes an enemy sabotoge from your deck."}, {keyword: "Weaken", description: "Reduces an enemies strength"}, {keyword: "Exhausted", description: "Enemies attack twice in a row"}, {keyword: "Stun", description: "Stunned enemies miss their next attack"}, {keyword: "Poison", description: "Damage delt at the end of the turn"}, {keyword: "Confuse", description: "Confused enemies attack a random enemy"}, {keyword: "Grow", description: "The card gains power each time it is used"}, {keyword: "Scheme", description: "Schemes are played to one of your support areas and then are charged up over time providing an effect once completed"}, {keyword: "Heal", description: "Restore health to your character"}, {keyword: "Reclaim", description: "Increase the power of all enemy sabotoges in your deck"}, {keyword: "Int", description: "How many cards your draw when attacking"}, {keyword: "Def", description: "The number of shields you have at the start of every turn."}, {keyword: "Str", description: "Added damage to each attack"}, {keyword: "Rummage", description: "Choose a card to be replaced by a random card from your deck."}, {keyword: "Transform", description: "Change your stats into another creatures. Once your hp falls to 0 you regain your previous stats."}, {keyword: "multiply", description: "Double the damage you would deal this turn."}, {keyword: "Decoy", description: "Avoid all sabotoges this turn."}, {keyword: "Energy", description: "Gain energy to use for other purposes."}, {keyword: "Next", description: "Add power to the next card you choose."}, {keyword: "Add Card", description: "Shuffle a number of new cards into your deck."}, {keyword: "Remove", description: "The card gets removed from your deck after you select it"}, {keyword: "Extra", description: "Attack again after this one."}, {keyword: "Deplete", description: "Remove a sabotoge from the selected enemy."}, {keyword: "Boost", description: "All card of the selected type gain extra power."}, {keyword: "Spook", description: "The enemy will recieve 1.5x damage while it is spooked."}, {keyword: "Transform", description: "Turn an emeny sabotoge in your deck into another card."}, {keyword: "All", description: "Deal damage to all enemies."}];
+var finesseAttack; 
 
 function shuffle(a) {
     for (let i = a.length; i; i--) {
@@ -1831,6 +1932,7 @@ class GameScreenHub extends React.Component {
 		this.toggleInfoScreen = this.toggleInfoScreen.bind(this);
 		this.gainSupCardReward = this.gainSupCardReward.bind(this);
 		this.gainSupGemReward = this.gainSupGemReward.bind(this);
+		this.clearSupRewards = this.clearSupRewards.bind(this);
 	}
 	writeUserData(){
 		var user = document.getElementById("saveName").value;
@@ -1896,6 +1998,12 @@ class GameScreenHub extends React.Component {
 		updateRewardArray.push(reward);
 		this.setState({
 			supGemRewards: updateRewardArray
+		});
+	}
+	clearSupRewards(){
+		this.setState({
+			supCardRewards: [],
+			supGemRewards: []
 		});
 	}
 	changeHeroHp(newHp){
@@ -2232,7 +2340,7 @@ class GameScreenHub extends React.Component {
 			{this.state.characterSelectScreen ? <CharacterSelectScreen getUserData={this.getUserData} writeUserData={this.writeUserData} goToLevelScreen={this.goToLevelScreen} score={this.state.score} createNewCharacter={this.createNewCharacter} influence={this.state.influence} shield={this.state.heroShield} spheres={this.state.sphereCount} attack={this.state.attack} playerHero={playerHero} switchEnemyArray={this.switchEnemyArray} goToEquipmentScreen={this.goToEquipmentScreen} heroHp={this.state.heroHp} showCollection={this.showCollection} changeHero={this.changeHero} goToGameScreen={this.goToGameScreen} /> : null }
 			{this.state.levelSelectScreen ? <LevelSelectScreen goToGameScreen={this.goToGameScreen} switchEnemyArray={this.switchEnemyArray} /> : null }
 			{this.state.gameScreen ? <GameScreen gainSupGemReward={this.gainSupGemReward} gainSupCardReward={this.gainSupCardReward} toggleInfoScreen={this.toggleInfoScreen} characterScreen={this.goToCharacterScreen} changeHeroShield={this.changeHeroShield} changeHeroAttack={this.changeHeroAttack} changeInfluence={this.changeInfluence} influence={this.state.influence} int={this.state.heroSelect.intelligence} shield={this.state.heroShield} switchEnemyArray={this.switchEnemyArray} increaseStormCounter={this.increaseStormCounter} decreaseStormCounter={this.decreaseStormCounter} stormCounter={this.state.stormCounter} changeHeroHp={this.changeHeroHp} heroHp={this.state.heroHp} score={this.state.score} setSpheres={this.setSphereCount} changeScore={this.changeScore} aux={this.auxilaryScreen} heroSelect={this.state.heroSelect} attack={this.state.attack} equipment={this.state.equipment} enemyArray={this.state.enemyArray} /> : null }
-			{this.state.auxilaryScreen ? <AuxilaryScreen supGemRewards={this.state.supGemRewards} supCardRewards={this.state.supCardRewards} goToEndingScreen={this.goToEndingScreen} changeInfluence={this.changeInfluence} influence={this.state.influence} setSphereCount={this.setSphereCount} score={this.state.score} resetStormCounter={this.resetStormCounter} goToCharacterScreen={this.goToCharacterScreen} /> : null }
+			{this.state.auxilaryScreen ? <AuxilaryScreen clearSupRewards={this.clearSupRewards} supGemRewards={this.state.supGemRewards} supCardRewards={this.state.supCardRewards} goToEndingScreen={this.goToEndingScreen} changeInfluence={this.changeInfluence} influence={this.state.influence} setSphereCount={this.setSphereCount} score={this.state.score} resetStormCounter={this.resetStormCounter} goToCharacterScreen={this.goToCharacterScreen} /> : null }
 			{this.state.collectionScreen ? <CollectionScreen goToCraftingScreen={this.goToCraftingScreen} checkDeckContents={this.checkDeckContents} /> : null }
 			{this.state.equipmentScreen ? <EquipmentScreen changeScore={this.changeScore} score={this.state.score} itemArray={this.state.itemArray} heroShield={this.state.heroShield} spheres={this.state.sphereCount} setSphereCount={this.setSphereCount} playerHero={playerHero} chooseItemAction={this.chooseItemAction} attack={this.state.attack} goToCharacterScreen={this.goToCharacterScreen} /> : null }
 			{this.state.craftingScreen ? <CraftingScreen showCollection={this.showCollection} /> : null}
@@ -2692,7 +2800,26 @@ class GameScreen extends React.Component {
 				recruit: false,
 				supportAction: true
 			}, () => {
-				this.checkSupportAbility(card);
+				if(card.cost > 0 && card.type === "stormlight"){
+					var meterNum = (card.cost * -1);
+					var splitMeter = this.state.spookLevel.split("/");
+					var splitMore = splitMeter[3].split(".");
+					var lastSplit = splitMore[0].split("meter");
+					var currentMeterNum = parseInt(lastSplit[1]);
+					var newMeterNum = (currentMeterNum + meterNum);
+					if(newMeterNum < 0){
+						newMeterNum = 0;
+					}else if(newMeterNum > 12){
+						newMeterNum = 12;
+					}
+					this.setState({
+						spookLevel: meterArray[newMeterNum]
+					}, () => {
+						this.checkSupportAbility(card);
+					});
+				}else{
+					this.checkSupportAbility(card);
+				}
 			    const x = document.getElementsByClassName("characterImage2");
 				for (var i=0; i < x.length; i ++ ){
 					x[i].classList.remove("targetedEnemy");
@@ -2789,7 +2916,32 @@ class GameScreen extends React.Component {
 		}else if(card.ability1.indexOf("supGems") >= 0){
 			var gemNum = parseInt(card.ability1.split(/[ ,]+/)[1]);
 			for(var i=0; i<gemNum; i++){
-				this.props.gainSupGemReward(card.icon);
+				var randNum = Math.floor(Math.random() * 2);
+				if(randNum === 1){
+					if(card.icon === lava){
+						this.props.gainSupGemReward(fire);
+					}else if(card.icon === mud){
+						this.props.gainSupGemReward(earth);
+					}else if(card.icon === desert){
+						this.props.gainSupGemReward(wind);
+					}else if(card.icon === storm){
+						this.props.gainSupGemReward(water);
+					}else{
+						this.props.gainSupGemReward(card.icon);
+					}
+				}if(randNum === 2){
+					if(card.icon === lava){
+						this.props.gainSupGemReward(earth);
+					}else if(card.icon === mud){
+						this.props.gainSupGemReward(water);
+					}else if(card.icon === desert){
+						this.props.gainSupGemReward(fire);
+					}else if(card.icon === storm){
+						this.props.gainSupGemReward(wind);
+					}else{
+						this.props.gainSupGemReward(card.icon);
+					}
+				}
 			}
 		}else if(card.ability1.indexOf("supCards") >= 0){
 			var cardNum = parseInt(card.ability1.split(/[ ,]+/)[1]);
@@ -2935,8 +3087,7 @@ class GameScreen extends React.Component {
 			}else{}
 		}
 		var cardPower = card.power;
-		console.log(card);
-		var newAttack = (this.props.attack + cardPower + this.state.nextSpellBonus + supportMod) * multiplier;
+		var newAttack = (this.props.attack + cardPower + this.state.nextSpellBonus + supportMod + factionBoost) * multiplier;
 		if(cardAbilityNum === 1){
 			this.setState({
 				nextSpellBonus: 0
@@ -3014,6 +3165,7 @@ class GameScreen extends React.Component {
 			}else if(checkAbility.indexOf("exhausted") >=0) {
 				if(this.state.exhausted === "immune"){
 				}else{
+					console.log("true exhaust");
 					this.setState({
 						exhausted: true
 					});
@@ -3131,9 +3283,37 @@ class GameScreen extends React.Component {
 				this.setState({
 					spookLevel: meterArray[newMeterNum]
 				});
-			}else{}
+			}else if(checkAbility.indexOf("finesse") >=0){
+				var finesseNum = parseInt(checkAbility.split(" ")[1]);
+				console.log(cardPower + finesseNum);
+				if(enemyArray[currentEnemy].hp <= (cardPower + finesseNum) && enemyArray[currentEnemy].hp >= (cardPower - finesseNum)){
+					finesseAttack = enemyArray[currentEnemy].hp;
+				}else{
+					finesseAttack = newAttack;
+				}
+			}else if(checkAbility.indexOf("factionBoost") >=0){
+				var factionNum = parseInt(checkAbility.split(" ")[1]);
+				var drawnCards = this.state.cards;
+				var boostedAttack = 0;
+				for(var i=0; i<drawnCards.length; i++){
+					if(card.faction === drawnCards[i].faction){
+						boostedAttack = boostedAttack + factionNum;
+					}else{}
+				}
+				if(cardAbilityNum === 1){
+					factionBoost = boostedAttack - 1;
+				}else{
+					newAttack = newAttack + boostedAttack - 1;
+				}
+			}
 			if(cardAbilityNum === 2){
-				this.playerAttack(newAttack);
+				if(card.ability1.indexOf("finesse") >=0 || card.ability2.indexOf("finesse") >=0 ){
+					console.log(finesseAttack);
+					this.playerAttack(finesseAttack);
+				}else{
+					console.log(newAttack);
+					this.playerAttack(newAttack);
+				}
 				cardAbilityNum = 1;
 			}else{
 				cardAbilityNum ++;
@@ -3177,15 +3357,15 @@ class GameScreen extends React.Component {
 				heroAttack = 0;
 			}else{
 				if(currentMeterNum === 0){
-					heroAttack = Math.Round(newAttack/3);
+					heroAttack = Math.round(newAttack/3);
 				}else if(currentMeterNum > 0 && currentMeterNum <= 3){
-					heroAttack = Math.Round(newAttack/2);
+					heroAttack = Math.round(newAttack/2);
 				}else if(currentMeterNum > 3 && currentMeterNum <= 8){
 					heroAttack = newAttack;
 				}else if(currentMeterNum > 8 && currentMeterNum <= 11){
-					heroAttack = Math.Round(newAttack * 2);
+					heroAttack = Math.round(newAttack * 2);
 				}else if(currentMeterNum === 12){
-					heroAttack = Math.Round(newAttack * 3);
+					heroAttack = Math.round(newAttack * 3);
 				}
 			}
 			var enemyHp = enemyHealth - heroAttack;
@@ -3636,9 +3816,9 @@ class GameScreen extends React.Component {
 				usedSupport = this.state.supportSlot2;
 				supSlot = "supportSlot2";
 			}
-			console.log(usedSupport);
 			if(usedSupport === null){
 			}else{
+				var parseNum = parseInt(usedSupport.ability2);
 				if(usedSupport.ability1.indexOf("supBurning") >= 0){
 					var burningNum = parseInt(usedSupport.ability1.split(/[ ,]+/)[1]);
 					this.setState({
@@ -3647,9 +3827,9 @@ class GameScreen extends React.Component {
 						this.playerAttackAll(burningNum);
 					});
 				}else{}
-				if(usedSupport.ability2 <= 0){
+				if(parseNum <= 0){
 					//usedSupport.ability2 = parseInt(usedSupport.ability1.split(" ")[3]);
-					usedSupport.ability = 9;
+					usedSupport.ability = "9";
 					cardArray.push(usedSupport);
 					var newArray = this.state.cards;
 					newArray.push(usedSupport);
@@ -3822,7 +4002,7 @@ class CardDisplayBox extends React.Component {
 		var cards = this.props.cards;
 		const numberOfCards = cards;
 		const listItems = numberOfCards.map((card, index) =>
-			<Card className={card.alignment} faction={card.faction} icon={card.icon} key={index} id={index} name={card.name} ability={card.ability1} cost={card.cost} power={card.power} text={card.text} card={card} chooseCard={this.props.chooseCard} />
+			<Card className={card.alignment} faction={card.faction} icon={card.icon} key={index} id={index} name={card.name} image={card.image} ability={card.ability1} cost={card.cost} power={card.power} text={card.text} card={card} chooseCard={this.props.chooseCard} />
 		);
 		return (
 			<div>{listItems}</div>
@@ -4305,7 +4485,12 @@ class AuxilaryScreen extends React.Component {
 		}else{
 			levelsBeaten.push(level);
 			cardArray = cardArray2;
-			this.levelRewards();
+			this.setState({
+				rewardCards: [],
+				rewardGems: []
+			}, () => {
+				this.levelRewards();
+			});
 			if(level === "earth"){
 				earthStage ++;
 			}else if(level === "fire"){
@@ -4315,7 +4500,6 @@ class AuxilaryScreen extends React.Component {
 			}else if(level === "wind"){
 				windStage ++;
 			}
-			level ++;
 			cardArray.sort(function(a, b){
 			    if(a.alignment < b.alignment) { return -1; }
 			    if(a.alignment > b.alignment) { return 1; }
@@ -4332,7 +4516,7 @@ class AuxilaryScreen extends React.Component {
 	}
 	levelRewards(){
 		var levelCard = this.props.supCardRewards;
-		console.log(levelCard);
+		console.log(this.props.supCardRewards);
 		var basicCards = [];
 		for(var i=1; i<21; i++){
 			var basicCard = eval('basic' + i);
@@ -4363,7 +4547,6 @@ class AuxilaryScreen extends React.Component {
 			}
 		}
 		var levelGems = this.props.supGemRewards;
-		console.log(levelGems);
 		var levelPoints;
 		if(level === "earth"){
 			for(var i=0; i<3; i++){
@@ -4395,6 +4578,8 @@ class AuxilaryScreen extends React.Component {
 		this.setState({
 			rewardCards: levelCard,
 			rewardGems: levelGems
+		}, () => {
+			this.props.clearSupRewards();
 		});
 		if(levelCard.length > 0){
 			for(var i=0; i<levelCard.length; i++){
@@ -4663,7 +4848,8 @@ class CraftingScreen extends React.Component {
 			}
 		}
 		const listFrames = multipleFrames.map((card, index) => {
-			if(card.unlocked === true) {
+			if(card.type === "support") {
+			}else{
 				return <CardFrame handleDrop={(stats) => this.frameDrop(card)} className={card.alignment} key={index} id={index} ability={card.ability1} icon={card.icon} faction={card.faction} name={card.name} type={card.type} cost={card.cost} power={card.power} text={card.text} />
 			}
 		});
