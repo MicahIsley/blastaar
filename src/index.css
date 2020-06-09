@@ -589,9 +589,7 @@ body {
 	animation: CardCostAnimation 8s ease infinite;
 }
 
-#influenceOrb:hover {
-	box-shadow: 0px 0px 5px 5px white;
-}
+
 
 #scoreDisplay {
 	font-size: 28px;
