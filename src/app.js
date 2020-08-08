@@ -1325,7 +1325,7 @@ const gangOfFleebsStats = {
 
 const purpleKreepStats = {
 	name: "Purple Kreep",
-	hp: 1,
+	hp: 10,
 	attack: 3,
 	sabotoge: 1,
 	pointValue: 150,
@@ -1336,7 +1336,7 @@ const purpleKreepStats = {
 
 const reacherStats = {
 	name: "Reacher",
-	hp: 1,
+	hp: 10,
 	attack: 3,
 	sabotoge: 1,
 	pointValue: 150,
@@ -1347,7 +1347,7 @@ const reacherStats = {
 
 const rundarrStats = {
 	name: "Rundarr",
-	hp: 1,
+	hp: 10,
 	attack: 3,
 	sabotoge: 1,
 	pointValue: 100,
@@ -1358,7 +1358,7 @@ const rundarrStats = {
 
 const sinisterSloopStats = {
 	name: "Sinister Sloop",
-	hp: 1,
+	hp: 10,
 	attack: 3,
 	sabotoge: 1,
 	pointValue: 100,
@@ -1369,7 +1369,7 @@ const sinisterSloopStats = {
 
 const soulShredderStats = {
 	name: "Soul Shredder",
-	hp: 1,
+	hp: 10,
 	attack: 3,
 	sabotoge: 1,
 	pointValue: 100,
@@ -1380,7 +1380,7 @@ const soulShredderStats = {
 
 const superPincherStats = {
 	name: "Super Pincher",
-	hp: 1,
+	hp: 10,
 	attack: 3,
 	sabotoge: 1,
 	pointValue: 100,
@@ -1391,7 +1391,7 @@ const superPincherStats = {
 
 const toogerStats = {
 	name: "Tooger",
-	hp: 1,
+	hp: 100,
 	attack: 3,
 	sabotoge: 1,
 	pointValue: 100,
