@@ -468,7 +468,7 @@ const kingWobbledukStats = {
 
 const primtreeStats = {
 	name: "Primtree",
-	hp: 8,
+	hp: 7,
 	attack: 2,
 	sabotoge: 0,
 	pointValue: 150,
@@ -540,8 +540,8 @@ const steedStats = {
 
 const stoneStriderStats = {
 	name: "Stone Strider",
-	hp: 8,
-	attack: 3,
+	hp: 9,
+	attack: 2,
 	sabotoge: 0,
 	pointValue: 100,
 	image: stoneStrider,
@@ -662,7 +662,7 @@ const pheonixWyrmStats = {
 const budleFairyStats = {
 	name: "Budle Fairy",
 	hp: 5,
-	attack: 8,
+	attack: 5,
 	sabotoge: 4,
 	pointValue: 500,
 	image: budleFairy,
@@ -674,8 +674,8 @@ const budleFairyStats = {
 const superBudleFairyStats = {
 	name: "Super Budle Fairy",
 	hp: 20,
-	attack: 6,
-	sabotoge: 4,
+	attack: 5,
+	sabotoge: 3,
 	pointValue: 700,
 	image: superBudleFairy,
 	sabCard: sabotoge3,
@@ -686,8 +686,8 @@ const superBudleFairyStats = {
 const ghostSharkStats = {
 	name: "Ghost Shark",
 	hp: 12,
-	attack: 4,
-	sabotoge: 2,
+	attack: 3,
+	sabotoge: 1,
 	pointValue: 100,
 	image: ghostShark,
 	sabCard: sabotoge1,
@@ -697,9 +697,9 @@ const ghostSharkStats = {
 
 const marshSlapperStats = {
 	name: "Marsh Slapper",
-	hp: 10,
+	hp: 9,
 	attack: 3,
-	sabotoge: 3,
+	sabotoge: 2,
 	pointValue: 100,
 	image: marshSlapper,
 	sabCard: sabotoge1,
@@ -710,7 +710,7 @@ const marshSlapperStats = {
 const kingSlapperStats = {
 	name: "King Slapper",
 	hp: 25,
-	attack: 5,
+	attack: 4,
 	sabotoge: 3,
 	pointValue: 100,
 	image: kingSlapper,
@@ -733,7 +733,7 @@ const albinoSlapperStats = {
 
 const trenchThumpStats = {
 	name: "Trench Thump",
-	hp: 9,
+	hp: 8,
 	attack: 2,
 	sabotoge: 0,
 	pointValue: 100,
@@ -757,7 +757,7 @@ const caveThumpStats = {
 
 const coralThumpStats = {
 	name: "Coral Thump",
-	hp: 10,
+	hp: 9,
 	attack: 2,
 	sabotoge: 2,
 	pointValue: 100,
@@ -781,8 +781,8 @@ const madnadoStats = {
 
 const empressMadnadoStats = {
 	name: "Empress Madnado",
-	hp: 3,
-	attack: 4,
+	hp: 16,
+	attack: 5,
 	sabotoge: 2,
 	pointValue: 250,
 	image: empressMadnado,
@@ -1325,7 +1325,7 @@ const gangOfFleebsStats = {
 
 const purpleKreepStats = {
 	name: "Purple Kreep",
-	hp: 8,
+	hp: 1,
 	attack: 3,
 	sabotoge: 1,
 	pointValue: 150,
@@ -1336,7 +1336,7 @@ const purpleKreepStats = {
 
 const reacherStats = {
 	name: "Reacher",
-	hp: 8,
+	hp: 1,
 	attack: 3,
 	sabotoge: 1,
 	pointValue: 150,
@@ -1347,7 +1347,7 @@ const reacherStats = {
 
 const rundarrStats = {
 	name: "Rundarr",
-	hp: 13,
+	hp: 1,
 	attack: 3,
 	sabotoge: 1,
 	pointValue: 100,
@@ -1358,7 +1358,7 @@ const rundarrStats = {
 
 const sinisterSloopStats = {
 	name: "Sinister Sloop",
-	hp: 13,
+	hp: 1,
 	attack: 3,
 	sabotoge: 1,
 	pointValue: 100,
@@ -1369,7 +1369,7 @@ const sinisterSloopStats = {
 
 const soulShredderStats = {
 	name: "Soul Shredder",
-	hp: 13,
+	hp: 1,
 	attack: 3,
 	sabotoge: 1,
 	pointValue: 100,
@@ -1380,7 +1380,7 @@ const soulShredderStats = {
 
 const superPincherStats = {
 	name: "Super Pincher",
-	hp: 13,
+	hp: 1,
 	attack: 3,
 	sabotoge: 1,
 	pointValue: 100,
@@ -1391,7 +1391,7 @@ const superPincherStats = {
 
 const toogerStats = {
 	name: "Tooger",
-	hp: 13,
+	hp: 1,
 	attack: 3,
 	sabotoge: 1,
 	pointValue: 100,
@@ -1505,7 +1505,7 @@ function levelFireDistribution(randEnemyNum){
 function levelWaterDistribution(randEnemyNum){
 	numberOfStages = 4;
 	if(stageComplete < 3){
-		numberOfEnemies = 3;
+		numberOfEnemies = 2;
 		if(randEnemyNum < 180){
 			createEnemy = trenchThumpStats;
 			return;
@@ -1583,7 +1583,7 @@ function levelWindDistribution(randEnemyNum){
 function levelDesertDistribution(randEnemyNum){
 	numberOfStages = 4;
 	if(stageComplete < 3){
-		numberOfEnemies = 2;
+		numberOfEnemies = 3;
 		if(randEnemyNum < 180){
 			createEnemy = sandSnippStats;
 			return;
@@ -1622,7 +1622,7 @@ function levelDesertDistribution(randEnemyNum){
 function levelLavaDistribution(randEnemyNum){
 	numberOfStages = 4;
 	if(stageComplete < 3){
-		numberOfEnemies = 2;
+		numberOfEnemies = 3;
 		if(randEnemyNum < 180){
 			createEnemy = emberiteStats;
 			return;
@@ -1661,7 +1661,7 @@ function levelLavaDistribution(randEnemyNum){
 function levelMudDistribution(randEnemyNum){
 	numberOfStages = 4;
 	if(stageComplete < 3){
-		numberOfEnemies = 2;
+		numberOfEnemies = 3;
 		if(randEnemyNum < 180){
 			createEnemy = bogBoarStats;
 			return;
@@ -1700,7 +1700,7 @@ function levelMudDistribution(randEnemyNum){
 function levelStormDistribution(randEnemyNum){
 	numberOfStages = 4;
 	if(stageComplete < 3){
-		numberOfEnemies = 2;
+		numberOfEnemies = 3;
 		if(randEnemyNum < 180){
 			createEnemy = shockSharkStats;
 			return;
@@ -1850,10 +1850,10 @@ var cardAbilityNum = 1;
 var factionBoost = 0;
 var itemArray = [rustySword, battleSpear, shardblade, leatherPads, parshendiCarapace, shardplate];
 var enemyArray = [];
-var cardArray = [basic1, basic2, basic3, basic4, lava5, basic6, basic7];
+var cardArray = [basic1, basic2, basic3, basic4, basic5, basic6, basic7];
 var cardArray2 = [];
 var recruitArray = [];
-var collectionArray = [basic1, basic2, basic3, basic4, lava5, basic6, basic7];
+var collectionArray = [basic1, basic2, basic3, basic4, basic5, basic6, basic7];
 var cardFrames = [];
 var elementOrbs = [];
 var multiplier = 1;
@@ -1895,7 +1895,7 @@ class GameScreenHub extends React.Component {
 			stormCounter: 100,
 			enemyArray: [enemyArray[0], enemyArray[1], enemyArray[2]],
 			sphereCount: 0,
-			influence: 10,
+			influence: 0,
 			itemArray: itemArray,
 			supCardRewards: [],
 			supGemRewards: [],
@@ -4984,7 +4984,7 @@ class EndingScreen extends React.Component {
 			<div className="row">
 				<div className="col-xs-12">
 					<div className="row endingText">
-						You Have Saved Your Family
+						You Have Saved Your Family!
 					</div>
 					<div className="row endingText">
 						Final Score: {this.props.score}
