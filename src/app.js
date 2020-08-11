@@ -1859,7 +1859,7 @@ var elementOrbs = [];
 var multiplier = 1;
 var allies = [];
 var meterArray = [meter0, meter1, meter2, meter3, meter4, meter5, meter6, meter7, meter8, meter9, meter10, meter11, meter12];
-var levelsBeaten = [];
+var levelsBeaten = ["tutorial"];
 var keyWordList = [{keyword: "Shield", description: "Shield blocks enemy damage and sabotoges."}, {keyword: "Purge", description: "Removes an enemy sabotoge from your deck."}, {keyword: "Weaken", description: "Reduces an enemies strength"}, {keyword: "Exhausted", description: "Enemies attack twice in a row"}, {keyword: "Stun", description: "Stunned enemies miss their next attack"}, {keyword: "Poison", description: "Damage delt at the end of the turn"}, {keyword: "Confuse", description: "Confused enemies attack a random enemy"}, {keyword: "Grow", description: "The card gains power each time it is used"}, {keyword: "Scheme", description: "Schemes are played to one of your support areas and then are charged up over time providing an effect once completed"}, {keyword: "Heal", description: "Restore health to your character"}, {keyword: "Reclaim", description: "Increase the power of all enemy sabotoges in your deck"}, {keyword: "Int", description: "How many cards your draw when attacking"}, {keyword: "Def", description: "The number of shields you have at the start of every turn."}, {keyword: "Str", description: "Added damage to each attack"}, {keyword: "Rummage", description: "Choose a card to be replaced by a random card from your deck."}, {keyword: "Transform", description: "Change your stats into another creatures. Once your hp falls to 0 you regain your previous stats."}, {keyword: "multiply", description: "Double the damage you would deal this turn."}, {keyword: "Decoy", description: "Avoid all sabotoges this turn."}, {keyword: "Energy", description: "Gain energy to use for other purposes."}, {keyword: "Next", description: "Add power to the next card you choose."}, {keyword: "Add Card", description: "Shuffle a number of new cards into your deck."}, {keyword: "Remove", description: "The card gets removed from your deck after you select it"}, {keyword: "Extra", description: "Attack again after this one."}, {keyword: "Deplete", description: "Remove a sabotoge from the selected enemy."}, {keyword: "Boost", description: "All card of the selected type gain extra power."}, {keyword: "Spook", description: "The enemy will recieve 1.5x damage while it is spooked."}, {keyword: "Transform", description: "Turn an emeny sabotoge in your deck into another card."}, {keyword: "All", description: "Deal damage to all enemies."}];
 var finesseAttack; 
 
@@ -1940,7 +1940,7 @@ class GameScreenHub extends React.Component {
 		if(user === ""){
 			console.log("enter a name");
 		}else{
-			var userSaveData = {name: user, collectionArray: collectionArray, levels: [earthStage,fireStage,waterStage,windStage]};
+			var userSaveData = {name: user, collectionArray: collectionArray, levels: levelsBeaten};
 			var saveDataArray = this.state.developers;
 			for(var i=0; i<saveDataArray.length; i++){
 				if(saveDataArray[i].name === user){
@@ -1948,23 +1948,33 @@ class GameScreenHub extends React.Component {
 				}else{}
 			}
 			saveDataArray.push(userSaveData);
+			console.log(userSaveData);
 			this.setState({
 				developers: saveDataArray
 
 			}, () => {
-				Firebase.database().ref('/').set(this.state.developers);
+				Firebase.database().ref(`/${user}`).set(this.state.developers);
 			 	console.log('DATA SAVED');
+			 	this.setState({
+			 		developers: []
+			 	});
 			});
 		}
 	}
 	getUserData(){
-	  let ref = Firebase.database().ref('/');
+	  var user = document.getElementById("saveName").value;
+	  let ref = Firebase.database().ref(`/${user}`);
 	  ref.on('value', snapshot => {
 	    const state = snapshot.val();
+	    console.log(state);
 	    this.setState({
 	    	developers: state
 	    }, () => {
-	    	this.setUpPlayerSave();
+	    	if(state === null){
+	    		console.log("No Save Data");
+	    	}else{
+	    		this.setUpPlayerSave();
+	    	}
 	    });
 	  });
 	  console.log('DATA RETRIEVED');
@@ -1981,10 +1991,7 @@ class GameScreenHub extends React.Component {
 		console.log(playerData);
 		//document.getElementById("saveName").value = playerData
 		collectionArray = playerData.collectionArray;
-		earthStage = playerData.levels[0];
-		fireStage = playerData.levels[1];
-		waterStage = playerData.levels[2];
-		windStage = playerData.levels[3];
+		levelsBeaten = playerData.levels;
 	}
 	gainSupCardReward(reward){
 		var updateRewardArray = this.state.supCardRewards;
@@ -2427,7 +2434,7 @@ class LevelSelectScreen extends React.Component {
 		if(levelsBeaten.includes("water") === true && levelsBeaten.includes("earth") === true){
 			unlockLevels[3] = true;
 		}
-		if(levelsBeaten.length > 4){
+		if(levelsBeaten.length > 5){
 			unlockLevels[4] = true;
 		}
 		this.setState({
@@ -2620,7 +2627,7 @@ class CharacterSelectScreen extends React.Component {
 							{/*<button className="campButton" onClick={this.props.goToEquipmentScreen}>Shop</button>*/}
 						</div>
 					</div>
-					{/*<div className="row">
+					<div className="row">
 						<div className="col-xs-offset-4 col-xs-2">
 							<input type="text" id="saveName"></input>
 						</div>
@@ -2630,7 +2637,7 @@ class CharacterSelectScreen extends React.Component {
 						<div className="col-xs-2">
 							<button className="saveButton" onClick={this.props.getUserData}>Load</button>
 						</div>
-					</div>*/}
+					</div>
 				</div>
 			</div>
 		)
@@ -3389,7 +3396,6 @@ class GameScreen extends React.Component {
 				}else{}
 
 			}else{}
-			console.log(heroAttack);
 			document.getElementById("badGuy" + (currentEnemy)).append("-" + heroAttack);
 			document.getElementById("badGuy" + (currentEnemy)).style.display="inline";
 			setTimeout(() => { 
