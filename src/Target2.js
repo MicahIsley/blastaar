@@ -12,10 +12,10 @@ function collect(connect, monitor) {
 class Target extends Component {
   render() {
     const { connectDropTarget, hovered, item } = this.props;
-    const backgroundColor = hovered ? 'white' : 'lightgreen';
+    const backgroundColor = hovered ? 'white' : '#a12921';
 
     return connectDropTarget(
-      <div className="col-xs-3 target" id="deckRow" style={{ background: backgroundColor }}>
+      <div className="col-xs-2 target" id="deckRow" style={{ background: backgroundColor }}>
         {this.props.listCurrentDeck()}
       </div>
     );
