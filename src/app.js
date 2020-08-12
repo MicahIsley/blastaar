@@ -433,7 +433,7 @@ var transform1 = new CardCon("Crystal", 0, 3, "Woot", "hero", 0, "", "", false, 
 const wobbledukStats = {
 	name: "Wobbleduk",
 	hp: 6,
-	attack: 3,
+	attack: 2,
 	sabotoge: 0,
 	pointValue: 50,
 	image: wobbleduk,
@@ -445,7 +445,7 @@ const wobbledukStats = {
 const angryWobbledukStats = {
 	name: "Mean Wobbleduk",
 	hp: 6,
-	attack: 4,
+	attack: 2,
 	sabotoge: 1,
 	pointValue: 50,
 	image: wobbleduk,
