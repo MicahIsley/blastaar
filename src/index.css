@@ -553,6 +553,15 @@ body {
 	border-width: .2px;
 	border-style: solid;
 	border-radius: 35px;
+	padding: 5px;
+}
+
+#supportSlot1 {
+	padding: 5px;
+}
+
+#supportSlot2 {
+	padding: 5px;
 }
 
 .true {
@@ -834,7 +843,7 @@ input {
 	border-color: black;
 	border-width: 2px;
 	left: 7%;
-	top: 34%;
+	top: 28%;
 	position: fixed;
 	z-index: 3;
 	background: white;
@@ -1221,6 +1230,7 @@ input {
 	width: 100%;
 }
 
+
 .boss {
 	
 }
@@ -1388,10 +1398,17 @@ input {
 .supportActionButton {
 	font-weight: bolder;
 	font-family: 'Metamorphous', cursive;
+	margin-top: 10px;
 }
 
 .supportActionButton:hover {
 	background: yellow;
+}
+
+.schemeReward {
+	border-style: solid;
+	border-color: gold;
+	border-width: 3px;
 }
 
 #attackButton {
