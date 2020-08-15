@@ -160,7 +160,7 @@ var sabotoge4 = new CardCon("Steamed", 0, -5, "Super way too hot", "enemy", 0, "
 
 var crafting1 = new CardCon("------", 0, 0, " ", "hero", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 0, 1, 0);
 var fire1 = new CardCon("Fireball", 0, 5, "Simple, but effective", "hero", 0, "", "", true, "stormlight", placeholderImg, fire, "fire", 1, 1, 0);
-var fire2 = new CardCon("Ember Smash", 0, 7, "Exhaust", "hero", 0, "exhaust", "", true, "stormlight", placeholderImg, fire, "fire", 2, 1, 0);
+var fire2 = new CardCon("Ember Smash", 0, 7, "Exhaust", "hero", 0, "exhausted", "", true, "stormlight", placeholderImg, fire, "fire", 2, 1, 0);
 var fire3 = new CardCon("Pew Pew Pew", 0, 1, "Deal 1 Damage To All Enemies", "hero", 0, "all", "", true, "stormlight", placeholderImg, fire, "fire", 3, 1, 0);
 var fire4 = new CardCon("Burn Bright", 0, 1, "Multiply", "hero", 0, "multiply", "", true, "stormlight", placeholderImg, fire, "fire", 4, 1, 0);
 var fire5 = new CardCon("Frantic Planning", 0, 3, "Draw +1", "hero", 0, "int 1", "", true, "stormlight", placeholderImg, fire, "fire", 5, 1, 0);
@@ -172,9 +172,9 @@ var fire10 = new CardCon("Big Boom", 0, 2, "Spooky 2", "hero", 0, "meter 2", "",
 var fire11 = new CardCon("Surround By Fire", 2, 0, "Fire Scheme 2/6", 0, "scheme fire 2", 6, true, "character", placeholderImg, fire, "fire", 11, 1, 0);
 var fire12 = new CardCon("Let It Burn", 0, 2, "Multiply", 0, "multiply", "", true, "stormlight", placeholderImg, fire, "fire", 12, 1, 0);
 var fire13 = new CardCon("Soul Flare", 0, 4, "Multiply. Exhaust.", "hero", 0, "multiply", "exhausted", true, "stormlight", placeholderImg, fire, "fire", 13, 1, 0);
-var fire14 = new CardCon("Risky Explosion", 0, 4, "All. Exhaust.", "hero", 0, "all", "exhausted", true, "stormlight", placeholderImg, fire, "fire", 14, 1, 0);
+var fire14 = new CardCon("Risky Explosion", 0, 4, "All. Exhaust.", "hero", 0, "exhausted", "all", true, "stormlight", placeholderImg, fire, "fire", 14, 1, 0);
 var fire15 = new CardCon("Fire Ruby", 0, 0, "Multiply. All", "hero", 0, "multiply", "all", true, "stormlight", placeholderImg, fire, "fire", 15, 1, 0);
-var fire16 = new CardCon("Look Into Flame", 0, 6, "Draw +2. Exhaust.", "hero", 0, "int 2", "exhaust", true, "stormlight", placeholderImg, fire, "fire", 16, 1, 0);
+var fire16 = new CardCon("Look Into Flame", 0, 6, "Draw +2. Exhaust.", "hero", 0, "int 2", "exhausted", true, "stormlight", placeholderImg, fire, "fire", 16, 1, 0);
 var fire17 = new CardCon("Smoke Monster", 3, 0, "Fire Scheme 4/12", "hero", 0, "scheme fire 4", 12, true, "character", placeholderImg, fire, "fire", 17, 1, 0);
 var fire18 = new CardCon("Spark Spirits", 0, 0, "+1 For Each Fire Card. All.", "hero", 0, "factionBoost 1", "all", true, "stormlight", placeholderImg, fire, "fire", 18, 1, 0);
 var fire19 = new CardCon("Big Fireball", 1, 9, "Whoa", "hero", 0, "", "", true, "stormlight", placeholderImg, fire, "fire", 19, 1, 0);
@@ -307,7 +307,7 @@ var basic58 = new CardCon("Form of Morp", 2, 0, "Morp form", "hero", 0, "shapesh
 
 var lava1 = new CardCon("Lava Ball", 0, 8, "Wow, duck!", "hero", 0, "", "", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
 var lava2 = new CardCon("Spew Magma", 0, 4, "Purge", "hero", 0, "purge", "", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
-var lava3 = new CardCon("Everywhere, Lava", 0, 12, "Exhaust", "hero", 0, "exhaust", "", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
+var lava3 = new CardCon("Everywhere, Lava", 0, 12, "Exhaust", "hero", 0, "exhausted", "", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
 var lava4 = new CardCon("Building Pressure", 0, 2, "Grow 2", "hero", 0, "grow 2 20", "", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 1);
 var lava5 = new CardCon("Smoke Scare", 0, 4, "Spooky 3", "hero", 0, "meter 3", "", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
 var lava6 = new CardCon("The Summit Trembles", 0, 3, "Shield 2. All", "hero", 0, "shield 2", "all", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
@@ -316,10 +316,10 @@ var lava8 = new CardCon("Molten Punch", 0, 0, "Grow 1. Shield 3", "hero", 0, "gr
 var lava9 = new CardCon("Magma Trap", 0, 2, "Weaken 2. Purge", "hero", 0, "purge", "weaken 2", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
 var lava10 = new CardCon("Furnace", 0, 2, "Energy 4", "hero", 0, "energy 4", "", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
 var lava11 = new CardCon("Monster Tracks", 2, 0, "Lava Scheme 2/Spooky 3", "hero", 0, "scheme lava 2", 3, true, "character", placeholderImg, lava, "lava", 0, 1, 0);
-var lava12 = new CardCon("Eruption", 0, 8, "All. Exhaust.", "hero", 0, "exhaust", "all", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
+var lava12 = new CardCon("Eruption", 0, 8, "All. Exhaust.", "hero", 0, "exhausted", "all", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
 var lava13 = new CardCon("Burn Impurity", 0, 1, "Purge twice", "hero", 0, "purge", "purge", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
 var lava14 = new CardCon("The Molten Crown", 0, 3, "Purge. Shield 3", "hero", 0, "purge", "shield 3", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
-var lava15 = new CardCon("Out Of Hand", 0, 4, "Grow 3. Exhaust", "hero", 0, "grow 3 31", "exhaust", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
+var lava15 = new CardCon("Out Of Hand", 0, 4, "Grow 3. Exhaust", "hero", 0, "grow 3 31", "exhausted", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
 var lava16 = new CardCon("Magma Visions", 0, 2, "Purge. Draw +1", "hero", 0, "purge", "int 1", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
 var lava17 = new CardCon("Mountain Treasure", 4, 0, "Lava Scheme 4/Treasure", "hero", 0, "scheme lava 4", 10, true, "character", placeholderImg, lava, "lava", 0, 1, 0);
 var lava18 = new CardCon("Moltify", 0, 4, "All", "hero", 0, "all", "", true, "stormlight", placeholderImg, lava, "lava", 0, 1, 0);
@@ -343,7 +343,7 @@ var desert6 = new CardCon("Changing Sand", 0, 4, "Draw +2", "hero", 0, "int 2", 
 var desert7 = new CardCon("Feint", 0, 1, "Extra. Decoy.", "hero", 0, "extra 1", "decoy", true, "stormlight", placeholderImg, desert, "desert", 0, 1, 0);
 var desert8 = new CardCon("Crystals", 0, 3, "Energy 4", "hero", 0, "energy 4", "", true, "stormlight", placeholderImg, desert, "desert", 0, 1, 0);
 var desert9 = new CardCon("Mummy Chase", 0, 3, "Spooky 3", "hero", 0, "meter 3", "", true, "stormlight", placeholderImg, desert, "desert", 0, 1, 0);
-var desert10 = new CardCon("Intense Dodge", 0, 5, "Decoy. Exhaust.", "hero", 0, "decoy", "exhaust", true, "stormlight", placeholderImg, desert, "deset", 0, 1, 0);
+var desert10 = new CardCon("Intense Dodge", 0, 5, "Decoy. Exhaust.", "hero", 0, "decoy", "exhausted", true, "stormlight", placeholderImg, desert, "deset", 0, 1, 0);
 var desert11 = new CardCon("Tomb Treasure", 2, 0, "Desert Scheme 3/Treasure", "hero", 0, "scheme desert 3", 11, true, "character", placeholderImg, desert, "deset", 0, 1, 0);
 var desert12 = new CardCon("Sand Flurry", 0, 3, "Multiply", "hero", 0, "multiply", "", true, "stormlight", placeholderImg, desert, "deset", 0, 1, 0);
 var desert13 = new CardCon("Rush of Magic", 0, 0, "Extra 2.", "hero", 0, "extra 2", "", true, "stormlight", placeholderImg, desert, "deset", 0, 1, 0);
@@ -566,7 +566,7 @@ const emberAdderStats = {
 	name: "Ember Adder",
 	hp: 7,
 	attack: 2,
-	sabotoge: 1,
+	sabotoge: 0,
 	pointValue: 100,
 	image: emberAdder,
 	sabCard: sabotoge1,
@@ -626,7 +626,7 @@ const kragmupStats = {
 	name: "kragmup",
 	hp: 6,
 	attack: 2,
-	sabotoge: 2,
+	sabotoge: 1,
 	pointValue: 100,
 	image: kragmup,
 	sabCard: sabotoge1,
@@ -876,7 +876,7 @@ const raaHowlerStats = {
 
 const boneStalkerStats = {
 	name: "Bone Stalker",
-	hp: 8,
+	hp: 10,
 	attack: 3,
 	sabotoge: 1,
 	pointValue: 150,
@@ -888,8 +888,8 @@ const boneStalkerStats = {
 
 const championStalkerStats = {
 	name: "Champion Stalker",
-	hp: 8,
-	attack: 3,
+	hp: 28,
+	attack: 6,
 	sabotoge: 1,
 	pointValue: 150,
 	image: championStalker,
@@ -901,8 +901,8 @@ const championStalkerStats = {
 const desertMadnadoStats = {
 	name: "Desert Madnado",
 	hp: 8,
-	attack: 3,
-	sabotoge: 1,
+	attack: 4,
+	sabotoge: 2,
 	pointValue: 150,
 	image: desertMadnado,
 	sabCard: sabotoge1,
@@ -912,9 +912,9 @@ const desertMadnadoStats = {
 
 const sandSnippStats = {
 	name: "Sand Snipp",
-	hp: 8,
-	attack: 3,
-	sabotoge: 1,
+	hp: 7,
+	attack: 2,
+	sabotoge: 0,
 	pointValue: 150,
 	image: sandSnipp,
 	sabCard: sabotoge1,
@@ -924,9 +924,9 @@ const sandSnippStats = {
 
 const predatorSnippStats = {
 	name: "Predator Snipp",
-	hp: 8,
+	hp: 7,
 	attack: 3,
-	sabotoge: 1,
+	sabotoge: 3,
 	pointValue: 150,
 	image: predatorSnipp,
 	sabCard: sabotoge1,
@@ -936,9 +936,9 @@ const predatorSnippStats = {
 
 const grumpeelStats = {
 	name: "Grumpeel",
-	hp: 8,
+	hp: 15,
 	attack: 3,
-	sabotoge: 1,
+	sabotoge: 0,
 	pointValue: 150,
 	image: grumpeel,
 	sabCard: sabotoge1,
@@ -948,9 +948,9 @@ const grumpeelStats = {
 
 const duneStabberStats = {
 	name: "Dune Stabber",
-	hp: 6,
-	attack: 2,
-	sabotoge: 2,
+	hp: 9,
+	attack: 5,
+	sabotoge: 1,
 	pointValue: 100,
 	image: duneStabber,
 	sabCard: sabotoge1,
@@ -960,9 +960,9 @@ const duneStabberStats = {
 
 const stabberConclaveStats = {
 	name: "Stabber Conclave",
-	hp: 6,
-	attack: 2,
-	sabotoge: 2,
+	hp: 29,
+	attack: 25,
+	sabotoge: 3,
 	pointValue: 100,
 	image: stabberConclave,
 	sabCard: sabotoge1,
@@ -973,8 +973,8 @@ const stabberConclaveStats = {
 const wanderingRelicStats = {
 	name: "Wandering Relic",
 	hp: 6,
-	attack: 2,
-	sabotoge: 2,
+	attack: 1,
+	sabotoge: 0,
 	pointValue: 100,
 	image: wanderingRelic,
 	sabCard: sabotoge1,
@@ -984,7 +984,7 @@ const wanderingRelicStats = {
 
 const emberiteStats = {
 	name: "Emberite",
-	hp: 6,
+	hp: 7,
 	attack: 2,
 	sabotoge: 2,
 	pointValue: 100,
@@ -997,9 +997,9 @@ const emberiteStats = {
 
 const nutriteStats = {
 	name: "Nutrite",
-	hp: 6,
-	attack: 2,
-	sabotoge: 2,
+	hp: 7,
+	attack: 3,
+	sabotoge: 1,
 	pointValue: 100,
 	image: nutrite,
 	sabCard: sabotoge1,
@@ -1009,7 +1009,7 @@ const nutriteStats = {
 
 const lavaWalkerStats = {
 	name: "Lava Walker",
-	hp: 6,
+	hp: 18,
 	attack: 2,
 	sabotoge: 2,
 	pointValue: 100,
@@ -1021,9 +1021,9 @@ const lavaWalkerStats = {
 
 const moltasaurusStats = {
 	name: "Moltasaurus",
-	hp: 6,
-	attack: 2,
-	sabotoge: 2,
+	hp: 11,
+	attack: 5,
+	sabotoge: 1,
 	pointValue: 100,
 	image: moltasaurus,
 	sabCard: sabotoge1,
@@ -1033,8 +1033,8 @@ const moltasaurusStats = {
 
 const moltasaurusRexStats = {
 	name: "Moltasaurus Rex",
-	hp: 6,
-	attack: 2,
+	hp: 30,
+	attack: 4,
 	sabotoge: 2,
 	pointValue: 100,
 	image: moltasaurusRex,
@@ -1045,9 +1045,9 @@ const moltasaurusRexStats = {
 
 const lavaLordWalkerStats = {
 	name: "Lava Lord Walker",
-	hp: 6,
-	attack: 2,
-	sabotoge: 2,
+	hp: 37,
+	attack: 3,
+	sabotoge: 1,
 	pointValue: 100,
 	image: lavaLordWalker,
 	sabCard: sabotoge1,
@@ -1057,8 +1057,8 @@ const lavaLordWalkerStats = {
 
 const trekapodStats = {
 	name: "Trekapod",
-	hp: 6,
-	attack: 2,
+	hp: 8,
+	attack: 3,
 	sabotoge: 2,
 	pointValue: 100,
 	image: trekapod,
@@ -1069,9 +1069,9 @@ const trekapodStats = {
 
 const volcanoTramplerStats = {
 	name: "Volcano Trampler",
-	hp: 6,
-	attack: 2,
-	sabotoge: 2,
+	hp: 13,
+	attack: 5,
+	sabotoge: 1,
 	pointValue: 100,
 	image: volcanoTrampler,
 	sabCard: sabotoge1,
@@ -1081,9 +1081,9 @@ const volcanoTramplerStats = {
 
 const walkingEruptionStats = {
 	name: "Walking Eruption",
-	hp: 6,
+	hp: 20,
 	attack: 2,
-	sabotoge: 2,
+	sabotoge: 1,
 	pointValue: 100,
 	image: walkingEruption,
 	sabCard: sabotoge1,
@@ -1093,9 +1093,9 @@ const walkingEruptionStats = {
 
 const bogBoarStats = {
 	name: "Bog Boar",
-	hp: 6,
-	attack: 2,
-	sabotoge: 2,
+	hp: 10,
+	attack: 3,
+	sabotoge: 3,
 	pointValue: 100,
 	image: bogBoar,
 	sabCard: sabotoge1,
@@ -1104,7 +1104,7 @@ const bogBoarStats = {
 
 const greaterGalopeStats = {
 	name: "Greater Galope",
-	hp: 6,
+	hp: 16,
 	attack: 2,
 	sabotoge: 2,
 	pointValue: 100,
@@ -1115,9 +1115,9 @@ const greaterGalopeStats = {
 
 const lesserGalopeStats = {
 	name: "Lesser Galope",
-	hp: 6,
-	attack: 2,
-	sabotoge: 2,
+	hp: 15,
+	attack: 3,
+	sabotoge: 1,
 	pointValue: 100,
 	image: lesserGalope,
 	sabCard: sabotoge1,
@@ -1126,9 +1126,9 @@ const lesserGalopeStats = {
 
 const mucksterStats = {
 	name: "Muckster",
-	hp: 6,
-	attack: 2,
-	sabotoge: 2,
+	hp: 9,
+	attack: 5,
+	sabotoge: 3,
 	pointValue: 100,
 	image: muckster,
 	sabCard: sabotoge1,
@@ -1137,9 +1137,9 @@ const mucksterStats = {
 
 const archmageMucksterStats = {
 	name: "Archmage Muckster",
-	hp: 6,
-	attack: 2,
-	sabotoge: 2,
+	hp: 23,
+	attack: 7,
+	sabotoge: 3,
 	pointValue: 100,
 	image: archmageMuckster,
 	sabCard: sabotoge1,
@@ -1148,9 +1148,9 @@ const archmageMucksterStats = {
 
 const sominusStats = {
 	name: "Sominus",
-	hp: 6,
-	attack: 2,
-	sabotoge: 2,
+	hp: 5,
+	attack: 1,
+	sabotoge: 1,
 	pointValue: 100,
 	image: sominus,
 	sabCard: sabotoge1,
@@ -1159,8 +1159,8 @@ const sominusStats = {
 
 const toxicRollerStats = {
 	name: "Toxic Roller",
-	hp: 6,
-	attack: 2,
+	hp: 10,
+	attack: 4,
 	sabotoge: 2,
 	pointValue: 100,
 	image: toxicRoller,
@@ -1170,9 +1170,9 @@ const toxicRollerStats = {
 
 const warthusStats = {
 	name: "Warthus",
-	hp: 6,
-	attack: 2,
-	sabotoge: 2,
+	hp: 22,
+	attack: 1,
+	sabotoge: 0,
 	pointValue: 100,
 	image: bogBoar,
 	sabCard: sabotoge1,
@@ -1181,8 +1181,8 @@ const warthusStats = {
 
 const duchessWarthusStats = {
 	name: "Duchess Warthus",
-	hp: 6,
-	attack: 2,
+	hp: 46,
+	attack: 3,
 	sabotoge: 2,
 	pointValue: 100,
 	image: duchessWarthus,
@@ -1192,9 +1192,9 @@ const duchessWarthusStats = {
 
 const staticGliderStats = {
 	name: "Static Glider",
-	hp: 15,
-	attack: 2,
-	sabotoge: 1,
+	hp: 13,
+	attack: 5,
+	sabotoge: 0,
 	pointValue: 100,
 	image: staticGlider,
 	sabCard: sabotoge1,
@@ -1204,7 +1204,7 @@ const staticGliderStats = {
 const staticCatcherStats = {
 	name: "Static Catcher",
 	hp: 15,
-	attack: 2,
+	attack: 4,
 	sabotoge: 1,
 	pointValue: 100,
 	image: staticCatcher,
@@ -1214,9 +1214,9 @@ const staticCatcherStats = {
 
 const shockSharkStats = {
 	name: "Shock Shark",
-	hp: 11,
-	attack: 4,
-	sabotoge: 1,
+	hp: 13,
+	attack: 5,
+	sabotoge: 0,
 	pointValue: 100,
 	image: shockShark,
 	sabCard: sabotoge1,
@@ -1225,8 +1225,8 @@ const shockSharkStats = {
 
 const greatShockSharkStats = {
 	name: "Great Shock Shark",
-	hp: 11,
-	attack: 4,
+	hp: 28,
+	attack: 6,
 	sabotoge: 1,
 	pointValue: 100,
 	image: greatShockShark,
@@ -1236,9 +1236,9 @@ const greatShockSharkStats = {
 
 const lightningBugStats = {
 	name: "Lightning Bug",
-	hp: 11,
-	attack: 4,
-	sabotoge: 1,
+	hp: 6,
+	attack: 3,
+	sabotoge: 3,
 	pointValue: 100,
 	image: lightningBug,
 	sabCard: sabotoge1,
@@ -1247,9 +1247,9 @@ const lightningBugStats = {
 
 const scorchedTreeGhastStats = {
 	name: "Schorched Tree Ghast",
-	hp: 11,
-	attack: 4,
-	sabotoge: 1,
+	hp: 17,
+	attack: 3,
+	sabotoge: 2,
 	pointValue: 100,
 	image: scorchedTreeGhast,
 	sabCard: sabotoge1,
@@ -1258,8 +1258,8 @@ const scorchedTreeGhastStats = {
 
 const shelterThumpStats = {
 	name: "Shelter Thump",
-	hp: 11,
-	attack: 4,
+	hp: 20,
+	attack: 3,
 	sabotoge: 1,
 	pointValue: 100,
 	image: shelterThump,
@@ -1269,9 +1269,9 @@ const shelterThumpStats = {
 
 const rainWolfStats = {
 	name: "Rain Wolf",
-	hp: 11,
+	hp: 14,
 	attack: 4,
-	sabotoge: 1,
+	sabotoge: 4,
 	pointValue: 100,
 	image: rainWolf,
 	sabCard: sabotoge1,
@@ -1280,9 +1280,9 @@ const rainWolfStats = {
 
 const enlightenedRainWolfStats = {
 	name: "Enlightened Rain Wolf",
-	hp: 11,
-	attack: 4,
-	sabotoge: 1,
+	hp: 30,
+	attack: 5,
+	sabotoge: 4,
 	pointValue: 100,
 	image: enlightenedRainWolf,
 	sabCard: sabotoge1,
@@ -1291,7 +1291,7 @@ const enlightenedRainWolfStats = {
 
 const borgusStats = {
 	name: "Borgus",
-	hp: 2,
+	hp: 12,
 	attack: 5,
 	sabotoge: 2,
 	pointValue: 200,
@@ -1302,9 +1302,9 @@ const borgusStats = {
 
 const misterBorgusStats = {
 	name: "Mister Borgus",
-	hp: 20,
-	attack: 4,
-	sabotoge: 5,
+	hp: 50,
+	attack: 6,
+	sabotoge: 2,
 	pointValue: 200,
 	image: misterBorgus,
 	sabCard: sabotoge1,
@@ -1325,9 +1325,9 @@ const gangOfFleebsStats = {
 
 const purpleKreepStats = {
 	name: "Purple Kreep",
-	hp: 10,
-	attack: 3,
-	sabotoge: 1,
+	hp: 17,
+	attack: 4,
+	sabotoge: 3,
 	pointValue: 150,
 	image: purpleKreep,
 	sabCard: sabotoge1,
@@ -1336,9 +1336,9 @@ const purpleKreepStats = {
 
 const reacherStats = {
 	name: "Reacher",
-	hp: 10,
-	attack: 3,
-	sabotoge: 1,
+	hp: 21,
+	attack: 5,
+	sabotoge: 0,
 	pointValue: 150,
 	image: reacher,
 	sabCard: sabotoge1,
@@ -1347,7 +1347,7 @@ const reacherStats = {
 
 const rundarrStats = {
 	name: "Rundarr",
-	hp: 10,
+	hp: 12,
 	attack: 3,
 	sabotoge: 1,
 	pointValue: 100,
@@ -1358,8 +1358,8 @@ const rundarrStats = {
 
 const sinisterSloopStats = {
 	name: "Sinister Sloop",
-	hp: 10,
-	attack: 3,
+	hp: 22,
+	attack: 6,
 	sabotoge: 1,
 	pointValue: 100,
 	image: sinisterSloop,
@@ -1369,9 +1369,9 @@ const sinisterSloopStats = {
 
 const soulShredderStats = {
 	name: "Soul Shredder",
-	hp: 10,
-	attack: 3,
-	sabotoge: 1,
+	hp: 20,
+	attack: 8,
+	sabotoge: 2,
 	pointValue: 100,
 	image: soulShredder,
 	sabCard: sabotoge1,
@@ -1380,9 +1380,9 @@ const soulShredderStats = {
 
 const superPincherStats = {
 	name: "Super Pincher",
-	hp: 10,
+	hp: 9,
 	attack: 3,
-	sabotoge: 1,
+	sabotoge: 6,
 	pointValue: 100,
 	image: superPincher,
 	sabCard: sabotoge1,
@@ -1392,8 +1392,8 @@ const superPincherStats = {
 const toogerStats = {
 	name: "Tooger",
 	hp: 100,
-	attack: 3,
-	sabotoge: 1,
+	attack: 5,
+	sabotoge: 5,
 	pointValue: 100,
 	image: tooger,
 	sabCard: sabotoge1,
@@ -1850,12 +1850,12 @@ var cardAbilityNum = 1;
 var factionBoost = 0;
 var itemArray = [rustySword, battleSpear, shardblade, leatherPads, parshendiCarapace, shardplate];
 var enemyArray = [];
-var cardArray = [basic1, basic2/*, basic3, basic4, basic14, basic6, basic7*/, basic18];
+var cardArray = [basic1, basic2, basic3, basic4, basic14, basic6, basic7];
 var cardArray2 = [];
 var recruitArray = [];
-var collectionArray = [basic1, basic2/*, basic3, basic4, basic14, basic6, basic7*/, basic18];
+var collectionArray = [basic1, basic2, basic3, basic4, basic14, basic6, basic7];
 var cardFrames = [];
-var elementOrbs = [];
+var elementOrbs = [fire];
 var multiplier = 1;
 var allies = [];
 var meterArray = [meter0, meter1, meter2, meter3, meter4, meter5, meter6, meter7, meter8, meter9, meter10, meter11, meter12];
@@ -1941,7 +1941,7 @@ class GameScreenHub extends React.Component {
 		var user = document.getElementById("saveName").value;
 		console.log(user);
 		if(user === ""){
-			console.log("enter a name");
+			this.displayErrorMessage("enter a name");
 		}else{
 			var userSaveData = {name: user, collectionArray: collectionArray, levels: levelsBeaten};
 			var saveDataArray = this.state.developers;
@@ -1957,7 +1957,7 @@ class GameScreenHub extends React.Component {
 
 			}, () => {
 				Firebase.database().ref(`/${user}`).set(this.state.developers);
-			 	console.log('DATA SAVED');
+			 	this.displayErrorMessage('DATA SAVED');
 			 	this.setState({
 			 		developers: []
 			 	});
@@ -1969,12 +1969,11 @@ class GameScreenHub extends React.Component {
 	  let ref = Firebase.database().ref(`/${user}`);
 	  ref.on('value', snapshot => {
 	    const state = snapshot.val();
-	    console.log(state);
 	    this.setState({
 	    	developers: state
 	    }, () => {
 	    	if(state === null){
-	    		console.log("No Save Data");
+	    		this.displayErrorMessage("No Save Data");
 	    	}else{
 	    		this.setUpPlayerSave();
 	    	}
@@ -2394,7 +2393,6 @@ class InfoScreen extends React.Component {
 		}
 	}
 	listKeywords(){
-		console.log("hey");
 		keyWordList.sort(function(a, b){
 		    if(a.keyword < b.keyword) { return -1; }
 		    if(a.keyword > b.keyword) { return 1; }
@@ -3208,7 +3206,6 @@ class GameScreen extends React.Component {
 			}else if(checkAbility.indexOf("exhausted") >=0) {
 				if(this.state.exhausted === "immune"){
 				}else{
-					console.log("true exhaust");
 					this.setState({
 						exhausted: true
 					});
@@ -3288,6 +3285,7 @@ class GameScreen extends React.Component {
 				document.getElementById(currentEnemy).classList.add("confused");
 			}else if(checkAbility.indexOf("all") >=0){
 				this.playerAttackAll(newAttack);
+				cardAbilityNum = 1;
 				return;
 			}else if(checkAbility.indexOf("poison") >=0){
 				var poisonNum = parseInt(checkAbility.match(/\d+/)[0]);
@@ -3354,7 +3352,6 @@ class GameScreen extends React.Component {
 					console.log(finesseAttack);
 					this.playerAttack(finesseAttack);
 				}else{
-					console.log(newAttack);
 					this.playerAttack(newAttack);
 				}
 				cardAbilityNum = 1;
@@ -3432,7 +3429,6 @@ class GameScreen extends React.Component {
 			document.getElementById("badGuy" + (currentEnemy)).append("-" + heroAttack);
 			document.getElementById("badGuy" + (currentEnemy)).style.display="inline";
 			setTimeout(() => { 
-				console.log(currentEnemy);
 				document.getElementById("badGuy" + (currentEnemy)).innerHTML="";
 				document.getElementById("badGuy" + (currentEnemy)).style.display="none";
 				if(enemyHp <= 0){
@@ -3641,7 +3637,6 @@ class GameScreen extends React.Component {
 		console.log(cardArray);
 	}
 	triggerEnemyDeath() {
-		console.log("triggerEnemyDeath");
 		var removeEndDmg = this.state.endOfTurnDmg;
 		for(var i=0; i<enemyArray.length; i++){
 			if(enemyArray[i].hp === 0){
@@ -3658,7 +3653,6 @@ class GameScreen extends React.Component {
 		}, 100);
 	}
 	enemyCleanUp() {
-		console.log('enemyCleanup');
 		if(enemyArray[0].hp === 0 && enemyArray[1].hp === 0 && enemyArray[2].hp === 0){
 				console.log("They're all dead. You win!");
 				//this.props.aux();
@@ -3681,7 +3675,6 @@ class GameScreen extends React.Component {
 			this.setState({
 				enemySab: currentSabArray
 			}, () => {
-				console.log(this.state.enemiesAttacking);
 				if(this.state.enemiesAttacking === false){
 					console.log("enemies will attack");
 					this.enemyAttackAction(0);
@@ -3720,7 +3713,6 @@ class GameScreen extends React.Component {
 			for (var i=0; i < x.length; i ++ ){
 				x[i].style.borderColor="black";
 			}
-			console.log("enemyNumber " + enemyNumber);
 			if(document.getElementById(enemyNumber).classList.contains("stunned")){
 				console.log("too stunned to attack");
 			}else{
@@ -3843,7 +3835,6 @@ class GameScreen extends React.Component {
 						this.enemyAttackAction(enemyNumber);
 					}else if(enemyNumber === (enemyArray.length - 1)){
 						if(this.state.exhausted === true){
-							console.log("exhausted attack");
 							this.enemyAttackAction(0);
 							this.setState({
 								exhausted: false
@@ -4861,12 +4852,12 @@ class CraftingScreen extends React.Component {
 		if(this.state.element[1] === "neutral"){
 		}else{
 			var craftedCard = this.state.resetCard;
-			console.log(craftedCard.name);
 			if(craftedCard.craft > 0){
 				var newCard = eval(this.state.element[1] + craftedCard.craft);
 				var a = collectionArray.findIndex(x => x.name === craftedCard.name);
 				if(collectionArray[a].ownedNum > 1){
 					collectionArray[a].ownedNum --;
+					collectionArray[a].deckNum --;
 				}else{
 					collectionArray.splice(a, 1);
 				}
@@ -4877,11 +4868,13 @@ class CraftingScreen extends React.Component {
 					}else{}
 				}
 				if(alreadyUnlocked === false){
-					collectionArray.push(newCard);
 					newCard.unlocked = true;
+					newCard.deckNum ++;
+					collectionArray.push(newCard);
 				}else{
 					var c = collectionArray.findIndex(x => x.name === newCard.name);
 					collectionArray[c].ownedNum ++;
+					collectionArray[c].deckNum ++;
 				}
 				/*var b = cardArray.findIndex(x => x.name === craftedCard.name);
 				cardArray.splice(a, 1);
