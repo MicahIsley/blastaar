@@ -181,7 +181,7 @@ var fire19 = new CardCon("Big Fireball", 1, 9, "Whoa", "hero", 0, "", "", true, 
 var fire20 = new CardCon("Wait For It", 1, 0, "Next +4. Draw +3.", "hero", 0, "next 4", "int 3", true, "stormlight", placeholderImg, fire, "fire", 20, 1, 0);
 var fire21 = new CardCon("Flame Scrabler", 2, 0, "Fire cards get +2 power", "hero", 0, "boost fire 2", 99, true, "support", flameScrabler, fire, "fire", 21, 1, 0);
 var fire22 = new CardCon("Broodmother", 2, 0, "Fire cards get +3 power", "hero", 0, "boost fire 3", 99, true, "support", broodmother, fire, "fire", 22, 1, 0);
-var fire23 = new CardCon("Morp", 2, 0, "Gain 2 Fire gems", "hero", 0, "supGems 2", 99, true, "support", morp, fire, "fire", 22, 1, 0);
+var fire23 = new CardCon("Morp", 1, 0, "Gain 2 Fire gems", "hero", 0, "supGems 2", 99, true, "support", morp, fire, "fire", 22, 1, 0);
 var fire24 = new CardCon("Ember Adder", 2, 0, "Gain an extra fire reward card", "hero", 0, "supCards 1", 99, true, "support", emberAdder, fire, "fire", 22, 1, 0);
 var fire25 = new CardCon("Kragmup", 2, 0, "Enemies take 1 damage each turn", "hero", 0, "supBurning 1", 99, true, "support", kragmup, fire, "fire", 22, 1, 0);
 var fire26 = new CardCon("Tipper", 2, 0, "Fire cards get +3 power", "hero", 0, "boost fire 3", 99, true, "support", tipper, fire, "fire", 22, 1, 0);
@@ -209,13 +209,13 @@ var earth18 = new CardCon("Fast Learning", 0, 3, "Grow 3", "hero", 0, "grow 3 30
 var earth19 = new CardCon("Super Crash", 1, 6, "+1 For Each Earth Card", "hero", 0, "factionBoost 1", "", true, "stormlight", placeholderImg, earth, "earth", 18, 1, 0);
 var earth20 = new CardCon("Strength Sap", 1, 4, "Weaken 4", "hero", 0, "weaken 4", "", true, "stormlight", placeholderImg, earth, "earth", 19, 1, 0);
 var earth21 = new CardCon("Rock Fairy", 1, 0, "5 Shield", "hero", 0, "supShield 5", "9", true, "support", rockFairy, earth, "earth", 21, 1, 1); 
-var earth22 = new CardCon("Primtree", 2, 0, "Earth cards get +2 power", "hero", 0, "boost earth 2 9", 99, true, "support", primtree, earth, "earth", 0, 1, 0);
-var earth23 = new CardCon("King Wobbleduk", 2, 0, "Earth cards get +3 power", "hero", 0, "boost earth 3 9", 99, true, "support", kingWobbleduk, earth, "earth", 0, 1, 0);
-var earth24 = new CardCon("Steed", 2, 0, "Gain 1 Shield Per Turn", "hero", 0, "supShield 1 9", 99, true, "support", steed, earth, "earth", 0, 1, 0);
+var earth22 = new CardCon("Primtree", 2, 0, "Earth cards get +2 power", "hero", 0, "boost earth 2", 99, true, "support", primtree, earth, "earth", 0, 1, 0);
+var earth23 = new CardCon("King Wobbleduk", 2, 0, "Earth cards get +3 power", "hero", 0, "boost earth 3", 99, true, "support", kingWobbleduk, earth, "earth", 0, 1, 0);
+var earth24 = new CardCon("Steed", 2, 0, "Gain 1 Shield Per Turn", "hero", 0, "supShield 1", 99, true, "support", steed, earth, "earth", 0, 1, 0);
 var earth25 = new CardCon("Stone Strider", 2, 0, "Gain 2 Shield Per Turn", "hero", 0, "supShield 2 9", 99, true, "support", stoneStrider, earth, "earth", 0, 1, 0);
-var earth26 = new CardCon("Jewel Primtree", 2, 0, "Gain 2 Earth Gems", "hero", 0, "supGems 2 9", 99, true, "support", jewelPrimtree, earth, "earth", 0, 1, 0);
-var earth27 = new CardCon("Queen Primtree", 2, 0, "Enemies have -2 Power", "hero", 0, "supWeaken 2 9", 99, true, "support", queenPrimtree, earth, "earth", 0, 1, 0);
-var earth28 = new CardCon("Tough Primtree", 2, 0, "Gain 3 Shield Per Turn", "hero", 0, "supShield 3 9", 99, true, "support", toughPrimtree, earth, "earth", 0, 1, 0);
+var earth26 = new CardCon("Jewel Primtree", 2, 0, "Gain 2 Earth Gems", "hero", 0, "supGems 2", 99, true, "support", jewelPrimtree, earth, "earth", 0, 1, 0);
+var earth27 = new CardCon("Queen Primtree", 2, 0, "Enemies have -2 Power", "hero", 0, "supWeaken 2", 99, true, "support", queenPrimtree, earth, "earth", 0, 1, 0);
+var earth28 = new CardCon("Tough Primtree", 2, 0, "Gain 3 Shield Per Turn", "hero", 0, "supShield 3", 99, true, "support", toughPrimtree, earth, "earth", 0, 1, 0);
 var earth29 = new CardCon("Wobbleduk", 2, 0, "Earth cards get +1 power", "hero", 0, "boost earth 1", 99, true, "support", wobbleduk, earth, "earth", 0, 1, 0);
 var wind1 = new CardCon("Tornado", 0, 1, "Next +5.", "hero", 0, "next 5", "", true, "stormlight", placeholderImg, wind, "wind", 1, 1, 0);
 var wind2 = new CardCon("Whirlwind", 0, 3, "Decoy", "hero", 0, "decoy", "", true, "stormlight", placeholderImg, wind, "wind", 2, 1, 0);
@@ -900,7 +900,7 @@ const championStalkerStats = {
 
 const desertMadnadoStats = {
 	name: "Desert Madnado",
-	hp: 8,
+	hp: 7,
 	attack: 4,
 	sabotoge: 2,
 	pointValue: 150,
@@ -936,7 +936,7 @@ const predatorSnippStats = {
 
 const grumpeelStats = {
 	name: "Grumpeel",
-	hp: 15,
+	hp: 12,
 	attack: 3,
 	sabotoge: 0,
 	pointValue: 150,
@@ -960,8 +960,8 @@ const duneStabberStats = {
 
 const stabberConclaveStats = {
 	name: "Stabber Conclave",
-	hp: 29,
-	attack: 25,
+	hp: 27,
+	attack: 5,
 	sabotoge: 3,
 	pointValue: 100,
 	image: stabberConclave,
@@ -1009,7 +1009,7 @@ const nutriteStats = {
 
 const lavaWalkerStats = {
 	name: "Lava Walker",
-	hp: 18,
+	hp: 12,
 	attack: 2,
 	sabotoge: 2,
 	pointValue: 100,
@@ -1021,7 +1021,7 @@ const lavaWalkerStats = {
 
 const moltasaurusStats = {
 	name: "Moltasaurus",
-	hp: 11,
+	hp: 9,
 	attack: 5,
 	sabotoge: 1,
 	pointValue: 100,
@@ -1045,7 +1045,7 @@ const moltasaurusRexStats = {
 
 const lavaLordWalkerStats = {
 	name: "Lava Lord Walker",
-	hp: 37,
+	hp: 34,
 	attack: 3,
 	sabotoge: 1,
 	pointValue: 100,
@@ -1058,7 +1058,7 @@ const lavaLordWalkerStats = {
 const trekapodStats = {
 	name: "Trekapod",
 	hp: 8,
-	attack: 3,
+	attack: 2,
 	sabotoge: 2,
 	pointValue: 100,
 	image: trekapod,
@@ -1069,8 +1069,8 @@ const trekapodStats = {
 
 const volcanoTramplerStats = {
 	name: "Volcano Trampler",
-	hp: 13,
-	attack: 5,
+	hp: 12,
+	attack: 3,
 	sabotoge: 1,
 	pointValue: 100,
 	image: volcanoTrampler,
@@ -1081,7 +1081,7 @@ const volcanoTramplerStats = {
 
 const walkingEruptionStats = {
 	name: "Walking Eruption",
-	hp: 20,
+	hp: 17,
 	attack: 2,
 	sabotoge: 1,
 	pointValue: 100,
@@ -1104,7 +1104,7 @@ const bogBoarStats = {
 
 const greaterGalopeStats = {
 	name: "Greater Galope",
-	hp: 16,
+	hp: 14,
 	attack: 2,
 	sabotoge: 2,
 	pointValue: 100,
@@ -1115,7 +1115,7 @@ const greaterGalopeStats = {
 
 const lesserGalopeStats = {
 	name: "Lesser Galope",
-	hp: 15,
+	hp: 13,
 	attack: 3,
 	sabotoge: 1,
 	pointValue: 100,
@@ -1127,7 +1127,7 @@ const lesserGalopeStats = {
 const mucksterStats = {
 	name: "Muckster",
 	hp: 9,
-	attack: 5,
+	attack: 4,
 	sabotoge: 3,
 	pointValue: 100,
 	image: muckster,
@@ -1159,8 +1159,8 @@ const sominusStats = {
 
 const toxicRollerStats = {
 	name: "Toxic Roller",
-	hp: 10,
-	attack: 4,
+	hp: 9,
+	attack: 3,
 	sabotoge: 2,
 	pointValue: 100,
 	image: toxicRoller,
@@ -1170,7 +1170,7 @@ const toxicRollerStats = {
 
 const warthusStats = {
 	name: "Warthus",
-	hp: 22,
+	hp: 20,
 	attack: 1,
 	sabotoge: 0,
 	pointValue: 100,
@@ -1192,8 +1192,8 @@ const duchessWarthusStats = {
 
 const staticGliderStats = {
 	name: "Static Glider",
-	hp: 13,
-	attack: 5,
+	hp: 8,
+	attack: 3,
 	sabotoge: 0,
 	pointValue: 100,
 	image: staticGlider,
@@ -1203,7 +1203,7 @@ const staticGliderStats = {
 
 const staticCatcherStats = {
 	name: "Static Catcher",
-	hp: 15,
+	hp: 10,
 	attack: 4,
 	sabotoge: 1,
 	pointValue: 100,
@@ -1214,7 +1214,7 @@ const staticCatcherStats = {
 
 const shockSharkStats = {
 	name: "Shock Shark",
-	hp: 13,
+	hp: 9,
 	attack: 5,
 	sabotoge: 0,
 	pointValue: 100,
@@ -1247,8 +1247,8 @@ const lightningBugStats = {
 
 const scorchedTreeGhastStats = {
 	name: "Schorched Tree Ghast",
-	hp: 17,
-	attack: 3,
+	hp: 15,
+	attack: 2,
 	sabotoge: 2,
 	pointValue: 100,
 	image: scorchedTreeGhast,
@@ -1258,8 +1258,8 @@ const scorchedTreeGhastStats = {
 
 const shelterThumpStats = {
 	name: "Shelter Thump",
-	hp: 20,
-	attack: 3,
+	hp: 19,
+	attack: 2,
 	sabotoge: 1,
 	pointValue: 100,
 	image: shelterThump,
@@ -1269,7 +1269,7 @@ const shelterThumpStats = {
 
 const rainWolfStats = {
 	name: "Rain Wolf",
-	hp: 14,
+	hp: 12,
 	attack: 4,
 	sabotoge: 4,
 	pointValue: 100,
@@ -1291,7 +1291,7 @@ const enlightenedRainWolfStats = {
 
 const borgusStats = {
 	name: "Borgus",
-	hp: 12,
+	hp: 17,
 	attack: 5,
 	sabotoge: 2,
 	pointValue: 200,
@@ -1313,8 +1313,8 @@ const misterBorgusStats = {
 
 const gangOfFleebsStats = {
 	name: "Gang of Fleebs",
-	hp: 3,
-	attack: 7,
+	hp: 4,
+	attack: 4,
 	sabotoge: 1,
 	pointValue: 250,
 	image: gangOfFleebs,
@@ -2021,6 +2021,7 @@ class GameScreenHub extends React.Component {
 	gainSupGemReward(reward){
 		var updateRewardArray = this.state.supGemRewards;
 		updateRewardArray.push(reward);
+		console.log(updateRewardArray);
 		this.setState({
 			supGemRewards: updateRewardArray
 		});
@@ -2941,17 +2942,16 @@ class GameScreen extends React.Component {
 		for(var i=0; i < x.length; i++){
 			x[i].classList.remove("influenceGlow");
 		}
-		console.log(card.type);
 		if((card.type === "support" || card.type === "character") && card.cost <= this.props.influence){
 			var newDamageMod = 0;
 			if(card.ability1.indexOf("supWeaken") >= 0){
 				var weakenNum = parseInt(card.ability1.split(/[ ,]+/)[1]);
-				newDamageMod = this.state.enemyDamageMod + weakenNum;
+				newDamageMod = this.state.enemyDamageMod - weakenNum;
 			}else if(card.ability1.indexOf("supGems") >= 0){
 				var gemNum = parseInt(card.ability1.split(/[ ,]+/)[1]);
 				for(var i=0; i<gemNum; i++){
 					var randNum = Math.floor(Math.random() * 2);
-					if(randNum === 1){
+					if(randNum === 0){
 						if(card.icon === lava){
 							this.props.gainSupGemReward(fire);
 						}else if(card.icon === mud){
@@ -2963,7 +2963,7 @@ class GameScreen extends React.Component {
 						}else{
 							this.props.gainSupGemReward(card.icon);
 						}
-					}if(randNum === 2){
+					}if(randNum === 1){
 						if(card.icon === lava){
 							this.props.gainSupGemReward(earth);
 						}else if(card.icon === mud){
@@ -3004,16 +3004,18 @@ class GameScreen extends React.Component {
 					this.props.error("Already have 2 supports");
 				}
 			}else{}
-			var removeRecruit = this.state.cards;
-			var a = cardArray.findIndex(x => x.name === card.name);
-			cardArray.splice(a, 1);
-			var b = removeRecruit.findIndex(x => x.name === card.name);
-			removeRecruit.splice(b, 1);
-			document.getElementById("influenceOrb").classList.remove("stormlightOn");
-			this.setState({
-				recruit: false,
-				cards: removeRecruit
-			});
+			if(this.state.supportSlot1 === null || this.state.supportSlot2 === null){
+				var removeRecruit = this.state.cards;
+				var a = cardArray.findIndex(x => x.name === card.name);
+				cardArray.splice(a, 1);
+				var b = removeRecruit.findIndex(x => x.name === card.name);
+				removeRecruit.splice(b, 1);
+				document.getElementById("influenceOrb").classList.remove("stormlightOn");
+				this.setState({
+					recruit: false,
+					cards: removeRecruit
+				});
+			}else{}
 		}else{
 			this.props.error("Not Enough Energy");
 		}
@@ -3604,7 +3606,7 @@ class GameScreen extends React.Component {
 				var newDamageMod = this.state.enemyDamageMod;
 				if(usedSupport.ability1.indexOf("supWeaken") >= 0){
 					var weakenNum = parseInt(usedSupport.ability1.split(/[ ,]+/)[1]);
-					newDamageMod = this.state.enemyDamageMod - weakenNum;
+					newDamageMod = this.state.enemyDamageMod + weakenNum;
 				}else{}
 				this.setState({
 					[supSlot]: null,
@@ -4232,28 +4234,35 @@ class SupportSlot extends React.Component {
 					<img className="supportSlotImage" src={this.props.card.image} alt="supportImage" />
 				</div>
 				}
-				<div className={`col-xs-offset-1 col-xs-8 ${cardStyle}`} id={this.props.supSlot}>
-					<div className="row supportText">
-						{this.props.card.text}
-					</div>
-					{ actionButton === true &&
-					<div className="row schemeCounter">
-						<div className="col-xs-12">
-							<div className="row">
-								<div className="col-xs-4">
-									{/*{this.props.schemePower}/{parseInt(this.props.card.ability1.split(/[ ,]+/)[2])}*/}
+				{ actionButton === true &&
+					<div className={`col-xs-offset-1 col-xs-8 ${cardStyle}`} id={this.props.supSlot}>
+						<div className="row supportText">
+							{this.props.card.text}
+						</div>
+						<div className="row schemeCounter">
+							<div className="col-xs-12">
+								<div className="row">
+									<div className="col-xs-4">
+										{/*{this.props.schemePower}/{parseInt(this.props.card.ability1.split(/[ ,]+/)[2])}*/}
+									</div>
+									<div className="col-xs-4 schemeReward">
+										{parseInt(this.props.card.ability1.split(/[ ,]+/)[3])}
+									</div>
 								</div>
-								<div className="col-xs-4 schemeReward">
-									{parseInt(this.props.card.ability1.split(/[ ,]+/)[3])}
+								<div className="row">
+									<div className="col-xs-offset-4 col-xs-4 coolButton supportActionButton" onClick={() => this.props.supportAction(this.props.card, this.props.supSlot)}>Action</div>
 								</div>
-							</div>
-							<div className="row">
-								<div className="col-xs-offset-4 col-xs-4 coolButton supportActionButton" onClick={() => this.props.supportAction(this.props.card, this.props.supSlot)}>Action</div>
 							</div>
 						</div>
 					</div>
-					}
-				</div>
+				}
+				{ actionButton === false &&
+					<div className={`col-xs-5 ${cardStyle}`} id={this.props.supSlot}>
+						<div className="row supportText">
+							{this.props.card.text}
+						</div>
+					</div>
+				}
 			</div>
 		)
 	}
@@ -4732,6 +4741,8 @@ class CollectionScreen extends React.Component {
 		}
 		this.setState({
 			currentDeck: cardsInDeck
+		}, () => {
+			cardArray = this.state.currentDeck;
 		});
 	}
 	addToDeck(card) {
