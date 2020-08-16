@@ -343,26 +343,26 @@ var desert6 = new CardCon("Changing Sand", 0, 4, "Draw +2", "hero", 0, "int 2", 
 var desert7 = new CardCon("Feint", 0, 1, "Extra. Decoy.", "hero", 0, "extra 1", "decoy", true, "stormlight", placeholderImg, desert, "desert", 0, 1, 0);
 var desert8 = new CardCon("Crystals", 0, 3, "Energy 4", "hero", 0, "energy 4", "", true, "stormlight", placeholderImg, desert, "desert", 0, 1, 0);
 var desert9 = new CardCon("Mummy Chase", 0, 3, "Spooky 3", "hero", 0, "meter 3", "", true, "stormlight", placeholderImg, desert, "desert", 0, 1, 0);
-var desert10 = new CardCon("Intense Dodge", 0, 5, "Decoy. Exhaust.", "hero", 0, "decoy", "exhausted", true, "stormlight", placeholderImg, desert, "deset", 0, 1, 0);
-var desert11 = new CardCon("Tomb Treasure", 2, 0, "Desert Scheme 3/Treasure", "hero", 0, "scheme desert 3", 11, true, "character", placeholderImg, desert, "deset", 0, 1, 0);
-var desert12 = new CardCon("Sand Flurry", 0, 3, "Multiply", "hero", 0, "multiply", "", true, "stormlight", placeholderImg, desert, "deset", 0, 1, 0);
-var desert13 = new CardCon("Rush of Magic", 0, 0, "Extra 2.", "hero", 0, "extra 2", "", true, "stormlight", placeholderImg, desert, "deset", 0, 1, 0);
-var desert14 = new CardCon("Desert Wisdom", 0, 2, "Extra. Draw +1.", "hero", 0, "extra 1", "int 1", true, "stormlight", placeholderImg, desert, "deset", 0, 1, 0);
-var desert15 = new CardCon("Mirage", 0, 1, "Multiply. Decoy", "hero", 0, "multiply", "decoy", true, "stormlight", placeholderImg, desert, "deset", 0, 1, 0);
-var desert16 = new CardCon("Delicate Slicing", 0, 2, "Finesse 1. All.", "hero", 0, "finesse 1", "all", true, "stormlight", placeholderImg, desert, "deset", 0, 1, 0);
-var desert17 = new CardCon("Entomb", 4, 0, "Desert Scheme 6/17", "hero", 0, "scheme desert 6", 17, true, "character", placeholderImg, desert, "deset", 0, 1, 0);
-var desert18 = new CardCon("Never Tire", 0, 2, "Extra. Multiply.", "hero", 0, "extra 1", "multiply", true, "stormlight", placeholderImg, desert, "deset", 0, 1, 0);
-var desert19 = new CardCon("Painful Illusion", 2, 2, "Extra 3", "hero", 0, "extra 3", "", true, "stormlight", placeholderImg, desert, "deset", 0, 1, 0);
-var desert20 = new CardCon("Sun Gem", 1, 3, "Draw +3. Next +3", "hero", 0, "int 3", "next 3", true, "stormlight", placeholderImg, desert, "deset", 0, 1, 0);
-var desert21 = new CardCon("Dune Stabber", 2, 3, "Desert Cards +2", "hero", 0, "boost desert 2", 99, true, "stormlight", duneStabber, desert, "deset", 0, 1, 0);
-var desert22 = new CardCon("Predator Snipp", 3, 3, "Desert Cards +3", "hero", 0, "boost desert 3", 99, true, "stormlight", predatorSnipp, desert, "deset", 0, 1, 0);
-var desert23 = new CardCon("Champion Stalker", 4, 3, "Desert Cards +4", "hero", 0, "boost desert 4", 99, true, "stormlight", championStalker, desert, "deset", 0, 1, 0);
-var desert24 = new CardCon("Stabber Conclave", 4, 3, "All enemies get -3 attack", "hero", 0, "supWeaken 3", 99, true, "stormlight", stabberConclave, desert, "deset", 0, 1, 0);
-var desert25 = new CardCon("Grumpeel", 2, 3, "Gain 2 gems", "hero", 0, "supGems 2", 99, true, "stormlight", grumpeel, desert, "deset", 0, 1, 0);
-var desert26 = new CardCon("Wandering Relic", 2, 3, "Gain 1 Desert Card", "hero", 0, "supCards 1", 99, true, "stormlight", wanderingRelic, desert, "deset", 0, 1, 0);
-var desert27 = new CardCon("Desert Madnado", 3, 3, "Your Next spells get +2", "hero", 0, "supAbilityBoost next 2", 99, true, "stormlight", desertMadnado, desert, "deset", 0, 1, 0);
-var desert28 = new CardCon("Bone Stalker", 3, 3, "Desert card gain grow 1 when played", "hero", 0, "supGrow desert 1", 99, true, "stormlight", boneStalker, desert, "deset", 0, 1, 0);
-var desert29 = new CardCon("Sand Snipp", 2, 3, "Decoy", "hero", 0, "supDecoy", 99, true, "stormlight", sandSnipp, desert, "deset", 0, 1, 0);
+var desert10 = new CardCon("Intense Dodge", 0, 5, "Decoy. Exhaust.", "hero", 0, "decoy", "exhausted", true, "stormlight", placeholderImg, desert, "desert", 0, 1, 0);
+var desert11 = new CardCon("Tomb Treasure", 2, 0, "Desert Scheme 3/Treasure", "hero", 0, "scheme desert 3", 11, true, "character", placeholderImg, desert, "desert", 0, 1, 0);
+var desert12 = new CardCon("Sand Flurry", 0, 3, "Multiply", "hero", 0, "multiply", "", true, "stormlight", placeholderImg, desert, "desert", 0, 1, 0);
+var desert13 = new CardCon("Rush of Magic", 0, 0, "Extra 2.", "hero", 0, "extra 2", "", true, "stormlight", placeholderImg, desert, "desert", 0, 1, 0);
+var desert14 = new CardCon("Desert Wisdom", 0, 2, "Extra. Draw +1.", "hero", 0, "extra 1", "int 1", true, "stormlight", placeholderImg, desert, "desert", 0, 1, 0);
+var desert15 = new CardCon("Mirage", 0, 1, "Multiply. Decoy", "hero", 0, "multiply", "decoy", true, "stormlight", placeholderImg, desert, "desert", 0, 1, 0);
+var desert16 = new CardCon("Delicate Slicing", 0, 2, "Finesse 1. All.", "hero", 0, "finesse 1", "all", true, "stormlight", placeholderImg, desert, "desert", 0, 1, 0);
+var desert17 = new CardCon("Entomb", 4, 0, "Desert Scheme 6/17", "hero", 0, "scheme desert 6", 17, true, "character", placeholderImg, desert, "desert", 0, 1, 0);
+var desert18 = new CardCon("Never Tire", 0, 2, "Extra. Multiply.", "hero", 0, "extra 1", "multiply", true, "stormlight", placeholderImg, desert, "desert", 0, 1, 0);
+var desert19 = new CardCon("Painful Illusion", 2, 2, "Extra 3", "hero", 0, "extra 3", "", true, "stormlight", placeholderImg, desert, "desert", 0, 1, 0);
+var desert20 = new CardCon("Sun Gem", 1, 3, "Draw +3. Next +3", "hero", 0, "int 3", "next 3", true, "stormlight", placeholderImg, desert, "desert", 0, 1, 0);
+var desert21 = new CardCon("Dune Stabber", 2, 3, "Desert Cards +2", "hero", 0, "boost desert 2", 99, true, "support", duneStabber, desert, "desert", 0, 1, 0);
+var desert22 = new CardCon("Predator Snipp", 3, 3, "Desert Cards +3", "hero", 0, "boost desert 3", 99, true, "support", predatorSnipp, desert, "desert", 0, 1, 0);
+var desert23 = new CardCon("Champion Stalker", 4, 3, "Desert Cards +4", "hero", 0, "boost desert 4", 99, true, "support", championStalker, desert, "desert", 0, 1, 0);
+var desert24 = new CardCon("Stabber Conclave", 4, 3, "All enemies get -3 attack", "hero", 0, "supWeaken 3", 99, true, "support", stabberConclave, desert, "desert", 0, 1, 0);
+var desert25 = new CardCon("Grumpeel", 2, 3, "Gain 2 gems", "hero", 0, "supGems 2", 99, true, "support", grumpeel, desert, "desert", 0, 1, 0);
+var desert26 = new CardCon("Wandering Relic", 2, 3, "Gain 1 Desert Card", "hero", 0, "supCards 1", 99, true, "support", wanderingRelic, desert, "desert", 0, 1, 0);
+var desert27 = new CardCon("Desert Madnado", 3, 3, "Your Next spells get +2", "hero", 0, "supAbilityBoost next 2", 99, true, "support", desertMadnado, desert, "desert", 0, 1, 0);
+var desert28 = new CardCon("Bone Stalker", 3, 3, "Desert card gain grow 1 when played", "hero", 0, "supGrow desert 1", 99, true, "support", boneStalker, desert, "desert", 0, 1, 0);
+var desert29 = new CardCon("Sand Snipp", 2, 3, "Decoy", "hero", 0, "supDecoy", 99, true, "support", sandSnipp, desert, "desert", 0, 1, 0);
 var storm1 = new CardCon("Storm Crunch", 0, 6, "", "hero", 0, "", "", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
 var storm2 = new CardCon("Static", 0, 4, "Stun", "hero", 0, "stun", "", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
 var storm3 = new CardCon("Threatening Clouds", 0, 1, "Finesse 2. Deplete.", "hero", 0, "finesse 2", "deplete", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
@@ -412,15 +412,15 @@ var mud17 = new CardCon("Never Escape", 4, 0, "Mud Scheme 5/20", "hero", 0, "sch
 var mud18 = new CardCon("Steal Essense", 0, 8, "Poison 1. Heal 4.", "hero", 0, "poison 1", "heal 4", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
 var mud19 = new CardCon("Swamp Stomp", 1, 9, "Confuse", "hero", 0, "confuse", "", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
 var mud20 = new CardCon("Inevitable Decay", 1, 1, "Poison 3. Poison 3", "hero", 0, "poison 3", "poison 3", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
-var mud21 = new CardCon("Warthus", 2, 0, "", "hero", 0, "boost mud 2", 99, true, "support", warthus, mud, "mud", 0, 1, 0);
-var mud22 = new CardCon("Muckster", 3, 0, "", "hero", 0, "boost mud 3", 99, true, "support", muckster, mud, "mud", 0, 1, 0);
-var mud23 = new CardCon("Archmage Muckster", 4, 0, "", "hero", 0, "boost mud 4", 99, true, "support", archmageMuckster, mud, "mud", 0, 1, 0);
-var mud24 = new CardCon("Bog Boar", 2, 0, "", "hero", 0, "supPoison 2", 99, true, "support", bogBoar, mud, "mud", 0, 1, 0);
-var mud25 = new CardCon("Toxic Roller", 3, 0, "", "hero", 0, "supPoison 4", 99, true, "support", toxicRoller, mud, "mud", 0, 1, 0);
-var mud26 = new CardCon("Lesser Galope", 2, 0, "", "hero", 0, "supGems 2", 99, true, "support", lesserGalope, mud, "mud", 0, 1, 0);
-var mud27 = new CardCon("Sominus", 2, 0, "", "hero", 0, "supCards 1", 99, true, "support", sominus, mud, "mud", 0, 1, 0);
-var mud28 = new CardCon("Duchess Warthus", 4, 0, "", "hero", 0, "supGrow mud 1", 99, true, "support", duchessWarthus, mud, "mud", 0, 1, 0);
-var mud29 = new CardCon("Greater Galope", 3, 0, "", "hero", 0, "supAbilityBoost poison 1", 99, true, "support", greaterGalope, mud, "mud", 0, 1, 0);
+var mud21 = new CardCon("Warthus", 2, 0, "Boost Mud 2", "hero", 0, "boost mud 2", 99, true, "support", warthus, mud, "mud", 0, 1, 0);
+var mud22 = new CardCon("Muckster", 3, 0, "Boost Mud 3", "hero", 0, "boost mud 3", 99, true, "support", muckster, mud, "mud", 0, 1, 0);
+var mud23 = new CardCon("Archmage Muckster", 4, 0, "Boost Mud 4", "hero", 0, "boost mud 4", 99, true, "support", archmageMuckster, mud, "mud", 0, 1, 0);
+var mud24 = new CardCon("Bog Boar", 2, 0, "Poison 2 Every Turn", "hero", 0, "supPoison 2", 99, true, "support", bogBoar, mud, "mud", 0, 1, 0);
+var mud25 = new CardCon("Toxic Roller", 3, 0, "Poison 4 Every Turn", "hero", 0, "supPoison 4", 99, true, "support", toxicRoller, mud, "mud", 0, 1, 0);
+var mud26 = new CardCon("Lesser Galope", 2, 0, "Gain 2 Gems", "hero", 0, "supGems 2", 99, true, "support", lesserGalope, mud, "mud", 0, 1, 0);
+var mud27 = new CardCon("Sominus", 2, 0, "Gain 1 Mud Card", "hero", 0, "supCards 1", 99, true, "support", sominus, mud, "mud", 0, 1, 0);
+var mud28 = new CardCon("Duchess Warthus", 4, 0, "Mud Card gain +1 Power When Played", "hero", 0, "supGrow mud 1", 99, true, "support", duchessWarthus, mud, "mud", 0, 1, 0);
+var mud29 = new CardCon("Greater Galope", 3, 0, "Poison Cards gain +1 Power", "hero", 0, "supAbilityBoost poison 1", 99, true, "support", greaterGalope, mud, "mud", 0, 1, 0);
 var spooky1 = new CardCon("Gand of Fleebs", 0, 0, "", "hero", 0, "", 99, true, "support", gangOfFleebs, spooky, "spooky", 0, 1, 0);
 var addCard1 = new CardCon("Roast", 0, 8, "Deal 8", "hero", 0, "remove", "", false, "stormlight", placeholderImg, fire, "fire", 0);
 var addCard2 = new CardCon("Earth Shield", 0, 3, "Shield 7", "hero", 0, "shield 7", "remove", false, "stormlight", placeholderImg, earth, "earth", 0);
@@ -1225,8 +1225,8 @@ const staticCatcherStats = {
 
 const shockSharkStats = {
 	name: "Shock Shark",
-	hp: 7,
-	attack: 4,
+	hp: 9,
+	attack: 5,
 	sabotoge: 0,
 	pointValue: 100,
 	image: shockShark,
@@ -1239,7 +1239,7 @@ const greatShockSharkStats = {
 	name: "Great Shock Shark",
 	hp: 28,
 	attack: 6,
-	sabotoge: 1,
+	sabotoge: 2,
 	pointValue: 100,
 	image: greatShockShark,
 	sabCard: sabotoge1,
@@ -1261,7 +1261,7 @@ const lightningBugStats = {
 
 const scorchedTreeGhastStats = {
 	name: "Schorched Tree Ghast",
-	hp: 13,
+	hp: 17,
 	attack: 2,
 	sabotoge: 2,
 	pointValue: 100,
@@ -1273,7 +1273,7 @@ const scorchedTreeGhastStats = {
 
 const shelterThumpStats = {
 	name: "Shelter Thump",
-	hp: 12,
+	hp: 14,
 	attack: 2,
 	sabotoge: 1,
 	pointValue: 100,
@@ -1285,8 +1285,8 @@ const shelterThumpStats = {
 
 const rainWolfStats = {
 	name: "Rain Wolf",
-	hp: 10,
-	attack: 3,
+	hp: 12,
+	attack: 4,
 	sabotoge: 3,
 	pointValue: 100,
 	image: rainWolf,
@@ -1868,10 +1868,10 @@ var cardAbilityNum = 1;
 var factionBoost = 0;
 var itemArray = [rustySword, battleSpear, shardblade, leatherPads, parshendiCarapace, shardplate];
 var enemyArray = [];
-var cardArray = [basic1, basic2, basic3, basic4, basic14, basic6, basic7];
+var cardArray = [basic1, basic2, basic3, basic4, basic14, basic6, basic7, storm21, lava21, mud21, desert21];
 var cardArray2 = [];
 var recruitArray = [];
-var collectionArray = [basic1, basic2, basic3, basic4, basic14, basic6, basic7];
+var collectionArray = [basic1, basic2, basic3, basic4, basic14, basic6, basic7, storm21, lava21, mud21, desert21];
 var cardFrames = [];
 var elementOrbs = [];
 var multiplier = 1;
@@ -3304,11 +3304,18 @@ class GameScreen extends React.Component {
 				enemyArray[currentEnemy].attack = enemyArray[currentEnemy].attack - weakenNum;
 			}else if(checkAbility.indexOf("reclaim") >=0){
 				var reclaimNum = parseInt(checkAbility.match(/\d+/)[0]);
-				for(var i=0; i<cardArray.length; i++){
-					if(cardArray[i].faction === "sabotogeCard"){
-						cardArray[i].power = cardArray[i].power + reclaimNum
-					}else{}
+				shuffle(cardArray);
+				cardArray.sort(function(a, b){
+				    if(a.alignment < b.alignment) { return -1; }
+				    if(a.alignment > b.alignment) { return 1; }
+				    return 0;
+				});
+				if(cardArray[0].alignment === "enemy"){
+					cardArray[0].power = cardArray[i].power + reclaimNum;
+				}else{
+					console.log("nothing to reclaim");
 				}
+				console.log(cardArray);
 			}else if(checkAbility.indexOf("confuse") >=0){
 				document.getElementById(currentEnemy).classList.add("confused");
 			}else if(checkAbility.indexOf("all") >=0){
@@ -3815,8 +3822,8 @@ class GameScreen extends React.Component {
 								playerShield: 0
 							});
 							if(enemyArray[enemyNumber].sabotoge > 0){
-								var enemyCard = enemyArray[enemyNumber].sabCard;
-								console.log(this.state.decoy);
+								var enemySabCard = enemyArray[enemyNumber].sabCard;
+								var enemyCard = new CardCon(enemySabCard.name, enemySabCard.cost, enemySabCard.power, enemySabCard.text, enemySabCard.alignment, enemySabCard.rarity, enemySabCard.ability1, enemySabCard.ability2, enemySabCard.unlocked, enemySabCard.type, enemySabCard.image, enemySabCard.icon, enemySabCard.faction, enemySabCard.craft, enemySabCard.ownedNum, enemySabCard.deckNum);
 								if(this.state.decoy === false){
 									cardArray.push(enemyCard);
 									enemyArray[enemyNumber].sabotoge --;
@@ -3838,7 +3845,8 @@ class GameScreen extends React.Component {
 						let playerHealth = this.props.heroHp;
 						const playerHp = playerHealth - enemyAttack;
 						if(enemyArray[enemyNumber].sabotoge > 0){
-							var enemyCard2 = enemyArray[enemyNumber].sabCard;
+							var enemySabCard2 = enemyArray[enemyNumber].sabCard;
+							var enemyCard2 = new CardCon(enemySabCard2.name, enemySabCard2.cost, enemySabCard2.power, enemySabCard2.text, enemySabCard2.alignment, enemySabCard2.rarity, enemySabCard2.ability1, enemySabCard2.ability2, enemySabCard2.unlocked, enemySabCard2.type, enemySabCard2.image, enemySabCard2.icon, enemySabCard2.faction, enemySabCard2.craft, enemySabCard2.ownedNum, enemySabCard2.deckNum);
 							if(this.state.decoy === false){
 								cardArray.push(enemyCard2);
 								enemyArray[enemyNumber].sabotoge --;

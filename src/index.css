@@ -829,7 +829,7 @@ input {
 }
 
 #collectionCol {
-	background: #a12921;
+	background: #ffffff38;
 	border-radius: 15px;
 	border-color: #ceb927;
 	border-width: 4px;
@@ -977,8 +977,18 @@ input {
 	border-color: orange;
 }
 
+.lavaSupport {
+	background-image: url('assets/cards/lavaSupport.png');
+	border-color: orange;
+}
+
 .storm {
 	background-image: url('assets/cards/stormCard.png');
+	border-color: grey;
+}
+
+.stormSupport {
+	background-image: url('assets/cards/stormSupport.png');
 	border-color: grey;
 }
 
@@ -987,8 +997,18 @@ input {
 	border-color: yellow;
 }
 
+.desertSupport {
+	background-image: url('assets/cards/desertSupport.png');
+	border-color: yellow;
+}
+
 .mud {
 	background-image: url('assets/cards/mudCard.png');
+	border-color: #501c09;
+}
+
+.mudSupport {
+	background-image: url('assets/cards/mudSupport.png');
 	border-color: #501c09;
 }
 
