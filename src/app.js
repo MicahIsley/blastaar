@@ -391,7 +391,7 @@ var storm25 = new CardCon("Shock Shark", 2, 0, "Gain 1 Storm Cards", "hero", 0, 
 var storm26 = new CardCon("Static Catcher", 3, 0, "Gain 3 Gems", "hero", 0, "supGems 3", 99, true, "support", staticCatcher, storm, "storm", 0, 1, 0);
 var storm27 = new CardCon("Rain Wolf", 3, 0, "Gain 2 Energy Per Turn", "hero", 0, "supEnergy 2", 99, true, "support", rainWolf, storm, "storm", 0, 1, 0);
 var storm28 = new CardCon("Schorched Tree Ghast", 2, 0, "Reclaim Cards +2", "hero", 0, "supAbilityBoost reclaim 2", 99, true, "support", scorchedTreeGhast, storm, "storm", 0, 1, 0);
-var storm29 = new CardCon("Enlightened Rain Wolf", 4, 0, "Add Grow 1 Storm Cards When Played", "hero", 0, "supGrow storm 1", 99, true, "support", enlightenedRainWolf, storm, "storm", 0, 1, 0);
+var storm29 = new CardCon("Enlightened Rain Wolf", 4, 0, "Add Grow 1 to Storm Cards When Played and Betsy is the Greatest", "hero", 0, "supGrow storm 1", 99, true, "support", enlightenedRainWolf, storm, "storm", 0, 1, 0);
 var mud1 = new CardCon("Mud Bath", 0, 6, "Heal 6", "hero", 0, "heal 6", "", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
 var mud2 = new CardCon("Mud Blast", 0, 3, "Confuse", "hero", 0, "confuse", "", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
 var mud3 = new CardCon("Stuck Muck", 0, 6, "Weaken 2", "hero", 0, "weaken 2", "", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
@@ -1099,7 +1099,8 @@ const bogBoarStats = {
 	pointValue: 100,
 	image: bogBoar,
 	sabCard: sabotoge1,
-	element: mud
+	element: mud,
+	supCard: mud24
 };
 
 const greaterGalopeStats = {
@@ -1110,7 +1111,8 @@ const greaterGalopeStats = {
 	pointValue: 100,
 	image: greaterGalope,
 	sabCard: sabotoge1,
-	element: mud
+	element: mud,
+	supCard: mud29
 };
 
 const lesserGalopeStats = {
@@ -1121,7 +1123,8 @@ const lesserGalopeStats = {
 	pointValue: 100,
 	image: lesserGalope,
 	sabCard: sabotoge1,
-	element: mud
+	element: mud,
+	supCard: mud26
 };
 
 const mucksterStats = {
@@ -1132,7 +1135,8 @@ const mucksterStats = {
 	pointValue: 100,
 	image: muckster,
 	sabCard: sabotoge1,
-	element: mud
+	element: mud,
+	supCard: mud22
 };
 
 const archmageMucksterStats = {
@@ -1143,7 +1147,8 @@ const archmageMucksterStats = {
 	pointValue: 100,
 	image: archmageMuckster,
 	sabCard: sabotoge1,
-	element: mud
+	element: mud,
+	supCard: mud23
 };
 
 const sominusStats = {
@@ -1154,7 +1159,8 @@ const sominusStats = {
 	pointValue: 100,
 	image: sominus,
 	sabCard: sabotoge1,
-	element: mud
+	element: mud,
+	supCard: mud27
 };
 
 const toxicRollerStats = {
@@ -1165,7 +1171,8 @@ const toxicRollerStats = {
 	pointValue: 100,
 	image: toxicRoller,
 	sabCard: sabotoge1,
-	element: mud
+	element: mud,
+	supCard: mud25
 };
 
 const warthusStats = {
@@ -1176,7 +1183,8 @@ const warthusStats = {
 	pointValue: 100,
 	image: bogBoar,
 	sabCard: sabotoge1,
-	element: mud
+	element: mud,
+	supCard: mud21
 };
 
 const duchessWarthusStats = {
@@ -1187,7 +1195,8 @@ const duchessWarthusStats = {
 	pointValue: 100,
 	image: duchessWarthus,
 	sabCard: sabotoge1,
-	element: mud
+	element: mud,
+	supCard: mud28
 };
 
 const staticGliderStats = {
@@ -1198,7 +1207,8 @@ const staticGliderStats = {
 	pointValue: 100,
 	image: staticGlider,
 	sabCard: sabotoge1,
-	element: storm
+	element: storm,
+	supCard: storm22
 };
 
 const staticCatcherStats = {
@@ -1209,18 +1219,20 @@ const staticCatcherStats = {
 	pointValue: 100,
 	image: staticCatcher,
 	sabCard: sabotoge1,
-	element: storm
+	element: storm,
+	supCard: storm26
 };
 
 const shockSharkStats = {
 	name: "Shock Shark",
 	hp: 7,
-	attack: 5,
+	attack: 4,
 	sabotoge: 0,
 	pointValue: 100,
 	image: shockShark,
 	sabCard: sabotoge1,
-	element: storm
+	element: storm,
+	supCard: storm25
 };
 
 const greatShockSharkStats = {
@@ -1231,7 +1243,8 @@ const greatShockSharkStats = {
 	pointValue: 100,
 	image: greatShockShark,
 	sabCard: sabotoge1,
-	element: storm
+	element: storm,
+	supCard: storm23
 };
 
 const lightningBugStats = {
@@ -1242,40 +1255,44 @@ const lightningBugStats = {
 	pointValue: 100,
 	image: lightningBug,
 	sabCard: sabotoge1,
-	element: storm
+	element: storm,
+	supCard: storm21
 };
 
 const scorchedTreeGhastStats = {
 	name: "Schorched Tree Ghast",
-	hp: 14,
+	hp: 13,
 	attack: 2,
 	sabotoge: 2,
 	pointValue: 100,
 	image: scorchedTreeGhast,
 	sabCard: sabotoge1,
-	element: storm
+	element: storm,
+	supCard: storm28
 };
 
 const shelterThumpStats = {
 	name: "Shelter Thump",
-	hp: 13,
+	hp: 12,
 	attack: 2,
 	sabotoge: 1,
 	pointValue: 100,
 	image: shelterThump,
 	sabCard: sabotoge1,
-	element: storm
+	element: storm,
+	supCard: storm24
 };
 
 const rainWolfStats = {
 	name: "Rain Wolf",
-	hp: 11,
+	hp: 10,
 	attack: 3,
 	sabotoge: 3,
 	pointValue: 100,
 	image: rainWolf,
 	sabCard: sabotoge1,
-	element: storm
+	element: storm,
+	supCard: storm27
 };
 
 const enlightenedRainWolfStats = {
@@ -1286,7 +1303,8 @@ const enlightenedRainWolfStats = {
 	pointValue: 100,
 	image: enlightenedRainWolf,
 	sabCard: sabotoge1,
-	element: storm
+	element: storm,
+	supCard: storm29
 };
 
 const borgusStats = {
@@ -1466,7 +1484,7 @@ function levelEarthDistribution(randEnemyNum){
 function levelFireDistribution(randEnemyNum){
 	numberOfStages = 4;
 	if(stageComplete < 3){
-		numberOfEnemies = 2;
+		numberOfEnemies = levelEnemyNum;
 		if(randEnemyNum < 180){
 			createEnemy = emberAdderStats;
 			return;
@@ -1505,7 +1523,7 @@ function levelFireDistribution(randEnemyNum){
 function levelWaterDistribution(randEnemyNum){
 	numberOfStages = 4;
 	if(stageComplete < 3){
-		numberOfEnemies = 2;
+		numberOfEnemies = levelEnemyNum;
 		if(randEnemyNum < 180){
 			createEnemy = trenchThumpStats;
 			return;
@@ -1544,7 +1562,7 @@ function levelWaterDistribution(randEnemyNum){
 function levelWindDistribution(randEnemyNum){
 	numberOfStages = 4;
 	if(stageComplete < 3){
-		numberOfEnemies = 2;
+		numberOfEnemies = levelEnemyNum;
 		if(randEnemyNum < 180){
 			createEnemy = maclawStats;
 			return;
@@ -1583,7 +1601,7 @@ function levelWindDistribution(randEnemyNum){
 function levelDesertDistribution(randEnemyNum){
 	numberOfStages = 4;
 	if(stageComplete < 3){
-		numberOfEnemies = 3;
+		numberOfEnemies = levelEnemyNum;
 		if(randEnemyNum < 180){
 			createEnemy = sandSnippStats;
 			return;
@@ -1622,7 +1640,7 @@ function levelDesertDistribution(randEnemyNum){
 function levelLavaDistribution(randEnemyNum){
 	numberOfStages = 4;
 	if(stageComplete < 3){
-		numberOfEnemies = 3;
+		numberOfEnemies = levelEnemyNum;
 		if(randEnemyNum < 180){
 			createEnemy = emberiteStats;
 			return;
@@ -1661,7 +1679,7 @@ function levelLavaDistribution(randEnemyNum){
 function levelMudDistribution(randEnemyNum){
 	numberOfStages = 4;
 	if(stageComplete < 3){
-		numberOfEnemies = 3;
+		numberOfEnemies = levelEnemyNum;
 		if(randEnemyNum < 180){
 			createEnemy = bogBoarStats;
 			return;
@@ -1700,7 +1718,7 @@ function levelMudDistribution(randEnemyNum){
 function levelStormDistribution(randEnemyNum){
 	numberOfStages = 4;
 	if(stageComplete < 3){
-		numberOfEnemies = 3;
+		numberOfEnemies = levelEnemyNum;
 		if(randEnemyNum < 180){
 			createEnemy = shockSharkStats;
 			return;
@@ -1862,6 +1880,7 @@ var meterArray = [meter0, meter1, meter2, meter3, meter4, meter5, meter6, meter7
 var levelsBeaten = ["tutorial"];
 var keyWordList = [{keyword: "Shield", description: "Shield blocks enemy damage and sabotoges."}, {keyword: "Purge", description: "Removes an enemy sabotoge from your deck."}, {keyword: "Weaken", description: "Reduces an enemies strength"}, {keyword: "Exhausted", description: "Enemies attack twice in a row"}, {keyword: "Stun", description: "Stunned enemies miss their next attack"}, {keyword: "Poison", description: "Damage delt at the end of the turn"}, {keyword: "Confuse", description: "Confused enemies attack a random enemy"}, {keyword: "Grow", description: "The card gains power each time it is used"}, {keyword: "Scheme", description: "Schemes are played to one of your support areas and then are charged up over time providing an effect once completed"}, {keyword: "Heal", description: "Restore health to your character"}, {keyword: "Reclaim", description: "Increase the power of all enemy sabotoges in your deck"}, {keyword: "Int", description: "How many cards your draw when attacking"}, {keyword: "Def", description: "The number of shields you have at the start of every turn."}, {keyword: "Str", description: "Added damage to each attack"}, {keyword: "Rummage", description: "Choose a card to be replaced by a random card from your deck."}, {keyword: "Transform", description: "Change your stats into another creatures. Once your hp falls to 0 you regain your previous stats."}, {keyword: "multiply", description: "Double the damage you would deal this turn."}, {keyword: "Decoy", description: "Avoid all sabotoges this turn."}, {keyword: "Energy", description: "Gain energy to use for other purposes."}, {keyword: "Next", description: "Add power to the next card you choose."}, {keyword: "Add Card", description: "Shuffle a number of new cards into your deck."}, {keyword: "Remove", description: "The card gets removed from your deck after you select it"}, {keyword: "Extra", description: "Attack again after this one."}, {keyword: "Deplete", description: "Remove a sabotoge from the selected enemy."}, {keyword: "Boost", description: "All card of the selected type gain extra power."}, {keyword: "Spook", description: "The enemy will recieve 1.5x damage while it is spooked."}, {keyword: "Transform", description: "Turn an emeny sabotoge in your deck into another card."}, {keyword: "All", description: "Deal damage to all enemies."}];
 var finesseAttack; 
+var levelEnemyNum = 2;
 
 function shuffle(a) {
     for (let i = a.length; i; i--) {
@@ -2364,7 +2383,7 @@ class GameScreenHub extends React.Component {
 			{this.state.createScreen ? <CreateCharacter error={this.displayErrorMessage} createNewCharacter={this.createNewCharacter} /> : null }
 			{this.state.characterSelectScreen ? <CharacterSelectScreen error={this.displayErrorMessage} getUserData={this.getUserData} writeUserData={this.writeUserData} goToLevelScreen={this.goToLevelScreen} score={this.state.score} createNewCharacter={this.createNewCharacter} influence={this.state.influence} shield={this.state.heroShield} spheres={this.state.sphereCount} attack={this.state.attack} playerHero={playerHero} switchEnemyArray={this.switchEnemyArray} goToEquipmentScreen={this.goToEquipmentScreen} heroHp={this.state.heroHp} showCollection={this.showCollection} changeHero={this.changeHero} goToGameScreen={this.goToGameScreen} changeInfluence={this.changeInfluence} /> : null }
 			{this.state.levelSelectScreen ? <LevelSelectScreen error={this.displayErrorMessage} goToCharacterScreen={this.goToCharacterScreen} goToGameScreen={this.goToGameScreen} switchEnemyArray={this.switchEnemyArray} /> : null }
-			{this.state.gameScreen ? <GameScreen error={this.displayErrorMessage} gainSupGemReward={this.gainSupGemReward} gainSupCardReward={this.gainSupCardReward} toggleInfoScreen={this.toggleInfoScreen} characterScreen={this.goToCharacterScreen} changeHeroShield={this.changeHeroShield} changeHeroAttack={this.changeHeroAttack} changeInfluence={this.changeInfluence} influence={this.state.influence} int={this.state.heroSelect.intelligence} shield={this.state.heroShield} switchEnemyArray={this.switchEnemyArray} increaseStormCounter={this.increaseStormCounter} decreaseStormCounter={this.decreaseStormCounter} stormCounter={this.state.stormCounter} changeHeroHp={this.changeHeroHp} heroHp={this.state.heroHp} score={this.state.score} setSpheres={this.setSphereCount} changeScore={this.changeScore} aux={this.auxilaryScreen} heroSelect={this.state.heroSelect} attack={this.state.attack} equipment={this.state.equipment} enemyArray={this.state.enemyArray} /> : null }
+			{this.state.gameScreen ? <GameScreen error={this.displayErrorMessage} clearSupRewards={this.clearSupRewards} gainSupGemReward={this.gainSupGemReward} gainSupCardReward={this.gainSupCardReward} toggleInfoScreen={this.toggleInfoScreen} characterScreen={this.goToCharacterScreen} changeHeroShield={this.changeHeroShield} changeHeroAttack={this.changeHeroAttack} changeInfluence={this.changeInfluence} influence={this.state.influence} int={this.state.heroSelect.intelligence} shield={this.state.heroShield} switchEnemyArray={this.switchEnemyArray} increaseStormCounter={this.increaseStormCounter} decreaseStormCounter={this.decreaseStormCounter} stormCounter={this.state.stormCounter} changeHeroHp={this.changeHeroHp} heroHp={this.state.heroHp} score={this.state.score} setSpheres={this.setSphereCount} changeScore={this.changeScore} aux={this.auxilaryScreen} heroSelect={this.state.heroSelect} attack={this.state.attack} equipment={this.state.equipment} enemyArray={this.state.enemyArray} /> : null }
 			{this.state.auxilaryScreen ? <AuxilaryScreen error={this.displayErrorMessage} clearSupRewards={this.clearSupRewards} supGemRewards={this.state.supGemRewards} supCardRewards={this.state.supCardRewards} goToEndingScreen={this.goToEndingScreen} changeInfluence={this.changeInfluence} influence={this.state.influence} setSphereCount={this.setSphereCount} score={this.state.score} resetStormCounter={this.resetStormCounter} showCollection={this.showCollection} goToCharacterScreen={this.goToCharacterScreen} /> : null }
 			{this.state.collectionScreen ? <CollectionScreen error={this.displayErrorMessage} toggleInfoScreen={this.toggleInfoScreen} goToCraftingScreen={this.goToCraftingScreen} checkDeckContents={this.checkDeckContents} /> : null }
 			{this.state.equipmentScreen ? <EquipmentScreen error={this.displayErrorMessage} changeScore={this.changeScore} score={this.state.score} itemArray={this.state.itemArray} heroShield={this.state.heroShield} spheres={this.state.sphereCount} setSphereCount={this.setSphereCount} playerHero={playerHero} chooseItemAction={this.chooseItemAction} attack={this.state.attack} goToCharacterScreen={this.goToCharacterScreen} /> : null }
@@ -2626,6 +2645,11 @@ class CharacterSelectScreen extends React.Component {
 		//this.props.switchEnemyArray();
 		this.props.createNewCharacter();
 		this.props.changeInfluence(0);
+		if(levelsBeaten.length >= 5){
+			levelEnemyNum = 3;
+		}else{
+			levelEnemyNum = 2;
+		}
 	}
 	render() {
 		return (
@@ -3368,11 +3392,23 @@ class GameScreen extends React.Component {
 	heroDraw() {
 		const audioEl = document.getElementsByClassName("clickSound")[0];
 	    audioEl.play();
+	    var patience = false;
+	    for(var i=0; i<3; i++){
+	    	if(document.getElementById(i + "image") === null){
+
+	    	}else{
+		    	if(document.getElementById(i + "image").classList.contains("attackingEnemy") === true){
+		    		patience = true;
+		    	}else{}
+		    }
+	    }
 		if( currentEnemy === 4 ){
 			this.props.error("Select an enemy to attack!");
 		}else{
 			if(this.state.cardDisplay === true){
 				this.props.error("Stop Cheating Doug...");
+			}else if(patience === true){
+				this.props.error("Patience Betsy");
 			}else{
 				var numberDrawn = this.state.playerInt;
 				shuffle(cardArray);
@@ -3626,6 +3662,7 @@ class GameScreen extends React.Component {
 	}
 	triggerPlayerDeath() {
 		this.props.characterScreen();
+		this.props.clearSupRewards();
 		cardArray.sort(function(a, b){
 		    if(a.alignment < b.alignment) { return -1; }
 		    if(a.alignment > b.alignment) { return 1; }
@@ -4603,27 +4640,36 @@ class AuxilaryScreen extends React.Component {
 			var basicCard = eval('basic' + i);
 			basicCards.push(basicCard);
 		}
-		shuffle(basicCards);
-		var randNum = Math.floor(Math.random() * 101);
 		if(level === 0){
 			levelCard = [basic2, basic3, basic4, basic5, basic6];
 		}else{
-			for(var i=0; i<basicCards.length; i++){
-				if(randNum < 70){
-					if(basicCards[i].rarity === 1){
-						levelCard.push(basicCards[i])
-						break;
-					}else{}
-				}else if(randNum > 70 && randNum < 95){
-					if(basicCards[i].rarity === 2){
-						levelCard.push(basicCards[i])
-						break;
-					}else{}
-				}else{
-					if(basicCards[i].rarity === 3){
-						levelCard.push(basicCards[i])
-						break;
-					}else{}
+			var numberOfRewardCards = 1;
+			if(levelEnemyNum === 3){
+				numberOfRewardCards = 2;
+			}else{
+				numberOfRewardCards = 1
+			}
+			console.log(numberOfRewardCards);
+			for(var i=0; i<numberOfRewardCards; i++){
+				for(var j=0; j<basicCards.length; j++){
+					shuffle(basicCards);
+					var randNum = Math.floor(Math.random() * 101);
+					if(randNum < 70){
+						if(basicCards[j].rarity === 1){
+							levelCard.push(basicCards[j])
+							break;
+						}else{}
+					}else if(randNum > 70 && randNum < 95){
+						if(basicCards[j].rarity === 2){
+							levelCard.push(basicCards[j])
+							break;
+						}else{}
+					}else{
+						if(basicCards[j].rarity === 3){
+							levelCard.push(basicCards[j])
+							break;
+						}else{}
+					}
 				}
 			}
 		}
@@ -4649,6 +4695,34 @@ class AuxilaryScreen extends React.Component {
 				levelGems.push(wind);
 			}
 			levelPoints = 1;
+		}else if(level === "lava"){
+			for(var i=0; i<2; i++){
+				levelGems.push(fire);
+			}
+			for(var i=0; i<2; i++){
+				levelGems.push(earth);
+			}
+		}else if(level === "mud"){
+			for(var i=0; i<2; i++){
+				levelGems.push(water);
+			}
+			for(var i=0; i<2; i++){
+				levelGems.push(earth);
+			}
+		}else if(level === "desert"){
+			for(var i=0; i<2; i++){
+				levelGems.push(fire);
+			}
+			for(var i=0; i<2; i++){
+				levelGems.push(wind);
+			}
+		}else if(level === "storm"){
+			for(var i=0; i<2; i++){
+				levelGems.push(water);
+			}
+			for(var i=0; i<2; i++){
+				levelGems.push(wind);
+			}
 		}else{}
 		if(level === 0){
 		}else{
@@ -4711,7 +4785,7 @@ class AuxilaryScreen extends React.Component {
 				<div className="row" id="rewardsMessage">Congratulations! Claim your rewards!</div>
 				<div className="row" id="rewardsDescription">Score: {this.props.score}</div>
 				<div className="row">
-					<div className="col-xs-offset-5 col-xs-4" id="cardRewardRow">
+					<div className="col-xs-offset-3 col-xs-6" id="cardRewardRow">
 						{this.listCardRewards()}
 					</div>
 				</div>
