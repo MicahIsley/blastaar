@@ -882,6 +882,23 @@ input {
 	transition: opacity 0.5s;
 }
 
+.cardObject {
+	width: 178px;
+}
+
+.helpText {
+	font-size: 18px;
+    position: absolute;
+    top: -59%;
+    z-index: 2;
+    background: #ffffffc4;
+    border-radius: 15px;
+    padding: 5px;
+}
+
+.bigWord {
+	font-size: 30px;
+}
 
 .hero {
 	border-style: inset;

@@ -52,6 +52,14 @@ class CollectionCard2 extends React.Component {
     var schemeReq = 0;
     var schemePower = 0;
     var scheme = false;
+    var rarity = "common";
+    if(this.props.rarity === 1){
+      rarity = "common";
+    }else if(this.props.rarity === 2){
+      rarity = "uncommon;"
+    }else{
+      rarity = "rare"
+    }
     if(charCard === "support"){
       influenceCost = true;
       cardStyle = this.props.faction + "Support";
@@ -71,7 +79,7 @@ class CollectionCard2 extends React.Component {
     const opacity = isDragging ? 0 : 1;
 
     return connectDragSource(
-      <div className={`row ${this.props.className} ${cardStyle}`} style={{ opacity }} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
+      <div className={`row ${this.props.className} ${cardStyle} ${rarity}`} style={{ opacity }} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
         <div className="col-xs-12">
           <div className="row">
             <div className="col-xs-3 deckCardPower">{this.props.power}</div>
