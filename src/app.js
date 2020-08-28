@@ -233,7 +233,7 @@ var earth18 = new CardCon("Strength Sap", 1, 4, "Weaken 1", "hero", 0, "weaken 1
 var earth19 = new CardCon("Rumblings From Below", 2, 0, "Earth Scheme 3/7", "hero", 0, "scheme earth 3", 7, true, "character", placeholderImg, earth, "earth", 19, 1, 0);
 var earth20 = new CardCon("Quicksand", 3, 0, "Earth Scheme 5/Confuse", "hero", 0, "scheme earth 5", "confuse", true, "character", placeholderImg, earth, "earth", 20, 1, 0);
 
-var earth21 = new CardCon("Rock Fairy", 1, 0, "Gain 1 Earth Card", "hero", 0, "supCards 1", 99, true, "support", rockFairy, earth, "earth", 21, 1, 1); 
+var earth21 = new CardCon("Rock Fairy", 1, 0, "Gain 1 Earth Card", "hero", 0, "supCards 1", 99, true, "support", rockFairy, earth, "earth", 21, 1, 0); 
 var earth22 = new CardCon("Primtree", 2, 0, "Earth cards get +2 power", "hero", 0, "boost earth 2", 99, true, "support", primtree, earth, "earth", 0, 1, 0);
 var earth23 = new CardCon("King Wobbleduk", 3, 0, "Earth cards get +3 power", "hero", 0, "boost earth 3", 99, true, "support", kingWobbleduk, earth, "earth", 0, 1, 0);
 var earth24 = new CardCon("Steed", 1, 0, "Gain 1 Shield Per Turn", "hero", 0, "supShield 1", 99, true, "support", steed, earth, "earth", 0, 1, 0);
@@ -2139,7 +2139,7 @@ class GameScreenHub extends React.Component {
 		var currentStorm = this.state.stormCounter - 1;
 		if(currentStorm === 0){
 			console.log("Storm has arrived, you're all dead");
-			this.highStorm();
+			//this.highStorm();
 		}else{
 			this.setState({
 				stormCounter: currentStorm
@@ -3869,13 +3869,17 @@ class GameScreen extends React.Component {
 						}
 						document.getElementsByClassName("heroDamageIndicator2")[0].style.display="inline";
 						document.getElementsByClassName("heroDamageIndicator2")[0].style.color="red";
-						setTimeout(() => {
-							document.getElementsByClassName("shieldIcon")[0].style.background="none";
-							document.getElementsByClassName("heroDamageIndicator2")[0].innerHTML="";
-							document.getElementsByClassName("heroDamageIndicator2")[0].style.display="none";
-						}, 500);
+						var extraDamage = this.props.heroHp + shieldDamage;
+						if(extraDamage <= 0){
+
+						}else{
+							setTimeout(() => {
+									document.getElementsByClassName("shieldIcon")[0].style.background="none";
+									document.getElementsByClassName("heroDamageIndicator2")[0].innerHTML="";
+									document.getElementsByClassName("heroDamageIndicator2")[0].style.display="none";
+							}, 500);
+						}
 						if(shieldDamage < 0){
-							var extraDamage = this.props.heroHp + shieldDamage;
 							if(extraDamage <= 0){
 								this.props.changeHeroHp(0);
 								this.triggerPlayerDeath();
@@ -4210,13 +4214,11 @@ class Card extends React.Component {
 	    this.onMouseLeave = this.onMouseLeave.bind(this);
 	}
 	onMouseEnter(){
-		console.log("enter");
 		this.setState({
 			hover: true
 		});
 	}
 	onMouseLeave(){
-		console.log("leave");
 		this.setState({
 			hover: false
 		});
@@ -4250,9 +4252,7 @@ class Card extends React.Component {
     	}
 		return (
 			<div className="col-xs-12 cardObject">
-				<div className="row helpText">
-					{this.state.hover ? <HeroCardHelp ability1={this.props.card.ability1} ability2={this.props.card.ability2} /> : null }
-				</div>
+				{this.state.hover ? <HeroCardHelp ability1={this.props.card.ability1} ability2={this.props.card.ability2} /> : null }
 				<div className="row">
 					<div onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} className={`col-xs-12 ${this.props.className} ${cardStyle}`} id={`${this.props.id}card`} onClick={() => this.props.chooseCard(this.props.card)}>
 						{ sphereCard === false &&
@@ -4309,26 +4309,42 @@ class HeroCardHelp extends React.Component {
 	componentDidMount(){
 		var keyword = [];
 		var description = [];
-		for(var i=0; i<keyWordList.length; i++){
-			console.log(keyWordList[i].keyword);
-			if(this.props.ability1.indexOf(keyWordList[i].keyword) >=0 || this.props.ability2.indexOf(keyWordList[i].keyword) >=0){
-				keyword.push(keyWordList[i].keyword);
-				description.push(keyWordList[i].description);
-			}else{}
+		if(typeof this.props.ability2 === "number"){
+			console.log("it's a support");
+		}else{
+			for(var i=0; i<keyWordList.length; i++){
+				if(this.props.ability1.indexOf(keyWordList[i].keyword) >=0 || this.props.ability2.indexOf(keyWordList[i].keyword) >=0){
+					keyword.push(keyWordList[i].keyword);
+					description.push(keyWordList[i].description);
+				}else{}
+			}
+			for(var i=0; i<keyword.length; i++){
+				keyword[i] = keyword[i].charAt(0).toUpperCase() + keyword[i].slice(1);
+			}
+			this.setState({
+				keyword: keyword,
+				description: description
+			});
 		}
-		this.setState({
-			keyword: keyword,
-			description: description
-		});
 	}
 	render() {
+		var keywords;
+		if((this.props.ability1 === "" && this.props.ability2 === "") || typeof this.props.ability2 === "number"){
+			keywords = "noAbility";
+		}else if(this.props.ability2 === ""){
+			keywords = "oneAbility";
+		}else{
+			keywords = "twoAbility";
+		}
 		return (
-			<div className="col-xs-12">
-				<div className="row bigWord">{this.state.keyword[0]}</div>
-				<div className="row">{this.state.description[0]}</div>
-				<div className="row bigWord">{this.state.keyword[1]}</div>
-				<div className="row">{this.state.description[1]}</div>
-			</div> 
+			<div className={`row helpText ${keywords}`}>
+				<div className="col-xs-12">
+					<div className="row bigWord">{this.state.keyword[0]}</div>
+					<div className="row">{this.state.description[0]}</div>
+					<div className="row bigWord">{this.state.keyword[1]}</div>
+					<div className="row">{this.state.description[1]}</div>
+				</div> 
+			</div>
 		)
 	}
 }
@@ -4641,7 +4657,6 @@ class Enemy extends React.Component {
 	    this.setState({
 	      hover: true
 	    });
-	    console.log("enter");
 	}
 	handleMouseLeave(){
 	    this.setState({

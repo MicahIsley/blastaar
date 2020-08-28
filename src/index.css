@@ -887,17 +887,29 @@ input {
 }
 
 .helpText {
-	font-size: 18px;
+	font-size: 14px;
     position: absolute;
-    top: -59%;
+    top: -84%;
     z-index: 2;
-    background: #ffffffc4;
+    background: white;
     border-radius: 15px;
     padding: 5px;
 }
 
+.oneAbility {
+	top: -51%;
+}
+
+.twoAbility {
+	top: -84%;
+}
+
+.noAbility {
+	display: none;
+}
+
 .bigWord {
-	font-size: 30px;
+	font-size: 24px;
 }
 
 .hero {
