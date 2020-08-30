@@ -167,13 +167,13 @@ var basic4 = new CardCon("Thick Skin", 0, 2, "Shield 2", "hero", 1, "shield 2", 
 var basic5 = new CardCon("Protective Bubble", 0, 0, "Shield 4", "hero", 1, "shield 4", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 5, 1, 0);
 var basic6 = new CardCon("Short Rest", 0, 2, "Heal 3", "hero", 1, "heal 3", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 6, 2, 2);
 var basic7 = new CardCon("Focus", 0, 1,"Next Spell +3", "hero", 1, "next 3", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 7, 2, 2);
-var basic8 = new CardCon("Reach Back In", 0, 3, "Rummage 2", "hero", 1, "research 2", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 8, 2, 2);
+var basic8 = new CardCon("Reach Back In", 0, 3, "Rummage 2", "hero", 1, "rummage 2", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 8, 2, 2);
 var basic9 = new CardCon("Store Energy", 0, 3, "Gain 1 Energy", "hero", 1, "energy 1", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 9, 2, 2);
 var basic10 = new CardCon("More Power", 0, 0, "Increase Magic by 1", "hero", 2, "str 1", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 10, 1, 0);
 var basic11 = new CardCon("Mind Grow", 0, 0, "Increase Intelligence by 1", "hero", 2, "int 1", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 11, 1, 0);
 var basic12 = new CardCon("React Stance", 0, 0, "Increase Shield by 1", "hero", 2, "def 1", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 12, 1, 0); 
 var basic13 = new CardCon("Powerful Shove", 0, 5, "Exhausted", "hero", 2, "exhausted", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 13, 1, 0);
-var basic14 = new CardCon("Thoughful Study", 0, 0, "Rummage 4", "hero", 1, "research 4", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 14, 1, 0);
+var basic14 = new CardCon("Thoughful Study", 0, 0, "Rummage 4", "hero", 1, "rummage 4", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 14, 1, 0);
 var basic15 = new CardCon("Crippling Shot", 0, 1, "Weaken 1", "hero", 1, "weaken 1", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 15, 1, 1);
 var basic16 = new CardCon("Goop", 0, 0, "Maybe Later", "hero", 3, "", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 16, 1, 0);
 var basic17 = new CardCon("Something", 0, 4, "", "hero", 1, "", "", true, "stormlight", placeholderImg, placeholderImg, "neutral", 17, 1, 0);
@@ -250,7 +250,7 @@ var wind4 = new CardCon("Ethereal", 0, 2, "Deplete. Decoy.", "hero", 0, "deplete
 var wind5 = new CardCon("Finesse Strike", 0, 2, "Finesse 1", "hero", 0, "finesse 1", "", true, "stormlight", placeholderImg, wind, "wind", 5, 1, 0);
 var wind6 = new CardCon("Blow Down", 0, 2, "Deplete 2", "hero", 0, "deplete", "deplete", true, "stormlight", placeholderImg, wind, "wind", 6, 1, 0);
 var wind7 = new CardCon("Tornado", 0, 1, "Next +5.", "hero", 0, "next 5", "", true, "stormlight", placeholderImg, wind, "wind", 7, 1, 0);
-var wind8 = new CardCon("Cloud Sign", 0, 5, "Rummage 2", "hero", 0, "research 2", "", true, "stormlight", placeholderImg, wind, "wind", 8, 1, 0);
+var wind8 = new CardCon("Cloud Sign", 0, 5, "Rummage 2", "hero", 0, "rummage 2", "", true, "stormlight", placeholderImg, wind, "wind", 8, 1, 0);
 var wind9 = new CardCon("Rising Wind", 0, 2, "Energy 3", "hero", 0, "energy 2", "", true, "stormlight", placeholderImg, wind, "wind", 9, 1, 0);
 var wind10 = new CardCon("Brewing Storm", 0, 2, "Draw +1", "hero", 0, "int 1", "", true, "stormlight", placeholderImg, wind, "wind", 10, 1, 0);
 var wind11 = new CardCon("Momentum", 0, 2, "Next +4. Draw +1.", "hero", 0, "next 4", "int 1", true, "stormlight", placeholderImg, wind, "wind", 11, 1, 0);
@@ -281,7 +281,7 @@ var water4 = new CardCon("Assimilate", 0, 2, "Reclaim 3", "hero", 0, "reclaim 3"
 var water5 = new CardCon("Spreading Sickness", 0, 2, "Posion 1 twice", "hero", 0, "poison 1", "poison 1", true, "stormlight", placeholderImg, water, "water", 15, 1, 0);
 var water6 = new CardCon("Drain Life", 0, 2, "Heal 3. Poison 1.", "hero", 0, "heal 3", "posion 1", true, "stormlight", placeholderImg, water, "water", 8, 1, 0);
 var water7 = new CardCon("Destroy Resistance", 0, 5, "Deplete", "hero", 0, "deplete", "", true, "stormlight", placeholderImg, water, "water", 5, 1, 0);
-var water8 = new CardCon("Consult the Tides", 0, 4, "Rummage 2", "hero", 0, "research 2", "", true, "stormlight", placeholderImg, water, "water", 7, 1, 0);
+var water8 = new CardCon("Consult the Tides", 0, 4, "Rummage 2", "hero", 0, "rummage 2", "", true, "stormlight", placeholderImg, water, "water", 7, 1, 0);
 var water9 = new CardCon("Power Water", 0, 3, "Energy 2", "hero", 0, "energy 2", "", true, "stormlight", placeholderImg, water, "water", 9, 1, 0);
 var water10 = new CardCon("Ice Hands", 0, 2, "Magic +1", "hero", 0, "str 1", "", true, "stormlight", placeholderImg, water, "water", 12, 1, 0);
 var water11 = new CardCon("Posion Spray", 0, 0, "Poison 3", "hero", 0, "poison 3", "", true, "stormlight", placeholderImg, water, "water", 11, 1, 0);
@@ -383,7 +383,7 @@ var storm4 = new CardCon("Readjust", 0, 4, "Reclaim 3", "hero", 0, "reclaim 3", 
 var storm5 = new CardCon("Stinging Tide", 0, 2, "Stun. Poison 2.", "hero", 0, "poison 2", "stun", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
 var storm6 = new CardCon("Crushing vortex", 0, 5, "Deplete. Next +2", "hero", 0, "deplete", "next 2", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
 var storm7 = new CardCon("Dazed", 0, 3, "Stun. Next +3", "hero", 0, "stun", "next 3", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
-var storm8 = new CardCon("Storm Crunch", 0, 6, "Rummage 3", "hero", 0, "research 3", "", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
+var storm8 = new CardCon("Storm Crunch", 0, 6, "Rummage 3", "hero", 0, "rummage 3", "", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
 var storm9 = new CardCon("Lightning Charged", 0, 3, "Energy 5", "hero", 0, "energy 5", "", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
 var storm10 = new CardCon("Thunder Clap", 0, 5, "Spooky 2", "hero", 0, "meter 2", "", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
 var storm11 = new CardCon("Thunderhead", 0, 2, "Stun. Magic +1", "hero", 0, "stun", "str 1", true, "stormlight", placeholderImg, storm, "storm", 0, 1, 0);
@@ -414,7 +414,7 @@ var mud4 = new CardCon("Tentacle Shackles", 0, 2, "Weaken 3", "hero", 0, "weaken
 var mud5 = new CardCon("Sickening Shot", 0, 2, "Confuse. Poison 2", "hero", 0, "confuse", "poison 2", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
 var mud6 = new CardCon("Swamp Power", 0, 2, "Grow 1. Heal 3", "hero", 0, "grow 1 15", "heal 3", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
 var mud7 = new CardCon("Stuck Muck", 0, 6, "Weaken 2", "hero", 0, "weaken 2", "", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
-var mud8 = new CardCon("Murky Whispers", 0, 5, "Rumage 4", "hero", 0, "research 4", "", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
+var mud8 = new CardCon("Murky Whispers", 0, 5, "Rumage 4", "hero", 0, "rummage 4", "", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
 var mud9 = new CardCon("Glow Minerals", 0, 4, "Energy 4", "hero", 0, "energy 4", "", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
 var mud10 = new CardCon("Duck", 0, 2, "Confuse. Magic +1.", "hero", 0, "confuse", "str 1", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
 var mud11 = new CardCon("Sink Hole", 0, 1, "Poison 1. Weaken 1.", "hero", 0, "poison 1", "weaken 1", true, "stormlight", placeholderImg, mud, "mud", 0, 1, 0);
@@ -1896,7 +1896,7 @@ var multiplier = 1;
 var allies = [];
 var meterArray = [meter0, meter1, meter2, meter3, meter4, meter5, meter6, meter7, meter8, meter9, meter10, meter11, meter12];
 var levelsBeaten = ["tutorial"];
-var keyWordList = [{keyword: "shield", description: "Shield blocks enemy damage and sabotoges."}, {keyword: "purge", description: "Removes an enemy sabotoge from your deck."}, {keyword: "weaken", description: "Reduces an enemies strength"}, {keyword: "exhausted", description: "Enemies attack twice in a row"}, {keyword: "stun", description: "Stunned enemies miss their next attack"}, {keyword: "poison", description: "Damage delt at the end of the turn"}, {keyword: "confuse", description: "Confused enemies attack a random enemy"}, {keyword: "grow", description: "The card gains power each time it is used"}, {keyword: "scheme", description: "Schemes are played to one of your support areas and then are charged up over time providing an effect once completed"}, {keyword: "heal", description: "Restore health to your character"}, {keyword: "reclaim", description: "Increase the power of all enemy sabotoges in your deck"}, {keyword: "int", description: "How many cards your draw when attacking"}, {keyword: "def", description: "The number of shields you have at the start of every turn."}, {keyword: "str", description: "Added damage to each attack"}, {keyword: "rummage", description: "Choose a card to be replaced by a random card from your deck."}, {keyword: "transform", description: "Change your stats into another creatures. Once your hp falls to 0 you regain your previous stats."}, {keyword: "multiply", description: "Double the damage you would deal this turn."}, {keyword: "decoy", description: "Avoid all sabotoges this turn."}, {keyword: "energy", description: "Gain energy to use for other purposes."}, {keyword: "next", description: "Add power to the next card you choose."}, {keyword: "add card", description: "Shuffle a number of new cards into your deck."}, {keyword: "remove", description: "The card gets removed from your deck after you select it"}, {keyword: "extra", description: "Attack again after this one."}, {keyword: "deplete", description: "Remove a sabotoge from the selected enemy."}, {keyword: "boost", description: "All card of the selected type gain extra power."}, {keyword: "spook", description: "The enemy will recieve 1.5x damage while it is spooked."}, {keyword: "transform", description: "Turn an emeny sabotoge in your deck into another card."}, {keyword: "all", description: "Deal damage to all enemies."}];
+var keyWordList = [{keyword: "shield", description: "Shield blocks enemy damage and sabotoges."}, {keyword: "purge", description: "Removes an enemy sabotoge from your deck."}, {keyword: "weaken", description: "Reduces an enemies strength"}, {keyword: "exhausted", description: "Enemies attack twice in a row"}, {keyword: "stun", description: "Stunned enemies miss their next attack"}, {keyword: "poison", description: "Damage delt at the end of the turn"}, {keyword: "confuse", description: "Confused enemies attack a random enemy"}, {keyword: "grow", description: "The card gains power each time it is used"}, {keyword: "scheme", description: "Schemes are played to one of your support areas and then are charged up over time providing an effect once completed"}, {keyword: "heal", description: "Restore health to your character"}, {keyword: "reclaim", description: "Increase the power of all enemy sabotoges in your deck"}, {keyword: "int", description: "How many cards your draw when attacking"}, {keyword: "def", description: "The number of shields you have at the start of every turn."}, {keyword: "str", description: "Added damage to each attack"}, {keyword: "rummage", description: "Switch a card with a random card from your deck."}, {keyword: "transform", description: "Change your stats into another creatures. Once your hp falls to 0 you regain your previous stats."}, {keyword: "multiply", description: "Double the damage you would deal this turn."}, {keyword: "decoy", description: "Avoid all sabotoges this turn."}, {keyword: "energy", description: "Gain energy to use for other purposes."}, {keyword: "next", description: "Add power to the next card you choose."}, {keyword: "add card", description: "Shuffle a number of new cards into your deck."}, {keyword: "remove", description: "The card gets removed from your deck after you select it"}, {keyword: "extra", description: "Attack again after this one."}, {keyword: "deplete", description: "Remove a sabotoge from the selected enemy."}, {keyword: "boost", description: "All card of the selected type gain extra power."}, {keyword: "spook", description: "The enemy will recieve 1.5x damage while it is spooked."}, {keyword: "transform", description: "Turn an emeny sabotoge in your deck into another card."}, {keyword: "all", description: "Deal damage to all enemies."}];
 var finesseAttack; 
 var levelEnemyNum = 2;
 
@@ -2966,6 +2966,7 @@ class GameScreen extends React.Component {
 							research: false,
 							cardAbility: false
 						}, () => {
+							document.getElementById("cardBox").classList.remove("rummageGlow");
 						});
 					}else{
 						console.log("keep reading!!");
@@ -3193,7 +3194,7 @@ class GameScreen extends React.Component {
 		var cardPower = card.power;
 		var newAttack = (this.props.attack + cardPower + this.state.nextSpellBonus + supportMod + factionBoost) * multiplier;
 		if(cardAbilityNum === 1){
-			if((card.ability1.indexOf("research") >=0 || card.ability2.indexOf("research") >=0) && this.state.cardAbility === true){
+			if((card.ability1.indexOf("rummage") >=0 || card.ability2.indexOf("rummage") >=0) && this.state.cardAbility === true){
 			}else{
 				this.setState({
 					nextSpellBonus: 0
@@ -3247,7 +3248,7 @@ class GameScreen extends React.Component {
 			}else if(checkAbility.indexOf("speed") >=0) {
 				var speedNum = parseInt(checkAbility.match(/\d+/)[0]);
 				this.props.increaseStormCounter(speedNum);
-			}else if(checkAbility.indexOf("research") >=0) {
+			}else if(checkAbility.indexOf("rummage") >=0) {
 				var researchNum = parseInt(checkAbility.match(/\d+/)[0]);
 				console.log(this.state.cardAbility);
 				if(this.state.cardAbility === true){
@@ -3255,6 +3256,8 @@ class GameScreen extends React.Component {
 						research: true,
 						cardDisplay: true,
 						researchNum: researchNum
+					}, () => {
+						document.getElementById("cardBox").classList.add("rummageGlow");
 					});
 					cardAbilityNum = 1;
 					return;
@@ -4513,9 +4516,9 @@ class HeroSideSlot extends React.Component {
 			<div className=" heroSideSlot col-xs-4">
 				<div className="row">
 					<div className="col-xs-4">
+						<ShieldSpan playerShield={this.props.playerShield} />
 						<PowerSpan attack={this.props.attack} equipment={this.props.equipment} />
 						<IntelligenceSpan int={this.props.int} />
-						<ShieldSpan playerShield={this.props.playerShield} />
 					</div>
 					<div className="col-xs-4">
 						<YouberImage image={player.image} />
