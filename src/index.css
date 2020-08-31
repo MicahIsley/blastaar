@@ -14,6 +14,14 @@ body {
 	width: 100%;
 }
 
+#craftTreeDisplay {
+	background: #000000b8;
+    position: absolute;
+    z-index: 4;
+    height: 100vh;
+    width: 100vw;
+}
+
 #youberRow {
 	text-align: center;
 }
@@ -47,6 +55,11 @@ body {
 .cardImg {
 	height: 35px;
 	width: 35px;
+}
+
+.cardSymNum {
+	margin-top: 10px;
+	font-size: 24px;
 }
 
 #keywordCol {
@@ -1275,6 +1288,18 @@ input {
 	font-size: 30px;
 }
 
+.enemyCardPower {
+	color: white;
+	background-image: url(assets/icons/power.png);
+	height: 65px;
+	width: 65px;
+	background-size: cover;
+	margin-top: 10px;
+	padding: 0px;
+	text-align: center;
+	font-size: 30px;
+}
+
 .cardPowerNum {
 	position: absolute;
     top: 14%;
@@ -1317,11 +1342,12 @@ input {
 
 .cardName {
 	font-size: 18px;
-	font-weight: bold;
+	font-weight: bolder;
 	text-align: center;
 	color: black;
 	margin: 0px;
 	background: #ffffff57;
+	font-family: 'Metamorphous', cursive;
 }
 
 .cardText {
@@ -1334,6 +1360,7 @@ input {
     border-width: 1px;
     border-color: black;
     border-style: solid;
+    font-family: 'Metamorphous', cursive;
 }
 
 .supportCardText {

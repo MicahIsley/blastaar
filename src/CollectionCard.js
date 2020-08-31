@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { DragSource } from 'react-dnd';
+import rummageSym from './assets/icons/rummageSym.png';
+import shield from './assets/icons/shield.png';
 
 const itemSource = {
   beginDrag(props) {
@@ -35,6 +37,21 @@ class CollectionCard extends React.Component {
     var schemePower = 0;
     var scheme = false;
     var rarity = "common";
+    var cardSym;
+    var cardText;
+    var regularText;
+    if(this.props.text.indexOf("Rummage") >= 0 ){
+      cardSym = rummageSym;
+      cardText = parseInt(this.props.text.match(/\d+/)[0]);
+      regularText = null;
+    }else if(this.props.text.indexOf("Shield") >= 0 ){
+      cardSym = shield;
+      cardText = parseInt(this.props.text.match(/\d+/)[0]);
+      regularText = null;
+    }else{
+      cardSym = null;
+      regularText = true;
+    }
     console.log(this.props.rarity);
     if(this.props.rarity === 1){
       rarity = "common";
@@ -62,7 +79,7 @@ class CollectionCard extends React.Component {
     const opacity = isDragging ? 0 : 1;
 
     return connectDragSource(
-      <div className={`col-xs-12 ${this.props.className} ${cardStyle} ${rarity}`} style={{ opacity }}>
+      <div className={`col-xs-12 ${this.props.className} ${cardStyle} ${rarity}`} style={{ opacity }} onDoubleClick = {() => { this.props.showCraftTree(this.props.craft)}}>
         { sphereCard === false &&
           <div className="row">
             <div className="col-xs-offset-4 col-xs-4 cardPower"><span className="cardPowerNum">{this.props.power}</span></div>
@@ -76,7 +93,11 @@ class CollectionCard extends React.Component {
           </div>
         }
         { sphereCard === false &&
-          <div className="row cardText">{this.props.text}</div>
+          <div className="row cardText">
+            { cardSym ? <img src={cardSym} className="col-xs-8 cardSym" /> : null }
+            { cardSym ? <div className="col-xs-4 cardSymNum">{cardText}</div> : null }
+            { regularText ? <div className="col-xs-12">{this.props.text}</div> : null }
+          </div>
         }
         <div className="row schemeRow">
           <div className="col-xs-12">

@@ -4411,7 +4411,11 @@ class CardText extends React.Component {
 			cardSym = rummageSym;
 			cardText = parseInt(this.props.cardText.match(/\d+/)[0]);
 			regularText = null;
-		}else{
+		}else if(this.props.cardText.indexOf("Shield") >= 0 ){
+	      cardSym = shield;
+	      cardText = parseInt(this.props.cardText.match(/\d+/)[0]);
+	      regularText = null;
+	    }else{
 			cardSym = null;
 			regularText = true;
 		}
@@ -4419,7 +4423,7 @@ class CardText extends React.Component {
 		return (
 			<div className="row cardText">
 				{ cardSym ? <img src={cardSym} className="col-xs-8 cardSym" /> : null }
-				{ cardSym ? <div className="col-xs-4">{cardText}</div> : null }
+				{ cardSym ? <div className="col-xs-4 cardSymNum">{cardText}</div> : null }
 				{ regularText ? <div className="col-xs-12">{this.props.cardText}</div> : null }
 			</div>
 		)
@@ -4831,7 +4835,7 @@ class EnemySabCard extends React.Component {
 		return (
 			<div className="col-xs-12 enemy enemyHoverCard">
 		          <div className="row">
-		            <div className="col-xs-offset-4 col-xs-4 cardPower">{this.props.sabCard.power}</div>
+		            <div className="col-xs-offset-4 col-xs-4 enemyCardPower">{this.props.sabCard.power}</div>
 		          </div>
 		        <div className="row cardName">{this.props.sabCard.name}</div>
 		        <div className="row cardText">{this.props.sabCard.text}</div>
@@ -5092,10 +5096,14 @@ class CollectionScreen extends React.Component {
 				{ id: 3, name: 'Item 3'},
 				{ id: 4, name: 'Item 4'},
 			],
-			deckSize: 0
+			deckSize: 0,
+			craftTreeScreen: false,
+			craftTree: []
+
 		}
 		this.listCollection = this.listCollection.bind(this);
 		this.listCurrentDeck = this.listCurrentDeck.bind(this);
+		this.showCraftTree = this.showCraftTree.bind(this);
 	}
 	componentDidMount(){
 		var cardsInDeck = [];
@@ -5166,12 +5174,35 @@ class CollectionScreen extends React.Component {
 			}
 		}
 	}
+	showCraftTree(craftNum){
+		var craftTree = [];
+		var show;
+		if(this.state.craftTreeScreen === true){
+			show = false;
+		}else{
+			show = true;
+		}
+		craftTree.push(eval("basic" + craftNum));
+		craftTree.push(eval("fire" + craftNum));
+		craftTree.push(eval("earth" + craftNum));
+		craftTree.push(eval("water" + craftNum));
+		craftTree.push(eval("wind" + craftNum));
+		craftTree.push(eval("lava" + craftNum));
+		craftTree.push(eval("desert" + craftNum));
+		craftTree.push(eval("mud" + craftNum));
+		craftTree.push(eval("storm" + craftNum));
+		this.setState({
+			craftTreeScreen: show,
+			craftTree: craftTree
+		});
+
+	}
 	listCollection() {
 		var cards = collectionArray;
 		console.log(cards);
 		const listCollection = cards.map((card, index) => {
 			if(card.unlocked === true) {
-				return <CollectionCard className={card.alignment} key={index} id={index} numberOwned={card.ownedNum} ability={card.ability1} icon={card.icon} faction={card.faction} name={card.name} type={card.type} cost={card.cost} power={card.power} text={card.text} rarity={card.rarity} handleDrop={(name) => this.addToDeck(card)} />
+				return <CollectionCard className={card.alignment} key={index} id={index} craft={card.craft} showCraftTree={this.showCraftTree} numberOwned={card.ownedNum} ability={card.ability1} icon={card.icon} faction={card.faction} name={card.name} type={card.type} cost={card.cost} power={card.power} text={card.text} rarity={card.rarity} handleDrop={(name) => this.addToDeck(card)} />
 			}
 		});
 		return (
@@ -5198,6 +5229,45 @@ class CollectionScreen extends React.Component {
 	render() {
 		return (
 			<div className="col-xs-12">
+			{ this.state.craftTreeScreen === true &&
+				<div className="row" id="craftTreeDisplay">
+					<div className="col-xs-12">
+						<div className="row">
+							<div id="fireCraftTree">
+								<CollectionCard className={this.state.craftTree[1].alignment} showCraftTree={this.showCraftTree} craft={this.state.craftTree[1].craft} numberOwned={this.state.craftTree[1].ownedNum} ability={this.state.craftTree[1].ability1} icon={this.state.craftTree[1].icon} faction={this.state.craftTree[1].faction} name={this.state.craftTree[1].name} type={this.state.craftTree[1].type} cost={this.state.craftTree[1].cost} power={this.state.craftTree[1].power} text={this.state.craftTree[1].text} rarity={this.state.craftTree[1].rarity} />
+							</div>
+							<div id="lavaCraftTree">
+								<CollectionCard className={this.state.craftTree[5].alignment} showCraftTree={this.showCraftTree} craft={this.state.craftTree[5].craft} numberOwned={this.state.craftTree[5].ownedNum} ability={this.state.craftTree[5].ability1} icon={this.state.craftTree[5].icon} faction={this.state.craftTree[5].faction} name={this.state.craftTree[5].name} type={this.state.craftTree[5].type} cost={this.state.craftTree[5].cost} power={this.state.craftTree[5].power} text={this.state.craftTree[5].text} rarity={this.state.craftTree[5].rarity} />
+							</div>
+							<div id="earthCraftTree">
+								<CollectionCard className={this.state.craftTree[2].alignment} showCraftTree={this.showCraftTree} craft={this.state.craftTree[2].craft} numberOwned={this.state.craftTree[2].ownedNum} ability={this.state.craftTree[2].ability1} icon={this.state.craftTree[2].icon} faction={this.state.craftTree[2].faction} name={this.state.craftTree[2].name} type={this.state.craftTree[2].type} cost={this.state.craftTree[2].cost} power={this.state.craftTree[2].power} text={this.state.craftTree[2].text} rarity={this.state.craftTree[2].rarity} />
+							</div>
+						</div>
+						<div className="row">
+							<div id="desertCraftTree">
+								<CollectionCard className={this.state.craftTree[6].alignment} showCraftTree={this.showCraftTree} craft={this.state.craftTree[6].craft} numberOwned={this.state.craftTree[6].ownedNum} ability={this.state.craftTree[6].ability1} icon={this.state.craftTree[6].icon} faction={this.state.craftTree[6].faction} name={this.state.craftTree[6].name} type={this.state.craftTree[6].type} cost={this.state.craftTree[6].cost} power={this.state.craftTree[6].power} text={this.state.craftTree[6].text} rarity={this.state.craftTree[6].rarity} />
+							</div>
+							<div id="basicCraftTree">
+								<CollectionCard className={this.state.craftTree[0].alignment} showCraftTree={this.showCraftTree} craft={this.state.craftTree[0].craft} numberOwned={this.state.craftTree[0].ownedNum} ability={this.state.craftTree[0].ability1} icon={this.state.craftTree[0].icon} faction={this.state.craftTree[0].faction} name={this.state.craftTree[0].name} type={this.state.craftTree[0].type} cost={this.state.craftTree[0].cost} power={this.state.craftTree[0].power} text={this.state.craftTree[0].text} rarity={this.state.craftTree[0].rarity} />
+							</div>
+							<div id="mudCraftTree">
+								<CollectionCard className={this.state.craftTree[7].alignment} showCraftTree={this.showCraftTree} craft={this.state.craftTree[7].craft} numberOwned={this.state.craftTree[7].ownedNum} ability={this.state.craftTree[7].ability1} icon={this.state.craftTree[7].icon} faction={this.state.craftTree[7].faction} name={this.state.craftTree[7].name} type={this.state.craftTree[7].type} cost={this.state.craftTree[7].cost} power={this.state.craftTree[7].power} text={this.state.craftTree[7].text} rarity={this.state.craftTree[7].rarity} />
+							</div>
+						</div>
+						<div className="row">
+							<div id="windCraftTree">
+								<CollectionCard className={this.state.craftTree[4].alignment} showCraftTree={this.showCraftTree} craft={this.state.craftTree[4].craft} numberOwned={this.state.craftTree[4].ownedNum} ability={this.state.craftTree[4].ability1} icon={this.state.craftTree[4].icon} faction={this.state.craftTree[4].faction} name={this.state.craftTree[4].name} type={this.state.craftTree[4].type} cost={this.state.craftTree[4].cost} power={this.state.craftTree[4].power} text={this.state.craftTree[4].text} rarity={this.state.craftTree[4].rarity} />
+							</div>
+							<div id="stormCraftTree">
+								<CollectionCard className={this.state.craftTree[8].alignment} showCraftTree={this.showCraftTree} craft={this.state.craftTree[8].craft} numberOwned={this.state.craftTree[8].ownedNum} ability={this.state.craftTree[8].ability1} icon={this.state.craftTree[8].icon} faction={this.state.craftTree[8].faction} name={this.state.craftTree[8].name} type={this.state.craftTree[8].type} cost={this.state.craftTree[8].cost} power={this.state.craftTree[8].power} text={this.state.craftTree[8].text} rarity={this.state.craftTree[8].rarity} />
+							</div>
+							<div id="waterCraftTree">
+								<CollectionCard className={this.state.craftTree[3].alignment} showCraftTree={this.showCraftTree} craft={this.state.craftTree[3].craft} numberOwned={this.state.craftTree[3].ownedNum} ability={this.state.craftTree[3].ability1} icon={this.state.craftTree[3].icon} faction={this.state.craftTree[3].faction} name={this.state.craftTree[3].name} type={this.state.craftTree[3].type} cost={this.state.craftTree[3].cost} power={this.state.craftTree[3].power} text={this.state.craftTree[3].text} rarity={this.state.craftTree[3].rarity} />
+							</div>
+						</div>
+					</div>
+				</div>
+			}
 				<div className="row">
 					<button className="col-xs-1 coolButton goBackButton" onClick={this.props.checkDeckContents}>Back</button>
 					<button className="col-xs-1 coolButton" onClick={this.props.goToCraftingScreen}>Crafting</button>
