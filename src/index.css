@@ -621,18 +621,50 @@ body {
 }
 
 #effectsRow {
-	height: 50px;
+	height: 56px;
 }
 
 .effectOrb {
+	margin-right: 8px;
+    color: black;
 	float: right;
-	border-color: black;
-	border-width: 3px;
-	border-style: solid;
-	border-radius: 25px;
-	background: white;
+    border-color: black;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 30px;
+    padding: 0px;
 	animation: effectPulse 4s ease-in-out infinite alternate;
     -webkit-animation: effectPulse 4s ease-in-out infinite alternate;
+}
+
+.shieldOrb {
+	background: radial-gradient(#929292, #0830c1);
+}
+
+.magicOrb {
+	background: radial-gradient(#929292, #560688);
+}
+
+.rummageOrb {
+	background: radial-gradient(#484848, #3a8621);
+}
+
+.decoyOrb {
+	padding-left: 9px;
+    overflow: hidden;
+    background: radial-gradient(white, #bb7600);
+}
+
+.effectSym {
+	padding: 0px;
+	height: 50px;
+	margin-left: 19px;
+}
+
+.effectNum {
+	font-size: 20px;
+    padding: 0px;
+    margin-top: 10px;
 }
 
 .stormlightOn {

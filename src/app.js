@@ -18,6 +18,7 @@ import CollectionCard2 from './CollectionCard2';
 import CreateCharacter from './CreateCharacter';
 import DeleteZone from './deleteZone.js';
 import awe from './assets/icons/awe.png';
+import decoySym from './assets/icons/decoySym.png';
 import desert from './assets/icons/desert.png';
 import earth from './assets/icons/earth.png';
 import empty from './assets/icons/empty.png';
@@ -29,6 +30,7 @@ import slash from './assets/icons/slash.png';
 import lava from './assets/icons/lava.png';
 import mud from './assets/icons/mud.png';
 import power from './assets/icons/power.png';
+import rummageSym from './assets/icons/rummageSym.png';
 import shield from './assets/icons/shield.png';
 import spooky from './assets/icons/spooky.png';
 import storm from './assets/icons/storm.png';
@@ -4117,7 +4119,7 @@ class GameScreen extends React.Component {
 				<div className="row" id="topRow">
 					<div className="col-xs-12">
 						<div className="row" id="enemySide">
-							<EnemySide updateEnemySab={this.updateEnemySab} cardDisplay={this.state.cardDisplay} state={this.state} sab={this.state.enemySab} />
+							<EnemySide updateEnemySab={this.updateEnemySab} cardDisplay={this.state.cardDisplay} state={this.state} sab={this.state.enemySab} heroDraw={this.heroDraw} />
 						</div>
 						<div className="row" id="tutorialMessageBox">
 							<div className="col-xs-12" id="tutorialMessageCol">
@@ -4166,18 +4168,18 @@ class EffectsRow extends React.Component {
 	listEffects () {
 		var currentEffects = [];
 		if(this.props.next > 0){
-			currentEffects.push({image: "nextSym", number: this.props.next});
+			currentEffects.push({image: power, number: (this.props.next + this.props.magic), type: "magicOrb"});
 		}else if(this.props.decoy === true){
-			currentEffects.push({image: "decoySym", number: null});
+			currentEffects.push({image: decoySym, number: null, type: "decoyOrb"});
 		}else if(this.props.shield > 0){
-			currentEffects.push({image: shield, number: this.props.shield});
+			currentEffects.push({image: shield, number: this.props.shield, type: "shieldOrb"});
 		}else if(this.props.magic > 0){
-			currentEffects.push({image: power, number: this.props.magic});
+			currentEffects.push({image: power, number: (this.props.next + this.props.magic), type: "magicOrb"});
 		}else if(this.props.rummage > 0){
-			currentEffects.push({image: "rummageSym", number: this.props.rummage});
+			currentEffects.push({image: rummageSym, number: this.props.rummage, type: "rummageOrb"});
 		}
 		const listEffects = currentEffects.map((effect, index) =>
-			<Effect key={index} id={index} image={effect.image} number={effect.number} />
+			<Effect key={index} id={index} image={effect.image} number={effect.number} type={effect.type} />
 		);
 		return (
 			<div className="row">{listEffects}</div>
@@ -4197,10 +4199,10 @@ class EffectsRow extends React.Component {
 class Effect extends React.Component {
 	render(){
 		return (
-			<div className="col-xs-3 effectOrb">
+			<div className={`col-xs-2 effectOrb ${this.props.type}`}>
 				<div className="row">
-					<img className="col-xs-6" src={shield} alt={this.props.image} />
-					<div className="col-xs-6">{this.props.number}</div>
+					<img className="col-xs-6 effectSym" src={this.props.image} alt={this.props.image} />
+					<div className="col-xs-2 effectNum">{this.props.number}</div>
 				</div>
 			</div>
 		)
@@ -4413,7 +4415,7 @@ class EnemySide extends React.Component {
 		const numberOfBadGuys = enemyArray;
 		const listItems = numberOfBadGuys.map((badGuy, index) => {
 			if(badGuy.hp > 0){
-				return <Enemy key={index} id={index} cardDisplay={this.props.cardDisplay} enemyId={"badGuy" + index} name={badGuy.name} eHp={badGuy.hp} attack={badGuy.attack} updateEnemySab={this.props.updateEnemySab} sab={this.props.sab[index]} sabCard={badGuy.sabCard} image={badGuy.image} />
+				return <Enemy key={index} id={index} heroDraw={this.props.heroDraw} cardDisplay={this.props.cardDisplay} enemyId={"badGuy" + index} name={badGuy.name} eHp={badGuy.hp} attack={badGuy.attack} updateEnemySab={this.props.updateEnemySab} sab={this.props.sab[index]} sabCard={badGuy.sabCard} image={badGuy.image} />
 			}else{
 				return <Placeholder key={index} id={index} />
 			}
@@ -4621,7 +4623,7 @@ class CharacterActions extends React.Component {
 				<audio className="clickSound">
 		          <source src={click}></source>
 		        </audio>
-				<button className="coolButton" id="attackButton" onClick={this.props.heroDraw}>Attack</button>
+				{/*<button className="coolButton" id="attackButton" onClick={this.props.heroDraw}>Attack</button>*/}
 			</div>
 		);
 	}
@@ -4767,6 +4769,7 @@ class Enemy extends React.Component {
 			document.getElementById(id + 'image').classList.add("targetedEnemy");
 			currentEnemy = id;
 		}
+		this.props.heroDraw();
 	}
 	render() {
 		return (
