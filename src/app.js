@@ -24,6 +24,8 @@ import empty from './assets/icons/empty.png';
 import fire from './assets/icons/fire.png';
 import heart from './assets/icons/heart.png';
 import int from './assets/icons/int.png';
+import magicBag from './assets/icons/magicBag.png';
+import slash from './assets/icons/slash.png';
 import lava from './assets/icons/lava.png';
 import mud from './assets/icons/mud.png';
 import power from './assets/icons/power.png';
@@ -641,7 +643,7 @@ const grandTipperStats = {
 };
 
 const kragmupStats = {
-	name: "kragmup",
+	name: "Kragmup",
 	hp: 6,
 	attack: 2,
 	sabotoge: 1,
@@ -2084,7 +2086,7 @@ class GameScreenHub extends React.Component {
 				document.getElementsByClassName("heroDamageIndicator2")[0].style.color="green";
 				document.getElementsByClassName("heroDamageIndicator2")[0].style.display="inline";
 				setTimeout(() => {
-					document.getElementsByClassName("shieldIcon")[0].style.background="none";
+					//document.getElementsByClassName("shieldIcon")[0].style.background="none";
 					document.getElementsByClassName("heroDamageIndicator2")[0].innerHTML="";
 					document.getElementsByClassName("heroDamageIndicator2")[0].style.display="none";
 				}, 500);
@@ -3864,7 +3866,7 @@ class GameScreen extends React.Component {
 					if(this.state.playerShield > 0){
 						let playerShield = this.state.playerShield;
 						const shieldDamage = playerShield - enemyAttack;
-						document.getElementsByClassName("shieldIcon")[0].style.background="blue";
+						//document.getElementsByClassName("shieldIcon")[0].style.background="blue";
 						if(enemyAttack <= 0){
 							document.getElementsByClassName("heroDamageIndicator2")[0].append(enemyAttack);
 						}else{
@@ -3877,7 +3879,7 @@ class GameScreen extends React.Component {
 
 						}else{
 							setTimeout(() => {
-									document.getElementsByClassName("shieldIcon")[0].style.background="none";
+									//document.getElementsByClassName("shieldIcon")[0].style.background="none";
 									document.getElementsByClassName("heroDamageIndicator2")[0].innerHTML="";
 									document.getElementsByClassName("heroDamageIndicator2")[0].style.display="none";
 							}, 500);
@@ -4115,7 +4117,7 @@ class GameScreen extends React.Component {
 				<div className="row" id="topRow">
 					<div className="col-xs-12">
 						<div className="row" id="enemySide">
-							<EnemySide updateEnemySab={this.updateEnemySab} state={this.state} sab={this.state.enemySab} />
+							<EnemySide updateEnemySab={this.updateEnemySab} cardDisplay={this.state.cardDisplay} state={this.state} sab={this.state.enemySab} />
 						</div>
 						<div className="row" id="tutorialMessageBox">
 							<div className="col-xs-12" id="tutorialMessageCol">
@@ -4132,7 +4134,8 @@ class GameScreen extends React.Component {
 						</div>
 						<div className="row">
 							<div className="col-xs-offset-4 col-xs-4">
-								<SpookyMeter spookLevel={this.state.spookLevel} />
+								{/*<SpookyMeter spookLevel={this.state.spookLevel} /> */}
+								<EffectsRow next={this.state.nextSpellBonus} decoy={this.state.decoy} shield={this.state.playerShield} magic={this.props.attack} rummage={this.state.researchNum} />
 							</div>
 						</div>
 						<div className="row" id="characterSide tabIndex" onKeyDown={this.handleKeyPress}>
@@ -4153,6 +4156,51 @@ class SpookyMeter extends React.Component {
 			<div className="col-xs-12"> 
 				<div className="row spookyMeterRow">
 					<img className="spookyMeter" src={this.props.spookLevel} alt="spookyMeter" />
+				</div>
+			</div>
+		)
+	}
+}
+
+class EffectsRow extends React.Component {
+	listEffects () {
+		var currentEffects = [];
+		if(this.props.next > 0){
+			currentEffects.push({image: "nextSym", number: this.props.next});
+		}else if(this.props.decoy === true){
+			currentEffects.push({image: "decoySym", number: null});
+		}else if(this.props.shield > 0){
+			currentEffects.push({image: shield, number: this.props.shield});
+		}else if(this.props.magic > 0){
+			currentEffects.push({image: power, number: this.props.magic});
+		}else if(this.props.rummage > 0){
+			currentEffects.push({image: "rummageSym", number: this.props.rummage});
+		}
+		const listEffects = currentEffects.map((effect, index) =>
+			<Effect key={index} id={index} image={effect.image} number={effect.number} />
+		);
+		return (
+			<div className="row">{listEffects}</div>
+		)
+	}
+	render(){
+		return (
+			<div className="row" id="effectsRow">
+				<div className="col-xs-12">
+					{this.listEffects()}
+				</div>
+			</div>
+		)
+	}
+}
+
+class Effect extends React.Component {
+	render(){
+		return (
+			<div className="col-xs-3 effectOrb">
+				<div className="row">
+					<img className="col-xs-6" src={shield} alt={this.props.image} />
+					<div className="col-xs-6">{this.props.number}</div>
 				</div>
 			</div>
 		)
@@ -4365,7 +4413,7 @@ class EnemySide extends React.Component {
 		const numberOfBadGuys = enemyArray;
 		const listItems = numberOfBadGuys.map((badGuy, index) => {
 			if(badGuy.hp > 0){
-				return <Enemy key={index} id={index} enemyId={"badGuy" + index} name={badGuy.name} eHp={badGuy.hp} updateEnemySab={this.props.updateEnemySab} sab={this.props.sab[index]} sabCard={badGuy.sabCard} image={badGuy.image} />
+				return <Enemy key={index} id={index} cardDisplay={this.props.cardDisplay} enemyId={"badGuy" + index} name={badGuy.name} eHp={badGuy.hp} attack={badGuy.attack} updateEnemySab={this.props.updateEnemySab} sab={this.props.sab[index]} sabCard={badGuy.sabCard} image={badGuy.image} />
 			}else{
 				return <Placeholder key={index} id={index} />
 			}
@@ -4516,20 +4564,35 @@ class HeroSideSlot extends React.Component {
 			<div className=" heroSideSlot col-xs-4">
 				<div className="row">
 					<div className="col-xs-4">
-						<ShieldSpan playerShield={this.props.playerShield} />
-						<PowerSpan attack={this.props.attack} equipment={this.props.equipment} />
-						<IntelligenceSpan int={this.props.int} />
+						<MagicBag int={this.props.int} />
 					</div>
-					<div className="col-xs-4">
+					<div className="col-xs-5">
 						<YouberImage image={player.image} />
 					</div>
-					<div className="col-xs-4">
-						<HPSpan hp={this.props.heroHp} hero={"heroDamageIndicator2"} enemyId={"hero"} />
+					<div className="col-xs-3 heroStats">
+						<HeroHPSpan hp={this.props.heroHp} hero={"heroDamageIndicator2"} enemyId={"hero"} />
 						<div className="row">
 							<InfluenceCounter toggle={this.props.toggleRecruitState} influence={this.props.influence} />
 						</div>
 						<CharacterActions heroDraw={this.props.heroDraw} />
 					</div>
+				</div>
+			</div>
+		)
+	}
+}
+
+class MagicBag extends React.Component {
+	render(){
+		return (
+			<div className="row">
+				<div className="col-xs-12">
+					<div className="row" id="drawRow">
+						<img className="col-xs-offset-2 col-xs-7 intImg" src={int} /> 
+						<div className="col-xs-2" id="drawNum">{this.props.int}</div>
+					</div>
+					<img src={magicBag} className="row magicBag" />
+					<div className="row" id="bagNum">{cardArray.length}</div>
 				</div>
 			</div>
 		)
@@ -4602,9 +4665,7 @@ class CharacterImage extends React.Component {
 class YouberImage extends React.Component {
 	render() {
 		return (
-			<div className="row">
-				<img className="youberImage" id={this.props.id + 'image'} src={this.props.image} alt={this.props.name} />
-			</div>
+			<img className="youberImage" id={this.props.id + 'image'} src={this.props.image} alt={this.props.name} />
 		);
 	}
 };
@@ -4612,10 +4673,26 @@ class YouberImage extends React.Component {
 class HPSpan extends React.Component {
 	render() {
 		return (
-			<div className="row hpSpan">
-				<img className="col-xs-4 heartIcon" src={heart} /> 
-				<span className="col-xs-3">{this.props.hp}</span>
-				<span className={`col-xs-2 ${this.props.hero}`} id={this.props.enemyId}></span>
+			<div className="col-xs-7 hpSpan">
+				<div className="row">
+					<img className="col-xs-4 heartIcon" src={heart} /> 
+					<span className="col-xs-3">{this.props.hp}</span>
+					<span className={`col-xs-2 ${this.props.hero}`} id={this.props.enemyId}></span>
+				</div>
+			</div>
+		);
+	}
+};
+
+class HeroHPSpan extends React.Component {
+	render() {
+		return (
+			<div className="col-xs-12 heroHpSpan">
+				<div className="row">
+					<img className="col-xs-4 heartIcon" src={heart} /> 
+					<span className="col-xs-3 currentHealth">{this.props.hp}</span>
+					<span className={`col-xs-2 ${this.props.hero}`} id={this.props.enemyId}></span>
+				</div>
 			</div>
 		);
 	}
@@ -4680,23 +4757,29 @@ class Enemy extends React.Component {
 		});
 	}
 	selectEnemyToAttack(id) {
-		const x = document.getElementsByClassName("characterImage2");
-		for (var i=0; i < x.length; i ++ ){
-			x[i].classList.remove("targetedEnemy");
+		if(this.props.cardDisplay === true){
+			console.log("Not Anymore");
+		}else{
+			const x = document.getElementsByClassName("characterImage2");
+			for (var i=0; i < x.length; i ++ ){
+				x[i].classList.remove("targetedEnemy");
+			}
+			document.getElementById(id + 'image').classList.add("targetedEnemy");
+			currentEnemy = id;
 		}
-		document.getElementById(id + 'image').classList.add("targetedEnemy");
-		currentEnemy = id;
 	}
 	render() {
 		return (
 			<div className="col-xs-4 enemyCharacterBox" id={this.props.id} onClick={() => {this.selectEnemyToAttack(this.props.id)}}>
 				<div className="row">
-					<div className="col-xs-offset-2 col-xs-8 enemyInfo">
+					<div className="col-xs-offset-2 col-xs-6 enemyInfo">
 						<CharacterName name={this.props.name} />
-						<HPSpan hp={this.props.eHp} enemyId={this.props.enemyId} hero={"heroDamageIndicator"} />
+						<div className="row">
+							<HPSpan hp={this.props.eHp} enemyId={this.props.enemyId} hero={"heroDamageIndicator"} />
+							<AttackNum attack={this.props.attack} />
+						</div>
 						<div className="row sabRow">
-							<div className="col-xs-2">Sab</div>
-							<div className="col-xs-9"><Sabotoge mouseEnter={this.handleMouseEnter} mouseLeave={this.handleMouseLeave} sab={this.props.sab} /></div>
+							<div className="col-xs-11"><Sabotoge mouseEnter={this.handleMouseEnter} mouseLeave={this.handleMouseLeave} sab={this.props.sab} /></div>
 						</div>
 					</div>
 				</div>
@@ -4710,6 +4793,19 @@ class Enemy extends React.Component {
 		);
 	}
 };
+
+class AttackNum extends React.Component {
+	render(){
+		return (
+			<div className= "col-xs-5">
+				<div className="row">
+					<img className="col-xs-6 slashIcon" src={slash} />
+					<div className="col-xs-4 attackNum">{this.props.attack}</div>
+				</div>
+			</div>
+		)
+	}
+}
 
 class EnemySabCard extends React.Component {
 	render() {

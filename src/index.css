@@ -543,7 +543,7 @@ body {
 
 .supportCol {
 	background: #ffffff2b;
-	height: 200px;
+	height: 220px;
 	border-color: grey;
 	border-width: .2px;
 	border-style: solid;
@@ -592,7 +592,7 @@ body {
 }
 
 #influenceOrb {
-	margin-left: 15%;
+	margin-left: 27%;
 	width: 50px;
 	background: yellow;
 	text-align: center;
@@ -617,7 +617,22 @@ body {
 }
 
 #playArea {
-	height: 0px;
+	height: 50px;
+}
+
+#effectsRow {
+	height: 50px;
+}
+
+.effectOrb {
+	float: right;
+	border-color: black;
+	border-width: 3px;
+	border-style: solid;
+	border-radius: 25px;
+	background: white;
+	animation: effectPulse 4s ease-in-out infinite alternate;
+    -webkit-animation: effectPulse 4s ease-in-out infinite alternate;
 }
 
 .stormlightOn {
@@ -696,6 +711,10 @@ input {
 	width: auto;
 }
 
+.currentHealth {
+	padding-left: 5px;
+}
+
 #heartStatIcon {
 	margin-left: 4%;
 }
@@ -770,6 +789,37 @@ input {
    	}
 }
 
+@-webkit-keyframes effectPulse {
+    0%{
+    	transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+    100%{
+    	transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+   	}
+}
+@-moz-keyframes effectPulse {
+     0%{
+    	transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+    100%{
+    	transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+   	}
+}
+@keyframes effectPulse {
+    0%{
+    	transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+    100%{
+    	transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+   	}
+}
+
 .deckTitle {
 	font-size: 35px;
 	text-align: center;
@@ -792,8 +842,8 @@ input {
 }
 
 .youberImage {
-	width: 100%;
-	margin-top: 15%;
+	width: 120%;
+	margin-left: -25%;
 }
 
 .chooseTitle {
@@ -805,12 +855,24 @@ input {
 
 .hpSpan {
 	font-size: 20px;
-	margin-top: 5px;
 }
 
 .intSpan {
 	font-size: 32px;
 	text-align: center;
+}
+
+.slashIcon {
+	height: 30px;
+    width: 30px;
+    padding: 0px;
+}
+
+.attackNum {
+	font-size: 20px;
+    text-align: center;
+    font-family: 'Metamorphous', cursive;
+    padding: 0px;
 }
 
 #deckRow {
@@ -1274,6 +1336,7 @@ input {
 }
 
 .characterImage2 {
+	margin-left: 4%;
 }
 
 .supportSlotImage {
@@ -1291,6 +1354,7 @@ input {
 }
 
 .sabRow {
+	margin-top: 5px;
 	height: 30px;
 }
 
@@ -1337,6 +1401,7 @@ input {
 .heroDamageIndicator2 {
 	color: red;
 	font-size: 20px;
+	padding-left: 3px;
 }
 
 .influenceOrbRow {
@@ -1360,26 +1425,69 @@ input {
 
 .characterName {
 	font-size: 22px;
-	padding-left: 15px;
+	text-align: center;
 }
 
 .enemyInfo {
 	border-color: black;
-	border-style: solid;
-	border-radius: 5px;
-	padding-bottom: 3px;
-	background: #ffffffcf;
+    border-style: solid;
+    border-radius: 15px;
+    border-width: 2px;
+    padding-bottom: 3px;
+    background: #ffffffa6;
 }
 
+.magicBag {
+	height: 145px;
+	margin-top: 5%;
+}
+
+#bagNum {
+	position: absolute;
+	z-index: 3;
+	font-family: 'Metamorphous', cursive;
+	font-size: 24px;
+	background: #ffffffa6;
+	border-radius: 10px;
+	bottom: 6%;
+	left: 50%;
+}
+
+#drawNum {
+	margin-top: 10px;
+	font-family: 'Metamorphous', cursive;
+	font-size: 30px;
+	background: #ffffffa6;
+	border-radius: 10px;
+	padding: 0px;
+    text-align: center;
+}
+
+.intImg {
+	width: 40%;
+    padding: 0px;
+}
 .heroSideSlot {
-	padding-left: 20px;
+	
+}
+
+.heroStats {
+	margin-top: 5%;
+	padding: 0px;
+	padding-bottom: 10px;
 	font-family: 'Metamorphous', cursive;
 	background: #ffffffad;
 	border-radius: 15px;
+	margin-left: -5%;
 }
 
 .heroSelectName {
 	margin-top: 5%;
+}
+
+.heroHpSpan {
+	font-size: 20px;
+	margin-top: 5px;
 }
 
 #stageName {
@@ -1463,7 +1571,7 @@ input {
 
 #attackButton {
 	background: #9a7200;
-	margin-left: 15%;
+	margin-left: 25%;
 }
 
 #rewardsMessage {
