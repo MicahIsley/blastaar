@@ -4310,7 +4310,7 @@ class Card extends React.Component {
 					<div onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} className={`col-xs-12 ${this.props.className} ${cardStyle}`} id={`${this.props.id}card`} onClick={() => this.props.chooseCard(this.props.card)}>
 						{ sphereCard === false &&
 				          <div className="row">
-				            <div className="col-xs-offset-4 col-xs-4 cardPower">{this.props.power}</div>
+				            <div className="col-xs-offset-4 col-xs-4 cardPower"><span className="cardPowerNum">{this.props.power}</span></div>
 				          </div>
 				        }
 				        <div className="row cardName">{this.props.name}</div>
@@ -4404,8 +4404,24 @@ class HeroCardHelp extends React.Component {
 
 class CardText extends React.Component {
 	render() {
+		var cardSym;
+		var cardText;
+		var regularText;
+		if(this.props.cardText.indexOf("Rummage") >= 0 ){
+			cardSym = rummageSym;
+			cardText = parseInt(this.props.cardText.match(/\d+/)[0]);
+			regularText = null;
+		}else{
+			cardSym = null;
+			regularText = true;
+		}
+		console.log(cardSym);
 		return (
-			<div className="row cardText">{this.props.cardText}</div> 
+			<div className="row cardText">
+				{ cardSym ? <img src={cardSym} className="col-xs-8 cardSym" /> : null }
+				{ cardSym ? <div className="col-xs-4">{cardText}</div> : null }
+				{ regularText ? <div className="col-xs-12">{this.props.cardText}</div> : null }
+			</div>
 		)
 	}
 }

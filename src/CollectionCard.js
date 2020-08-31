@@ -65,7 +65,7 @@ class CollectionCard extends React.Component {
       <div className={`col-xs-12 ${this.props.className} ${cardStyle} ${rarity}`} style={{ opacity }}>
         { sphereCard === false &&
           <div className="row">
-            <div className="col-xs-offset-4 col-xs-4 cardPower">{this.props.power}</div>
+            <div className="col-xs-offset-4 col-xs-4 cardPower"><span className="cardPowerNum">{this.props.power}</span></div>
             <div className="col-xs-3 numberOwned">{this.props.numberOwned}</div>
           </div>
         }
