@@ -5104,6 +5104,7 @@ class CollectionScreen extends React.Component {
 		this.listCollection = this.listCollection.bind(this);
 		this.listCurrentDeck = this.listCurrentDeck.bind(this);
 		this.showCraftTree = this.showCraftTree.bind(this);
+		this.hideCraftTree = this.hideCraftTree.bind(this);
 	}
 	componentDidMount(){
 		var cardsInDeck = [];
@@ -5182,20 +5183,27 @@ class CollectionScreen extends React.Component {
 		}else{
 			show = true;
 		}
-		craftTree.push(eval("basic" + craftNum));
-		craftTree.push(eval("fire" + craftNum));
-		craftTree.push(eval("earth" + craftNum));
-		craftTree.push(eval("water" + craftNum));
-		craftTree.push(eval("wind" + craftNum));
-		craftTree.push(eval("lava" + craftNum));
-		craftTree.push(eval("desert" + craftNum));
-		craftTree.push(eval("mud" + craftNum));
-		craftTree.push(eval("storm" + craftNum));
+		if(craftNum > 0){
+			craftTree.push(eval("basic" + craftNum));
+			craftTree.push(eval("fire" + craftNum));
+			craftTree.push(eval("earth" + craftNum));
+			craftTree.push(eval("water" + craftNum));
+			craftTree.push(eval("wind" + craftNum));
+			craftTree.push(eval("lava" + craftNum));
+			craftTree.push(eval("desert" + craftNum));
+			craftTree.push(eval("mud" + craftNum));
+			craftTree.push(eval("storm" + craftNum));
+		}else{}
 		this.setState({
 			craftTreeScreen: show,
 			craftTree: craftTree
 		});
 
+	}
+	hideCraftTree(){
+		this.setState({
+			craftTreeScreen: false
+		});
 	}
 	listCollection() {
 		var cards = collectionArray;
@@ -5230,39 +5238,39 @@ class CollectionScreen extends React.Component {
 		return (
 			<div className="col-xs-12">
 			{ this.state.craftTreeScreen === true &&
-				<div className="row" id="craftTreeDisplay">
-					<div className="col-xs-12">
-						<div className="row">
-							<div id="fireCraftTree">
-								<CollectionCard className={this.state.craftTree[1].alignment} showCraftTree={this.showCraftTree} craft={this.state.craftTree[1].craft} numberOwned={this.state.craftTree[1].ownedNum} ability={this.state.craftTree[1].ability1} icon={this.state.craftTree[1].icon} faction={this.state.craftTree[1].faction} name={this.state.craftTree[1].name} type={this.state.craftTree[1].type} cost={this.state.craftTree[1].cost} power={this.state.craftTree[1].power} text={this.state.craftTree[1].text} rarity={this.state.craftTree[1].rarity} />
-							</div>
-							<div id="lavaCraftTree">
-								<CollectionCard className={this.state.craftTree[5].alignment} showCraftTree={this.showCraftTree} craft={this.state.craftTree[5].craft} numberOwned={this.state.craftTree[5].ownedNum} ability={this.state.craftTree[5].ability1} icon={this.state.craftTree[5].icon} faction={this.state.craftTree[5].faction} name={this.state.craftTree[5].name} type={this.state.craftTree[5].type} cost={this.state.craftTree[5].cost} power={this.state.craftTree[5].power} text={this.state.craftTree[5].text} rarity={this.state.craftTree[5].rarity} />
-							</div>
-							<div id="earthCraftTree">
-								<CollectionCard className={this.state.craftTree[2].alignment} showCraftTree={this.showCraftTree} craft={this.state.craftTree[2].craft} numberOwned={this.state.craftTree[2].ownedNum} ability={this.state.craftTree[2].ability1} icon={this.state.craftTree[2].icon} faction={this.state.craftTree[2].faction} name={this.state.craftTree[2].name} type={this.state.craftTree[2].type} cost={this.state.craftTree[2].cost} power={this.state.craftTree[2].power} text={this.state.craftTree[2].text} rarity={this.state.craftTree[2].rarity} />
-							</div>
-						</div>
+				<div className="row" id="craftTreeDisplay" onClick={this.hideCraftTree}>
+					<div className="col-xs-offset-3 col-xs-9">
 						<div className="row">
 							<div id="desertCraftTree">
-								<CollectionCard className={this.state.craftTree[6].alignment} showCraftTree={this.showCraftTree} craft={this.state.craftTree[6].craft} numberOwned={this.state.craftTree[6].ownedNum} ability={this.state.craftTree[6].ability1} icon={this.state.craftTree[6].icon} faction={this.state.craftTree[6].faction} name={this.state.craftTree[6].name} type={this.state.craftTree[6].type} cost={this.state.craftTree[6].cost} power={this.state.craftTree[6].power} text={this.state.craftTree[6].text} rarity={this.state.craftTree[6].rarity} />
+								<CollectionCard className={this.state.craftTree[6].alignment} showCraftTree={this.showCraftTree} craft={this.state.craftTree[6].craft} ability={this.state.craftTree[6].ability1} icon={this.state.craftTree[6].icon} faction={this.state.craftTree[6].faction} name={this.state.craftTree[6].name} type={this.state.craftTree[6].type} cost={this.state.craftTree[6].cost} power={this.state.craftTree[6].power} text={this.state.craftTree[6].text} rarity={this.state.craftTree[6].rarity} />
 							</div>
-							<div id="basicCraftTree">
-								<CollectionCard className={this.state.craftTree[0].alignment} showCraftTree={this.showCraftTree} craft={this.state.craftTree[0].craft} numberOwned={this.state.craftTree[0].ownedNum} ability={this.state.craftTree[0].ability1} icon={this.state.craftTree[0].icon} faction={this.state.craftTree[0].faction} name={this.state.craftTree[0].name} type={this.state.craftTree[0].type} cost={this.state.craftTree[0].cost} power={this.state.craftTree[0].power} text={this.state.craftTree[0].text} rarity={this.state.craftTree[0].rarity} />
+							<div id="fireCraftTree">
+								<CollectionCard className={this.state.craftTree[1].alignment} showCraftTree={this.showCraftTree} craft={this.state.craftTree[1].craft} ability={this.state.craftTree[1].ability1} icon={this.state.craftTree[1].icon} faction={this.state.craftTree[1].faction} name={this.state.craftTree[1].name} type={this.state.craftTree[1].type} cost={this.state.craftTree[1].cost} power={this.state.craftTree[1].power} text={this.state.craftTree[1].text} rarity={this.state.craftTree[1].rarity} />
 							</div>
-							<div id="mudCraftTree">
-								<CollectionCard className={this.state.craftTree[7].alignment} showCraftTree={this.showCraftTree} craft={this.state.craftTree[7].craft} numberOwned={this.state.craftTree[7].ownedNum} ability={this.state.craftTree[7].ability1} icon={this.state.craftTree[7].icon} faction={this.state.craftTree[7].faction} name={this.state.craftTree[7].name} type={this.state.craftTree[7].type} cost={this.state.craftTree[7].cost} power={this.state.craftTree[7].power} text={this.state.craftTree[7].text} rarity={this.state.craftTree[7].rarity} />
+							<div id="lavaCraftTree">
+								<CollectionCard className={this.state.craftTree[5].alignment} showCraftTree={this.showCraftTree} craft={this.state.craftTree[5].craft} ability={this.state.craftTree[5].ability1} icon={this.state.craftTree[5].icon} faction={this.state.craftTree[5].faction} name={this.state.craftTree[5].name} type={this.state.craftTree[5].type} cost={this.state.craftTree[5].cost} power={this.state.craftTree[5].power} text={this.state.craftTree[5].text} rarity={this.state.craftTree[5].rarity} />
 							</div>
 						</div>
 						<div className="row">
 							<div id="windCraftTree">
-								<CollectionCard className={this.state.craftTree[4].alignment} showCraftTree={this.showCraftTree} craft={this.state.craftTree[4].craft} numberOwned={this.state.craftTree[4].ownedNum} ability={this.state.craftTree[4].ability1} icon={this.state.craftTree[4].icon} faction={this.state.craftTree[4].faction} name={this.state.craftTree[4].name} type={this.state.craftTree[4].type} cost={this.state.craftTree[4].cost} power={this.state.craftTree[4].power} text={this.state.craftTree[4].text} rarity={this.state.craftTree[4].rarity} />
+								<CollectionCard className={this.state.craftTree[4].alignment} showCraftTree={this.showCraftTree} craft={this.state.craftTree[4].craft} ability={this.state.craftTree[4].ability1} icon={this.state.craftTree[4].icon} faction={this.state.craftTree[4].faction} name={this.state.craftTree[4].name} type={this.state.craftTree[4].type} cost={this.state.craftTree[4].cost} power={this.state.craftTree[4].power} text={this.state.craftTree[4].text} rarity={this.state.craftTree[4].rarity} />
 							</div>
+							<div id="basicCraftTree">
+								<CollectionCard className={this.state.craftTree[0].alignment} showCraftTree={this.showCraftTree} craft={this.state.craftTree[0].craft} ability={this.state.craftTree[0].ability1} icon={this.state.craftTree[0].icon} faction={this.state.craftTree[0].faction} name={this.state.craftTree[0].name} type={this.state.craftTree[0].type} cost={this.state.craftTree[0].cost} power={this.state.craftTree[0].power} text={this.state.craftTree[0].text} rarity={this.state.craftTree[0].rarity} />
+							</div>
+							<div id="earthCraftTree">
+								<CollectionCard className={this.state.craftTree[2].alignment} showCraftTree={this.showCraftTree} craft={this.state.craftTree[2].craft} ability={this.state.craftTree[2].ability1} icon={this.state.craftTree[2].icon} faction={this.state.craftTree[2].faction} name={this.state.craftTree[2].name} type={this.state.craftTree[2].type} cost={this.state.craftTree[2].cost} power={this.state.craftTree[2].power} text={this.state.craftTree[2].text} rarity={this.state.craftTree[2].rarity} />
+							</div>
+						</div>
+						<div className="row">
 							<div id="stormCraftTree">
-								<CollectionCard className={this.state.craftTree[8].alignment} showCraftTree={this.showCraftTree} craft={this.state.craftTree[8].craft} numberOwned={this.state.craftTree[8].ownedNum} ability={this.state.craftTree[8].ability1} icon={this.state.craftTree[8].icon} faction={this.state.craftTree[8].faction} name={this.state.craftTree[8].name} type={this.state.craftTree[8].type} cost={this.state.craftTree[8].cost} power={this.state.craftTree[8].power} text={this.state.craftTree[8].text} rarity={this.state.craftTree[8].rarity} />
+								<CollectionCard className={this.state.craftTree[8].alignment} showCraftTree={this.showCraftTree} craft={this.state.craftTree[8].craft} ability={this.state.craftTree[8].ability1} icon={this.state.craftTree[8].icon} faction={this.state.craftTree[8].faction} name={this.state.craftTree[8].name} type={this.state.craftTree[8].type} cost={this.state.craftTree[8].cost} power={this.state.craftTree[8].power} text={this.state.craftTree[8].text} rarity={this.state.craftTree[8].rarity} />
 							</div>
 							<div id="waterCraftTree">
-								<CollectionCard className={this.state.craftTree[3].alignment} showCraftTree={this.showCraftTree} craft={this.state.craftTree[3].craft} numberOwned={this.state.craftTree[3].ownedNum} ability={this.state.craftTree[3].ability1} icon={this.state.craftTree[3].icon} faction={this.state.craftTree[3].faction} name={this.state.craftTree[3].name} type={this.state.craftTree[3].type} cost={this.state.craftTree[3].cost} power={this.state.craftTree[3].power} text={this.state.craftTree[3].text} rarity={this.state.craftTree[3].rarity} />
+								<CollectionCard className={this.state.craftTree[3].alignment} showCraftTree={this.showCraftTree} craft={this.state.craftTree[3].craft} ability={this.state.craftTree[3].ability1} icon={this.state.craftTree[3].icon} faction={this.state.craftTree[3].faction} name={this.state.craftTree[3].name} type={this.state.craftTree[3].type} cost={this.state.craftTree[3].cost} power={this.state.craftTree[3].power} text={this.state.craftTree[3].text} rarity={this.state.craftTree[3].rarity} />
+							</div>
+							<div id="mudCraftTree">
+								<CollectionCard className={this.state.craftTree[7].alignment} showCraftTree={this.showCraftTree} craft={this.state.craftTree[7].craft} ability={this.state.craftTree[7].ability1} icon={this.state.craftTree[7].icon} faction={this.state.craftTree[7].faction} name={this.state.craftTree[7].name} type={this.state.craftTree[7].type} cost={this.state.craftTree[7].cost} power={this.state.craftTree[7].power} text={this.state.craftTree[7].text} rarity={this.state.craftTree[7].rarity} />
 							</div>
 						</div>
 					</div>
