@@ -1467,7 +1467,7 @@ function tutorialLevels(){
 function levelEarthDistribution(randEnemyNum){
 	numberOfStages = 4;
 	if(stageComplete < 3){
-		numberOfEnemies = 2;
+		numberOfEnemies = levelEnemyNum;
 		if(randEnemyNum < 140){
 			createEnemy = primtreeStats;
 			return;
@@ -1866,7 +1866,7 @@ function CardCon(name, cost, power, text, alignment, rarity, ability1, ability2,
 	this.deckNum = deckNum;
 }
 
-const kaladinH = new HeroCon("Youber", 50, 0, 3, 0, youber, true);
+const youberHero = new HeroCon("Youber", 50, 0, 3, 0, youber, true);
 var shapeshift1 = new HeroCon("Wobbleduk", 30, 3, 3, 4, wobbleduk, true);
 var shapeshift2 = new HeroCon("Budle Fairy", 20, 2, 5, 0, budleFairy, true);
 var shapeshift3 = new HeroCon("Madnado", 25, 4, 3, 2, madnado, true);
@@ -1932,7 +1932,7 @@ class GameScreenHub extends React.Component {
 			heroShield: 2,
 			equipment: null,
 			score: 0,
-			heroHp: 10,
+			heroHp: 50,
 			stormCounter: 100,
 			enemyArray: [enemyArray[0], enemyArray[1], enemyArray[2]],
 			sphereCount: 0,
@@ -2076,7 +2076,7 @@ class GameScreenHub extends React.Component {
 	changeHeroHp(newHp){
 		var oldHp = this.state.heroHp;
 		var healedHp = newHp - oldHp;
-		this.state.heroSelect.hp = newHp;
+		this.state.heroHp = newHp;
 		if(document.getElementsByClassName("heroDamageIndicator2")[0] === undefined){
 
 		}else{
@@ -2119,7 +2119,7 @@ class GameScreenHub extends React.Component {
 		});
 	}
 	createNewCharacter(data){
-		playerHero = new HeroCon("Youber", 50, 0, 3, 0, youber, true);
+		playerHero = youberHero;
 		this.setState({
 			attack: playerHero.attack,
 			heroSelect: playerHero,
@@ -2175,13 +2175,13 @@ class GameScreenHub extends React.Component {
 		}
 		const div = document.getElementById(data.id);
 		div.classList.add("highlightedHero");
-		if(selectedHero === "kaladinH"){
+		if(selectedHero === "youberHero"){
 			this.setState({
-				heroSelect: kaladinH,
-				attack: kaladinH.attack
+				heroSelect: youberHero,
+				attack: youberHero.attack
 			}, () => {
-				this.changeHeroHp(kaladinH.hp);
-				player = kaladinH;
+				this.changeHeroHp(youberHero.hp);
+				player = youberHero;
 			});
 		}else{}
 	}
@@ -2421,7 +2421,7 @@ class GameScreenHub extends React.Component {
 			{this.state.characterSelectScreen ? <CharacterSelectScreen error={this.displayErrorMessage} getUserData={this.getUserData} writeUserData={this.writeUserData} goToLevelScreen={this.goToLevelScreen} score={this.state.score} createNewCharacter={this.createNewCharacter} influence={this.state.influence} shield={this.state.heroShield} spheres={this.state.sphereCount} attack={this.state.attack} playerHero={playerHero} switchEnemyArray={this.switchEnemyArray} goToEquipmentScreen={this.goToEquipmentScreen} heroHp={this.state.heroHp} showCollection={this.showCollection} changeHero={this.changeHero} goToGameScreen={this.goToGameScreen} changeInfluence={this.changeInfluence} /> : null }
 			{this.state.levelSelectScreen ? <LevelSelectScreen error={this.displayErrorMessage} goToCharacterScreen={this.goToCharacterScreen} goToGameScreen={this.goToGameScreen} switchEnemyArray={this.switchEnemyArray} /> : null }
 			{this.state.gameScreen ? <GameScreen error={this.displayErrorMessage} clearSupRewards={this.clearSupRewards} gainSupGemReward={this.gainSupGemReward} gainSupCardReward={this.gainSupCardReward} toggleInfoScreen={this.toggleInfoScreen} characterScreen={this.goToCharacterScreen} changeHeroShield={this.changeHeroShield} changeHeroAttack={this.changeHeroAttack} changeInfluence={this.changeInfluence} influence={this.state.influence} int={this.state.heroSelect.intelligence} shield={this.state.heroShield} switchEnemyArray={this.switchEnemyArray} increaseStormCounter={this.increaseStormCounter} decreaseStormCounter={this.decreaseStormCounter} stormCounter={this.state.stormCounter} changeHeroHp={this.changeHeroHp} heroHp={this.state.heroHp} score={this.state.score} setSpheres={this.setSphereCount} changeScore={this.changeScore} aux={this.auxilaryScreen} heroSelect={this.state.heroSelect} attack={this.state.attack} equipment={this.state.equipment} enemyArray={this.state.enemyArray} /> : null }
-			{this.state.auxilaryScreen ? <AuxilaryScreen error={this.displayErrorMessage} clearSupRewards={this.clearSupRewards} supGemRewards={this.state.supGemRewards} supCardRewards={this.state.supCardRewards} goToEndingScreen={this.goToEndingScreen} changeInfluence={this.changeInfluence} influence={this.state.influence} setSphereCount={this.setSphereCount} score={this.state.score} resetStormCounter={this.resetStormCounter} showCollection={this.showCollection} goToCharacterScreen={this.goToCharacterScreen} /> : null }
+			{this.state.auxilaryScreen ? <AuxilaryScreen error={this.displayErrorMessage} changeHeroHp={this.changeHeroHp} heroHp={this.state.heroHp} clearSupRewards={this.clearSupRewards} supGemRewards={this.state.supGemRewards} supCardRewards={this.state.supCardRewards} goToEndingScreen={this.goToEndingScreen} changeInfluence={this.changeInfluence} influence={this.state.influence} setSphereCount={this.setSphereCount} score={this.state.score} resetStormCounter={this.resetStormCounter} showCollection={this.showCollection} goToCharacterScreen={this.goToCharacterScreen} /> : null }
 			{this.state.collectionScreen ? <CollectionScreen error={this.displayErrorMessage} toggleInfoScreen={this.toggleInfoScreen} goToCraftingScreen={this.goToCraftingScreen} checkDeckContents={this.checkDeckContents} /> : null }
 			{this.state.equipmentScreen ? <EquipmentScreen error={this.displayErrorMessage} changeScore={this.changeScore} score={this.state.score} itemArray={this.state.itemArray} heroShield={this.state.heroShield} spheres={this.state.sphereCount} setSphereCount={this.setSphereCount} playerHero={playerHero} chooseItemAction={this.chooseItemAction} attack={this.state.attack} goToCharacterScreen={this.goToCharacterScreen} /> : null }
 			{this.state.craftingScreen ? <CraftingScreen error={this.displayErrorMessage} toggleInfoScreen={this.toggleInfoScreen} showCollection={this.showCollection} /> : null}
@@ -3385,8 +3385,7 @@ class GameScreen extends React.Component {
 				});
 			}else if(checkAbility.indexOf("finesse") >=0){
 				var finesseNum = parseInt(checkAbility.split(" ")[1]);
-				console.log(cardPower + finesseNum);
-				if(enemyArray[currentEnemy].hp <= (cardPower + finesseNum) && enemyArray[currentEnemy].hp >= (cardPower - finesseNum)){
+				if(enemyArray[currentEnemy].hp <= (newAttack + finesseNum) && enemyArray[currentEnemy].hp >= (newAttack - finesseNum)){
 					finesseAttack = enemyArray[currentEnemy].hp;
 				}else{
 					finesseAttack = newAttack;
@@ -4848,6 +4847,11 @@ class AuxilaryScreen extends React.Component {
 			this.props.goToEndingScreen();
 		}else{
 			levelsBeaten.push(level);
+			if(levelsBeaten.length < 4){
+				youberHero.hp = youberHero.hp + 5;
+			}else{
+				youberHero.hp = youberHero.hp + 10;
+			}
 			cardArray = cardArray2;
 			this.setState({
 				rewardCards: [],
