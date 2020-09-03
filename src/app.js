@@ -2725,6 +2725,8 @@ class CharacterSelectScreen extends React.Component {
 							<button className="saveButton" onClick={this.props.getUserData}>Load</button>
 						</div>
 					</div>
+					<div className="row"><a target="_blank" href="https://github.com/MicahIsley/blastaar/blob/old-state/README.md">9/3 Patch Notes</a>
+					</div>
 				</div>
 			</div>
 		)
