@@ -1895,7 +1895,7 @@ var cardArray2 = [];
 var recruitArray = [];
 var collectionArray = [basic1, basic2, basic3, basic4, basic6, basic7, basic8, basic9, basic15, basic19];
 var cardFrames = [];
-var elementOrbs = [];
+var elementOrbs = [fire, fire, fire];
 var multiplier = 1;
 var allies = [];
 var meterArray = [meter0, meter1, meter2, meter3, meter4, meter5, meter6, meter7, meter8, meter9, meter10, meter11, meter12];
@@ -5344,12 +5344,7 @@ class CraftingScreen extends React.Component {
 			if(craftedCard.craft > 0){
 				var newCard = eval(this.state.element[1] + craftedCard.craft);
 				var a = collectionArray.findIndex(x => x.name === craftedCard.name);
-				if(collectionArray[a].ownedNum > 1){
-					collectionArray[a].ownedNum --;
-					collectionArray[a].deckNum --;
-				}else{
-					collectionArray.splice(a, 1);
-				}
+				collectionArray[a].deckNum --;
 				var alreadyUnlocked = false;
 				for(var i=0; i<collectionArray.length; i++){
 					if(collectionArray[i].name === newCard.name){
@@ -5362,7 +5357,6 @@ class CraftingScreen extends React.Component {
 					collectionArray.push(newCard);
 				}else{
 					var c = collectionArray.findIndex(x => x.name === newCard.name);
-					collectionArray[c].ownedNum ++;
 					collectionArray[c].deckNum ++;
 				}
 				/*var b = cardArray.findIndex(x => x.name === craftedCard.name);
