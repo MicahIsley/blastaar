@@ -5,8 +5,6 @@ import shield from './assets/icons/shield.png';
 
 const itemSource = {
   beginDrag(props) {
-    console.log(props.power);
-    console.log('dragging');
     return props;
   },
   endDrag(props, monitor, component) {

@@ -17,7 +17,7 @@ class FrameTarget extends Component {
     return connectDropTarget(
       <div className={`col-xs-12 craftCard ${this.props.faction}`}>
         <div className="row">
-          <div className="col-xs-offset-4 col-xs-4 cardPower">{this.props.power}</div>
+          <div className="col-xs-offset-5 col-xs-4 cardPower targetCardPower">{this.props.power}</div>
         </div>
         <div className="row craftingCardName">{this.props.name}</div>
         <div className="row cardText">
