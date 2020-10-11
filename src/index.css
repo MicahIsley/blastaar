@@ -1058,7 +1058,7 @@ input {
 
 .hero:hover {
 	transform:  scale(1.3);
-	z-index: 2;
+	z-index: 3;
 }
 
 .hero2 {
@@ -1174,6 +1174,10 @@ input {
 .spooky {
 	background: radial-gradient(black, white);
 	border-color: black;
+}
+
+.greyScale {
+	filter: grayscale(100%);
 }
 
 .sphere {

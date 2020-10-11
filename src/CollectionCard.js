@@ -38,6 +38,7 @@ class CollectionCard extends React.Component {
     var cardSym;
     var cardText;
     var regularText;
+    var ownedNum;
     if(this.props.text.indexOf("Rummage") >= 0 ){
       cardSym = rummageSym;
       cardText = parseInt(this.props.text.match(/\d+/)[0]);
@@ -73,11 +74,14 @@ class CollectionCard extends React.Component {
     }else if(charCard === "sphere"){
       sphereCard = true;
     }
+    if(this.props.numberOwned === 0){
+      ownedNum = "greyScale";
+    }else{}
     const { isDragging, connectDragSource, item } = this.props;
     const opacity = isDragging ? 0 : 1;
 
     return connectDragSource(
-      <div className={`col-xs-12 ${this.props.className} ${cardStyle} ${rarity}`} style={{ opacity }} onDoubleClick = {() => { this.props.showCraftTree(this.props.craft)}}>
+      <div className={`col-xs-12 ${this.props.className} ${cardStyle} ${rarity} ${ownedNum}`} style={{ opacity }} onDoubleClick = {() => { this.props.showCraftTree(this.props.craft)}}>
         { sphereCard === false &&
           <div className="row">
             <div className="col-xs-offset-4 col-xs-4 cardPower"><span className="cardPowerNum">{this.props.power}</span></div>
