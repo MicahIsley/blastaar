@@ -43,7 +43,7 @@ class CollectionCard extends React.Component {
       cardSym = rummageSym;
       cardText = parseInt(this.props.text.match(/\d+/)[0]);
       regularText = null;
-    }else if(this.props.text.indexOf("Shield") >= 0 ){
+    }else if(this.props.text.indexOf("Ward") >= 0 ){
       cardSym = shield;
       cardText = parseInt(this.props.text.match(/\d+/)[0]);
       regularText = null;
@@ -51,6 +51,9 @@ class CollectionCard extends React.Component {
       cardSym = null;
       regularText = true;
     }
+    if(this.props.cost > 0){
+      influenceCost = true;
+    }else{}
     console.log(this.props.rarity);
     if(this.props.rarity === 1){
       rarity = "common";

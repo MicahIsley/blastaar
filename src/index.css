@@ -62,6 +62,11 @@ body {
 	font-size: 24px;
 }
 
+.cardSym {
+	height: 43px;
+    width: 82px;
+}
+
 #keywordCol {
 	height: 550px;
 	overflow: scroll;

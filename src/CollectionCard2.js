@@ -60,7 +60,7 @@ class CollectionCard2 extends React.Component {
       cardSym = rummageSym;
       cardText = parseInt(this.props.text.match(/\d+/)[0]);
       regularText = null;
-    }else if(this.props.text.indexOf("Shield") >= 0 ){
+    }else if(this.props.text.indexOf("Ward") >= 0 ){
       cardSym = shield;
       cardText = parseInt(this.props.text.match(/\d+/)[0]);
       regularText = null;
@@ -75,6 +75,9 @@ class CollectionCard2 extends React.Component {
     }else{
       rarity = "rare"
     }
+    if(this.props.cost > 0){
+      influenceCost = true;
+    }else{}
     if(charCard === "support"){
       influenceCost = true;
       cardStyle = this.props.faction + "Support";
@@ -120,7 +123,6 @@ class CollectionCard2 extends React.Component {
               { influenceCost === true &&
                 <div className="row hoverBottomRow">
                   <div className="col-xs-4 influenceCost">{this.props.cost}</div>
-                  <div className="col-xs-offset-4 col-xs-4"><img className="iconImg" src={this.props.icon} alt="icon" /></div>
                 </div>
               }
               </div>
