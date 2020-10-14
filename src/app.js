@@ -22,6 +22,8 @@ import decoySym from './assets/icons/decoySym.png';
 import desert from './assets/icons/desert.png';
 import earth from './assets/icons/earth.png';
 import empty from './assets/icons/empty.png';
+import exhaustedSym from './assets/icons/exhaustedSym.png';
+import extraSym from './assets/icons/extraSym.png';
 import fire from './assets/icons/fire.png';
 import heart from './assets/icons/heart.png';
 import int from './assets/icons/int.png';
@@ -165,7 +167,7 @@ var sabotoge4 = new CardCon("Steamed", 0, -5, "Super way too hot", "enemy", 0, "
 
 var crafting1 = new CardCon("------", 0, 0, " ", "hero", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 0, 1, 0);
 
-var basic1 = new CardCon("Small Rock", 0, 2, "It's pretty small.", "hero", 1, "extra 2", "decoy", false, "stormlight", placeholderImg, placeholderImg, "neutral", 1, 0, 4);
+var basic1 = new CardCon("Small Rock", 0, 2, "It's pretty small.", "hero", 1, "", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 1, 0, 4);
 var basic2 = new CardCon("Big Rock", 0, 4, "It's pretty big.", "hero", 1, "", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 2, 0, 3);
 var basic3 = new CardCon("Biggest Blast", 0, 6, "Whaaam.", "hero", 2, "", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 3, 0, 1); 
 var basic4 = new CardCon("Thick Skin", 0, 2, "Ward 2.", "hero", 1, "ward 2", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 4, 0, 2);
@@ -182,7 +184,7 @@ var basic14 = new CardCon("Thoughful Study", 0, 0, "Rummage 4.", "hero", 1, "rum
 var basic15 = new CardCon("Crippling Shot", 0, 1, "Weaken 1.", "hero", 1, "weaken 1", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 15, 0, 1);
 var basic16 = new CardCon("Goop", 0, 0, "Maybe Later.", "hero", 3, "", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 16, 0, 0);
 var basic17 = new CardCon("Something", 0, 4, "Something.", "hero", 1, "", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 17, 0, 0);
-var basic18 = new CardCon("Magic Rock", 0, 3, "Looks like it should turn into something.", "hero", 3, "", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 18, 0, 0);
+var basic18 = new CardCon("Magic Rock", 0, 3, "Looks like it should turn into something.", "hero", 3, "", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 18, 0, 1);
 var basic19 = new CardCon("Magic Rock", 0, 3, "Looks like it should turn into something.", "hero", 3, "", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 18, 0, 0);
 var basic20 = new CardCon("Magic Rock", 0, 3, "Looks like it should turn into something.", "hero", 3, "", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 18, 0, 0);
 //var basic19 = new CardCon("Plot", 1, 0, "Scheme.", "hero", 2, "scheme neutral 2 4", 1, false, "character", placeholderImg, placeholderImg, "neutral", 19, 0, 0);
@@ -379,7 +381,7 @@ var desert13 = new CardCon("Dust Rage", 0, 7, "Decoy.", "hero", 0, "decoy", "", 
 var desert14 = new CardCon("Dune Speed", 0, 3, "Extra.", "hero", 0, "extra 1", "", false, "stormlight", placeholderImg, desert, "desert", 14, 0, 0);
 var desert15 = new CardCon("Rush of Magic", 0, 0, "Extra 2.", "hero", 0, "extra 2", "", false, "stormlight", placeholderImg, desert, "desert", 15, 0, 0);
 var desert16 = new CardCon("Never Tire", 0, 2, "Extra. Multiply.", "hero", 0, "extra 1", "multiply", false, "stormlight", placeholderImg, desert, "desert", 16, 0, 0);
-var desert17 = new CardCon("Painful Illusion", 2, 2, "Extra 3.", "hero", 0, "extra 3", "", false, "stormlight", placeholderImg, desert, "desert", 17, 0, 1);
+var desert17 = new CardCon("Painful Illusion", 2, 2, "Extra 3.", "hero", 0, "extra 3", "", false, "stormlight", placeholderImg, desert, "desert", 17, 0, 0);
 var desert18 = new CardCon("Sun Gem", 1, 3, "Draw +3. Next +3.", "hero", 0, "int 3", "next 3", false, "stormlight", placeholderImg, desert, "desert", 18, 0, 0);
 var desert19 = new CardCon("Magic Rock", 0, 3, "Looks like it should turn into something.", "hero", 3, "", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 18, 0, 0);
 var desert20 = new CardCon("Magic Rock", 0, 3, "Looks like it should turn into something.", "hero", 3, "", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 18, 0, 0);
@@ -1920,7 +1922,7 @@ var cardAbilityNum = 1;
 var factionBoost = 0;
 var itemArray = [rustySword, battleSpear, shardblade, leatherPads, parshendiCarapace, shardplate];
 var enemyArray = [];
-var cardArray = [basic1, basic2, basic3, basic4, basic6, basic7, basic8, basic9, basic15, desert17];
+var cardArray = [basic1, basic2, basic3, basic4, basic6, basic7, basic8, basic9, basic15, basic18];
 var cardArray2 = [];
 var recruitArray = [];
 var collectionArray = [];
@@ -2260,7 +2262,11 @@ class GameScreenHub extends React.Component {
 		});
 	}
 	checkDeckContents(){
-		if(cardArray.length < 20){
+		var deckNumber = 0;
+		for(var i=0; i<cardArray.length; i++){
+			deckNumber = cardArray[i].deckNum + deckNumber;
+		}
+		if(deckNumber < 20){
 			this.displayErrorMessage("Must have at least 20 cards in your deck.");
 		}else{
 			this.goToCharacterScreen();
@@ -4155,7 +4161,7 @@ class GameScreen extends React.Component {
 						<div className="row">
 							<div className="col-xs-offset-4 col-xs-4">
 								{/*<SpookyMeter spookLevel={this.state.spookLevel} /> */}
-								<EffectsRow extra={this.state.extraAttacks} next={this.state.nextSpellBonus} decoy={this.state.decoy} shield={this.state.playerShield} magic={this.props.attack} rummage={this.state.researchNum} />
+								<EffectsRow exhausted={this.state.exhausted} extra={this.state.extraAttacks} next={this.state.nextSpellBonus} decoy={this.state.decoy} shield={this.state.playerShield} magic={this.props.attack} rummage={this.state.researchNum} />
 							</div>
 						</div>
 						<div className="row" id="characterSide tabIndex" onKeyDown={this.handleKeyPress}>
@@ -4198,8 +4204,11 @@ class EffectsRow extends React.Component {
 			currentEffects.push({image: rummageSym, number: this.props.rummage, type: "rummageOrb"});
 		}else{}
 		if(this.props.extra > 0){
-			currentEffects.push({image: "extraSym", number: this.props.extra, type: "extraOrb"});
-		}
+			currentEffects.push({image: extraSym, number: this.props.extra, type: "extraOrb"});
+		}else{}
+		if(this.props.exhausted === true){
+			currentEffects.push({image: exhaustedSym, number: null, type: "exhaustedOrb"});
+		}else{}
 		const listEffects = currentEffects.map((effect, index) =>
 			<Effect key={index} id={index} image={effect.image} number={effect.number} type={effect.type} />
 		);
