@@ -1364,6 +1364,12 @@ input {
     left: 37%;
 }
 
+.cardPowerNum2 {
+	position: absolute;
+    top: 14%;
+    left: 23%;
+}
+
 .deckCardPower {
 	color: white;
 	background-image: url(assets/icons/power.png);
