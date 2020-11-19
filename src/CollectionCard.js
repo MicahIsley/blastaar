@@ -40,6 +40,7 @@ class CollectionCard extends React.Component {
     var regularText;
     var ownedNum;
     var cardNumberClass = "cardPowerNum";
+    console.log(this.props);
     if(this.props.text.indexOf("Rummage") >= 0 ){
       cardSym = rummageSym;
       cardText = parseInt(this.props.text.match(/\d+/)[0]);
@@ -72,6 +73,7 @@ class CollectionCard extends React.Component {
     }else if(charCard === "support"){
       influenceCost = true;
       cardStyle = this.props.faction + "Support";
+      sphereCard = true;
     }else if(charCard === "stormlight"){
       stormlightCost = true;
       cardStyle = this.props.faction;
@@ -91,24 +93,31 @@ class CollectionCard extends React.Component {
     return connectDragSource(
       <div className={`col-xs-12 ${this.props.className} ${cardStyle} ${rarity} ${ownedNum}`} style={{ opacity }} onDoubleClick = {() => { this.props.showCraftTree(this.props.craft)}}>
         { sphereCard === false &&
-          <div className="row">
-            <div className="col-xs-offset-4 col-xs-4 cardPower"><span className={cardNumberClass}>{this.props.power}</span></div>
-            <div className="col-xs-3 numberOwned">{this.props.numberOwned}</div>
+          <div>
+            <div className="row">
+              <div className="col-xs-offset-4 col-xs-4 cardPower"><span className={cardNumberClass}>{this.props.power}</span></div>
+              <div className="col-xs-3 numberOwned">{this.props.numberOwned}</div>
+            </div>
+            <div className="row cardName">{this.props.name}</div>
           </div>
         }
-        <div className="row cardName">{this.props.name}</div>
         { sphereCard === true &&
           <div className="row">
-            <div className={`col-xs-offset-4 col-xs-4 sphereIcon ${this.props.ability}`}></div>
+            <div className="col-xs-12">
+              <div className="row">
+                <div className="col-xs-3 numberOwned">{this.props.numberOwned}</div>
+              </div>
+              <div className="row">
+                <img className="monsterPic" src={this.props.image} alt="monsta" />
+              </div>
+            </div>
           </div>
         }
-        { sphereCard === false &&
-          <div className="row cardText">
-            { cardSym ? <img src={cardSym} className="col-xs-8 cardSym" /> : null }
-            { cardSym ? <div className="col-xs-4 cardSymNum">{cardText}</div> : null }
-            { regularText ? <div className="col-xs-12">{this.props.text}</div> : null }
-          </div>
-        }
+        <div className="row cardText">
+          { cardSym ? <img src={cardSym} className="col-xs-8 cardSym" /> : null }
+          { cardSym ? <div className="col-xs-4 cardSymNum">{cardText}</div> : null }
+          { regularText ? <div className="col-xs-12">{this.props.text}</div> : null }
+        </div>
         <div className="row schemeRow">
           <div className="col-xs-12">
           { scheme === true &&
@@ -121,12 +130,12 @@ class CollectionCard extends React.Component {
         </div>
         <div className="row bottomRow">
         { influenceCost === true &&
-          <div className="col-xs-4 influenceCost">{this.props.cost}</div>
+          <div className="col-xs-3 influenceCost">{this.props.cost}</div>
         }
         { stormlightCost === true &&
-          <div className="col-xs-4"></div>
+          <div className="col-xs-3"></div>
         }
-          <div className="col-xs-offset-4 col-xs-4"><img className="iconImg" src={this.props.icon} alt="icon" /></div>
+          <div className="col-xs-offset-5 col-xs-4"><img className="iconImg" src={this.props.icon} alt="icon" /></div>
         </div>
       </div>
     )

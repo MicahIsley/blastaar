@@ -81,6 +81,7 @@ class CollectionCard2 extends React.Component {
     if(charCard === "support"){
       influenceCost = true;
       cardStyle = this.props.faction + "Support";
+      sphereCard = true;
     }if(charCard === "character"){
       scheme = true;
       influenceCost = true;
@@ -107,6 +108,9 @@ class CollectionCard2 extends React.Component {
         </div>
         { this.state.hover === true &&
           <div className="expandedCard col-xs-12">
+            { sphereCard === true &&  
+              <img src={this.props.image} className="expandMonsterImage" alt="monsta" />
+            }
             <div className="row cardText">
             { cardSym ? <img src={cardSym} className="col-xs-8 cardSym" /> : null }
             { cardSym ? <div className="col-xs-4 cardSymNum">{cardText}</div> : null }
@@ -122,7 +126,7 @@ class CollectionCard2 extends React.Component {
               }
               { influenceCost === true &&
                 <div className="row hoverBottomRow">
-                  <div className="col-xs-4 influenceCost">{this.props.cost}</div>
+                  <div className="col-xs-3 influenceCost">{this.props.cost}</div>
                 </div>
               }
               </div>
