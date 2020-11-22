@@ -2,6 +2,11 @@ body {
 	background: #232323;
 }
 
+.titleDesigns {
+	background-image: url('assets/backgrounds/titleDesigns.png');
+	height: 100vh;
+}
+
 .endingText {
 	color: white;
 	font-family: 'Metamorphous', cursive;
@@ -194,8 +199,10 @@ body {
 }
 
 #mainTitle {
+	margin-top: 8%;
 	height: 250px;
     width: 400px;
+    margin-bottom: 25px;
 }
 
 .mainScore {
@@ -217,18 +224,22 @@ body {
 }
 
 .levelChoice {
-	background: #a9a9a9;
-	font-size: 24px;
-	text-align: center;
+	background: #00000059;
+	background-size: contain;
+	height: 115px;
+	width: 115px;
+	border-radius: 15px;
+	border-color: black;
+	border-width: 5px;
 	border-style: solid;
-	border-width: 3px;
-	border-color: #444444;
-	border-radius: 5px;
-	font-family: 'Metamorphous', cursive;
 }
 
 .levelChoice:hover {
-	border-color: black;
+	border-color: white;
+}
+
+.levelSymbol {
+	height: 115px;
 }
 
 .levelChoiceRow {
@@ -237,24 +248,46 @@ body {
 
 #fireLevel {
 	position: absolute;
-	left: 50px;
+	top: 100px;
+	left: 150px;
+	background-image: url('assets/icons/fire.png');
+}
+
+#fireLevel:hover {
+	background-image: url('assets/icons/fireHover.png');
 }
 
 #waterLevel {
 	position: absolute;
-	top: 505px;
-    left: 850px;
+	top: 450px;
+    left: 1000px;
+    background-image: url('assets/icons/water.png');
+}
+
+#waterLevel:hover {
+	background-image: url('assets/icons/waterHover.png');
 }
 
 #windLevel {
 	position: absolute;
-	top: 505px;
-    left: 50px;
+	top: 450px;
+    left: 150px;
+    background-image: url('assets/icons/wind.png');
+}
+
+#windLevel:hover {
+	background-image: url('assets/icons/windHover.png');
 }
 
 #earthLevel {
 	position: absolute;
-	left: 850px;
+	top: 100px;
+	left: 950px;
+	background-image: url('assets/icons/earth.png');
+}
+
+#earthLevel:hover {
+	background-image: url('assets/icons/earthHover.png');
 }
 
 #lavaLevel {
@@ -293,11 +326,7 @@ body {
 }
 
 .selectedLevel {
-	border-style: solid;
-	border-color: black;
-	border-width: 3px;
-	background: black;
-	color: white;
+	border-color: white;
 }
 
 .packOption {
