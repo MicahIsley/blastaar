@@ -15,6 +15,38 @@ body {
 	margin-top: 100px;
 }
 
+.highScore {
+	background: orange;
+	font-size: 24px;
+	font-family: 'Metamorphous', cursive;
+	margin-top: 5%;
+	border-radius: 15px;
+	border-color: red;
+	border-width: 5px;
+	border-style: solid;
+}
+
+#trophyImg {
+	height: 50px;
+}
+
+#patchNotes {
+	margin-top: 150px;
+}
+
+#highScoreTitle {
+	font-size: 36px;
+	font-family: 'Metamorphous', cursive;
+	text-align: center;
+}
+
+.scoreTitle {
+	background: orange;
+	font-size: 28px;
+	font-family: 'Metamorphous', cursive;
+	font-weight: bolder;
+}
+
 .spookyMeter {
 	width: 100%;
 }
@@ -56,7 +88,7 @@ body {
 }
 
 #errorMessage {
-	position: absolute;
+	position: fixed;
 	z-index: 9;
 	margin-top: 20%;
 	margin-left: 35%;
@@ -121,6 +153,20 @@ body {
 
 .infoButton:hover {
 	background: white;
+}
+
+#saveIcon {
+	height: 50px;
+}
+
+#saveBox {
+	z-index: 2;
+	position: fixed;
+	background: #b35b23;
+	right: 5px;
+	border-color: #a70e0e;
+	border-radius: 3px;
+	border-style: solid;
 }
 
 .saveButton {
@@ -199,7 +245,7 @@ body {
 }
 
 #mainTitle {
-	margin-top: 8%;
+	margin-top: 6%;
 	height: 250px;
     width: 400px;
     margin-bottom: 25px;
@@ -207,7 +253,13 @@ body {
 
 .mainScore {
 	font-family: 'Metamorphous', cursive;
-	font-size: 20px;
+	font-size: 18px;
+	background: #9c9c9c;
+	margin-top: 15px;
+	border-radius: 15px;
+	border-color: #ceb927;
+	border-width: 2px;
+	border-style: solid;
 }
 
 .schemeCounter {
@@ -236,6 +288,12 @@ body {
 
 .levelChoice:hover {
 	border-color: white;
+}
+
+#tutorialLevel {
+	height: auto;
+	width: auto;
+	box-shadow: none;
 }
 
 .levelSymbol {
@@ -292,25 +350,45 @@ body {
 
 #lavaLevel {
 	position: absolute;
-	left: 405px;
+	left: 575px;
+	background-image: url('assets/icons/lava.png');
+}
+
+#lavaLevel:hover {
+	background-image: url('assets/icons/lavaHover.png');
 }
 
 #stormLevel {
 	position: absolute;
-	top: 600px;
-    left: 405px;
+	top: 515px;
+    left: 600px;
+    background-image: url('assets/icons/storm.png');
+}
+
+#stormLevel:hover {
+	background-image: url('assets/icons/stormHover.png');
 }
 
 #desertLevel {
 	position: absolute;
 	top: 300px;
-    left: 180px;
+    left: 400px;
+    background-image: url('assets/icons/desert.png');
+}
+
+#desertLevel:hover {
+	background-image: url('assets/icons/desertHover.png');
 }
 
 #mudLevel {
 	position: absolute;
 	top: 300px;
-    left: 560px;
+    left: 725px;
+    background-image: url('assets/icons/mud.png');
+}
+
+#mudLevel:hover {
+	background-image: url('assets/icons/mudHover.png');
 }
 
 #towerLevel {
@@ -318,11 +396,80 @@ body {
 	top: 400px;
 }
 
+#trophyButton {
+	height: 50px;
+	background-size: contain;
+	background-image: url('assets/icons/trophy.png');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#trophyButton:hover {
+	background-image: url('assets/icons/trophyHover.png');
+}
+
+#saveButton {
+	height: 50px;
+	background-size: contain;
+	background-image: url('assets/icons/save.png');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#saveButton:hover {
+	background-image: url('assets/icons/saveHover.png');
+}
+
 #levelChoiceTitle {
 	text-align: center;
 	font-size: 24px;
 	font-family: 'Metamorphous', cursive;
 	background: #ffffff6e;
+}
+
+#defeatRow {
+	height: 100vh;
+	overflow: hidden;
+}
+
+#toogerShadow {
+	background-image: url('assets/tower/toogerShadow.png');
+	height: 500px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 30%;
+    -webkit-animation: animate 5s ease-in;
+}
+
+@-webkit-keyframes animate {
+  from { 
+    height: 500px;
+    margin-left: 28%;
+  }
+  to {
+    height: 1000px;
+    margin-left: 10%;
+  } 
+}
+@keyframes animate {
+  from { 
+    height: 500px;
+    margin-left: 28%;
+  }
+  to {
+    height: 1000px;
+    margin-left: 10%;
+  } 
+}
+
+#defeatTitle {
+	color: white;
+	font-size: 55px;
+	font-family: 'Metamorphous', cursive;
+	position: absolute;
+	z-index: 2;
+	top: 40%;
+    left: 42%;
 }
 
 .selectedLevel {
@@ -355,12 +502,13 @@ body {
 	left: 25%;
 	top: 15%;
 	z-index: 4;
-	height: 400px;
-	width: 600px;
+	height: 350px;
+	width: 500px;
 	border-style: solid;
 	border-color: black;
 	border-width: 3px;
-	background: white;
+	background: #ffffffbd;
+	border-radius: 15px;
 	padding: 15px;
 	font-size: 24px;
 }
@@ -371,8 +519,8 @@ body {
 
 #tutorialButtonRow {
 	position: absolute;
-	bottom: 30px;
-	width: 600px;
+	bottom: 80px;
+	width: 500px;
 }
 
 #tutorialMessageButton {
@@ -668,7 +816,7 @@ body {
 }
 
 #gameScreenBackground {
-	background-image: url('assets/backgrounds/backgroundTree.png'), url('assets/backgrounds/grassBackground.png');
+	background-image: url('assets/backgrounds/grassBackground.png');
 	background-repeat: no-repeat;
 }
 

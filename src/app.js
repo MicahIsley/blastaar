@@ -34,9 +34,11 @@ import lava from './assets/icons/lava.png';
 import mud from './assets/icons/mud.png';
 import power from './assets/icons/power.png';
 import rummageSym from './assets/icons/rummageSym.png';
+import save from './assets/icons/save.png';
 import shield from './assets/icons/shield.png';
 import spooky from './assets/icons/spooky.png';
 import storm from './assets/icons/storm.png';
+import trophy from './assets/icons/trophy.png';
 import water from './assets/icons/water.png';
 import wind from './assets/icons/wind.png';
 import mainTitle from './assets/backgrounds/mainTitle.png';
@@ -114,6 +116,7 @@ import sinisterSloop from './assets/tower/sinisterSloop.png';
 import soulShredder from './assets/tower/soulShredder.png';
 import superPincher from './assets/tower/superPincher.png';
 import tooger from './assets/tower/tooger.png';
+import toogerShadow from './assets/tower/toogerShadow.png';
 import albinoSlapper from './assets/water/albinoSlapper.gif';
 import budleFairy from './assets/water/budleFairy.gif';
 import caveThump from './assets/water/caveThump.gif';
@@ -2031,6 +2034,7 @@ var itemArray = [rustySword, battleSpear, shardblade, leatherPads, parshendiCara
 var enemyArray = [];
 var cardArray = [neutral1, neutral2, neutral3, neutral4, neutral5, neutral6, neutral7, neutral8, neutral12, neutral17];
 var cardArray2 = [];
+var tutorialDeckSave;
 var recruitArray = [];
 var collectionArray = [];
 var cardFrames = [];
@@ -2038,7 +2042,7 @@ var elementOrbs = [];
 var multiplier = 1;
 var allies = [];
 var meterArray = [meter0, meter1, meter2, meter3, meter4, meter5, meter6, meter7, meter8, meter9, meter10, meter11, meter12];
-var levelsBeaten = ["tutorial"];
+var levelsBeaten = ["tutorial", "fire", "water", "earth", "wind"];
 var keyWordList = [{keyword: "finesse", description: "Change power by X to exactly kill an enemy"}, {keyword: "ward", description: "Ward blocks enemy damage and sabotoges."}, {keyword: "purge", description: "Removes an enemy sabotoge from your deck."}, {keyword: "weaken", description: "Reduces an enemies strength"}, {keyword: "exhausted", description: "Enemies attack twice in a row"}, {keyword: "stun", description: "Stunned enemies miss their next attack"}, {keyword: "poison", description: "Damage delt at the end of the turn"}, {keyword: "confuse", description: "Confused enemies attack a random enemy"}, {keyword: "grow", description: "The card gains power each time it is used"}, {keyword: "scheme", description: "Schemes are played to one of your support areas and then are charged up over time providing an effect once completed"}, {keyword: "heal", description: "Restore health to your character"}, {keyword: "reclaim", description: "Increase the power of all enemy sabotoges in your deck"}, {keyword: "int", description: "How many cards your draw when attacking"}, {keyword: "def", description: "The number of shields you have at the start of every turn."}, {keyword: "str", description: "Added damage to each attack"}, {keyword: "rummage", description: "Switch a card with a random card from your deck."}, {keyword: "multiply", description: "Double the damage you would deal this turn."}, {keyword: "decoy", description: "Avoid all sabotoges this turn."}, {keyword: "energy", description: "Gain energy to use for other purposes."}, {keyword: "next", description: "Add power to the next card you choose."}, {keyword: "add", description: "Shuffle a number of new cards into your deck."}, {keyword: "remove", description: "The card gets removed from your deck after you select it"}, {keyword: "extra", description: "Attack again after this one."}, /*{keyword: "deplete", description: "Remove a sabotoge from the selected enemy."},*/ {keyword: "factionBoost", description: "Gains power for each card of the same type played."}, /*{keyword: "spooky", description: "Increase the chances of getting a creature's card."},*/ {keyword: "transform", description: "Turn an emeny sabotoge in your deck into another card."}, {keyword: "all", description: "Deal damage to all enemies."}];
 var finesseAttack; 
 var levelEnemyNum = 2;
@@ -2070,6 +2074,8 @@ class GameScreenHub extends React.Component {
 			miningGame: false,
 			craftingScreen: false,
 			levelSelectScreen: false,
+			playerDeathScreen: false,
+			highScoreScreen: false,
 			attack: 1,
 			heroShield: 2,
 			equipment: null,
@@ -2084,7 +2090,8 @@ class GameScreenHub extends React.Component {
 			supGemRewards: [],
 			errorMessage: null,
 			developers: [],
-			bossStats: null
+			bossStats: null,
+			highScores: []
 		}
 		this.changeHero = this.changeHero.bind(this);
 		this.goToGameScreen = this.goToGameScreen.bind(this);
@@ -2120,6 +2127,24 @@ class GameScreenHub extends React.Component {
 		this.clearSupRewards = this.clearSupRewards.bind(this);
 		this.displayErrorMessage = this.displayErrorMessage.bind(this);
 		this.removeErrorMessage = this.removeErrorMessage.bind(this);
+		this.playerDeathScreen = this.playerDeathScreen.bind(this);
+		this.highScoreScreen = this.highScoreScreen.bind(this);
+	}
+	componentDidMount(){
+		var updatedScores = [];
+		var ref = Firebase.database().ref();
+		ref.on('value', function(snapshot) {
+			snapshot.forEach(function(user){
+				var data =(user.val());
+				console.log(data[0].name);
+				updatedScores.push({name: data[0].name, score: data[0].score});
+			});
+		});
+		this.setState({
+			highScores: updatedScores
+		}, () => {
+			console.log(this.state.highScores);
+		});
 	}
 	writeUserData(){
 		var user = document.getElementById("saveName").value;
@@ -2129,7 +2154,7 @@ class GameScreenHub extends React.Component {
 		}else if(user === "super" || user === "super1" || user === "super2"){
 			this.displayErrorMessage("Pick a different name");
 		}else{
-			var userSaveData = {name: user, collectionArray: collectionArray, levels: levelsBeaten};
+			var userSaveData = {name: user, collectionArray: collectionArray, levels: levelsBeaten, score: this.state.score};
 			var saveDataArray = this.state.developers;
 			for(var i=0; i<saveDataArray.length; i++){
 				if(saveDataArray[i].name === user){
@@ -2137,7 +2162,6 @@ class GameScreenHub extends React.Component {
 				}else{}
 			}
 			saveDataArray.push(userSaveData);
-			console.log(userSaveData);
 			this.setState({
 				developers: saveDataArray
 
@@ -2162,10 +2186,10 @@ class GameScreenHub extends React.Component {
 	    		this.displayErrorMessage("No Save Data");
 	    	}else{
 	    		this.setUpPlayerSave();
+	    		this.displayErrorMessage('DATA RETRIEVED');
 	    	}
 	    });
 	  });
-	  console.log('DATA RETRIEVED');
 	}
 	setUpPlayerSave(){
 		var user = document.getElementById("saveName").value;
@@ -2237,9 +2261,6 @@ class GameScreenHub extends React.Component {
 		this.setState({
 			heroHp: newHp
 		});
-		if(newHp === 0){
-			this.goToCharacterScreen();
-		}
 	}
 	changeHeroAttack(newAttack){
 		this.setState({
@@ -2353,11 +2374,24 @@ class GameScreenHub extends React.Component {
 			});
 		}
 	}
+	playerDeathScreen(){
+		this.setState({
+			gameScreen: false,
+			playerDeathScreen: true,
+			characterSelectScreen: false
+		});
+	}
 	goToLevelScreen(){
 		this.setState({
 			characterSelectScreen: false,
 			auxilaryScreen: false,
 			levelSelectScreen: true
+		});
+	}
+	highScoreScreen(){
+		this.setState({
+			characterSelectScreen: false,
+			highScoreScreen: true
 		});
 	}
 	goToEquipmentScreen(){
@@ -2391,7 +2425,8 @@ class GameScreenHub extends React.Component {
 			collectionScreen: false,
 			equipmentScreen: false,
 			createScreen: false,
-			levelSelectScreen: false
+			levelSelectScreen: false,
+			highScoreScreen: false
 		});
 	}
 	auxilaryScreen(){
@@ -2413,7 +2448,8 @@ class GameScreenHub extends React.Component {
 			characterSelectScreen: false,
 			auxilaryScreen: false,
 			craftingScreen: false,
-			collectionScreen: true
+			collectionScreen: true,
+			playerDeathScreen: false
 		});
 	}
 	createEnemies() {
@@ -2475,22 +2511,25 @@ class GameScreenHub extends React.Component {
 		});
 	}
 	tutorialActions(){
-		if(stageComplete === 1){
+		if(stageComplete === 0){
+			tutorialDeckSave = cardArray;
+			cardArray = [neutral1];
+		}else if(stageComplete === 1){
 			cardArray = [neutral1, neutral2];
 			document.getElementById("tutorialMessage").innerHTML=" ";
 			document.getElementById("tutorialMessageBox").style.display="inline";
-			document.getElementById("tutorialMessage").append("Well done, I think you could use a bigger rock");
+			document.getElementById("tutorialMessage").append("When you defeat an enemy with exact damage, you gain an energy! You also have a chance at capturing their monster card, each enemy has one. Here, try a bigger rock");
 		}else if(stageComplete === 2){
-			cardArray.push(neutral4);
+			cardArray.push(neutral3);
 			document.getElementById("tutorialMessage").innerHTML=" ";
 			document.getElementById("tutorialMessageBox").style.display="inline";
-			document.getElementById("tutorialMessage").append("Uh oh, the enemy is trying to sabotoge your spells. Here, try using a shielding spell to protect yourself.");
+			document.getElementById("tutorialMessage").append("Uh oh, the enemy is trying to sabotoge your magic bag. A ward spell will protect you.");
 		}else if(stageComplete === 3){
 			this.changeHeroHp(50);
-			cardArray = [neutral1, neutral2, neutral3, neutral4, neutral5, neutral6];
+			cardArray = [neutral1, neutral2, neutral3, neutral4, neutral5, neutral7];
 			document.getElementById("tutorialMessage").innerHTML=" ";
 			document.getElementById("tutorialMessageBox").style.display="inline";
-			document.getElementById("tutorialMessage").append("Whoa, that was tough. If you have a shield up enemies can't sabotoge you, but if you run out the enemy gets to put one of their cards in your deck. Looks like you need some healing and I added some new cards to your deck. Uh oh... hear that? Something big is coming. ");
+			document.getElementById("tutorialMessage").append("Whoa, that was tough. If you have a ward up, enemies can't sabotoge you, but if you run out the enemy gets to put one of their cards in your deck. Looks like you need some healing and I added some new cards to your deck. Uh oh... hear that? Something big is coming... ");
 		}
 	}
 	switchEnemyArray() {
@@ -2575,15 +2614,68 @@ class GameScreenHub extends React.Component {
 			<ErrorMessage errorMessage={this.state.errorMessage} />
 			{this.state.infoScreen ? <InfoScreen error={this.displayErrorMessage} toggleInfoScreen={this.toggleInfoScreen} /> : null }
 			{this.state.createScreen ? <CreateCharacter error={this.displayErrorMessage} createNewCharacter={this.createNewCharacter} /> : null }
-			{this.state.characterSelectScreen ? <CharacterSelectScreen error={this.displayErrorMessage} getUserData={this.getUserData} writeUserData={this.writeUserData} goToLevelScreen={this.goToLevelScreen} score={this.state.score} createNewCharacter={this.createNewCharacter} influence={this.state.influence} shield={this.state.heroShield} spheres={this.state.sphereCount} attack={this.state.attack} playerHero={playerHero} switchEnemyArray={this.switchEnemyArray} goToEquipmentScreen={this.goToEquipmentScreen} heroHp={this.state.heroHp} showCollection={this.showCollection} changeHero={this.changeHero} goToGameScreen={this.goToGameScreen} changeInfluence={this.changeInfluence} /> : null }
+			{this.state.characterSelectScreen ? <CharacterSelectScreen error={this.displayErrorMessage} highScoreScreen={this.highScoreScreen} getUserData={this.getUserData} writeUserData={this.writeUserData} goToLevelScreen={this.goToLevelScreen} score={this.state.score} createNewCharacter={this.createNewCharacter} influence={this.state.influence} shield={this.state.heroShield} spheres={this.state.sphereCount} attack={this.state.attack} playerHero={playerHero} switchEnemyArray={this.switchEnemyArray} goToEquipmentScreen={this.goToEquipmentScreen} heroHp={this.state.heroHp} showCollection={this.showCollection} changeHero={this.changeHero} goToGameScreen={this.goToGameScreen} changeInfluence={this.changeInfluence} /> : null }
 			{this.state.levelSelectScreen ? <LevelSelectScreen error={this.displayErrorMessage} goToCharacterScreen={this.goToCharacterScreen} goToGameScreen={this.goToGameScreen} switchEnemyArray={this.switchEnemyArray} /> : null }
-			{this.state.gameScreen ? <GameScreen boss={this.state.bossStats} bossEffect={this.state.bossEffect} error={this.displayErrorMessage} clearSupRewards={this.clearSupRewards} gainSupGemReward={this.gainSupGemReward} gainSupCardReward={this.gainSupCardReward} toggleInfoScreen={this.toggleInfoScreen} characterScreen={this.goToCharacterScreen} changeHeroShield={this.changeHeroShield} changeHeroAttack={this.changeHeroAttack} changeInfluence={this.changeInfluence} influence={this.state.influence} int={this.state.heroSelect.intelligence} shield={this.state.heroShield} switchEnemyArray={this.switchEnemyArray} increaseStormCounter={this.increaseStormCounter} decreaseStormCounter={this.decreaseStormCounter} stormCounter={this.state.stormCounter} changeHeroHp={this.changeHeroHp} heroHp={this.state.heroHp} score={this.state.score} setSpheres={this.setSphereCount} changeScore={this.changeScore} aux={this.auxilaryScreen} heroSelect={this.state.heroSelect} attack={this.state.attack} equipment={this.state.equipment} enemyArray={this.state.enemyArray} goToCollection={this.showCollection} /> : null }
+			{this.state.gameScreen ? <GameScreen playerDeathScreen={this.playerDeathScreen} boss={this.state.bossStats} bossEffect={this.state.bossEffect} error={this.displayErrorMessage} clearSupRewards={this.clearSupRewards} gainSupGemReward={this.gainSupGemReward} gainSupCardReward={this.gainSupCardReward} toggleInfoScreen={this.toggleInfoScreen} characterScreen={this.goToCharacterScreen} changeHeroShield={this.changeHeroShield} changeHeroAttack={this.changeHeroAttack} changeInfluence={this.changeInfluence} influence={this.state.influence} int={this.state.heroSelect.intelligence} shield={this.state.heroShield} switchEnemyArray={this.switchEnemyArray} increaseStormCounter={this.increaseStormCounter} decreaseStormCounter={this.decreaseStormCounter} stormCounter={this.state.stormCounter} changeHeroHp={this.changeHeroHp} heroHp={this.state.heroHp} score={this.state.score} setSpheres={this.setSphereCount} changeScore={this.changeScore} aux={this.auxilaryScreen} heroSelect={this.state.heroSelect} attack={this.state.attack} equipment={this.state.equipment} enemyArray={this.state.enemyArray} goToCollection={this.showCollection} /> : null }
 			{this.state.auxilaryScreen ? <AuxilaryScreen error={this.displayErrorMessage} changeHeroHp={this.changeHeroHp} heroHp={this.state.heroHp} clearSupRewards={this.clearSupRewards} supGemRewards={this.state.supGemRewards} supCardRewards={this.state.supCardRewards} goToEndingScreen={this.goToEndingScreen} changeInfluence={this.changeInfluence} influence={this.state.influence} setSphereCount={this.setSphereCount} score={this.state.score} resetStormCounter={this.resetStormCounter} showCollection={this.showCollection} goToCharacterScreen={this.goToCharacterScreen} /> : null }
 			{this.state.collectionScreen ? <CollectionScreen error={this.displayErrorMessage} toggleInfoScreen={this.toggleInfoScreen} goToCraftingScreen={this.goToCraftingScreen} checkDeckContents={this.checkDeckContents} /> : null }
 			{this.state.equipmentScreen ? <EquipmentScreen error={this.displayErrorMessage} changeScore={this.changeScore} score={this.state.score} itemArray={this.state.itemArray} heroShield={this.state.heroShield} spheres={this.state.sphereCount} setSphereCount={this.setSphereCount} playerHero={playerHero} chooseItemAction={this.chooseItemAction} attack={this.state.attack} goToCharacterScreen={this.goToCharacterScreen} /> : null }
 			{this.state.craftingScreen ? <CraftingScreen error={this.displayErrorMessage} toggleInfoScreen={this.toggleInfoScreen} showCollection={this.showCollection} /> : null}
 			{this.state.endingScreen ? <EndingScreen error={this.displayErrorMessage} score={this.state.score} /> : null}
+			{this.state.playerDeathScreen ? <PlayerDeathScreen showCollection={this.showCollection} /> : null}
+			{this.state.highScoreScreen ? <HighScoreScreen goToCharacterScreen={this.goToCharacterScreen} highScores={this.state.highScores} /> : null }
 			{this.state.miningGame ? <MiningGame error={this.displayErrorMessage} /> : null }
+			</div>
+		)
+	}
+}
+
+class HighScoreScreen extends React.Component {
+	listHighScores(){
+		var highScoreList = this.props.highScores;
+		highScoreList.sort(function(a, b){
+		    if(a.score < b.score) { return 1; }
+		    if(a.score > b.score) { return -1; }
+		    return 0;
+		});
+		const listHighScores = highScoreList.map((score, index) =>
+			<HighScore id={index} name={score.name} score={score.score} key={index} />
+		);
+		return (
+			<div>{listHighScores}</div>
+		)
+	}
+	render() {
+		return (
+			<div className="row">
+				<div className="col-xs-12">
+					<div className="row">
+						<div className="col-xs-1 coolButton" onClick={this.props.goToCharacterScreen}>Back</div>
+					</div>
+					<div className="row">
+						<div className="col-xs-offset-2 col-xs-8 highScore">
+							<div className="row" id="highScoreTitle">High Scores</div>
+							<div className="row">
+								<div className="col-xs-offset-3 col-xs-2 scoreTitle">Rank</div>
+								<div className="col-xs-2 scoreTitle">User</div>
+								<div className="col-xs-2 scoreTitle">Score</div>
+							</div>
+							{this.listHighScores()}
+						</div>
+					</div>
+				</div>
+			</div>
+		)
+	}
+}
+
+class HighScore extends React.Component {
+	render(){
+		return (
+			<div className="row">
+				<div className="col-xs-offset-3 col-xs-2 scoreRank">{this.props.id + 1}</div>
+				<div className="col-xs-2 scoreName">{this.props.name}</div>
+				<div className="col-xs-2 scoreScore">{this.props.score}</div>
 			</div>
 		)
 	}
@@ -2703,11 +2795,11 @@ class LevelSelectScreen extends React.Component {
 						<div className="col-xs-3 levelChoice" id="waterLevel" onClick={() => {this.selectLevel("water")}}></div>
 					</div>
 					<div className="row levelChoiceRow">
-						{this.state.levelsUnlocked[0] ? <div className="col-xs-3 levelChoice" id="lavaLevel" onClick={() => {this.selectLevel("lava")}}>Lava Mountain</div> : null }
-						{this.state.levelsUnlocked[1] ? <div className="col-xs-3 levelChoice" id="desertLevel" onClick={() => {this.selectLevel("desert")}}>Barrens of Dust</div> : null }
+						{this.state.levelsUnlocked[0] ? <div className="col-xs-3 levelChoice" id="lavaLevel" onClick={() => {this.selectLevel("lava")}}></div> : null }
+						{this.state.levelsUnlocked[1] ? <div className="col-xs-3 levelChoice" id="desertLevel" onClick={() => {this.selectLevel("desert")}}></div> : null }
 					</div><div className="row levelChoiceRow">
-						{this.state.levelsUnlocked[2] ? <div className="col-xs-3 levelChoice" id="stormLevel" onClick={() => {this.selectLevel("storm")}}>Tempest Coast</div> : null }
-						{this.state.levelsUnlocked[3] ? <div className="col-xs-3 levelChoice" id="mudLevel" onClick={() => {this.selectLevel("mud")}}>Magic Marsh</div> : null }
+						{this.state.levelsUnlocked[2] ? <div className="col-xs-3 levelChoice" id="stormLevel" onClick={() => {this.selectLevel("storm")}}></div> : null }
+						{this.state.levelsUnlocked[3] ? <div className="col-xs-3 levelChoice" id="mudLevel" onClick={() => {this.selectLevel("mud")}}></div> : null }
 					</div>
 					<div className="row levelChoiceRow">
 						{this.state.levelsUnlocked[4] ? <div className="col-xs-offset-4 col-xs-4 levelChoice" id="towerLevel" onClick={() => {this.selectLevel("tower")}}>The Tower</div> : null }
@@ -2715,7 +2807,7 @@ class LevelSelectScreen extends React.Component {
 					<div className="row" id="levelButtonRow">
 						<div className="col-xs-offset-1 col-xs-2 levelButton" onClick={this.props.goToCharacterScreen}>Back</div>
 						<div className="col-xs-offset-2 col-xs-2 levelButton" onClick={this.props.goToGameScreen}>Play</div>
-						<div className="col-xs-2 levelChoice" id="tutorialLevel" onClick={() => {this.selectLevel("tutorial")}}>Tutorial</div>
+						<div className="col-xs-offset-1 col-xs-2 levelChoice levelButton" id="tutorialLevel" onClick={() => {this.selectLevel("tutorial")}}>Tutorial</div>
 					</div>
 				</div>
 			</div>
@@ -2834,7 +2926,15 @@ class EquipmentScreen extends React.Component {
 }
 
 class CharacterSelectScreen extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			saveBox: false
+		}
+		this.openSaveBox = this.openSaveBox.bind(this);
+	}
 	componentDidMount(){
+		console.log("css mount");
 		stageComplete = 0;
 		//this.props.switchEnemyArray();
 		this.props.createNewCharacter();
@@ -2845,41 +2945,68 @@ class CharacterSelectScreen extends React.Component {
 			levelEnemyNum = 2;
 		}
 	}
+	openSaveBox(){
+		var saveState;
+		if(this.state.saveBox === true){
+			saveState = false;
+		}else{
+			saveState = true;
+		}
+		this.setState({
+			saveBox: saveState
+		});
+	}
 	render() {
 		return (
 			<div className="row titleDesigns">
 				<div className="col-xs-12">
+					<div className="row">
+						<div className="col-xs-offset-8 col-xs-2 mainScore">Score: {this.props.score}</div>
+						<div className="col-xs-1" id="trophyButton" onClick={this.props.highScoreScreen}></div>
+						<div className="col-xs-1" id="saveButton" onClick={this.openSaveBox}></div>
+					</div>
+					{ this.state.saveBox ? <SaveBox writeUserData={this.props.writeUserData} getUserData={this.props.getUserData} /> : null }
 					<div className="row chooseTitle">
 						<img src={mainTitle} alt="mainTitle" id="mainTitle" />
 					</div>
 					<div className="row">
 						<div className="col-xs-offset-5 col-xs-4">
 							<div className="row">
-								{/*<div className="col-xs-5 mainScore scoreRow">Score: {this.props.score}</div>
-								<div className="col-xs-5 mainScore scoreRow">Coins: {this.props.spheres}</div>*/}
+								{/*<div className="col-xs-5 mainScore scoreRow">Coins: {this.props.spheres}</div>*/}
 							</div>
 						</div>
 					</div>
 					<div className="row">
-						<div className="col-xs-offset-2 col-xs-4">
+						<div className="col-xs-offset-3 col-xs-3">
 							<button className="campButton" onClick={this.props.goToLevelScreen}>Adventure</button>
 						</div>
-						<div className="col-xs-4">
+						<div className="col-xs-3">
 							<button className="campButton" onClick={this.props.showCollection}>Deck</button>
 						</div>
 					</div>
-					<div className="row">
-						<div className="col-xs-offset-4 col-xs-2">
-							<input type="text" id="saveName"></input>
-						</div>
-						<div className="col-xs-1">
-							<button className="saveButton" onClick={this.props.writeUserData}>Save</button>
-						</div>
-						<div className="col-xs-1">
-							<button className="saveButton" onClick={this.props.getUserData}>Load</button>
-						</div>
+					<div className="row" id="patchNotes"><a target="_blank" href="https://github.com/MicahIsley/blastaar/blob/old-state/README.md">10/10 Patch Notes</a>
 					</div>
-					<div className="row"><a target="_blank" href="https://github.com/MicahIsley/blastaar/blob/old-state/README.md">10/10 Patch Notes</a>
+				</div>
+			</div>
+		)
+	}
+}
+
+class SaveBox extends React.Component {
+	render() {
+		return (
+			<div className="row">
+				<div className="col-xs-2" id="saveBox">
+					<div className="row">
+						<input type="text" id="saveName"></input>
+					</div>
+					<div className="row">
+						<div className="col-xs-6">
+							<button className="coolButton" onClick={this.props.writeUserData}>Save</button>
+						</div>
+						<div className="col-xs-6">
+							<button className="coolButton" onClick={this.props.getUserData}>Load</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -2996,6 +3123,8 @@ class GameScreen extends React.Component {
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + desertBackground + ")";
 		}else if(level === "tower"){
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + towerBackground + ")";
+		}else if(level === "tutorial"){
+			document.getElementById("tutorialMessageBox").style.display = "inline";
 		}
 		var enemySabs = [];
 		var nullHp1 = null;
@@ -4071,7 +4200,9 @@ class GameScreen extends React.Component {
 		}
 	}
 	triggerPlayerDeath() {
-		this.props.goToCollection();
+		console.log("playerdeath");
+		//this.props.goToCollection();
+		this.props.playerDeathScreen();
 		this.props.clearSupRewards();
 		cardArray.sort(function(a, b){
 		    if(a.alignment < b.alignment) { return -1; }
@@ -4250,6 +4381,7 @@ class GameScreen extends React.Component {
 						if(shieldDamage < 0){
 							if(extraDamage <= 0){
 								this.props.changeHeroHp(0);
+								console.log("trigger death 1");
 								this.triggerPlayerDeath();
 							}else{
 								this.props.changeHeroHp(extraDamage);
@@ -4316,6 +4448,7 @@ class GameScreen extends React.Component {
 			}
 			setTimeout(() => {
 				if(this.props.heroHp === 0){
+					console.log("triggerDeath 2");
 					this.triggerPlayerDeath();
 				}else{
 					document.getElementById(enemyNumber + "image").classList.remove("attackingEnemy");
@@ -4486,7 +4619,7 @@ class GameScreen extends React.Component {
 						</div>
 						<div className="row" id="tutorialMessageBox">
 							<div className="col-xs-12" id="tutorialMessageCol">
-								<div className="row" id="tutorialMessage"></div>
+								<div className="row" id="tutorialMessage">Clicking an enemy draws your spells and selecting a spell sends an attack.</div>
 								<div className="row" id="tutorialButtonRow">
 									<div className="coolButton col-xs-4" id="tutorialMessageButton" onClick={this.handleTutorialClick} >OK</div>
 								</div>
@@ -4510,6 +4643,22 @@ class GameScreen extends React.Component {
 						</div>
 					</div>
 				</div>
+			</div>
+		)
+	}
+}
+
+class PlayerDeathScreen extends React.Component {
+	componentDidMount(){
+		setTimeout(() => {
+			this.props.showCollection();
+		}, 5000);
+	}
+	render() {
+		return (
+			<div className="row" id="defeatRow">
+				<img src={toogerShadow} id="toogerShadow" alt="shadow" />
+				<div id="defeatTitle">Defeat</div>
 			</div>
 		)
 	}
@@ -5327,6 +5476,8 @@ class AuxilaryScreen extends React.Component {
 	componentDidMount(){
 		if(level === "tower"){
 			this.props.goToEndingScreen();
+		}else if(level === "tutorial"){
+			cardArray = tutorialDeckSave;
 		}else{
 			levelsBeaten.push(level);
 			if(levelsBeaten.length < 4){
