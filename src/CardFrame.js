@@ -38,6 +38,10 @@ class CardFrame extends React.Component {
     }else if(charCard === "sphere"){
       sphereCard = true;
     }
+    if(this.props.cost > 0){
+      influenceCost = true;
+      stormlightCost = false;
+    }
     const { isDragging, connectDragSource, item } = this.props;
     const opacity = isDragging ? 0 : 1;
 

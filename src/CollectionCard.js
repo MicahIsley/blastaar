@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { DragSource } from 'react-dnd';
 import rummageSym from './assets/icons/rummageSym.png';
 import shield from './assets/icons/shield.png';
+import rare from './assets/icons/rare.png';
+import uncommon from './assets/icons/uncommon.png';
+import common from './assets/icons/common.png';
+import empty from './assets/icons/empty.png';
 
 const itemSource = {
   beginDrag(props) {
@@ -40,7 +44,6 @@ class CollectionCard extends React.Component {
     var regularText;
     var ownedNum;
     var cardNumberClass = "cardPowerNum";
-    console.log(this.props);
     if(this.props.text.indexOf("Rummage") >= 0 ){
       cardSym = rummageSym;
       cardText = parseInt(this.props.text.match(/\d+/)[0]);
@@ -56,13 +59,14 @@ class CollectionCard extends React.Component {
     if(this.props.cost > 0){
       influenceCost = true;
     }else{}
-    console.log(this.props.rarity);
     if(this.props.rarity === 1){
-      rarity = "common";
+      rarity = common;
     }else if(this.props.rarity === 2){
-      rarity = "uncommon;"
+      rarity = uncommon;
+    }else if(this.props.rarity === 3){
+      rarity = rare;
     }else{
-      rarity = "rare"
+      rarity = empty;
     }
     if(charCard === "character"){
       scheme = true;
@@ -132,10 +136,11 @@ class CollectionCard extends React.Component {
         { influenceCost === true &&
           <div className="col-xs-3 influenceCost">{this.props.cost}</div>
         }
-        { stormlightCost === true &&
+        { influenceCost === false &&
           <div className="col-xs-3"></div>
         }
-          <div className="col-xs-offset-5 col-xs-4"><img className="iconImg" src={this.props.icon} alt="icon" /></div>
+          <div className="col-xs-5"><img className="rarityImg" src={rarity} alt="rarity" /></div>
+          <div className="col-xs-4"><img className="iconImg" src={this.props.icon} alt="icon" /></div>
         </div>
       </div>
     )
