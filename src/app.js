@@ -63,7 +63,7 @@ import championStalker from './assets/desert/championStalker.gif';
 import desertMadnado from './assets/desert/desertMadnado.gif';
 import duneStabber from './assets/desert/duneStabber.gif';
 import grumpeel from './assets/desert/grumpeel.gif';
-import predatorSnipp from './assets/desert/predatorSnipp.png';
+import predatorSnipp from './assets/desert/predatorSnipp.gif';
 import sandSnipp from './assets/desert/sandSnipp.gif';
 import stabberConclave from './assets/desert/stabberConclave.gif';
 import wanderingRelic from './assets/desert/wanderingRelic.gif';
@@ -73,7 +73,7 @@ import primtree from './assets/earth/primtree.gif';
 import queenPrimtree from './assets/earth/queenPrimtree.gif';
 import rockFairy from './assets/earth/rockFairy.gif';
 import steed from './assets/earth/steed.gif';
-import stoneStrider from './assets/earth/stoneStrider.png';
+import stoneStrider from './assets/earth/stoneStrider.gif';
 import toughPrimtree from './assets/earth/toughPrimtree.gif';
 import wobbleduk from './assets/earth/wobbleduk.gif';
 import broodmother from './assets/fire/broodmother.gif';
@@ -97,7 +97,7 @@ import walkingEruption from './assets/lava/walkingEruption.gif';
 import archmageMuckster from './assets/mud/archmageMuckster.gif';
 import bogBoar from './assets/mud/bogBoar.gif';
 import duchessWarthus from './assets/mud/duchessWarthus.gif';
-import greaterGalope from './assets/mud/greaterGalope.png';
+import greaterGalope from './assets/mud/greaterGalope.gif';
 import lesserGalope from './assets/mud/lesserGalope.gif';
 import muckster from './assets/mud/muckster.gif';
 import sominus from './assets/mud/sominus.gif';
@@ -121,7 +121,7 @@ import rundarr from './assets/tower/rundarr.gif';
 import sinisterSloop from './assets/tower/sinisterSloop.gif';
 import soulShredder from './assets/tower/soulShredder.gif';
 import superPincher from './assets/tower/superPincher.gif';
-import tooger from './assets/tower/tooger.png';
+import tooger from './assets/tower/tooger.gif';
 import toogerShadow from './assets/tower/toogerShadow.png';
 import albinoSlapper from './assets/water/albinoSlapper.gif';
 import budleFairy from './assets/water/budleFairy.gif';
@@ -154,6 +154,8 @@ import mistyWoods from './assets/audio/mistyWoods.m4a';
 import intense from './assets/audio/intense.m4a';
 import brightStyle from './assets/audio/brightStyle.m4a';
 import findingOut from './assets/audio/findingOut.m4a';
+import defeat from './assets/audio/defeat.m4a';
+import victory from './assets/audio/victory.m4a';
 import meter0 from './assets/spookyMeter/meter0.png';
 import meter1 from './assets/spookyMeter/meter1.png';
 import meter2 from './assets/spookyMeter/meter2.png';
@@ -3209,7 +3211,7 @@ class GameScreen extends React.Component {
 		}
 		audioEl.loop = true;
 		audioEl.volume = .4;
-	    //audioEl.play();
+	    audioEl.play();
 		var enemySabs = [];
 		var nullHp1 = null;
 		var nullHp2 = null;
@@ -4816,6 +4818,8 @@ class GameScreen extends React.Component {
 
 class PlayerDeathScreen extends React.Component {
 	componentDidMount(){
+		var audioEl = document.getElementsByClassName("defeatMusic")[0];
+		audioEl.play();
 		setTimeout(() => {
 			this.props.showCollection();
 		}, 5000);
@@ -4823,6 +4827,9 @@ class PlayerDeathScreen extends React.Component {
 	render() {
 		return (
 			<div className="row" id="defeatRow">
+				<audio className="defeatMusic">
+		          <source src={defeat}></source>
+		        </audio>
 				<img src={toogerShadow} id="toogerShadow" alt="shadow" />
 				<div id="defeatTitle">Defeat</div>
 			</div>
@@ -5658,6 +5665,8 @@ class AuxilaryScreen extends React.Component {
 	this.listGemRewards = this.listGemRewards.bind(this);
 	}
 	componentDidMount(){
+		var audioEl = document.getElementsByClassName("victoryMusic")[0];
+		audioEl.play();
 		if(level === "tower"){
 			this.props.goToEndingScreen();
 		}else if(level === "tutorial"){
@@ -5861,6 +5870,9 @@ class AuxilaryScreen extends React.Component {
 	render() {
 		return (
 			<div className="col-xs-12">
+				<audio className="victoryMusic">
+		          <source src={victory}></source>
+		        </audio>
 				<div className="row" id="rewardsMessage">Congratulations! Claim your rewards!</div>
 				<div className="row" id="rewardsDescription">Score: {this.props.score}</div>
 				<div className="row">
