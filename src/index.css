@@ -7,6 +7,13 @@ body {
 	height: 100vh;
 }
 
+.enemyStatus {
+	position: absolute;
+    z-index: 2;
+    height: 175px;
+    margin-left: 9%;
+}
+
 .endingText {
 	color: white;
 	font-family: 'Metamorphous', cursive;
@@ -113,8 +120,12 @@ body {
 }
 
 #keywordCol {
-	height: 550px;
+	margin-top: 15px;
+	height: 335px;
 	overflow: scroll;
+	border-color: black;
+	border-style: solid;
+	border-width: 0px 3px;
 }
 
 .keyword {
@@ -135,11 +146,24 @@ body {
 
 #infoArea {
 	background: white;
-	height: 600px;
-	width: 80%;
-	margin-left: 10%;
+	height: 400px;
+	width: 60%;
+	margin-left: 20%;
+	margin-top: 4%;
 	position: absolute;
 	z-index: 6;
+	border-radius: 15px;
+}
+
+#descriptionArea {
+	font-size: 20px;
+	margin-top: 15px;
+}
+
+.gameInfoTitle {
+	font-size: 36px;
+	font-family: 'Metamorphous', cursive;
+	text-align: center;
 }
 
 .infoButton {
@@ -1973,11 +1997,9 @@ input {
 }
 
 .stunned {
-	background: yellow;
 }
 
 .confused {
-	background: purple;
 }
 
 @-webkit-keyframes pusate {
