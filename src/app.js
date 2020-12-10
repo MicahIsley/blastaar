@@ -3055,7 +3055,7 @@ class CharacterSelectScreen extends React.Component {
 							<button className="campButton" onClick={this.props.showCollection}>Deck</button>
 						</div>
 					</div>
-					<div className="row" id="patchNotes"><a target="_blank" href="https://github.com/MicahIsley/blastaar/blob/old-state/README.md">10/10 Patch Notes</a>
+					<div className="row" id="patchNotes"><a target="_blank" href="https://github.com/MicahIsley/blastaar/blob/old-state/README.md">12/10 Patch Notes</a>
 					</div>
 				</div>
 			</div>
@@ -4831,7 +4831,7 @@ class PlayerDeathScreen extends React.Component {
 		          <source src={defeat}></source>
 		        </audio>
 				<img src={toogerShadow} id="toogerShadow" alt="shadow" />
-				<div id="defeatTitle">Defeat</div>
+				<div id="defeatTitle">DEFEAT</div>
 			</div>
 		)
 	}
