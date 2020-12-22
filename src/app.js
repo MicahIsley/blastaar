@@ -488,7 +488,7 @@ var spooky1 = new CardCon("Gang of Fleebs", 0, 0, "Nothing Yet", "hero", 0, "", 
 var addCard1 = new CardCon("Energy Blast", 0, 5, "Gain 2 Energy. Remove.", "hero", 0, "energy 2", "remove", false, "stormlight", placeholderImg, neutral, "neutral", 0, 0, 0);
 var addCard2 = new CardCon("Grey Goo", 0, 0, "Still Gross", "hero", 0, "addCard 3 1", "remove", false, "stormlight", placeholderImg, neutral, "neutral", 0, 0, 0);
 var addCard3 = new CardCon("Supreme Power", 0, 5, "Magic +5. Remove.", "hero", 0, "str 5", "remove", false, "stormlight", placeholderImg, neutral, "neutral", 0, 0, 0);
-var addCard4 = new CardCon("Earth Shield", 0, 3, "Heal 8. Remove.", "hero", 0, "heal 8", "remove", false, "stormlight", placeholderImg, earth, "earth", 0, 0, 0);
+var addCard4 = new CardCon("Berry", 0, 3, "Heal 8. Remove.", "hero", 0, "heal 8", "remove", false, "stormlight", placeholderImg, earth, "earth", 0, 0, 0);
 var addCard5 = new CardCon("Strange Geode", 0, 0, "It's Cracking", "hero", 0, "addCard6 1", "remove", false, "stormlight", placeholderImg, earth, "earth", 0, 0, 0);
 var addCard6 = new CardCon("Quartz of Destiny", 0, 0, "Ongoing Ward +6. Remove.", "hero", 0, "def 6", "remove", false, "stormlight", placeholderImg, earth, "earth", 0, 0, 0);
 var addCard7 = new CardCon("Roast", 0, 10, "Roasted. Remove.", "hero", 0, "remove", "", false, "stormlight", placeholderImg, fire, "fire", 0, 0, 0);
@@ -2056,7 +2056,7 @@ var elementOrbs = [];
 var multiplier = 1;
 var allies = [];
 var meterArray = [meter0, meter1, meter2, meter3, meter4, meter5, meter6, meter7, meter8, meter9, meter10, meter11, meter12];
-var levelsBeaten = [];
+var levelsBeaten = ["fire"];
 var keyWordList = [{keyword: "finesse", description: "Change power by X to exactly kill an enemy"}, {keyword: "ward", description: "Ward blocks enemy damage and sabotages."}, {keyword: "purge", description: "Removes an enemy sabotage from your deck."}, {keyword: "weaken", description: "Reduces an enemies strength"}, {keyword: "exhausted", description: "Enemies attack twice in a row"}, {keyword: "stun", description: "Stunned enemies miss their next attack"}, {keyword: "poison", description: "Damage delt at the end of the turn"}, {keyword: "confuse", description: "Confused enemies attack a random enemy"}, {keyword: "grow", description: "The card gains power each time it is used"}, {keyword: "scheme", description: "Schemes are played to one of your support areas and then are charged up over time providing an effect once completed"}, {keyword: "heal", description: "Restore health to your character"}, {keyword: "reclaim", description: "Increase the power of all enemy sabotages in your deck"}, {keyword: "int", description: "How many cards your draw when attacking"}, {keyword: "def", description: "The number of shields you have at the start of every turn."}, {keyword: "str", description: "Added damage to each attack"}, {keyword: "rummage", description: "Switch a card with a random card from your deck."}, {keyword: "multiply", description: "Double the damage you would deal this turn."}, {keyword: "decoy", description: "Avoid all sabotages this turn."}, {keyword: "energy", description: "Gain energy to use for other purposes."}, {keyword: "next", description: "Add power to the next card you choose."}, {keyword: "add", description: "Shuffle a number of new cards into your deck."}, {keyword: "remove", description: "The card gets removed from your deck after you select it"}, {keyword: "extra", description: "Attack again after this one."}, /*{keyword: "deplete", description: "Remove a sabotage from the selected enemy."},*/ {keyword: "factionBoost", description: "Gains power for each card of the same type played."}, /*{keyword: "spooky", description: "Increase the chances of getting a creature's card."},*/ {keyword: "transform", description: "Turn an emeny sabotage in your deck into another card."}, {keyword: "all", description: "Deal damage to all enemies."}, {keyword: "clutch", description: "Gains extra effects when your HP is <= 15."}, {keyword: "random", description: "One of two effects."}, {keyword: "stash", description: "Gains extra effects when your energy is >=5."}, {keyword: "treasure", description: "Add gems and/or cards to your rewards."}, {keyword: "capture", description: "Increase the change of gaining targeted monster's card."}, {}];
 var finesseAttack; 
 var levelEnemyNum = 2;
@@ -2065,6 +2065,9 @@ var wardBoost;
 var healBoost;
 var numberOfSaves = 0;
 var updatedScores = [];
+var loggedIn = false;
+var username;
+var userSaveArray = [];
 
 function shuffle(a) {
     for (let i = a.length; i; i--) {
@@ -2108,7 +2111,10 @@ class GameScreenHub extends React.Component {
 			developers: [],
 			developersEternal: [],
 			bossStats: null,
-			highScores: []
+			highScores: [],
+			userSaveArray: [],
+			displayUserSaves: false,
+			saveBox: false
 		}
 		this.changeHero = this.changeHero.bind(this);
 		this.goToGameScreen = this.goToGameScreen.bind(this);
@@ -2137,6 +2143,8 @@ class GameScreenHub extends React.Component {
 		this.changeHeroShield = this.changeHeroShield.bind(this);
 		this.writeUserData = this.writeUserData.bind(this);
 		this.getUserData = this.getUserData.bind(this);
+		this.createNewUser = this.createNewUser.bind(this);
+		this.loadUserSaves = this.loadUserSaves.bind(this);
 		this.setUpPlayerSave = this.setUpPlayerSave.bind(this);
 		this.toggleInfoScreen = this.toggleInfoScreen.bind(this);
 		this.gainSupCardReward = this.gainSupCardReward.bind(this);
@@ -2146,12 +2154,28 @@ class GameScreenHub extends React.Component {
 		this.removeErrorMessage = this.removeErrorMessage.bind(this);
 		this.playerDeathScreen = this.playerDeathScreen.bind(this);
 		this.highScoreScreen = this.highScoreScreen.bind(this);
+		this.openSaveBox = this.openSaveBox.bind(this);
+		this.logOutUser = this.logOutUser.bind(this);
+		this.autoSave = this.autoSave.bind(this);
 	}
 	componentDidMount(){
 		console.log("mounting");
+		collectionArray = [];
+		for(var i=0; i<9; i++){
+			var cardTypeArray = ["neutral", "earth", "fire", "water", "wind", "desert", "lava", "mud", "storm"];
+			for(var j=1; j<30; j++){
+				if(cardTypeArray[i] === "neutral" && j > 20){
+
+				}else{	
+					var pushCard = eval(cardTypeArray[i] + j);
+					collectionArray.push(pushCard);
+				}
+			}
+		}
+		collectionArray.push(spooky1);
 		numberOfSaves = 0;
 		updatedScores = [];
-		var ref = Firebase.database().ref();
+		var ref = Firebase.database().ref('Micah/');
 		ref.on('value', function(snapshot) {
 			updatedScores = [];
 			numberOfSaves = 0;
@@ -2165,17 +2189,70 @@ class GameScreenHub extends React.Component {
 			highScores: updatedScores
 		});
 	}
-	writeUserData(){
-		var userEternal = document.getElementById("saveName").value + "!" + numberOfSaves;
+	createNewUser(){
+		var newUser = document.getElementById("saveName").value;
+		var newPassword = document.getElementById("password").value;
+	 	Firebase.database().ref(`/${newUser}/password`).set(newPassword);
+	 	this.displayErrorMessage('USER CREATED');
+	 	username = newUser;
+	}
+	logOutUser(){
+		username = "noUser";
+		loggedIn = false;
+		this.setState({
+			displayUserSaves: false,
+			saveBox: false
+		})
+	}
+	loadUserSaves(){
+		console.log("loadUserSaves");
+		userSaveArray = [];
 		var user = document.getElementById("saveName").value;
+		var ref = Firebase.database().ref(`/${user}`);
+		var password = document.getElementById("password").value;
+		var wrongPassword = false;
+		ref.on('value', function(snapshot) {
+				numberOfSaves = 0;
+				if(snapshot.val().password === password || loggedIn === true){
+					userSaveArray = [];
+					snapshot.forEach(function(user){
+						var data =(user.val());
+						if(data.name === undefined){
+						}else{
+							userSaveArray.push({name: data.name, collectionArray: data.collectionArray, levelsBeaten: data.levels, score: data.score});
+						}
+					});
+					loggedIn = true;
+					username = user;
+				}else{
+					wrongPassword = true;
+				}
+		});
+		if(wrongPassword === true){
+			this.displayErrorMessage("Wrong Password");
+		}else{
+			this.setState({
+				userSaveArray: userSaveArray,
+				displayUserSaves: true,
+				saveBox: false
+			}, () => {
+				console.log(this.state.userSaveArray);
+
+			});
+		}
+	}
+	writeUserData(){
+		var userEternal = document.getElementById("saveFileName").value + "!" + numberOfSaves;
+		var user = username;
+		var fileName = document.getElementById("saveFileName").value;
 		console.log(user);
 		if(user === ""){
 			this.displayErrorMessage("enter a name");
 		}else if(user === "super" || user === "super1" || user === "super2"){
 			this.displayErrorMessage("Pick a different name");
 		}else{
-			var userSaveData = {name: user, collectionArray: collectionArray, levels: levelsBeaten, score: this.state.score};
-			var userEternalData = {name: userEternal, collectionArray: collectionArray, levels: levelsBeaten, score: this.state.score};
+			var userSaveData = {collectionArray: collectionArray, score: this.state.score, levels: levelsBeaten, name: fileName};
+			var userEternalData = {collectionArray: collectionArray, score: this.state.score, levels: levelsBeaten, name: fileName};
 			this.setState({
 				developers: userSaveData,
 				developersEternal: userEternalData
@@ -2186,13 +2263,39 @@ class GameScreenHub extends React.Component {
 			 	this.setState({
 			 		developers: []
 			 	});
-			 	Firebase.database().ref(`/${user}`).set(this.state.developers);
+			 	Firebase.database().ref(`/${user}/${fileName}`).set(this.state.developers);
 			 	this.displayErrorMessage('DATA SAVED');
 			 	this.setState({
 			 		developers: []
 			 	});
 			});
 		}
+		setTimeout(() => {
+			this.setState({
+				userSaveArray: userSaveArray
+			});
+		}, 3000);
+	}
+	autoSave(){
+		console.log("autoSave");
+		var user = username;
+		var fileName = "Auto Save";
+		var userSaveData = {collectionArray: collectionArray, score: this.state.score, levels: levelsBeaten, name: fileName};
+		this.setState({
+			developers: userSaveData
+
+		}, () => {
+		 	Firebase.database().ref(`/${user}/${fileName}`).set(this.state.developers);
+		 	this.displayErrorMessage('DATA SAVED');
+		 	this.setState({
+		 		developers: []
+		 	});
+		});
+		setTimeout(() => {
+			this.setState({
+				userSaveArray: userSaveArray
+			});
+		}, 3000);
 	}
 	getUserData(){
 	  var user = document.getElementById("saveName").value;
@@ -2212,20 +2315,30 @@ class GameScreenHub extends React.Component {
 	    });
 	  });
 	}
-	setUpPlayerSave(){
-		var user = document.getElementById("saveName").value;
-		var playerData = this.state.developers;
+	setUpPlayerSave(collection, lvlsBeat, score){
+		console.log(collection);
+		console.log(lvlsBeat)
 		//document.getElementById("saveName").value = playerData
-		if(playerData.collectionArray === undefined){
+		if(collectionArray === undefined){
 
 		}else{
-			collectionArray = playerData.collectionArray;
+			for(var i=0; i<collection.length; i++){
+				collectionArray[i].deckNum = collection[i].deckNum;
+				collectionArray[i].ownedNum = collection[i].ownedNum;
+				collectionArray[i].unlocked = collection[i].unlocked;
+			}
 		}
-		if(playerData.levelsBeaten === undefined){
+		if(levelsBeaten === undefined){
 
 		}else{
-			levelsBeaten = playerData.levels;
+			levelsBeaten = lvlsBeat;
 		}
+		this.setState({
+			score: 0,
+			displayUserSaves: false
+		}, () => {
+			this.changeScore(score);
+		});
 	}
 	removeErrorMessage(){
 		this.setState({
@@ -2397,6 +2510,27 @@ class GameScreenHub extends React.Component {
 			});
 		}else{}
 	}
+	openSaveBox(){
+		var saveState;
+		var userSaveState;
+		if(loggedIn === true){
+			if(this.state.displayUserSaves === true){
+				userSaveState = false;
+			}else{
+				userSaveState = true;
+			}
+		}else{
+			if(this.state.saveBox === true){
+				saveState = false;
+			}else{
+				saveState = true;
+			}
+		}
+		this.setState({
+			saveBox: saveState,
+			displayUserSaves: userSaveState
+		});
+	}
 	goToGameScreen(){
 		console.log(level);
 		if(level === 0){
@@ -2406,7 +2540,8 @@ class GameScreenHub extends React.Component {
 				gameScreen: true,
 				characterSelectScreen: false,
 				auxilaryScreen: false,
-				levelSelectScreen: false
+				levelSelectScreen: false,
+				displayUserSaves: false
 			});
 		}
 	}
@@ -2433,20 +2568,23 @@ class GameScreenHub extends React.Component {
 		this.setState({
 			characterSelectScreen: false,
 			auxilaryScreen: false,
-			levelSelectScreen: true
+			levelSelectScreen: true,
+			displayUserSaves: false
 		});
 	}
 	highScoreScreen(){
 		this.setState({
 			characterSelectScreen: false,
 			highScoreScreen: true,
-			highScores: updatedScores
+			highScores: updatedScores,
+			displayUserSaves: false
 		});
 	}
 	goToEquipmentScreen(){
 		this.setState({
 			equipmentScreen: true,
-			characterSelectScreen: false
+			characterSelectScreen: false,
+			displayUserSaves: false
 		});
 	}
 	goToCraftingScreen(){
@@ -2498,7 +2636,8 @@ class GameScreenHub extends React.Component {
 			auxilaryScreen: false,
 			craftingScreen: false,
 			collectionScreen: true,
-			playerDeathScreen: false
+			playerDeathScreen: false,
+			displayUserSaves: false
 		});
 	}
 	createEnemies() {
@@ -2672,7 +2811,7 @@ class GameScreenHub extends React.Component {
 			<ErrorMessage errorMessage={this.state.errorMessage} />
 			{this.state.infoScreen ? <InfoScreen play={this.playAudio} pause={this.pauseAudio} error={this.displayErrorMessage} toggleInfoScreen={this.toggleInfoScreen} /> : null }
 			{this.state.createScreen ? <CreateCharacter error={this.displayErrorMessage} createNewCharacter={this.createNewCharacter} /> : null }
-			{this.state.characterSelectScreen ? <CharacterSelectScreen error={this.displayErrorMessage} highScoreScreen={this.highScoreScreen} getUserData={this.getUserData} writeUserData={this.writeUserData} goToLevelScreen={this.goToLevelScreen} score={this.state.score} createNewCharacter={this.createNewCharacter} influence={this.state.influence} shield={this.state.heroShield} spheres={this.state.sphereCount} attack={this.state.attack} playerHero={playerHero} switchEnemyArray={this.switchEnemyArray} goToEquipmentScreen={this.goToEquipmentScreen} heroHp={this.state.heroHp} showCollection={this.showCollection} changeHero={this.changeHero} goToGameScreen={this.goToGameScreen} changeInfluence={this.changeInfluence} /> : null }
+			{this.state.characterSelectScreen ? <CharacterSelectScreen error={this.displayErrorMessage} autoSave={this.autoSave} logOutUser={this.logOutUser} openSaveBox={this.openSaveBox} saveBox={this.state.saveBox} setUpPlayerSave={this.setUpPlayerSave} displayUserSaves={this.state.displayUserSaves} userSaveArray={this.state.userSaveArray} highScoreScreen={this.highScoreScreen} loadUserSaves={this.loadUserSaves} createNewUser={this.createNewUser} getUserData={this.getUserData} writeUserData={this.writeUserData} goToLevelScreen={this.goToLevelScreen} score={this.state.score} createNewCharacter={this.createNewCharacter} influence={this.state.influence} shield={this.state.heroShield} spheres={this.state.sphereCount} attack={this.state.attack} playerHero={playerHero} switchEnemyArray={this.switchEnemyArray} goToEquipmentScreen={this.goToEquipmentScreen} heroHp={this.state.heroHp} showCollection={this.showCollection} changeHero={this.changeHero} goToGameScreen={this.goToGameScreen} changeInfluence={this.changeInfluence} /> : null }
 			{this.state.levelSelectScreen ? <LevelSelectScreen error={this.displayErrorMessage} goToCharacterScreen={this.goToCharacterScreen} goToGameScreen={this.goToGameScreen} switchEnemyArray={this.switchEnemyArray} /> : null }
 			{this.state.gameScreen ? <GameScreen playerDeathScreen={this.playerDeathScreen} boss={this.state.bossStats} bossEffect={this.state.bossEffect} error={this.displayErrorMessage} clearSupRewards={this.clearSupRewards} gainSupGemReward={this.gainSupGemReward} gainSupCardReward={this.gainSupCardReward} toggleInfoScreen={this.toggleInfoScreen} characterScreen={this.goToCharacterScreen} changeHeroShield={this.changeHeroShield} changeHeroAttack={this.changeHeroAttack} changeInfluence={this.changeInfluence} influence={this.state.influence} int={this.state.heroSelect.intelligence} shield={this.state.heroShield} switchEnemyArray={this.switchEnemyArray} increaseStormCounter={this.increaseStormCounter} decreaseStormCounter={this.decreaseStormCounter} stormCounter={this.state.stormCounter} changeHeroHp={this.changeHeroHp} heroHp={this.state.heroHp} score={this.state.score} setSpheres={this.setSphereCount} changeScore={this.changeScore} aux={this.auxilaryScreen} heroSelect={this.state.heroSelect} attack={this.state.attack} equipment={this.state.equipment} enemyArray={this.state.enemyArray} goToCollection={this.showCollection} /> : null }
 			{this.state.auxilaryScreen ? <AuxilaryScreen error={this.displayErrorMessage} changeHeroHp={this.changeHeroHp} heroHp={this.state.heroHp} clearSupRewards={this.clearSupRewards} supGemRewards={this.state.supGemRewards} supCardRewards={this.state.supCardRewards} goToEndingScreen={this.goToEndingScreen} changeInfluence={this.changeInfluence} influence={this.state.influence} setSphereCount={this.setSphereCount} score={this.state.score} resetStormCounter={this.resetStormCounter} showCollection={this.showCollection} goToCharacterScreen={this.goToCharacterScreen} /> : null }
@@ -2995,14 +3134,21 @@ class EquipmentScreen extends React.Component {
 }
 
 class CharacterSelectScreen extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			saveBox: false
-		}
-		this.openSaveBox = this.openSaveBox.bind(this);
-	}
 	componentDidMount(){
+		collectionArray = [];
+		for(var i=0; i<9; i++){
+			var cardTypeArray = ["neutral", "earth", "fire", "water", "wind", "desert", "lava", "mud", "storm"];
+			for(var j=1; j<30; j++){
+				if(cardTypeArray[i] === "neutral" && j > 20){
+
+				}else{	
+					var pushCard = eval(cardTypeArray[i] + j);
+					collectionArray.push(pushCard);
+				}
+			}
+		}
+		collectionArray.push(spooky1);
+		console.log(this.props.displayUserSaves);
 		stageComplete = 0;
 		//this.props.switchEnemyArray();
 		this.props.createNewCharacter();
@@ -3012,17 +3158,7 @@ class CharacterSelectScreen extends React.Component {
 		}else{
 			levelEnemyNum = 2;
 		}
-	}
-	openSaveBox(){
-		var saveState;
-		if(this.state.saveBox === true){
-			saveState = false;
-		}else{
-			saveState = true;
-		}
-		this.setState({
-			saveBox: saveState
-		});
+		this.props.autoSave();
 	}
 	render() {
 		return (
@@ -3033,10 +3169,11 @@ class CharacterSelectScreen extends React.Component {
 				<div className="col-xs-12">
 					<div className="row">
 						<div className="col-xs-offset-8 col-xs-2 mainScore">Score: {this.props.score}</div>
-						<div className="col-xs-1" id="trophyButton" onClick={this.props.highScoreScreen}></div>
-						<div className="col-xs-1" id="saveButton" onClick={this.openSaveBox}></div>
+						{/*<div className="col-xs-1" id="trophyButton" onClick={this.props.highScoreScreen}></div>*/}
+						<div className="col-xs-1" id="saveButton" onClick={this.props.openSaveBox}></div>
 					</div>
-					{ this.state.saveBox ? <SaveBox writeUserData={this.props.writeUserData} getUserData={this.props.getUserData} /> : null }
+					{ this.props.saveBox ? <SaveBox loadUserSaves={this.props.loadUserSaves} createNewUser={this.props.createNewUser} writeUserData={this.props.writeUserData} getUserData={this.props.getUserData} /> : null }
+					{ this.props.displayUserSaves ? <UserSavesBox logOutUser={this.props.logOutUser} setUpPlayerSave={this.props.setUpPlayerSave} writeUserData={this.props.writeUserData} userSaveArray={this.props.userSaveArray} getUserData={this.props.getUserData} /> : null }
 					<div className="row chooseTitle">
 						<img src={mainTitle} alt="mainTitle" id="mainTitle" />
 					</div>
@@ -3072,14 +3209,63 @@ class SaveBox extends React.Component {
 						<input type="text" id="saveName"></input>
 					</div>
 					<div className="row">
+						<input type="text" id="password"></input>
+					</div>
+					<div className="row">
 						<div className="col-xs-6">
-							<button className="coolButton" onClick={this.props.writeUserData}>Save</button>
+							<button className="coolButton" onClick={this.props.createNewUser}>New</button>
 						</div>
 						<div className="col-xs-6">
-							<button className="coolButton" onClick={this.props.getUserData}>Load</button>
+							<button className="coolButton" onClick={this.props.loadUserSaves}>Log In</button>
 						</div>
 					</div>
 				</div>
+			</div>
+		)
+	}
+}
+
+class UserSavesBox extends React.Component {
+	listUserSaves(){
+		var userSaves = this.props.userSaveArray;
+		console.log(userSaves);
+		const listUserSaves = userSaves.map((save, index) =>
+			<UserSave key={index} id={index} name={save.name} setUpPlayerSave={this.props.setUpPlayerSave} collectionArray={save.collectionArray} levelsBeaten={save.levelsBeaten} score={save.score} />
+		);
+		return (
+			<div className="col-xs-12">{listUserSaves}</div>
+		)
+	}
+	render() {
+		return (
+			<div className="row">
+				<div className="col-xs-3" id="userSavesBox">
+					<div className="row">
+						<div className="col-xs-6">
+							{this.listUserSaves()}
+						</div>
+						<div className="col-xs-6">
+							<button className="coolButton" onClick={this.props.logOutUser}>Logout</button>
+						</div>
+					</div>
+					<div className="row">
+						<input type="text" id="saveFileName"></input>
+					</div>
+					<div className="row">
+						<button className="coolButton" onClick={this.props.writeUserData}>Save</button>
+					</div>
+				</div>
+			</div>
+		)
+	}
+
+}
+
+class UserSave extends React.Component {
+	render(){
+		return (
+			<div className="row">
+				<div className="col-xs-12 userSave" onClick={() => { this.props.setUpPlayerSave(this.props.collectionArray, this.props.levelsBeaten, this.props.score)}}>{this.props.name}</div>
 			</div>
 		)
 	}
@@ -4378,13 +4564,16 @@ class GameScreen extends React.Component {
 	triggerEnemyDeath() {
 		console.log("triggerEnemyDeath");
 		var removeEndDmg = this.state.endOfTurnDmg;
+		var removePoison = this.state.status;
 		for(var i=0; i<enemyArray.length; i++){
 			if(enemyArray[i].hp === 0){
 				removeEndDmg[i] = 0;
+				removePoison[i] = empty;
 			}else{}
 		}
 		this.setState({
-			endOfTurnDmg: removeEndDmg
+			endOfTurnDmg: removeEndDmg,
+			status: removePoison
 		});
 		setTimeout(() => {
 			this.enemyCleanUp();

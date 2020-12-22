@@ -193,6 +193,28 @@ body {
 	border-style: solid;
 }
 
+#userSavesBox {
+	z-index: 2;
+	position: fixed;
+	background: #b35b23;
+	right: 5px;
+	top: 100px;
+	border-color: #a70e0e;
+	border-radius: 3px;
+	border-style: solid;
+}
+
+.userSave {
+	background: white;
+	border-color: black;
+	border-width: 3px;
+	border-style: solid;
+}
+
+.userSave:hover {
+	background: grey;
+}
+
 .saveButton {
 	margin-top: 15px;
 	background: black;
