@@ -2056,7 +2056,7 @@ var elementOrbs = [];
 var multiplier = 1;
 var allies = [];
 var meterArray = [meter0, meter1, meter2, meter3, meter4, meter5, meter6, meter7, meter8, meter9, meter10, meter11, meter12];
-var levelsBeaten = ["fire"];
+var levelsBeaten = [];
 var keyWordList = [{keyword: "finesse", description: "Change power by X to exactly kill an enemy"}, {keyword: "ward", description: "Ward blocks enemy damage and sabotages."}, {keyword: "purge", description: "Removes an enemy sabotage from your deck."}, {keyword: "weaken", description: "Reduces an enemies strength"}, {keyword: "exhausted", description: "Enemies attack twice in a row"}, {keyword: "stun", description: "Stunned enemies miss their next attack"}, {keyword: "poison", description: "Damage delt at the end of the turn"}, {keyword: "confuse", description: "Confused enemies attack a random enemy"}, {keyword: "grow", description: "The card gains power each time it is used"}, {keyword: "scheme", description: "Schemes are played to one of your support areas and then are charged up over time providing an effect once completed"}, {keyword: "heal", description: "Restore health to your character"}, {keyword: "reclaim", description: "Increase the power of all enemy sabotages in your deck"}, {keyword: "int", description: "How many cards your draw when attacking"}, {keyword: "def", description: "The number of shields you have at the start of every turn."}, {keyword: "str", description: "Added damage to each attack"}, {keyword: "rummage", description: "Switch a card with a random card from your deck."}, {keyword: "multiply", description: "Double the damage you would deal this turn."}, {keyword: "decoy", description: "Avoid all sabotages this turn."}, {keyword: "energy", description: "Gain energy to use for other purposes."}, {keyword: "next", description: "Add power to the next card you choose."}, {keyword: "add", description: "Shuffle a number of new cards into your deck."}, {keyword: "remove", description: "The card gets removed from your deck after you select it"}, {keyword: "extra", description: "Attack again after this one."}, /*{keyword: "deplete", description: "Remove a sabotage from the selected enemy."},*/ {keyword: "factionBoost", description: "Gains power for each card of the same type played."}, /*{keyword: "spooky", description: "Increase the chances of getting a creature's card."},*/ {keyword: "transform", description: "Turn an emeny sabotage in your deck into another card."}, {keyword: "all", description: "Deal damage to all enemies."}, {keyword: "clutch", description: "Gains extra effects when your HP is <= 15."}, {keyword: "random", description: "One of two effects."}, {keyword: "stash", description: "Gains extra effects when your energy is >=5."}, {keyword: "treasure", description: "Add gems and/or cards to your rewards."}, {keyword: "capture", description: "Increase the change of gaining targeted monster's card."}, {}];
 var finesseAttack; 
 var levelEnemyNum = 2;
@@ -2246,13 +2246,19 @@ class GameScreenHub extends React.Component {
 		var user = username;
 		var fileName = document.getElementById("saveFileName").value;
 		console.log(user);
+		var levelArray;
+		if(levelsBeaten.length === 0){
+			levelArray = ["empty"];
+		}else{
+			levelArray = levelsBeaten;
+		}
 		if(user === ""){
 			this.displayErrorMessage("enter a name");
 		}else if(user === "super" || user === "super1" || user === "super2"){
 			this.displayErrorMessage("Pick a different name");
 		}else{
-			var userSaveData = {collectionArray: collectionArray, score: this.state.score, levels: levelsBeaten, name: fileName};
-			var userEternalData = {collectionArray: collectionArray, score: this.state.score, levels: levelsBeaten, name: fileName};
+			var userSaveData = {collectionArray: collectionArray, score: this.state.score, levels: levelArray, name: fileName};
+			var userEternalData = {collectionArray: collectionArray, score: this.state.score, levels: levelArray, name: fileName};
 			this.setState({
 				developers: userSaveData,
 				developersEternal: userEternalData
@@ -2328,8 +2334,8 @@ class GameScreenHub extends React.Component {
 				collectionArray[i].unlocked = collection[i].unlocked;
 			}
 		}
-		if(levelsBeaten === undefined){
-
+		if(lvlsBeat[0] === "empty"){
+			levelsBeaten = [];
 		}else{
 			levelsBeaten = lvlsBeat;
 		}
@@ -3204,12 +3210,14 @@ class SaveBox extends React.Component {
 	render() {
 		return (
 			<div className="row">
-				<div className="col-xs-2" id="saveBox">
+				<div className="col-xs-3" id="saveBox">
 					<div className="row">
-						<input type="text" id="saveName"></input>
+						<div className="col-xs-4">Name</div>
+						<input className="col-xs-8" type="text" id="saveName"></input>
 					</div>
 					<div className="row">
-						<input type="text" id="password"></input>
+						<div className="col-xs-4">Password</div>
+						<input className="col-xs-8" type="text" id="password"></input>
 					</div>
 					<div className="row">
 						<div className="col-xs-6">
@@ -3249,7 +3257,8 @@ class UserSavesBox extends React.Component {
 						</div>
 					</div>
 					<div className="row">
-						<input type="text" id="saveFileName"></input>
+						<div className="col-xs-4">Save Name</div>
+						<input className="col-xs-8" type="text" id="saveFileName"></input>
 					</div>
 					<div className="row">
 						<button className="coolButton" onClick={this.props.writeUserData}>Save</button>

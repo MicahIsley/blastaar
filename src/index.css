@@ -198,7 +198,6 @@ body {
 	position: fixed;
 	background: #b35b23;
 	right: 5px;
-	top: 100px;
 	border-color: #a70e0e;
 	border-radius: 3px;
 	border-style: solid;
@@ -225,10 +224,6 @@ body {
 .saveButton:hover {
 	background: white;
 	color: black;
-}
-
-#saveName {
-	margin-top: 20px;
 }
 
 .allyImage {

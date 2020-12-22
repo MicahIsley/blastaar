@@ -15,3 +15,9 @@ Youber's Quest
 -All monsters now move at least a bit!
 
 -Probably lots of little fixes/changes that I forgot about
+
+12/22 Patch Notes
+
+-Added better save feature
+-Clicking the scroll now lets you log in or create a new user, then you may load any previously saved files or make a new save. Also the game will autosave everytime you enter the title screen. The autosave only has the most recent save info on it.
+- Loading a save will now correctly display all the cards you have earned. It does not currently save unspent gems, so craft all cards that you want before saving.
