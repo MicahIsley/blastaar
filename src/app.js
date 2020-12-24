@@ -2192,9 +2192,13 @@ class GameScreenHub extends React.Component {
 	createNewUser(){
 		var newUser = document.getElementById("saveName").value;
 		var newPassword = document.getElementById("password").value;
-	 	Firebase.database().ref(`/${newUser}/password`).set(newPassword);
-	 	this.displayErrorMessage('USER CREATED');
-	 	username = newUser;
+		if(newUser === "" || newPassword === ""){
+			this.displayErrorMessage('Enter Name and Password');
+		}else{
+		 	Firebase.database().ref(`/${newUser}/password`).set(newPassword);
+		 	this.displayErrorMessage('USER CREATED');
+		 	username = newUser;
+		 }
 	}
 	logOutUser(){
 		username = "noUser";
@@ -2210,35 +2214,39 @@ class GameScreenHub extends React.Component {
 		var user = document.getElementById("saveName").value;
 		var ref = Firebase.database().ref(`/${user}`);
 		var password = document.getElementById("password").value;
-		var wrongPassword = false;
-		ref.on('value', function(snapshot) {
-				numberOfSaves = 0;
-				if(snapshot.val().password === password || loggedIn === true){
-					userSaveArray = [];
-					snapshot.forEach(function(user){
-						var data =(user.val());
-						if(data.name === undefined){
-						}else{
-							userSaveArray.push({name: data.name, collectionArray: data.collectionArray, levelsBeaten: data.levels, score: data.score});
-						}
-					});
-					loggedIn = true;
-					username = user;
-				}else{
-					wrongPassword = true;
-				}
-		});
-		if(wrongPassword === true){
-			this.displayErrorMessage("Wrong Password");
+		if(user === "" || password === ""){
+			this.displayErrorMessage('Enter name and password');
 		}else{
-			this.setState({
-				userSaveArray: userSaveArray,
-				displayUserSaves: true,
-				saveBox: false
-			}, () => {
-				console.log(this.state.userSaveArray);
-
+			var wrongPassword = false;
+			ref.on('value', function(snapshot) {
+					numberOfSaves = 0;
+					if(snapshot.val().password === password || loggedIn === true){
+						userSaveArray = [];
+						snapshot.forEach(function(user){
+							var data =(user.val());
+							if(data.name === undefined){
+							}else{
+								userSaveArray.push({name: data.name, collectionArray: data.collectionArray, levelsBeaten: data.levels, score: data.score});
+							}
+						});
+						loggedIn = true;
+						username = user;
+					}else{
+						wrongPassword = true;
+					}
 			});
+			if(wrongPassword === true){
+				this.displayErrorMessage("Wrong Password");
+			}else{
+				this.setState({
+					userSaveArray: userSaveArray,
+					displayUserSaves: true,
+					saveBox: false
+				}, () => {
+					console.log(this.state.userSaveArray);
+
+				});
+			}
 		}
 	}
 	writeUserData(){
