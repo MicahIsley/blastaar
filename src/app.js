@@ -2242,7 +2242,7 @@ class GameScreenHub extends React.Component {
 		}
 	}
 	writeUserData(){
-		var userEternal = document.getElementById("saveFileName").value + "!" + numberOfSaves;
+		//var userEternal = document.getElementById("saveFileName").value + "!" + numberOfSaves;
 		var user = username;
 		var fileName = document.getElementById("saveFileName").value;
 		console.log(user);
@@ -2258,17 +2258,17 @@ class GameScreenHub extends React.Component {
 			this.displayErrorMessage("Pick a different name");
 		}else{
 			var userSaveData = {collectionArray: collectionArray, score: this.state.score, levels: levelArray, name: fileName};
-			var userEternalData = {collectionArray: collectionArray, score: this.state.score, levels: levelArray, name: fileName};
+			//var userEternalData = {collectionArray: collectionArray, score: this.state.score, levels: levelArray, name: fileName};
 			this.setState({
 				developers: userSaveData,
-				developersEternal: userEternalData
+				//developersEternal: userEternalData
 
 			}, () => {
-				Firebase.database().ref(`/${userEternal}`).set(this.state.developersEternal);
+				/*Firebase.database().ref(`/${userEternal}`).set(this.state.developersEternal);
 			 	this.displayErrorMessage('DATA SAVED');
 			 	this.setState({
 			 		developers: []
-			 	});
+			 	});*/
 			 	Firebase.database().ref(`/${user}/${fileName}`).set(this.state.developers);
 			 	this.displayErrorMessage('DATA SAVED');
 			 	this.setState({
