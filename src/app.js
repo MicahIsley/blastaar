@@ -283,7 +283,7 @@ var fire25 = new CardCon("Kragmup", 2, 0, "Burning 1.", "hero", 0, "supBurning 1
 var fire26 = new CardCon("Tipper", 2, 0, "Fire cards get +1 power.", "hero", 0, "boost fire 1", 99, false, "support", tipper, fire, "fire", 0, 0, 0);
 var fire27 = new CardCon("Grand Tipper", 3, 0, "Burning 3.", "hero", 0, "supBurning 3", 99, false, "support", grandTipper, fire, "fire", 0, 0, 0);
 var fire28 = new CardCon("Pheonix Wyrm", 2, 0, "Burning 2.", "hero", 0, "supBurning 2", 99, false, "support", pheonixWyrm, fire, "fire", 0, 0, 0);
-var fire29 = new CardCon("Flame Crawler", 1, 0, "Fire cards get +1 power.", "hero", 0, "boost fire 1", 99, false, "support", flameCrawler, fire, "fire", 0, 0, 0);
+var fire29 = new CardCon("Flame Crawler", 1, 0, "Immune to Exhaust", "hero", 0, "supExhaust", 99, false, "support", flameCrawler, fire, "fire", 0, 0, 0);
 
 var water1 = new CardCon("Quick Chill", 0, 2, "Stun.", "hero", 1, "stun", "", false, "stormlight", placeholderImg, water, "water", 1, 0, 0);
 var water2 = new CardCon("Restorative Blast", 0, 4, "Reclaim 2", "hero", 1, "reclaim 2", "", false, "stormlight", placeholderImg, water, "water", 2, 0, 0);
@@ -2346,6 +2346,11 @@ class GameScreenHub extends React.Component {
 			levelsBeaten = [];
 		}else{
 			levelsBeaten = lvlsBeat;
+			if(levelsBeaten.length >= 3){
+				levelEnemyNum = 3;
+			}else{
+				levelEnemyNum = 2;
+			}
 		}
 		this.setState({
 			score: 0,
@@ -2379,7 +2384,9 @@ class GameScreenHub extends React.Component {
 			audioEl = document.getElementsByClassName("brightStyle")[0];
 		}else if(level === "wind"){
 			audioEl = document.getElementsByClassName("findingOut")[0];
-		}else{}
+		}else{
+			audioEl = document.getElementsByClassName("findingOut")[0];
+		}
 		audioEl.pause();
 	}
 	playAudio(){
@@ -2392,7 +2399,9 @@ class GameScreenHub extends React.Component {
 			audioEl = document.getElementsByClassName("brightStyle")[0];
 		}else if(level === "wind"){
 			audioEl = document.getElementsByClassName("findingOut")[0];
-		}else{}
+		}else{
+			audioEl = document.getElementsByClassName("findingOut")[0];
+		}
 		audioEl.play();
 	}
 	gainSupCardReward(reward){
@@ -3569,7 +3578,7 @@ class GameScreen extends React.Component {
 			}
 		}
 		multiplier = 1;
-		if(this.state.recruit === true && (card.type === "support" || card.type === "character")){
+		if(card.type === "support" || card.type === "character"){
 			console.log("going to recruit");
 			this.recruitCharacter(card);
 		}else if(this.state.research === true){
@@ -4279,16 +4288,27 @@ class GameScreen extends React.Component {
 				var numberDrawn = this.state.playerInt + this.state.extraCards;
 				shuffle(cardArray);
 				var selectedCards = cardArray.slice(0, numberDrawn);
-				this.setState({
-					cards: []
-				}, () =>{
+				var unplayableCards = 0;
+				for(var i=0; i<selectedCards.length; i++){
+					if(selectedCards[i].cost > this.props.influence){
+						unplayableCards ++;
+					}else{}
+				}
+				if(unplayableCards === selectedCards.length){
+					this.playerAttack(0);
+					this.props.error("Critical Miss");
+				}else{
 					this.setState({
-					cardDisplay: true,
-					cards: selectedCards
+						cards: []
 					}, () =>{
-						this.updateSabotageNum();
+						this.setState({
+						cardDisplay: true,
+						cards: selectedCards
+						}, () =>{
+							this.updateSabotageNum();
+						});
 					});
-				});
+				}
 			}
 		}
 	}
