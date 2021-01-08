@@ -2330,8 +2330,6 @@ class GameScreenHub extends React.Component {
 	  });
 	}
 	setUpPlayerSave(collection, lvlsBeat, score){
-		console.log(collection);
-		console.log(lvlsBeat)
 		//document.getElementById("saveName").value = playerData
 		if(collectionArray === undefined){
 
@@ -2340,6 +2338,9 @@ class GameScreenHub extends React.Component {
 				collectionArray[i].deckNum = collection[i].deckNum;
 				collectionArray[i].ownedNum = collection[i].ownedNum;
 				collectionArray[i].unlocked = collection[i].unlocked;
+				if(collectionArray[i].deckNum > 0){
+					cardArray.push(collectionArray[i]);
+				}else{}
 			}
 		}
 		if(lvlsBeat[0] === "empty"){
@@ -2348,8 +2349,10 @@ class GameScreenHub extends React.Component {
 			levelsBeaten = lvlsBeat;
 			if(levelsBeaten.length >= 3){
 				levelEnemyNum = 3;
+				youberHero.hp = youberHero.hp + ((levelsBeaten.length - 1) * 10);
 			}else{
 				levelEnemyNum = 2;
+				youberHero.hp = youberHero.hp + (levelsBeaten.length * 5);
 			}
 		}
 		this.setState({
@@ -3578,11 +3581,11 @@ class GameScreen extends React.Component {
 			}
 		}
 		multiplier = 1;
-		if(card.type === "support" || card.type === "character"){
+		if(this.state.research === true){
+			this.chooseResearch(card);
+		}else if(card.type === "support" || card.type === "character"){
 			console.log("going to recruit");
 			this.recruitCharacter(card);
-		}else if(this.state.research === true){
-			this.chooseResearch(card);
 		}else if(this.state.scheming === true){
 			const x = document.getElementsByClassName("hero");
 				for (var i=0; i < x.length; i ++ ){
@@ -3591,7 +3594,7 @@ class GameScreen extends React.Component {
 			this.scheme(card);
 		}else{
 			if(card.cost > this.props.influence && card.type === "stormlight"){
-				this.props.error("Not enough energy");
+				this.props.error("Not enough energy!");
 			}else{
 				this.setState({
 					cardDisplay: false,
@@ -4400,6 +4403,10 @@ class GameScreen extends React.Component {
 			heroAttack = 0;
 		}else{
 			heroAttack = newAttack;
+		}
+		const x = document.getElementsByClassName("characterImage2");
+		for (var i=0; i < x.length; i ++ ){
+			x[i].classList.remove("targetedEnemy");
 		}
 		for(var i = 0; i<enemyArray.length; i++){
 			if(enemyArray[i].hp > 0){
