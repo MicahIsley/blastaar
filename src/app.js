@@ -189,7 +189,7 @@ var crafting1 = new CardCon("------", 0, 0, " ", "hero", 0, "", "", false, "stor
 
 var neutral1 = new CardCon("Small Rock", 0, 2, "It's pretty small.", "hero", 1, "", "", false, "stormlight", placeholderImg, neutral, "neutral", 1, 0, 4);
 var neutral2 = new CardCon("Big Rock", 0, 4, "It's pretty big.", "hero", 1, "", "", false, "stormlight", placeholderImg, neutral, "neutral", 2, 0, 3);
-var neutral3 = new CardCon("Thick Skin", 0, 2, "Ward 2.", "hero", 1, "ward 2", "", false, "stormlight", placeholderImg, neutral, "neutral", 3, 0, 2);
+var neutral3 = new CardCon("Thick Skin", 0, 2, "Ward 3.", "hero", 1, "ward 3", "", false, "stormlight", placeholderImg, neutral, "neutral", 3, 0, 2);
 var neutral4 = new CardCon("Short Rest", 0, 2, "Heal 3.", "hero", 1, "heal 3", "", false, "stormlight", placeholderImg, neutral, "neutral", 4, 0, 2);
 var neutral5 = new CardCon("Focus", 0, 1, "Next Spell +3.", "hero", 1, "next 3", "", false, "stormlight", placeholderImg, neutral, "neutral", 5, 0, 2);
 var neutral6 = new CardCon("Reach Back In", 0, 3, "Rummage 2.", "hero", 1, "rummage 2", "", false, "stormlight", placeholderImg, neutral, "neutral", 6, 0, 2);
@@ -254,9 +254,9 @@ var earth29 = new CardCon("Wobbleduk", 1, 0, "Earth cards get +1 power.", "hero"
 
 var fire1 = new CardCon("Fire Rock", 0, 4, "Simple, but effective.", "hero", 1, "", "", false, "stormlight", placeholderImg, fire, "fire", 1, 0, 0);
 var fire2 = new CardCon("Illuminate", 0, 4, "Next +2", "hero", 1, "next 2", "", false, "stormlight", placeholderImg, fire, "fire", 2, 0, 0);
-var fire3 = new CardCon("Ember Smash", 0, 2, "All.", "hero", 1, "", "all", false, "stormlight", placeholderImg, fire, "fire", 3, 0, 0);
+var fire3 = new CardCon("Ember Smash", 0, 4, "Ward 3", "hero", 1, "ward 3", "", false, "stormlight", placeholderImg, fire, "fire", 3, 0, 0);
 var fire4 = new CardCon("Fling and Wait", 0, 1, "Random. +6 Power/+0 Power.", "hero", 1, "random", "damage 6/damage 0", false, "stormlight", placeholderImg, fire, "fire", 4, 0, 0);
-var fire5 = new CardCon("Pew Pew Pew", 0, 2, "All 2.", "hero", 1, "", "all", false, "stormlight", placeholderImg, fire, "fire", 5, 0, 0);
+var fire5 = new CardCon("Pew Pew Pew", 0, 2, "All", "hero", 1, "", "all", false, "stormlight", placeholderImg, fire, "fire", 5, 0, 0);
 var fire6 = new CardCon("Purify", 0, 3, "Purge", "hero", 1, "purge", "", false, "stormlight", placeholderImg, fire, "fire", 6, 0, 0);
 var fire7 = new CardCon("Fuel", 0, 3, "Energy 3.", "hero", 1, "energy 3", "", false, "stormlight", placeholderImg, fire, "fire", 7, 0, 0);
 var fire8 = new CardCon("Inner Fire", 0, 1, "Magic +1.", "hero", 1, "str 1", "", false, "stormlight", placeholderImg, fire, "fire", 8, 0, 0);
@@ -287,7 +287,7 @@ var fire29 = new CardCon("Flame Crawler", 1, 0, "Immune to Exhaust", "hero", 0, 
 
 var water1 = new CardCon("Quick Chill", 0, 2, "Stun.", "hero", 1, "stun", "", false, "stormlight", placeholderImg, water, "water", 1, 0, 0);
 var water2 = new CardCon("Restorative Blast", 0, 4, "Reclaim 2", "hero", 1, "reclaim 2", "", false, "stormlight", placeholderImg, water, "water", 2, 0, 0);
-var water3 = new CardCon("Ice Shell", 0, 2, "Ward 4", "hero", 1, "ward 4", "", false, "stormlight", placeholderImg, water, "water", 3, 0, 0);
+var water3 = new CardCon("Ice Shell", 0, 2, "Ward 5", "hero", 1, "ward 5", "", false, "stormlight", placeholderImg, water, "water", 3, 0, 0);
 var water4 = new CardCon("Assimilate", 0, 2, "Draw +1.", "hero", 1, "int 1", "", false, "stormlight", placeholderImg, water, "water", 4, 0, 0);
 var water5 = new CardCon("Stuck in Muck", 0, 4, "Capture 1.", "hero", 1, "capture 1", "", false, "stormlight", placeholderImg, water, "water", 5, 0, 0);
 var water6 = new CardCon("Riptide", 0, 5, "Rummage 1.", "hero", 1, "rummage 1", "", false, "stormlight", placeholderImg, water, "water", 6, 0, 0);
@@ -4777,7 +4777,7 @@ class GameScreen extends React.Component {
 							this.setState({
 								playerShield: 0
 							});
-							if(enemyArray[enemyNumber].sabotage > 0){
+							if(enemyArray[enemyNumber].sabotage > 0 && enemyAttack > 0){
 								var enemySabCard = enemyArray[enemyNumber].sabCard;
 								var enemyCard = new CardCon(enemySabCard.name, enemySabCard.cost, enemySabCard.power, enemySabCard.text, enemySabCard.alignment, enemySabCard.rarity, enemySabCard.ability1, enemySabCard.ability2, enemySabCard.unlocked, enemySabCard.type, enemySabCard.image, enemySabCard.icon, enemySabCard.faction, enemySabCard.craft, enemySabCard.ownedNum, enemySabCard.deckNum);
 								if(this.state.decoy === false){
@@ -4800,7 +4800,7 @@ class GameScreen extends React.Component {
 					}else{
 						let playerHealth = this.props.heroHp;
 						const playerHp = playerHealth - enemyAttack;
-						if(enemyArray[enemyNumber].sabotage > 0){
+						if(enemyArray[enemyNumber].sabotage > 0 && enemyAttack > 0){
 							var enemySabCard2 = enemyArray[enemyNumber].sabCard;
 							var enemyCard2 = new CardCon(enemySabCard2.name, enemySabCard2.cost, enemySabCard2.power, enemySabCard2.text, enemySabCard2.alignment, enemySabCard2.rarity, enemySabCard2.ability1, enemySabCard2.ability2, enemySabCard2.unlocked, enemySabCard2.type, enemySabCard2.image, enemySabCard2.icon, enemySabCard2.faction, enemySabCard2.craft, enemySabCard2.ownedNum, enemySabCard2.deckNum);
 							if(this.state.decoy === false){
