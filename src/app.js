@@ -243,7 +243,7 @@ var earth20 = new CardCon("Strange Geode", 0, 0, "What's Inside?", "hero", 3, "a
 //var earth20 = new CardCon("Quicksand", 3, 0, "Scheme 5.", "hero", 0, "scheme earth 5 confuse", 1, false, "character", placeholderImg, earth, "earth", 20, 0, 0);
 
 var earth21 = new CardCon("Rock Fairy", 1, 0, "Gain 1 Earth Card.", "hero", 0, "supCards 1", 99, false, "support", rockFairy, earth, "earth", 21, 0, 0); 
-var earth22 = new CardCon("Primtree", 2, 0, "Earth cards get +2 power.", "hero", 0, "boost earth 2", 99, false, "support", primtree, earth, "earth", 0, 0, 0);
+var earth22 = new CardCon("Primtree", 2, 0, "Earth cards get +2 power.", "hero", 0, "match earth heal 2", 99, false, "support", primtree, earth, "earth", 0, 0, 0);
 var earth23 = new CardCon("King Wobbleduk", 3, 0, "Earth cards get +3 power.", "hero", 0, "boost earth 3", 99, false, "support", kingWobbleduk, earth, "earth", 0, 0, 0);
 var earth24 = new CardCon("Steed", 1, 0, "Heal 2 Each Turn", "hero", 0, "supHeal 2", 99, false, "support", steed, earth, "earth", 0, 0, 0);
 var earth25 = new CardCon("Stone Strider", 2, 0, "Heal 3 Each Turn", "hero", 0, "supHeal 3", 99, false, "support", stoneStrider, earth, "earth", 0, 0, 0);
@@ -3871,6 +3871,11 @@ class GameScreen extends React.Component {
 							var boostObject = {type: ability, num: boostNum};
 							boostArray.push(boostObject);
 						}else{}
+					}else if(supArray[i].ability1.indexOf("match") >= 0){
+						var boostType = supArray[i].ability1.split(/[ ,]+/)[1];
+						var boostAbility = supArray[i].ability1.split(/[ ,]+/)[2] + " " + supArray[i].ability1.split(/[ ,]+/)[3];
+						var boostObject = {type: boostType, num: boostAbility};
+						boostArray.push(boostObject);
 					}
 				}
 			}
@@ -3886,9 +3891,14 @@ class GameScreen extends React.Component {
 	checkCardAbility(card){
 		var supportMod = 0;
 		var boostArray = this.state.boostArray;
+		var supportAbility = false;
 		for(var i=0; i<boostArray.length; i++){
 			if(card.faction === boostArray[i].type || card.ability1.indexOf(boostArray[i].type) >=0 || card.ability2.indexOf(boostArray[i].type) >=0){
-				supportMod = supportMod + boostArray[i].num;
+				if(typeof boostArray[i].num === "number"){
+					supportMod = supportMod + boostArray[i].num;
+				}else{
+					supportAbility = boostArray[i].num;
+				}
 			}else{}
 		}
 		var cardPower = card.power;
@@ -3922,6 +3932,8 @@ class GameScreen extends React.Component {
 			}else{
 				checkAbility = card.ability2;
 			}
+		}else if(cardAbilityNum === 3){
+			checkAbility = supportAbility;
 		}
 		if(card.ability1.indexOf("scheme") >=0){
 			this.playerAttack(newAttack);
@@ -4253,7 +4265,15 @@ class GameScreen extends React.Component {
 					cardAbilityNum = 2;
 				}
 			}else{}
-			if(cardAbilityNum === 2){
+			if(cardAbilityNum === 2 && supportAbility === false){
+				if(card.ability1.indexOf("finesse") >=0 || card.ability2.indexOf("finesse") >=0 ){
+					this.playerAttack(finesseAttack);
+				}else{
+					this.playerAttack(newAttack);
+				}
+				this.updateTypeCount(card.faction);
+				cardAbilityNum = 1;
+			}else if(cardAbilityNum === 3){
 				if(card.ability1.indexOf("finesse") >=0 || card.ability2.indexOf("finesse") >=0 ){
 					this.playerAttack(finesseAttack);
 				}else{
