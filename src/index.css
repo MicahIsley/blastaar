@@ -7,6 +7,28 @@ body {
 	height: 100vh;
 }
 
+#storyScreen {
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+	background: black;
+	color: white;
+	font-size: 25px;
+	font-family: 'Metamorphous', cursive;
+	z-index: 5;
+}
+
+#storyText {
+	padding: 50px;
+}
+
+#storyButtonRow {
+	position: fixed;
+	bottom: 30px;
+	width: 100%;
+	text-align: center;
+}
+
 .enemyStatus {
 	position: absolute;
     z-index: 2;
@@ -1310,6 +1332,19 @@ input {
 	z-index: 3;
 }
 
+.rewardCard {
+	border-style: inset;
+	color: white;
+	border-width: 6px;
+	border-radius: 30px 5px;
+	box-shadow: 4px 0px 2px black;
+	float: left;
+    height: 180px;
+    width: 161px;
+	margin: 5px;
+	text-align: center;
+}
+
 .hero2 {
 	border-style: inset;
 	color: white;
@@ -1817,6 +1852,43 @@ input {
     background: #ffffffa6;
 }
 
+#rewardsCol {
+	background: #696969ad;
+    position: fixed;
+    z-index: 1;
+    height: 45vh;
+    width: 0px;
+    right: 15px;
+    bottom: 240px;
+    transition: .5s;
+    overflow: scroll;
+}
+
+#rewardsIcon {
+	position: fixed;
+	margin-right: 10px;
+    margin-top: 34px;
+    right: 25px;
+    bottom: 240px;
+	height: 100px;
+	width: 100px;
+	background-image: url(assets/icons/rewards.png);
+	background-size: contain;
+	transition: .5s;
+}
+
+#rewardsIcon:hover {
+	background-image: url(assets/icons/rewardsHover.png);
+}
+
+.rewardGem {
+	height: 50px;
+	border-radius: 50px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: black;
+}
+
 .magicBag {
 	height: 145px;
 	margin-top: 5%;
@@ -1965,20 +2037,42 @@ input {
 	margin-top: 25px;
 	margin-bottom: 25px;
 	border-style: solid;
-	border-color: black;
+	border-radius: 15px;
+	border-color: red;
 	border-width: 3px;
 	font-family: 'Metamorphous', cursive;
 	color: white;
 }
 
 #cardRewardRow {
-	
+	border-radius: 15px;
+	border-color: red;
+	border-width: 3px;
+	border-style: solid;
 }
 
 #gemRewardRow {
 	margin-top: 25px;
 	margin-bottom: 50px;
 	text-align: center;
+	overflow: scroll;
+	border-radius: 15px;
+	border-color: red;
+	border-width: 3px;
+	border-style: solid;
+}
+
+#hpRewardRow {
+	color: white;
+	padding-top: 24px;
+	padding-bottom: 24px;
+	margin-top: 25px;
+	margin-bottom: 50px;
+	text-align: center;
+	border-radius: 15px;
+	border-color: red;
+	border-width: 3px;
+	border-style: solid;
 }
 
 .coolButton {
