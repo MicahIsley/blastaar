@@ -194,12 +194,34 @@ var enemy1Slot = {};
 var enemy2Slot = {};
 var createEnemy;
 
+var storyText = [
+	{level: "first", timing: "Start", text: "Youber awakens from a terrible dream. His home is dark and empty. Calling out, he soon realizes that he is alone. His family is gone. It finally happened. Youber grabs his great-grandfathers magic sack and walks out into the beyond."},
+	{level: "earth", timing: "Start", text: "Youber decides to explore the pleasant forests of Primafauna. That couldn't possibly be too scary."},
+	{level: "earth", timing: "End", text: "Youber learns of a growing darkness in the heart of the woods. Should he press deeper of explore the neighboring regions?"},
+	{level: "fire", timing: "Start", text: "Youber adventures into the fearsome fire fields. Perhaps here he will discover some clues about his family's disappearance."},
+	{level: "fire", timing: "End", text: "Sweating profusely, Youber ponders his next steps. Move on to cooler pastures or persue whatever secrets this burning land holds."},
+	{level: "water", timing: "Start", text: "Youber's questing leads him to the Islands of Ruu. A tropical paradise, though Youber has never been too fond of the water."},
+	{level: "water", timing: "End", text: "Youber hears a rumor of danger farther inland. Could this be where his family was taken?"},
+	{level: "wind", timing: "Start", text: "Youber scales the heights of the Howling Caverns. These caves surely hold many secrets."},
+	{level: "wind", timing: "End", text: "Youber can see a dark shroud in the distance. It appears his adventure leads furthur in danger."},
+	{level: "desert", timing: "Start", text: "The sun grows hotter, the air drier. Youber needs a drink, but on quests, sacrifices must be made."},
+	{level: "desert", timing: "End", text: "As Youber treks through the desert, an image looms in the distance. Not a mirage, but a dark tower, looming ominously. Now Youber must find the path forward."},
+	{level: "lava", timing: "Start", text: "Youber ventures into the Magma Lands. The ground trembles beneath his feet and the air boils. If there are any secrets here, they must be found quickly."},
+	{level: "lava", timing: "End", text: "Past the volcano's peak the Dark Tower comes into focus. It seems to be calling to Youber, challenging him to save his family."},
+	{level: "mud", timing: "Start", text: "Youber can smell the bog long before he arrives. The mud seems lively here and magic seems to radiate from every surface."},
+	{level: "mud", timing: "End", text: "Dirtier than before and stickier, Youber emerges with tales of a tower corrupting everything around it."},
+	{level: "storm", timing: "Start", text: "Normally, Youber would seek shelter when a storm arose, but these are extraordinary times and Youber will not be detered."},
+	{level: "storm", timing: "End", text: "The dlouds break and Youber sees what has been drawing him toward it this whole time. The Dark Tower"},
+	{level: "tower", timing: "Start", text: "Finally, the path to the tower revealed itself and Youber finds himself about to ascend it. Afterall, shouldn't the reward to all quest end at the top of an treacherous tower?"},
+	{level: "tower", timing: "End", text: "Youber has found his family! Now that evil has been vanquished, Youber can return home and live a life of peace and hapiness."}
+]
+
 var sabotage1 = new CardCon("Tripped Up", 0, 0, "Hit the ground", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
 var sabotage2 = new CardCon("Budle Charm", 0, -1, "Woozy", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
 var sabotage3 = new CardCon("Raging Storm", 0, -2, "So Fierce", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
 var sabotage4 = new CardCon("Steamed", 0, -3, "Super way too hot", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
-var sabotage5 = new CardCon("Disrupt", 0, 0, "No Ward", "enemy", 0, "blockW", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
-var sabotage6 = new CardCon("Sickness", 0, 0, "No Heal", "enemy", 0, "blockH", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
+var sabotage5 = new CardCon("Disrupt", 0, 0, "No Wrd", "enemy", 0, "blockW", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
+var sabotage6 = new CardCon("Sickness", 0, 0, "No Hl", "enemy", 0, "blockH", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
 var sabotage7 = new CardCon("Mind Scramble", 0, 0, "No Card Abilities", "enemy", 0, "blockA", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
 
 var crafting1 = new CardCon("------", 0, 0, " ", "hero", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 0, 1, 0);
@@ -1500,6 +1522,7 @@ const borgusStats = {
 	image: borgus,
 	sabCard: sabotage1,
 	element: "spooky",
+	supCard: spooky1,
 	effect: [null, null, null]
 };
 
@@ -1512,6 +1535,7 @@ const misterBorgusStats = {
 	image: misterBorgus,
 	sabCard: sabotage1,
 	element: "spooky",
+	supCard: spooky1,
 	effect: [null, null, null]
 };
 
@@ -1537,6 +1561,7 @@ const purpleKreepStats = {
 	image: purpleKreep,
 	sabCard: sabotage1,
 	element: "spooky",
+	supCard: spooky1,
 	effect: [null, null, null]
 };
 
@@ -1549,6 +1574,7 @@ const reacherStats = {
 	image: reacher,
 	sabCard: sabotage1,
 	element: "spooky",
+	supCard: spooky1,
 	effect: [null, null, null]
 };
 
@@ -1561,6 +1587,7 @@ const rundarrStats = {
 	image: rundarr,
 	sabCard: sabotage1,
 	element: "spooky",
+	supCard: spooky1,
 	effect: [null, null, null]
 };
 
@@ -1573,6 +1600,7 @@ const sinisterSloopStats = {
 	image: sinisterSloop,
 	sabCard: sabotage1,
 	element: "spooky",
+	supCard: spooky1,
 	effect: [null, null, null]
 };
 
@@ -1585,6 +1613,7 @@ const soulShredderStats = {
 	image: soulShredder,
 	sabCard: sabotage1,
 	element: "spooky",
+	supCard: spooky1,
 	effect: [null, null, null]
 };
 
@@ -1597,6 +1626,7 @@ const superPincherStats = {
 	image: superPincher,
 	sabCard: sabotage1,
 	element: "spooky",
+	supCard: spooky1,
 	effect: [null, null, null]
 };
 
@@ -1609,6 +1639,7 @@ const toogerStats = {
 	image: tooger,
 	sabCard: sabotage1,
 	element: "spooky",
+	supCard: spooky1,
 	effect: [null, null, null]
 };
 
@@ -1621,6 +1652,7 @@ const earthGolemStats = {
 	image: earthGolem,
 	sabCard: sabotage1,
 	element: "earth",
+	supCard: spooky1,
 	effect: ["impervious", null, null]
 };
 
@@ -1633,6 +1665,7 @@ const fireGolemStats = {
 	image: fireGolem,
 	sabCard: sabotage1,
 	element: "fire",
+	supCard: spooky1,
 	effect: ["impervious", null, null]
 };
 
@@ -1645,6 +1678,7 @@ const waterGolemStats = {
 	image: waterGolem,
 	sabCard: sabotage1,
 	element: "water",
+	supCard: spooky1,
 	effect: ["impervious", null, null]
 };
 
@@ -1657,6 +1691,7 @@ const windGolemStats = {
 	image: windGolem,
 	sabCard: sabotage1,
 	element: "wind",
+	supCard: spooky1,
 	effect: ["impervious", null, null]
 };
 
@@ -1669,6 +1704,7 @@ const desertGolemStats = {
 	image: desertGolem,
 	sabCard: sabotage1,
 	element: "desert",
+	supCard: spooky1,
 	effect: ["impervious", null, null]
 };
 
@@ -1681,6 +1717,7 @@ const lavaGolemStats = {
 	image: lavaGolem,
 	sabCard: sabotage1,
 	element: "lava",
+	supCard: spooky1,
 	effect: ["impervious", null, null]
 };
 
@@ -1693,6 +1730,7 @@ const mudGolemStats = {
 	image: mudGolem,
 	sabCard: sabotage1,
 	element: "mud",
+	supCard: spooky1,
 	effect: ["impervious", null, null]
 };
 
@@ -1704,7 +1742,8 @@ const stormGolemStats = {
 	pointValue: 750,
 	image: stormGolem,
 	sabCard: sabotage1,
-	element: "storm",
+	element: "storm",	
+	supCard: spooky1,
 	effect: ["impervious", null, null]
 };
 
@@ -2220,6 +2259,7 @@ var loggedIn = false;
 var username;
 var userSaveArray = [];
 var storyCounter = 0;
+var currentStoryText;
 
 function shuffle(a) {
     for (let i = a.length; i; i--) {
@@ -2505,14 +2545,17 @@ class GameScreenHub extends React.Component {
 			if(levelsBeaten.length >= 3){
 				levelEnemyNum = 3;
 				youberHero.hp = youberHero.hp + ((levelsBeaten.length - 1) * 10);
+				console.log(youberHero.hp);
 			}else{
 				levelEnemyNum = 2;
 				youberHero.hp = youberHero.hp + (levelsBeaten.length * 5);
+				console.log(youberHero.hp);
 			}
 		}
 		this.setState({
 			score: 0,
-			displayUserSaves: false
+			displayUserSaves: false,
+			heroHp: youberHero.hp
 		}, () => {
 			this.changeScore(score);
 		});
@@ -2562,7 +2605,8 @@ class GameScreenHub extends React.Component {
 		}
 		audioEl.play();
 	}
-	showStoryScreen(){
+	showStoryScreen(newStoryText){
+		currentStoryText = newStoryText;
 		this.setState({
 			storyScreen: true
 		});
@@ -3153,7 +3197,7 @@ class LevelSelectScreen extends React.Component {
 		if(levelsBeaten.length > 0){
 
 		}else{
-			this.props.showStoryScreen();
+			this.props.showStoryScreen(storyText[0].text);
 		}
 		var unlockLevels = this.state.levelsUnlocked;
 		if(levelsBeaten.includes("fire") === true && levelsBeaten.includes("earth") === true){
@@ -3222,21 +3266,21 @@ class LevelSelectScreen extends React.Component {
 
 class StoryScreen extends React.Component {
 	componentDidMount(){
+		storyCounter = 0;
 		this.scrollText();
 	}
 	scrollText(){
-		var speed = 50;
-		var storyText = "Youber awakens from a terrible dream. His home is dark and empty. Calling out, he soon realizes that he is alone. His family is gone. It finally happened. Youber grabs his great-grandfathers magic sack and walks out into the beyond.";
+		var speed = 40;
 		if(document.getElementById("storyText") === null){
-			speed = 50;
+			speed = 40;
 			storyCounter = 0;
 		}else{
-			if (storyCounter < storyText.length) {
-				document.getElementById("storyText").innerHTML += storyText.charAt(storyCounter);
-			    if(storyText.charAt(storyCounter) === "."){
-			    	speed = 1500;
+			if (storyCounter < currentStoryText.length) {
+				document.getElementById("storyText").innerHTML += currentStoryText.charAt(storyCounter);
+			    if(currentStoryText.charAt(storyCounter) === "."){
+			    	speed = 1000;
 			    }else{
-			    	speed = 50;
+			    	speed = 40;
 			    }
 			    storyCounter++;
 			    setTimeout(() => {
@@ -3608,37 +3652,49 @@ class GameScreen extends React.Component {
 	}
 	componentDidMount() {
 		var audioEl;
+		var newStoryText;
 		if(level === "fire"){
+			newStoryText = storyText[3].text;
 			audioEl = document.getElementsByClassName("intense")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + fireBackground + ")";
 		}else if(level === "earth"){
+			newStoryText = storyText[1].text;
 			audioEl = document.getElementsByClassName("mistyWoods")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + grassBackground + ")";
 		}else if(level === "water"){
+			newStoryText = storyText[5].text;
 			audioEl = document.getElementsByClassName("brightStyle")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + waterBackground + ")";
 		}else if(level === "wind"){
+			newStoryText = storyText[7].text;
 			audioEl = document.getElementsByClassName("findingOut")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + windBackground + ")";
 		}else if(level === "lava"){
+			newStoryText = storyText[11].text;
 			audioEl = document.getElementsByClassName("findingOut")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + lavaBackground + ")";
 		}else if(level === "storm"){
+			newStoryText = storyText[15].text;
 			audioEl = document.getElementsByClassName("findingOut")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + stormBackground + ")";
 		}else if(level === "mud"){
+			newStoryText = storyText[13].text;
 			audioEl = document.getElementsByClassName("findingOut")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + mudBackground + ")";
 		}else if(level === "desert"){
+			newStoryText = storyText[9].text;
 			audioEl = document.getElementsByClassName("findingOut")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + desertBackground + ")";
 		}else if(level === "tower"){
+			newStoryText = storyText[17].text;
 			audioEl = document.getElementsByClassName("findingOut")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + towerBackground + ")";
 		}else if(level === "tutorial"){
 			audioEl = document.getElementsByClassName("findingOut")[0];
 			document.getElementById("tutorialMessageBox").style.display = "inline";
 		}
+		console.log(newStoryText);
+		this.props.showStoryScreen(newStoryText);
 		audioEl.loop = true;
 		audioEl.volume = .4;
 	    audioEl.play();
@@ -4485,12 +4541,14 @@ class GameScreen extends React.Component {
 			if(cardAbilityNum === 2 && supportAbility === false){
 				if(card.ability1.indexOf("finesse") >=0 || card.ability2.indexOf("finesse") >=0 ){
 					if(attackAll === true){
+						console.log("attackAll");
 						this.playerAttackAll(finesseAttack, false);
 					}else{
 						this.playerAttack(finesseAttack, cardElement);
 					}
 				}else{
 					if(attackAll === true){
+						console.log("attackAll2");
 						this.playerAttackAll(newAttack, false);
 					}else{
 						this.playerAttack(newAttack, cardElement);
@@ -4645,6 +4703,7 @@ class GameScreen extends React.Component {
 		}
 	}
 	playerAttackAll(newAttack, burn) {
+		attackAll = false;
 		var heroAttack;
 		if(newAttack < 0){
 			heroAttack = 0;
@@ -4887,7 +4946,27 @@ class GameScreen extends React.Component {
 				//this.props.aux();
 				//stageComplete ++;
 				if(stageComplete === numberOfStages - 1){
-					this.props.showStoryScreen();
+					var newStoryText;
+					if(level === "earth"){
+						newStoryText = storyText[2].text;
+					}else if(level === "fire"){
+						newStoryText = storyText[4].text;
+					}else if(level === "water"){
+						newStoryText = storyText[6].text;
+					}else if(level === "wind"){
+						newStoryText = storyText[8].text;
+					}else if(level === "desert"){
+						newStoryText = storyText[10].text;
+					}else if(level === "lava"){
+						newStoryText = storyText[12].text;
+					}else if(level === "mud"){
+						newStoryText = storyText[14].text;
+					}else if(level === "storm"){
+						newStoryText = storyText[16].text;
+					}else if(level === "tower"){
+						newStoryText = storyText[18].text;
+					}
+					this.props.showStoryScreen(newStoryText);
 					this.props.aux();
 				}else{
 					this.setState({
@@ -5530,7 +5609,7 @@ class Card extends React.Component {
 				}
 			}else if(this.props.card.ability2.indexOf("damage") >=0){
 				var damageNum = parseInt(this.props.card.ability2.split(" ")[1]);
-				if(this.props.card.ability1 === "clutch" && this.props.heroHp <=35){
+				if(this.props.card.ability1 === "clutch" && this.props.heroHp <=15){
 					cardBonus = damageNum;
 				}else{}
 			}
