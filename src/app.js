@@ -172,6 +172,7 @@ import intense from './assets/audio/intense.m4a';
 import brightStyle from './assets/audio/brightStyle.m4a';
 import findingOut from './assets/audio/findingOut.m4a';
 import fireDestruction from './assets/audio/fireDestruction.m4a';
+import mysteryMud from './assets/audio/mysteryMud.m4a';
 import defeat from './assets/audio/defeat.m4a';
 import victory from './assets/audio/victory.m4a';
 import meter0 from './assets/spookyMeter/meter0.png';
@@ -218,14 +219,17 @@ var storyText = [
 ]
 
 var sabotage1 = new CardCon("Tripped Up", 0, 0, "Hit the ground", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
-var sabotage2 = new CardCon("Budle Charm", 0, -1, "Woozy", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
+var sabotage2 = new CardCon("Off Balance", 0, -1, "Woozy", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
 var sabotage3 = new CardCon("Raging Storm", 0, -2, "So Fierce", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
 var sabotage4 = new CardCon("Steamed", 0, -3, "Super way too hot", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
 var sabotage5 = new CardCon("Disrupt", 0, 0, "No Wrd", "enemy", 0, "blockW", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
 var sabotage6 = new CardCon("Sickness", 0, 0, "No Hl", "enemy", 0, "blockH", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
 var sabotage7 = new CardCon("Mind Scramble", 0, 0, "No Card Abilities", "enemy", 0, "blockA", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
 var sabotage8 = new CardCon("Leech", 0, 0, "Enemy gets +1 HP when attacked.", "enemy", 0, "siphon 1", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
-var sabotage9 = new CardCon("Leech", 0, 0, "Enemy gets +2 HP when attacked.", "enemy", 0, "siphon 2", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
+var sabotage9 = new CardCon("Big Leech", 0, 0, "Enemy gets +2 HP when attacked.", "enemy", 0, "siphon 2", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
+var sabotage10 = new CardCon("Exhaustion", 0, 0, "Get Exhausted", "enemy", 0, "enemyExhst", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
+var sabotage11 = new CardCon("Brain Dead", 0, -4, "", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
+var sabotage9 = new CardCon("Super Leech", 0, 0, "Enemy gets +3 HP when attacked.", "enemy", 0, "siphon 3", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
 
 var crafting1 = new CardCon("------", 0, 0, " ", "hero", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 0, 1, 0);
 
@@ -678,7 +682,7 @@ const kingWobbledukStats = {
 	sabotage: 2,
 	pointValue: 1000,
 	image: kingWobbleduk,
-	sabCard: sabotage9,
+	sabCard: sabotage1,
 	element: "earth",
 	supCard: earth23,
 	effect: [null, null, null]
@@ -1052,11 +1056,11 @@ const alphaSpookawStats = {
 const duneStabberStats = {
 	name: "Dune Stabber",
 	hp: 9,
-	attack: 5,
+	attack: 4,
 	sabotage: 1,
 	pointValue: 100,
 	image: duneStabber,
-	sabCard: sabotage1,
+	sabCard: sabotage2,
 	element: "desert",
 	supCard: desert21,
 	effect: [null, null, null]
@@ -1064,7 +1068,7 @@ const duneStabberStats = {
 
 const sandSnippStats = {
 	name: "Sand Snipp",
-	hp: 7,
+	hp: 10,
 	attack: 2,
 	sabotage: 0,
 	pointValue: 100,
@@ -1078,11 +1082,11 @@ const sandSnippStats = {
 const desertMadnadoStats = {
 	name: "Desert Madnado",
 	hp: 7,
-	attack: 4,
-	sabotage: 2,
+	attack: 5,
+	sabotage: 1,
 	pointValue: 200,
 	image: desertMadnado,
-	sabCard: sabotage1,
+	sabCard: sabotage2,
 	element: "desert",
 	supCard: desert27,
 	effect: [null, null, null]
@@ -1090,7 +1094,7 @@ const desertMadnadoStats = {
 
 const grumpeelStats = {
 	name: "Grumpeel",
-	hp: 12,
+	hp: 13,
 	attack: 3,
 	sabotage: 0,
 	pointValue: 200,
@@ -1103,12 +1107,12 @@ const grumpeelStats = {
 
 const boneStalkerStats = {
 	name: "Bone Stalker",
-	hp: 10,
-	attack: 3,
+	hp: 11,
+	attack: 5,
 	sabotage: 1,
 	pointValue: 300,
 	image: boneStalker,
-	sabCard: sabotage1,
+	sabCard: sabotage10,
 	element: "desert",
 	supCard: desert28,
 	effect: [null, null, null]
@@ -1116,12 +1120,12 @@ const boneStalkerStats = {
 
 const wanderingRelicStats = {
 	name: "Wandering Relic",
-	hp: 6,
-	attack: 1,
-	sabotage: 0,
+	hp: 7,
+	attack: 3,
+	sabotage: 3,
 	pointValue: 300,
 	image: wanderingRelic,
-	sabCard: sabotage1,
+	sabCard: sabotage10,
 	element: "desert",
 	supCard: desert26,
 	effect: [null, null, null]
@@ -1129,12 +1133,12 @@ const wanderingRelicStats = {
 
 const predatorSnippStats = {
 	name: "Predator Snipp",
-	hp: 7,
-	attack: 3,
-	sabotage: 3,
+	hp: 5,
+	attack: 5,
+	sabotage: 2,
 	pointValue: 400,
 	image: predatorSnipp,
-	sabCard: sabotage1,
+	sabCard: sabotage3,
 	element: "desert",
 	supCard: desert22,
 	effect: [null, null, null]
@@ -1143,11 +1147,11 @@ const predatorSnippStats = {
 const championStalkerStats = {
 	name: "Champion Stalker",
 	hp: 28,
-	attack: 6,
+	attack: 5,
 	sabotage: 1,
 	pointValue: 1000,
 	image: championStalker,
-	sabCard: sabotage1,
+	sabCard: sabotage10,
 	element: "desert",
 	supCard: desert23,
 	effect: [exhaustedSym, null, "countDown"]
@@ -1155,12 +1159,12 @@ const championStalkerStats = {
 
 const stabberConclaveStats = {
 	name: "Stabber Conclave",
-	hp: 27,
+	hp: 26,
 	attack: 5,
 	sabotage: 3,
 	pointValue: 1000,
 	image: stabberConclave,
-	sabCard: sabotage1,
+	sabCard: sabotage2,
 	element: "desert",
 	supCard: desert24,
 	effect: [exhaustedSym, null, "countDown"]
@@ -1168,9 +1172,9 @@ const stabberConclaveStats = {
 
 const emberiteStats = {
 	name: "Emberite",
-	hp: 7,
-	attack: 2,
-	sabotage: 2,
+	hp: 8,
+	attack: 4,
+	sabotage: 0,
 	pointValue: 100,
 	image: emberite,
 	sabCard: sabotage1,
@@ -1181,9 +1185,9 @@ const emberiteStats = {
 
 const lavaWalkerStats = {
 	name: "Lava Walker",
-	hp: 12,
+	hp: 16,
 	attack: 2,
-	sabotage: 2,
+	sabotage: 0,
 	pointValue: 100,
 	image: lavaWalker,
 	sabCard: sabotage1,
@@ -1194,12 +1198,12 @@ const lavaWalkerStats = {
 
 const walkingEruptionStats = {
 	name: "Walking Eruption",
-	hp: 17,
-	attack: 2,
+	hp: 14,
+	attack: 3,
 	sabotage: 1,
 	pointValue: 200,
 	image: walkingEruption,
-	sabCard: sabotage1,
+	sabCard: sabotage5,
 	element: "lava",
 	supCard: lava29,
 	effect: [null, null, null]
@@ -1207,8 +1211,8 @@ const walkingEruptionStats = {
 
 const trekapodStats = {
 	name: "Trekapod",
-	hp: 8,
-	attack: 2,
+	hp: 9,
+	attack: 3,
 	sabotage: 2,
 	pointValue: 200,
 	image: trekapod,
@@ -1220,9 +1224,9 @@ const trekapodStats = {
 
 const moltasaurusStats = {
 	name: "Moltasaurus",
-	hp: 9,
-	attack: 5,
-	sabotage: 1,
+	hp: 11,
+	attack: 6,
+	sabotage: 0,
 	pointValue: 300,
 	image: moltasaurus,
 	sabCard: sabotage1,
@@ -1234,11 +1238,11 @@ const moltasaurusStats = {
 const volcanoTramplerStats = {
 	name: "Volcano Trampler",
 	hp: 12,
-	attack: 3,
+	attack: 5,
 	sabotage: 1,
 	pointValue: 300,
 	image: volcanoTrampler,
-	sabCard: sabotage1,
+	sabCard: sabotage5,
 	element: "lava",
 	supCard: lava21,
 	effect: [null, null, null]
@@ -1248,10 +1252,10 @@ const nutriteStats = {
 	name: "Nutrite",
 	hp: 7,
 	attack: 3,
-	sabotage: 1,
+	sabotage: 2,
 	pointValue: 400,
 	image: nutrite,
-	sabCard: sabotage1,
+	sabCard: sabotage7,
 	element: "lava",
 	supCard: lava26,
 	effect: [null, null, null]
@@ -1260,11 +1264,11 @@ const nutriteStats = {
 const moltasaurusRexStats = {
 	name: "Moltasaurus Rex",
 	hp: 30,
-	attack: 4,
+	attack: 7,
 	sabotage: 2,
 	pointValue: 1000,
 	image: moltasaurusRex,
-	sabCard: sabotage1,
+	sabCard: sabotage5,
 	element: "lava",
 	supCard: lava28,
 	effect: [power, 1, "static"]
@@ -1272,12 +1276,12 @@ const moltasaurusRexStats = {
 
 const lavaLordWalkerStats = {
 	name: "Lava Lord Walker",
-	hp: 34,
-	attack: 3,
+	hp: 38,
+	attack: 4,
 	sabotage: 1,
 	pointValue: 1000,
 	image: lavaLordWalker,
-	sabCard: sabotage1,
+	sabCard: sabotage4,
 	element: "lava",
 	supCard: lava24,
 	effect: [power, 1, "static"]
@@ -1285,7 +1289,7 @@ const lavaLordWalkerStats = {
 
 const lesserGalopeStats = {
 	name: "Lesser Galope",
-	hp: 13,
+	hp: 12,
 	attack: 3,
 	sabotage: 1,
 	pointValue: 100,
@@ -1303,7 +1307,7 @@ const toxicRollerStats = {
 	sabotage: 2,
 	pointValue: 100,
 	image: toxicRoller,
-	sabCard: sabotage1,
+	sabCard: sabotage8,
 	element: mud,
 	supCard: mud25,
 	effect: [null, null, null]
@@ -1311,12 +1315,12 @@ const toxicRollerStats = {
 
 const sominusStats = {
 	name: "Sominus",
-	hp: 5,
-	attack: 1,
+	hp: 8,
+	attack: 3,
 	sabotage: 1,
 	pointValue: 200,
 	image: sominus,
-	sabCard: sabotage1,
+	sabCard: sabotage9,
 	element: mud,
 	supCard: mud27,
 	effect: [null, null, null]
@@ -1325,7 +1329,7 @@ const sominusStats = {
 const warthusStats = {
 	name: "Warthus",
 	hp: 20,
-	attack: 1,
+	attack: 2,
 	sabotage: 0,
 	pointValue: 200,
 	image: warthus,
@@ -1337,12 +1341,12 @@ const warthusStats = {
 
 const mucksterStats = {
 	name: "Muckster",
-	hp: 9,
+	hp: 10,
 	attack: 4,
 	sabotage: 3,
 	pointValue: 300,
 	image: muckster,
-	sabCard: sabotage1,
+	sabCard: sabotage8,
 	element: mud,
 	supCard: mud22,
 	effect: [null, null, null]
@@ -1350,7 +1354,7 @@ const mucksterStats = {
 
 const bogBoarStats = {
 	name: "Bog Boar",
-	hp: 10,
+	hp: 12,
 	attack: 3,
 	sabotage: 3,
 	pointValue: 300,
@@ -1364,8 +1368,8 @@ const bogBoarStats = {
 const greaterGalopeStats = {
 	name: "Greater Galope",
 	hp: 14,
-	attack: 2,
-	sabotage: 2,
+	attack: 4,
+	sabotage: 1,
 	pointValue: 400,
 	image: greaterGalope,
 	sabCard: sabotage1,
@@ -1378,10 +1382,10 @@ const archmageMucksterStats = {
 	name: "Archmage Muckster",
 	hp: 23,
 	attack: 7,
-	sabotage: 3,
+	sabotage: 1,
 	pointValue: 1000,
 	image: archmageMuckster,
-	sabCard: sabotage1,
+	sabCard: sabotage11,
 	element: mud,
 	supCard: mud23,
 	effect: [int, 1, "static"]
@@ -1391,7 +1395,7 @@ const duchessWarthusStats = {
 	name: "Duchess Warthus",
 	hp: 46,
 	attack: 3,
-	sabotage: 2,
+	sabotage: 0,
 	pointValue: 1000,
 	image: duchessWarthus,
 	sabCard: sabotage1,
@@ -1404,10 +1408,10 @@ const staticGliderStats = {
 	name: "Static Glider",
 	hp: 8,
 	attack: 3,
-	sabotage: 0,
+	sabotage: 1,
 	pointValue: 100,
 	image: staticGlider,
-	sabCard: sabotage1,
+	sabCard: sabotage2,
 	element: "storm",
 	supCard: storm22,
 	effect: [null, null, null]
@@ -1428,12 +1432,12 @@ const shockSharkStats = {
 
 const lightningBugStats = {
 	name: "Lightning Bug",
-	hp: 6,
-	attack: 3,
+	hp: 7,
+	attack: 4,
 	sabotage: 2,
 	pointValue: 200,
 	image: lightningBug,
-	sabCard: sabotage1,
+	sabCard: sabotage2,
 	element: "storm",
 	supCard: storm21,
 	effect: [null, null, null]
@@ -1442,8 +1446,8 @@ const lightningBugStats = {
 const scorchedTreeGhastStats = {
 	name: "Schorched Tree Ghast",
 	hp: 17,
-	attack: 2,
-	sabotage: 2,
+	attack: 3,
+	sabotage: 3,
 	pointValue: 200,
 	image: scorchedTreeGhast,
 	sabCard: sabotage1,
@@ -1456,7 +1460,7 @@ const shelterThumpStats = {
 	name: "Shelter Thump",
 	hp: 14,
 	attack: 2,
-	sabotage: 1,
+	sabotage: 3,
 	pointValue: 300,
 	image: shelterThump,
 	sabCard: sabotage1,
@@ -1467,12 +1471,12 @@ const shelterThumpStats = {
 
 const rainWolfStats = {
 	name: "Rain Wolf",
-	hp: 12,
+	hp: 11,
 	attack: 4,
 	sabotage: 3,
 	pointValue: 300,
 	image: rainWolf,
-	sabCard: sabotage1,
+	sabCard: sabotage2,
 	element: "storm",
 	supCard: storm27,
 	effect: [null, null, null]
@@ -1482,7 +1486,7 @@ const staticCatcherStats = {
 	name: "Static Catcher",
 	hp: 10,
 	attack: 3,
-	sabotage: 1,
+	sabotage: 5,
 	pointValue: 400,
 	image: staticCatcher,
 	sabCard: sabotage1,
@@ -1498,7 +1502,7 @@ const greatShockSharkStats = {
 	sabotage: 2,
 	pointValue: 1000,
 	image: greatShockShark,
-	sabCard: sabotage1,
+	sabCard: sabotage3,
 	element: "storm",
 	supCard: storm23,
 	effect: [slash, 2, "countDown"]
@@ -1508,10 +1512,10 @@ const enlightenedRainWolfStats = {
 	name: "Enlightened Rain Wolf",
 	hp: 30,
 	attack: 5,
-	sabotage: 4,
+	sabotage: 6,
 	pointValue: 1000,
 	image: enlightenedRainWolf,
-	sabCard: sabotage1,
+	sabCard: sabotage2,
 	element: "storm",
 	supCard: storm29,
 	effect: [slash, 2, "countDown"]
@@ -1787,12 +1791,10 @@ const treasureChestStats = {
 	effect: ["stage", damagedTreasureStats, null]
 }
 
+var smallGolemArray = [earthGolemStats, fireGolemStats, waterGolemStats, windGolemStats];
+var bigGolemArray = [desertGolemStats, lavaGolemStats, mudGolemStats, stormGolemStats];
 var numberOfEnemies = 1;
 var numberOfStages;
-var earthStage = 0;
-var waterStage = 0;
-var windStage = 0;
-var fireStage = 0;
 var enemyDistributionArray = [140, 280, 350, 420, 455, 490, 498];
 var enemyDistributionArray2 = [90, 180, 280, 380, 430, 480, 498];
 var enemyDistributionArray3 = [80, 160, 250, 340, 400, 460, 498];
@@ -1815,22 +1817,15 @@ function tutorialLevels(){
 }
 
 function levelEarthDistribution(randEnemyNum){
-	numberOfStages = 4;
-	if(stageComplete < 3){
-		levelEnemyNum = 1;
-		for(var i=0; i<levelsBeaten.length; i++){
-			if(levelsBeaten[i] === "earth"){
-				levelEnemyNum ++;
-			}else{}
-		}
-		if(levelEnemyNum = 2){
-			enemyDistributionArray = enemyDistributionArray2;
-		}else if(levelEnemyNum = 3){
-			enemyDistributionArray = enemyDistributionArray3;
-		}else if(levelEnemyNum > 3){
-			levelEnemyNum = 3;
-		}else{}
-		numberOfEnemies = levelEnemyNum;
+	numberOfStages = 3;
+	if(numberOfEnemies === 2){
+		enemyDistributionArray = enemyDistributionArray2;
+	}else if(numberOfEnemies >= 3){
+		enemyDistributionArray = enemyDistributionArray3;
+		numberOfStages = 4;
+	}else{}
+	var randNum = Math.floor(Math.random() * 3);
+	if(numberOfStages === 3 || (numberOfStages === 4 && stageComplete < 3)){
 		if(randEnemyNum < enemyDistributionArray[0]){
 			createEnemy = primtreeStats;
 			return;
@@ -1853,10 +1848,10 @@ function levelEarthDistribution(randEnemyNum){
 			createEnemy = primtreeRoyalStats;
 			return;
 		}else{
-			createEnemy = gangOfFleebsStats;
+			createEnemy = smallGolemArray[randNum];
 		}
 	}else if(stageComplete === 3){
-		levelEnemyNum = 2;
+		numberOfEnemies = 1;
 		if(randEnemyNum < 250){
 			createEnemy = kingWobbledukStats;
 			return;
@@ -1867,22 +1862,15 @@ function levelEarthDistribution(randEnemyNum){
 }
 
 function levelFireDistribution(randEnemyNum){
-	numberOfStages = 4;
-	if(stageComplete < 3){
-		levelEnemyNum = 1;
-		for(var i=0; i<levelsBeaten.length; i++){
-			if(levelsBeaten[i] === "fire"){
-				levelEnemyNum ++;
-			}else{}
-		}
-		if(levelEnemyNum = 2){
-			enemyDistributionArray = enemyDistributionArray2;
-		}else if(levelEnemyNum = 3){
-			enemyDistributionArray = enemyDistributionArray3;
-		}else if(levelEnemyNum > 3){
-			levelEnemyNum = 3;
-		}else{}
-		numberOfEnemies = levelEnemyNum;
+	numberOfStages = 3;
+	if(numberOfEnemies === 2){
+		enemyDistributionArray = enemyDistributionArray2;
+	}else if(numberOfEnemies >= 3){
+		enemyDistributionArray = enemyDistributionArray3;
+		numberOfStages = 4;
+	}else{}
+	var randNum = Math.floor(Math.random() * 3);
+	if(numberOfStages === 3 || (numberOfStages === 4 && stageComplete < 3)){
 		if(randEnemyNum < enemyDistributionArray[0]){
 			createEnemy = emberAdderStats;
 			return;
@@ -1905,7 +1893,7 @@ function levelFireDistribution(randEnemyNum){
 			createEnemy = flameScrablerStats;
 			return;
 		}else{
-			createEnemy = gangOfFleebsStats;
+			createEnemy = smallGolemArray[randNum];
 		}
 	}else if(stageComplete === 3){
 		numberOfEnemies = 1;
@@ -1919,22 +1907,15 @@ function levelFireDistribution(randEnemyNum){
 }
 
 function levelWaterDistribution(randEnemyNum){
-	numberOfStages = 4;
-	if(stageComplete < 3){
-		levelEnemyNum = 1;
-		for(var i=0; i<levelsBeaten.length; i++){
-			if(levelsBeaten[i] === "water"){
-				levelEnemyNum ++;
-			}else{}
-		}
-		if(levelEnemyNum = 2){
-			enemyDistributionArray = enemyDistributionArray2;
-		}else if(levelEnemyNum = 3){
-			enemyDistributionArray = enemyDistributionArray3;
-		}else if(levelEnemyNum > 3){
-			levelEnemyNum = 3;
-		}else{}
-		numberOfEnemies = levelEnemyNum;
+	numberOfStages = 3;
+	if(numberOfEnemies === 2){
+		enemyDistributionArray = enemyDistributionArray2;
+	}else if(numberOfEnemies >= 3){
+		enemyDistributionArray = enemyDistributionArray3;
+		numberOfStages = 4;
+	}else{}
+	var randNum = Math.floor(Math.random() * 3);
+	if(numberOfStages === 3 || (numberOfStages === 4 && stageComplete < 3)){
 		if(randEnemyNum < enemyDistributionArray[0]){
 			createEnemy = trenchThumpStats;
 			return;
@@ -1957,7 +1938,7 @@ function levelWaterDistribution(randEnemyNum){
 			createEnemy = albinoSlapperStats;
 			return;
 		}else{
-			createEnemy = gangOfFleebsStats;
+			createEnemy = smallGolemArray[randNum];
 		}
 	}else if(stageComplete === 3){
 		numberOfEnemies = 1;
@@ -1971,22 +1952,15 @@ function levelWaterDistribution(randEnemyNum){
 }
 
 function levelWindDistribution(randEnemyNum){
-	numberOfStages = 4;
-	if(stageComplete < 3){
-		levelEnemyNum = 1;
-		for(var i=0; i<levelsBeaten.length; i++){
-			if(levelsBeaten[i] === "wind"){
-				levelEnemyNum ++;
-			}else{}
-		}
-		if(levelEnemyNum = 2){
-			enemyDistributionArray = enemyDistributionArray2;
-		}else if(levelEnemyNum = 3){
-			enemyDistributionArray = enemyDistributionArray3;
-		}else if(levelEnemyNum > 3){
-			levelEnemyNum = 3;
-		}else{}
-		numberOfEnemies = levelEnemyNum;
+	numberOfStages = 3;
+	if(numberOfEnemies === 2){
+		enemyDistributionArray = enemyDistributionArray2;
+	}else if(numberOfEnemies >= 3){
+		enemyDistributionArray = enemyDistributionArray3;
+		numberOfStages = 4;
+	}else{}
+	var randNum = Math.floor(Math.random() * 3);
+	if(numberOfStages === 3 || (numberOfStages === 4 && stageComplete < 3)){
 		if(randEnemyNum < enemyDistributionArray[0]){
 			createEnemy = maclawStats;
 			return;
@@ -2009,7 +1983,7 @@ function levelWindDistribution(randEnemyNum){
 			createEnemy = windFlitterStats;
 			return;
 		}else{
-			createEnemy = gangOfFleebsStats;
+			createEnemy = smallGolemArray[randNum];
 		}
 	}else if(stageComplete === 3){
 		numberOfEnemies = 1;
@@ -2023,22 +1997,15 @@ function levelWindDistribution(randEnemyNum){
 }
 
 function levelDesertDistribution(randEnemyNum){
-	numberOfStages = 4;
-	if(stageComplete < 3){
-		levelEnemyNum = 1;
-		for(var i=0; i<levelsBeaten.length; i++){
-			if(levelsBeaten[i] === "desert"){
-				levelEnemyNum ++;
-			}else{}
-		}
-		if(levelEnemyNum = 2){
-			enemyDistributionArray = enemyDistributionArray2;
-		}else if(levelEnemyNum = 3){
-			enemyDistributionArray = enemyDistributionArray3;
-		}else if(levelEnemyNum > 3){
-			levelEnemyNum = 3;
-		}else{}
-		numberOfEnemies = levelEnemyNum;
+	numberOfStages = 3;
+	if(numberOfEnemies === 2){
+		enemyDistributionArray = enemyDistributionArray2;
+	}else if(numberOfEnemies >= 3){
+		enemyDistributionArray = enemyDistributionArray3;
+		numberOfStages = 4;
+	}else{}
+	var randNum = Math.floor(Math.random() * 3);
+	if(numberOfStages === 3 || (numberOfStages === 4 && stageComplete < 3)){
 		if(randEnemyNum < enemyDistributionArray[0]){
 			createEnemy = sandSnippStats;
 			return;
@@ -2061,7 +2028,7 @@ function levelDesertDistribution(randEnemyNum){
 			createEnemy = predatorSnippStats;
 			return;
 		}else{
-			createEnemy = gangOfFleebsStats;
+			createEnemy = bigGolemArray[randNum];
 		}
 	}else if(stageComplete === 3){
 		numberOfEnemies = 1;
@@ -2075,22 +2042,15 @@ function levelDesertDistribution(randEnemyNum){
 }
 
 function levelLavaDistribution(randEnemyNum){
-	numberOfStages = 4;
-	if(stageComplete < 3){
-		levelEnemyNum = 1;
-		for(var i=0; i<levelsBeaten.length; i++){
-			if(levelsBeaten[i] === "lava"){
-				levelEnemyNum ++;
-			}else{}
-		}
-		if(levelEnemyNum = 2){
-			enemyDistributionArray = enemyDistributionArray2;
-		}else if(levelEnemyNum = 3){
-			enemyDistributionArray = enemyDistributionArray3;
-		}else if(levelEnemyNum > 3){
-			levelEnemyNum = 3;
-		}else{}
-		numberOfEnemies = levelEnemyNum;
+	numberOfStages = 3;
+	if(numberOfEnemies === 2){
+		enemyDistributionArray = enemyDistributionArray2;
+	}else if(numberOfEnemies >= 3){
+		enemyDistributionArray = enemyDistributionArray3;
+		numberOfStages = 4;
+	}else{}
+	var randNum = Math.floor(Math.random() * 3);
+	if(numberOfStages === 3 || (numberOfStages === 4 && stageComplete < 3)){
 		if(randEnemyNum < enemyDistributionArray[0]){
 			createEnemy = emberiteStats;
 			return;
@@ -2113,7 +2073,7 @@ function levelLavaDistribution(randEnemyNum){
 			createEnemy = nutriteStats;
 			return;
 		}else{
-			createEnemy = gangOfFleebsStats;
+			createEnemy = bigGolemArray[randNum];
 		}
 	}else if(stageComplete === 3){
 		numberOfEnemies = 1;
@@ -2127,22 +2087,15 @@ function levelLavaDistribution(randEnemyNum){
 }
 
 function levelMudDistribution(randEnemyNum){
-	numberOfStages = 4;
-	if(stageComplete < 3){
-		levelEnemyNum = 1;
-		for(var i=0; i<levelsBeaten.length; i++){
-			if(levelsBeaten[i] === "mud"){
-				levelEnemyNum ++;
-			}else{}
-		}
-		if(levelEnemyNum = 2){
-			enemyDistributionArray = enemyDistributionArray2;
-		}else if(levelEnemyNum = 3){
-			enemyDistributionArray = enemyDistributionArray3;
-		}else if(levelEnemyNum > 3){
-			levelEnemyNum = 3;
-		}else{}
-		numberOfEnemies = levelEnemyNum;
+	numberOfStages = 3;
+	if(numberOfEnemies === 2){
+		enemyDistributionArray = enemyDistributionArray2;
+	}else if(numberOfEnemies >= 3){
+		enemyDistributionArray = enemyDistributionArray3;
+		numberOfStages = 4;
+	}else{}
+	var randNum = Math.floor(Math.random() * 3);
+	if(numberOfStages === 3 || (numberOfStages === 4 && stageComplete < 3)){
 		if(randEnemyNum < enemyDistributionArray[0]){
 			createEnemy = lesserGalopeStats;
 			return;
@@ -2165,7 +2118,7 @@ function levelMudDistribution(randEnemyNum){
 			createEnemy = greaterGalopeStats;
 			return;
 		}else{
-			createEnemy = gangOfFleebsStats;
+			createEnemy = bigGolemArray[randNum];
 		}
 	}else if(stageComplete === 3){
 		numberOfEnemies = 1;
@@ -2179,22 +2132,15 @@ function levelMudDistribution(randEnemyNum){
 }
 
 function levelStormDistribution(randEnemyNum){
-	numberOfStages = 4;
-	if(stageComplete < 3){
-		levelEnemyNum = 1;
-		for(var i=0; i<levelsBeaten.length; i++){
-			if(levelsBeaten[i] === "storm"){
-				levelEnemyNum ++;
-			}else{}
-		}
-		if(levelEnemyNum = 2){
-			enemyDistributionArray = enemyDistributionArray2;
-		}else if(levelEnemyNum = 3){
-			enemyDistributionArray = enemyDistributionArray3;
-		}else if(levelEnemyNum > 3){
-			levelEnemyNum = 3;
-		}else{}
-		numberOfEnemies = levelEnemyNum;
+	numberOfStages = 3;
+	if(numberOfEnemies === 2){
+		enemyDistributionArray = enemyDistributionArray2;
+	}else if(numberOfEnemies >= 3){
+		enemyDistributionArray = enemyDistributionArray3;
+		numberOfStages = 4;
+	}else{}
+	var randNum = Math.floor(Math.random() * 3);
+	if(numberOfStages === 3 || (numberOfStages === 4 && stageComplete < 3)){
 		if(randEnemyNum < enemyDistributionArray[0]){
 			createEnemy = shockSharkStats;
 			return;
@@ -2217,7 +2163,7 @@ function levelStormDistribution(randEnemyNum){
 			createEnemy = staticCatcherStats;
 			return;
 		}else{
-			createEnemy = gangOfFleebsStats;
+			createEnemy = bigGolemArray[randNum];
 		}
 	}else if(stageComplete === 3){
 		numberOfEnemies = 1;
@@ -2355,7 +2301,7 @@ var elementOrbs = [];
 var multiplier = 1;
 var allies = [];
 var meterArray = [meter0, meter1, meter2, meter3, meter4, meter5, meter6, meter7, meter8, meter9, meter10, meter11, meter12];
-var levelsBeaten = ["earth", "fire"];
+var levelsBeaten = [];
 var keyWordList = [{id: "finesse", keyword: "Finesse", description: "Change power by X to exactly kill an enemy"}, {id: "ward", keyword: "Ward", description: "Ward blocks enemy damage and sabotages."}, {id: "purge", keyword: "Purge", description: "Removes an enemy sabotage from your deck."}, {id: "weaken", keyword: "Weaken", description: "Reduces an enemies strength"}, {id: "exhausted", keyword: "Exhausted", description: "Enemies attack twice in a row"}, {id:"stun", keyword: "Stun", description: "Stunned enemies miss their next attack"}, {id: "poison", keyword: "Poison", description: "Damage delt at the end of the turn"}, {id: "confuse", keyword: "Confuse", description: "Confused enemies attack a random enemy"}, {id: "grow", keyword: "Grow", description: "The card gains power each time it is used"}, /*{id: "scheme", keyword: "Scheme", description: "Schemes are played to one of your support areas and then are charged up over time providing an effect once completed"},*/ {id: "heal", keyword: "Heal", description: "Restore health to your character"}, {id: "reclaim", keyword: "Reclaim", description: "Increase the power of all enemy sabotages in your deck"}, {id: "int", keyword: "Draw", description: "How many extra cards your draw your next turn."}, {id: "def", keyword: "Ongoing Ward", description: "The number of shields you have at the start of every turn."}, {id: "str", keyword: "Magic", description: "Added damage to each attack"}, {id: "rummage", keyword: "Rummage", description: "Switch a card with a random card from your deck."}, {id: "multiply", keyword: "Multiply", description: "Multiply your damage by X."}, {id: "decoy", keyword: "Decoy", description: "Avoid all sabotages this turn."}, {id: "energy", keyword: "Energy", description: "Gain energy to use for other purposes."}, {id: "next", keyword: "Next", description: "Add power to next attack."}, {id: "add", keyword: "Add", description: "Shuffle a number of new cards into your deck."}, {id: "remove", keyword: "Remove", description: "The card gets removed from your deck after you select it"}, {id: "extra", keyword: "Extra", description: "Attack again after this one."}, /*{id: "deplete", keyword: "Deplete", description: "Remove a sabotage from the selected enemy."},*/ {id: "factionBoost", keyword: "Damage Boost", description: "Gains power for each card of the same type played."}, /*{id: "spooky", keyword: "Spooky", description: "Increase the chances of getting a creature's card."}, {id: "transform", keyword: "Transform", description: "Turn an emeny sabotage in your deck into another card."},*/ {id: "all", keyword: "All", description: "Deal damage to all enemies."}, {id: "clutch", keyword: "Clutch", description: "Gains extra effects when your HP is 15 or lower."}, {id: "random", keyword: "Random", description: "One of two effects."}, {id: "stash", keyword: "Energy Stash", description: "Gains extra effects when your energy is 5 or more."}, {id: "treasure", keyword: "Treasure", description: "Add gems and/or cards to your rewards."}, {id: "capture", keyword: "Capture", description: "Increase the change of gaining targeted monster's card."}, {id: "hlBoost", keyword: "Heal Boost", description: "Heal 1 for each card of the same element you've played."}, 
 {id: "wrdBoost", keyword: "Ward Boost", description: "Gain 1 ward for each card of the same element you've played."}, {id: "supBurning", keyword: "Burning", description: "Deals damage at the end of every turn."}, {id: "supGems", keyword: "Gain Gems", description: "Add gems to your rewards."}, {id: "supCards", keyword: "Gain Cards", description: "Add cards to your rewards."}, {id: "supBoost", keyword: "Boost", description: "Increases the power of that type."}];
 var finesseAttack; 
@@ -2371,6 +2317,14 @@ var username;
 var userSaveArray = [];
 var storyCounter = 0;
 var currentStoryText;
+var fireGem = fire;
+var earthGem = earth;
+var waterGem = water;
+var windGem = wind;
+var desertGem = desert;
+var lavaGem = lava;
+var mudGem = mud;
+var stormGem = storm;
 
 function shuffle(a) {
     for (let i = a.length; i; i--) {
@@ -2698,6 +2652,8 @@ class GameScreenHub extends React.Component {
 			audioEl = document.getElementsByClassName("findingOut")[0];
 		}else if(level === "lava"){
 			audioEl = document.getElementsByClassName("fireDestruction")[0];
+		}else if(level === "mud"){
+			audioEl = document.getElementsByClassName("mysteryMud")[0];
 		}else{
 			audioEl = document.getElementsByClassName("findingOut")[0];
 		}
@@ -2715,6 +2671,8 @@ class GameScreenHub extends React.Component {
 			audioEl = document.getElementsByClassName("findingOut")[0];
 		}else if(level === "lava"){
 			audioEl = document.getElementsByClassName("fireDestruction")[0];
+		}else if(level === "mud"){
+			audioEl = document.getElementsByClassName("mysteryMud")[0];
 		}else{
 			audioEl = document.getElementsByClassName("findingOut")[0];
 		}
@@ -2992,11 +2950,17 @@ class GameScreenHub extends React.Component {
 	}
 	createEnemies() {
 		enemyArray = [];
+		numberOfEnemies = 1;
+		for(var i=0; i<levelsBeaten.length; i++){
+			if(levelsBeaten[i] === level){
+				numberOfEnemies ++;
+			}else{}
+		}
 		for(var i=0; i < 3; i++){
 			if(i >= numberOfEnemies){
 				var newEnemy = new EnemyCon("", 0, 0, 0, 0, null, null, null, null, [null, null, null]);
 				enemyArray.push(newEnemy);
-			}else if(stageComplete === 3 && i === 0){
+			}else if((stageComplete === 3 && i === 0) || numberOfEnemies === 1){
 				numberOfEnemies = 2;
 				var newEnemy = new EnemyCon("", 0, 0, 0, 0, null, null, null, null, [null, null, null]);
 				enemyArray.push(newEnemy);
@@ -3161,6 +3125,9 @@ class GameScreenHub extends React.Component {
 	        </audio>
 	        <audio className="fireDestruction">
 	          <source src={fireDestruction}></source>
+	        </audio>
+	        <audio className="mysteryMud">
+	          <source src={mysteryMud}></source>
 	        </audio>
 			<ErrorMessage errorMessage={this.state.errorMessage} />
 			{this.state.storyScreen ? <StoryScreen hideStoryScreen={this.hideStoryScreen} /> : null }
@@ -3800,7 +3767,7 @@ class GameScreen extends React.Component {
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + stormBackground + ")";
 		}else if(level === "mud"){
 			newStoryText = storyText[13].text;
-			audioEl = document.getElementsByClassName("findingOut")[0];
+			audioEl = document.getElementsByClassName("mysteryMud")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + mudBackground + ")";
 		}else if(level === "desert"){
 			newStoryText = storyText[9].text;
@@ -3811,10 +3778,10 @@ class GameScreen extends React.Component {
 			audioEl = document.getElementsByClassName("findingOut")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + towerBackground + ")";
 		}else if(level === "tutorial"){
+			newStoryText = storyText[0].text;
 			audioEl = document.getElementsByClassName("findingOut")[0];
 			document.getElementById("tutorialMessageBox").style.display = "inline";
 		}
-		console.log(newStoryText);
 		this.props.showStoryScreen(newStoryText);
 		audioEl.loop = true;
 		audioEl.volume = .4;
@@ -3853,6 +3820,8 @@ class GameScreen extends React.Component {
 			audioEl = document.getElementsByClassName("findingOut")[0];
 		}else if(level === "lava"){
 			audioEl = document.getElementsByClassName("fireDestruction")[0];
+		}else if(level === "mud"){
+			audioEl = document.getElementsByClassName("mysteryMud")[0];
 		}else{
 			audioEl = document.getElementsByClassName("findingOut")[0];
 		}
@@ -6510,10 +6479,19 @@ class AuxilaryScreen extends React.Component {
 			cardArray = tutorialDeckSave;
 		}else{
 			levelsBeaten.push(level);
-			if(levelsBeaten.length < 4){
+			var rewardTier = 0;
+			for(var i=0; i<levelsBeaten.length; i++){
+				if(levelsBeaten[i] === level){
+					rewardTier ++;
+				}else{}
+			}
+			if(rewardTier === 1){
+				youberHero.hp = youberHero.hp + 2;
+				rewardHp = 2;
+			}else if(rewardTier === 2){
 				youberHero.hp = youberHero.hp + 5;
 				rewardHp = 5;
-			}else{
+			}else if(rewardTier === 3){
 				youberHero.hp = youberHero.hp + 10;
 				rewardHp = 10;
 			}
@@ -6523,17 +6501,8 @@ class AuxilaryScreen extends React.Component {
 				rewardGems: [],
 				rewardHp: rewardHp
 			}, () => {
-				this.levelRewards();
+				this.levelRewards(rewardTier);
 			});
-			if(level === "earth"){
-				earthStage ++;
-			}else if(level === "fire"){
-				fireStage ++;
-			}else if(level === "water"){
-				waterStage ++;
-			}else if(level === "wind"){
-				windStage ++;
-			}
 			cardArray.sort(function(a, b){
 			    if(a.alignment < b.alignment) { return -1; }
 			    if(a.alignment > b.alignment) { return 1; }
@@ -6548,9 +6517,8 @@ class AuxilaryScreen extends React.Component {
 			cardArray.splice(0, enemyCardNum);
 		}
 	}
-	levelRewards(){
+	levelRewards(rewardTier){
 		var levelCard = this.props.supCardRewards;
-		console.log(this.props.supCardRewards);
 		var neutralCards = [];
 		for(var i=1; i<21; i++){
 			var neutralCard = eval('neutral' + i);
@@ -6559,13 +6527,7 @@ class AuxilaryScreen extends React.Component {
 		if(level === 0){
 			levelCard = [neutral2, neutral3, neutral4, neutral5, neutral6];
 		}else{
-			var numberOfRewardCards = 2;
-			if(levelEnemyNum === 3){
-				numberOfRewardCards = 3;
-			}else{
-				numberOfRewardCards = 2
-			}
-			for(var i=0; i<numberOfRewardCards; i++){
+			for(var i=0; i<rewardTier; i++){
 				for(var j=0; j<neutralCards.length; j++){
 					shuffle(neutralCards);
 					var randNum = Math.floor(Math.random() * 101);
@@ -6601,56 +6563,11 @@ class AuxilaryScreen extends React.Component {
 			}
 		}
 		var levelGems = this.props.supGemRewards;
-		var levelPoints;
-		if(level === "earth"){
-			for(var i=0; i<3; i++){
-				levelGems.push(earth);
-			}
-			levelPoints = 1;
-		}else if(level === "fire"){
-			for(var i=0; i<3; i++){
-				levelGems.push(fire);
-			}
-			levelPoints = 1;
-		}else if(level === "water"){
-			for(var i=0; i<3; i++){
-				levelGems.push(water);
-			}
-			levelPoints = 1;
-		}else if(level === "wind"){
-			for(var i=0; i<3; i++){
-				levelGems.push(wind);
-			}
-			levelPoints = 1;
-		}else if(level === "lava"){
-			for(var i=0; i<2; i++){
-				levelGems.push(fire);
-			}
-			for(var i=0; i<2; i++){
-				levelGems.push(earth);
-			}
-		}else if(level === "mud"){
-			for(var i=0; i<2; i++){
-				levelGems.push(water);
-			}
-			for(var i=0; i<2; i++){
-				levelGems.push(earth);
-			}
-		}else if(level === "desert"){
-			for(var i=0; i<2; i++){
-				levelGems.push(fire);
-			}
-			for(var i=0; i<2; i++){
-				levelGems.push(wind);
-			}
-		}else if(level === "storm"){
-			for(var i=0; i<2; i++){
-				levelGems.push(water);
-			}
-			for(var i=0; i<2; i++){
-				levelGems.push(wind);
-			}
-		}else{}
+		var levelGemsNum = rewardTier + 1;
+		var gemType = eval(level + "Gem");
+		for(var i=0; i<levelGemsNum; i++){
+			levelGems.push(gemType);
+		}
 		if(level === 0){
 		}else{
 			for(var i=0; i<levelGems.length; i++){
