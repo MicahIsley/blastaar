@@ -7,6 +7,10 @@ body {
 	height: 100vh;
 }
 
+#firstChoiceRow {
+	margin-top: 10%;
+}
+
 #storyScreen {
 	position: absolute;
 	height: 100vh;
@@ -20,6 +24,7 @@ body {
 
 #storyText {
 	padding: 50px;
+	margin: 100px;
 }
 
 #storyButtonRow {
@@ -332,9 +337,9 @@ body {
 }
 
 #levelSelectScreen {
-	background-image: url('assets/backgrounds/levelScreen.png');
 	background-repeat: no-repeat; 
 	margin-left: 6%;
+	margin-top: 1%;
 	height: 680px;
 }
 
@@ -350,6 +355,19 @@ body {
 }
 
 .levelChoice:hover {
+	border-color: white;
+}
+
+.firstLevelChoice {
+	background: #00000059;
+	background-size: contain;
+	border-radius: 15px;
+	border-color: black;
+	border-width: 5px;
+	border-style: solid;
+}
+
+.firstLevelChoice:hover {
 	border-color: white;
 }
 
@@ -483,13 +501,6 @@ body {
 	background-image: url('assets/icons/saveHover.png');
 }
 
-#levelChoiceTitle {
-	text-align: center;
-	font-size: 24px;
-	font-family: 'Metamorphous', cursive;
-	background: #ffffff6e;
-}
-
 #defeatRow {
 	height: 100vh;
 	overflow: hidden;
@@ -536,6 +547,10 @@ body {
 }
 
 .selectedLevel {
+	border-color: white;
+}
+
+.selectedFirstLevel {
 	border-color: white;
 }
 

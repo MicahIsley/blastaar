@@ -188,6 +188,24 @@ import meter9 from './assets/spookyMeter/meter9.png';
 import meter10 from './assets/spookyMeter/meter10.png';
 import meter11 from './assets/spookyMeter/meter11.png';
 import meter12 from './assets/spookyMeter/meter12.png';
+import earthSection from './assets/backgrounds/earthSection.png';
+import fireSection from './assets/backgrounds/fireSection.png';
+import waterSection from './assets/backgrounds/waterSection.png';
+import windSection from './assets/backgrounds/windSection.png';
+import desertSection from './assets/backgrounds/desertSection.png';
+import lavaSection from './assets/backgrounds/lavaSection.png';
+import mudSection from './assets/backgrounds/mudSection.png';
+import stormSection from './assets/backgrounds/stormSection.png';
+import towerSection from './assets/backgrounds/towerSection.png';
+import earthSectionHidden from './assets/backgrounds/earthSectionHidden.png';
+import fireSectionHidden from './assets/backgrounds/fireSectionHidden.png';
+import waterSectionHidden from './assets/backgrounds/waterSectionHidden.png';
+import windSectionHidden from './assets/backgrounds/windSectionHidden.png';
+import desertSectionHidden from './assets/backgrounds/desertSectionHidden.png';
+import lavaSectionHidden from './assets/backgrounds/lavaSectionHidden.png';
+import mudSectionHidden from './assets/backgrounds/mudSectionHidden.png';
+import stormSectionHidden from './assets/backgrounds/stormSectionHidden.png';
+import towerSectionHidden from './assets/backgrounds/towerSectionHidden.png';
 import './index.css';
 
 var player;
@@ -197,26 +215,126 @@ var enemy2Slot = {};
 var createEnemy;
 
 var storyText = [
-	{level: "first", timing: "Start", text: "Youber awakens from a terrible dream. His home is dark and empty. Calling out, he soon realizes that he is alone. His family is gone. It finally happened. Youber grabs his great-grandfathers magic sack and walks out into the beyond."},
-	{level: "earth", timing: "Start", text: "Youber decides to explore the pleasant forests of Primafauna. That couldn't possibly be too scary."},
-	{level: "earth", timing: "End", text: "Youber learns of a growing darkness in the heart of the woods. Should he press deeper of explore the neighboring regions?"},
-	{level: "fire", timing: "Start", text: "Youber adventures into the fearsome fire fields. Perhaps here he will discover some clues about his family's disappearance."},
-	{level: "fire", timing: "End", text: "Sweating profusely, Youber ponders his next steps. Move on to cooler pastures or persue whatever secrets this burning land holds."},
-	{level: "water", timing: "Start", text: "Youber's questing leads him to the Islands of Ruu. A tropical paradise, though Youber has never been too fond of the water."},
-	{level: "water", timing: "End", text: "Youber hears a rumor of danger farther inland. Could this be where his family was taken?"},
-	{level: "wind", timing: "Start", text: "Youber scales the heights of the Howling Caverns. These caves surely hold many secrets."},
-	{level: "wind", timing: "End", text: "Youber can see a dark shroud in the distance. It appears his adventure leads furthur in danger."},
-	{level: "desert", timing: "Start", text: "The sun grows hotter, the air drier. Youber needs a drink, but on quests, sacrifices must be made."},
-	{level: "desert", timing: "End", text: "As Youber treks through the desert, an image looms in the distance. Not a mirage, but a dark tower, looming ominously. Now Youber must find the path forward."},
-	{level: "lava", timing: "Start", text: "Youber ventures into the Magma Lands. The ground trembles beneath his feet and the air boils. If there are any secrets here, they must be found quickly."},
-	{level: "lava", timing: "End", text: "Past the volcano's peak the Dark Tower comes into focus. It seems to be calling to Youber, challenging him to save his family."},
-	{level: "mud", timing: "Start", text: "Youber can smell the bog long before he arrives. The mud seems lively here and magic seems to radiate from every surface."},
-	{level: "mud", timing: "End", text: "Dirtier than before and stickier, Youber emerges with tales of a tower corrupting everything around it."},
-	{level: "storm", timing: "Start", text: "Normally, Youber would seek shelter when a storm arose, but these are extraordinary times and Youber will not be detered."},
-	{level: "storm", timing: "End", text: "The dlouds break and Youber sees what has been drawing him toward it this whole time. The Dark Tower"},
-	{level: "tower", timing: "Start", text: "Finally, the path to the tower revealed itself and Youber finds himself about to ascend it. Afterall, shouldn't the reward to all quest end at the top of an treacherous tower?"},
-	{level: "tower", timing: "End", text: "Youber has found his family! Now that evil has been vanquished, Youber can return home and live a life of peace and hapiness."}
-]
+	{level: "first", timing: "Start", text: "Youber awakens from a terrible dream. His home is dark and empty. Calling out, he soon realizes that he is alone. His family is gone. It finally happened. Youber grabs his grandfather's magic sack and walks out into the beyond."},
+];
+
+var earthText = [
+	{type: "start", timing: 0, text: "Youber recalls his grandfather talking about disappearing, as if it was inevitable. Though he never mentioned why or how. Perhaps the forest will hold some answers. Youber entered the woods, prepared for whatever perils might befall him."},
+	{type: "start", timing: 0.5, text: "Youber takes a moment to collect his thoughts. The creatures seem considerably agitated. Youber looks around and finds some interesting items. These must enhance the magic sack. A quick rest and then further into the woods."},
+	{type: "start", timing: 1, text: "Youber, feeling slightly empowered, presses through the ever thickening growth. The trees look more unnatural the farther Youber travels. Youber stumbles down an embankment and finds himself confronted by more creatures. They don't look particularly pleased..."},
+	{type: "start", timing: 1.5, text: "Youber looks around and sees a sign. It appears that Youber can choose to venture into the heart of the woods, take a magic chute to the Fire Fields, or follow the path South towards the Islands of Ruu. Decisions, decisions..."},
+	{type: "start", timing: 2, text: "Youber is undeterred by danger and finds his way into the heart of the forest. The trees give way to a clearing and Youber quickly realizes he has been surrounded...and there's something very large looming in the distance."},
+	{type: "start", timing: 2.5, text: "With the denizens of the forest defeated, they seem to relax for just a moment. They haven't seen Youber's family, but they have suffered disappearances of there own. West, they claim, the sickness lies West. The creatures seems to be growing agitated once more. Youber presses onward to new lands..."},
+	{type: "regular", timing: 0, text: "Youber decides his quest leads into the forests of Primafauna. He remembers hearing stories about the woods and the gentle creatures that lived there. Hopefully, Youber's journey will be unevent...what was that? The trees rustle and branches snap. Youber is not alone."},
+	{type: "regular", timing: 0.5, text: "Youber takes a moment to collect his thoughts. The creatures seem far from gentle. However, Youber will not give up, he can feel that he's getting closer. A quick rest and then further into the woods."},
+	{type: "regular", timing: 1, text: "Youber, feeling slightly empowered, presses through the ever thickening growth. Youber stumbles down an embankment and finds himself confronted by more creatures. They don't look particularly pleased..."},
+	{type: "regular", timing: 1.5, text: "Youber looks around and sees a crossroads, with paths leading out of the forest. Still, the tress are luring Youber deeper in. More secrets and power lie ahead. Decisions, decisions..."},
+	{type: "regular", timing: 2, text: "Youber is undeterred by danger and finds his way into the heart of the forest. The trees give way to a clearing and Youber quickly realizes he has been surrounded...and there's something very large looming in the distance."},
+	{type: "regular", timing: 2.5, text: "With the denizens of the forest defeated, they seem to relax for just a moment. Long enough for Youber to hear about a growing corruption in the West. The creatures seems to be growing agitated once more. Youber presses onward..."},
+	{type: "regular", timing: 3, text: "Youber can't seem to stay away from the forest for too long. Surely there is more hidden behind these Vine covered trees."},
+	{type: "regular", timing: 3.5, text: "Youber grows in the ways of the Earth. He must think that this is the power he needs to complete his quest."}
+
+];
+
+var fireText = [
+	{type: "start", timing: 0, text: "Youber recalls his grandfather talking about disappearing, as if it was inevitable. Though he never mentioned why or how. Perhaps the Fire Fields will hold some answers. Youber entered the burning plains, prepared for whatever perils might befall him."},
+	{type: "start", timing: 0.5, text: "Youber wipes his brow and collects his thoughts. On the ground, Youber finds some red orbs. His magic sack glows in anticipation. Youber takes a quick break to make some modifications."},
+	{type: "start", timing: 1, text: "Youber treads carefully around the fire rivers and listening for any sulfuric explosions. The sky is always dark here, even when there are no clouds. Youber is starting to understand why anything that lived here would have poor manners. Speaking of which, here come some now..."},
+	{type: "start", timing: 1.5, text: "A way out! The path Youber has been taking splits. Take a chute to the Primafauna Forest, travel South the the Howling Caverns, or continue to brave the smoldering wasteland. First a snack, then decisions."},
+	{type: "start", timing: 2, text: "The fire creatures grow more numerous as Youber presses onward. Youber notices large markings, something large lives here, splendid. The ground rumbles, not a fissure. Youber steels himself for conflict."},
+	{type: "start", timing: 2.5, text: "Youber defeats the leader and presses for information. A growing terror lives in the East. Youber knows that his quest must lead him there. Happy to be rid of this treacherous land, Youber continues his quest elsewhere."}
+	{type: "regular", timing: 0, text: "Youber adventures into the fearsome Fire Fields. The in habitants have a fearsome reputation. Youber will have to be ready for anythings. Perhaps here he will discover some clues about his family's disappearance as well."},
+	{type: "regular", timing: 0.5, text: "Although painful, this place is good for training. Youber feels his Fire powers growing. The more powerful he gets, the better chance of rescuing his family."},
+	{type: "regular", timing: 1, text: "Youber treads carefully around the fire rivers and listening for any sulfuric explosions. The sky is always dark here, even when there are no clouds. Youber is starting to understand why anything that lived here would have poor manners. Speaking of which, here come some now..."},
+	{type: "regular", timing: 1.5, text: "Sweating profusely, Youber ponders his next steps. Move on to cooler pastures or persue whatever secrets this burning land holds."},
+	{type: "regular", timing: 2, text: "A large crag conceals Youber's path forward. Upon cresting the peak, Youber sees a gathering of monsters surrounding a hulking figure. Youber is scared, but his quest must go on."},
+	{type: "regular", timing: 2.5, text: "The monsters hush as Youber stands alone in victory. Youber learns of more powerful lands beyond this place, but mastering just Fire will not be enough to venture there. Feeling inspired, Youber takes his sack and sets a new course."},
+	{type: "regular", timing: 3, text: "Why would Youber return to such an awful place. Secrets, promises of power, heaps of Ash laying undisturbed. Youber will need all the help he can get if his quest is to be completed."},
+	{type: "regular", timing: 3.5, text: "Fire is an alluring power and Youber has claimed much of its power. Perhaps a little more?"}
+];
+
+var waterText = [
+	{type: "start", timing: 0, text: "Youber recalls his grandfather talking about disappearing, as if it was inevitable. Though he never mentioned why or how. Perhaps the Islands of Ruu will hold some answers. Youber crosses into the tropical paradise, preparing for whatever perils might befall him."},
+	{type: "start", timing: 0.5, text: "Youber is taken aback at finding so much hostility in such a warm, welcoming place. At least he found some fancy looking gems. Youber instinctively feels that they will improve his magic sack in some way. Youber spends a moment discovering how."},
+	{type: "start", timing: 1, text: "Youber slowly makes his way to the larger islands. They are streaked with greys and blacks. Dull colors that feel out of place in this vibrant climate. Youber spies some monsters roaming the coast, they are headed his way..."},
+	{type: "start", timing: 1.5, text: "Youber find a shallow cave with two chutes inside. One leads into the forest region and the other to the Howling Caverns. Youber also feels that these islands hold more secrets. What will Youber do next?"},
+	{type: "start", timing: 2, text: "The largest island lies ahead, accompanied by the largest throng of monster. The leader looms larger among them. Youber, determined to continue his quest, ventures forward, looking for answers."},
+	{type: "start", timing: 2.5, text: "The leader defeated, Youber manages to extract some useful information. The dull palate is a new phenomenom here, creeping in from the North-West. Also, monsters have been disappearing from the Islands too. The monsters suddenly stop sharing and begin glaring at Youber. Youber gets the message and moves on."},
+	{type: "regular", timing: 0, text: "Youber's questing leads him to the Islands of Ruu. A tropical paradise, though Youber has never been too fond of the water."},
+	{type: "regular", timing: 0.5, text: "Youber is taken aback at finding so much hostility in such a warm, welcoming place. At least Youber is learning some of the Water power that permeates the islands. No family yet, but Youber know every step he gets closer."},
+	{type: "regular", timing: 1, text: "Youber slowly makes his way to the larger islands. They are streaked with greys and blacks. Dull colors that feel out of place in this vibrant climate. Youber spies some monsters roaming the coast, they are headed his way..."},
+	{type: "regular", timing: 1.5, text: "Youber hears a rumor of danger across the waters. Could this be where his family was taken?"},
+	{type: "regular", timing: 2, text: "The largest island lies ahead, accompanied by the largest throng of monster. The leader looms larger among them. Youber, determined to continue his quest, ventures forward, looking for answers."},
+	{type: "regular", timing: 2.5, text: "Youber learns of an ever raging tempest to the West, a place with powerful magic. However, it seems that Water will not be enough to find the way there. Youber knows that his quest leads to new lands."},
+	{type: "regular", timing: 3, text: "Youber returns to the islands, hoping to grow stronger in the way of Water. Was every crevase explored? Did Youber look behind every Waterfall?"},
+	{type: "regular", timing: 3.5, text: "Youber's mastery with Water grows and grows. His magic sack will hopefully be strong enough to save his family."}
+];
+
+var windText = [
+	{type: "start", timing: 0, text: "Youber recalls his grandfather talking about disappearing, as if it was inevitable. Though he never mentioned why or how. Perhaps the towering crags will hold some answers. Youber crosses into the wind-swept landscape, preparing for whatever perils might befall him."},
+	{type: "start", timing: 0.5, text: "Dueling on the cliffs is dangerous, but it appears Youber has discovered some interesting gems. Perhaps Youber can use these to make his sack more powerful. A quick moment to rest and then the climing continues."},
+	{type: "start", timing: 1, text: "These caves don't just howl, they moan. And the smell is nigh unbearable. However, Youber is confident that he will only finish his quest if he braves the caves. Speaking of danger..."},
+	{type: "start", timing: 1.5, text: "Chutes! Pathways to other lands. One to the Fire Fields and the other to the tropical region. These could be useful to Youber. Youber can also contining scouring the cliffs for answers and secrets."},
+	{type: "start", timing: 2, text: "Youber reaches the top of the tallest spire. The howling is almost deafening, Youber enters the cavern and within moments realizes he is vastly outnumbered. Youber opens the magic sack..."},
+	{type: "start", timing: 2.5, text: "Youber has defended himself and conquered the champion of the cliffs. Youber learns of a dark shroud that lies to the East. Creatures from the caves have been disapearing into the shroud. Youber learns all he can and then moves on."},
+	{type: "regular", timing: 0, text: "Youber scales the heights of the Howling Caverns. These caves surely hold many secrets."},
+	{type: "regular", timing: 0.5, text: "Dueling on the cliffs is dangerous, but it appears Youber has discovered some Wind magic. A quick moment to rest and then the climing continues."},
+	{type: "regular", timing: 1, text: "These caves don't just howl, they moan. And the smell is nigh unbearable. However, Youber is confident that he will only finish his quest if he braves the caves. Speaking of danger..."},
+	{type: "regular", timing: 1.5, text: "Chutes! Pathways to other lands. One to the Fire Fields and the other to the tropical region. These could be useful to Youber. Youber can also contining scouring the cliffs for answers and secrets."},
+	{type: "regular", timing: 2, text: "Youber reaches the top of the tallest spire. The howling is almost deafening, Youber enters the cavern and within moments realizes he is vastly outnumbered. Youber opens the magic sack..."},
+	{type: "regular", timing: 2.5, text: "Youber can see far into the distance from up here. A desert and a massive storm lingering on the horizon. Is Youber destined to visit these lands? Will the Wind magic be enough?"},
+	{type: "regular", timing : 3, text: "There are so many caverns that Youber had to return to explore. Youber is convinced that powerful magic lies dormant in these cliffs. Perhaps it is guarded by trap, like Poison Gas?"},
+	{type: "regular", timing: 3.5, text: "The rush of learning Wind magic excites Youber. Wanting to rescue his family drives him forward, but learn to fly would be really really sweet."}
+];
+
+var desertText = [
+	{type: "regular", timing: 0, text: "Having learned the magic of Fire and Wind, the path to the Barrens of Dust reveals itself. The sun grows hotter, the air drier. Youber needs a drink, but on quests, sacrifices must be made."},
+	{type: "regular", timing: 0.5, text: "As Youber treks through the desert, an image looms in the distance. Not a mirage, but a dark tower, looming ominously. Now Youber must find the path forward."},
+	{type: "regular", timing: 1, text: "The shifting sands make travel difficult, but Youber carries on. The bones emerging from the dunes grow more numerous and the monsters living here are certainly fierce."},
+	{type: "regular", timing: 1.5, text: "Desert magic is powerful, Youber discovers. With this power in his magic sack, Youber believes he stands a change at completing his quest."},
+	{type: "regular", timing: 2, text: "A large gathering in the desert stops Youber in his tracks. Do they know the way to the Tower? Youber slowly emerges into the fray. Time to find out."},
+	{type: "regular", timing: 2.5, text: "The desert Lord knows the way to the Tower, but it is accompanied by harsh warnings. Death awaits all who venture there. Does Youber charge straight towards his destiny or spend some more time growing in power?"},
+	{type: "regular", timing: 3, text: "The deserts are always shifting, revealing new paths where before there were none. Youber decideds to explore a bit more, longing for some ancient Desert magic."},
+	{type: "regular", timing: 3.5, text: "Youber is beginning to enjoy the dunes and the Desert magic that flows through them. Youber feeling stronger than ever, gazes at the Tower, knowing that it's waiting for him."}
+];
+
+var lavaText = [
+	{type: "regular", timing: 0, text: "Fire and Earth open the path for Youber to venture into the Magma Lands. The ground trembles beneath his feet and the air boils. If there are any secrets here, they must be found quickly."},
+	{type: "regular", timing: 0.5, text: "Lava magic will be a useful addition to the magic sack. Youber doesn't like being in constant danger, but at least the rewards are sweet."},
+	{type: "regular", timing: 1, text: "The monsters that live here seem to congregate close to the largest volcano. Youber makes his way straight towards it, no matter what's in his way..."},
+	{type: "regular", timing: 1.5, text: "The grand volcano spews constant ash into the air, but the sky is even darker to the South. Youber suspects there are greater powers than volcanos in this land."},
+	{type: "regular", timing: 2, text: "Almost as the peak, Youber feels a great tembling. Quickly realizing that it's not the mount that trembles, but a horde of monsters surrounding Youber."},
+	{type: "regular", timing: 2.5, text: "Youber stands on the precipice and sees in the distance a black tower rising over the horizon. Youber believes he sees the path forward, but he is unsure whether his power is great enough to challenge the tower. Either way, the questing continues."},
+	{type: "regular", timing: 3, text: "Youber returns to the tumultuous land of lava in hopes of finding a massive secret. There have always been tales of the great volcano being powered by unlimited power. Sounds useful."},
+	{type: "regular", timing: 3.5, text: "The Lava magic asks much from Youber and gives much in return. The longer Youber stays here the more magic his magic bag becomes."}
+];
+
+var mudText = [
+	{type: "regular", timing: 0, text: "As Youber travels between the edge of the forest and the coast, he can smell the bog long before he arrives. The mud seems lively here and magic seems to radiate from every surface."},
+	{type: "regular", timing: 0.5, text: "The Mudlands seem eager to defend themselves from Youber. He is not the first creature to come here in hopes of harnessing the magic here."},
+	{type: "regular", timing: 1, text: "The path is almost impossible to follow and Youber makes many sticky mistakes. And the creatures here are just waiting for Youber to slip..."},
+	{type: "regular", timing: 1.5, text: "Youber slowly learns the way of mud magic, making him more formidable. A dark shadow lingers everywhere, disturbing even the monsters who live here."},
+	{type: "regular", timing: 2, text: "The obelisks of mud grow more numerous and dramatic. Twisting and surging in impossible ways. Youber notices a large dome ahead...except it's alive!"},
+	{type: "regular", timing: 2.5, text: "The large mud creature bellows about the tower. A tower which haunts everything around it. Youber is informed of the path West and moves to the next stage of his journey."},
+	{type: "regular", timing: 3, text: "The mud is hard to leave behind. Especially when Youber learned such powerful magic here. What if Youber found a secret power, one that would finally save his family?"},
+	{type: "regular", timing: 3.5, text: "The magic of Mud is worth the risks found in the bog. Youber merely wants to save his family and find secrets. Youber likes secrets."}
+];
+
+var stormText = [
+	{type: "regular", timing: 0, text: "Using the power of Wind and Water to make his way into the storm, Youber forgoes shelter in favor of answers. Whatever or whoever is waiting for him here will bring him one step closer to his family."},
+	{type: "regular", timing: 0.5, text: "Youber discovers a small piece of storm magic. Placing it in his sack, Youber walks further into the tempest and double-checks that he isn't wearing any metal."},
+	{type: "regular", timing: 1, text: "The wind grows wild and the driving rain swirls around Youber. Any threats are impossible to see coming. How can anything call this place home? Alas, what was that..."},
+	{type: "regular", timing: 1.5, text: "Flashes of lighting reveal the landscape around Youber. A starkly empty land, ravaged by an unrelenting storm. Even still, Youber can sense the magic that lives here, magic Youber will need if he wishes to complete his quest."},
+	{type: "regular", timing: 2, text: "The eye of the storm. Youber has a fleeting moment of relief before realizing the monsters circle above. A large shadow swallows Youber from above..."},
+	{type: "regular", timing: 2.5, text: "Victorious, Youber commands the monsters attention and learns of a towering tower the towers in the North. Nothing flies there and returns. Youber walks back into the storm, knowing his destiny awaits."},
+	{type: "regular", timing: 3, text: "Youber comes prepared this time to enter the storm. This will help him find the secrets that are disguised by the driving rains. Youber must find more power!"},
+	{type: "regular", timing: 3.5, text: "Storm magic courses through Youber. He feels strong, but will it be enough. Self-doubt has always been a struggle for Youber."}
+];
+
+var towerText = [
+	{type: "regular", timing: 0, text: "Finally, the path to the tower revealed itself and Youber finds himself about to ascend it. Afterall, shouldn't the reward to all quest end at the top of an treacherous tower?"},
+	{type: "regular", timing: 0.5, text: "Youber has found his family! Now that evil has been vanquished, Youber can return home and live a life of peace and hapiness."}
+];
 
 var sabotage1 = new CardCon("Tripped Up", 0, 0, "Hit the ground", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
 var sabotage2 = new CardCon("Off Balance", 0, -1, "Woozy", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
@@ -523,7 +641,7 @@ var storm21 = new CardCon("Lightning Bug", 2, 0, "Storm Cards get +3.", "hero", 
 var storm22 = new CardCon("Static Glider", 3, 0, "+5 Ward.", "hero", 0, "supShield 5", 99, false, "support", staticGlider, storm, "storm", 0, 0, 0);
 var storm23 = new CardCon("Great Shock Shark", 4, 0, "Storm Cards get +6.", "hero", 0, "supBoost storm 6", 99, false, "support", greatShockShark, storm, "storm", 0, 0, 0);
 var storm24 = new CardCon("Shelter Thump", 2, 0, "Gain 4 Storm Gems.", "hero", 0, "supGems 4", 99, false, "support", shelterThump, storm, "storm", 0, 0, 0);
-var storm25 = new CardCon("Shock Shark", 2, 0, "Gain 2 Storm Cards.", "hero", 0, "supCards 2", 99, false, "support", placeholderImg, storm, "storm", 0, 0, 0);
+var storm25 = new CardCon("Shock Shark", 2, 0, "Gain 2 Storm Cards.", "hero", 0, "supCards 2", 99, false, "support", shockShark, storm, "storm", 0, 0, 0);
 var storm26 = new CardCon("Static Catcher", 3, 0, "Storm Cards get Rummage 2", "hero", 0, "match/storm/rummage 2", 99, false, "support", staticCatcher, storm, "storm", 0, 0, 0);
 var storm27 = new CardCon("Rain Wolf", 3, 0, "Gain 4 Energy Per Turn.", "hero", 0, "supEnergy 4", 99, false, "support", rainWolf, storm, "storm", 0, 0, 0);
 var storm28 = new CardCon("Schorched Tree Ghast", 2, 0, "Reclaim Cards get +5.", "hero", 0, "supAbilityBoost reclaim 5", 99, false, "support", scorchedTreeGhast, storm, "storm", 0, 0, 0);
@@ -2325,6 +2443,7 @@ var desertGem = desert;
 var lavaGem = lava;
 var mudGem = mud;
 var stormGem = storm;
+var startingLevel = null;
 
 function shuffle(a) {
     for (let i = a.length; i; i--) {
@@ -2352,6 +2471,7 @@ class GameScreenHub extends React.Component {
 			levelSelectScreen: false,
 			playerDeathScreen: false,
 			highScoreScreen: false,
+			firstLevelChoice: false,
 			storyScreen: false,
 			attack: 1,
 			heroShield: 2,
@@ -2873,12 +2993,22 @@ class GameScreenHub extends React.Component {
 		});
 	}
 	goToLevelScreen(){
-		this.setState({
-			characterSelectScreen: false,
-			auxilaryScreen: false,
-			levelSelectScreen: true,
-			displayUserSaves: false
-		});
+		if(levelsBeaten.length === 0 && startingLevel === null){
+			this.setState({
+				characterSelectScreen: false,
+				auxilaryScreen: false,
+				firstLevelChoice: true,
+				displayUserSaves: false
+			});
+		}else{
+			this.setState({
+				characterSelectScreen: false,
+				auxilaryScreen: false,
+				levelSelectScreen: true,
+				displayUserSaves: false,
+				firstLevelChoice: false
+			});
+		}
 	}
 	highScoreScreen(){
 		this.setState({
@@ -3134,6 +3264,7 @@ class GameScreenHub extends React.Component {
 			{this.state.infoScreen ? <InfoScreen play={this.playAudio} pause={this.pauseAudio} error={this.displayErrorMessage} toggleInfoScreen={this.toggleInfoScreen} /> : null }
 			{this.state.createScreen ? <CreateCharacter error={this.displayErrorMessage} createNewCharacter={this.createNewCharacter} /> : null }
 			{this.state.characterSelectScreen ? <CharacterSelectScreen error={this.displayErrorMessage} autoSave={this.autoSave} logOutUser={this.logOutUser} openSaveBox={this.openSaveBox} saveBox={this.state.saveBox} setUpPlayerSave={this.setUpPlayerSave} displayUserSaves={this.state.displayUserSaves} userSaveArray={this.state.userSaveArray} highScoreScreen={this.highScoreScreen} loadUserSaves={this.loadUserSaves} createNewUser={this.createNewUser} getUserData={this.getUserData} writeUserData={this.writeUserData} goToLevelScreen={this.goToLevelScreen} score={this.state.score} createNewCharacter={this.createNewCharacter} influence={this.state.influence} shield={this.state.heroShield} spheres={this.state.sphereCount} attack={this.state.attack} playerHero={playerHero} switchEnemyArray={this.switchEnemyArray} goToEquipmentScreen={this.goToEquipmentScreen} heroHp={this.state.heroHp} showCollection={this.showCollection} changeHero={this.changeHero} goToGameScreen={this.goToGameScreen} changeInfluence={this.changeInfluence} /> : null }
+			{this.state.firstLevelChoice ? <FirstLevelChoice goToLevelScreen={this.goToLevelScreen} /> : null}
 			{this.state.levelSelectScreen ? <LevelSelectScreen error={this.displayErrorMessage} showStoryScreen={this.showStoryScreen} goToCharacterScreen={this.goToCharacterScreen} goToGameScreen={this.goToGameScreen} switchEnemyArray={this.switchEnemyArray} /> : null }
 			{this.state.gameScreen ? <GameScreen showStoryScreen={this.showStoryScreen} playerDeathScreen={this.playerDeathScreen} supGemRewards={this.state.supGemRewards} supCardRewards={this.state.supCardRewards} boss={this.state.bossStats} bossEffect={this.state.bossEffect} error={this.displayErrorMessage} clearSupRewards={this.clearSupRewards} gainSupGemReward={this.gainSupGemReward} gainSupCardReward={this.gainSupCardReward} toggleInfoScreen={this.toggleInfoScreen} characterScreen={this.goToCharacterScreen} changeHeroShield={this.changeHeroShield} changeHeroAttack={this.changeHeroAttack} changeInfluence={this.changeInfluence} influence={this.state.influence} int={this.state.heroSelect.intelligence} shield={this.state.heroShield} switchEnemyArray={this.switchEnemyArray} increaseStormCounter={this.increaseStormCounter} decreaseStormCounter={this.decreaseStormCounter} stormCounter={this.state.stormCounter} changeHeroHp={this.changeHeroHp} heroHp={this.state.heroHp} score={this.state.score} setSpheres={this.setSphereCount} changeScore={this.changeScore} aux={this.auxilaryScreen} heroSelect={this.state.heroSelect} attack={this.state.attack} equipment={this.state.equipment} enemyArray={this.state.enemyArray} goToCollection={this.showCollection} /> : null }
 			{this.state.auxilaryScreen ? <AuxilaryScreen error={this.displayErrorMessage} changeHeroHp={this.changeHeroHp} heroHp={this.state.heroHp} clearSupRewards={this.clearSupRewards} supGemRewards={this.state.supGemRewards} supCardRewards={this.state.supCardRewards} goToEndingScreen={this.goToEndingScreen} changeInfluence={this.changeInfluence} influence={this.state.influence} setSphereCount={this.setSphereCount} score={this.state.score} resetStormCounter={this.resetStormCounter} showCollection={this.showCollection} goToCharacterScreen={this.goToCharacterScreen} /> : null }
@@ -3144,6 +3275,35 @@ class GameScreenHub extends React.Component {
 			{this.state.playerDeathScreen ? <PlayerDeathScreen showStoryScreen={this.showStoryScreen} showCollection={this.showCollection} /> : null}
 			{this.state.highScoreScreen ? <HighScoreScreen goToCharacterScreen={this.goToCharacterScreen} highScores={this.state.highScores} /> : null }
 			{this.state.miningGame ? <MiningGame error={this.displayErrorMessage} /> : null }
+			</div>
+		)
+	}
+}
+
+class FirstLevelChoice extends React.Component {
+	chooseFirstLevel(level){
+		startingLevel = level;
+		const x = document.getElementsByClassName("firstLevelChoice");
+		for (var i=0; i < x.length; i ++ ){
+			x[i].classList.remove("selectedFirstLevel");
+		}
+		document.getElementById(level + "First").classList.add("selectedFirstLevel");
+	}
+	render(){
+		return(
+			<div className="row">
+				<div className="col-xs-12">
+					<div className="row">Choose Starting Level</div>
+					<div className="row" id="firstChoiceRow">
+						<img className="col-xs-3 firstLevelChoice" id="earthFirst" src={earth} alt="earth" onClick={() => {this.chooseFirstLevel("earth")}} />
+						<img className="col-xs-3 firstLevelChoice" id="fireFirst" src={fire} alt="fire" onClick={() => {this.chooseFirstLevel("fire")}} />
+						<img className="col-xs-3 firstLevelChoice" id="waterFirst" src={water} alt="water" onClick={() => {this.chooseFirstLevel("water")}} />
+						<img className="col-xs-3 firstLevelChoice" id="windFirst" src={wind} alt="wind" onClick={() => {this.chooseFirstLevel("wind")}} />
+					</div>
+					<div className="row">
+						<button className="col-xs-offset-3 col-xs-3 campButton" onClick={this.props.goToLevelScreen}>Adventure</button>
+					</div>
+				</div>
 			</div>
 		)
 	}
@@ -3262,12 +3422,12 @@ class InfoScreen extends React.Component {
 		)
 	}
 }
-
+var backgroundScreenImage = "";
 class LevelSelectScreen extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			levelsUnlocked: [false, false, false, false, false]
+			levelsUnlocked: [false, false, false, false, false, false, false, false, false]
 		}
 		this.selectLevel = this.selectLevel.bind(this);
 	}
@@ -3285,25 +3445,88 @@ class LevelSelectScreen extends React.Component {
 		}else{
 			this.props.showStoryScreen(storyText[0].text);
 		}
+		var levelCount = [0,0,0,0,0,0,0,0];
+		for(var i=0; i<levelsBeaten.length; i++){
+			if(levelsBeaten[i] === "earth"){
+				levelCount[0] ++;
+			}else if(levelsBeaten[i] === "fire"){
+				levelCount[1] ++;
+			}else if(levelsBeaten[i] === "water"){
+				levelCount[2] ++;
+			}else if(levelsBeaten[i] === "wind"){
+				levelCount[3] ++;
+			}else if(levelsBeaten[i] === "desert"){
+				levelCount[4] ++;
+			}else if(levelsBeaten[i] === "lava"){
+				levelCount[5] ++;
+			}else if(levelsBeaten[i] === "mud"){
+				levelCount[6] ++;
+			}else if(levelsBeaten[i] === "storm"){
+				levelCount[7] ++;
+			}else{}
+		}
+		var hiddenLevels = [{hidden: true, urlShow: "url(" + earthSection + ")", urlHidden: "url(" + earthSectionHidden + ")"},{hidden: true, urlShow: "url(" + fireSection + ")", urlHidden: "url(" + fireSectionHidden + ")"},{hidden: true, urlShow: "url(" + waterSection + ")", urlHidden: "url(" + waterSectionHidden + ")"},{hidden: true, urlShow: "url(" + windSection + ")", urlHidden: "url(" + windSectionHidden + ")"},{hidden: true, urlShow: "url(" + desertSection + ")", urlHidden: "url(" + desertSectionHidden + ")"},{hidden: true, urlShow: "url(" + lavaSection + ")", urlHidden: "url(" + lavaSectionHidden + ")"},{hidden: true, urlShow: "url(" + mudSection + ")", urlHidden: "url(" + mudSectionHidden + ")"},{hidden: true, urlShow: "url(" + stormSection + ")", urlHidden: "url(" + stormSectionHidden + ")"},{hidden: true, urlShow: "url(" + towerSection + ")", urlHidden: "url(" + towerSectionHidden + ")"}];
 		var unlockLevels = this.state.levelsUnlocked;
-		if(levelsBeaten.includes("fire") === true && levelsBeaten.includes("earth") === true){
+		if(levelCount[0] >= 1 || startingLevel === "earth" || levelCount[1] >= 2 || levelCount[2] >= 2){
 			unlockLevels[0] = true;
+			hiddenLevels[0].hidden = false;
 		}
-		if(levelsBeaten.includes("fire") === true && levelsBeaten.includes("wind") === true){
+		if(levelCount[1] >= 1 || startingLevel === "fire" || levelCount[0] >= 2 || levelCount[3] >= 2){
 			unlockLevels[1] = true;
+			hiddenLevels[1].hidden = false;
 		}
-		if(levelsBeaten.includes("water") === true && levelsBeaten.includes("wind") === true){
+		if(levelCount[2] >= 1 || startingLevel === "water" || levelCount[0] >= 2 || levelCount[3] >= 2){
 			unlockLevels[2] = true;
+			hiddenLevels[2].hidden = false;
 		}
-		if(levelsBeaten.includes("water") === true && levelsBeaten.includes("earth") === true){
+		if(levelCount[3] >= 1 || startingLevel === "wind" || levelCount[1] >= 2 || levelCount[2] >= 2){
 			unlockLevels[3] = true;
+			hiddenLevels[3].hidden = false;
 		}
-		if(levelsBeaten.length > 4){
+		if(levelCount[0] >= 3 && levelCount[1] >= 3){
+			unlockLevels[5] = true;
+			hiddenLevels[5].hidden = false;
+		}
+		if(levelCount[1] >= 3 && levelCount[3] >= 3){
 			unlockLevels[4] = true;
+			hiddenLevels[4].hidden = false;
+		}
+		if(levelCount[2] >= 3 && levelCount[3] >= 3){
+			unlockLevels[7] = true;
+			hiddenLevels[7].hidden = false;
+		}
+		if(levelCount[0] >= 3 && levelCount[2] >= 3){
+			unlockLevels[6] = true;
+			hiddenLevels[6].hidden = false;
+		}
+		if(levelCount[4] >= 3 || levelCount[5] >= 3 || levelCount[6] >= 3 || levelCount[7] >= 3){
+			unlockLevels[8] = true;
+			hiddenLevels[8].hidden = false;
 		}
 		this.setState({
 			levelsUnlocked: unlockLevels
 		});
+		backgroundScreenImage = "";
+		for(var i=0; i<hiddenLevels.length; i++){
+			if(hiddenLevels[i].hidden === false){
+				if(i === 8){
+					backgroundScreenImage = backgroundScreenImage + hiddenLevels[i].urlShow;
+				}else{
+					backgroundScreenImage = backgroundScreenImage + hiddenLevels[i].urlShow + ", ";
+				}
+			}else{}
+		}
+		for(var i=0; i<hiddenLevels.length; i++){
+			if(hiddenLevels[i].hidden === true){
+				if(i === 8){
+					backgroundScreenImage = backgroundScreenImage + hiddenLevels[i].urlHidden;
+				}else{
+					backgroundScreenImage = backgroundScreenImage + hiddenLevels[i].urlHidden + ", ";
+				}
+			}else{}
+		}
+		console.log(backgroundScreenImage);
+		document.getElementById("levelSelectScreen").style.backgroundImage = backgroundScreenImage;
 	}
 	selectLevel(choice){
 		level = choice;
@@ -3315,29 +3538,29 @@ class LevelSelectScreen extends React.Component {
 		document.getElementById(choice + "Level").classList.add("selectedLevel");
 	}
 	render() {
+		var sectionStyle = {
+			backgroundImage: backgroundScreenImage
+		}
 		return (
-			<div className="row" id="levelSelectScreen">
+			<div className="row" id="levelSelectScreen" style={ sectionStyle }>
 				<div className="col-xs-12">
-					<div className="row" id="levelChoiceTitle">
-						<div className="col-xs-offset-2 col-xs-8">Choose a level</div>
+					<div className="row levelChoiceRow">
+						{this.state.levelsUnlocked[1] ? <div className="col-xs-3 levelChoice" id="fireLevel" onClick={() => {this.selectLevel("fire")}}></div> : null }
+						{this.state.levelsUnlocked[0] ? <div className="col-xs-3 levelChoice" id="earthLevel" onClick={() => {this.selectLevel("earth")}}></div> : null }
 					</div>
 					<div className="row levelChoiceRow">
-						<div className="col-xs-3 levelChoice" id="fireLevel" onClick={() => {this.selectLevel("fire")}}></div>
-						<div className="col-xs-3 levelChoice" id="earthLevel" onClick={() => {this.selectLevel("earth")}}></div>
+						{this.state.levelsUnlocked[3] ? <div className="col-xs-3 levelChoice" id="windLevel" onClick={() => {this.selectLevel("wind")}}></div> : null }
+						{this.state.levelsUnlocked[2] ? <div className="col-xs-3 levelChoice" id="waterLevel" onClick={() => {this.selectLevel("water")}}></div> : null }
 					</div>
 					<div className="row levelChoiceRow">
-						<div className="col-xs-3 levelChoice" id="windLevel" onClick={() => {this.selectLevel("wind")}}></div>
-						<div className="col-xs-3 levelChoice" id="waterLevel" onClick={() => {this.selectLevel("water")}}></div>
-					</div>
-					<div className="row levelChoiceRow">
-						{this.state.levelsUnlocked[0] ? <div className="col-xs-3 levelChoice" id="lavaLevel" onClick={() => {this.selectLevel("lava")}}></div> : null }
-						{this.state.levelsUnlocked[1] ? <div className="col-xs-3 levelChoice" id="desertLevel" onClick={() => {this.selectLevel("desert")}}></div> : null }
+						{this.state.levelsUnlocked[5] ? <div className="col-xs-3 levelChoice" id="lavaLevel" onClick={() => {this.selectLevel("lava")}}></div> : null }
+						{this.state.levelsUnlocked[4] ? <div className="col-xs-3 levelChoice" id="desertLevel" onClick={() => {this.selectLevel("desert")}}></div> : null }
 					</div><div className="row levelChoiceRow">
-						{this.state.levelsUnlocked[2] ? <div className="col-xs-3 levelChoice" id="stormLevel" onClick={() => {this.selectLevel("storm")}}></div> : null }
-						{this.state.levelsUnlocked[3] ? <div className="col-xs-3 levelChoice" id="mudLevel" onClick={() => {this.selectLevel("mud")}}></div> : null }
+						{this.state.levelsUnlocked[7] ? <div className="col-xs-3 levelChoice" id="stormLevel" onClick={() => {this.selectLevel("storm")}}></div> : null }
+						{this.state.levelsUnlocked[6] ? <div className="col-xs-3 levelChoice" id="mudLevel" onClick={() => {this.selectLevel("mud")}}></div> : null }
 					</div>
 					<div className="row levelChoiceRow">
-						{this.state.levelsUnlocked[4] ? <div className="col-xs-offset-4 col-xs-4 levelChoice" id="towerLevel" onClick={() => {this.selectLevel("tower")}}>The Tower</div> : null }
+						{this.state.levelsUnlocked[8] ? <div className="col-xs-offset-4 col-xs-4 levelChoice" id="towerLevel" onClick={() => {this.selectLevel("tower")}}>The Tower</div> : null }
 					</div>
 					<div className="row" id="levelButtonRow">
 						<div className="col-xs-offset-1 col-xs-2 levelButton" onClick={this.props.goToCharacterScreen}>Back</div>
@@ -3363,7 +3586,7 @@ class StoryScreen extends React.Component {
 		}else{
 			if (storyCounter < currentStoryText.length) {
 				document.getElementById("storyText").innerHTML += currentStoryText.charAt(storyCounter);
-			    if(currentStoryText.charAt(storyCounter) === "."){
+			    if(currentStoryText.charAt(storyCounter) === "." || currentStoryText.charAt(storyCounter) === "?" || currentStoryText.charAt(storyCounter) === "!"){
 			    	speed = 1000;
 			    }else{
 			    	speed = 40;
@@ -3741,44 +3964,53 @@ class GameScreen extends React.Component {
 	componentDidMount() {
 		var audioEl;
 		var newStoryText;
+		var storyTime = 0;
+		for(var i=0; i<levelsBeaten.length; i++){
+			if(levelsBeaten[i] === level){
+				storyTime ++;
+			}
+		}
+		var newStoryText;
+		var textArray = eval(level + "Text");
+		for(var i=0; i<textArray.length; i++){
+			if(startingLevel === level){
+				if(textArray[i].type === "start" && textArray[i].timing === storyTime){
+					newStoryText = textArray[i].text;
+				}else{}
+			}else{
+				if(textArray[i].type === "regular" && textArray[i].timing === storyTime){
+					newStoryText = textArray[i].text;
+				}else{}
+			}
+		}
 		if(level === "fire"){
-			newStoryText = storyText[3].text;
 			audioEl = document.getElementsByClassName("intense")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + fireBackground + ")";
 		}else if(level === "earth"){
-			newStoryText = storyText[1].text;
 			audioEl = document.getElementsByClassName("mistyWoods")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + grassBackground + ")";
 		}else if(level === "water"){
-			newStoryText = storyText[5].text;
 			audioEl = document.getElementsByClassName("brightStyle")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + waterBackground + ")";
 		}else if(level === "wind"){
-			newStoryText = storyText[7].text;
 			audioEl = document.getElementsByClassName("findingOut")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + windBackground + ")";
 		}else if(level === "lava"){
-			newStoryText = storyText[11].text;
 			audioEl = document.getElementsByClassName("fireDestruction")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + lavaBackground + ")";
 		}else if(level === "storm"){
-			newStoryText = storyText[15].text;
 			audioEl = document.getElementsByClassName("findingOut")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + stormBackground + ")";
 		}else if(level === "mud"){
-			newStoryText = storyText[13].text;
 			audioEl = document.getElementsByClassName("mysteryMud")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + mudBackground + ")";
 		}else if(level === "desert"){
-			newStoryText = storyText[9].text;
 			audioEl = document.getElementsByClassName("findingOut")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + desertBackground + ")";
 		}else if(level === "tower"){
-			newStoryText = storyText[17].text;
 			audioEl = document.getElementsByClassName("findingOut")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + towerBackground + ")";
 		}else if(level === "tutorial"){
-			newStoryText = storyText[0].text;
 			audioEl = document.getElementsByClassName("findingOut")[0];
 			document.getElementById("tutorialMessageBox").style.display = "inline";
 		}
@@ -5110,24 +5342,23 @@ class GameScreen extends React.Component {
 				//stageComplete ++;
 				if(stageComplete === numberOfStages - 1){
 					var newStoryText;
-					if(level === "earth"){
-						newStoryText = storyText[2].text;
-					}else if(level === "fire"){
-						newStoryText = storyText[4].text;
-					}else if(level === "water"){
-						newStoryText = storyText[6].text;
-					}else if(level === "wind"){
-						newStoryText = storyText[8].text;
-					}else if(level === "desert"){
-						newStoryText = storyText[10].text;
-					}else if(level === "lava"){
-						newStoryText = storyText[12].text;
-					}else if(level === "mud"){
-						newStoryText = storyText[14].text;
-					}else if(level === "storm"){
-						newStoryText = storyText[16].text;
-					}else if(level === "tower"){
-						newStoryText = storyText[18].text;
+					var storyTime = .5;
+					for(var i=0; i<levelsBeaten.length; i++){
+						if(levelsBeaten[i] === level){
+							storyTime ++;
+						}else{}
+					}
+					var textArray = eval(level + "Text");
+					for(var i=0; i<textArray.length; i++){
+						if(startingLevel === level){
+							if(textArray[i].type === "start" && textArray[i].timing === storyTime){
+								newStoryText = textArray[i].text;
+							}else{}
+						}else{
+							if(textArray[i].type === "regular" && textArray[i].timing === storyTime){
+								newStoryText = textArray[i].text;
+							}else{}
+						}
 					}
 					this.props.showStoryScreen(newStoryText);
 					this.props.aux();
