@@ -242,8 +242,8 @@ var fireText = [
 	{type: "start", timing: 1, text: "Youber treads carefully around the fire rivers and listening for any sulfuric explosions. The sky is always dark here, even when there are no clouds. Youber is starting to understand why anything that lived here would have poor manners. Speaking of which, here come some now..."},
 	{type: "start", timing: 1.5, text: "A way out! The path Youber has been taking splits. Take a chute to the Primafauna Forest, travel South the the Howling Caverns, or continue to brave the smoldering wasteland. First a snack, then decisions."},
 	{type: "start", timing: 2, text: "The fire creatures grow more numerous as Youber presses onward. Youber notices large markings, something large lives here, splendid. The ground rumbles, not a fissure. Youber steels himself for conflict."},
-	{type: "start", timing: 2.5, text: "Youber defeats the leader and presses for information. A growing terror lives in the East. Youber knows that his quest must lead him there. Happy to be rid of this treacherous land, Youber continues his quest elsewhere."}
-	{type: "regular", timing: 0, text: "Youber adventures into the fearsome Fire Fields. The in habitants have a fearsome reputation. Youber will have to be ready for anythings. Perhaps here he will discover some clues about his family's disappearance as well."},
+	{type: "start", timing: 2.5, text: "Youber defeats the leader and presses for information. A growing terror lives in the East. Youber knows that his quest must lead him there. Happy to be rid of this treacherous land, Youber continues his quest elsewhere."},
+	{type: "regular", timing: 0, text: "Youber adventures into the fearsome Fire Fields. The inhabitants have a fearsome reputation. Youber will have to be ready for anything. Perhaps here he will discover some clues about his family's disappearance."},
 	{type: "regular", timing: 0.5, text: "Although painful, this place is good for training. Youber feels his Fire powers growing. The more powerful he gets, the better chance of rescuing his family."},
 	{type: "regular", timing: 1, text: "Youber treads carefully around the fire rivers and listening for any sulfuric explosions. The sky is always dark here, even when there are no clouds. Youber is starting to understand why anything that lived here would have poor manners. Speaking of which, here come some now..."},
 	{type: "regular", timing: 1.5, text: "Sweating profusely, Youber ponders his next steps. Move on to cooler pastures or persue whatever secrets this burning land holds."},
@@ -274,7 +274,7 @@ var windText = [
 	{type: "start", timing: 0, text: "Youber recalls his grandfather talking about disappearing, as if it was inevitable. Though he never mentioned why or how. Perhaps the towering crags will hold some answers. Youber crosses into the wind-swept landscape, preparing for whatever perils might befall him."},
 	{type: "start", timing: 0.5, text: "Dueling on the cliffs is dangerous, but it appears Youber has discovered some interesting gems. Perhaps Youber can use these to make his sack more powerful. A quick moment to rest and then the climing continues."},
 	{type: "start", timing: 1, text: "These caves don't just howl, they moan. And the smell is nigh unbearable. However, Youber is confident that he will only finish his quest if he braves the caves. Speaking of danger..."},
-	{type: "start", timing: 1.5, text: "Chutes! Pathways to other lands. One to the Fire Fields and the other to the tropical region. These could be useful to Youber. Youber can also contining scouring the cliffs for answers and secrets."},
+	{type: "start", timing: 1.5, text: "Chutes! Pathways to other lands. One to the Fire Fields and the other to the tropical region. These could be useful to Youber. Youber can also continue scouring the cliffs for answers and secrets."},
 	{type: "start", timing: 2, text: "Youber reaches the top of the tallest spire. The howling is almost deafening, Youber enters the cavern and within moments realizes he is vastly outnumbered. Youber opens the magic sack..."},
 	{type: "start", timing: 2.5, text: "Youber has defended himself and conquered the champion of the cliffs. Youber learns of a dark shroud that lies to the East. Creatures from the caves have been disapearing into the shroud. Youber learns all he can and then moves on."},
 	{type: "regular", timing: 0, text: "Youber scales the heights of the Howling Caverns. These caves surely hold many secrets."},
@@ -1935,15 +1935,8 @@ function tutorialLevels(){
 }
 
 function levelEarthDistribution(randEnemyNum){
-	numberOfStages = 3;
-	if(numberOfEnemies === 2){
-		enemyDistributionArray = enemyDistributionArray2;
-	}else if(numberOfEnemies >= 3){
-		enemyDistributionArray = enemyDistributionArray3;
-		numberOfStages = 4;
-	}else{}
 	var randNum = Math.floor(Math.random() * 3);
-	if(numberOfStages === 3 || (numberOfStages === 4 && stageComplete < 3)){
+	if((numberOfStages === 3 && stageComplete < 3) || (numberOfStages === 4 && stageComplete < 3)){
 		if(randEnemyNum < enemyDistributionArray[0]){
 			createEnemy = primtreeStats;
 			return;
@@ -2419,7 +2412,7 @@ var elementOrbs = [];
 var multiplier = 1;
 var allies = [];
 var meterArray = [meter0, meter1, meter2, meter3, meter4, meter5, meter6, meter7, meter8, meter9, meter10, meter11, meter12];
-var levelsBeaten = [];
+var levelsBeaten = ["earth", "earth"];
 var keyWordList = [{id: "finesse", keyword: "Finesse", description: "Change power by X to exactly kill an enemy"}, {id: "ward", keyword: "Ward", description: "Ward blocks enemy damage and sabotages."}, {id: "purge", keyword: "Purge", description: "Removes an enemy sabotage from your deck."}, {id: "weaken", keyword: "Weaken", description: "Reduces an enemies strength"}, {id: "exhausted", keyword: "Exhausted", description: "Enemies attack twice in a row"}, {id:"stun", keyword: "Stun", description: "Stunned enemies miss their next attack"}, {id: "poison", keyword: "Poison", description: "Damage delt at the end of the turn"}, {id: "confuse", keyword: "Confuse", description: "Confused enemies attack a random enemy"}, {id: "grow", keyword: "Grow", description: "The card gains power each time it is used"}, /*{id: "scheme", keyword: "Scheme", description: "Schemes are played to one of your support areas and then are charged up over time providing an effect once completed"},*/ {id: "heal", keyword: "Heal", description: "Restore health to your character"}, {id: "reclaim", keyword: "Reclaim", description: "Increase the power of all enemy sabotages in your deck"}, {id: "int", keyword: "Draw", description: "How many extra cards your draw your next turn."}, {id: "def", keyword: "Ongoing Ward", description: "The number of shields you have at the start of every turn."}, {id: "str", keyword: "Magic", description: "Added damage to each attack"}, {id: "rummage", keyword: "Rummage", description: "Switch a card with a random card from your deck."}, {id: "multiply", keyword: "Multiply", description: "Multiply your damage by X."}, {id: "decoy", keyword: "Decoy", description: "Avoid all sabotages this turn."}, {id: "energy", keyword: "Energy", description: "Gain energy to use for other purposes."}, {id: "next", keyword: "Next", description: "Add power to next attack."}, {id: "add", keyword: "Add", description: "Shuffle a number of new cards into your deck."}, {id: "remove", keyword: "Remove", description: "The card gets removed from your deck after you select it"}, {id: "extra", keyword: "Extra", description: "Attack again after this one."}, /*{id: "deplete", keyword: "Deplete", description: "Remove a sabotage from the selected enemy."},*/ {id: "factionBoost", keyword: "Damage Boost", description: "Gains power for each card of the same type played."}, /*{id: "spooky", keyword: "Spooky", description: "Increase the chances of getting a creature's card."}, {id: "transform", keyword: "Transform", description: "Turn an emeny sabotage in your deck into another card."},*/ {id: "all", keyword: "All", description: "Deal damage to all enemies."}, {id: "clutch", keyword: "Clutch", description: "Gains extra effects when your HP is 15 or lower."}, {id: "random", keyword: "Random", description: "One of two effects."}, {id: "stash", keyword: "Energy Stash", description: "Gains extra effects when your energy is 5 or more."}, {id: "treasure", keyword: "Treasure", description: "Add gems and/or cards to your rewards."}, {id: "capture", keyword: "Capture", description: "Increase the change of gaining targeted monster's card."}, {id: "hlBoost", keyword: "Heal Boost", description: "Heal 1 for each card of the same element you've played."}, 
 {id: "wrdBoost", keyword: "Ward Boost", description: "Gain 1 ward for each card of the same element you've played."}, {id: "supBurning", keyword: "Burning", description: "Deals damage at the end of every turn."}, {id: "supGems", keyword: "Gain Gems", description: "Add gems to your rewards."}, {id: "supCards", keyword: "Gain Cards", description: "Add cards to your rewards."}, {id: "supBoost", keyword: "Boost", description: "Increases the power of that type."}];
 var finesseAttack; 
@@ -2444,6 +2437,7 @@ var lavaGem = lava;
 var mudGem = mud;
 var stormGem = storm;
 var startingLevel = null;
+var patience = false;
 
 function shuffle(a) {
     for (let i = a.length; i; i--) {
@@ -3086,6 +3080,17 @@ class GameScreenHub extends React.Component {
 				numberOfEnemies ++;
 			}else{}
 		}
+		numberOfStages = 3;
+		if(numberOfEnemies === 2){
+			enemyDistributionArray = enemyDistributionArray2;
+		}else if(numberOfEnemies === 3){
+			enemyDistributionArray = enemyDistributionArray3;
+			numberOfStages = 4;
+			numberOfEnemies = 2;
+		}else if(numberOfEnemies >=4){
+			enemyDistributionArray = enemyDistributionArray3;
+			numberOfStages = 4;
+		}else{}
 		for(var i=0; i < 3; i++){
 			if(i >= numberOfEnemies){
 				var newEnemy = new EnemyCon("", 0, 0, 0, 0, null, null, null, null, [null, null, null]);
@@ -3166,6 +3171,7 @@ class GameScreenHub extends React.Component {
 		}
 	}
 	switchEnemyArray() {
+
 		if(document.getElementById("stunned") === null){
 		}else{
 			document.getElementById("stunned").classList.remove("stunned");
@@ -3178,6 +3184,7 @@ class GameScreenHub extends React.Component {
 			if(level === "tutorial"){
 				this.tutorialActions();
 			}
+			patience = false;
 			this.createEnemies();
 		}else{
 			var stageName = "stage" + stageComplete;
@@ -3983,6 +3990,7 @@ class GameScreen extends React.Component {
 				}else{}
 			}
 		}
+		console.log(newStoryText);
 		if(level === "fire"){
 			audioEl = document.getElementsByClassName("intense")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + fireBackground + ")";
@@ -4222,6 +4230,7 @@ class GameScreen extends React.Component {
 		});
 	}
 	chooseCard(card) {
+		patience = true;
 		this.setState({
 			enemiesAttacking: false
 		});
@@ -4962,9 +4971,9 @@ class GameScreen extends React.Component {
 		}
 	}
 	heroDraw() {
+		console.log("heroDraw");
 		const audioEl = document.getElementsByClassName("clickSound")[0];
 	    audioEl.play();
-	    var patience = false;
 	    for(var i=0; i<3; i++){
 	    	if(document.getElementById(i + "image") === null){
 
@@ -5403,6 +5412,7 @@ class GameScreen extends React.Component {
 		}else{}
 	}
 	enemyAttackAction(enemyNumber) {
+		patience = false;
 		this.setState({
 			enemiesAttacking: true
 		});
