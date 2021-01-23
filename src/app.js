@@ -2676,6 +2676,7 @@ class GameScreenHub extends React.Component {
 	  });
 	}
 	setUpPlayerSave(collection, lvlsBeat, score, elOrbs, hhp){
+		console.log(elOrbs);
 		if(collectionArray === undefined){
 
 		}else{
