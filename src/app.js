@@ -3767,7 +3767,7 @@ class CharacterSelectScreen extends React.Component {
 							<button className="campButton" onClick={this.props.showCollection}>Deck</button>
 						</div>
 					</div>
-					<div className="row" id="patchNotes"><a target="_blank" href="https://github.com/MicahIsley/blastaar/blob/old-state/README.md">12/10 Patch Notes</a>
+					<div className="row" id="patchNotes"><a target="_blank" href="https://github.com/MicahIsley/blastaar/blob/old-state/README.md">1/23 Patch Notes</a>
 					</div>
 				</div>
 			</div>

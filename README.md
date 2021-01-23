@@ -1,6 +1,6 @@
 Youber's Quest
 
-1/21 Patch Notes
+1/23 Patch Notes
 
 - New Music Tracks
 - Each level now starts with one enemy and scales up when revisiting. Rewards have been scaled too.
