@@ -2640,7 +2640,7 @@ class GameScreenHub extends React.Component {
 		}else{
 			saveOrbs = elementOrbs;
 		}
-		var userSaveData = {name: fileName, collectionArray: collectionArray, score: this.state.score, levels: levelsBeaten, orbs: elementOrbs, hp: youberHero.hp };
+		var userSaveData = {name: fileName, collectionArray: collectionArray, score: this.state.score, levels: levelsBeaten, elementOrbs: elementOrbs, hp: youberHero.hp };
 		this.setState({
 			developers: userSaveData
 
@@ -2925,7 +2925,7 @@ class GameScreenHub extends React.Component {
 	goToGameScreen(){
 		console.log(level);
 		if(level === 0){
-			console.log("Pick a stage");
+			this.displayErrorMessage('Pick a Stage');
 		}else{
 			this.setState({
 				gameScreen: true,
