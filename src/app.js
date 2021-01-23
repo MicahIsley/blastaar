@@ -7314,6 +7314,7 @@ class CraftingScreen extends React.Component {
 		}
 	}
 	listCardFrames() {
+		console.log("hey");
 		var multipleFrames = collectionArray;
 		const listFrames = multipleFrames.map((card, index) => {
 			if(card.type === "support" || (card.ownedNum === 0 && card.deckNum === 0) || card.faction === "desert" || card.faction === "lava" || card.faction === "mud" || card.faction === "storm") {
@@ -7326,6 +7327,7 @@ class CraftingScreen extends React.Component {
 		)
 	}
 	listElementOrbs() {
+		console.log(this.state.elementOrbs);
 		const listElementOrbs = this.state.elementOrbs.map((orb, index) =>
 			<Element  key={index} element={orb} handleDrop={(element) => this.orbDrop(orb)} />
 		);
