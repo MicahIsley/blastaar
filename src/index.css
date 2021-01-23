@@ -475,6 +475,12 @@ body {
 #towerLevel {
 	position: absolute;
 	top: 400px;
+	left: 150px;
+	background-image: url('assets/icons/tower.png');
+}
+
+#towerLevel:hover {
+	background-image: url('assets/icons/towerHover.png');
 }
 
 #trophyButton {
@@ -615,82 +621,39 @@ body {
 .neutralSupportSlot {
 	text-align: center;
 	background: grey;
-	border-style: solid;
-	border-color: black;
-	border-width: 3px;
-	border-radius: 15px;
 }
 
 .fireSupportSlot {
 	text-align: center;
 	background: #ff000082;
-	border-style: solid;
-	border-color: black;
-	border-width: 3px;
-	border-radius: 15px;
 }
 
 .earthSupportSlot {
 	text-align: center;
-	background: brown;
-	border-style: solid;
-	border-color: black;
-	border-width: 3px;
-	border-radius: 15px;
 }
 
 .waterSupportSlot {
 	text-align: center;
-	background: blue;
-	border-style: solid;
-	border-color: black;
-	border-width: 3px;
-	border-radius: 15px;
 }
 
 .windSupportSlot {
 	text-align: center;
-	background: white;
-	border-style: solid;
-	border-color: black;
-	border-width: 3px;
-	border-radius: 15px;
 }
 
 .lavaSupportSlot {
 	text-align: center;
-	background: orange;
-	border-style: solid;
-	border-color: black;
-	border-width: 3px;
-	border-radius: 15px;
 }
 
 .mudSupportSlot {
 	text-align: center;
-	background: purple;
-	border-style: solid;
-	border-color: black;
-	border-width: 3px;
-	border-radius: 15px;
 }
 
 .desertSupportSlot {
 	text-align: center;
-	background: yellow;
-	border-style: solid;
-	border-color: black;
-	border-width: 3px;
-	border-radius: 15px;
 }
 
 .stormSupportSlot {
 	text-align: center;
-	background: darkgrey;
-	border-style: solid;
-	border-color: black;
-	border-width: 3px;
-	border-radius: 15px;
 }
 
 .schemeMeter {
@@ -721,11 +684,16 @@ body {
 }
 
 .supportText {
-	font-size: 20px;
+	font-size: 30px;
+	font-weight: bolder;
 	font-family: 'Metamorphous', cursive;
 	margin-top: 5px;
 	margin-bottom: 5px;
 	text-align: center;
+	background: #82828270;
+	border-radius: 25px;
+	padding: 7px;
+
 }
 
 #craftingArea {
@@ -867,7 +835,7 @@ body {
 }
 
 .supportCol {
-	background: #ffffff2b;
+	background: #d0d0d085;
 	height: 220px;
 	border-color: grey;
 	border-width: .2px;

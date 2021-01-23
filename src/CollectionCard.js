@@ -29,6 +29,53 @@ function collect(connect, monitor) {
 }
 
 class CollectionCard extends React.Component {
+  constructor(props) {
+      super(props);
+      this.state = {
+        finalText1: "",
+        cardSym1: null,
+        finalText2: null,
+        cardSym2: null,
+        regularText1: true,
+        regularText2: false,
+      }
+  }
+  componentDidMount() {
+    var cardSym = [];
+    var cardText;
+    var regularText = [];
+    var splitText = this.props.text.split(".");
+    var finalText = [];
+    for(var i=0; i<2; i++){
+      if(splitText[i] === null || splitText[i] === undefined){
+
+      }else{
+        if(splitText[i].indexOf("Rummage") >= 0 ){
+          cardSym[i] = rummageSym;
+          finalText[i] = parseInt(splitText[i].match(/\d+/)[0]);
+          regularText[i] = false;
+        }else if(splitText[i].indexOf("Ward") >= 0 ){
+              cardSym[i] = shield;
+              console.log(splitText[i]);
+              finalText[i] = parseInt(splitText[i].match(/\d+/)[0]);
+              regularText[i] = false;
+          }else{
+          cardSym[i] = null;
+          finalText[i] = splitText[i];
+          regularText[i] = true;
+        }
+      }
+    }
+    this.setState({
+      cardSym1: cardSym[0],
+      finalText1: finalText[0],
+      cardSym2: cardSym[1],
+      finalText2: finalText[1],
+      regularText1: regularText[0],
+      regularText2: regularText[1]
+    }, () => {
+    });
+  }
   render() {
     var charCard = this.props.type;
     var influenceCost = false;
@@ -39,23 +86,8 @@ class CollectionCard extends React.Component {
     var schemePower = 0;
     var scheme = false;
     var rarity = "common";
-    var cardSym;
-    var cardText;
-    var regularText;
     var ownedNum;
     var cardNumberClass = "cardPowerNum";
-    if(this.props.text.indexOf("Rummage") >= 0 ){
-      cardSym = rummageSym;
-      cardText = parseInt(this.props.text.match(/\d+/)[0]);
-      regularText = null;
-    }else if(this.props.text.indexOf("Ward") >= 0 ){
-      cardSym = shield;
-      cardText = parseInt(this.props.text.match(/\d+/)[0]);
-      regularText = null;
-    }else{
-      cardSym = null;
-      regularText = true;
-    }
     if(this.props.cost > 0){
       influenceCost = true;
     }else{}
@@ -118,9 +150,18 @@ class CollectionCard extends React.Component {
           </div>
         }
         <div className="row cardText">
-          { cardSym ? <img src={cardSym} className="col-xs-8 cardSym" /> : null }
-          { cardSym ? <div className="col-xs-4 cardSymNum">{cardText}</div> : null }
-          { regularText ? <div className="col-xs-12">{this.props.text}</div> : null }
+          <div className="col-xs-12">
+            <div className="row">
+              { this.state.cardSym1 ? <img src={this.state.cardSym1} className="col-xs-8 cardSym" /> : null }
+              { this.state.cardSym1 ? <div className="col-xs-4">{this.state.finalText1}</div> : null }
+              { this.state.regularText1 ? <div className="col-xs-12">{this.state.finalText1}</div> : null }
+            </div>
+            <div className="row">
+              { this.state.cardSym2 ? <img src={this.state.cardSym2} className="col-xs-8 cardSym" /> : null }
+              { this.state.cardSym2 ? <div className="col-xs-4">{this.state.finalText2}</div> : null }
+              { this.state.regularText2 ? <div className="col-xs-12">{this.state.finalText2}</div> : null }
+            </div>
+          </div>
         </div>
         <div className="row schemeRow">
           <div className="col-xs-12">
