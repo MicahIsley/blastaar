@@ -2807,7 +2807,7 @@ class GameScreenHub extends React.Component {
 					//document.getElementsByClassName("shieldIcon")[0].style.background="none";
 					document.getElementsByClassName("heroDamageIndicator2")[0].innerHTML="";
 					document.getElementsByClassName("heroDamageIndicator2")[0].style.display="none";
-				}, 500);
+				}, 350);
 			}else{}
 		}
 		this.setState({
@@ -3148,7 +3148,6 @@ class GameScreenHub extends React.Component {
 		}
 	}
 	switchEnemyArray() {
-
 		if(document.getElementById("stunned") === null){
 		}else{
 			document.getElementById("stunned").classList.remove("stunned");
@@ -3571,9 +3570,9 @@ class StoryScreen extends React.Component {
 			if (storyCounter < currentStoryText.length) {
 				document.getElementById("storyText").innerHTML += currentStoryText.charAt(storyCounter);
 			    if(currentStoryText.charAt(storyCounter) === "." || currentStoryText.charAt(storyCounter) === "?" || currentStoryText.charAt(storyCounter) === "!"){
-			    	speed = 1000;
+			    	speed = 750;
 			    }else{
-			    	speed = 40;
+			    	speed = 30;
 			    }
 			    storyCounter++;
 			    setTimeout(() => {
@@ -5080,7 +5079,7 @@ class GameScreen extends React.Component {
 						}
 					});
 				}
-			}, 500);
+			}, 350);
 		}
 	}
 	playerAttackAll(newAttack, burn) {
@@ -5142,7 +5141,7 @@ class GameScreen extends React.Component {
 					}
 				}else{}
 			});
-		}, 500);
+		}, 350);
 	}
 	recruitAction(recruit) {
 		if(recruit.counter > 0){
@@ -5466,12 +5465,11 @@ class GameScreen extends React.Component {
 								enemyHpArray: [enemyArray[0].hp, enemyArray[1].hp, enemyArray[2].hp]
 							});
 						}
-					}, 500);
+					}, 350);
 				}else{
 					if(this.state.playerShield > 0){
 						let playerShield = this.state.playerShield;
 						const shieldDamage = playerShield - enemyAttack;
-						//document.getElementsByClassName("shieldIcon")[0].style.background="blue";
 						if(shieldDamage >= 0){
 							console.log("Ward Sound Effect");
 						}else{
@@ -5487,7 +5485,7 @@ class GameScreen extends React.Component {
 									//document.getElementsByClassName("shieldIcon")[0].style.background="none";
 									document.getElementsByClassName("heroDamageIndicator2")[0].innerHTML="";
 									document.getElementsByClassName("heroDamageIndicator2")[0].style.display="none";
-							}, 500);
+							}, 350);
 						}
 						if(shieldDamage < 0){
 							if(extraDamage <= 0){
@@ -5552,7 +5550,7 @@ class GameScreen extends React.Component {
 							}else{
 								this.props.changeHeroHp(playerHp);
 							}
-						}, 500);
+						}, 350);
 					}
 				}
 			}
@@ -5605,7 +5603,7 @@ class GameScreen extends React.Component {
 						}
 					}else{}
 				}
-			}, 1000);
+			}, 500);
 		}
 	}
 	endOfTurnDmg(){
