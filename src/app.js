@@ -207,6 +207,14 @@ import lavaSectionHidden from './assets/backgrounds/lavaSectionHidden.png';
 import mudSectionHidden from './assets/backgrounds/mudSectionHidden.png';
 import stormSectionHidden from './assets/backgrounds/stormSectionHidden.png';
 import towerSectionHidden from './assets/backgrounds/towerSectionHidden.png';
+import earthSecret from './assets/earth/earthSecret.png';
+import earthSecretRevealed from './assets/earth/earthSecretRevealed.png';
+import fireSecret from './assets/fire/fireSecret.png';
+import fireSecretRevealed from './assets/fire/fireSecretRevealed.png';
+import waterSecret from './assets/water/waterSecret.png';
+import waterSecretRevealed from './assets/water/waterSecretRevealed.png';
+import windSecret from './assets/wind/windSecret.png';
+import windSecretRevealed from './assets/wind/windSecretRevealed.png';
 import './index.css';
 
 var player;
@@ -259,13 +267,13 @@ var waterText = [
 	{type: "start", timing: 0.5, text: "Youber is taken aback at finding so much hostility in such a warm, welcoming place. At least he found some fancy looking gems. Youber instinctively feels that they will improve his magic sack in some way. Youber spends a moment discovering how."},
 	{type: "start", timing: 1, text: "Youber slowly makes his way to the larger islands. They are streaked with greys and blacks. Dull colors that feel out of place in this vibrant climate. Youber spies some monsters roaming the coast, they are headed his way..."},
 	{type: "start", timing: 1.5, text: "Youber find a shallow cave with two chutes inside. One leads into the forest region and the other to the Howling Caverns. Youber also feels that these islands hold more secrets. What will Youber do next?"},
-	{type: "start", timing: 2, text: "The largest island lies ahead, accompanied by the largest throng of monster. The leader looms larger among them. Youber, determined to continue his quest, ventures forward, looking for answers."},
+	{type: "start", timing: 2, text: "The largest island lies ahead, accompanied by the largest throng of monsters. The leader looms larger among them. Youber, determined to continue his quest, ventures forward, looking for answers."},
 	{type: "start", timing: 2.5, text: "The leader defeated, Youber manages to extract some useful information. The dull palate is a new phenomenom here, creeping in from the North-West. Also, monsters have been disappearing from the Islands too. The monsters suddenly stop sharing and begin glaring at Youber. Youber gets the message and moves on."},
 	{type: "regular", timing: 0, text: "Youber's questing leads him to the Islands of Ruu. A tropical paradise, though Youber has never been too fond of the water."},
 	{type: "regular", timing: 0.5, text: "Youber is taken aback at finding so much hostility in such a warm, welcoming place. At least Youber is learning some of the Water power that permeates the islands. No family yet, but Youber know every step he gets closer."},
 	{type: "regular", timing: 1, text: "Youber slowly makes his way to the larger islands. They are streaked with greys and blacks. Dull colors that feel out of place in this vibrant climate. Youber spies some monsters roaming the coast, they are headed his way..."},
 	{type: "regular", timing: 1.5, text: "Youber hears a rumor of danger across the waters. Could this be where his family was taken?"},
-	{type: "regular", timing: 2, text: "The largest island lies ahead, accompanied by the largest throng of monster. The leader looms larger among them. Youber, determined to continue his quest, ventures forward, looking for answers."},
+	{type: "regular", timing: 2, text: "The largest island lies ahead, accompanied by the largest throng of monsters. The leader looms larger among them. Youber, determined to continue his quest, ventures forward, looking for answers."},
 	{type: "regular", timing: 2.5, text: "Youber learns of an ever raging tempest to the West, a place with powerful magic. However, it seems that Water will not be enough to find the way there. Youber knows that his quest leads to new lands."},
 	{type: "regular", timing: 3, text: "Youber returns to the islands, hoping to grow stronger in the way of Water. Was every crevase explored? Did Youber look behind every Waterfall?"},
 	{type: "regular", timing: 3.5, text: "Youber's mastery with Water grows and grows. His magic sack will hopefully be strong enough to save his family."}
@@ -337,6 +345,11 @@ var towerText = [
 	{type: "regular", timing: 0.5, text: "Youber has found his family! Now that evil has been vanquished, Youber can return home and live a life of peace and hapiness."}
 ];
 
+var tutorialText = [
+	{type: "regular", timing: 0, text: ""},
+	{type: "regular", timing: 0.5, text: ""}
+];
+
 var sabotage1 = new CardCon("Tripped Up", 0, 0, "Hit the ground", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
 var sabotage2 = new CardCon("Off Balance", 0, -1, "Woozy", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
 var sabotage3 = new CardCon("Raging Storm", 0, -2, "So Fierce", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
@@ -363,7 +376,7 @@ var neutral8 = new CardCon("Crippling Shot", 0, 1, "Weaken 1.", "hero", 1, "weak
 var neutral9 = new CardCon("Shrug Off", 0, 2, "Reclaim 1.", "hero", 1, "reclaim 1", "", false, "stormlight", placeholderImg, neutral, "neutral", 9, 0, 0);
 var neutral10 = new CardCon("Smooth Rock", 0, 3, "Finesse 1.", "hero", 1, "finesse 1", "", false, "stormlight", placeholderImg, neutral, "neutral", 10, 0, 0);
 var neutral11 = new CardCon("Finicky Orb", 0, 4, "Random. Energy 3/0.", "hero", 1, "random", "energy 3/energy 0", false, "stormlight", placeholderImg, neutral, "neutral", 11, 0, 0);
-var neutral12 = new CardCon("Biggest Blast", 0, 6, "Whaaam.", "hero", 2, "", "", false, "stormlight", placeholderImg, neutral, "neutral", 12, 0, 1); 
+var neutral12 = new CardCon("Biggest Rock", 0, 6, "Whaaam.", "hero", 2, "", "", false, "stormlight", placeholderImg, neutral, "neutral", 12, 0, 1); 
 var neutral13 = new CardCon("Mystery Spell", 0, 3, "Random. Heal 5/+5 Damage.", "hero", 2, "random", "heal 5/damage 5", false, "stormlight", placeholderImg, neutral, "neutral", 13, 0, 0);
 var neutral14 = new CardCon("Soul Lasso", 0, 2, "Capture 1.", "hero", 2, "capture 1", "", false, "stormlight", placeholderImg, neutral, "neutral", 14, 0, 0);
 var neutral15 = new CardCon("Powerful Shove", 0, 9, "Exhausted.", "hero", 2, "exhausted", "", false, "stormlight", placeholderImg, neutral, "neutral", 15, 0, 0);
@@ -550,7 +563,7 @@ var desert28 = new CardCon("Bone Stalker", 3, 0, "Desert card get Multipler +1."
 var desert29 = new CardCon("Sand Snipp", 2, 0, "Decoy.", "hero", 0, "supDecoy", 99, false, "support", sandSnipp, desert, "desert", 0, 0, 0);
 
 var lava1 = new CardCon("Lava Ball", 0, 7, "Duck.", "hero", 1, "", "", false, "stormlight", placeholderImg, lava, "lava", 1, 0, 0);
-var lava2 = new CardCon("Spew Magma", 0, 4, "Grow 1", "hero", 1, "", "grow 1 99", false, "stormlight", placeholderImg, lava, "lava", 2, 0, 0);
+var lava2 = new CardCon("Spew Magma", 0, 4, "Grow 2", "hero", 1, "", "grow 1 99", false, "stormlight", placeholderImg, lava, "lava", 2, 0, 0);
 var lava3 = new CardCon("Everywhere, Lava", 0, 12, "Exhaust.", "hero", 2, "exhausted", "", false, "stormlight", placeholderImg, lava, "lava", 3, 0, 0);
 var lava4 = new CardCon("Blazing Shimmer", 0, 3, "Ward 7.", "hero", 1, "ward 7", "", false, "stormlight", placeholderImg, lava, "lava", 4, 0, 0);
 var lava5 = new CardCon("The Summit Trembles", 0, 4, "All. Heal 2", "hero", 1, "heal 2", "all", false, "stormlight", placeholderImg, lava, "lava", 5, 0, 0);
@@ -708,7 +721,7 @@ const wobbledukStats = {
 	sabCard: sabotage1,
 	element: "earth",
 	supCard: earth29,
-	effect: [null, null, null]
+	effect: ["regular", null, null]
 };
 
 const angryWobbledukStats = {
@@ -721,7 +734,7 @@ const angryWobbledukStats = {
 	sabCard: sabotage1,
 	element: "earth",
 	supCard: earth29,
-	effect: [null, null, null]
+	effect: ["regular", null, null]
 };
 
 const primtreeStats = {
@@ -734,7 +747,7 @@ const primtreeStats = {
 	sabCard: sabotage8,
 	element: "earth",
 	supCard: earth22,
-	effect: [null, null, null]
+	effect: ["regular", null, null]
 };
 
 const primtreeDefenderStats = {
@@ -747,7 +760,7 @@ const primtreeDefenderStats = {
 	sabCard: sabotage8,
 	element: "earth",
 	supCard: earth28,
-	effect: [null, null, null]
+	effect: ["regular", null, null]
 };
 
 const stoneStriderStats = {
@@ -760,7 +773,7 @@ const stoneStriderStats = {
 	sabCard: sabotage1,
 	element: "earth",
 	supCard: earth25,
-	effect: [null, null, null]
+	effect: ["regular", null, null]
 };
 
 const rockFairyStats = {
@@ -773,7 +786,7 @@ const rockFairyStats = {
 	sabCard: sabotage9,
 	element: "earth",
 	supCard: earth21,
-	effect: [null, null, null]
+	effect: ["regular", null, null]
 };
 
 const steedStats = {
@@ -786,7 +799,7 @@ const steedStats = {
 	sabCard: sabotage8,
 	element: "earth",
 	supCard: earth24,
-	effect: [null, null, null]
+	effect: ["regular", null, null]
 };
 
 const primtreeRoyalStats = {
@@ -799,7 +812,7 @@ const primtreeRoyalStats = {
 	sabCard: sabotage9,
 	element: "earth",
 	supCard: earth26,
-	effect: [null, null, null]
+	effect: ["regular", null, null]
 };
 
 const kingWobbledukStats = {
@@ -812,7 +825,7 @@ const kingWobbledukStats = {
 	sabCard: sabotage1,
 	element: "earth",
 	supCard: earth23,
-	effect: [null, null, null]
+	effect: ["regular", null, null]
 };
 
 const queenPrimtreeStats = {
@@ -825,7 +838,7 @@ const queenPrimtreeStats = {
 	sabCard: sabotage8,
 	element: "earth",
 	supCard: earth27,
-	effect: [null, null, null]
+	effect: ["regular", null, null]
 };
 
 const emberAdderStats = {
@@ -1892,7 +1905,7 @@ const bustedTreasureStats = {
 	sabCard: sabotage1,
 	element: "object",
 	effect: ["final", treasure, null]
-}
+};
 
 const damagedTreasureStats = {
 	name: "Treasure Chest",
@@ -1904,7 +1917,7 @@ const damagedTreasureStats = {
 	sabCard: sabotage1,
 	element: "object",
 	effect: ["stage", bustedTreasureStats, null]
-}
+};
 
 const treasureChestStats = {
 	name: "Treasure Chest",
@@ -1916,7 +1929,103 @@ const treasureChestStats = {
 	sabCard: sabotage1,
 	element: "object",
 	effect: ["stage", damagedTreasureStats, null]
-}
+};
+
+const earthSecretRevealedStats = {
+	name: "Secret",
+	hp: 100,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: earthSecretRevealed,
+	sabCard: sabotage1,
+	element: "object",
+	effect: ["secret", null, null]
+};
+
+const earthSecretStats = {
+	name: "Secret",
+	hp: 1,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: earthSecret,
+	sabCard: sabotage1,
+	element: "object",
+	effect: ["secret", earthSecretRevealed, "neutral"]
+};
+
+const fireSecretRevealedStats = {
+	name: "Secret",
+	hp: 100,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: fireSecretRevealed,
+	sabCard: sabotage1,
+	element: "object",
+	effect: ["secret", null, null]
+};
+
+const fireSecretStats = {
+	name: "Secret",
+	hp: 1,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: fireSecret,
+	sabCard: sabotage1,
+	element: "object",
+	effect: ["secret", fireSecretRevealed, "neutral"]
+};
+
+const waterSecretRevealedStats = {
+	name: "Secret",
+	hp: 100,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: waterSecretRevealed,
+	sabCard: sabotage1,
+	element: "object",
+	effect: ["secret", null, null]
+};
+
+const waterSecretStats = {
+	name: "Secret",
+	hp: 1,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: waterSecret,
+	sabCard: sabotage1,
+	element: "object",
+	effect: ["secret", waterSecretRevealed, "neutral"]
+};
+
+const windSecretRevealedStats = {
+	name: "Secret",
+	hp: 100,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: windSecretRevealed,
+	sabCard: sabotage1,
+	element: "object",
+	effect: ["secret", null, null]
+};
+
+const windSecretStats = {
+	name: "Secret",
+	hp: 1,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: windSecret,
+	sabCard: sabotage1,
+	element: "object",
+	effect: ["secret", windSecretRevealed, "neutral"]
+};
 
 var smallGolemArray = [earthGolemStats, fireGolemStats, waterGolemStats, windGolemStats];
 var bigGolemArray = [desertGolemStats, lavaGolemStats, mudGolemStats, stormGolemStats];
@@ -2368,7 +2477,7 @@ var tutorialDeckSave;
 var recruitArray = [];
 var collectionArray = [];
 var cardFrames = [];
-var elementOrbs = [];
+var elementOrbs = [fire];
 var multiplier = 1;
 var allies = [];
 var meterArray = [meter0, meter1, meter2, meter3, meter4, meter5, meter6, meter7, meter8, meter9, meter10, meter11, meter12];
@@ -2398,6 +2507,8 @@ var mudGem = mud;
 var stormGem = storm;
 var startingLevel = null;
 var patience = false;
+var secrets = false;
+var unlockedSecrets = [false, false, false, false];
 
 function shuffle(a) {
     for (let i = a.length; i; i--) {
@@ -2550,15 +2661,24 @@ class GameScreenHub extends React.Component {
 			this.displayErrorMessage('Enter name and password');
 		}else{
 			var wrongPassword = false;
-			ref.on('value', function(snapshot) {
+			ref.once('value')
+				.then((snapshot) => {
 					numberOfSaves = 0;
 					if(snapshot.val().password === password || loggedIn === true){
 						userSaveArray = [];
-						snapshot.forEach(function(user){
+						snapshot.forEach((user) => {
 							var data =(user.val());
 							if(data.name === undefined){
 							}else{
 								userSaveArray.push({name: data.name, collectionArray: data.collectionArray, levelsBeaten: data.levels, score: data.score, elementOrbs: data.elementOrbs, hp: data.hp});
+								this.setState({
+									userSaveArray: userSaveArray,
+									displayUserSaves: true,
+									saveBox: false
+								}, () => {
+									console.log(this.state.userSaveArray);
+
+								});
 							}
 						});
 						loggedIn = true;
@@ -2567,7 +2687,7 @@ class GameScreenHub extends React.Component {
 						wrongPassword = true;
 					}
 			});
-			if(wrongPassword === true){
+			/*if(wrongPassword === true){
 				this.displayErrorMessage("Wrong Password");
 			}else{
 				this.setState({
@@ -2578,7 +2698,7 @@ class GameScreenHub extends React.Component {
 					console.log(this.state.userSaveArray);
 
 				});
-			}
+			}*/
 		}
 	}
 	writeUserData(){
@@ -2691,7 +2811,7 @@ class GameScreenHub extends React.Component {
 			levelsBeaten = lvlsBeat;
 			youberHero.hp = hhp;
 		}
-		if(elementOrbs.includes(neutral)){
+		if(elOrbs.includes(neutral)){
 			elementOrbs = [];
 		}else{
 			elementOrbs = elOrbs;
@@ -3043,7 +3163,7 @@ class GameScreenHub extends React.Component {
 		}
 		if(levelTier === 1){
 			enemyDistributionArray = enemyDistributionArray2;
-			stageArray = [1, 1, 2];
+			stageArray = [1, 1, 1];
 			numberOfStages = 3;
 		}else if(levelTier === 2){
 			enemyDistributionArray = enemyDistributionArray3;
@@ -3111,6 +3231,7 @@ class GameScreenHub extends React.Component {
 				enemyArray.push(newEnemy);
 			}
 		}
+		console.log(enemyArray);
 		this.setState({
 			enemyArray: enemyArray
 		});
@@ -3746,7 +3867,7 @@ class CharacterSelectScreen extends React.Component {
 							<button className="campButton" onClick={this.props.showCollection}>Deck</button>
 						</div>
 					</div>
-					<div className="row" id="patchNotes"><a target="_blank" href="https://github.com/MicahIsley/blastaar/blob/old-state/README.md">1/23 Patch Notes</a>
+					<div className="row" id="patchNotes"><a target="_blank" href="https://github.com/MicahIsley/blastaar/blob/old-state/README.md">2/7 Patch Notes</a>
 					</div>
 				</div>
 			</div>
@@ -4666,8 +4787,8 @@ class GameScreen extends React.Component {
 				});
 			}else if(checkAbility.indexOf("weaken") >=0){
 				var weakenNum = parseInt(checkAbility.match(/\d+/)[0]);
-				if(enemyArray[currentEnemy].attack - weakenNum < 0){
-					enemyArray[currentEnemy].attack = 0;
+				if(enemyArray[currentEnemy].attack - weakenNum <= 0){
+					enemyArray[currentEnemy].attack = 1;
 				}else{
 					enemyArray[currentEnemy].attack = enemyArray[currentEnemy].attack - weakenNum;
 				}
@@ -4937,6 +5058,17 @@ class GameScreen extends React.Component {
 				heroAttack = 0;
 			}else if(enemyArray[currentEnemy].effect[0] === "impervious" && cardElement === enemyArray[currentEnemy].element){
 				heroAttack = 0;
+				this.props.error("It didn't have an effect.");
+			}else if(enemyArray[currentEnemy].effect[0] === "secret" && cardElement === enemyArray[currentEnemy].effect[2]){
+				secrets = false;
+				var secretArray = ["earth", "fire", "water", "wind"];
+				for(var i=0; i<secretArray.length; i++){
+					if(secretArray[i] === level){
+						unlockedSecrets[i] = true;
+						this.props.error("A new path is revealed");
+					}else{}
+				}
+
 			}else{}
 			var enemyHp = enemyHealth - heroAttack;
 			if(enemyHealth === heroAttack){
@@ -4963,8 +5095,11 @@ class GameScreen extends React.Component {
 				}
 				var supCardValue = Math.floor(Math.random() * 11) + this.state.spookLevel;
 				if(supCardValue >= enemyLevel){
-					this.props.gainSupCardReward(enemyArray[currentEnemy].supCard);
-					this.props.error("Gained Monster Prize!");
+					if(enemyArray[currentEnemy].effect[0] === "secret"){
+					}else{
+						this.props.gainSupCardReward(enemyArray[currentEnemy].supCard);
+						this.props.error("Gained Monster Prize!");
+					}
 				}else{}
 
 			}else{}
@@ -5233,7 +5368,14 @@ class GameScreen extends React.Component {
 					enemyArray[i] = newEnemy;
 				}else if(enemyArray[i].effect[0] === "final" && enemyArray[i].hp === 0){
 					enemyArray[i].image = enemyArray[i].effect[1];
-				}
+				}else if(secrets === true && enemyArray[i].hp === 0){
+					var newSecret = eval(level + "SecretStats");
+					var newEnemy = new EnemyCon(newSecret.name, newSecret.hp, newSecret.attack, newSecret.sabotage, newSecret.pointValue, newSecret.image, newSecret.sabCard, newSecret.element, newSecret.supCard, newSecret.effect);
+					enemyArray[i] = newEnemy;
+				}else if(enemyArray[i].effect[0] === "secret" && enemyArray[i].hp === 0){
+					console.log("revealed");
+					enemyArray[i].image = enemyArray[i].effect[1];
+				}else{}
 			}
 		}
 		this.setState({
@@ -5284,6 +5426,7 @@ class GameScreen extends React.Component {
 					this.updateEnemySab();
 				}
 		}else{
+			patience = false;
 			var currentSabArray = [];
 			for(var i=0; i < enemyArray.length; i++){
 				currentSabArray.push(enemyArray[i].sabotage);
@@ -6142,7 +6285,7 @@ class EnemySide extends React.Component {
 	listBadGuys () {
 		const numberOfBadGuys = enemyArray;
 		const listItems = numberOfBadGuys.map((badGuy, index) => {
-			if(badGuy.hp > 0 || badGuy.effect[0] === "final"){
+			if(badGuy.hp > 0 || badGuy.effect[0] === "final" || badGuy.effect[0] === "secret"){
 				return <Enemy key={index} id={index} status={this.props.status[index]} bossCleanse={this.props.bossCleanse} heroDraw={this.props.heroDraw} cardDisplay={this.props.cardDisplay} enemyId={"badGuy" + index} name={badGuy.name} eHp={badGuy.hp} attack={badGuy.attack} updateEnemySab={this.props.updateEnemySab} sab={this.props.sab[index]} sabCard={badGuy.sabCard} image={badGuy.image} element={badGuy.element} effect={badGuy.effect} />
 			}else{
 				return <Placeholder key={index} id={index} />
@@ -6461,7 +6604,8 @@ class Enemy extends React.Component {
 	    this.state = {
 	      hover: false,
 	      enemyEffect: true,
-	      object: true
+	      object: true,
+	      boss: null
 	    }
 	    this.handleMouseEnter = this.handleMouseEnter.bind(this);
 	    this.handleMouseLeave = this.handleMouseLeave.bind(this);
@@ -6473,20 +6617,13 @@ class Enemy extends React.Component {
 	}
 	handleMouseLeave(){
 	    this.setState({
-	      hover: false,
-	      boss: null
+	      hover: false
 	    });
 	}
 	componentDidMount(){
 		this.props.updateEnemySab();
-		var newId;
 		var enemyEffect;
 		var object = true;
-		if(stageComplete === 3){
-			newId = "boss"
-		}else{
-			newId = " "
-		}
 		if(this.props.element === "object"){
 			enemyEffect = false;
 			object = false;
@@ -6496,7 +6633,7 @@ class Enemy extends React.Component {
 			enemyEffect = false;
 		}
 		this.setState({
-			boss: newId,
+			boss: null,
 			enemyEffect: enemyEffect,
 			object: object
 		});
@@ -6514,6 +6651,14 @@ class Enemy extends React.Component {
 		this.props.heroDraw();
 	}
 	render() {
+		var newId;
+		if(stageComplete === 3){
+			newId = "boss";
+		}else if(this.props.effect[0] === "secret"){
+			newId = "secretImage";
+		}else{
+			newId = null;
+		}
 		return (
 			<div className="col-xs-4 enemyCharacterBox" id={this.props.id} onClick={() => {this.selectEnemyToAttack(this.props.id)}}>
 				<div className="row">
@@ -6531,7 +6676,7 @@ class Enemy extends React.Component {
 				</div>
 				<div className="row">
 					<div className="col-xs-offset-2 col-xs-8">
-						<CharacterImage image={this.props.image} boss={this.state.boss} status={this.props.status} id={this.props.id} />
+						<CharacterImage image={this.props.image} boss={newId} status={this.props.status} id={this.props.id} />
 						{this.state.hover ? <EnemySabCard sabCard={this.props.sabCard}/> : null }
 					</div>
 				</div>
@@ -7115,8 +7260,8 @@ class CraftingScreen extends React.Component {
 		this.handleCraftClick = this.handleCraftClick.bind(this);
 	}
 	handleCraftClick(){
-		//if(this.state.element[1] === "neutral" || this.state.element[1] === "desert" || this.state.element[1] === "lava" || this.state.element[1] === "mud" || this.state.element[1] === "storm"){
-		//}else{
+		if(this.state.element[1] === "neutral" || this.state.element[1] === "desert" || this.state.element[1] === "lava" || this.state.element[1] === "mud" || this.state.element[1] === "storm"){
+		}else{
 			var craftedCard = this.state.resetCard;
 			if(craftedCard.craft > 0){
 				var newCard = eval(this.state.element[1] + craftedCard.craft);
@@ -7211,7 +7356,7 @@ class CraftingScreen extends React.Component {
 					elementOrbs: elementOrbs
 				});
 			}else{}
-		//}
+		}
 	}
 	handleResetClick(){
 		if(this.state.element[1] === "neutral"){
@@ -7244,8 +7389,10 @@ class CraftingScreen extends React.Component {
 		)
 	}
 	orbDrop(element){
-		var newElement;
-		if(this.state.card.faction === "neutral"){
+		var newElement = this.state.element;
+		if(this.state.card.faction === "lava" || this.state.card.faction === "desert" || this.state.card.faction === "mud" || this.state.card.faction === "storm"){
+			console.log("Can't Upgrade Further");
+		}else if(this.state.card.faction === "neutral"){
 			if(element === fire){
 					newElement = [fire, "fire"];
 			}else if(element === wind){
