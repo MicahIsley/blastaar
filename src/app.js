@@ -20,6 +20,7 @@ import CreateCharacter from './CreateCharacter';
 import DeleteZone from './deleteZone.js';
 import awe from './assets/icons/awe.png';
 import bustedTreasure from './assets/icons/bustedTreasure.png';
+import cardPrize from './assets/icons/cardPrize.gif';
 import common from './assets/icons/common.png';
 import confused from './assets/icons/confused.png';
 import damagedTreasure from './assets/icons/damagedTreasure.png';
@@ -36,6 +37,8 @@ import magicBag from './assets/icons/magicBag.png';
 import slash from './assets/icons/slash.png';
 import lava from './assets/icons/lava.png';
 import mud from './assets/icons/mud.png';
+import obeliskOfPrizes from './assets/icons/obeliskOfPrizes.gif';
+import orbPrize from './assets/icons/orbPrize.gif';
 import poisoned from './assets/icons/poisoned.png';
 import power from './assets/icons/power.png';
 import rare from './assets/icons/rare.png';
@@ -215,6 +218,23 @@ import waterSecret from './assets/water/waterSecret.png';
 import waterSecretRevealed from './assets/water/waterSecretRevealed.png';
 import windSecret from './assets/wind/windSecret.png';
 import windSecretRevealed from './assets/wind/windSecretRevealed.png';
+import earthYouber from './assets/costumes/earthYouber.gif';
+import fireYouber from './assets/costumes/fireYouber.gif';
+import stormYouber from './assets/costumes/stormYouber.gif';
+import waterYouber from './assets/costumes/waterYouber.gif';
+import windYouber from './assets/costumes/windYouber.gif';
+import earthKey from './assets/artifacts/earthKey.png';
+import fireKey from './assets/artifacts/fireKey.png';
+import waterKey from './assets/artifacts/waterKey.png';
+import windKey from './assets/artifacts/windKey.png';
+import desertScroll from './assets/artifacts/desertScroll.png';
+import earthScroll from './assets/artifacts/earthScroll.png';
+import fireScroll from './assets/artifacts/fireScroll.png';
+import lavaScroll from './assets/artifacts/lavaScroll.png';
+import mudScroll from './assets/artifacts/mudScroll.png';
+import stormScroll from './assets/artifacts/stormScroll.png';
+import waterScroll from './assets/artifacts/waterScroll.png';
+import windScroll from './assets/artifacts/windScroll.png';
 import './index.css';
 
 var player;
@@ -2027,6 +2047,42 @@ const windSecretStats = {
 	effect: ["secret", windSecretRevealed, "neutral"]
 };
 
+const orbPrizeStats = {
+	name: "Orbs",
+	hp: 1,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: orbPrize,
+	sabCard: sabotage1,
+	element: "object",
+	effect: ["prize", "orbs", null]
+};
+
+const cardPrizeStats = {
+	name: "Cards",
+	hp: 1,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: cardPrize,
+	sabCard: sabotage1,
+	element: "object",
+	effect: ["prize", "cards", null]
+};
+
+const obeliskOfPrizesStats = {
+	name: "Orbs",
+	hp: 100,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: obeliskOfPrizes,
+	sabCard: sabotage1,
+	element: "obelisk",
+	effect: ["obelisk", null, null]
+};
+
 var smallGolemArray = [earthGolemStats, fireGolemStats, waterGolemStats, windGolemStats];
 var bigGolemArray = [desertGolemStats, lavaGolemStats, mudGolemStats, stormGolemStats];
 var numberOfEnemies = 1;
@@ -2054,7 +2110,7 @@ function tutorialLevels(){
 
 function levelEarthDistribution(randEnemyNum){
 	var randNum = Math.floor(Math.random() * 3);
-	if((numberOfStages === 3 && stageComplete < 3) || (numberOfStages === 4 && stageComplete < 3)){
+	if((numberOfStages === 4 && stageComplete < 4) || (numberOfStages === 5 && stageComplete < 4)){
 		if(randEnemyNum < enemyDistributionArray[0]){
 			createEnemy = primtreeStats;
 			return;
@@ -2079,7 +2135,7 @@ function levelEarthDistribution(randEnemyNum){
 		}else{
 			createEnemy = smallGolemArray[randNum];
 		}
-	}else if(stageComplete === 3){
+	}else if(stageComplete === 4){
 		numberOfEnemies = 1;
 		if(randEnemyNum < 250){
 			createEnemy = kingWobbledukStats;
@@ -2092,7 +2148,7 @@ function levelEarthDistribution(randEnemyNum){
 
 function levelFireDistribution(randEnemyNum){
 	var randNum = Math.floor(Math.random() * 3);
-	if((numberOfStages === 3 && stageComplete < 3) || (numberOfStages === 4 && stageComplete < 3)){
+	if((numberOfStages === 4 && stageComplete < 4) || (numberOfStages === 5 && stageComplete < 4)){
 		if(randEnemyNum < enemyDistributionArray[0]){
 			createEnemy = emberAdderStats;
 			return;
@@ -2117,7 +2173,7 @@ function levelFireDistribution(randEnemyNum){
 		}else{
 			createEnemy = smallGolemArray[randNum];
 		}
-	}else if(stageComplete === 3){
+	}else if(stageComplete === 4){
 		numberOfEnemies = 1;
 		if(randEnemyNum < 250){
 			createEnemy = broodmotherStats;
@@ -2130,7 +2186,7 @@ function levelFireDistribution(randEnemyNum){
 
 function levelWaterDistribution(randEnemyNum){
 	var randNum = Math.floor(Math.random() * 3);
-	if((numberOfStages === 3 && stageComplete < 3) || (numberOfStages === 4 && stageComplete < 3)){
+	if((numberOfStages === 4 && stageComplete < 4) || (numberOfStages === 5 && stageComplete < 4)){
 		if(randEnemyNum < enemyDistributionArray[0]){
 			createEnemy = trenchThumpStats;
 			return;
@@ -2155,7 +2211,7 @@ function levelWaterDistribution(randEnemyNum){
 		}else{
 			createEnemy = smallGolemArray[randNum];
 		}
-	}else if(stageComplete === 3){
+	}else if(stageComplete === 4){
 		numberOfEnemies = 1;
 		if(randEnemyNum < 250){
 			createEnemy = superBudleFairyStats;
@@ -2168,7 +2224,7 @@ function levelWaterDistribution(randEnemyNum){
 
 function levelWindDistribution(randEnemyNum){
 	var randNum = Math.floor(Math.random() * 3);
-	if((numberOfStages === 3 && stageComplete < 3) || (numberOfStages === 4 && stageComplete < 3)){
+	if((numberOfStages === 4 && stageComplete < 4) || (numberOfStages === 5 && stageComplete < 4)){
 		if(randEnemyNum < enemyDistributionArray[0]){
 			createEnemy = maclawStats;
 			return;
@@ -2193,7 +2249,7 @@ function levelWindDistribution(randEnemyNum){
 		}else{
 			createEnemy = smallGolemArray[randNum];
 		}
-	}else if(stageComplete === 3){
+	}else if(stageComplete === 4){
 		numberOfEnemies = 1;
 		if(randEnemyNum < 250){
 			createEnemy = empressMadnadoStats;
@@ -2206,7 +2262,7 @@ function levelWindDistribution(randEnemyNum){
 
 function levelDesertDistribution(randEnemyNum){
 	var randNum = Math.floor(Math.random() * 3);
-	if((numberOfStages === 3 && stageComplete < 3) || (numberOfStages === 4 && stageComplete < 3)){
+	if((numberOfStages === 4 && stageComplete < 4) || (numberOfStages === 5 && stageComplete < 4)){
 		if(randEnemyNum < enemyDistributionArray[0]){
 			createEnemy = sandSnippStats;
 			return;
@@ -2231,7 +2287,7 @@ function levelDesertDistribution(randEnemyNum){
 		}else{
 			createEnemy = bigGolemArray[randNum];
 		}
-	}else if(stageComplete === 3){
+	}else if(stageComplete === 4){
 		numberOfEnemies = 1;
 		if(randEnemyNum < 250){
 			createEnemy = championStalkerStats;
@@ -2244,7 +2300,7 @@ function levelDesertDistribution(randEnemyNum){
 
 function levelLavaDistribution(randEnemyNum){
 	var randNum = Math.floor(Math.random() * 3);
-	if((numberOfStages === 3 && stageComplete < 3) || (numberOfStages === 4 && stageComplete < 3)){
+	if((numberOfStages === 4 && stageComplete < 4) || (numberOfStages === 5 && stageComplete < 4)){
 		if(randEnemyNum < enemyDistributionArray[0]){
 			createEnemy = emberiteStats;
 			return;
@@ -2269,7 +2325,7 @@ function levelLavaDistribution(randEnemyNum){
 		}else{
 			createEnemy = bigGolemArray[randNum];
 		}
-	}else if(stageComplete === 3){
+	}else if(stageComplete === 4){
 		numberOfEnemies = 1;
 		if(randEnemyNum < 250){
 			createEnemy = lavaLordWalkerStats;
@@ -2282,7 +2338,7 @@ function levelLavaDistribution(randEnemyNum){
 
 function levelMudDistribution(randEnemyNum){
 	var randNum = Math.floor(Math.random() * 3);
-	if((numberOfStages === 3 && stageComplete < 3) || (numberOfStages === 4 && stageComplete < 3)){
+	if((numberOfStages === 4 && stageComplete < 4) || (numberOfStages === 5 && stageComplete < 4)){
 		if(randEnemyNum < enemyDistributionArray[0]){
 			createEnemy = lesserGalopeStats;
 			return;
@@ -2307,7 +2363,7 @@ function levelMudDistribution(randEnemyNum){
 		}else{
 			createEnemy = bigGolemArray[randNum];
 		}
-	}else if(stageComplete === 3){
+	}else if(stageComplete === 4){
 		numberOfEnemies = 1;
 		if(randEnemyNum < 250){
 			createEnemy = archmageMucksterStats;
@@ -2320,7 +2376,7 @@ function levelMudDistribution(randEnemyNum){
 
 function levelStormDistribution(randEnemyNum){
 	var randNum = Math.floor(Math.random() * 3);
-	if((numberOfStages === 3 && stageComplete < 3) || (numberOfStages === 4 && stageComplete < 3)){
+	if((numberOfStages === 4 && stageComplete < 4) || (numberOfStages === 5 && stageComplete < 4)){
 		if(randEnemyNum < enemyDistributionArray[0]){
 			createEnemy = shockSharkStats;
 			return;
@@ -2345,7 +2401,7 @@ function levelStormDistribution(randEnemyNum){
 		}else{
 			createEnemy = bigGolemArray[randNum];
 		}
-	}else if(stageComplete === 3){
+	}else if(stageComplete === 4){
 		numberOfEnemies = 1;
 		if(randEnemyNum < 250){
 			createEnemy = enlightenedRainWolfStats;
@@ -2477,7 +2533,7 @@ var tutorialDeckSave;
 var recruitArray = [];
 var collectionArray = [];
 var cardFrames = [];
-var elementOrbs = [fire];
+var elementOrbs = [];
 var multiplier = 1;
 var allies = [];
 var meterArray = [meter0, meter1, meter2, meter3, meter4, meter5, meter6, meter7, meter8, meter9, meter10, meter11, meter12];
@@ -2508,7 +2564,11 @@ var stormGem = storm;
 var startingLevel = null;
 var patience = false;
 var secrets = false;
-var unlockedSecrets = [false, false, false, false];
+var unlockedSecrets = [false, false, false, false, false, false, false, false];
+var elementKeys = [false, false, false, false];
+var elementScrolls = [false, false, false, false, false, false, false, false];
+var secretArtifacts = [true, true, true, true, false, false, false, false];
+var equippedArtifact;
 
 function shuffle(a) {
     for (let i = a.length; i; i--) {
@@ -2543,7 +2603,7 @@ class GameScreenHub extends React.Component {
 			equipment: null,
 			score: 0,
 			heroHp: 50,
-			stormCounter: 100,
+			stormCounter: 5,
 			enemyArray: [enemyArray[0], enemyArray[1], enemyArray[2]],
 			sphereCount: 0,
 			influence: 1,
@@ -2557,7 +2617,9 @@ class GameScreenHub extends React.Component {
 			highScores: [],
 			userSaveArray: [],
 			displayUserSaves: false,
-			saveBox: false
+			saveBox: false,
+			prizeChoice: null,
+			obelisk: 0
 		}
 		this.changeHero = this.changeHero.bind(this);
 		this.goToGameScreen = this.goToGameScreen.bind(this);
@@ -2602,6 +2664,7 @@ class GameScreenHub extends React.Component {
 		this.autoSave = this.autoSave.bind(this);
 		this.showStoryScreen = this.showStoryScreen.bind(this);
 		this.hideStoryScreen = this.hideStoryScreen.bind(this);
+		this.prizeChoice = this.prizeChoice.bind(this);
 	}
 	componentDidMount(){
 		collectionArray = [];
@@ -2888,6 +2951,13 @@ class GameScreenHub extends React.Component {
 			storyScreen: false
 		});
 	}
+	prizeChoice(choice){
+		this.setState({
+			prizeChoice: choice
+		}, () => {
+			this.auxilaryScreen();
+		});
+	}
 	gainSupCardReward(reward){
 		var updateRewardArray = this.state.supCardRewards;
 		updateRewardArray.push(reward);
@@ -2969,9 +3039,22 @@ class GameScreenHub extends React.Component {
 		});
 	}
 	decreaseStormCounter(){
+		patience = false;
 		var currentStorm = this.state.stormCounter - 1;
 		if(currentStorm === 0){
-			//this.highStorm();
+			var obeliskPoints = 100 - enemyArray[1].hp;
+			this.setState({
+				obelisk: obeliskPoints
+			}, () => {
+				if(this.state.obelisk >= 15){
+					this.displayErrorMessage("Something came out...");
+					setTimeout(() => {
+						this.auxilaryScreen();
+					}, 1500);
+				}else{
+					this.auxilaryScreen();
+				}
+			});
 		}else{
 			this.setState({
 				stormCounter: currentStorm
@@ -3163,29 +3246,29 @@ class GameScreenHub extends React.Component {
 		}
 		if(levelTier === 1){
 			enemyDistributionArray = enemyDistributionArray2;
-			stageArray = [1, 1, 1];
-			numberOfStages = 3;
+			stageArray = [1, 1, 1, 1];
+			numberOfStages = 4;
 		}else if(levelTier === 2){
 			enemyDistributionArray = enemyDistributionArray3;
-			stageArray = [2, 2, 2];
-			numberOfStages = 3;
+			stageArray = [2, 2, 2, 2];
+			numberOfStages = 4;
 		}else if(levelTier === 3){
 			enemyDistributionArray = enemyDistributionArray3;
-			stageArray = [2, 2, 3, 1];
-			numberOfStages = 4;
+			stageArray = [2, 2, 2, 3, 1];
+			numberOfStages = 5;
 		}else if(levelTier > 3){
 			enemyDistributionArray = enemyDistributionArray3;
-			stageArray = [3, 3, 3, 1];
-			numberOfStages = 4;
+			stageArray = [2, 3, 3, 3, 1];
+			numberOfStages = 5;
 		}else{}
 		numberOfEnemies = stageArray[stageComplete];
 		for(var i=0; i < 3; i++){
 			if(i >= numberOfEnemies){
-				var newEnemy = new EnemyCon("", 0, 0, 0, 0, null, null, null, null, [null, null, null]);
+				var newEnemy = new EnemyCon("", 0, 0, 0, 0, null, null, "box", null, [null, null, null]);
 				enemyArray.push(newEnemy);
 			}else if((stageComplete === 3 && i === 0) || numberOfEnemies === 1){
 				numberOfEnemies = 2;
-				var newEnemy = new EnemyCon("", 0, 0, 0, 0, null, null, null, null, [null, null, null]);
+				var newEnemy = new EnemyCon("", 0, 0, 0, 0, null, null, "box", null, [null, null, null]);
 				enemyArray.push(newEnemy);
 			}else{
 				var randEnemyNum = Math.floor(Math.random() * 500) + 1;
@@ -3358,8 +3441,8 @@ class GameScreenHub extends React.Component {
 			{this.state.characterSelectScreen ? <CharacterSelectScreen error={this.displayErrorMessage} autoSave={this.autoSave} logOutUser={this.logOutUser} openSaveBox={this.openSaveBox} saveBox={this.state.saveBox} setUpPlayerSave={this.setUpPlayerSave} displayUserSaves={this.state.displayUserSaves} userSaveArray={this.state.userSaveArray} highScoreScreen={this.highScoreScreen} loadUserSaves={this.loadUserSaves} createNewUser={this.createNewUser} getUserData={this.getUserData} writeUserData={this.writeUserData} goToLevelScreen={this.goToLevelScreen} score={this.state.score} createNewCharacter={this.createNewCharacter} influence={this.state.influence} shield={this.state.heroShield} spheres={this.state.sphereCount} attack={this.state.attack} playerHero={playerHero} switchEnemyArray={this.switchEnemyArray} goToEquipmentScreen={this.goToEquipmentScreen} heroHp={this.state.heroHp} showCollection={this.showCollection} changeHero={this.changeHero} goToGameScreen={this.goToGameScreen} changeInfluence={this.changeInfluence} /> : null }
 			{this.state.firstLevelChoice ? <FirstLevelChoice goToLevelScreen={this.goToLevelScreen} /> : null}
 			{this.state.levelSelectScreen ? <LevelSelectScreen error={this.displayErrorMessage} showStoryScreen={this.showStoryScreen} goToCharacterScreen={this.goToCharacterScreen} goToGameScreen={this.goToGameScreen} switchEnemyArray={this.switchEnemyArray} /> : null }
-			{this.state.gameScreen ? <GameScreen showStoryScreen={this.showStoryScreen} playerDeathScreen={this.playerDeathScreen} supGemRewards={this.state.supGemRewards} supCardRewards={this.state.supCardRewards} boss={this.state.bossStats} bossEffect={this.state.bossEffect} error={this.displayErrorMessage} clearSupRewards={this.clearSupRewards} gainSupGemReward={this.gainSupGemReward} gainSupCardReward={this.gainSupCardReward} toggleInfoScreen={this.toggleInfoScreen} characterScreen={this.goToCharacterScreen} changeHeroShield={this.changeHeroShield} changeHeroAttack={this.changeHeroAttack} changeInfluence={this.changeInfluence} influence={this.state.influence} int={this.state.heroSelect.intelligence} shield={this.state.heroShield} switchEnemyArray={this.switchEnemyArray} increaseStormCounter={this.increaseStormCounter} decreaseStormCounter={this.decreaseStormCounter} stormCounter={this.state.stormCounter} changeHeroHp={this.changeHeroHp} heroHp={this.state.heroHp} score={this.state.score} setSpheres={this.setSphereCount} changeScore={this.changeScore} aux={this.auxilaryScreen} heroSelect={this.state.heroSelect} attack={this.state.attack} equipment={this.state.equipment} enemyArray={this.state.enemyArray} goToCollection={this.showCollection} /> : null }
-			{this.state.auxilaryScreen ? <AuxilaryScreen error={this.displayErrorMessage} changeHeroHp={this.changeHeroHp} heroHp={this.state.heroHp} clearSupRewards={this.clearSupRewards} supGemRewards={this.state.supGemRewards} supCardRewards={this.state.supCardRewards} goToEndingScreen={this.goToEndingScreen} changeInfluence={this.changeInfluence} influence={this.state.influence} setSphereCount={this.setSphereCount} score={this.state.score} resetStormCounter={this.resetStormCounter} showCollection={this.showCollection} goToCharacterScreen={this.goToCharacterScreen} /> : null }
+			{this.state.gameScreen ? <GameScreen prizeChoice={this.prizeChoice} showStoryScreen={this.showStoryScreen} playerDeathScreen={this.playerDeathScreen} supGemRewards={this.state.supGemRewards} supCardRewards={this.state.supCardRewards} boss={this.state.bossStats} bossEffect={this.state.bossEffect} error={this.displayErrorMessage} clearSupRewards={this.clearSupRewards} gainSupGemReward={this.gainSupGemReward} gainSupCardReward={this.gainSupCardReward} toggleInfoScreen={this.toggleInfoScreen} characterScreen={this.goToCharacterScreen} changeHeroShield={this.changeHeroShield} changeHeroAttack={this.changeHeroAttack} changeInfluence={this.changeInfluence} influence={this.state.influence} int={this.state.heroSelect.intelligence} shield={this.state.heroShield} switchEnemyArray={this.switchEnemyArray} increaseStormCounter={this.increaseStormCounter} decreaseStormCounter={this.decreaseStormCounter} stormCounter={this.state.stormCounter} changeHeroHp={this.changeHeroHp} heroHp={this.state.heroHp} score={this.state.score} setSpheres={this.setSphereCount} changeScore={this.changeScore} aux={this.auxilaryScreen} heroSelect={this.state.heroSelect} attack={this.state.attack} equipment={this.state.equipment} enemyArray={this.state.enemyArray} goToCollection={this.showCollection} /> : null }
+			{this.state.auxilaryScreen ? <AuxilaryScreen error={this.displayErrorMessage} obelisk={this.state.obelisk} prizeChoice={this.state.prizeChoice} changeHeroHp={this.changeHeroHp} heroHp={this.state.heroHp} clearSupRewards={this.clearSupRewards} supGemRewards={this.state.supGemRewards} supCardRewards={this.state.supCardRewards} goToEndingScreen={this.goToEndingScreen} changeInfluence={this.changeInfluence} influence={this.state.influence} setSphereCount={this.setSphereCount} score={this.state.score} resetStormCounter={this.resetStormCounter} showCollection={this.showCollection} goToCharacterScreen={this.goToCharacterScreen} /> : null }
 			{this.state.collectionScreen ? <CollectionScreen error={this.displayErrorMessage} toggleInfoScreen={this.toggleInfoScreen} goToCraftingScreen={this.goToCraftingScreen} checkDeckContents={this.checkDeckContents} /> : null }
 			{this.state.equipmentScreen ? <EquipmentScreen error={this.displayErrorMessage} changeScore={this.changeScore} score={this.state.score} itemArray={this.state.itemArray} heroShield={this.state.heroShield} spheres={this.state.sphereCount} setSphereCount={this.setSphereCount} playerHero={playerHero} chooseItemAction={this.chooseItemAction} attack={this.state.attack} goToCharacterScreen={this.goToCharacterScreen} /> : null }
 			{this.state.craftingScreen ? <CraftingScreen error={this.displayErrorMessage} toggleInfoScreen={this.toggleInfoScreen} showCollection={this.showCollection} /> : null}
@@ -3520,10 +3603,16 @@ class LevelSelectScreen extends React.Component {
 		this.state = {
 			levelsUnlocked: [false, false, false, false, false, false, false, false, false],
 			backgroundScreenImage: null,
+			levelCount: [0,0,0,0,0,0,0,0]
 		}
 		this.selectLevel = this.selectLevel.bind(this);
 	}
 	componentDidMount(){
+		if(equippedArtifact === null){
+
+		}else{
+			player.image = equippedArtifact;
+		}
 		cardArray2 = cardArray;
 		cardArray = [];
 		for(var i=0; i<cardArray2.length; i++){
@@ -3575,19 +3664,19 @@ class LevelSelectScreen extends React.Component {
 			unlockLevels[3] = true;
 			hiddenLevels[3].hidden = false;
 		}
-		if(levelCount[0] >= 3 && levelCount[1] >= 3){
+		if(elementKeys[0] === true && elementKeys[1] === true){
 			unlockLevels[5] = true;
 			hiddenLevels[5].hidden = false;
 		}
-		if(levelCount[1] >= 3 && levelCount[3] >= 3){
+		if(elementKeys[1] === true && elementKeys[3] === true){
 			unlockLevels[4] = true;
 			hiddenLevels[4].hidden = false;
 		}
-		if(levelCount[2] >= 3 && levelCount[3] >= 3){
+		if(elementKeys[2] === true && elementKeys[3] === true){
 			unlockLevels[7] = true;
 			hiddenLevels[7].hidden = false;
 		}
-		if(levelCount[0] >= 3 && levelCount[2] >= 3){
+		if(elementKeys[0] === true && elementKeys[2] === true){
 			unlockLevels[6] = true;
 			hiddenLevels[6].hidden = false;
 		}
@@ -3613,7 +3702,8 @@ class LevelSelectScreen extends React.Component {
 		document.getElementById("levelSelectScreen").style.backgroundImage = slicedImage;
 		this.setState({
 			levelsUnlocked: unlockLevels,
-			backgroundScreenImage: backgroundScreenImage
+			backgroundScreenImage: backgroundScreenImage,
+			levelCount: levelCount
 		});
 	}
 	selectLevel(choice){
@@ -3630,19 +3720,59 @@ class LevelSelectScreen extends React.Component {
 			<div className="row" id="levelSelectScreen">
 				<div className="col-xs-12">
 					<div className="row levelChoiceRow">
-						{this.state.levelsUnlocked[1] ? <div className="col-xs-3 levelChoice" id="fireLevel" onClick={() => {this.selectLevel("fire")}}></div> : null }
-						{this.state.levelsUnlocked[0] ? <div className="col-xs-3 levelChoice" id="earthLevel" onClick={() => {this.selectLevel("earth")}}></div> : null }
+						{this.state.levelsUnlocked[1] ? <div className="col-xs-3 levelChoice" id="fireLevel" onClick={() => {this.selectLevel("fire")}}>
+							<div className="row">
+								<div className="col-xs-2 levelCount">{this.state.levelCount[1] + 1}</div>
+							</div>
+						</div> : null }
+						{unlockedSecrets[1] ? <div className="col-xs-3 levelTempleChoice" id="fireTempleLevel" onClick={() => {this.selectLevel("fireTemple")}}></div> : null }
+						{this.state.levelsUnlocked[0] ? <div className="col-xs-3 levelChoice" id="earthLevel" onClick={() => {this.selectLevel("earth")}}>
+							<div className="row">
+								<div className="col-xs-2 levelCount">{this.state.levelCount[0] + 1}</div>
+							</div>
+						</div> : null }
+						{unlockedSecrets[0] ? <div className="col-xs-3 levelTempleChoice" id="earthTempleLevel" onClick={() => {this.selectLevel("earthTemple")}}></div> : null }
 					</div>
 					<div className="row levelChoiceRow">
-						{this.state.levelsUnlocked[3] ? <div className="col-xs-3 levelChoice" id="windLevel" onClick={() => {this.selectLevel("wind")}}></div> : null }
-						{this.state.levelsUnlocked[2] ? <div className="col-xs-3 levelChoice" id="waterLevel" onClick={() => {this.selectLevel("water")}}></div> : null }
+						{this.state.levelsUnlocked[3] ? <div className="col-xs-3 levelChoice" id="windLevel" onClick={() => {this.selectLevel("wind")}}>
+							<div className="row">
+								<div className="col-xs-2 levelCount">{this.state.levelCount[3] + 1}</div>
+							</div>
+						</div> : null }
+						{unlockedSecrets[3] ? <div className="col-xs-3 levelTempleChoice" id="windTempleLevel" onClick={() => {this.selectLevel("windTemple")}}></div> : null }
+						{this.state.levelsUnlocked[2] ? <div className="col-xs-3 levelChoice" id="waterLevel" onClick={() => {this.selectLevel("water")}}>
+							<div className="row">
+								<div className="col-xs-2 levelCount">{this.state.levelCount[2] + 1}</div>
+							</div>
+						</div> : null }
+						{unlockedSecrets[2] ? <div className="col-xs-3 levelTempleChoice" id="waterTempleLevel" onClick={() => {this.selectLevel("waterTemple")}}></div> : null }
 					</div>
 					<div className="row levelChoiceRow">
-						{this.state.levelsUnlocked[5] ? <div className="col-xs-3 levelChoice" id="lavaLevel" onClick={() => {this.selectLevel("lava")}}></div> : null }
-						{this.state.levelsUnlocked[4] ? <div className="col-xs-3 levelChoice" id="desertLevel" onClick={() => {this.selectLevel("desert")}}></div> : null }
+						{this.state.levelsUnlocked[5] ? <div className="col-xs-3 levelChoice" id="lavaLevel" onClick={() => {this.selectLevel("lava")}}>
+							<div className="row">
+								<div className="col-xs-2 levelCount">{this.state.levelCount[5] + 1}</div>
+							</div>
+						</div> : null }
+						{unlockedSecrets[5] ? <div className="col-xs-3 levelTempleChoice" id="lavaTempleLevel" onClick={() => {this.selectLevel("lavaTemple")}}></div> : null }
+						{this.state.levelsUnlocked[4] ? <div className="col-xs-3 levelChoice" id="desertLevel" onClick={() => {this.selectLevel("desert")}}>
+							<div className="row">
+								<div className="col-xs-2 levelCount">{this.state.levelCount[4] + 1}</div>
+							</div>
+						</div> : null }
+						{unlockedSecrets[4] ? <div className="col-xs-3 levelTempleChoice" id="desertTempleLevel" onClick={() => {this.selectLevel("desertTemple")}}></div> : null }
 					</div><div className="row levelChoiceRow">
-						{this.state.levelsUnlocked[7] ? <div className="col-xs-3 levelChoice" id="stormLevel" onClick={() => {this.selectLevel("storm")}}></div> : null }
-						{this.state.levelsUnlocked[6] ? <div className="col-xs-3 levelChoice" id="mudLevel" onClick={() => {this.selectLevel("mud")}}></div> : null }
+						{this.state.levelsUnlocked[7] ? <div className="col-xs-3 levelChoice" id="stormLevel" onClick={() => {this.selectLevel("storm")}}>
+							<div className="row">
+								<div className="col-xs-2 levelCount">{this.state.levelCount[7] + 1}</div>
+							</div>
+						</div> : null }
+						{unlockedSecrets[7] ? <div className="col-xs-3 levelTempleChoice" id="stormTempleLevel" onClick={() => {this.selectLevel("stormTemple")}}></div> : null }
+						{this.state.levelsUnlocked[6] ? <div className="col-xs-3 levelChoice" id="mudLevel" onClick={() => {this.selectLevel("mud")}}>
+							<div className="row">
+								<div className="col-xs-2 levelCount">{this.state.levelCount[6] + 1}</div>
+							</div>
+						</div> : null }
+						{unlockedSecrets[6] ? <div className="col-xs-3 levelTempleChoice" id="mudTempleLevel" onClick={() => {this.selectLevel("mudTemple")}}></div> : null }
 					</div>
 					<div className="row levelChoiceRow">
 						{this.state.levelsUnlocked[8] ? <div className="col-xs-offset-4 col-xs-4 levelChoice" id="towerLevel" onClick={() => {this.selectLevel("tower")}}></div> : null }
@@ -3707,6 +3837,17 @@ class EquipmentScreen extends React.Component {
 			packCards: []
 		}
 		this.listPackCards = this.listPackCards.bind(this);
+	}
+	selectArtifact(costume, artifact){
+		const x = document.getElementsByClassName("artifactImg");
+		for (var i=0; i < x.length; i ++ ){
+			x[i].classList.remove("selectedArtifact");
+		}
+		if(document.getElementById(artifact) === null ){
+		}else{
+			document.getElementById(artifact).classList.add("selectedArtifact");
+			equippedArtifact = costume;
+		}
 	}
 	listWeaponOptions() {
 		const numberOfItems = this.props.itemArray;
@@ -3784,25 +3925,48 @@ class EquipmentScreen extends React.Component {
 	render() {
 		return (
 			<div className="row">
-				<div className="col-xs-12">
-					<div className="row chooseTitle">
-						Shop
-					</div>
+				<div className="col-xs-1 coolButton" onClick={this.props.goToCharacterScreen}>Back</div>
+				<div className="col-xs-7">
+					<div className="row treasureTitle">Keys</div>
 					<div className="row">
-						<div className="col-xs-3"><button className="coolButton" onClick={this.props.goToCharacterScreen}>Back</button></div>
-						<div className="col-xs-offset-6 col-xs-3" id="shopPoints">
-							Points: {this.props.spheres}
-						</div>
+						<div className="col-xs-3 keySlot" id="earthKey">{elementKeys[0] ? <img className="keyImg" src={earthKey} id="key1" alt="earthKey" /> : null }</div>
+						<div className="col-xs-3 keySlot" id="fireKey">{elementKeys[1] ? <img className="keyImg" src={fireKey} id="key2" alt="fireKey" /> : null }</div>
+						<div className="col-xs-3 keySlot" id="waterKey">{elementKeys[2] ? <img className="keyImg" src={waterKey} id="key3" alt="waterKey" /> : null }</div>
+						<div className="col-xs-3 keySlot" id="windKey">{elementKeys[3] ? <img className="keyImg" src={windKey} id="key4" alt="windKey" /> : null }</div>
 					</div>
+					<div className="row treasureTitle">Artifacts</div>
 					<div className="row">
-						<div className="col-xs-offset-2 col-xs-2 packOption" id="basicPack" onClick={() => {this.openPacks("basic")}}>Basic Pack</div>
-						<div className="col-xs-offset-1 col-xs-2 packOption" id="superPack" onClick={() => {this.openPacks("super")}}>Super Pack</div>
-						<div className="col-xs-offset-1 col-xs-2 packOption" id="extremePack" onClick={() => {this.openPacks("extreme")}}>Extreme Pack</div>
+						<div className="col-xs-3 artifactSlot" onClick={() => { this.selectArtifact(waterYouber, "waterYouber") }}>{secretArtifacts[0] ? <img className="artifactImg" id="waterYouber" src={grandGoo} alt="grandGoo" /> : null }</div>
+						<div className="col-xs-3 artifactSlot" onClick={() => { this.selectArtifact(earthYouber, "earthYouber") }}>{secretArtifacts[1] ? <img className="artifactImg" id="earthYouber" src={sarcophagus} alt="sarcophagus" /> : null }</div>
+						<div className="col-xs-3 artifactSlot" onClick={() => { this.selectArtifact(stormYouber, "stormYouber") }}>{secretArtifacts[2] ? <img className="artifactImg" id="stormYouber" src={elderStorm} alt="elderStorm" /> : null }</div>
+						<div className="col-xs-3 artifactSlot" onClick={() => { this.selectArtifact(fireYouber, "fireYouber") }}>{secretArtifacts[3] ? <img className="artifactImg" id="fireYouber" src={moltenPedestal} alt="moltenPedestal" /> : null }</div>
 					</div>
-					<div className="row" id="newCardDisplay">
-						{this.listPackCards()}
+					<div className="row artifactRow2">
+						<div className="col-xs-3 artifactSlot" id="artifact5"></div>
+						<div className="col-xs-3 artifactSlot" id="artifact6"></div>
+						<div className="col-xs-3 artifactSlot" id="artifact7"></div>
+						<div className="col-xs-3 artifactSlot" id="artifact8"></div>
 					</div>
 				</div>
+				<div className="col-xs-3">
+					<div className="row treasureTitle">Scrolls</div>
+					<div className="row">
+						<div className="col-xs-6 scrollSlot">{elementScrolls[0] ? <img className="scrollImg" src={earthScroll} id="scroll1" alt="earthScroll" /> : null }</div>
+						<div className="col-xs-6 scrollSlot">{elementScrolls[1] ? <img className="scrollImg" src={fireScroll} id="scroll2" alt="fireScroll" /> : null }</div>
+					</div>
+					<div className="row">
+						<div className="col-xs-6 scrollSlot">{elementScrolls[2] ? <img className="scrollImg" src={waterScroll} id="scroll3" alt="waterScroll" /> : null }</div>
+						<div className="col-xs-6 scrollSlot">{elementScrolls[3] ? <img className="scrollImg" src={windScroll} id="scroll4" alt="windScroll" /> : null }</div>
+					</div>
+					<div className="row">
+						<div className="col-xs-6 scrollSlot">{elementScrolls[4] ? <img className="scrollImg" src={desertScroll} id="scroll5" alt="desertScroll" /> : null }</div>
+						<div className="col-xs-6 scrollSlot">{elementScrolls[5] ? <img className="scrollImg" src={lavaScroll} id="scroll6" alt="lavaScroll" /> : null }</div>
+					</div>
+					<div className="row">
+						<div className="col-xs-6 scrollSlot">{elementScrolls[6] ? <img className="scrollImg" src={mudScroll} id="scroll7" alt="mudScroll" /> : null }</div>
+						<div className="col-xs-6 scrollSlot">{elementScrolls[7] ? <img className="scrollImg" src={stormScroll} id="scroll8" alt="stormScroll" /> : null }</div>
+					</div>
+				</div> 
 			</div>
 		)
 	}
@@ -3860,11 +4024,14 @@ class CharacterSelectScreen extends React.Component {
 						</div>
 					</div>
 					<div className="row">
-						<div className="col-xs-offset-3 col-xs-3">
+						<div className="col-xs-offset-1 col-xs-3">
 							<button className="campButton" onClick={this.props.goToLevelScreen}>Adventure</button>
 						</div>
 						<div className="col-xs-3">
 							<button className="campButton" onClick={this.props.showCollection}>Deck</button>
+						</div>
+						<div className="col-xs-3">
+							<button className="campButton" onClick={this.props.goToEquipmentScreen}>Treasure</button>
 						</div>
 					</div>
 					<div className="row" id="patchNotes"><a target="_blank" href="https://github.com/MicahIsley/blastaar/blob/old-state/README.md">2/7 Patch Notes</a>
@@ -4295,9 +4462,9 @@ class GameScreen extends React.Component {
 			this.recruitCharacter(card);
 		}else if(this.state.scheming === true){
 			const x = document.getElementsByClassName("hero");
-				for (var i=0; i < x.length; i ++ ){
-					x[i].classList.remove("influenceGlow");
-				}
+			for (var i=0; i < x.length; i ++ ){
+				x[i].classList.remove("influenceGlow");
+			}
 			this.scheme(card);
 		}else{
 			if(card.cost > this.props.influence && card.type === "stormlight"){
@@ -5115,20 +5282,31 @@ class GameScreen extends React.Component {
 					});
 					var pointValue = enemyArray[currentEnemy].pointValue;
 					this.props.changeScore(pointValue);
-					currentEnemy = 4;
-					this.triggerEnemyDeath();
+					console.log(enemyArray[currentEnemy].element);
+					if(enemyArray[currentEnemy].element === "obelisk"){
+						this.props.aux();
+					}else{
+						currentEnemy = 4;
+						this.triggerEnemyDeath();
+					}
 				}else{
 					enemyArray[currentEnemy].hp = enemyHp;
-					currentEnemy = 4;
 					this.setState({
 						enemyHpArray: [enemyArray[0].hp, enemyArray[1].hp, enemyArray[2].hp]
 					}, () => {
 						if(this.state.extraAttacks === 0){
-							if(stageComplete === 3){
-								this.bossCleanse();
-							}else{}
-							this.enemyAttackAction(0);
+							console.log(enemyArray[currentEnemy]);
+							if(enemyArray[currentEnemy].element === "obelisk"){
+								this.props.decreaseStormCounter();
+							}else{
+								currentEnemy = 4;
+								if(stageComplete === 3){
+									this.bossCleanse();
+								}else{}
+								this.enemyAttackAction(0);
+							}
 						}else{
+							currentEnemy = 4;
 							var attacksLeft = this.state.extraAttacks - 1;
 							patience = false;
 							this.setState({
@@ -5189,7 +5367,11 @@ class GameScreen extends React.Component {
 
 					}else{
 						if(this.state.extraAttacks === 0){
-							this.enemyAttackAction(0);
+							if(enemyArray[currentEnemy].element === "obelisk"){
+								this.props.decreaseStormCounter();
+							}else{
+								this.enemyAttackAction(0);
+							}
 						}else{
 							var attacksLeft = this.state.extraAttacks - 1;
 							this.setState({
@@ -5392,7 +5574,8 @@ class GameScreen extends React.Component {
 				//this.props.aux();
 				//stageComplete ++;
 				if(stageComplete === numberOfStages - 1){
-					var newStoryText;
+					this.bonusStage();
+					/*var newStoryText;
 					var storyTime = .5;
 					for(var i=0; i<levelsBeaten.length; i++){
 						if(levelsBeaten[i] === level){
@@ -5412,7 +5595,7 @@ class GameScreen extends React.Component {
 						}
 					}
 					this.props.showStoryScreen(newStoryText);
-					this.props.aux();
+					this.props.aux();*/
 				}else{
 					this.setState({
 						playerShield: this.props.shield,
@@ -5442,6 +5625,13 @@ class GameScreen extends React.Component {
 				}
 			});
 		}
+	}
+	bonusStage(){
+		patience = false;
+		enemyArray = [orbPrizeStats, obeliskOfPrizesStats, cardPrizeStats];
+		this.setState({
+			enemyArray: enemyArray
+		});
 	}
 	checkBossEffect(){
 		var bossEffect = this.props.bossEffect;
@@ -5483,7 +5673,6 @@ class GameScreen extends React.Component {
 						noAbility: false,
 						enemyHeal: 0
 					}, () => {
-						this.props.decreaseStormCounter();
 						this.endOfTurnDmg();
 					});
 				}
@@ -5838,7 +6027,7 @@ class GameScreen extends React.Component {
 				<div className="row" id="topRow">
 					<div className="col-xs-12">
 						<div className="row" id="enemySide">
-							<EnemySide status={this.state.status} updateEnemySab={this.updateEnemySab} bossCleanse={this.state.bossCleanse} cardDisplay={this.state.cardDisplay} state={this.state} sab={this.state.enemySab} heroDraw={this.heroDraw} />
+							<EnemySide prizeChoice={this.props.prizeChoice} aux={this.props.aux} gainSupGemReward={this.props.gainSupGemReward} gainSupCardReward={this.props.gainSupCardReward} status={this.state.status} updateEnemySab={this.updateEnemySab} bossCleanse={this.state.bossCleanse} cardDisplay={this.state.cardDisplay} state={this.state} sab={this.state.enemySab} heroDraw={this.heroDraw} />
 						</div>
 						<div className="row" id="tutorialMessageBox">
 							<div className="col-xs-12" id="tutorialMessageCol">
@@ -6286,7 +6475,7 @@ class EnemySide extends React.Component {
 		const numberOfBadGuys = enemyArray;
 		const listItems = numberOfBadGuys.map((badGuy, index) => {
 			if(badGuy.hp > 0 || badGuy.effect[0] === "final" || badGuy.effect[0] === "secret"){
-				return <Enemy key={index} id={index} status={this.props.status[index]} bossCleanse={this.props.bossCleanse} heroDraw={this.props.heroDraw} cardDisplay={this.props.cardDisplay} enemyId={"badGuy" + index} name={badGuy.name} eHp={badGuy.hp} attack={badGuy.attack} updateEnemySab={this.props.updateEnemySab} sab={this.props.sab[index]} sabCard={badGuy.sabCard} image={badGuy.image} element={badGuy.element} effect={badGuy.effect} />
+				return <Enemy key={index} id={index} aux={this.props.aux} prizeChoice={this.props.prizeChoice} status={this.props.status[index]} bossCleanse={this.props.bossCleanse} heroDraw={this.props.heroDraw} cardDisplay={this.props.cardDisplay} enemyId={"badGuy" + index} name={badGuy.name} eHp={badGuy.hp} attack={badGuy.attack} updateEnemySab={this.props.updateEnemySab} sab={this.props.sab[index]} sabCard={badGuy.sabCard} image={badGuy.image} element={badGuy.element} effect={badGuy.effect} />
 			}else{
 				return <Placeholder key={index} id={index} />
 			}
@@ -6648,11 +6837,15 @@ class Enemy extends React.Component {
 			document.getElementById(id + 'image').classList.add("targetedEnemy");
 			currentEnemy = id;
 		}
-		this.props.heroDraw();
+		if(this.props.effect[0] === "prize"){
+			this.props.prizeChoice(this.props.effect[1]);
+		}else{
+			this.props.heroDraw();
+		}
 	}
 	render() {
 		var newId;
-		if(stageComplete === 3){
+		if(stageComplete === 4){
 			newId = "boss";
 		}else if(this.props.effect[0] === "secret"){
 			newId = "secretImage";
@@ -6665,7 +6858,7 @@ class Enemy extends React.Component {
 					<div className="col-xs-offset-2 col-xs-6 enemyInfo">
 						<CharacterName name={this.props.name} />
 						<div className="row">
-							<HPSpan hp={this.props.eHp} enemyId={this.props.enemyId} hero={"heroDamageIndicator"} />
+							{ this.state.object ? <HPSpan hp={this.props.eHp} enemyId={this.props.enemyId} hero={"heroDamageIndicator"} /> : null }
 							{ this.state.object ? <AttackNum attack={this.props.attack} /> : null }
 						</div>
 						<div className="row sabRow">
@@ -6768,6 +6961,16 @@ class AuxilaryScreen extends React.Component {
 		}else{
 			levelsBeaten.push(level);
 			var rewardTier = 0;
+			var levelArray = ["earth", "fire", "water", "wind", "desert", "lava", "mud", "storm"];
+			for(var i=0; i<levelArray.length; i++){
+				if(levelArray[i] === level){
+					if(rewardTier === 2){
+						elementScrolls[i] = true;
+					}else if(rewardTier === 3){
+						elementKeys[i] = true;
+					}else{}
+				}else{}
+			}
 			for(var i=0; i<levelsBeaten.length; i++){
 				if(levelsBeaten[i] === level){
 					rewardTier ++;
@@ -6814,7 +7017,7 @@ class AuxilaryScreen extends React.Component {
 		}
 		if(level === 0){
 			levelCard = [neutral2, neutral3, neutral4, neutral5, neutral6];
-		}else{
+		}else if(this.props.prizeChoice === "cards"){
 			for(var i=0; i<rewardTier; i++){
 				for(var j=0; j<neutralCards.length; j++){
 					shuffle(neutralCards);
@@ -6846,17 +7049,44 @@ class AuxilaryScreen extends React.Component {
 					}
 				}
 			}
-		}
+		}else{}
 		var levelGems = this.props.supGemRewards;
-		var levelGemsNum = rewardTier + 1;
+		var levelGemsNum = rewardTier;
 		var gemType = eval(level + "Gem");
-		for(var i=0; i<levelGemsNum; i++){
-			levelGems.push(gemType);
-		}
-		if(level === 0){
-		}else{
-			for(var i=0; i<levelGems.length; i++){
-				elementOrbs.push(levelGems[i]);
+		if(this.props.prizeChoice === "orbs"){
+			for(var i=0; i<levelGemsNum; i++){
+				levelGems.push(gemType);
+			}
+			if(level === 0){
+			}else{
+				for(var i=0; i<levelGems.length; i++){
+					elementOrbs.push(levelGems[i]);
+				}
+			}
+		}else{}
+		if(this.props.obelisk >= 15 && this.props.obelisk < 30){
+			var factionArray = ["earth", "fire", "water", "wind"];
+			var randFaction = Math.floor(Math.random() * 3);
+			var randNum = Math.floor(Math.random() * 20) + 1;
+			var newCard = eval(factionArray[randFaction] + randNum);
+			levelCard.push(newCard);
+		}else if(this.props.obelisk >= 30 && this.props.obelisk < 45){
+			for(var i=0; i<2; i++){
+				var factionArray = [earth, fire, water, wind];
+				var randFaction = Math.floor(Math.random() * 3);
+				levelGems.push(factionArray[randFaction]);
+			}
+		}else if(this.props.obelisk >= 45 && this.props.obelisk < 60){
+			var factionArray = ["desert", "lava", "mud", "storm"];
+			var randFaction = Math.floor(Math.random() * 3);
+			var randNum = Math.floor(Math.random() * 20) + 1;
+			var newCard = eval(factionArray[randFaction] + randNum);
+			levelCard.push(newCard);
+		}else if(this.props.obelisk >= 60){
+			for(var i=0; i<2; i++){
+				var factionArray = [desert, lava, mud, storm];
+				var randFaction = Math.floor(Math.random() * 3);
+				levelGems.push(factionArray[randFaction]);
 			}
 		}
 		this.setState({
@@ -6918,14 +7148,14 @@ class AuxilaryScreen extends React.Component {
 				<div className="row" id="rewardsMessage">Congratulations! Claim your rewards!</div>
 				<div className="row" id="rewardsDescription">Score: {this.props.score}</div>
 				<div className="row">
-					<div className="col-xs-offset-2 col-xs-8" id="cardRewardRow">
+					{ this.state.rewardCards ? <div className="col-xs-offset-2 col-xs-8" id="cardRewardRow">
 						{this.listCardRewards()}
-					</div>
+					</div> : null }
 				</div>
 				<div className="row">
-					<div className="col-xs-offset-2 col-xs-4" id="gemRewardRow">
+					{ this.state.rewardGems ? <div className="col-xs-offset-2 col-xs-4" id="gemRewardRow">
 						{this.listGemRewards()}
-					</div>
+					</div> : null}
 					<div className="col-xs-4" id="hpRewardRow"><img src={heart} className="heartIcon" alt="heartIcon" />+{this.state.rewardHp}</div>
 				</div>
 				<div className="row">
@@ -7260,7 +7490,8 @@ class CraftingScreen extends React.Component {
 		this.handleCraftClick = this.handleCraftClick.bind(this);
 	}
 	handleCraftClick(){
-		if(this.state.element[1] === "neutral" || this.state.element[1] === "desert" || this.state.element[1] === "lava" || this.state.element[1] === "mud" || this.state.element[1] === "storm"){
+		if(this.state.element[1] === "neutral"){
+			console.log(this.state.element);
 		}else{
 			var craftedCard = this.state.resetCard;
 			if(craftedCard.craft > 0){
@@ -7393,68 +7624,68 @@ class CraftingScreen extends React.Component {
 		if(this.state.card.faction === "lava" || this.state.card.faction === "desert" || this.state.card.faction === "mud" || this.state.card.faction === "storm"){
 			console.log("Can't Upgrade Further");
 		}else if(this.state.card.faction === "neutral"){
-			if(element === fire){
+			if(element === fire && elementScrolls[1] === true){
 					newElement = [fire, "fire"];
-			}else if(element === wind){
+			}else if(element === wind && elementScrolls[3] === true){
 				newElement = [wind, "wind"];
-			}else if(element === water){
+			}else if(element === water && elementScrolls[2] === true){
 				newElement = [water, "water"];
-			}else if(element === earth){
+			}else if(element === earth && elementScrolls[0] === true){
 				newElement = [earth, "earth"];
-			}else if(element === desert && levelsBeaten.includes("desert")){
+			}else if(element === desert && elementScrolls[4] === true){
 				newElement = [desert, "desert"];
-			}else if(element === lava && levelsBeaten.includes("lava")){
+			}else if(element === lava && elementScrolls[5] === true){
 				newElement = [lava, "lava"];
-			}else if(element === mud && levelsBeaten.includes("mud")){
+			}else if(element === mud && elementScrolls[6] === true){
 				newElement = [mud, "mud"];
-			}else if(element === storm && levelsBeaten.includes("storm")){
+			}else if(element === storm && elementScrolls[7] === true){
 				newElement = [storm, "storm"];
 			}
 		}else{
 			if(this.state.element[0] === fire){
-				if(element === earth && levelsBeaten.includes("lava")){
+				if(element === earth && elementScrolls[5] === true){
 					newElement = [lava, "lava"];
-				}else if(element === wind && levelsBeaten.includes("desert")){
+				}else if(element === wind && elementScrolls[4] === true){
 					newElement = [desert, "desert"];
-				}else if(element === desert && levelsBeaten.includes("desert")){
+				}else if(element === desert && elementScrolls[4] === true){
 					newElement = [desert, "desert"];
-				}else if(element === lava && levelsBeaten.includes("lava")){
+				}else if(element === lava && elementScrolls[5] === true){
 					newElement = [lava, "lava"];
 				}else{
 					newElement = [fire, "fire"];
 				}
 			}else if(this.state.element[0] === earth){
-				if(element === fire && levelsBeaten.includes("lava")){
+				if(element === fire && elementScrolls[5] === true){
 					newElement = [lava, "lava"];
-				}else if (element === water && levelsBeaten.includes("mud")){
+				}else if (element === water && elementScrolls[6] === true){
 					newElement = [mud, "mud"];
-				}else if(element === lava && levelsBeaten.includes("lava")){
+				}else if(element === lava && elementScrolls[5] === true){
 					newElement = [lava, "lava"];
-				}else if(element === mud && levelsBeaten.includes("mud")){
+				}else if(element === mud && elementScrolls[6] === true){
 					newElement = [mud, "mud"];
 				}else{
 					newElement = [earth, "earth"];
 				}
 			}else if(this.state.element[0] === wind){
-				if(element === fire && levelsBeaten.includes("desert")){
+				if(element === fire && elementScrolls[4] === true){
 					newElement = [desert, "desert"];
-				}else if(element === water && levelsBeaten.includes("storm")){
+				}else if(element === water && elementScrolls[7] === true){
 					newElement = [storm, "storm"];
-				}else if(element === desert && levelsBeaten.includes("desert")){
+				}else if(element === desert && elementScrolls[4] === true){
 					newElement = [desert, "desert"];
-				}else if(element === storm && levelsBeaten.includes("storm")){
+				}else if(element === storm && elementScrolls[7] === true){
 					newElement = [storm, "storm"];
 				}else{
 					newElement = [wind, "wind"];
 				}
 			}else if(this.state.element[0] === water){
-				if(element === wind && levelsBeaten.includes("storm")){
+				if(element === wind && elementScrolls[7] === true){
 					newElement = [storm, "storm"];
-				}else if(element === earth && levelsBeaten.includes("mud")){
+				}else if(element === earth && elementScrolls[6] === true){
 					newElement = [mud, "mud"];
-				}else if(element === mud && levelsBeaten.includes("mud")){
+				}else if(element === mud && elementScrolls[6] === true){
 					newElement = [mud, "mud"];
-				}else if(element === storm && levelsBeaten.includes("storm")){
+				}else if(element === storm && elementScrolls[7] === true){
 					newElement = [storm, "storm"];
 				}else{
 					newElement = [water, "water"];

@@ -2,6 +2,74 @@ body {
 	background: #232323;
 }
 
+.levelCount {
+	background: #0000009e;
+	color: white;
+	padding-left: 3px;
+	font-size: 16px;
+	border-radius: 5px 0px;
+	font-family: 'Metamorphous', cursive;
+}
+
+.artifactImg {
+	height: 130px;
+	border-style: solid;
+	border-width: 3px;
+	border-radius: 15px;
+}
+
+.keyImg {
+	height: 130px;
+}
+
+.scrollImg {
+	height: 130px;
+}
+
+.selectedArtifact {
+	border-color: green;
+	border-width: 5px;
+	border-style: solid;
+}
+
+.treasureTitle {
+	font-size: 36px;
+	padding-left: 25px;
+	color: white;
+	font-family: 'Metamorphous', cursive;
+	margin-bottom: 15px;
+	margin-top: 15px;
+}
+
+.keySlot {
+	height: 150px;
+	background-image: url('assets/artifacts/keySlot.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.scrollSlot {
+	height: 150px;
+	background-image: url('assets/artifacts/keySlot.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	padding-left: 2.5%;
+    padding-top: 4px;
+}
+
+.artifactSlot {
+	padding-left: 10px;
+    padding-top: 10px;
+	height: 150px;
+	background-image: url('assets/artifacts/artifactSlot.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.artifactRow2 {
+	margin-top: 10px;
+}
+
 .titleDesigns {
 	background-image: url('assets/backgrounds/titleDesigns.png');
 	height: 100vh;
@@ -358,6 +426,21 @@ body {
 	border-color: white;
 }
 
+.levelTempleChoice {
+	background: #00000059;
+	background-size: contain;
+	height: 85px;
+	width: 85px;
+	border-radius: 15px;
+	border-color: black;
+	border-width: 3px;
+	border-style: solid;
+}
+
+.levelTempleChoice:hover {
+	border-color: white;
+}
+
 .firstLevelChoice {
 	background: #00000059;
 	background-size: contain;
@@ -396,6 +479,13 @@ body {
 	background-image: url('assets/icons/fireHover.png');
 }
 
+#fireTempleLevel {
+	position: absolute;
+	top: 200px;
+	left: 20px;
+	background-image: url('assets/backgrounds/temple.png');
+}
+
 #waterLevel {
 	position: absolute;
 	top: 450px;
@@ -405,6 +495,13 @@ body {
 
 #waterLevel:hover {
 	background-image: url('assets/icons/waterHover.png');
+}
+
+#waterTempleLevel {
+	position: absolute;
+	top: 525px;
+	left: 900px;
+	background-image: url('assets/backgrounds/temple.png');
 }
 
 #windLevel {
@@ -418,6 +515,13 @@ body {
 	background-image: url('assets/icons/windHover.png');
 }
 
+#windTempleLevel {
+	position: absolute;
+	top: 450px;
+	left: 15px;
+	background-image: url('assets/backgrounds/temple.png');
+}
+
 #earthLevel {
 	position: absolute;
 	top: 100px;
@@ -429,6 +533,13 @@ body {
 	background-image: url('assets/icons/earthHover.png');
 }
 
+#earthTempleLevel {
+	position: absolute;
+	top: 90px;
+	left: 1100px;
+	background-image: url('assets/backgrounds/temple.png');
+}
+
 #lavaLevel {
 	position: absolute;
 	left: 575px;
@@ -437,6 +548,13 @@ body {
 
 #lavaLevel:hover {
 	background-image: url('assets/icons/lavaHover.png');
+}
+
+#lavaTempleLevel {
+	position: absolute;
+	top: 50px;
+	left: 720px;
+	background-image: url('assets/backgrounds/temple.png');
 }
 
 #stormLevel {
@@ -450,6 +568,13 @@ body {
 	background-image: url('assets/icons/stormHover.png');
 }
 
+#stormTempleLevel {
+	position: absolute;
+	top: 515px;
+	left: 450px;
+	background-image: url('assets/backgrounds/temple.png');
+}
+
 #desertLevel {
 	position: absolute;
 	top: 300px;
@@ -461,6 +586,13 @@ body {
 	background-image: url('assets/icons/desertHover.png');
 }
 
+#desertTempleLevel {
+	position: absolute;
+	top: 305px;
+	left: 280px;
+	background-image: url('assets/backgrounds/temple.png');
+}
+
 #mudLevel {
 	position: absolute;
 	top: 300px;
@@ -470,6 +602,13 @@ body {
 
 #mudLevel:hover {
 	background-image: url('assets/icons/mudHover.png');
+}
+
+#mudTempleLevel {
+	position: absolute;
+	top: 250px;
+	left: 850px;
+	background-image: url('assets/backgrounds/temple.png');
 }
 
 #towerLevel {
