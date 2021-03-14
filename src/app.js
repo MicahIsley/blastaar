@@ -265,6 +265,24 @@ var earthText = [
 
 ];
 
+var earthTempleText = [
+	{type: "start", timing: 0, text: "Youber recalls his grandfather talking about disappearing, as if it was inevitable. Though he never mentioned why or how. Perhaps the forest will hold some answers. Youber entered the woods, prepared for whatever perils might befall him."},
+	{type: "start", timing: 0.5, text: "Youber takes a moment to collect his thoughts. The creatures seem considerably agitated. Youber looks around and finds some interesting items. These must enhance the magic sack. A quick rest and then further into the woods."},
+	{type: "start", timing: 1, text: "Youber, feeling slightly empowered, presses through the ever thickening growth. The trees look more unnatural the farther Youber travels. Youber stumbles down an embankment and finds himself confronted by more creatures. They don't look particularly pleased..."},
+	{type: "start", timing: 1.5, text: "Youber looks around and sees a sign. It appears that Youber can choose to venture into the heart of the woods, take a magic chute to the Fire Fields, or follow the path South towards the Islands of Ruu. Decisions, decisions..."},
+	{type: "start", timing: 2, text: "Youber is undeterred by danger and finds his way into the heart of the forest. The trees give way to a clearing and Youber quickly realizes he has been surrounded...and there's something very large looming in the distance."},
+	{type: "start", timing: 2.5, text: "With the denizens of the forest defeated, they seem to relax for just a moment. They haven't seen Youber's family, but they have suffered disappearances of there own. West, they claim, the sickness lies West. The creatures seems to be growing agitated once more. Youber presses onward to new lands..."},
+	{type: "regular", timing: 0, text: "Youber decides his quest leads into the forests of Primafauna. He remembers hearing stories about the woods and the gentle creatures that lived there. Hopefully, Youber's journey will be unevent...what was that? The trees rustle and branches snap. Youber is not alone."},
+	{type: "regular", timing: 0.5, text: "Youber takes a moment to collect his thoughts. The creatures seem far from gentle. However, Youber will not give up, he can feel that he's getting closer. A quick rest and then further into the woods."},
+	{type: "regular", timing: 1, text: "Youber, feeling slightly empowered, presses through the ever thickening growth. Youber stumbles down an embankment and finds himself confronted by more creatures. They don't look particularly pleased..."},
+	{type: "regular", timing: 1.5, text: "Youber looks around and sees a crossroads, with paths leading out of the forest. Still, the tress are luring Youber deeper in. More secrets and power lie ahead. Decisions, decisions..."},
+	{type: "regular", timing: 2, text: "Youber is undeterred by danger and finds his way into the heart of the forest. The trees give way to a clearing and Youber quickly realizes he has been surrounded...and there's something very large looming in the distance."},
+	{type: "regular", timing: 2.5, text: "With the denizens of the forest defeated, they seem to relax for just a moment. Long enough for Youber to hear about a growing corruption in the West. The creatures seems to be growing agitated once more. Youber presses onward..."},
+	{type: "regular", timing: 3, text: "Youber can't seem to stay away from the forest for too long. Surely there is more hidden behind these Vine covered trees."},
+	{type: "regular", timing: 3.5, text: "Youber grows in the ways of the Earth. He must think that this is the power he needs to complete his quest."}
+
+];
+
 var fireText = [
 	{type: "start", timing: 0, text: "Youber recalls his grandfather talking about disappearing, as if it was inevitable. Though he never mentioned why or how. Perhaps the Fire Fields will hold some answers. Youber entered the burning plains, prepared for whatever perils might befall him."},
 	{type: "start", timing: 0.5, text: "Youber wipes his brow and collects his thoughts. On the ground, Youber finds some red orbs. His magic sack glows in anticipation. Youber takes a quick break to make some modifications."},
@@ -381,7 +399,7 @@ var sabotage8 = new CardCon("Leech", 0, 0, "Enemy gets +1 HP when attacked.", "e
 var sabotage9 = new CardCon("Big Leech", 0, 0, "Enemy gets +2 HP when attacked.", "enemy", 0, "siphon 2", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
 var sabotage10 = new CardCon("Exhaustion", 0, 0, "Get Exhausted", "enemy", 0, "enemyExhst", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
 var sabotage11 = new CardCon("Brain Dead", 0, -4, "", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
-var sabotage9 = new CardCon("Super Leech", 0, 0, "Enemy gets +3 HP when attacked.", "enemy", 0, "siphon 3", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
+var sabotage12 = new CardCon("Super Leech", 0, 0, "Enemy gets +3 HP when attacked.", "enemy", 0, "siphon 3", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
 
 var crafting1 = new CardCon("------", 0, 0, " ", "hero", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 0, 1, 0);
 
@@ -1972,7 +1990,7 @@ const earthSecretStats = {
 	image: earthSecret,
 	sabCard: sabotage1,
 	element: "object",
-	effect: ["secret", earthSecretRevealed, "neutral"]
+	effect: ["secret", earthSecretRevealed, "fire"]
 };
 
 const fireSecretRevealedStats = {
@@ -1996,7 +2014,7 @@ const fireSecretStats = {
 	image: fireSecret,
 	sabCard: sabotage1,
 	element: "object",
-	effect: ["secret", fireSecretRevealed, "neutral"]
+	effect: ["secret", fireSecretRevealed, "wind"]
 };
 
 const waterSecretRevealedStats = {
@@ -2020,7 +2038,7 @@ const waterSecretStats = {
 	image: waterSecret,
 	sabCard: sabotage1,
 	element: "object",
-	effect: ["secret", waterSecretRevealed, "neutral"]
+	effect: ["secret", waterSecretRevealed, "earth"]
 };
 
 const windSecretRevealedStats = {
@@ -2044,7 +2062,7 @@ const windSecretStats = {
 	image: windSecret,
 	sabCard: sabotage1,
 	element: "object",
-	effect: ["secret", windSecretRevealed, "neutral"]
+	effect: ["secret", windSecretRevealed, "water"]
 };
 
 const orbPrizeStats = {
@@ -2072,7 +2090,7 @@ const cardPrizeStats = {
 };
 
 const obeliskOfPrizesStats = {
-	name: "Orbs",
+	name: "Obelisk Of Prizes",
 	hp: 100,
 	attack: 0,
 	sabotage: 0,
@@ -2144,6 +2162,33 @@ function levelEarthDistribution(randEnemyNum){
 			createEnemy = queenPrimtreeStats;
 		}
 	}
+}
+
+function levelEarthTempleDistribution(randEnemyNum){
+	if(randEnemyNum < enemyDistributionArray[0]){
+			createEnemy = primtreeStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[1]){
+			createEnemy = wobbledukStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[2]){
+			createEnemy = primtreeDefenderStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[3]){
+			createEnemy = stoneStriderStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[4]){
+			createEnemy = steedStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[5]){
+			createEnemy = rockFairyStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[6]){
+			createEnemy = primtreeRoyalStats;
+			return;
+		}else{
+			createEnemy = smallGolemArray[0];
+		}
 }
 
 function levelFireDistribution(randEnemyNum){
@@ -2564,7 +2609,7 @@ var stormGem = storm;
 var startingLevel = null;
 var patience = false;
 var secrets = false;
-var unlockedSecrets = [false, false, false, false, false, false, false, false];
+var unlockedSecrets = [true, false, false, false, false, false, false, false];
 var elementKeys = [false, false, false, false];
 var elementScrolls = [false, false, false, false, false, false, false, false];
 var secretArtifacts = [true, true, true, true, false, false, false, false];
@@ -2955,6 +3000,26 @@ class GameScreenHub extends React.Component {
 		this.setState({
 			prizeChoice: choice
 		}, () => {
+			var newStoryText;
+			var storyTime = .5;
+			for(var i=0; i<levelsBeaten.length; i++){
+				if(levelsBeaten[i] === level){
+					storyTime ++;
+				}else{}
+			}
+			var textArray = eval(level + "Text");
+			for(var i=0; i<textArray.length; i++){
+				if(startingLevel === level){
+					if(textArray[i].type === "start" && textArray[i].timing === storyTime){
+						newStoryText = textArray[i].text;
+					}else{}
+				}else{
+					if(textArray[i].type === "regular" && textArray[i].timing === storyTime){
+						newStoryText = textArray[i].text;
+					}else{}
+				}
+			}
+			this.showStoryScreen(newStoryText);
 			this.auxilaryScreen();
 		});
 	}
@@ -3244,29 +3309,35 @@ class GameScreenHub extends React.Component {
 				levelTier ++;
 			}else{}
 		}
-		if(levelTier === 1){
-			enemyDistributionArray = enemyDistributionArray2;
-			stageArray = [1, 1, 1, 1];
-			numberOfStages = 4;
-		}else if(levelTier === 2){
-			enemyDistributionArray = enemyDistributionArray3;
-			stageArray = [2, 2, 2, 2];
-			numberOfStages = 4;
-		}else if(levelTier === 3){
-			enemyDistributionArray = enemyDistributionArray3;
-			stageArray = [2, 2, 2, 3, 1];
-			numberOfStages = 5;
-		}else if(levelTier > 3){
-			enemyDistributionArray = enemyDistributionArray3;
-			stageArray = [2, 3, 3, 3, 1];
-			numberOfStages = 5;
-		}else{}
+		if(level.includes("Temple") === true){
+			console.log("Welcome to Temple");
+			numberOfStages = 10;
+			stageArray = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1];
+		}else{
+			if(levelTier === 1){
+				enemyDistributionArray = enemyDistributionArray2;
+				stageArray = [1, 1, 1, 1];
+				numberOfStages = 4;
+			}else if(levelTier === 2){
+				enemyDistributionArray = enemyDistributionArray3;
+				stageArray = [2, 2, 2, 2];
+				numberOfStages = 4;
+			}else if(levelTier === 3){
+				enemyDistributionArray = enemyDistributionArray3;
+				stageArray = [2, 2, 2, 3, 1];
+				numberOfStages = 5;
+			}else if(levelTier > 3){
+				enemyDistributionArray = enemyDistributionArray3;
+				stageArray = [2, 3, 3, 3, 1];
+				numberOfStages = 5;
+			}else{}
+		}
 		numberOfEnemies = stageArray[stageComplete];
 		for(var i=0; i < 3; i++){
 			if(i >= numberOfEnemies){
 				var newEnemy = new EnemyCon("", 0, 0, 0, 0, null, null, "box", null, [null, null, null]);
 				enemyArray.push(newEnemy);
-			}else if((stageComplete === 3 && i === 0) || numberOfEnemies === 1){
+			}else if((stageComplete === (numberOfStages - 1) && i === 0) || numberOfEnemies === 1){
 				numberOfEnemies = 2;
 				var newEnemy = new EnemyCon("", 0, 0, 0, 0, null, null, "box", null, [null, null, null]);
 				enemyArray.push(newEnemy);
@@ -3292,7 +3363,9 @@ class GameScreenHub extends React.Component {
 					levelStormDistribution(randEnemyNum);
 				}else if(level === "tower"){
 					levelTowerDistribution(randEnemyNum);
-				}
+				}else if(level === "earthTemple"){
+					levelEarthTempleDistribution(randEnemyNum);
+				}else{}
 				var selected = createEnemy;
 				var eName = selected.name;
 				var eHp = selected.hp;
@@ -4236,33 +4309,67 @@ class GameScreen extends React.Component {
 		if(level === "fire"){
 			audioEl = document.getElementsByClassName("intense")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + fireBackground + ")";
+			if(unlockedSecrets[1] === true){
+			}else{
+				secrets = true;
+			}
 		}else if(level === "earth"){
 			audioEl = document.getElementsByClassName("mistyWoods")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + grassBackground + ")";
+			if(unlockedSecrets[0] === true){
+			}else{
+				secrets = true;
+			}
 		}else if(level === "water"){
 			audioEl = document.getElementsByClassName("brightStyle")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + waterBackground + ")";
+			if(unlockedSecrets[2] === true){
+			}else{
+				secrets = true;
+			}
 		}else if(level === "wind"){
 			audioEl = document.getElementsByClassName("findingOut")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + windBackground + ")";
+			if(unlockedSecrets[3] === true){
+			}else{
+				secrets = true;
+			}
 		}else if(level === "lava"){
 			audioEl = document.getElementsByClassName("fireDestruction")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + lavaBackground + ")";
+			if(unlockedSecrets[5] === true){
+			}else{
+				secrets = true;
+			}
 		}else if(level === "storm"){
 			audioEl = document.getElementsByClassName("findingOut")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + stormBackground + ")";
+			if(unlockedSecrets[7] === true){
+			}else{
+				secrets = true;
+			}
 		}else if(level === "mud"){
 			audioEl = document.getElementsByClassName("mysteryMud")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + mudBackground + ")";
+			if(unlockedSecrets[6] === true){
+			}else{
+				secrets = true;
+			}
 		}else if(level === "desert"){
 			audioEl = document.getElementsByClassName("findingOut")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + desertBackground + ")";
+			if(unlockedSecrets[4] === true){
+			}else{
+				secrets = true;
+			}
 		}else if(level === "tower"){
 			audioEl = document.getElementsByClassName("findingOut")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + towerBackground + ")";
 		}else if(level === "tutorial"){
 			audioEl = document.getElementsByClassName("findingOut")[0];
 			document.getElementById("tutorialMessageBox").style.display = "inline";
+		}else{
+			audioEl = document.getElementsByClassName("findingOut")[0];
 		}
 		this.props.showStoryScreen(newStoryText);
 		audioEl.loop = true;
@@ -5227,12 +5334,12 @@ class GameScreen extends React.Component {
 				heroAttack = 0;
 				this.props.error("It didn't have an effect.");
 			}else if(enemyArray[currentEnemy].effect[0] === "secret" && cardElement === enemyArray[currentEnemy].effect[2]){
-				secrets = false;
 				var secretArray = ["earth", "fire", "water", "wind"];
 				for(var i=0; i<secretArray.length; i++){
 					if(secretArray[i] === level){
 						unlockedSecrets[i] = true;
 						this.props.error("A new path is revealed");
+						enemyArray[i].image = enemyArray[i].effect[1];
 					}else{}
 				}
 
@@ -5270,11 +5377,17 @@ class GameScreen extends React.Component {
 				}else{}
 
 			}else{}
-			document.getElementById("badGuy" + (currentEnemy)).append("-" + heroAttack);
-			document.getElementById("badGuy" + (currentEnemy)).style.display="inline";
-			setTimeout(() => { 
-				document.getElementById("badGuy" + (currentEnemy)).innerHTML="";
-				document.getElementById("badGuy" + (currentEnemy)).style.display="none";
+			if(enemyArray[currentEnemy].effect[0] === "secret"){
+			}else{
+				document.getElementById("badGuy" + (currentEnemy)).append("-" + heroAttack);
+				document.getElementById("badGuy" + (currentEnemy)).style.display="inline";
+			}
+			setTimeout(() => {
+				if(enemyArray[currentEnemy].effect[0] === "secret"){
+				}else{
+					document.getElementById("badGuy" + (currentEnemy)).innerHTML="";
+					document.getElementById("badGuy" + (currentEnemy)).style.display="none";
+				}
 				if(enemyHp <= 0){
 					enemyArray[currentEnemy].hp = 0;
 					this.setState({
@@ -5551,12 +5664,13 @@ class GameScreen extends React.Component {
 				}else if(enemyArray[i].effect[0] === "final" && enemyArray[i].hp === 0){
 					enemyArray[i].image = enemyArray[i].effect[1];
 				}else if(secrets === true && enemyArray[i].hp === 0){
-					var newSecret = eval(level + "SecretStats");
-					var newEnemy = new EnemyCon(newSecret.name, newSecret.hp, newSecret.attack, newSecret.sabotage, newSecret.pointValue, newSecret.image, newSecret.sabCard, newSecret.element, newSecret.supCard, newSecret.effect);
-					enemyArray[i] = newEnemy;
-				}else if(enemyArray[i].effect[0] === "secret" && enemyArray[i].hp === 0){
-					console.log("revealed");
-					enemyArray[i].image = enemyArray[i].effect[1];
+					var randNum = Math.floor(Math.random() * 101);
+					if(randNum >= 90){
+						secrets = false;
+						var newSecret = eval(level + "SecretStats");
+						var newEnemy = new EnemyCon(newSecret.name, newSecret.hp, newSecret.attack, newSecret.sabotage, newSecret.pointValue, newSecret.image, newSecret.sabCard, newSecret.element, newSecret.supCard, newSecret.effect);
+						enemyArray[i] = newEnemy;
+					}else{}
 				}else{}
 			}
 		}
@@ -5575,27 +5689,6 @@ class GameScreen extends React.Component {
 				//stageComplete ++;
 				if(stageComplete === numberOfStages - 1){
 					this.bonusStage();
-					/*var newStoryText;
-					var storyTime = .5;
-					for(var i=0; i<levelsBeaten.length; i++){
-						if(levelsBeaten[i] === level){
-							storyTime ++;
-						}else{}
-					}
-					var textArray = eval(level + "Text");
-					for(var i=0; i<textArray.length; i++){
-						if(startingLevel === level){
-							if(textArray[i].type === "start" && textArray[i].timing === storyTime){
-								newStoryText = textArray[i].text;
-							}else{}
-						}else{
-							if(textArray[i].type === "regular" && textArray[i].timing === storyTime){
-								newStoryText = textArray[i].text;
-							}else{}
-						}
-					}
-					this.props.showStoryScreen(newStoryText);
-					this.props.aux();*/
 				}else{
 					this.setState({
 						playerShield: this.props.shield,
@@ -5627,6 +5720,8 @@ class GameScreen extends React.Component {
 		}
 	}
 	bonusStage(){
+		this.props.error("Choose Your Prize");
+		document.getElementById("stageName").innerHTML = "Bonus Stage";
 		patience = false;
 		enemyArray = [orbPrizeStats, obeliskOfPrizesStats, cardPrizeStats];
 		this.setState({
@@ -6813,13 +6908,18 @@ class Enemy extends React.Component {
 		this.props.updateEnemySab();
 		var enemyEffect;
 		var object = true;
+		console.log("mounting");
 		if(this.props.element === "object"){
 			enemyEffect = false;
 			object = false;
+			console.log("it's an object");
 		}else if(this.props.effect[2] === "countdown" || this.props.effect[2] === "static"){
 			enemyEffect = true;
+			console.log("countdown");
 		}else{
+			console.log("normal enemy");
 			enemyEffect = false;
+
 		}
 		this.setState({
 			boss: null,
@@ -6846,20 +6946,25 @@ class Enemy extends React.Component {
 	render() {
 		var newId;
 		if(stageComplete === 4){
-			newId = "boss";
+			if(level.includes("Temple") === true){
+				newId = null;
+			}else{
+				newId = "boss";
+			}
 		}else if(this.props.effect[0] === "secret"){
 			newId = "secretImage";
 		}else{
 			newId = null;
 		}
+		console.log(this.state.object);
 		return (
 			<div className="col-xs-4 enemyCharacterBox" id={this.props.id} onClick={() => {this.selectEnemyToAttack(this.props.id)}}>
 				<div className="row">
 					<div className="col-xs-offset-2 col-xs-6 enemyInfo">
 						<CharacterName name={this.props.name} />
 						<div className="row">
-							{ this.state.object ? <HPSpan hp={this.props.eHp} enemyId={this.props.enemyId} hero={"heroDamageIndicator"} /> : null }
-							{ this.state.object ? <AttackNum attack={this.props.attack} /> : null }
+							<HPSpan hp={this.props.eHp} enemyId={this.props.enemyId} hero={"heroDamageIndicator"} />
+							<AttackNum attack={this.props.attack} />
 						</div>
 						<div className="row sabRow">
 							<div className="col-xs-11"><Sabotage mouseEnter={this.handleMouseEnter} mouseLeave={this.handleMouseLeave} sab={this.props.sab} /></div>
@@ -6943,8 +7048,8 @@ class AuxilaryScreen extends React.Component {
 		this.state = {
 			rewardCards: [],
 			rewardGems: [],
-			rewardHp: 0
-
+			rewardHp: 0,
+			extraItem: null
 		}
 	this.levelRewards = this.levelRewards.bind(this);
 	this.listCardRewards = this.listCardRewards.bind(this);
@@ -6953,7 +7058,8 @@ class AuxilaryScreen extends React.Component {
 	componentDidMount(){
 		var audioEl = document.getElementsByClassName("victoryMusic")[0];
 		audioEl.play();
-		var rewardHp = 0; 
+		var rewardHp = 0;
+		var extraItem;
 		if(level === "tower"){
 			this.props.goToEndingScreen();
 		}else if(level === "tutorial"){
@@ -6961,19 +7067,23 @@ class AuxilaryScreen extends React.Component {
 		}else{
 			levelsBeaten.push(level);
 			var rewardTier = 0;
+			for(var i=0; i<levelsBeaten.length; i++){
+				if(levelsBeaten[i] === level){
+					rewardTier ++;
+				}else{}
+			}
 			var levelArray = ["earth", "fire", "water", "wind", "desert", "lava", "mud", "storm"];
+			var scrollArray = [earthScroll, fireScroll, waterScroll, windScroll, desertScroll, lavaScroll, mudScroll, stormScroll];
+			var keyArray = [earthKey, fireKey, waterKey, windKey/*, desertKey, lavaKey, mudKey, stormKey*/];
 			for(var i=0; i<levelArray.length; i++){
 				if(levelArray[i] === level){
 					if(rewardTier === 2){
 						elementScrolls[i] = true;
+						extraItem = scrollArray[i];
 					}else if(rewardTier === 3){
 						elementKeys[i] = true;
+						extraItem = keyArray[i];
 					}else{}
-				}else{}
-			}
-			for(var i=0; i<levelsBeaten.length; i++){
-				if(levelsBeaten[i] === level){
-					rewardTier ++;
 				}else{}
 			}
 			if(rewardTier === 1){
@@ -6990,7 +7100,8 @@ class AuxilaryScreen extends React.Component {
 			this.setState({
 				rewardCards: [],
 				rewardGems: [],
-				rewardHp: rewardHp
+				rewardHp: rewardHp,
+				extraItem: extraItem
 			}, () => {
 				this.levelRewards(rewardTier);
 			});
@@ -7009,6 +7120,7 @@ class AuxilaryScreen extends React.Component {
 		}
 	}
 	levelRewards(rewardTier){
+		console.log(this.props.prizeChoice);
 		var levelCard = this.props.supCardRewards;
 		var neutralCards = [];
 		for(var i=1; i<21; i++){
@@ -7157,6 +7269,9 @@ class AuxilaryScreen extends React.Component {
 						{this.listGemRewards()}
 					</div> : null}
 					<div className="col-xs-4" id="hpRewardRow"><img src={heart} className="heartIcon" alt="heartIcon" />+{this.state.rewardHp}</div>
+				</div>
+				<div className="row">
+					{this.state.extraItem ? <img src={this.state.extraItem} alt="extraItem" id="extraItemImg" /> : null }
 				</div>
 				<div className="row">
 					<button className="coolButton col-xs-offset-4 col-xs-4" onClick={this.props.showCollection}>Deck</button>
