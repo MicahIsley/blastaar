@@ -235,6 +235,20 @@ import mudScroll from './assets/artifacts/mudScroll.png';
 import stormScroll from './assets/artifacts/stormScroll.png';
 import waterScroll from './assets/artifacts/waterScroll.png';
 import windScroll from './assets/artifacts/windScroll.png';
+import boulderDoor from './assets/templePath/boulderDoor.png';
+import dirtDoor from './assets/templePath/dirtDoor.png';
+import earthMarkedDoor from './assets/templePath/earthMarkedDoor.png';
+import emptyDoor from './assets/templePath/emptyDoor.png';
+import ironDoor from './assets/templePath/ironDoor.png';
+import magicDoor from './assets/templePath/magicDoor.png';
+import oldDoor from './assets/templePath/oldDoor.png';
+import runeDoor from './assets/templePath/runeDoor.png';
+import vineDoor from './assets/templePath/vineDoor.png';
+import waterDoor from './assets/templePath/waterDoor.png';
+import earthStalactite from './assets/templePath/earthStalactite.gif';
+import fireStalactite from './assets/templePath/fireStalactite.gif';
+import waterStalactite from './assets/templePath/waterStalactite.gif';
+import windStalactite from './assets/templePath/windStalactite.gif';
 import './index.css';
 
 var player;
@@ -2101,6 +2115,126 @@ const obeliskOfPrizesStats = {
 	effect: ["obelisk", null, null]
 };
 
+const boulderDoorStats = {
+	name: "Boulder Door",
+	hp: 10,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: boulderDoor,
+	sabCard: sabotage1,
+	element: "doorway",
+	effect: [null, null, null]
+};
+
+const dirtDoorStats = {
+	name: "Dirt Door",
+	hp: 10,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: dirtDoor,
+	sabCard: sabotage1,
+	element: "doorway",
+	effect: ["weakness", "wind", null]
+};
+
+const earthMarkedDoorStats = {
+	name: "Earth Marked Door",
+	hp: 10,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: earthMarkedDoor,
+	sabCard: sabotage1,
+	element: "doorway",
+	effect: [null, null, null]
+};
+
+const emptyDoorStats = {
+	name: "Empty Door",
+	hp: 10,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: emptyDoor,
+	sabCard: sabotage1,
+	element: "doorway",
+	effect: [null, null, null]
+};
+
+const ironDoorStats = {
+	name: "Iron Door",
+	hp: 10,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: ironDoor,
+	sabCard: sabotage1,
+	element: "doorway",
+	effect: [null, null, null]
+};
+
+const magicDoorStats = {
+	name: "Magic Door",
+	hp: 10,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: magicDoor,
+	sabCard: sabotage1,
+	element: "doorway",
+	effect: [null, null, null]
+};
+
+const oldDoorStats = {
+	name: "Old Door",
+	hp: 10,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: oldDoor,
+	sabCard: sabotage1,
+	element: "doorway",
+	effect: [null, null, null]
+};
+
+const runeDoorStats = {
+	name: "Rune Door",
+	hp: 10,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: runeDoor,
+	sabCard: sabotage1,
+	element: "doorway",
+	effect: [null, null, null]
+};
+
+const vineDoorStats = {
+	name: "Vine Door",
+	hp: 10,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: vineDoor,
+	sabCard: sabotage1,
+	element: "doorway",
+	effect: ["weakness", "fire", null]
+};
+
+const waterDoorStats = {
+	name: "Water Door",
+	hp: 10,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: waterDoor,
+	sabCard: sabotage1,
+	element: "doorway",
+	effect: [null, null, null]
+};
+
 var smallGolemArray = [earthGolemStats, fireGolemStats, waterGolemStats, windGolemStats];
 var bigGolemArray = [desertGolemStats, lavaGolemStats, mudGolemStats, stormGolemStats];
 var numberOfEnemies = 1;
@@ -2229,6 +2363,33 @@ function levelFireDistribution(randEnemyNum){
 	}
 }
 
+function levelFireTempleDistribution(randEnemyNum){
+	if(randEnemyNum < enemyDistributionArray[0]){
+			createEnemy = emberAdderStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[1]){
+			createEnemy = flameCrawlerStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[2]){
+			createEnemy = kragmupStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[3]){
+			createEnemy = tipperStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[4]){
+			createEnemy = morpStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[5]){
+			createEnemy = pheonixWyrmStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[6]){
+			createEnemy = flameScrablerStats;
+			return;
+		}else{
+			createEnemy = smallGolemArray[1];
+		}
+}
+
 function levelWaterDistribution(randEnemyNum){
 	var randNum = Math.floor(Math.random() * 3);
 	if((numberOfStages === 4 && stageComplete < 4) || (numberOfStages === 5 && stageComplete < 4)){
@@ -2265,6 +2426,33 @@ function levelWaterDistribution(randEnemyNum){
 			createEnemy = kingSlapperStats;
 		}
 	}
+}
+
+function levelWaterTempleDistribution(randEnemyNum){
+	if(randEnemyNum < enemyDistributionArray[0]){
+			createEnemy = trenchThumpStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[1]){
+			createEnemy = marshSlapperStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[2]){
+			createEnemy = ghostSharkStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[3]){
+			createEnemy = coralThumpStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[4]){
+			createEnemy = caveThumpStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[5]){
+			createEnemy = budleFairyStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[6]){
+			createEnemy = albinoSlapperStats;
+			return;
+		}else{
+			createEnemy = smallGolemArray[2];
+		}
 }
 
 function levelWindDistribution(randEnemyNum){
@@ -2305,6 +2493,33 @@ function levelWindDistribution(randEnemyNum){
 	}
 }
 
+function levelWindTempleDistribution(randEnemyNum){
+	if(randEnemyNum < enemyDistributionArray[0]){
+			createEnemy = maclawStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[1]){
+			createEnemy = madnadoStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[2]){
+			createEnemy = raaHowlerStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[3]){
+			createEnemy = flooferStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[4]){
+			createEnemy = windleFairyStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[5]){
+			createEnemy = spookawStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[6]){
+			createEnemy = windFlitterStats;
+			return;
+		}else{
+			createEnemy = smallGolemArray[3];
+		}
+}
+
 function levelDesertDistribution(randEnemyNum){
 	var randNum = Math.floor(Math.random() * 3);
 	if((numberOfStages === 4 && stageComplete < 4) || (numberOfStages === 5 && stageComplete < 4)){
@@ -2341,6 +2556,33 @@ function levelDesertDistribution(randEnemyNum){
 			createEnemy = stabberConclaveStats;
 		}
 	}
+}
+
+function levelDesertTempleDistribution(randEnemyNum){
+	if(randEnemyNum < enemyDistributionArray[0]){
+			createEnemy = sandSnippStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[1]){
+			createEnemy = duneStabberStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[2]){
+			createEnemy = desertMadnadoStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[3]){
+			createEnemy = wanderingRelicStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[4]){
+			createEnemy = grumpeelStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[5]){
+			createEnemy = boneStalkerStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[6]){
+			createEnemy = predatorSnippStats;
+			return;
+		}else{
+			createEnemy = bigGolemArray[0];
+		}
 }
 
 function levelLavaDistribution(randEnemyNum){
@@ -2381,6 +2623,33 @@ function levelLavaDistribution(randEnemyNum){
 	}
 }
 
+function levelLavaTempleDistribution(randEnemyNum){
+	if(randEnemyNum < enemyDistributionArray[0]){
+			createEnemy = emberiteStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[1]){
+			createEnemy = lavaWalkerStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[2]){
+			createEnemy = trekapodStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[3]){
+			createEnemy = walkingEruptionStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[4]){
+			createEnemy = moltasaurusStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[5]){
+			createEnemy = volcanoTramplerStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[6]){
+			createEnemy = nutriteStats;
+			return;
+		}else{
+			createEnemy = bigGolemArray[1];
+		}
+}
+
 function levelMudDistribution(randEnemyNum){
 	var randNum = Math.floor(Math.random() * 3);
 	if((numberOfStages === 4 && stageComplete < 4) || (numberOfStages === 5 && stageComplete < 4)){
@@ -2419,6 +2688,33 @@ function levelMudDistribution(randEnemyNum){
 	}
 }
 
+function levelMudTempleDistribution(randEnemyNum){
+	if(randEnemyNum < enemyDistributionArray[0]){
+			createEnemy = lesserGalopeStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[1]){
+			createEnemy = toxicRollerStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[2]){
+			createEnemy = warthusStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[3]){
+			createEnemy = sominusStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[4]){
+			createEnemy = mucksterStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[5]){
+			createEnemy = bogBoarStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[6]){
+			createEnemy = greaterGalopeStats;
+			return;
+		}else{
+			createEnemy = bigGolemArray[2];
+		}
+}
+
 function levelStormDistribution(randEnemyNum){
 	var randNum = Math.floor(Math.random() * 3);
 	if((numberOfStages === 4 && stageComplete < 4) || (numberOfStages === 5 && stageComplete < 4)){
@@ -2455,6 +2751,33 @@ function levelStormDistribution(randEnemyNum){
 			createEnemy = greatShockSharkStats;
 		}
 	}
+}
+
+function levelStormTempleDistribution(randEnemyNum){
+	if(randEnemyNum < enemyDistributionArray[0]){
+			createEnemy = shockSharkStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[1]){
+			createEnemy = staticGliderStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[2]){
+			createEnemy = lightningBugStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[3]){
+			createEnemy = scorchedTreeGhastStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[4]){
+			createEnemy = shelterThumpStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[5]){
+			createEnemy = rainWolfStats;
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[6]){
+			createEnemy = staticCatcherStats;
+			return;
+		}else{
+			createEnemy = bigGolemArray[3];
+		}
 }
 
 function levelTowerDistribution(randEnemyNum){
@@ -2612,7 +2935,7 @@ var secrets = false;
 var unlockedSecrets = [true, false, false, false, false, false, false, false];
 var elementKeys = [false, false, false, false];
 var elementScrolls = [false, false, false, false, false, false, false, false];
-var secretArtifacts = [true, true, true, true, false, false, false, false];
+var secretArtifacts = [false, false, false, false, false, false, false, false];
 var equippedArtifact;
 
 function shuffle(a) {
@@ -3365,6 +3688,20 @@ class GameScreenHub extends React.Component {
 					levelTowerDistribution(randEnemyNum);
 				}else if(level === "earthTemple"){
 					levelEarthTempleDistribution(randEnemyNum);
+				}else if(level === "fireTemple"){
+					levelFireTempleDistribution(randEnemyNum);
+				}else if(level === "waterTemple"){
+					levelWaterTempleDistribution(randEnemyNum);
+				}else if(level === "windTemple"){
+					levelWindTempleDistribution(randEnemyNum);
+				}else if(level === "desertTemple"){
+					levelDesertTempleDistribution(randEnemyNum);
+				}else if(level === "lavaTemple"){
+					levelLavaTempleDistribution(randEnemyNum);
+				}else if(level === "mudTemple"){
+					levelMudTempleDistribution(randEnemyNum);
+				}else if(level === "stormTemple"){
+					levelStormTempleDistribution(randEnemyNum);
 				}else{}
 				var selected = createEnemy;
 				var eName = selected.name;
@@ -5947,7 +6284,7 @@ class GameScreen extends React.Component {
 								noAbility: false,
 								enemyHeal: 0
 							}, () => {
-								this.props.decreaseStormCounter();
+								//this.props.decreaseStormCounter();
 								this.endOfTurnDmg();
 							});
 						}
@@ -7074,16 +7411,22 @@ class AuxilaryScreen extends React.Component {
 			}
 			var levelArray = ["earth", "fire", "water", "wind", "desert", "lava", "mud", "storm"];
 			var scrollArray = [earthScroll, fireScroll, waterScroll, windScroll, desertScroll, lavaScroll, mudScroll, stormScroll];
-			var keyArray = [earthKey, fireKey, waterKey, windKey/*, desertKey, lavaKey, mudKey, stormKey*/];
+			var keyArray = [earthKey, fireKey, waterKey, windKey];
+			var artifactArray = [moltenPedestal, grandGoo, elderStorm, sarcophagus];
 			for(var i=0; i<levelArray.length; i++){
 				if(levelArray[i] === level){
 					if(rewardTier === 2){
 						elementScrolls[i] = true;
 						extraItem = scrollArray[i];
 					}else if(rewardTier === 3){
-						elementKeys[i] = true;
-						extraItem = keyArray[i];
+						if(i<4){
+							elementKeys[i] = true;
+							extraItem = keyArray[i];
+						}else{}
 					}else{}
+				}else if(level.includes("Temple") && level.includes(levelArray[i])){
+					extraItem = artifactArray[i];
+					secretArtifacts[i] = true;
 				}else{}
 			}
 			if(rewardTier === 1){
