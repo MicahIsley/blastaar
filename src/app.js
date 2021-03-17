@@ -168,7 +168,7 @@ import walkRight from './assets/walkRight.gif';
 import walkUp from './assets/walkUp.png';
 import background from './assets/audio/audio.m4a';
 import click from './assets/audio/click.mp3';
-import attackSound from './assets/audio/attackSound.mp3';
+import attackSound from './assets/audio/attackSound.wav';
 import collectSound from './assets/audio/collectSound.mp3';
 import mainTitles from './assets/audio/mainTitles.m4a';
 import mistyWoods from './assets/audio/mistyWoods.m4a';
@@ -179,6 +179,7 @@ import fireDestruction from './assets/audio/fireDestruction.m4a';
 import mysteryMud from './assets/audio/mysteryMud.m4a';
 import defeat from './assets/audio/defeat.m4a';
 import victory from './assets/audio/victory.m4a';
+import hitSound from './assets/audio/hit.wav';
 import meter0 from './assets/spookyMeter/meter0.png';
 import meter1 from './assets/spookyMeter/meter1.png';
 import meter2 from './assets/spookyMeter/meter2.png';
@@ -2235,6 +2236,18 @@ const waterDoorStats = {
 	effect: [null, null, null]
 };
 
+const earthStalactiteStats = {
+	name: "",
+	hp: 10,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: earthStalactite,
+	sabCard: sabotage1,
+	element: "object",
+	effect: [null, null, null]
+}
+
 var smallGolemArray = [earthGolemStats, fireGolemStats, waterGolemStats, windGolemStats];
 var bigGolemArray = [desertGolemStats, lavaGolemStats, mudGolemStats, stormGolemStats];
 var numberOfEnemies = 1;
@@ -2300,28 +2313,28 @@ function levelEarthDistribution(randEnemyNum){
 
 function levelEarthTempleDistribution(randEnemyNum){
 	if(randEnemyNum < enemyDistributionArray[0]){
-			createEnemy = primtreeStats;
+			createEnemy = emptyDoorStats;
 			return;
 		}else if(randEnemyNum < enemyDistributionArray[1]){
-			createEnemy = wobbledukStats;
+			createEnemy = boulderDoorStats;
 			return;
 		}else if(randEnemyNum < enemyDistributionArray[2]){
-			createEnemy = primtreeDefenderStats;
+			createEnemy = vineDoorStats;
 			return;
 		}else if(randEnemyNum < enemyDistributionArray[3]){
-			createEnemy = stoneStriderStats;
+			createEnemy = oldDoorStats;
 			return;
 		}else if(randEnemyNum < enemyDistributionArray[4]){
-			createEnemy = steedStats;
+			createEnemy = waterDoorStats;
 			return;
 		}else if(randEnemyNum < enemyDistributionArray[5]){
-			createEnemy = rockFairyStats;
+			createEnemy = earthStalactiteStats;
 			return;
 		}else if(randEnemyNum < enemyDistributionArray[6]){
-			createEnemy = primtreeRoyalStats;
+			createEnemy = runeDoorStats;
 			return;
 		}else{
-			createEnemy = smallGolemArray[0];
+			createEnemy = magicDoorStats;
 		}
 }
 
@@ -2871,11 +2884,11 @@ function CardCon(name, cost, power, text, alignment, rarity, ability1, ability2,
 	this.deckNum = deckNum;
 }
 
-const youberHero = new HeroCon("Youber", 50, 0, 3, 0, youber, true);
-var shapeshift1 = new HeroCon("Wobbleduk", 30, 3, 3, 4, wobbleduk, true);
-var shapeshift2 = new HeroCon("Budle Fairy", 20, 2, 5, 0, budleFairy, true);
-var shapeshift3 = new HeroCon("Madnado", 25, 4, 3, 2, madnado, true);
-var shapeshift4 = new HeroCon("Morp", 25, 5, 2, 2, morp, true);
+const youberHero = new HeroCon("Youber", 50, 0, 3, 0, youber, true, false);
+var shapeshift1 = new HeroCon("Wobbleduk", 30, 3, 3, 4, wobbleduk, true, false);
+var shapeshift2 = new HeroCon("Budle Fairy", 20, 2, 5, 0, budleFairy, true, false);
+var shapeshift3 = new HeroCon("Madnado", 25, 4, 3, 2, madnado, true, false);
+var shapeshift4 = new HeroCon("Morp", 25, 5, 2, 2, morp, true, false);
 
 const rustySword = new ItemCon("Rusty Sword", 1, "weapon", 10, true, true);
 const battleSpear = new ItemCon("Battle Spear", 2, "weapon", 70, true, true);
@@ -2885,7 +2898,7 @@ const parshendiCarapace = new ItemCon("Parshendi Carapace", 2, "armor", 80, true
 const shardplate = new ItemCon("Shardplate", 3, "armor", 150, true, true);
 
 var currentEnemy = 4;
-var playerHero = new HeroCon("Youber", 50, 0, 3, 0, youber, true);
+var playerHero = new HeroCon("Youber", 50, 0, 3, 0, youber, true, false);
 var gameMode = "marathon";
 var level = 0;
 var stageComplete = 0;
@@ -2905,7 +2918,7 @@ var elementOrbs = [];
 var multiplier = 1;
 var allies = [];
 var meterArray = [meter0, meter1, meter2, meter3, meter4, meter5, meter6, meter7, meter8, meter9, meter10, meter11, meter12];
-var levelsBeaten = [];
+var levelsBeaten = ["earth", "earth"];
 var keyWordList = [{id: "finesse", keyword: "Finesse", description: "Change power by X to exactly kill an enemy"}, {id: "ward", keyword: "Ward", description: "Ward blocks enemy damage and sabotages."}, {id: "purge", keyword: "Purge", description: "Removes an enemy sabotage from your deck."}, {id: "weaken", keyword: "Weaken", description: "Reduces an enemies strength"}, {id: "exhausted", keyword: "Exhausted", description: "Enemies attack twice in a row"}, {id:"stun", keyword: "Stun", description: "Stunned enemies miss their next attack"}, {id: "poison", keyword: "Poison", description: "Damage delt at the end of the turn"}, {id: "confuse", keyword: "Confuse", description: "Confused enemies attack a random enemy"}, {id: "grow", keyword: "Grow", description: "The card gains power each time it is used"}, /*{id: "scheme", keyword: "Scheme", description: "Schemes are played to one of your support areas and then are charged up over time providing an effect once completed"},*/ {id: "heal", keyword: "Heal", description: "Restore health to your character"}, {id: "reclaim", keyword: "Reclaim", description: "Increase the power of all enemy sabotages in your deck"}, {id: "int", keyword: "Draw", description: "How many extra cards your draw your next turn."}, {id: "def", keyword: "Ongoing Ward", description: "The number of shields you have at the start of every turn."}, {id: "str", keyword: "Magic", description: "Added damage to each attack"}, {id: "rummage", keyword: "Rummage", description: "Switch a card with a random card from your deck."}, {id: "multiply", keyword: "Multiply", description: "Multiply your damage by X."}, {id: "decoy", keyword: "Decoy", description: "Avoid all sabotages this turn."}, {id: "energy", keyword: "Energy", description: "Gain energy to use for other purposes."}, {id: "next", keyword: "Next", description: "Add power to next attack."}, {id: "add", keyword: "Add", description: "Shuffle a number of new cards into your deck."}, {id: "remove", keyword: "Remove", description: "The card gets removed from your deck after you select it"}, {id: "extra", keyword: "Extra", description: "Attack again after this one."}, /*{id: "deplete", keyword: "Deplete", description: "Remove a sabotage from the selected enemy."},*/ {id: "factionBoost", keyword: "Damage Boost", description: "Gains power for each card of the same type played."}, /*{id: "spooky", keyword: "Spooky", description: "Increase the chances of getting a creature's card."}, {id: "transform", keyword: "Transform", description: "Turn an emeny sabotage in your deck into another card."},*/ {id: "all", keyword: "All", description: "Deal damage to all enemies."}, {id: "clutch", keyword: "Clutch", description: "Gains extra effects when your HP is 15 or lower."}, {id: "random", keyword: "Random", description: "One of two effects."}, {id: "stash", keyword: "Energy Stash", description: "Gains extra effects when your energy is 5 or more."}, {id: "treasure", keyword: "Treasure", description: "Add gems and/or cards to your rewards."}, {id: "capture", keyword: "Capture", description: "Increase the change of gaining targeted monster's card."}, {id: "hlBoost", keyword: "Heal Boost", description: "Heal 1 for each card of the same element you've played."}, 
 {id: "wrdBoost", keyword: "Ward Boost", description: "Gain 1 ward for each card of the same element you've played."}, {id: "supBurning", keyword: "Burning", description: "Deals damage at the end of every turn."}, {id: "supGems", keyword: "Gain Gems", description: "Add gems to your rewards."}, {id: "supCards", keyword: "Gain Cards", description: "Add cards to your rewards."}, {id: "supBoost", keyword: "Boost", description: "Increases the power of that type."}];
 var finesseAttack; 
@@ -2935,7 +2948,7 @@ var secrets = false;
 var unlockedSecrets = [true, false, false, false, false, false, false, false];
 var elementKeys = [false, false, false, false];
 var elementScrolls = [false, false, false, false, false, false, false, false];
-var secretArtifacts = [false, false, false, false, false, false, false, false];
+var secretArtifacts = [true, false, false, false, false, false, false, false];
 var equippedArtifact;
 
 function shuffle(a) {
@@ -3517,7 +3530,10 @@ class GameScreenHub extends React.Component {
 				levelSelectScreen: false,
 				displayUserSaves: false
 			});
+			const audioEl = document.getElementsByClassName("clickSound")[0];
+	    	audioEl.play();
 		}
+
 	}
 	toggleInfoScreen(){
 		if(this.state.infoScreen === true){
@@ -3529,6 +3545,8 @@ class GameScreenHub extends React.Component {
 				infoScreen: true
 			});
 		}
+		const audioEl = document.getElementsByClassName("clickSound")[0];
+	    audioEl.play();
 	}
 	playerDeathScreen(){
 		this.setState({
@@ -3554,6 +3572,8 @@ class GameScreenHub extends React.Component {
 				firstLevelChoice: false
 			});
 		}
+		const audioEl = document.getElementsByClassName("clickSound")[0];
+	    audioEl.play();
 	}
 	highScoreScreen(){
 		this.setState({
@@ -3569,12 +3589,16 @@ class GameScreenHub extends React.Component {
 			characterSelectScreen: false,
 			displayUserSaves: false
 		});
+		const audioEl = document.getElementsByClassName("clickSound")[0];
+	    audioEl.play();
 	}
 	goToCraftingScreen(){
 		this.setState({
 			craftingScreen: true,
 			collectionScreen: false
 		});
+		const audioEl = document.getElementsByClassName("clickSound")[0];
+	    audioEl.play();
 	}
 	checkDeckContents(){
 		var deckNumber = 0;
@@ -3622,6 +3646,8 @@ class GameScreenHub extends React.Component {
 			playerDeathScreen: false,
 			displayUserSaves: false
 		});
+		const audioEl = document.getElementsByClassName("clickSound")[0];
+	    audioEl.play();
 	}
 	createEnemies() {
 		enemyArray = [];
@@ -3724,7 +3750,6 @@ class GameScreenHub extends React.Component {
 				enemyArray.push(newEnemy);
 			}
 		}
-		console.log(enemyArray);
 		this.setState({
 			enemyArray: enemyArray
 		});
@@ -3843,6 +3868,9 @@ class GameScreenHub extends React.Component {
 	        </audio>
 	        <audio className="mysteryMud">
 	          <source src={mysteryMud}></source>
+	        </audio>
+	        <audio className="clickSound">
+	          <source src={click}></source>
 	        </audio>
 			<ErrorMessage errorMessage={this.state.errorMessage} />
 			{this.state.storyScreen ? <StoryScreen hideStoryScreen={this.hideStoryScreen} /> : null }
@@ -4018,8 +4046,8 @@ class LevelSelectScreen extends React.Component {
 		this.selectLevel = this.selectLevel.bind(this);
 	}
 	componentDidMount(){
-		if(equippedArtifact === null){
-
+		if(equippedArtifact === undefined){
+			player.image = youber;
 		}else{
 			player.image = equippedArtifact;
 		}
@@ -4594,7 +4622,8 @@ class GameScreen extends React.Component {
 			noWard: false,
 			noAbility: false,
 			showRewards: false,
-			enemyHeal: 0
+			enemyHeal: 0,
+			templeHealth: 100
 
 		}
 		this.playerAttack = this.playerAttack.bind(this);
@@ -4731,7 +4760,8 @@ class GameScreen extends React.Component {
 			0: enemyArray[0].hp,
 			1: nullHp1,
 			2: nullHp2,
-			enemyHpArray: [enemyArray[0].hp, nullHp1, nullHp2]
+			enemyHpArray: [enemyArray[0].hp, nullHp1, nullHp2],
+			templeHealth: 100
 		});
 	}
 	componentWillUnmount(){
@@ -5555,8 +5585,11 @@ class GameScreen extends React.Component {
 					threshold = 50;
 				}else{}
 				if(captureNum >= threshold){
-					this.props.gainSupCardReward(enemyArray[currentEnemy].supCard);
-					this.props.error("Gained Monster Prize!");
+					if(enemyArray[currentEnemy].element === "doorway"){
+					}else{
+						this.props.gainSupCardReward(enemyArray[currentEnemy].supCard);
+						this.props.error("Gained Monster Prize!");
+					}
 				}else{
 					this.props.error("Failed");
 				}
@@ -5653,8 +5686,6 @@ class GameScreen extends React.Component {
 		if(this.state.enemyHeal > 0){
 			enemyArray[currentEnemy].hp = enemyArray[currentEnemy].hp + this.state.enemyHeal;
 		}else{}
-		const audioEl = document.getElementsByClassName("clickSound")[0];
-	    audioEl.play();
 	    const x = document.getElementsByClassName("characterImage2");
 		for (var i=0; i < x.length; i ++ ){
 			x[i].classList.remove("targetedEnemy");
@@ -5681,6 +5712,32 @@ class GameScreen extends React.Component {
 				}
 
 			}else{}
+			if(level.includes("Temple")){
+				var templeHealth = this.state.templeHealth - heroAttack;
+				var shakeLength;
+				if(this.state.templeHealth >= 90 && templeHealth < 90){
+					shakeLength = 100;
+					this.props.error("Uh oh, what was that?");
+				}else if(this.state.templeHealth >= 50 && templeHealth < 50){
+					shakeLength = 500;
+					this.props.error("This place is not stable");
+				}else if(templeHealth < 20 && templeHealth >= 0){
+					shakeLength = 1500;
+				}else if(templeHealth <=0){
+					this.props.aux();
+				}else{
+					shakeLength = 0;
+				}
+				this.setState({
+					templeHealth: templeHealth
+				});
+				if(shakeLength > 0){
+					document.getElementById("gameScreenBackground").classList.add("shake");
+				}else{}
+				setTimeout(() => {
+					document.getElementById("gameScreenBackground").classList.remove("shake");
+				}, shakeLength)
+			}else{}
 			var enemyHp = enemyHealth - heroAttack;
 			if(enemyHealth === heroAttack){
 				const audioEl = document.getElementsByClassName("collectSound")[0];
@@ -5706,7 +5763,7 @@ class GameScreen extends React.Component {
 				}
 				var supCardValue = Math.floor(Math.random() * 11) + this.state.spookLevel;
 				if(supCardValue >= enemyLevel){
-					if(enemyArray[currentEnemy].effect[0] === "secret"){
+					if(enemyArray[currentEnemy].effect[0] === "secret" || enemyArray[currentEnemy].element === "doorway"){
 					}else{
 						this.props.gainSupCardReward(enemyArray[currentEnemy].supCard);
 						this.props.error("Gained Monster Prize!");
@@ -5719,7 +5776,15 @@ class GameScreen extends React.Component {
 				document.getElementById("badGuy" + (currentEnemy)).append("-" + heroAttack);
 				document.getElementById("badGuy" + (currentEnemy)).style.display="inline";
 			}
+			const audioEl = document.getElementsByClassName("hitSound")[0];
+	    	audioEl.play();
+	    	if(enemyArray[currentEnemy].element === "doorway"){
+
+	    	}else{
+				document.getElementById((currentEnemy) + "image").classList.add("shake");
+			}
 			setTimeout(() => {
+				document.getElementById((currentEnemy) + "image").classList.remove("shake");
 				if(enemyArray[currentEnemy].effect[0] === "secret"){
 				}else{
 					document.getElementById("badGuy" + (currentEnemy)).innerHTML="";
@@ -5732,7 +5797,6 @@ class GameScreen extends React.Component {
 					});
 					var pointValue = enemyArray[currentEnemy].pointValue;
 					this.props.changeScore(pointValue);
-					console.log(enemyArray[currentEnemy].element);
 					if(enemyArray[currentEnemy].element === "obelisk"){
 						this.props.aux();
 					}else{
@@ -5745,7 +5809,6 @@ class GameScreen extends React.Component {
 						enemyHpArray: [enemyArray[0].hp, enemyArray[1].hp, enemyArray[2].hp]
 					}, () => {
 						if(this.state.extraAttacks === 0){
-							console.log(enemyArray[currentEnemy]);
 							if(enemyArray[currentEnemy].element === "obelisk"){
 								this.props.decreaseStormCounter();
 							}else{
@@ -5769,6 +5832,8 @@ class GameScreen extends React.Component {
 		}
 	}
 	playerAttackAll(newAttack, burn) {
+		const audioEl = document.getElementsByClassName("hitSound")[0];
+	    audioEl.play();
 		enemyArray[currentEnemy].hp = enemyArray[currentEnemy].hp + this.state.enemyHeal;
 		attackAll = false;
 		var heroAttack;
@@ -5777,6 +5842,12 @@ class GameScreen extends React.Component {
 		}else{
 			heroAttack = newAttack;
 		}
+		if(level.includes("Temple")){
+			var templeHealth = this.state.templeHealth - newAttack;
+			this.setState({
+				templeHealth: templeHealth
+			});
+		}else{}
 		const x = document.getElementsByClassName("characterImage2");
 		for (var i=0; i < x.length; i ++ ){
 			x[i].classList.remove("targetedEnemy");
@@ -5785,6 +5856,7 @@ class GameScreen extends React.Component {
 			if(enemyArray[i].hp > 0){
 				document.getElementById("badGuy" + (i)).append("-" + heroAttack);
 				document.getElementById("badGuy" + (i)).style.display="inline";
+				document.getElementById((i) + "image").classList.add("shake");
 			}else{}
 			if(enemyArray[i].hp === heroAttack){
 				this.props.setSpheres(1);
@@ -5795,6 +5867,7 @@ class GameScreen extends React.Component {
 				if(enemyArray[i].hp > 0){
 					document.getElementById("badGuy" + (i)).innerHTML="";
 					document.getElementById("badGuy" + (i)).style.display="none";
+					document.getElementById((i) + "image").classList.remove("shake");
 					if(enemyArray[i].hp - heroAttack <= 0){
 						enemyArray[i].hp = 0;
 					}else{
@@ -5853,7 +5926,6 @@ class GameScreen extends React.Component {
 				}
 			}
 		}else{
-			console.log('no more actions');
 		}
 	}
 	supportAction(support, supSlot){
@@ -6008,6 +6080,8 @@ class GameScreen extends React.Component {
 						var newEnemy = new EnemyCon(newSecret.name, newSecret.hp, newSecret.attack, newSecret.sabotage, newSecret.pointValue, newSecret.image, newSecret.sabCard, newSecret.element, newSecret.supCard, newSecret.effect);
 						enemyArray[i] = newEnemy;
 					}else{}
+				}else if(enemyArray[i].element === "doorway" && enemyArray[i].hp === 0){
+					enemyArray[i].image = emptyDoor;
 				}else{}
 			}
 		}
@@ -6031,12 +6105,18 @@ class GameScreen extends React.Component {
 						playerShield: this.props.shield,
 						cardAbility: true
 					});
-					stageComplete ++;
-					this.props.switchEnemyArray();
-					if(stageComplete === 3){
-						this.checkBossEffect();
-					}else{}
-					this.updateEnemySab();
+					if(level.includes("Temple")){
+						if(this.state.templeHealth <=0){
+							this.prosp.aux();
+						}
+					}else{
+						stageComplete ++;
+						this.props.switchEnemyArray();
+						if(stageComplete === 3){
+							this.checkBossEffect();
+						}else{}
+						this.updateEnemySab();
+					}
 				}
 		}else{
 			patience = false;
@@ -6114,10 +6194,11 @@ class GameScreen extends React.Component {
 			for (var i=0; i < x.length; i ++ ){
 				x[i].style.borderColor="black";
 			}
-			if(document.getElementById(enemyNumber).classList.contains("stunned") || enemyArray[enemyNumber].element === "object"){
+			if(document.getElementById(enemyNumber).classList.contains("stunned") || enemyArray[enemyNumber].element === "object" || enemyArray[enemyNumber].element === "doorway"){
 				console.log("too stunned to attack");
 			}else{
 				document.getElementById(enemyNumber + "image").classList.add("attackingEnemy");
+				document.getElementById(enemyNumber + "image").classList.add("enemyAttack");
 				var enemiesAlive = 0;
 				for(var i=0; i<enemyArray.length; i++){
 					if(enemyArray[i].hp > 0){
@@ -6246,10 +6327,13 @@ class GameScreen extends React.Component {
 					console.log("triggerDeath 2");
 					this.triggerPlayerDeath();
 				}else{
-					if(document.getElementById(enemyNumber + "image").classList === null){
+					console.log(enemyNumber);
+					console.log(document.getElementById(enemyNumber + "image"));
+					if(document.getElementById(enemyNumber + "image") === null){
 
 					}else{
 						document.getElementById(enemyNumber + "image").classList.remove("attackingEnemy");
+						document.getElementById(enemyNumber + "image").classList.remove("enemyAttack");
 						document.getElementById(enemyNumber).classList.remove("stunned");
 						document.getElementById(enemyNumber).classList.remove("confused");
 						var statusArray = this.state.status;
@@ -6328,7 +6412,6 @@ class GameScreen extends React.Component {
 					cardArray.push(usedSupport);
 					var newArray = this.state.cards;
 					newArray.push(usedSupport);
-					console.log(parseInt(usedSupport.ability1.split(" ")[3]));
 					var newDamageMod = this.state.enemyDamageMod;
 					if(usedSupport.ability1.indexOf("supWeaken") >= 0){
 						var weakenNum = parseInt(usedSupport.ability1.split(/[ ,]+/)[1]);
@@ -6438,7 +6521,7 @@ class GameScreen extends React.Component {
 		        <audio className="mistyWoods">
 		          <source src={mistyWoods}></source>
 		        </audio>
-		        <audio className="attackSound">
+		        <audio className="hitSound">
 		          <source src={attackSound}></source>
 		        </audio>
 		        <audio className="collectSound">
@@ -6459,7 +6542,7 @@ class GameScreen extends React.Component {
 				<div className="row" id="topRow">
 					<div className="col-xs-12">
 						<div className="row" id="enemySide">
-							<EnemySide prizeChoice={this.props.prizeChoice} aux={this.props.aux} gainSupGemReward={this.props.gainSupGemReward} gainSupCardReward={this.props.gainSupCardReward} status={this.state.status} updateEnemySab={this.updateEnemySab} bossCleanse={this.state.bossCleanse} cardDisplay={this.state.cardDisplay} state={this.state} sab={this.state.enemySab} heroDraw={this.heroDraw} />
+							<EnemySide error={this.props.error} switchEnemyArray={this.props.switchEnemyArray} prizeChoice={this.props.prizeChoice} aux={this.props.aux} gainSupGemReward={this.props.gainSupGemReward} gainSupCardReward={this.props.gainSupCardReward} status={this.state.status} updateEnemySab={this.updateEnemySab} bossCleanse={this.state.bossCleanse} cardDisplay={this.state.cardDisplay} state={this.state} sab={this.state.enemySab} heroDraw={this.heroDraw} />
 						</div>
 						<div className="row" id="tutorialMessageBox">
 							<div className="col-xs-12" id="tutorialMessageCol">
@@ -6906,8 +6989,8 @@ class EnemySide extends React.Component {
 	listBadGuys () {
 		const numberOfBadGuys = enemyArray;
 		const listItems = numberOfBadGuys.map((badGuy, index) => {
-			if(badGuy.hp > 0 || badGuy.effect[0] === "final" || badGuy.effect[0] === "secret"){
-				return <Enemy key={index} id={index} aux={this.props.aux} prizeChoice={this.props.prizeChoice} status={this.props.status[index]} bossCleanse={this.props.bossCleanse} heroDraw={this.props.heroDraw} cardDisplay={this.props.cardDisplay} enemyId={"badGuy" + index} name={badGuy.name} eHp={badGuy.hp} attack={badGuy.attack} updateEnemySab={this.props.updateEnemySab} sab={this.props.sab[index]} sabCard={badGuy.sabCard} image={badGuy.image} element={badGuy.element} effect={badGuy.effect} />
+			if(badGuy.hp > 0 || badGuy.effect[0] === "final" || badGuy.effect[0] === "secret" || badGuy.element === "doorway"){
+				return <Enemy key={index} id={index} aux={this.props.aux} error={this.props.error} switchEnemyArray={this.props.switchEnemyArray} prizeChoice={this.props.prizeChoice} status={this.props.status[index]} bossCleanse={this.props.bossCleanse} heroDraw={this.props.heroDraw} cardDisplay={this.props.cardDisplay} enemyId={"badGuy" + index} name={badGuy.name} eHp={badGuy.hp} attack={badGuy.attack} updateEnemySab={this.props.updateEnemySab} sab={this.props.sab[index]} sabCard={badGuy.sabCard} image={badGuy.image} element={badGuy.element} effect={badGuy.effect} />
 			}else{
 				return <Placeholder key={index} id={index} />
 			}
@@ -7245,16 +7328,12 @@ class Enemy extends React.Component {
 		this.props.updateEnemySab();
 		var enemyEffect;
 		var object = true;
-		console.log("mounting");
 		if(this.props.element === "object"){
 			enemyEffect = false;
 			object = false;
-			console.log("it's an object");
 		}else if(this.props.effect[2] === "countdown" || this.props.effect[2] === "static"){
 			enemyEffect = true;
-			console.log("countdown");
 		}else{
-			console.log("normal enemy");
 			enemyEffect = false;
 
 		}
@@ -7276,6 +7355,10 @@ class Enemy extends React.Component {
 		}
 		if(this.props.effect[0] === "prize"){
 			this.props.prizeChoice(this.props.effect[1]);
+		}else if(this.props.image === emptyDoor){
+			this.props.switchEnemyArray();
+
+			stageComplete ++;
 		}else{
 			this.props.heroDraw();
 		}
@@ -7293,7 +7376,6 @@ class Enemy extends React.Component {
 		}else{
 			newId = null;
 		}
-		console.log(this.state.object);
 		return (
 			<div className="col-xs-4 enemyCharacterBox" id={this.props.id} onClick={() => {this.selectEnemyToAttack(this.props.id)}}>
 				<div className="row">
@@ -7463,7 +7545,6 @@ class AuxilaryScreen extends React.Component {
 		}
 	}
 	levelRewards(rewardTier){
-		console.log(this.props.prizeChoice);
 		var levelCard = this.props.supCardRewards;
 		var neutralCards = [];
 		for(var i=1; i<21; i++){
@@ -7949,7 +8030,6 @@ class CraftingScreen extends React.Component {
 	}
 	handleCraftClick(){
 		if(this.state.element[1] === "neutral"){
-			console.log(this.state.element);
 		}else{
 			var craftedCard = this.state.resetCard;
 			if(craftedCard.craft > 0){
