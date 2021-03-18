@@ -75,7 +75,7 @@ import duneStabber from './assets/desert/duneStabber.gif';
 import grumpeel from './assets/desert/grumpeel.gif';
 import predatorSnipp from './assets/desert/predatorSnipp.gif';
 import sandSnipp from './assets/desert/sandSnipp.gif';
-import sarcophagus from './assets/desert/sarcophagus.png';
+import sarcophagus from './assets/artifacts/sarcophagus.png';
 import stabberConclave from './assets/desert/stabberConclave.gif';
 import wanderingRelic from './assets/desert/wanderingRelic.gif';
 import earthGolem from './assets/earth/earthGolem.gif';
@@ -104,7 +104,7 @@ import lavaLordWalker from './assets/lava/lavaLordWalker.gif';
 import lavaWalker from './assets/lava/lavaWalker.gif';
 import moltasaurus from './assets/lava/moltasaurus.gif';
 import moltasaurusRex from './assets/lava/moltasaurusRex.gif';
-import moltenPedestal from './assets/lava/moltenPedestal.png';
+import moltenPedestal from './assets/artifacts/moltenPedestal.png';
 import nutrite from './assets/lava/nutrite.gif';
 import trekapod from './assets/lava/trekapod.gif';
 import volcanoTrampler from './assets/lava/volcanoTrampler.gif';
@@ -112,7 +112,7 @@ import walkingEruption from './assets/lava/walkingEruption.gif';
 import archmageMuckster from './assets/mud/archmageMuckster.gif';
 import bogBoar from './assets/mud/bogBoar.gif';
 import duchessWarthus from './assets/mud/duchessWarthus.gif';
-import grandGoo from './assets/mud/grandGoo.png';
+import grandGoo from './assets/artifacts/grandGoo.png';
 import greaterGalope from './assets/mud/greaterGalope.gif';
 import lesserGalope from './assets/mud/lesserGalope.gif';
 import muckster from './assets/mud/muckster.gif';
@@ -224,6 +224,7 @@ import fireYouber from './assets/costumes/fireYouber.gif';
 import stormYouber from './assets/costumes/stormYouber.gif';
 import waterYouber from './assets/costumes/waterYouber.gif';
 import windYouber from './assets/costumes/windYouber.gif';
+import earthArtifact from './assets/artifacts/earthArtifact.png';
 import earthKey from './assets/artifacts/earthKey.png';
 import fireKey from './assets/artifacts/fireKey.png';
 import waterKey from './assets/artifacts/waterKey.png';
@@ -242,6 +243,7 @@ import earthMarkedDoor from './assets/templePath/earthMarkedDoor.png';
 import emptyDoor from './assets/templePath/emptyDoor.png';
 import ironDoor from './assets/templePath/ironDoor.png';
 import magicDoor from './assets/templePath/magicDoor.png';
+import mortemus from './assets/templePath/mortemus.gif';
 import oldDoor from './assets/templePath/oldDoor.png';
 import runeDoor from './assets/templePath/runeDoor.png';
 import vineDoor from './assets/templePath/vineDoor.png';
@@ -2248,6 +2250,42 @@ const earthStalactiteStats = {
 	effect: [null, null, null]
 }
 
+const earthArtifactStats = {
+	name: "Earth Artifact",
+	hp: 10,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: placeholderImg,
+	sabCard: sabotage1,
+	element: "object",
+	effect: [null, null, null]
+}
+
+const orbTraderStats = {
+	name: "Orb Trader",
+	hp: 10,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: placeholderImg,
+	sabCard: sabotage1,
+	element: "object",
+	effect: [null, null, null]
+}
+
+const runeFragmentStats = {
+	name: "Earth Rune Fragment",
+	hp: 10,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: placeholderImg,
+	sabCard: sabotage1,
+	element: "object",
+	effect: [null, null, null]
+}
+
 var smallGolemArray = [earthGolemStats, fireGolemStats, waterGolemStats, windGolemStats];
 var bigGolemArray = [desertGolemStats, lavaGolemStats, mudGolemStats, stormGolemStats];
 var numberOfEnemies = 1;
@@ -2255,6 +2293,7 @@ var numberOfStages;
 var enemyDistributionArray = [140, 280, 350, 420, 455, 490, 498];
 var enemyDistributionArray2 = [90, 180, 280, 380, 430, 480, 498];
 var enemyDistributionArray3 = [80, 160, 250, 340, 400, 460, 498];
+var lastDoorway = "Empty Door";
 
 function tutorialLevels(){
 	numberOfStages = 4;
@@ -2312,30 +2351,71 @@ function levelEarthDistribution(randEnemyNum){
 }
 
 function levelEarthTempleDistribution(randEnemyNum){
-	if(randEnemyNum < enemyDistributionArray[0]){
-			createEnemy = emptyDoorStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[1]){
-			createEnemy = boulderDoorStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[2]){
-			createEnemy = vineDoorStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[3]){
-			createEnemy = oldDoorStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[4]){
-			createEnemy = waterDoorStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[5]){
+	if(enemyArray.length === 0 || enemyArray.length === 2){
+		if(lastDoorway === "Empty Door"){
+			if(randEnemyNum < 100){
+				createEnemy = emptyDoorStats;
+			}else if(randEnemyNum >= 100 && randEnemyNum < 275){
+				createEnemy = dirtDoorStats;
+			}else if(randEnemyNum >= 275 && randEnemyNum < 450){
+				createEnemy = oldDoorStats;
+			}else if(randEnemyNum >=450 && randEnemyNum < 475){
+				createEnemy = boulderDoorStats;
+			}else{
+				createEnemy = vineDoorStats;
+			}
+		}else if(lastDoorway === "Dirt Door" || lastDoorway === "Old Door"){
+			if(randEnemyNum < 50){
+				createEnemy = emptyDoorStats;
+			}else if(randEnemyNum >= 50 && randEnemyNum < 250){
+				createEnemy = boulderDoorStats;
+			}else if(randEnemyNum >= 250 && randEnemyNum < 450){
+				createEnemy = vineDoorStats;
+			}else if(randEnemyNum >= 450 && randEnemyNum < 475){
+				createEnemy = magicDoorStats;
+			}else{
+				createEnemy = runeDoorStats;
+			}
+		}else if(lastDoorway === "Boulder Door" || lastDoorway === "Iron Door" || lastDoorway === "Vine Door" || lastDoorway === "Water Door"){
+			if(randEnemyNum < 10){
+				createEnemy = emptyDoorStats;
+			}else if(randEnemyNum >= 10 && randEnemyNum < 220){
+				createEnemy = magicDoorStats;
+			}else if(randEnemyNum >= 220 && randEnemyNum < 430){
+				createEnemy = runeDoorStats;
+			}else{
+				createEnemy = earthMarkedDoorStats;
+			}
+		}else if(lastDoorway === "Magic Door" || lastDoorway === "Rune Door"){
+			if(randEnemyNum < 1){
+				createEnemy = emptyDoorStats;
+			}else{
+				createEnemy = earthMarkedDoorStats;
+			}
+		}else if(lastDoorway === "Earth Marked Door"){
+			createEnemy = earthMarkedDoorStats;
+		}else{}
+	}else{
+		if(lastDoorway === "Empty Door"){
+			if(randEnemyNum < 125){
+				createEnemy = wobbledukStats;
+			}else if(randEnemyNum >= 125 && randEnemyNum < 250){
+				createEnemy = primtreeStats;
+			}else if(randEnemyNum >= 250 && randEnemyNum < 375){
+				createEnemy = steedStats;
+			}else{
+				createEnemy = stoneStrider;
+			}
+		}else if(lastDoorway === "Dirt Door" || lastDoorway === "Old Door"){
 			createEnemy = earthStalactiteStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[6]){
-			createEnemy = runeDoorStats;
-			return;
-		}else{
-			createEnemy = magicDoorStats;
-		}
+		}else if(lastDoorway === "Boulder Door" || lastDoorway === "Iron Door" || lastDoorway === "Vine Door" || lastDoorway === "Water Door"){
+			createEnemy = treasureChestStats;
+		}else if(lastDoorway === "Magic Door" || lastDoorway === "Rune Door"){
+			createEnemy = orbTraderStats;
+		}else if(lastDoorway === "Earth Marked Door"){
+			createEnemy = earthArtifactStats;
+		}else{}
+	}
 }
 
 function levelFireDistribution(randEnemyNum){
@@ -2378,29 +2458,29 @@ function levelFireDistribution(randEnemyNum){
 
 function levelFireTempleDistribution(randEnemyNum){
 	if(randEnemyNum < enemyDistributionArray[0]){
-			createEnemy = emberAdderStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[1]){
-			createEnemy = flameCrawlerStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[2]){
-			createEnemy = kragmupStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[3]){
-			createEnemy = tipperStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[4]){
-			createEnemy = morpStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[5]){
-			createEnemy = pheonixWyrmStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[6]){
-			createEnemy = flameScrablerStats;
-			return;
-		}else{
-			createEnemy = smallGolemArray[1];
-		}
+		createEnemy = emberAdderStats;
+		return;
+	}else if(randEnemyNum < enemyDistributionArray[1]){
+		createEnemy = flameCrawlerStats;
+		return;
+	}else if(randEnemyNum < enemyDistributionArray[2]){
+		createEnemy = kragmupStats;
+		return;
+	}else if(randEnemyNum < enemyDistributionArray[3]){
+		createEnemy = tipperStats;
+		return;
+	}else if(randEnemyNum < enemyDistributionArray[4]){
+		createEnemy = morpStats;
+		return;
+	}else if(randEnemyNum < enemyDistributionArray[5]){
+		createEnemy = pheonixWyrmStats;
+		return;
+	}else if(randEnemyNum < enemyDistributionArray[6]){
+		createEnemy = flameScrablerStats;
+		return;
+	}else{
+		createEnemy = smallGolemArray[1];
+	}
 }
 
 function levelWaterDistribution(randEnemyNum){
@@ -3660,8 +3740,7 @@ class GameScreenHub extends React.Component {
 		}
 		if(level.includes("Temple") === true){
 			console.log("Welcome to Temple");
-			numberOfStages = 10;
-			stageArray = [1, 2, 3, 1, 2, 3, 1, 2, 3, 1];
+			numberOfStages = 100;
 		}else{
 			if(levelTier === 1){
 				enemyDistributionArray = enemyDistributionArray2;
@@ -3681,7 +3760,11 @@ class GameScreenHub extends React.Component {
 				numberOfStages = 5;
 			}else{}
 		}
-		numberOfEnemies = stageArray[stageComplete];
+		if(level.includes("Temple") === true){
+			numberOfEnemies = 3;
+		}else{
+			numberOfEnemies = stageArray[stageComplete];
+		}
 		for(var i=0; i < 3; i++){
 			if(i >= numberOfEnemies){
 				var newEnemy = new EnemyCon("", 0, 0, 0, 0, null, null, "box", null, [null, null, null]);
@@ -5763,7 +5846,7 @@ class GameScreen extends React.Component {
 				}
 				var supCardValue = Math.floor(Math.random() * 11) + this.state.spookLevel;
 				if(supCardValue >= enemyLevel){
-					if(enemyArray[currentEnemy].effect[0] === "secret" || enemyArray[currentEnemy].element === "doorway"){
+					if(enemyArray[currentEnemy].effect[0] === "secret" || enemyArray[currentEnemy].element === "doorway" || enemyArray[currentEnemy].element === "object"){
 					}else{
 						this.props.gainSupCardReward(enemyArray[currentEnemy].supCard);
 						this.props.error("Gained Monster Prize!");
@@ -7356,8 +7439,8 @@ class Enemy extends React.Component {
 		if(this.props.effect[0] === "prize"){
 			this.props.prizeChoice(this.props.effect[1]);
 		}else if(this.props.image === emptyDoor){
+			lastDoorway = this.props.name;
 			this.props.switchEnemyArray();
-
 			stageComplete ++;
 		}else{
 			this.props.heroDraw();
