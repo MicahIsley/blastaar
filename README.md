@@ -1,20 +1,11 @@
 Youber's Quest
 
-1/23 Patch Notes
+March Patch Notes
 
-- New Music Tracks
-- Each level now starts with one enemy and scales up when revisiting. Rewards have been scaled too.
-- New enemies have been added.
-- Story text has been added to the game.
-- The map now reveals itself as more areas are discovered.
-- The card button on the right-hand side of the screen shows any rewards that you've earned, if you beat the level.
-- Your unused orbs are now saved.
+-Treasure!
 
-2/7 Patch Notes
-- User saves should now load the first time.
-- Tutorial should now work.
-- Hopefully you can't get stuck on 'Patience Betsy' anymore.
-- Weaken can no longer reduce an enemies strength below 1.
-- Neutral gem should no longer appear.
-- Placing a third gem on a crafted card won't crash the game.
-- Clicking craft with no card or with a neutral card will no properly do nothing.
+-Indicator on level select screen for how many times you've beaten a region.
+
+-Now you choose your rewards at the end of each level. Fighting the obelisk gives you 5 turns to do as much damage and your rewards scale accordingly.
+
+-Some things move a bit.

@@ -120,7 +120,7 @@ import mudGolem from './assets/mud/mudGolem.gif';
 import sominus from './assets/mud/sominus.gif';
 import toxicRoller from './assets/mud/toxicRoller.gif';
 import warthus from './assets/mud/warthus.gif';
-import elderStorm from './assets/storm/elderStorm.png';
+import elderStorm from './assets/artifacts/elderStorm.png';
 import enlightenedRainWolf from './assets/storm/enlightenedRainWolf.gif';
 import greatShockShark from './assets/storm/greatShockShark.gif';
 import lightningBug from './assets/storm/lightningBug.gif';
@@ -1959,7 +1959,7 @@ const bustedTreasureStats = {
 	image: bustedTreasure,
 	sabCard: sabotage1,
 	element: "object",
-	effect: ["final", treasure, null]
+	effect: ["final", cardPrize, null]
 };
 
 const damagedTreasureStats = {
@@ -2248,7 +2248,7 @@ const earthStalactiteStats = {
 	sabCard: sabotage1,
 	element: "object",
 	effect: [null, null, null]
-}
+};
 
 const earthArtifactStats = {
 	name: "Earth Artifact",
@@ -2256,11 +2256,11 @@ const earthArtifactStats = {
 	attack: 0,
 	sabotage: 0,
 	pointValue: 0,
-	image: placeholderImg,
+	image: earthArtifact,
 	sabCard: sabotage1,
 	element: "object",
 	effect: [null, null, null]
-}
+};
 
 const orbTraderStats = {
 	name: "Orb Trader",
@@ -2268,11 +2268,11 @@ const orbTraderStats = {
 	attack: 0,
 	sabotage: 0,
 	pointValue: 0,
-	image: placeholderImg,
+	image: mortemus,
 	sabCard: sabotage1,
 	element: "object",
-	effect: [null, null, null]
-}
+	effect: ["orbTrader", null, null]
+};
 
 const runeFragmentStats = {
 	name: "Earth Rune Fragment",
@@ -2284,7 +2284,7 @@ const runeFragmentStats = {
 	sabCard: sabotage1,
 	element: "object",
 	effect: [null, null, null]
-}
+};
 
 var smallGolemArray = [earthGolemStats, fireGolemStats, waterGolemStats, windGolemStats];
 var bigGolemArray = [desertGolemStats, lavaGolemStats, mudGolemStats, stormGolemStats];
@@ -2397,7 +2397,7 @@ function levelEarthTempleDistribution(randEnemyNum){
 		}else{}
 	}else{
 		if(lastDoorway === "Empty Door"){
-			if(randEnemyNum < 125){
+			/*if(randEnemyNum < 125){
 				createEnemy = wobbledukStats;
 			}else if(randEnemyNum >= 125 && randEnemyNum < 250){
 				createEnemy = primtreeStats;
@@ -2405,9 +2405,16 @@ function levelEarthTempleDistribution(randEnemyNum){
 				createEnemy = steedStats;
 			}else{
 				createEnemy = stoneStrider;
-			}
+			}*/
+			createEnemy = orbTraderStats;
 		}else if(lastDoorway === "Dirt Door" || lastDoorway === "Old Door"){
-			createEnemy = earthStalactiteStats;
+			if(randEnemyNum < 250){
+				createEnemy = earthStalactiteStats;
+			}else if(randEnemyNum < 450) {
+				createEnemy = treasureChestStats;
+			}else{
+				createEnemy = earthGolemStats;
+			}
 		}else if(lastDoorway === "Boulder Door" || lastDoorway === "Iron Door" || lastDoorway === "Vine Door" || lastDoorway === "Water Door"){
 			createEnemy = treasureChestStats;
 		}else if(lastDoorway === "Magic Door" || lastDoorway === "Rune Door"){
@@ -2994,7 +3001,7 @@ var tutorialDeckSave;
 var recruitArray = [];
 var collectionArray = [];
 var cardFrames = [];
-var elementOrbs = [];
+var elementOrbs = [fire, fire, earth, earth, water, wind];
 var multiplier = 1;
 var allies = [];
 var meterArray = [meter0, meter1, meter2, meter3, meter4, meter5, meter6, meter7, meter8, meter9, meter10, meter11, meter12];
@@ -4706,7 +4713,8 @@ class GameScreen extends React.Component {
 			noAbility: false,
 			showRewards: false,
 			enemyHeal: 0,
-			templeHealth: 100
+			templeHealth: 100,
+			orbTraderScreen: false
 
 		}
 		this.playerAttack = this.playerAttack.bind(this);
@@ -4732,6 +4740,7 @@ class GameScreen extends React.Component {
 		this.updateSabotageNum = this.updateSabotageNum.bind(this);
 		this.rewardsClick = this.rewardsClick.bind(this);
 		this.checkSabCard = this.checkSabCard.bind(this);
+		this.showOrbTraderScreen = this.showOrbTraderScreen.bind(this);
 	}
 	componentDidMount() {
 		var audioEl;
@@ -4869,6 +4878,17 @@ class GameScreen extends React.Component {
 	}
 	handleTutorialClick() {
 		document.getElementById("tutorialMessageBox").style.display="none";
+	}
+	showOrbTraderScreen() {
+		var toggleScreen;
+		if(this.state.orbTraderScreen === false){
+			toggleScreen = true;
+		}else{
+			toggleScreen = false;
+		}
+		this.setState({
+			orbTraderScreen: toggleScreen
+		});
 	}
 	updateEnemySab() {
 		var enemySabs = [];
@@ -6622,10 +6642,11 @@ class GameScreen extends React.Component {
 						<div className="infoButton" id="infoButton" onClick={this.props.toggleInfoScreen}>?</div>
 					</div>
 				</div>
+				{this.state.orbTraderScreen ? <OrbTraderScreen showOrbTraderScreen={this.showOrbTraderScreen} /> : null }
 				<div className="row" id="topRow">
 					<div className="col-xs-12">
 						<div className="row" id="enemySide">
-							<EnemySide error={this.props.error} switchEnemyArray={this.props.switchEnemyArray} prizeChoice={this.props.prizeChoice} aux={this.props.aux} gainSupGemReward={this.props.gainSupGemReward} gainSupCardReward={this.props.gainSupCardReward} status={this.state.status} updateEnemySab={this.updateEnemySab} bossCleanse={this.state.bossCleanse} cardDisplay={this.state.cardDisplay} state={this.state} sab={this.state.enemySab} heroDraw={this.heroDraw} />
+							<EnemySide error={this.props.error} showOrbTraderScreen={this.showOrbTraderScreen} switchEnemyArray={this.props.switchEnemyArray} prizeChoice={this.props.prizeChoice} aux={this.props.aux} gainSupGemReward={this.props.gainSupGemReward} gainSupCardReward={this.props.gainSupCardReward} status={this.state.status} updateEnemySab={this.updateEnemySab} bossCleanse={this.state.bossCleanse} cardDisplay={this.state.cardDisplay} state={this.state} sab={this.state.enemySab} heroDraw={this.heroDraw} />
 						</div>
 						<div className="row" id="tutorialMessageBox">
 							<div className="col-xs-12" id="tutorialMessageCol">
@@ -6658,6 +6679,170 @@ class GameScreen extends React.Component {
 								<Character supportAction={this.supportAction} schemePower={this.state.schemePower} supportSlot1={this.state.supportSlot1} supportSlot2={this.state.supportSlot2} toggleRecruitState={this.toggleRecruitState} influence={this.props.influence} stormlight={this.state.stormlight} recruitAction={this.recruitAction} attack={this.props.attack} int={this.state.playerInt} playerShield={this.state.playerShield} heroHp={this.props.heroHp} equipItem={this.equipItem} heroDraw={this.heroDraw} heroPosition={this.state.heroPosition} cards={this.state.cards} chooseCard={this.chooseCard} equipment={this.props.equipment} cardDisplay={this.state.cardDisplay} />
 							</div>
 						</div>
+					</div>
+				</div>
+			</div>
+		)
+	}
+}
+
+class OrbTraderScreen extends React.Component {
+	constructor(props) {
+	    super(props);
+	    this.state = {
+	      orbCount: [0,0,0,0],
+	      trade: [0,0],
+	      orbs: [null, null],
+	      number: [null, null],
+	      text: [null, null]
+	    }
+	    this.tradingClick = this.tradingClick.bind(this);
+	    this.selectOrb = this.selectOrb.bind(this);
+	    this.confirmTrade = this.confirmTrade.bind(this);
+	}
+	componentDidMount(){
+		var orbCount = [0,0,0,0];
+		for(var i=0; i<elementOrbs.length; i++){
+			if(elementOrbs[i] === earth){
+				orbCount[0] ++;
+			}else if(elementOrbs[i] === fire){
+				orbCount[1] ++;
+			}else if(elementOrbs[i] === water){
+				orbCount[2] ++;
+			}else if(elementOrbs[i] === wind){
+				orbCount[3] ++;
+			}
+		}
+		this.setState({
+			orbCount: orbCount
+		});
+	}
+	tradingClick(option){
+		var trade = this.state.trade;
+		console.log(this.state.trade);
+		console.log(this.state.orbCount);
+		console.log(this.state.number);
+		if(option === "playerUp"){
+			if((this.state.trade[0] + 2) <= (this.state.orbCount[this.state.number[0]])){
+				console.log("hey");
+				trade[0] = trade[0] + 2;
+			}else{}
+		}else if(option === "playerDown"){
+			if(trade[0] > 0){
+				trade[0] = trade[0] - 2;
+			}else{}
+		}else if(option === "traderUp"){
+			trade[1]++;
+		}else if(option === "traderDown"){
+			if(trade[1] > 0){
+				trade[1]--;
+			}else{}
+		}
+		this.setState({
+			trade: trade
+		});
+	}
+	selectOrb(option, type, number, text){
+		var orbs = this.state.orbs;
+		var string = this.state.text;
+		var trade = this.state.trade;
+		var position = this.state.number;
+		if(type === this.state.orbs[0] || option === "trader"){
+
+		}else{
+			trade[0] = 0;
+		}
+		if(option === "player"){
+			orbs[0] = type;
+			string[0] = text;
+			position[0] = number;
+		}else if(option === "trader"){
+			orbs[1] = type;
+			string[1] = text;
+			position[1] = number;
+		}
+		this.setState({
+			orbs: orbs,
+			number: position,
+			text: string,
+			trade: trade
+		}, () =>{
+			const x = document.getElementsByClassName("traderOrb");
+			for (var i=0; i < x.length; i ++ ){
+				x[i].classList.remove("orbSelected");
+			}
+			for(var i=0; i<this.state.orbs.length; i++){
+				if(i===0){
+					if(this.state.orbs[0] === null){
+
+					}else{
+						document.getElementById(this.state.text[0] + "OrbP").classList.add("orbSelected");
+					}
+				}else if(i===1){
+					if(this.state.orbs[1] === null){
+
+					}else{
+						document.getElementById(this.state.text[1] + "OrbT").classList.add("orbSelected");
+					}
+				}
+			}
+		});
+	}
+	confirmTrade(){
+		if(this.state.trade[0] === (this.state.trade[1] * 2) && this.state.orbs[0] != this.state.orbs[1]){
+			for(var i=0; i<this.state.trade[0]; i++){
+				var usedElement = elementOrbs.indexOf(this.state.orbs[0]);
+				elementOrbs.splice(usedElement, 1);
+			}
+			for(var i=0; i<this.state.trade[1]; i++){
+				elementOrbs.push(this.state.orbs[1]);
+			}
+			console.log(elementOrbs);
+		}else{}
+		this.props.showOrbTraderScreen();
+	}
+	render() {
+		return (
+			<div className="row" id="orbTraderScreen">
+				<div className="col-xs-12">
+					<div className="row">
+						<div className="col-xs-8" id="orbTraderText">Orbs for trade! If you give me two orbs of the same type, I'll give you one of another.</div>
+						<div className="col-xs-4"><img src={mortemus} id="orbTraderImg" alt="mortemus" /></div>
+					</div>
+					<div className="row">
+						<div className="col-xs-4" id="playerOrbs">
+							<div className="row">
+								<div className="orbSelection col-xs-6"><img src={earth} className="traderOrb" id="earthOrbP" alt="earthOrb" onClick={() => {this.selectOrb("player", earth, 0, "earth")}} /><div className="orbCount" id="earthCount">{this.state.orbCount[0]}</div></div>
+								<div className="orbSelection col-xs-6"><img src={fire} className="traderOrb" id="fireOrbP" alt="fireOrb" onClick={() => {this.selectOrb("player", fire, 1, "fire")}} /><div className="orbCount" id="fireCount">{this.state.orbCount[1]}</div></div>
+							</div>
+							<div className="row">
+								<div className="orbSelection col-xs-6"><img src={water} className="traderOrb" id="waterOrbP" alt="waterOrb" onClick={() => {this.selectOrb("player", water, 2, "water")}}/><div className="orbCount" id="waterCount">{this.state.orbCount[2]}</div></div>
+								<div className="orbSelection col-xs-6"><img src={wind} className="traderOrb" id="windOrbP" alt="windOrb" onClick={() => {this.selectOrb("player", wind, 3, "wind")}}/><div className="orbCount" id="windCount">{this.state.orbCount[3]}</div></div>
+							</div>
+						</div>
+						<div className="col-xs-2">
+							<div className="row tradeIcon" onClick={() => {this.tradingClick("playerUp")}}>+</div>
+							<div className="row">{this.state.trade[0]}</div>
+							<div className="row tradeIcon" onClick={() => {this.tradingClick("playerDown")}}>-</div>
+						</div>
+						<div className="col-xs-2">
+							<div className="row tradeIcon" onClick={() => {this.tradingClick("traderUp")}}>+</div>
+							<div className="row">{this.state.trade[1]}</div>
+							<div className="row tradeIcon" onClick={() => {this.tradingClick("traderDown")}}>-</div>
+						</div>
+						<div className="col-xs-4" id="traderOrbs">
+							<div className="row">
+								<div className="orbSelection col-xs-6"><img src={earth} className="traderOrb" id="earthOrbT" alt="earthOrb" onClick={() => {this.selectOrb("trader", earth, 0, "earth")}}/></div>
+								<div className="orbSelection col-xs-6"><img src={fire} className="traderOrb" id="fireOrbT" alt="fireOrb" onClick={() => {this.selectOrb("trader", fire, 1, "fire")}}/></div>
+							</div>
+							<div className="row">
+								<div className="orbSelection col-xs-6"><img src={water} className="traderOrb" id="waterOrbT" alt="waterOrb" onClick={() => {this.selectOrb("trader", water, 2, "water")}}/></div>
+								<div className="orbSelection col-xs-6"><img src={wind} className="traderOrb" id="windOrbT" alt="windOrb" onClick={() => {this.selectOrb("trader", wind, 3, "wind")}}/></div>
+							</div>
+						</div>
+					</div>
+					<div className="row">
+						<div className="col-xs-offset-3 col-xs-4 coolButton" onClick={this.confirmTrade}>Confirm</div>
 					</div>
 				</div>
 			</div>
@@ -7073,7 +7258,7 @@ class EnemySide extends React.Component {
 		const numberOfBadGuys = enemyArray;
 		const listItems = numberOfBadGuys.map((badGuy, index) => {
 			if(badGuy.hp > 0 || badGuy.effect[0] === "final" || badGuy.effect[0] === "secret" || badGuy.element === "doorway"){
-				return <Enemy key={index} id={index} aux={this.props.aux} error={this.props.error} switchEnemyArray={this.props.switchEnemyArray} prizeChoice={this.props.prizeChoice} status={this.props.status[index]} bossCleanse={this.props.bossCleanse} heroDraw={this.props.heroDraw} cardDisplay={this.props.cardDisplay} enemyId={"badGuy" + index} name={badGuy.name} eHp={badGuy.hp} attack={badGuy.attack} updateEnemySab={this.props.updateEnemySab} sab={this.props.sab[index]} sabCard={badGuy.sabCard} image={badGuy.image} element={badGuy.element} effect={badGuy.effect} />
+				return <Enemy key={index} id={index} aux={this.props.aux} error={this.props.error} showOrbTraderScreen={this.props.showOrbTraderScreen} switchEnemyArray={this.props.switchEnemyArray} prizeChoice={this.props.prizeChoice} status={this.props.status[index]} bossCleanse={this.props.bossCleanse} heroDraw={this.props.heroDraw} cardDisplay={this.props.cardDisplay} enemyId={"badGuy" + index} name={badGuy.name} eHp={badGuy.hp} attack={badGuy.attack} updateEnemySab={this.props.updateEnemySab} sab={this.props.sab[index]} sabCard={badGuy.sabCard} image={badGuy.image} element={badGuy.element} effect={badGuy.effect} />
 			}else{
 				return <Placeholder key={index} id={index} />
 			}
@@ -7442,6 +7627,10 @@ class Enemy extends React.Component {
 			lastDoorway = this.props.name;
 			this.props.switchEnemyArray();
 			stageComplete ++;
+		}else if(this.props.image === mortemus){
+			this.props.showOrbTraderScreen();
+		}else if(this.props.image === cardPrize && this.props.effect[0] === "final"){
+			console.log("gainCardPrize");
 		}else{
 			this.props.heroDraw();
 		}
