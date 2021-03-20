@@ -252,6 +252,22 @@ import earthStalactite from './assets/templePath/earthStalactite.gif';
 import fireStalactite from './assets/templePath/fireStalactite.gif';
 import waterStalactite from './assets/templePath/waterStalactite.gif';
 import windStalactite from './assets/templePath/windStalactite.gif';
+import prisonOrbBlank from './assets/templePath/prisonOrbBlank.gif';
+import prisonOrbE from './assets/templePath/prisonOrbE.gif';
+import prisonOrbEF from './assets/templePath/prisonOrbEF.gif';
+import prisonOrbEFI from './assets/templePath/prisonOrbEFI.gif';
+import prisonOrbEFW from './assets/templePath/prisonOrbEFW.gif';
+import prisonOrbEFWI from './assets/templePath/prisonOrbEFWI.gif';
+import prisonOrbEI from './assets/templePath/prisonOrbEI.gif';
+import prisonOrbEW from './assets/templePath/prisonOrbEW.gif';
+import prisonOrbEWI from './assets/templePath/prisonOrbEWI.gif';
+import prisonOrbF from './assets/templePath/prisonOrbF.gif';
+import prisonOrbFI from './assets/templePath/prisonOrbFI.gif';
+import prisonOrbFW from './assets/templePath/prisonOrbFW.gif';
+import prisonOrbFWI from './assets/templePath/prisonOrbFWI.gif';
+import prisonOrbI from './assets/templePath/prisonOrbI.gif';
+import prisonOrbW from './assets/templePath/prisonOrbW.gif';
+import prisonOrbWI from './assets/templePath/prisonOrbWI.gif';
 import './index.css';
 
 var player;
@@ -259,6 +275,21 @@ var enemy0Slot = {};
 var enemy1Slot = {};
 var enemy2Slot = {};
 var createEnemy;
+var prisonOrbBlank2 = prisonOrbBlank;
+var prisonOrbE2 = prisonOrbE;
+var prisonOrbEF2 = prisonOrbEF;
+var prisonOrbEFI2 = prisonOrbEFI;
+var prisonOrbEFWI2 = prisonOrbEFWI;
+var prisonOrbEI2 = prisonOrbEI;
+var prisonOrbEW2 = prisonOrbEW;
+var prisonOrbEWI2 = prisonOrbEWI;
+var prisonOrbF2 = prisonOrbF;
+var prisonOrbFI2 = prisonOrbFI;
+var prisonOrbFW2 = prisonOrbFW;
+var prisonOrbFWI2 = prisonOrbFWI;
+var prisonOrbI2 = prisonOrbI;
+var prisonOrbW2 = prisonOrbW;
+var prisonOrbWI2 = prisonOrbWI;
 
 var storyText = [
 	{level: "first", timing: "Start", text: "Youber awakens from a terrible dream. His home is dark and empty. Calling out, he soon realizes that he is alone. His family is gone. It finally happened. Youber grabs his grandfather's magic sack and walks out into the beyond."},
@@ -2239,7 +2270,7 @@ const waterDoorStats = {
 };
 
 const earthStalactiteStats = {
-	name: "",
+	name: "Stalactite",
 	hp: 10,
 	attack: 0,
 	sabotage: 0,
@@ -2247,7 +2278,7 @@ const earthStalactiteStats = {
 	image: earthStalactite,
 	sabCard: sabotage1,
 	element: "object",
-	effect: [null, null, null]
+	effect: ["drop", "orbs", null]
 };
 
 const earthArtifactStats = {
@@ -2281,6 +2312,18 @@ const runeFragmentStats = {
 	sabotage: 0,
 	pointValue: 0,
 	image: placeholderImg,
+	sabCard: sabotage1,
+	element: "object",
+	effect: [null, null, null]
+};
+
+const prisonOrbStats = {
+	name: "Prison Orb",
+	hp: 10,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: empty,
 	sabCard: sabotage1,
 	element: "object",
 	effect: [null, null, null]
@@ -2406,7 +2449,7 @@ function levelEarthTempleDistribution(randEnemyNum){
 			}else{
 				createEnemy = stoneStrider;
 			}*/
-			createEnemy = orbTraderStats;
+			createEnemy = prisonOrbStats;
 		}else if(lastDoorway === "Dirt Door" || lastDoorway === "Old Door"){
 			if(randEnemyNum < 250){
 				createEnemy = earthStalactiteStats;
@@ -3037,6 +3080,7 @@ var elementKeys = [false, false, false, false];
 var elementScrolls = [false, false, false, false, false, false, false, false];
 var secretArtifacts = [true, false, false, false, false, false, false, false];
 var equippedArtifact;
+var prisonOrbImg = [true, false, true, false];
 
 function shuffle(a) {
     for (let i = a.length; i; i--) {
@@ -4890,6 +4934,27 @@ class GameScreen extends React.Component {
 			orbTraderScreen: toggleScreen
 		});
 	}
+	checkPrisonOrbImg(){
+		var imgName = "prisonOrb";
+		if(prisonOrbImg[0] === true){
+			imgName = imgName + "E";
+		}else{}
+		if(prisonOrbImg[1] === true){
+			imgName = imgName + "F";
+		}else{}
+		if(prisonOrbImg[2] === true){
+			imgName = imgName + "W";
+		}else{}
+		if(prisonOrbImg[3] === true){
+			imgName = imgName + "I";
+		}else{}
+		if(prisonOrbImg[0] === false && prisonOrbImg[1] === false && prisonOrbImg[2] === false && prisonOrbImg[3] === false){
+			imgName = imgName + "Blank"
+		}else{}
+		var actualImg = eval(imgName + "2");
+		document.getElementById("1image").classList.add("prisonOrbImg");
+		document.getElementById("1image").style.backgroundImage = "url('" + actualImg + "')";
+	}
 	updateEnemySab() {
 		var enemySabs = [];
 		if(enemyArray.length === 1){
@@ -6169,13 +6234,27 @@ class GameScreen extends React.Component {
 			if(enemyArray[i].name === ""){
 
 			}else{
+				console.log(enemyArray);
+				console.log(enemyArray[i].effect[0]);
 				if(enemyArray[i].effect[0] === "stage" && enemyArray[i].hp === 0){
 					var nextStage = enemyArray[i].effect[1];
 					var newEnemy = new EnemyCon(nextStage.name, nextStage.hp, nextStage.attack, nextStage.sabotage, nextStage.pointValue, nextStage.image, nextStage.sabCard, nextStage.element, nextStage.supCard, nextStage.effect);
 					enemyArray[i] = newEnemy;
 				}else if(enemyArray[i].effect[0] === "final" && enemyArray[i].hp === 0){
 					enemyArray[i].image = enemyArray[i].effect[1];
-				}else if(secrets === true && enemyArray[i].hp === 0){
+				}else if(enemyArray[i].element === "doorway" && enemyArray[i].hp === 0){
+					enemyArray[i].image = emptyDoor;
+				}else if(enemyArray[i].effect[0] === "drop" && enemyArray[i].hp === 0){
+					for(var i=0; i<2; i++){
+						if(enemyArray[i].effect[1] === "orbs"){
+							console.log("free orbs");
+							var randElement = [earth, fire, water, wind];
+							var randNum = Math.floor(Math.random() * 4);
+							this.props.gainSupGemReward(randElement[randNum]);
+						}else{}
+					}
+				}else{}
+				if(secrets === true && enemyArray[i].hp === 0){
 					var randNum = Math.floor(Math.random() * 101);
 					if(randNum >= 90){
 						secrets = false;
@@ -6183,9 +6262,7 @@ class GameScreen extends React.Component {
 						var newEnemy = new EnemyCon(newSecret.name, newSecret.hp, newSecret.attack, newSecret.sabotage, newSecret.pointValue, newSecret.image, newSecret.sabCard, newSecret.element, newSecret.supCard, newSecret.effect);
 						enemyArray[i] = newEnemy;
 					}else{}
-				}else if(enemyArray[i].element === "doorway" && enemyArray[i].hp === 0){
-					enemyArray[i].image = emptyDoor;
-				}else{}
+				}
 			}
 		}
 		this.setState({
@@ -6646,7 +6723,7 @@ class GameScreen extends React.Component {
 				<div className="row" id="topRow">
 					<div className="col-xs-12">
 						<div className="row" id="enemySide">
-							<EnemySide error={this.props.error} showOrbTraderScreen={this.showOrbTraderScreen} switchEnemyArray={this.props.switchEnemyArray} prizeChoice={this.props.prizeChoice} aux={this.props.aux} gainSupGemReward={this.props.gainSupGemReward} gainSupCardReward={this.props.gainSupCardReward} status={this.state.status} updateEnemySab={this.updateEnemySab} bossCleanse={this.state.bossCleanse} cardDisplay={this.state.cardDisplay} state={this.state} sab={this.state.enemySab} heroDraw={this.heroDraw} />
+							<EnemySide error={this.props.error} checkPrisonOrbImg={this.checkPrisonOrbImg} showOrbTraderScreen={this.showOrbTraderScreen} switchEnemyArray={this.props.switchEnemyArray} prizeChoice={this.props.prizeChoice} aux={this.props.aux} gainSupGemReward={this.props.gainSupGemReward} gainSupCardReward={this.props.gainSupCardReward} status={this.state.status} updateEnemySab={this.updateEnemySab} bossCleanse={this.state.bossCleanse} cardDisplay={this.state.cardDisplay} state={this.state} sab={this.state.enemySab} heroDraw={this.heroDraw} />
 						</div>
 						<div className="row" id="tutorialMessageBox">
 							<div className="col-xs-12" id="tutorialMessageCol">
@@ -6822,12 +6899,12 @@ class OrbTraderScreen extends React.Component {
 						</div>
 						<div className="col-xs-2">
 							<div className="row tradeIcon" onClick={() => {this.tradingClick("playerUp")}}>+</div>
-							<div className="row">{this.state.trade[0]}</div>
+							<div className="row tradeIcon">{this.state.trade[0]}</div>
 							<div className="row tradeIcon" onClick={() => {this.tradingClick("playerDown")}}>-</div>
 						</div>
 						<div className="col-xs-2">
 							<div className="row tradeIcon" onClick={() => {this.tradingClick("traderUp")}}>+</div>
-							<div className="row">{this.state.trade[1]}</div>
+							<div className="row tradeIcon">{this.state.trade[1]}</div>
 							<div className="row tradeIcon" onClick={() => {this.tradingClick("traderDown")}}>-</div>
 						</div>
 						<div className="col-xs-4" id="traderOrbs">
@@ -7258,7 +7335,7 @@ class EnemySide extends React.Component {
 		const numberOfBadGuys = enemyArray;
 		const listItems = numberOfBadGuys.map((badGuy, index) => {
 			if(badGuy.hp > 0 || badGuy.effect[0] === "final" || badGuy.effect[0] === "secret" || badGuy.element === "doorway"){
-				return <Enemy key={index} id={index} aux={this.props.aux} error={this.props.error} showOrbTraderScreen={this.props.showOrbTraderScreen} switchEnemyArray={this.props.switchEnemyArray} prizeChoice={this.props.prizeChoice} status={this.props.status[index]} bossCleanse={this.props.bossCleanse} heroDraw={this.props.heroDraw} cardDisplay={this.props.cardDisplay} enemyId={"badGuy" + index} name={badGuy.name} eHp={badGuy.hp} attack={badGuy.attack} updateEnemySab={this.props.updateEnemySab} sab={this.props.sab[index]} sabCard={badGuy.sabCard} image={badGuy.image} element={badGuy.element} effect={badGuy.effect} />
+				return <Enemy key={index} id={index} aux={this.props.aux} error={this.props.error} checkPrisonOrbImg={this.props.checkPrisonOrbImg} showOrbTraderScreen={this.props.showOrbTraderScreen} gainSupCardReward={this.props.gainSupCardReward} switchEnemyArray={this.props.switchEnemyArray} prizeChoice={this.props.prizeChoice} status={this.props.status[index]} bossCleanse={this.props.bossCleanse} heroDraw={this.props.heroDraw} cardDisplay={this.props.cardDisplay} enemyId={"badGuy" + index} name={badGuy.name} eHp={badGuy.hp} attack={badGuy.attack} updateEnemySab={this.props.updateEnemySab} sab={this.props.sab[index]} sabCard={badGuy.sabCard} image={badGuy.image} element={badGuy.element} effect={badGuy.effect} />
 			}else{
 				return <Placeholder key={index} id={index} />
 			}
@@ -7593,6 +7670,9 @@ class Enemy extends React.Component {
 	    });
 	}
 	componentDidMount(){
+		if(this.props.name === "Prison Orb"){
+			this.props.checkPrisonOrbImg();
+		}else{}
 		this.props.updateEnemySab();
 		var enemyEffect;
 		var object = true;
@@ -7630,7 +7710,48 @@ class Enemy extends React.Component {
 		}else if(this.props.image === mortemus){
 			this.props.showOrbTraderScreen();
 		}else if(this.props.image === cardPrize && this.props.effect[0] === "final"){
-			console.log("gainCardPrize");
+			var typeCards = [];
+			var cardNum = 1;
+				for(var i=1; i<21; i++){
+					var randElement = ["neutral", "earth", "fire", "water", "wind"];
+					var randNum = Math.floor(Math.random() * 5);
+					var typeCard = eval(randElement[randNum] + i);
+					typeCards.push(typeCard);
+				}
+				for(var i=0; i<cardNum; i++){
+					var newCard;
+					for(var j=0; j<typeCards.length; j++){
+						shuffle(typeCards);
+						var randNum = Math.floor(Math.random() * 101);
+						if(randNum < 50){
+							if(typeCards[j].rarity === 1){
+								if((typeCards[j].ownedNum + typeCards[j].deckNum) >=4){
+								}else{
+									newCard = typeCards[j];
+									break;
+								}
+							}else{}
+						}else if(randNum > 50 && randNum < 85){
+							if(typeCards[j].rarity === 2){
+								if((typeCards[j].ownedNum + typeCards[j].deckNum) >=4){
+								}else{
+									newCard = typeCards[j];
+									break;
+								}
+							}else{}
+						}else{
+							if(typeCards[j].rarity === 3){
+								if((typeCards[j].ownedNum + typeCards[j].deckNum) >=4){
+								}else{
+									newCard = typeCards[j];
+									break;
+								}
+							}else{}
+						}
+					}
+					this.props.gainSupCardReward(newCard);
+				}
+				enemyArray[1] = new EnemyCon("", 0, 0, 0, 0, null, null, "box", null, [null, null, null]);
 		}else{
 			this.props.heroDraw();
 		}
