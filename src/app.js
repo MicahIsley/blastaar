@@ -2278,7 +2278,7 @@ const earthStalactiteStats = {
 	image: earthStalactite,
 	sabCard: sabotage1,
 	element: "object",
-	effect: ["drop", "orbs", null]
+	effect: ["drop", "orbs", true]
 };
 
 const earthArtifactStats = {
@@ -2290,7 +2290,7 @@ const earthArtifactStats = {
 	image: earthArtifact,
 	sabCard: sabotage1,
 	element: "object",
-	effect: [null, null, null]
+	effect: ["artifact", null, null]
 };
 
 const orbTraderStats = {
@@ -2430,8 +2430,18 @@ function levelEarthTempleDistribution(randEnemyNum){
 				createEnemy = earthMarkedDoorStats;
 			}
 		}else if(lastDoorway === "Magic Door" || lastDoorway === "Rune Door"){
-			if(randEnemyNum < 1){
-				createEnemy = emptyDoorStats;
+			if(randEnemyNum < 20){
+				createEnemy = oldDoorStats;
+			}else if(randEnemyNum >= 20 && randEnemyNum < 40){
+				createEnemy = dirtDoorStats;
+			}else if(randEnemyNum >= 40 && randEnemyNum < 90){
+				createEnemy = boulderDoorStats;
+			}else if(randEnemyNum >= 90 && randEnemyNum < 140){
+				createEnemy = vineDoorStats;
+			}else if(randEnemyNum >= 140 && randEnemyNum < 240){
+				createEnemy = magicDoorStats;
+			}else if(randEnemyNum >= 240 && randEnemyNum < 340){
+				createEnemy = runeDoorStats;
 			}else{
 				createEnemy = earthMarkedDoorStats;
 			}
@@ -2447,21 +2457,43 @@ function levelEarthTempleDistribution(randEnemyNum){
 			}else if(randEnemyNum >= 250 && randEnemyNum < 375){
 				createEnemy = steedStats;
 			}else{
-				createEnemy = stoneStrider;
+				createEnemy = stoneStriderStats;
 			}*/
 			createEnemy = prisonOrbStats;
 		}else if(lastDoorway === "Dirt Door" || lastDoorway === "Old Door"){
-			if(randEnemyNum < 250){
+			/*if(randEnemyNum < 250){
 				createEnemy = earthStalactiteStats;
-			}else if(randEnemyNum < 450) {
+			}else if(randEnemyNum >= 250 && randEnemyNum < 450) {
 				createEnemy = treasureChestStats;
 			}else{
 				createEnemy = earthGolemStats;
-			}
+			}*/
+			createEnemy = prisonOrbStats;
 		}else if(lastDoorway === "Boulder Door" || lastDoorway === "Iron Door" || lastDoorway === "Vine Door" || lastDoorway === "Water Door"){
-			createEnemy = treasureChestStats;
+			/*if(randEnemyNum < 100){
+				createEnemy = earthStalactiteStats;
+			}else if(randEnemyNum >= 100 && randEnemyNum < 200) {
+				createEnemy = treasureChestStats;
+			}else if(randEnemyNum >= 200 && randEnemyNum < 300) {
+				createEnemy = earthGolemStats;
+			}else if(randEnemyNum >= 300 && randEnemyNum < 450) {
+				createEnemy = orbTraderStats;
+			}else{
+				createEnemy = prisonOrbStats;
+			}*/
+			createEnemy = prisonOrbStats;
 		}else if(lastDoorway === "Magic Door" || lastDoorway === "Rune Door"){
-			createEnemy = orbTraderStats;
+			if(randEnemyNum < 100){
+				createEnemy = earthStalactiteStats;
+			}else if(randEnemyNum >= 100 && randEnemyNum < 200) {
+				createEnemy = treasureChestStats;
+			}else if(randEnemyNum >= 200 && randEnemyNum < 300) {
+				createEnemy = earthGolemStats;
+			}else if(randEnemyNum >= 300 && randEnemyNum < 450) {
+				createEnemy = orbTraderStats;
+			}else{
+				createEnemy = prisonOrbStats;
+			}
 		}else if(lastDoorway === "Earth Marked Door"){
 			createEnemy = earthArtifactStats;
 		}else{}
@@ -3044,11 +3076,11 @@ var tutorialDeckSave;
 var recruitArray = [];
 var collectionArray = [];
 var cardFrames = [];
-var elementOrbs = [fire, fire, earth, earth, water, wind];
+var elementOrbs = [fire, fire, fire, fire];
 var multiplier = 1;
 var allies = [];
 var meterArray = [meter0, meter1, meter2, meter3, meter4, meter5, meter6, meter7, meter8, meter9, meter10, meter11, meter12];
-var levelsBeaten = ["earth", "earth"];
+var levelsBeaten = ["earth", "earth", "earth"];
 var keyWordList = [{id: "finesse", keyword: "Finesse", description: "Change power by X to exactly kill an enemy"}, {id: "ward", keyword: "Ward", description: "Ward blocks enemy damage and sabotages."}, {id: "purge", keyword: "Purge", description: "Removes an enemy sabotage from your deck."}, {id: "weaken", keyword: "Weaken", description: "Reduces an enemies strength"}, {id: "exhausted", keyword: "Exhausted", description: "Enemies attack twice in a row"}, {id:"stun", keyword: "Stun", description: "Stunned enemies miss their next attack"}, {id: "poison", keyword: "Poison", description: "Damage delt at the end of the turn"}, {id: "confuse", keyword: "Confuse", description: "Confused enemies attack a random enemy"}, {id: "grow", keyword: "Grow", description: "The card gains power each time it is used"}, /*{id: "scheme", keyword: "Scheme", description: "Schemes are played to one of your support areas and then are charged up over time providing an effect once completed"},*/ {id: "heal", keyword: "Heal", description: "Restore health to your character"}, {id: "reclaim", keyword: "Reclaim", description: "Increase the power of all enemy sabotages in your deck"}, {id: "int", keyword: "Draw", description: "How many extra cards your draw your next turn."}, {id: "def", keyword: "Ongoing Ward", description: "The number of shields you have at the start of every turn."}, {id: "str", keyword: "Magic", description: "Added damage to each attack"}, {id: "rummage", keyword: "Rummage", description: "Switch a card with a random card from your deck."}, {id: "multiply", keyword: "Multiply", description: "Multiply your damage by X."}, {id: "decoy", keyword: "Decoy", description: "Avoid all sabotages this turn."}, {id: "energy", keyword: "Energy", description: "Gain energy to use for other purposes."}, {id: "next", keyword: "Next", description: "Add power to next attack."}, {id: "add", keyword: "Add", description: "Shuffle a number of new cards into your deck."}, {id: "remove", keyword: "Remove", description: "The card gets removed from your deck after you select it"}, {id: "extra", keyword: "Extra", description: "Attack again after this one."}, /*{id: "deplete", keyword: "Deplete", description: "Remove a sabotage from the selected enemy."},*/ {id: "factionBoost", keyword: "Damage Boost", description: "Gains power for each card of the same type played."}, /*{id: "spooky", keyword: "Spooky", description: "Increase the chances of getting a creature's card."}, {id: "transform", keyword: "Transform", description: "Turn an emeny sabotage in your deck into another card."},*/ {id: "all", keyword: "All", description: "Deal damage to all enemies."}, {id: "clutch", keyword: "Clutch", description: "Gains extra effects when your HP is 15 or lower."}, {id: "random", keyword: "Random", description: "One of two effects."}, {id: "stash", keyword: "Energy Stash", description: "Gains extra effects when your energy is 5 or more."}, {id: "treasure", keyword: "Treasure", description: "Add gems and/or cards to your rewards."}, {id: "capture", keyword: "Capture", description: "Increase the change of gaining targeted monster's card."}, {id: "hlBoost", keyword: "Heal Boost", description: "Heal 1 for each card of the same element you've played."}, 
 {id: "wrdBoost", keyword: "Ward Boost", description: "Gain 1 ward for each card of the same element you've played."}, {id: "supBurning", keyword: "Burning", description: "Deals damage at the end of every turn."}, {id: "supGems", keyword: "Gain Gems", description: "Add gems to your rewards."}, {id: "supCards", keyword: "Gain Cards", description: "Add cards to your rewards."}, {id: "supBoost", keyword: "Boost", description: "Increases the power of that type."}];
 var finesseAttack; 
@@ -3075,12 +3107,12 @@ var stormGem = storm;
 var startingLevel = null;
 var patience = false;
 var secrets = false;
-var unlockedSecrets = [true, false, false, false, false, false, false, false];
+var unlockedSecrets = [false, false, false, false, false, false, false, false];
 var elementKeys = [false, false, false, false];
 var elementScrolls = [false, false, false, false, false, false, false, false];
-var secretArtifacts = [true, false, false, false, false, false, false, false];
+var secretArtifacts = [false, false, false, false, false, false, false, false];
 var equippedArtifact;
-var prisonOrbImg = [true, false, true, false];
+var prisonOrbImg = [false, false, false, false];
 
 function shuffle(a) {
     for (let i = a.length; i; i--) {
@@ -3245,7 +3277,7 @@ class GameScreenHub extends React.Component {
 							var data =(user.val());
 							if(data.name === undefined){
 							}else{
-								userSaveArray.push({name: data.name, collectionArray: data.collectionArray, levelsBeaten: data.levels, score: data.score, elementOrbs: data.elementOrbs, hp: data.hp});
+								userSaveArray.push({name: data.name, collectionArray: data.collectionArray, levelsBeaten: data.levels, score: data.score, elementOrbs: data.elementOrbs, hp: data.hp, elementScrolls: data.elementScrolls, elementKeys: data.elementKeys, unlockedSecrets: data.unlockedSecrets, secretArtifacts: data.secretArtifacts, prisonOrbImg: data.prisonOrbImg});
 								this.setState({
 									userSaveArray: userSaveArray,
 									displayUserSaves: true,
@@ -3298,7 +3330,7 @@ class GameScreenHub extends React.Component {
 			}else{
 				saveOrbs = elementOrbs;
 			}
-			var userSaveData = {name: fileName, collectionArray: collectionArray, score: this.state.score, levels: levelArray, elementOrbs: saveOrbs, hp: youberHero.hp};
+			var userSaveData = {name: fileName, collectionArray: collectionArray, score: this.state.score, levels: levelArray, elementOrbs: saveOrbs, hp: youberHero.hp, elementScrolls: elementScrolls, elementKeys: elementKeys, unlockedSecrets: unlockedSecrets, secretArtifacts: secretArtifacts, prisonOrbImg: prisonOrbImg};
 			//var userEternalData = {collectionArray: collectionArray, score: this.state.score, levels: levelArray, name: fileName};
 			this.setState({
 				developers: userSaveData,
@@ -3332,7 +3364,7 @@ class GameScreenHub extends React.Component {
 		}else{
 			saveOrbs = elementOrbs;
 		}
-		var userSaveData = {name: fileName, collectionArray: collectionArray, score: this.state.score, levels: levelsBeaten, elementOrbs: saveOrbs, hp: youberHero.hp };
+		var userSaveData = {name: fileName, collectionArray: collectionArray, score: this.state.score, levels: levelsBeaten, elementOrbs: saveOrbs, hp: youberHero.hp, elementScrolls: elementScrolls, elementKeys: elementKeys, unlockedSecrets: unlockedSecrets, secretArtifacts: secretArtifacts, prisonOrbImg: prisonOrbImg};
 		this.setState({
 			developers: userSaveData
 
@@ -3367,7 +3399,7 @@ class GameScreenHub extends React.Component {
 	    });
 	  });
 	}
-	setUpPlayerSave(collection, lvlsBeat, score, elOrbs, hhp){
+	setUpPlayerSave(collection, lvlsBeat, score, elOrbs, hhp, elKeys, elScrolls, unSecrets, secArtifacts, priOrbImg){
 		if(collectionArray === undefined){
 
 		}else{
@@ -3380,6 +3412,11 @@ class GameScreenHub extends React.Component {
 				}else{}
 			}
 		}
+		elementKeys = elKeys;
+		elementScrolls = elScrolls;
+		unlockedSecrets = unSecrets;
+		secretArtifacts = secArtifacts;
+		prisonOrbImg = priOrbImg;
 		if(lvlsBeat[0] === "empty"){
 			levelsBeaten = [];
 		}else{
@@ -4508,10 +4545,10 @@ class EquipmentScreen extends React.Component {
 					</div>
 					<div className="row treasureTitle">Artifacts</div>
 					<div className="row">
-						<div className="col-xs-3 artifactSlot" onClick={() => { this.selectArtifact(waterYouber, "waterYouber") }}>{secretArtifacts[0] ? <img className="artifactImg" id="waterYouber" src={grandGoo} alt="grandGoo" /> : null }</div>
-						<div className="col-xs-3 artifactSlot" onClick={() => { this.selectArtifact(earthYouber, "earthYouber") }}>{secretArtifacts[1] ? <img className="artifactImg" id="earthYouber" src={sarcophagus} alt="sarcophagus" /> : null }</div>
-						<div className="col-xs-3 artifactSlot" onClick={() => { this.selectArtifact(stormYouber, "stormYouber") }}>{secretArtifacts[2] ? <img className="artifactImg" id="stormYouber" src={elderStorm} alt="elderStorm" /> : null }</div>
-						<div className="col-xs-3 artifactSlot" onClick={() => { this.selectArtifact(fireYouber, "fireYouber") }}>{secretArtifacts[3] ? <img className="artifactImg" id="fireYouber" src={moltenPedestal} alt="moltenPedestal" /> : null }</div>
+						<div className="col-xs-3 artifactSlot" onClick={() => { this.selectArtifact(earthYouber, "earthYouber") }}>{secretArtifacts[0] ? <img className="artifactImg" id="earthYouber" src={earthArtifact} alt="earthArtifact" /> : null }</div>
+						<div className="col-xs-3 artifactSlot" onClick={() => { this.selectArtifact(fireYouber, "fireYouber") }}>{secretArtifacts[1] ? <img className="artifactImg" id="fireYouber" src={sarcophagus} alt="sarcophagus" /> : null }</div>
+						<div className="col-xs-3 artifactSlot" onClick={() => { this.selectArtifact(waterYouber, "waterYouber") }}>{secretArtifacts[2] ? <img className="artifactImg" id="waterYouber" src={elderStorm} alt="elderStorm" /> : null }</div>
+						<div className="col-xs-3 artifactSlot" onClick={() => { this.selectArtifact(windYouber, "windYouber") }}>{secretArtifacts[3] ? <img className="artifactImg" id="windYouber" src={moltenPedestal} alt="moltenPedestal" /> : null }</div>
 					</div>
 					<div className="row artifactRow2">
 						<div className="col-xs-3 artifactSlot" id="artifact5"></div>
@@ -4646,7 +4683,7 @@ class UserSavesBox extends React.Component {
 		var userSaves = this.props.userSaveArray;
 		console.log(userSaves);
 		const listUserSaves = userSaves.map((save, index) =>
-			<UserSave key={index} id={index} name={save.name} setUpPlayerSave={this.props.setUpPlayerSave} collectionArray={save.collectionArray} levelsBeaten={save.levelsBeaten} score={save.score} hp={save.hp} elementOrbs={save.elementOrbs} />
+			<UserSave key={index} id={index} name={save.name} setUpPlayerSave={this.props.setUpPlayerSave} collectionArray={save.collectionArray} levelsBeaten={save.levelsBeaten} score={save.score} hp={save.hp} elementOrbs={save.elementOrbs} elementKeys={save.elementKeys} elementScrolls={save.elementScrolls} unlockedSecrets={save.unlockedSecrets} secretArtifacts={save.secretArtifacts} prisonOrbImg={save.prisonOrbImg} />
 		);
 		return (
 			<div className="col-xs-12">{listUserSaves}</div>
@@ -4682,7 +4719,7 @@ class UserSave extends React.Component {
 	render(){
 		return (
 			<div className="row">
-				<div className="col-xs-12 userSave" onClick={() => { this.props.setUpPlayerSave(this.props.collectionArray, this.props.levelsBeaten, this.props.score, this.props.elementOrbs, this.props.hp)}}>{this.props.name}</div>
+				<div className="col-xs-12 userSave" onClick={() => { this.props.setUpPlayerSave(this.props.collectionArray, this.props.levelsBeaten, this.props.score, this.props.elementOrbs, this.props.hp, this.props.elementKeys, this.props.elementScrolls, this.props.unlockedSecrets, this.props.secretArtifacts, this.props.prisonOrbImg)}}>{this.props.name}</div>
 			</div>
 		)
 	}
@@ -5774,14 +5811,14 @@ class GameScreen extends React.Component {
 				if(card.ability1.indexOf("finesse") >=0 || card.ability2.indexOf("finesse") >=0 ){
 					if(attackAll === true){
 						console.log("attackAll");
-						this.playerAttackAll(finesseAttack, false);
+						this.playerAttackAll(finesseAttack, false, cardElement);
 					}else{
 						this.playerAttack(finesseAttack, cardElement);
 					}
 				}else{
 					if(attackAll === true){
 						console.log("attackAll2");
-						this.playerAttackAll(newAttack, false);
+						this.playerAttackAll(newAttack, false, cardElement);
 					}else{
 						this.playerAttack(newAttack, cardElement);
 					}
@@ -5860,6 +5897,18 @@ class GameScreen extends React.Component {
 		}
 		if(enemyArray[currentEnemy].hp <= 0){
 			console.log("He's dead, pick another target.");
+		}else if(enemyArray[currentEnemy].name === "Prison Orb"){
+			if(cardElement === "neutral"){
+				prisonOrbImg[0] = true;
+			}else if(cardElement === "fire"){
+				prisonOrbImg[1] = true;
+			}else if(cardElement === "water"){
+				prisonOrbImg[2] = true;
+			}else if(cardElement === "wind"){
+				prisonOrbImg[3] = true;
+			}
+			this.checkPrisonOrbImg();
+			patience = false;
 		}else{
 			var numberOfPlayerCharacters = this.state.recruitArray.length + 1;
 			var enemyHealth = enemyArray[currentEnemy].hp;
@@ -5883,6 +5932,7 @@ class GameScreen extends React.Component {
 			if(level.includes("Temple")){
 				var templeHealth = this.state.templeHealth - heroAttack;
 				var shakeLength;
+				var ending = false;
 				if(this.state.templeHealth >= 90 && templeHealth < 90){
 					shakeLength = 100;
 					this.props.error("Uh oh, what was that?");
@@ -5892,6 +5942,7 @@ class GameScreen extends React.Component {
 				}else if(templeHealth < 20 && templeHealth >= 0){
 					shakeLength = 1500;
 				}else if(templeHealth <=0){
+					ending = true;
 					this.props.aux();
 				}else{
 					shakeLength = 0;
@@ -5899,12 +5950,14 @@ class GameScreen extends React.Component {
 				this.setState({
 					templeHealth: templeHealth
 				});
-				if(shakeLength > 0){
-					document.getElementById("gameScreenBackground").classList.add("shake");
+				if(ending === false){
+					if(shakeLength > 0){
+						document.getElementById("gameScreenBackground").classList.add("shake");
+					}else{}
+					setTimeout(() => {
+						document.getElementById("gameScreenBackground").classList.remove("shake");
+					}, shakeLength)
 				}else{}
-				setTimeout(() => {
-					document.getElementById("gameScreenBackground").classList.remove("shake");
-				}, shakeLength)
 			}else{}
 			var enemyHp = enemyHealth - heroAttack;
 			if(enemyHealth === heroAttack){
@@ -5999,7 +6052,7 @@ class GameScreen extends React.Component {
 			}, 350);
 		}
 	}
-	playerAttackAll(newAttack, burn) {
+	playerAttackAll(newAttack, burn, cardElement) {
 		const audioEl = document.getElementsByClassName("hitSound")[0];
 	    audioEl.play();
 		enemyArray[currentEnemy].hp = enemyArray[currentEnemy].hp + this.state.enemyHeal;
@@ -6020,59 +6073,73 @@ class GameScreen extends React.Component {
 		for (var i=0; i < x.length; i ++ ){
 			x[i].classList.remove("targetedEnemy");
 		}
-		for(var i = 0; i<enemyArray.length; i++){
-			if(enemyArray[i].hp > 0){
-				document.getElementById("badGuy" + (i)).append("-" + heroAttack);
-				document.getElementById("badGuy" + (i)).style.display="inline";
-				document.getElementById((i) + "image").classList.add("shake");
-			}else{}
-			if(enemyArray[i].hp === heroAttack){
-				this.props.setSpheres(1);
+		if(enemyArray[currentEnemy].name === "Prison Orb"){
+			if(cardElement === "earth"){
+				prisonOrbImg[0] = true;
+			}else if(cardElement === "fire"){
+				prisonOrbImg[1] = true;
+			}else if(cardElement === "water"){
+				prisonOrbImg[2] = true;
+			}else if(cardElement === "wind"){
+				prisonOrbImg[3] = true;
 			}
-		}
-		setTimeout(() => { 
+			this.checkPrisonOrbImg();
+			patience = false;
+		}else{
 			for(var i = 0; i<enemyArray.length; i++){
 				if(enemyArray[i].hp > 0){
-					document.getElementById("badGuy" + (i)).innerHTML="";
-					document.getElementById("badGuy" + (i)).style.display="none";
-					document.getElementById((i) + "image").classList.remove("shake");
-					if(enemyArray[i].hp - heroAttack <= 0){
-						enemyArray[i].hp = 0;
-					}else{
-						enemyArray[i].hp = enemyArray[i].hp - heroAttack;
-					}
+					document.getElementById("badGuy" + (i)).append("-" + heroAttack);
+					document.getElementById("badGuy" + (i)).style.display="inline";
+					document.getElementById((i) + "image").classList.add("shake");
 				}else{}
+				if(enemyArray[i].hp === heroAttack){
+					this.props.setSpheres(1);
+				}
 			}
-			this.setState({
-				enemyHpArray: [enemyArray[0].hp, enemyArray[1].hp, enemyArray[2].hp]
-			}, () => {
-				this.triggerEnemyDeath();
-				var enemiesAlive = 0;
-				for(var i=0; i<enemyArray.length; i++){
+			setTimeout(() => { 
+				for(var i = 0; i<enemyArray.length; i++){
 					if(enemyArray[i].hp > 0){
-						enemiesAlive ++;
+						document.getElementById("badGuy" + (i)).innerHTML="";
+						document.getElementById("badGuy" + (i)).style.display="none";
+						document.getElementById((i) + "image").classList.remove("shake");
+						if(enemyArray[i].hp - heroAttack <= 0){
+							enemyArray[i].hp = 0;
+						}else{
+							enemyArray[i].hp = enemyArray[i].hp - heroAttack;
+						}
 					}else{}
 				}
-				if(enemiesAlive > 0){
-					if(burn === true){
-
-					}else{
-						if(this.state.extraAttacks === 0){
-							if(enemyArray[currentEnemy].element === "obelisk"){
-								this.props.decreaseStormCounter();
-							}else{
-								this.enemyAttackAction(0);
-							}
-						}else{
-							var attacksLeft = this.state.extraAttacks - 1;
-							this.setState({
-								extraAttacks: attacksLeft
-							});
-						}
+				this.setState({
+					enemyHpArray: [enemyArray[0].hp, enemyArray[1].hp, enemyArray[2].hp]
+				}, () => {
+					this.triggerEnemyDeath();
+					var enemiesAlive = 0;
+					for(var i=0; i<enemyArray.length; i++){
+						if(enemyArray[i].hp > 0){
+							enemiesAlive ++;
+						}else{}
 					}
-				}else{}
-			});
-		}, 350);
+					if(enemiesAlive > 0){
+						if(burn === true){
+
+						}else{
+							if(this.state.extraAttacks === 0){
+								if(enemyArray[currentEnemy].element === "obelisk"){
+									this.props.decreaseStormCounter();
+								}else{
+									this.enemyAttackAction(0);
+								}
+							}else{
+								var attacksLeft = this.state.extraAttacks - 1;
+								this.setState({
+									extraAttacks: attacksLeft
+								});
+							}
+						}
+					}else{}
+				});
+			}, 350);
+		}
 	}
 	recruitAction(recruit) {
 		if(recruit.counter > 0){
@@ -6244,7 +6311,8 @@ class GameScreen extends React.Component {
 					enemyArray[i].image = enemyArray[i].effect[1];
 				}else if(enemyArray[i].element === "doorway" && enemyArray[i].hp === 0){
 					enemyArray[i].image = emptyDoor;
-				}else if(enemyArray[i].effect[0] === "drop" && enemyArray[i].hp === 0){
+				}else if(enemyArray[i].effect[0] === "drop" && enemyArray[i].hp === 0 && enemyArray[i].effect[2] === true){
+					enemyArray[i].effect[2] = false;
 					for(var i=0; i<2; i++){
 						if(enemyArray[i].effect[1] === "orbs"){
 							console.log("free orbs");
@@ -6256,7 +6324,7 @@ class GameScreen extends React.Component {
 				}else{}
 				if(secrets === true && enemyArray[i].hp === 0){
 					var randNum = Math.floor(Math.random() * 101);
-					if(randNum >= 90){
+					if(randNum >= 40){
 						secrets = false;
 						var newSecret = eval(level + "SecretStats");
 						var newEnemy = new EnemyCon(newSecret.name, newSecret.hp, newSecret.attack, newSecret.sabotage, newSecret.pointValue, newSecret.image, newSecret.sabCard, newSecret.element, newSecret.supCard, newSecret.effect);
@@ -7704,9 +7772,14 @@ class Enemy extends React.Component {
 		if(this.props.effect[0] === "prize"){
 			this.props.prizeChoice(this.props.effect[1]);
 		}else if(this.props.image === emptyDoor){
-			lastDoorway = this.props.name;
-			this.props.switchEnemyArray();
-			stageComplete ++;
+			if(patience === true){
+				this.props.error("Patience Betsy");
+			}else{
+				lastDoorway = this.props.name;
+				document.getElementById("1image").classList.remove("prisonOrbImg");
+				this.props.switchEnemyArray();
+				stageComplete ++;
+			}
 		}else if(this.props.image === mortemus){
 			this.props.showOrbTraderScreen();
 		}else if(this.props.image === cardPrize && this.props.effect[0] === "final"){
@@ -7752,6 +7825,8 @@ class Enemy extends React.Component {
 					this.props.gainSupCardReward(newCard);
 				}
 				enemyArray[1] = new EnemyCon("", 0, 0, 0, 0, null, null, "box", null, [null, null, null]);
+		}else if(this.props.effect[0] === "artifact"){
+			this.props.aux();
 		}else{
 			this.props.heroDraw();
 		}
@@ -7887,7 +7962,7 @@ class AuxilaryScreen extends React.Component {
 			var levelArray = ["earth", "fire", "water", "wind", "desert", "lava", "mud", "storm"];
 			var scrollArray = [earthScroll, fireScroll, waterScroll, windScroll, desertScroll, lavaScroll, mudScroll, stormScroll];
 			var keyArray = [earthKey, fireKey, waterKey, windKey];
-			var artifactArray = [moltenPedestal, grandGoo, elderStorm, sarcophagus];
+			var artifactArray = [earthArtifact, moltenPedestal, grandGoo, elderStorm, sarcophagus];
 			for(var i=0; i<levelArray.length; i++){
 				if(levelArray[i] === level){
 					if(rewardTier === 2){
@@ -7981,7 +8056,13 @@ class AuxilaryScreen extends React.Component {
 		}else{}
 		var levelGems = this.props.supGemRewards;
 		var levelGemsNum = rewardTier;
-		var gemType = eval(level + "Gem");
+		var gemType;
+		if(level.includes("Temple")){
+			var gemSlice = level.slice(0, -6);
+			gemType = eval(gemSlice + "Gem");
+		}else{
+			gemType = eval(level + "Gem");
+		}
 		if(this.props.prizeChoice === "orbs"){
 			for(var i=0; i<levelGemsNum; i++){
 				levelGems.push(gemType);
