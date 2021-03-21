@@ -2450,7 +2450,7 @@ function levelEarthTempleDistribution(randEnemyNum){
 		}else{}
 	}else{
 		if(lastDoorway === "Empty Door"){
-			/*if(randEnemyNum < 125){
+			if(randEnemyNum < 125){
 				createEnemy = wobbledukStats;
 			}else if(randEnemyNum >= 125 && randEnemyNum < 250){
 				createEnemy = primtreeStats;
@@ -2458,19 +2458,17 @@ function levelEarthTempleDistribution(randEnemyNum){
 				createEnemy = steedStats;
 			}else{
 				createEnemy = stoneStriderStats;
-			}*/
-			createEnemy = prisonOrbStats;
+			}
 		}else if(lastDoorway === "Dirt Door" || lastDoorway === "Old Door"){
-			/*if(randEnemyNum < 250){
+			if(randEnemyNum < 250){
 				createEnemy = earthStalactiteStats;
 			}else if(randEnemyNum >= 250 && randEnemyNum < 450) {
 				createEnemy = treasureChestStats;
 			}else{
 				createEnemy = earthGolemStats;
-			}*/
-			createEnemy = prisonOrbStats;
+			}
 		}else if(lastDoorway === "Boulder Door" || lastDoorway === "Iron Door" || lastDoorway === "Vine Door" || lastDoorway === "Water Door"){
-			/*if(randEnemyNum < 100){
+			if(randEnemyNum < 100){
 				createEnemy = earthStalactiteStats;
 			}else if(randEnemyNum >= 100 && randEnemyNum < 200) {
 				createEnemy = treasureChestStats;
@@ -2480,8 +2478,7 @@ function levelEarthTempleDistribution(randEnemyNum){
 				createEnemy = orbTraderStats;
 			}else{
 				createEnemy = prisonOrbStats;
-			}*/
-			createEnemy = prisonOrbStats;
+			}
 		}else if(lastDoorway === "Magic Door" || lastDoorway === "Rune Door"){
 			if(randEnemyNum < 100){
 				createEnemy = earthStalactiteStats;
