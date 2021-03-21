@@ -3,6 +3,7 @@ Youber's Quest
 March Patch Notes
 
 -Treasure!
+- You now need to find a scroll for each element to craft cards of that type.
 
 -Indicator on level select screen for how many times you've beaten a region.
 
