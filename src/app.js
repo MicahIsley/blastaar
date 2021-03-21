@@ -4316,7 +4316,11 @@ class LevelSelectScreen extends React.Component {
 		});
 	}
 	selectLevel(choice){
-		level = choice;
+		if(choice === "fireTemple" || choice === "waterTemple" || choice === "windTemple"){
+			this.props.error("Under Construction");
+		}else{
+			level = choice;
+		}
 		this.props.switchEnemyArray();
 		const x = document.getElementsByClassName("levelChoice");
 		for (var i=0; i < x.length; i ++ ){
