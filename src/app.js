@@ -219,11 +219,13 @@ import waterSecret from './assets/water/waterSecret.png';
 import waterSecretRevealed from './assets/water/waterSecretRevealed.png';
 import windSecret from './assets/wind/windSecret.png';
 import windSecretRevealed from './assets/wind/windSecretRevealed.png';
-import earthYouber from './assets/costumes/earthYouber.gif';
-import fireYouber from './assets/costumes/fireYouber.gif';
-import stormYouber from './assets/costumes/stormYouber.gif';
-import waterYouber from './assets/costumes/waterYouber.gif';
-import windYouber from './assets/costumes/windYouber.gif';
+import desertMasterYouber from './assets/costumes/desertMasterYouber.gif';
+import earthMasterYouber from './assets/costumes/earthMasterYouber.gif';
+import fireMasterYouber from './assets/costumes/fireMasterYouber.gif';
+import lavaMasterYouber from './assets/costumes/lavaMasterYouber.gif';
+import stormMasterYouber from './assets/costumes/stormMasterYouber.gif';
+import waterMasterYouber from './assets/costumes/waterMasterYouber.gif';
+import windMasterYouber from './assets/costumes/windMasterYouber.gif';
 import earthArtifact from './assets/artifacts/earthArtifact.png';
 import earthKey from './assets/artifacts/earthKey.png';
 import fireKey from './assets/artifacts/fireKey.png';
@@ -241,13 +243,20 @@ import boulderDoor from './assets/templePath/boulderDoor.png';
 import dirtDoor from './assets/templePath/dirtDoor.png';
 import earthMarkedDoor from './assets/templePath/earthMarkedDoor.png';
 import emptyDoor from './assets/templePath/emptyDoor.png';
+import fireDoor from './assets/templePath/fireDoor.png';
+import fireMarkedDoor from './assets/templePath/fireMarkedDoor.png';
+import iceDoor from './assets/templePath/iceDoor.png';
 import ironDoor from './assets/templePath/ironDoor.png';
 import magicDoor from './assets/templePath/magicDoor.png';
 import mortemus from './assets/templePath/mortemus.gif';
 import oldDoor from './assets/templePath/oldDoor.png';
 import runeDoor from './assets/templePath/runeDoor.png';
+import shockDoor from './assets/templePath/shockDoor.png';
+import tornadoDoor from './assets/templePath/tornadoDoor.png';
 import vineDoor from './assets/templePath/vineDoor.png';
 import waterDoor from './assets/templePath/waterDoor.png';
+import waterMarkedDoor from './assets/templePath/waterMarkedDoor.png';
+import windMarkedDoor from './assets/templePath/windMarkedDoor.png';
 import earthStalactite from './assets/templePath/earthStalactite.gif';
 import fireStalactite from './assets/templePath/fireStalactite.gif';
 import waterStalactite from './assets/templePath/waterStalactite.gif';
@@ -2197,6 +2206,29 @@ const emptyDoorStats = {
 	effect: [null, null, null]
 };
 
+const fireDoorStats = {
+	name: "Fire Door",
+	hp: 10,
+	attack: 0,
+	sabotage: 0,
+	pointValue: fireDoor,
+	sabCard: sabotage1,
+	element: "doorway",
+	effect: [null, null, null]
+};
+
+const iceDoorStats = {
+	name: "Ice Door",
+	hp: 10,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: iceDoor,
+	sabCard: sabotage1,
+	element: "doorway",
+	effect: [null, null, null]
+};
+
 const ironDoorStats = {
 	name: "Iron Door",
 	hp: 10,
@@ -2240,6 +2272,30 @@ const runeDoorStats = {
 	sabotage: 0,
 	pointValue: 0,
 	image: runeDoor,
+	sabCard: sabotage1,
+	element: "doorway",
+	effect: [null, null, null]
+};
+
+const shockDoorStats = {
+	name: "Shock Door",
+	hp: 10,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: shockDoor,
+	sabCard: sabotage1,
+	element: "doorway",
+	effect: [null, null, null]
+};
+
+const tornadoDoorStats = {
+	name: "Tornado Door",
+	hp: 10,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: tornadoDoor,
 	sabCard: sabotage1,
 	element: "doorway",
 	effect: [null, null, null]
@@ -2536,29 +2592,106 @@ function levelFireDistribution(randEnemyNum){
 }
 
 function levelFireTempleDistribution(randEnemyNum){
-	if(randEnemyNum < enemyDistributionArray[0]){
-		createEnemy = emberAdderStats;
-		return;
-	}else if(randEnemyNum < enemyDistributionArray[1]){
-		createEnemy = flameCrawlerStats;
-		return;
-	}else if(randEnemyNum < enemyDistributionArray[2]){
-		createEnemy = kragmupStats;
-		return;
-	}else if(randEnemyNum < enemyDistributionArray[3]){
-		createEnemy = tipperStats;
-		return;
-	}else if(randEnemyNum < enemyDistributionArray[4]){
-		createEnemy = morpStats;
-		return;
-	}else if(randEnemyNum < enemyDistributionArray[5]){
-		createEnemy = pheonixWyrmStats;
-		return;
-	}else if(randEnemyNum < enemyDistributionArray[6]){
-		createEnemy = flameScrablerStats;
-		return;
+	if(enemyArray.length === 0 || enemyArray.length === 2){
+		if(lastDoorway === "Empty Door"){
+			if(randEnemyNum < 100){
+				createEnemy = emptyDoorStats;
+			}else if(randEnemyNum >= 100 && randEnemyNum < 275){
+				createEnemy = dirtDoorStats;
+			}else if(randEnemyNum >= 275 && randEnemyNum < 450){
+				createEnemy = oldDoorStats;
+			}else if(randEnemyNum >=450 && randEnemyNum < 475){
+				createEnemy = boulderDoorStats;
+			}else{
+				createEnemy = vineDoorStats;
+			}
+		}else if(lastDoorway === "Dirt Door" || lastDoorway === "Old Door"){
+			if(randEnemyNum < 50){
+				createEnemy = emptyDoorStats;
+			}else if(randEnemyNum >= 50 && randEnemyNum < 250){
+				createEnemy = boulderDoorStats;
+			}else if(randEnemyNum >= 250 && randEnemyNum < 450){
+				createEnemy = vineDoorStats;
+			}else if(randEnemyNum >= 450 && randEnemyNum < 475){
+				createEnemy = magicDoorStats;
+			}else{
+				createEnemy = runeDoorStats;
+			}
+		}else if(lastDoorway === "Boulder Door" || lastDoorway === "Iron Door" || lastDoorway === "Vine Door" || lastDoorway === "Water Door"){
+			if(randEnemyNum < 10){
+				createEnemy = emptyDoorStats;
+			}else if(randEnemyNum >= 10 && randEnemyNum < 220){
+				createEnemy = magicDoorStats;
+			}else if(randEnemyNum >= 220 && randEnemyNum < 430){
+				createEnemy = runeDoorStats;
+			}else{
+				createEnemy = earthMarkedDoorStats;
+			}
+		}else if(lastDoorway === "Magic Door" || lastDoorway === "Rune Door"){
+			if(randEnemyNum < 20){
+				createEnemy = oldDoorStats;
+			}else if(randEnemyNum >= 20 && randEnemyNum < 40){
+				createEnemy = dirtDoorStats;
+			}else if(randEnemyNum >= 40 && randEnemyNum < 90){
+				createEnemy = boulderDoorStats;
+			}else if(randEnemyNum >= 90 && randEnemyNum < 140){
+				createEnemy = vineDoorStats;
+			}else if(randEnemyNum >= 140 && randEnemyNum < 240){
+				createEnemy = magicDoorStats;
+			}else if(randEnemyNum >= 240 && randEnemyNum < 340){
+				createEnemy = runeDoorStats;
+			}else{
+				createEnemy = earthMarkedDoorStats;
+			}
+		}else if(lastDoorway === "Earth Marked Door"){
+			createEnemy = earthMarkedDoorStats;
+		}else{}
 	}else{
-		createEnemy = smallGolemArray[1];
+		if(lastDoorway === "Empty Door"){
+			if(randEnemyNum < 125){
+				createEnemy = wobbledukStats;
+			}else if(randEnemyNum >= 125 && randEnemyNum < 250){
+				createEnemy = primtreeStats;
+			}else if(randEnemyNum >= 250 && randEnemyNum < 375){
+				createEnemy = steedStats;
+			}else{
+				createEnemy = stoneStriderStats;
+			}
+		}else if(lastDoorway === "Dirt Door" || lastDoorway === "Old Door"){
+			if(randEnemyNum < 250){
+				createEnemy = earthStalactiteStats;
+			}else if(randEnemyNum >= 250 && randEnemyNum < 450) {
+				createEnemy = treasureChestStats;
+			}else{
+				createEnemy = earthGolemStats;
+			}
+		}else if(lastDoorway === "Boulder Door" || lastDoorway === "Iron Door" || lastDoorway === "Vine Door" || lastDoorway === "Water Door"){
+			if(randEnemyNum < 100){
+				createEnemy = earthStalactiteStats;
+			}else if(randEnemyNum >= 100 && randEnemyNum < 200) {
+				createEnemy = treasureChestStats;
+			}else if(randEnemyNum >= 200 && randEnemyNum < 300) {
+				createEnemy = earthGolemStats;
+			}else if(randEnemyNum >= 300 && randEnemyNum < 450) {
+				createEnemy = orbTraderStats;
+			}else{
+				createEnemy = prisonOrbStats;
+			}
+		}else if(lastDoorway === "Magic Door" || lastDoorway === "Rune Door"){
+			if(randEnemyNum < 100){
+				createEnemy = earthStalactiteStats;
+			}else if(randEnemyNum >= 100 && randEnemyNum < 200) {
+				createEnemy = treasureChestStats;
+			}else if(randEnemyNum >= 200 && randEnemyNum < 300) {
+				createEnemy = earthGolemStats;
+			}else if(randEnemyNum >= 300 && randEnemyNum < 450) {
+				createEnemy = orbTraderStats;
+			}else{
+				createEnemy = prisonOrbStats;
+			}
+		}else if(lastDoorway === "Earth Marked Door"){
+			createEnemy = earthArtifactStats;
+		}else{}
 	}
 }
 
@@ -4546,10 +4679,10 @@ class EquipmentScreen extends React.Component {
 					</div>
 					<div className="row treasureTitle">Artifacts</div>
 					<div className="row">
-						<div className="col-xs-3 artifactSlot" onClick={() => { this.selectArtifact(earthYouber, "earthYouber") }}>{secretArtifacts[0] ? <img className="artifactImg" id="earthYouber" src={earthArtifact} alt="earthArtifact" /> : null }</div>
-						<div className="col-xs-3 artifactSlot" onClick={() => { this.selectArtifact(fireYouber, "fireYouber") }}>{secretArtifacts[1] ? <img className="artifactImg" id="fireYouber" src={sarcophagus} alt="sarcophagus" /> : null }</div>
-						<div className="col-xs-3 artifactSlot" onClick={() => { this.selectArtifact(waterYouber, "waterYouber") }}>{secretArtifacts[2] ? <img className="artifactImg" id="waterYouber" src={elderStorm} alt="elderStorm" /> : null }</div>
-						<div className="col-xs-3 artifactSlot" onClick={() => { this.selectArtifact(windYouber, "windYouber") }}>{secretArtifacts[3] ? <img className="artifactImg" id="windYouber" src={moltenPedestal} alt="moltenPedestal" /> : null }</div>
+						<div className="col-xs-3 artifactSlot" onClick={() => { this.selectArtifact(earthMasterYouber, "earthYouber") }}>{secretArtifacts[0] ? <img className="artifactImg" id="earthYouber" src={earthArtifact} alt="earthArtifact" /> : null }</div>
+						<div className="col-xs-3 artifactSlot" onClick={() => { this.selectArtifact(fireMasterYouber, "fireYouber") }}>{secretArtifacts[1] ? <img className="artifactImg" id="fireYouber" src={sarcophagus} alt="sarcophagus" /> : null }</div>
+						<div className="col-xs-3 artifactSlot" onClick={() => { this.selectArtifact(waterMasterYouber, "waterYouber") }}>{secretArtifacts[2] ? <img className="artifactImg" id="waterYouber" src={elderStorm} alt="elderStorm" /> : null }</div>
+						<div className="col-xs-3 artifactSlot" onClick={() => { this.selectArtifact(windMasterYouber, "windYouber") }}>{secretArtifacts[3] ? <img className="artifactImg" id="windYouber" src={moltenPedestal} alt="moltenPedestal" /> : null }</div>
 					</div>
 					<div className="row artifactRow2">
 						<div className="col-xs-3 artifactSlot" id="artifact5"></div>
