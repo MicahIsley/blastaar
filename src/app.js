@@ -228,8 +228,11 @@ import waterMasterYouber from './assets/costumes/waterMasterYouber.gif';
 import windMasterYouber from './assets/costumes/windMasterYouber.gif';
 import earthArtifact from './assets/artifacts/earthArtifact.png';
 import earthKey from './assets/artifacts/earthKey.png';
+import fireArtifact from './assets/artifacts/fireArtifact.png';
 import fireKey from './assets/artifacts/fireKey.png';
+import waterArtifact from './assets/artifacts/waterArtifact.png';
 import waterKey from './assets/artifacts/waterKey.png';
+import windArtifact from './assets/artifacts/windArtifact.png';
 import windKey from './assets/artifacts/windKey.png';
 import desertScroll from './assets/artifacts/desertScroll.png';
 import earthScroll from './assets/artifacts/earthScroll.png';
@@ -2194,6 +2197,42 @@ const earthMarkedDoorStats = {
 	effect: [null, null, null]
 };
 
+const fireMarkedDoorStats = {
+	name: "Fire Marked Door",
+	hp: 10,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: fireMarkedDoor,
+	sabCard: sabotage1,
+	element: "doorway",
+	effect: [null, null, null]
+};
+
+const waterMarkedDoorStats = {
+	name: "Water Marked Door",
+	hp: 10,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: waterMarkedDoor,
+	sabCard: sabotage1,
+	element: "doorway",
+	effect: [null, null, null]
+};
+
+const windMarkedDoorStats = {
+	name: "Wind Marked Door",
+	hp: 10,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: windMarkedDoor,
+	sabCard: sabotage1,
+	element: "doorway",
+	effect: [null, null, null]
+};
+
 const emptyDoorStats = {
 	name: "Empty Door",
 	hp: 10,
@@ -2337,6 +2376,42 @@ const earthStalactiteStats = {
 	effect: ["drop", "orbs", true]
 };
 
+const fireStalactiteStats = {
+	name: "Stalactite",
+	hp: 10,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: fireStalactite,
+	sabCard: sabotage1,
+	element: "object",
+	effect: ["drop", "orbs", true]
+};
+
+const waterStalactiteStats = {
+	name: "Stalactite",
+	hp: 10,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: waterStalactite,
+	sabCard: sabotage1,
+	element: "object",
+	effect: ["drop", "orbs", true]
+};
+
+const windStalactiteStats = {
+	name: "Stalactite",
+	hp: 10,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: windStalactite,
+	sabCard: sabotage1,
+	element: "object",
+	effect: ["drop", "orbs", true]
+};
+
 const earthArtifactStats = {
 	name: "Earth Artifact",
 	hp: 10,
@@ -2344,6 +2419,42 @@ const earthArtifactStats = {
 	sabotage: 0,
 	pointValue: 0,
 	image: earthArtifact,
+	sabCard: sabotage1,
+	element: "object",
+	effect: ["artifact", null, null]
+};
+
+const fireArtifactStats = {
+	name: "Fire Artifact",
+	hp: 10,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: fireArtifact,
+	sabCard: sabotage1,
+	element: "object",
+	effect: ["artifact", null, null]
+};
+
+const waterArtifactStats = {
+	name: "Water Artifact",
+	hp: 10,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: waterArtifact,
+	sabCard: sabotage1,
+	element: "object",
+	effect: ["artifact", null, null]
+};
+
+const windArtifactStats = {
+	name: "Wind Artifact",
+	hp: 10,
+	attack: 0,
+	sabotage: 0,
+	pointValue: 0,
+	image: windArtifact,
 	sabCard: sabotage1,
 	element: "object",
 	effect: ["artifact", null, null]
@@ -2601,23 +2712,23 @@ function levelFireTempleDistribution(randEnemyNum){
 			}else if(randEnemyNum >= 275 && randEnemyNum < 450){
 				createEnemy = oldDoorStats;
 			}else if(randEnemyNum >=450 && randEnemyNum < 475){
-				createEnemy = boulderDoorStats;
+				createEnemy = ironDoorStats;
 			}else{
-				createEnemy = vineDoorStats;
+				createEnemy = fireDoorStats;
 			}
 		}else if(lastDoorway === "Dirt Door" || lastDoorway === "Old Door"){
 			if(randEnemyNum < 50){
 				createEnemy = emptyDoorStats;
 			}else if(randEnemyNum >= 50 && randEnemyNum < 250){
-				createEnemy = boulderDoorStats;
+				createEnemy = ironDoorStats;
 			}else if(randEnemyNum >= 250 && randEnemyNum < 450){
-				createEnemy = vineDoorStats;
+				createEnemy = fireDoorStats;
 			}else if(randEnemyNum >= 450 && randEnemyNum < 475){
 				createEnemy = magicDoorStats;
 			}else{
 				createEnemy = runeDoorStats;
 			}
-		}else if(lastDoorway === "Boulder Door" || lastDoorway === "Iron Door" || lastDoorway === "Vine Door" || lastDoorway === "Water Door"){
+		}else if(lastDoorway === "Fire Door" || lastDoorway === "Iron Door"){
 			if(randEnemyNum < 10){
 				createEnemy = emptyDoorStats;
 			}else if(randEnemyNum >= 10 && randEnemyNum < 220){
@@ -2625,7 +2736,7 @@ function levelFireTempleDistribution(randEnemyNum){
 			}else if(randEnemyNum >= 220 && randEnemyNum < 430){
 				createEnemy = runeDoorStats;
 			}else{
-				createEnemy = earthMarkedDoorStats;
+				createEnemy = fireMarkedDoorStats;
 			}
 		}else if(lastDoorway === "Magic Door" || lastDoorway === "Rune Door"){
 			if(randEnemyNum < 20){
@@ -2633,45 +2744,45 @@ function levelFireTempleDistribution(randEnemyNum){
 			}else if(randEnemyNum >= 20 && randEnemyNum < 40){
 				createEnemy = dirtDoorStats;
 			}else if(randEnemyNum >= 40 && randEnemyNum < 90){
-				createEnemy = boulderDoorStats;
+				createEnemy = ironDoorStats;
 			}else if(randEnemyNum >= 90 && randEnemyNum < 140){
-				createEnemy = vineDoorStats;
+				createEnemy = fireDoorStats;
 			}else if(randEnemyNum >= 140 && randEnemyNum < 240){
 				createEnemy = magicDoorStats;
 			}else if(randEnemyNum >= 240 && randEnemyNum < 340){
 				createEnemy = runeDoorStats;
 			}else{
-				createEnemy = earthMarkedDoorStats;
+				createEnemy = fireMarkedDoorStats;
 			}
 		}else if(lastDoorway === "Earth Marked Door"){
-			createEnemy = earthMarkedDoorStats;
+			createEnemy = fireMarkedDoorStats;
 		}else{}
 	}else{
 		if(lastDoorway === "Empty Door"){
 			if(randEnemyNum < 125){
-				createEnemy = wobbledukStats;
+				createEnemy = emberAdderStats;
 			}else if(randEnemyNum >= 125 && randEnemyNum < 250){
-				createEnemy = primtreeStats;
+				createEnemy = kragmupStats;
 			}else if(randEnemyNum >= 250 && randEnemyNum < 375){
-				createEnemy = steedStats;
+				createEnemy = morpStats;
 			}else{
-				createEnemy = stoneStriderStats;
+				createEnemy = flameCrawlerStats;
 			}
 		}else if(lastDoorway === "Dirt Door" || lastDoorway === "Old Door"){
 			if(randEnemyNum < 250){
-				createEnemy = earthStalactiteStats;
+				createEnemy = fireStalactiteStats;
 			}else if(randEnemyNum >= 250 && randEnemyNum < 450) {
 				createEnemy = treasureChestStats;
 			}else{
-				createEnemy = earthGolemStats;
+				createEnemy = fireGolemStats;
 			}
-		}else if(lastDoorway === "Boulder Door" || lastDoorway === "Iron Door" || lastDoorway === "Vine Door" || lastDoorway === "Water Door"){
+		}else if(lastDoorway === "Iron Door" || lastDoorway === "Fire Door"){
 			if(randEnemyNum < 100){
-				createEnemy = earthStalactiteStats;
+				createEnemy = fireStalactiteStats;
 			}else if(randEnemyNum >= 100 && randEnemyNum < 200) {
 				createEnemy = treasureChestStats;
 			}else if(randEnemyNum >= 200 && randEnemyNum < 300) {
-				createEnemy = earthGolemStats;
+				createEnemy = fireGolemStats;
 			}else if(randEnemyNum >= 300 && randEnemyNum < 450) {
 				createEnemy = orbTraderStats;
 			}else{
@@ -2679,18 +2790,18 @@ function levelFireTempleDistribution(randEnemyNum){
 			}
 		}else if(lastDoorway === "Magic Door" || lastDoorway === "Rune Door"){
 			if(randEnemyNum < 100){
-				createEnemy = earthStalactiteStats;
+				createEnemy = fireStalactiteStats;
 			}else if(randEnemyNum >= 100 && randEnemyNum < 200) {
 				createEnemy = treasureChestStats;
 			}else if(randEnemyNum >= 200 && randEnemyNum < 300) {
-				createEnemy = earthGolemStats;
+				createEnemy = fireGolemStats;
 			}else if(randEnemyNum >= 300 && randEnemyNum < 450) {
 				createEnemy = orbTraderStats;
 			}else{
 				createEnemy = prisonOrbStats;
 			}
-		}else if(lastDoorway === "Earth Marked Door"){
-			createEnemy = earthArtifactStats;
+		}else if(lastDoorway === "Fire Marked Door"){
+			createEnemy = fireArtifactStats;
 		}else{}
 	}
 }
@@ -2734,30 +2845,107 @@ function levelWaterDistribution(randEnemyNum){
 }
 
 function levelWaterTempleDistribution(randEnemyNum){
-	if(randEnemyNum < enemyDistributionArray[0]){
-			createEnemy = trenchThumpStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[1]){
-			createEnemy = marshSlapperStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[2]){
-			createEnemy = ghostSharkStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[3]){
-			createEnemy = coralThumpStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[4]){
-			createEnemy = caveThumpStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[5]){
-			createEnemy = budleFairyStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[6]){
-			createEnemy = albinoSlapperStats;
-			return;
-		}else{
-			createEnemy = smallGolemArray[2];
-		}
+	if(enemyArray.length === 0 || enemyArray.length === 2){
+		if(lastDoorway === "Empty Door"){
+			if(randEnemyNum < 100){
+				createEnemy = emptyDoorStats;
+			}else if(randEnemyNum >= 100 && randEnemyNum < 275){
+				createEnemy = dirtDoorStats;
+			}else if(randEnemyNum >= 275 && randEnemyNum < 450){
+				createEnemy = oldDoorStats;
+			}else if(randEnemyNum >=450 && randEnemyNum < 475){
+				createEnemy = iceDoorStats;
+			}else{
+				createEnemy = waterDoorStats;
+			}
+		}else if(lastDoorway === "Dirt Door" || lastDoorway === "Old Door"){
+			if(randEnemyNum < 50){
+				createEnemy = emptyDoorStats;
+			}else if(randEnemyNum >= 50 && randEnemyNum < 250){
+				createEnemy = iceDoorStats;
+			}else if(randEnemyNum >= 250 && randEnemyNum < 450){
+				createEnemy = waterDoorStats;
+			}else if(randEnemyNum >= 450 && randEnemyNum < 475){
+				createEnemy = magicDoorStats;
+			}else{
+				createEnemy = runeDoorStats;
+			}
+		}else if(lastDoorway === "Water Door" || lastDoorway === "Ice Door"){
+			if(randEnemyNum < 10){
+				createEnemy = emptyDoorStats;
+			}else if(randEnemyNum >= 10 && randEnemyNum < 220){
+				createEnemy = magicDoorStats;
+			}else if(randEnemyNum >= 220 && randEnemyNum < 430){
+				createEnemy = runeDoorStats;
+			}else{
+				createEnemy = waterMarkedDoorStats;
+			}
+		}else if(lastDoorway === "Magic Door" || lastDoorway === "Rune Door"){
+			if(randEnemyNum < 20){
+				createEnemy = oldDoorStats;
+			}else if(randEnemyNum >= 20 && randEnemyNum < 40){
+				createEnemy = dirtDoorStats;
+			}else if(randEnemyNum >= 40 && randEnemyNum < 90){
+				createEnemy = iceDoorStats;
+			}else if(randEnemyNum >= 90 && randEnemyNum < 140){
+				createEnemy = waterDoorStats;
+			}else if(randEnemyNum >= 140 && randEnemyNum < 240){
+				createEnemy = magicDoorStats;
+			}else if(randEnemyNum >= 240 && randEnemyNum < 340){
+				createEnemy = runeDoorStats;
+			}else{
+				createEnemy = waterMarkedDoorStats;
+			}
+		}else if(lastDoorway === "Water Marked Door"){
+			createEnemy = waterMarkedDoorStats;
+		}else{}
+	}else{
+		if(lastDoorway === "Empty Door"){
+			if(randEnemyNum < 125){
+				createEnemy = caveThumpStats;
+			}else if(randEnemyNum >= 125 && randEnemyNum < 250){
+				createEnemy = marshSlapperStats;
+			}else if(randEnemyNum >= 250 && randEnemyNum < 375){
+				createEnemy = coralThumpStats;
+			}else{
+				createEnemy = ghostSharkStats;
+			}
+		}else if(lastDoorway === "Dirt Door" || lastDoorway === "Old Door"){
+			if(randEnemyNum < 250){
+				createEnemy = waterStalactiteStats;
+			}else if(randEnemyNum >= 250 && randEnemyNum < 450) {
+				createEnemy = treasureChestStats;
+			}else{
+				createEnemy = waterGolemStats;
+			}
+		}else if(lastDoorway === "Ice Door" || lastDoorway === "Water Door"){
+			if(randEnemyNum < 100){
+				createEnemy = waterStalactiteStats;
+			}else if(randEnemyNum >= 100 && randEnemyNum < 200) {
+				createEnemy = treasureChestStats;
+			}else if(randEnemyNum >= 200 && randEnemyNum < 300) {
+				createEnemy = waterGolemStats;
+			}else if(randEnemyNum >= 300 && randEnemyNum < 450) {
+				createEnemy = orbTraderStats;
+			}else{
+				createEnemy = prisonOrbStats;
+			}
+		}else if(lastDoorway === "Magic Door" || lastDoorway === "Rune Door"){
+			if(randEnemyNum < 100){
+				createEnemy = waterStalactiteStats;
+			}else if(randEnemyNum >= 100 && randEnemyNum < 200) {
+				createEnemy = treasureChestStats;
+			}else if(randEnemyNum >= 200 && randEnemyNum < 300) {
+				createEnemy = waterGolemStats;
+			}else if(randEnemyNum >= 300 && randEnemyNum < 450) {
+				createEnemy = orbTraderStats;
+			}else{
+				createEnemy = prisonOrbStats;
+			}
+		}else if(lastDoorway === "Water Marked Door"){
+			createEnemy = waterArtifactStats;
+		}else{}
+	}
 }
 
 function levelWindDistribution(randEnemyNum){
@@ -2799,30 +2987,107 @@ function levelWindDistribution(randEnemyNum){
 }
 
 function levelWindTempleDistribution(randEnemyNum){
-	if(randEnemyNum < enemyDistributionArray[0]){
-			createEnemy = maclawStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[1]){
-			createEnemy = madnadoStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[2]){
-			createEnemy = raaHowlerStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[3]){
-			createEnemy = flooferStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[4]){
-			createEnemy = windleFairyStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[5]){
-			createEnemy = spookawStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[6]){
-			createEnemy = windFlitterStats;
-			return;
-		}else{
-			createEnemy = smallGolemArray[3];
-		}
+	if(enemyArray.length === 0 || enemyArray.length === 2){
+		if(lastDoorway === "Empty Door"){
+			if(randEnemyNum < 100){
+				createEnemy = emptyDoorStats;
+			}else if(randEnemyNum >= 100 && randEnemyNum < 275){
+				createEnemy = dirtDoorStats;
+			}else if(randEnemyNum >= 275 && randEnemyNum < 450){
+				createEnemy = oldDoorStats;
+			}else if(randEnemyNum >=450 && randEnemyNum < 475){
+				createEnemy = shockDoorStats;
+			}else{
+				createEnemy = tornadoDoorStats;
+			}
+		}else if(lastDoorway === "Dirt Door" || lastDoorway === "Old Door"){
+			if(randEnemyNum < 50){
+				createEnemy = emptyDoorStats;
+			}else if(randEnemyNum >= 50 && randEnemyNum < 250){
+				createEnemy = shockDoorStats;
+			}else if(randEnemyNum >= 250 && randEnemyNum < 450){
+				createEnemy = tornadoDoorStats;
+			}else if(randEnemyNum >= 450 && randEnemyNum < 475){
+				createEnemy = magicDoorStats;
+			}else{
+				createEnemy = runeDoorStats;
+			}
+		}else if(lastDoorway === "Tornado Door" || lastDoorway === "Shock Door"){
+			if(randEnemyNum < 10){
+				createEnemy = emptyDoorStats;
+			}else if(randEnemyNum >= 10 && randEnemyNum < 220){
+				createEnemy = magicDoorStats;
+			}else if(randEnemyNum >= 220 && randEnemyNum < 430){
+				createEnemy = runeDoorStats;
+			}else{
+				createEnemy = windMarkedDoorStats;
+			}
+		}else if(lastDoorway === "Magic Door" || lastDoorway === "Rune Door"){
+			if(randEnemyNum < 20){
+				createEnemy = oldDoorStats;
+			}else if(randEnemyNum >= 20 && randEnemyNum < 40){
+				createEnemy = dirtDoorStats;
+			}else if(randEnemyNum >= 40 && randEnemyNum < 90){
+				createEnemy = shockDoorStats;
+			}else if(randEnemyNum >= 90 && randEnemyNum < 140){
+				createEnemy = tornadoDoorStats;
+			}else if(randEnemyNum >= 140 && randEnemyNum < 240){
+				createEnemy = magicDoorStats;
+			}else if(randEnemyNum >= 240 && randEnemyNum < 340){
+				createEnemy = runeDoorStats;
+			}else{
+				createEnemy = windMarkedDoorStats;
+			}
+		}else if(lastDoorway === "Wind Marked Door"){
+			createEnemy = windMarkedDoorStats;
+		}else{}
+	}else{
+		if(lastDoorway === "Empty Door"){
+			if(randEnemyNum < 125){
+				createEnemy = spookawStats;
+			}else if(randEnemyNum >= 125 && randEnemyNum < 250){
+				createEnemy = madnadoStats;
+			}else if(randEnemyNum >= 250 && randEnemyNum < 375){
+				createEnemy = maclawStats;
+			}else{
+				createEnemy = flooferStats;
+			}
+		}else if(lastDoorway === "Dirt Door" || lastDoorway === "Old Door"){
+			if(randEnemyNum < 250){
+				createEnemy = windStalactiteStats;
+			}else if(randEnemyNum >= 250 && randEnemyNum < 450) {
+				createEnemy = treasureChestStats;
+			}else{
+				createEnemy = windGolemStats;
+			}
+		}else if(lastDoorway === "Iron Door" || lastDoorway === "Wind Door"){
+			if(randEnemyNum < 100){
+				createEnemy = windStalactiteStats;
+			}else if(randEnemyNum >= 100 && randEnemyNum < 200) {
+				createEnemy = treasureChestStats;
+			}else if(randEnemyNum >= 200 && randEnemyNum < 300) {
+				createEnemy = windGolemStats;
+			}else if(randEnemyNum >= 300 && randEnemyNum < 450) {
+				createEnemy = orbTraderStats;
+			}else{
+				createEnemy = prisonOrbStats;
+			}
+		}else if(lastDoorway === "Magic Door" || lastDoorway === "Rune Door"){
+			if(randEnemyNum < 100){
+				createEnemy = windStalactiteStats;
+			}else if(randEnemyNum >= 100 && randEnemyNum < 200) {
+				createEnemy = treasureChestStats;
+			}else if(randEnemyNum >= 200 && randEnemyNum < 300) {
+				createEnemy = windGolemStats;
+			}else if(randEnemyNum >= 300 && randEnemyNum < 450) {
+				createEnemy = orbTraderStats;
+			}else{
+				createEnemy = prisonOrbStats;
+			}
+		}else if(lastDoorway === "Wind Marked Door"){
+			createEnemy = windArtifactStats;
+		}else{}
+	}
 }
 
 function levelDesertDistribution(randEnemyNum){
@@ -4207,7 +4472,7 @@ class FirstLevelChoice extends React.Component {
 		return(
 			<div className="row">
 				<div className="col-xs-12">
-					<div className="row">Choose Starting Level</div>
+					<div className="row" id="levelTitle">Choose Starting Level</div>
 					<div className="row" id="firstChoiceRow">
 						<img className="col-xs-3 firstLevelChoice" id="earthFirst" src={earth} alt="earth" onClick={() => {this.chooseFirstLevel("earth")}} />
 						<img className="col-xs-3 firstLevelChoice" id="fireFirst" src={fire} alt="fire" onClick={() => {this.chooseFirstLevel("fire")}} />
@@ -4446,11 +4711,7 @@ class LevelSelectScreen extends React.Component {
 		});
 	}
 	selectLevel(choice){
-		if(choice === "fireTemple" || choice === "waterTemple" || choice === "windTemple"){
-			this.props.error("Under Construction");
-		}else{
-			level = choice;
-		}
+		level = choice;
 		this.props.switchEnemyArray();
 		const x = document.getElementsByClassName("levelChoice");
 		for (var i=0; i < x.length; i ++ ){

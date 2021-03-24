@@ -2,6 +2,13 @@ body {
 	background: #232323;
 }
 
+#levelTitle {
+	font-size: 40px;
+	color: white;
+	text-align: center;
+	font-family: 'Metamorphous', cursive;
+}
+
 .prisonOrbImg {
 	background-image: url('assets/templePath/prisonOrbBlank.gif');
 	background-size: contain;
@@ -2249,6 +2256,7 @@ input {
 	border-color: red;
 	border-width: 3px;
 	border-style: solid;
+	height: 84px;
 }
 
 #hpRewardRow {
