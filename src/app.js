@@ -8043,9 +8043,15 @@ class CharacterName extends React.Component {
 
 class CharacterImage extends React.Component {
 	render() {
+		var statusClass;
+		if(this.props.boss === "boss"){
+			statusClass = "enemyBossStatus";
+		}else{
+			statusClass = "enemyStatus";
+		}
 		return (
 			<div className="row">
-				<img className="enemyStatus" src={this.props.status} alt="enemyStatus" />
+				<img className={statusClass} src={this.props.status} alt="enemyStatus" />
 				<img className={`characterImage2 col-xs-offset-1 col-xs-8 ${this.props.boss}`} id={this.props.id + 'image'} src={this.props.image} alt={this.props.name} />
 			</div>
 		);
@@ -8382,11 +8388,11 @@ class AuxilaryScreen extends React.Component {
 				youberHero.hp = youberHero.hp + 2;
 				rewardHp = 2;
 			}else if(rewardTier === 2){
+				youberHero.hp = youberHero.hp + 3;
+				rewardHp = 3;
+			}else if(rewardTier === 3){
 				youberHero.hp = youberHero.hp + 5;
 				rewardHp = 5;
-			}else if(rewardTier === 3){
-				youberHero.hp = youberHero.hp + 10;
-				rewardHp = 10;
 			}
 			cardArray = cardArray2;
 			this.setState({
@@ -8466,13 +8472,13 @@ class AuxilaryScreen extends React.Component {
 			for(var i=0; i<levelGemsNum; i++){
 				levelGems.push(gemType);
 			}
-			if(level === 0){
-			}else{
-				for(var i=0; i<levelGems.length; i++){
-					elementOrbs.push(levelGems[i]);
-				}
-			}
 		}else{}
+		if(level === 0){
+		}else{
+			for(var i=0; i<levelGems.length; i++){
+				elementOrbs.push(levelGems[i]);
+			}
+		}
 		if(this.props.obelisk >= 15 && this.props.obelisk < 30){
 			var factionArray = ["earth", "fire", "water", "wind"];
 			var randFaction = Math.floor(Math.random() * 3);
