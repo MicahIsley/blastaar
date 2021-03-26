@@ -5503,7 +5503,7 @@ class GameScreen extends React.Component {
 		}
 		this.setState({
 			noHeal: noHeal,
-			noShield: noWard,
+			noWard: noWard,
 			noAbility: noAbility,
 			enemyHeal: enemyHeal,
 			exhausted: exhausted
@@ -6720,12 +6720,14 @@ class GameScreen extends React.Component {
 					}
 				}else{}
 				if(secrets === true && enemyArray[i].hp === 0){
-					var randNum = Math.floor(Math.random() * 101);
-					if(randNum >= 40){
-						secrets = false;
-						var newSecret = eval(level + "SecretStats");
-						var newEnemy = new EnemyCon(newSecret.name, newSecret.hp, newSecret.attack, newSecret.sabotage, newSecret.pointValue, newSecret.image, newSecret.sabCard, newSecret.element, newSecret.supCard, newSecret.effect);
-						enemyArray[i] = newEnemy;
+					if(level === "earth" || level === "fire" || level === "water" || level === "wind"){
+						var randNum = Math.floor(Math.random() * 101);
+						if(randNum >= 40){
+							secrets = false;
+							var newSecret = eval(level + "SecretStats");
+							var newEnemy = new EnemyCon(newSecret.name, newSecret.hp, newSecret.attack, newSecret.sabotage, newSecret.pointValue, newSecret.image, newSecret.sabCard, newSecret.element, newSecret.supCard, newSecret.effect);
+							enemyArray[i] = newEnemy;
+						}else{}
 					}else{}
 				}
 			}
@@ -6826,7 +6828,7 @@ class GameScreen extends React.Component {
 						cardAbility: true,
 						decoy: false,
 						noHeal: false,
-						noShield: false,
+						noWard: false,
 						noAbility: false,
 						enemyHeal: 0
 					}, () => {
@@ -7009,7 +7011,7 @@ class GameScreen extends React.Component {
 								cardAbility: true,
 								decoy: false,
 								noHeal: false,
-								noShield: false,
+								noWard: false,
 								noAbility: false,
 								enemyHeal: 0
 							}, () => {
