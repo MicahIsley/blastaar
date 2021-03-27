@@ -2038,7 +2038,7 @@ const earthSecretRevealedStats = {
 	image: earthSecretRevealed,
 	sabCard: sabotage1,
 	element: "object",
-	effect: ["secret", null, null]
+	effect: ["secret", "revealed", null]
 };
 
 const earthSecretStats = {
@@ -2050,7 +2050,7 @@ const earthSecretStats = {
 	image: earthSecret,
 	sabCard: sabotage1,
 	element: "object",
-	effect: ["secret", earthSecretRevealed, "fire"]
+	effect: ["secret", earthSecretRevealed, "neutral"]
 };
 
 const fireSecretRevealedStats = {
@@ -2062,7 +2062,7 @@ const fireSecretRevealedStats = {
 	image: fireSecretRevealed,
 	sabCard: sabotage1,
 	element: "object",
-	effect: ["secret", null, null]
+	effect: ["secret", "revealed", null]
 };
 
 const fireSecretStats = {
@@ -2086,7 +2086,7 @@ const waterSecretRevealedStats = {
 	image: waterSecretRevealed,
 	sabCard: sabotage1,
 	element: "object",
-	effect: ["secret", null, null]
+	effect: ["secret", "revealed", null]
 };
 
 const waterSecretStats = {
@@ -2110,7 +2110,7 @@ const windSecretRevealedStats = {
 	image: windSecretRevealed,
 	sabCard: sabotage1,
 	element: "object",
-	effect: ["secret", null, null]
+	effect: ["secret", "revealed", null]
 };
 
 const windSecretStats = {
@@ -4612,6 +4612,7 @@ class LevelSelectScreen extends React.Component {
 		this.selectLevel = this.selectLevel.bind(this);
 	}
 	componentDidMount(){
+		lastDoorway = "Empty Door";
 		if(equippedArtifact === undefined){
 			player.image = youber;
 		}else{
@@ -6276,6 +6277,15 @@ class GameScreen extends React.Component {
 						cards: selectedCards
 						}, () =>{
 							this.updateSabotageNum();
+							if(numberDrawn > 6){
+								document.getElementById("cardBox").style.left = "0%";
+							}else if(numberDrawn > 5){
+								document.getElementById("cardBox").style.left = "5%";
+							}else if(numberDrawn > 4){
+								document.getElementById("cardBox").style.left = "10%";
+							}else if(numberDrawn > 3){
+								document.getElementById("cardBox").style.left = "15%";
+							}else{}
 						});
 					});
 				}
@@ -6321,7 +6331,10 @@ class GameScreen extends React.Component {
 					if(secretArray[i] === level){
 						unlockedSecrets[i] = true;
 						this.props.error("A new path is revealed");
-						enemyArray[i].image = enemyArray[i].effect[1];
+						var newSecret = eval(secretArray[i] + "SecretRevealedStats");
+						var newEnemy = new EnemyCon(newSecret.name, newSecret.hp, newSecret.attack, newSecret.sabotage, newSecret.pointValue, newSecret.image, newSecret.sabCard, newSecret.element, newSecret.supCard, newSecret.effect);
+						enemyArray[currentEnemy] = newEnemy;
+						enemyHealth = enemyArray[currentEnemy].hp;
 					}else{}
 				}
 
@@ -6698,8 +6711,6 @@ class GameScreen extends React.Component {
 			if(enemyArray[i].name === ""){
 
 			}else{
-				console.log(enemyArray);
-				console.log(enemyArray[i].effect[0]);
 				if(enemyArray[i].effect[0] === "stage" && enemyArray[i].hp === 0){
 					var nextStage = enemyArray[i].effect[1];
 					var newEnemy = new EnemyCon(nextStage.name, nextStage.hp, nextStage.attack, nextStage.sabotage, nextStage.pointValue, nextStage.image, nextStage.sabCard, nextStage.element, nextStage.supCard, nextStage.effect);
@@ -6741,6 +6752,7 @@ class GameScreen extends React.Component {
 		}, 100);
 	}
 	enemyCleanUp() {
+		console.log(enemyArray);
 		if(enemyArray[0].hp === 0 && enemyArray[1].hp === 0 && enemyArray[2].hp === 0){
 				console.log("They're all dead. You win!");
 				//this.props.aux();
@@ -8176,7 +8188,7 @@ class Enemy extends React.Component {
 		}
 		if(this.props.effect[0] === "prize"){
 			this.props.prizeChoice(this.props.effect[1]);
-		}else if(this.props.image === emptyDoor){
+		}else if(this.props.image === emptyDoor || this.props.effect[1] === "revealed"){
 			if(patience === true){
 				this.props.error("Patience Betsy");
 			}else{
