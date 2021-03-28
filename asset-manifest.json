@@ -1,8 +1,8 @@
 {
   "main.css": "static/css/main.1d286a58.css",
   "main.css.map": "static/css/main.1d286a58.css.map",
-  "main.js": "static/js/main.01199a08.js",
-  "main.js.map": "static/js/main.01199a08.js.map",
+  "main.js": "static/js/main.b89c618c.js",
+  "main.js.map": "static/js/main.b89c618c.js.map",
   "static/media/albinoSlapper.gif": "static/media/albinoSlapper.7d9bd704.gif",
   "static/media/alphaSpookaw.gif": "static/media/alphaSpookaw.24669431.gif",
   "static/media/archmageMuckster.gif": "static/media/archmageMuckster.6fa4fb3b.gif",
@@ -154,6 +154,7 @@
   "static/media/mudCard.png": "static/media/mudCard.b133b5eb.png",
   "static/media/mudGolem.gif": "static/media/mudGolem.2bed9a3f.gif",
   "static/media/mudHover.png": "static/media/mudHover.cfc1b168.png",
+  "static/media/mudMasterYouber.gif": "static/media/mudMasterYouber.74d46b84.gif",
   "static/media/mudScroll.png": "static/media/mudScroll.a7ea85bb.png",
   "static/media/mudSection.png": "static/media/mudSection.c50c95f1.png",
   "static/media/mudSectionHidden.png": "static/media/mudSectionHidden.7b146179.png",
