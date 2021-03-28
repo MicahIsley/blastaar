@@ -223,6 +223,7 @@ import desertMasterYouber from './assets/costumes/desertMasterYouber.gif';
 import earthMasterYouber from './assets/costumes/earthMasterYouber.gif';
 import fireMasterYouber from './assets/costumes/fireMasterYouber.gif';
 import lavaMasterYouber from './assets/costumes/lavaMasterYouber.gif';
+import mudMasterYouber from './assets/costumes/mudMasterYouber.gif';
 import stormMasterYouber from './assets/costumes/stormMasterYouber.gif';
 import waterMasterYouber from './assets/costumes/waterMasterYouber.gif';
 import windMasterYouber from './assets/costumes/windMasterYouber.gif';
@@ -4942,15 +4943,15 @@ class EquipmentScreen extends React.Component {
 					<div className="row treasureTitle">Artifacts</div>
 					<div className="row">
 						<div className="col-xs-3 artifactSlot" onClick={() => { this.selectArtifact(earthMasterYouber, "earthYouber") }}>{secretArtifacts[0] ? <img className="artifactImg" id="earthYouber" src={earthArtifact} alt="earthArtifact" /> : null }</div>
-						<div className="col-xs-3 artifactSlot" onClick={() => { this.selectArtifact(fireMasterYouber, "fireYouber") }}>{secretArtifacts[1] ? <img className="artifactImg" id="fireYouber" src={sarcophagus} alt="sarcophagus" /> : null }</div>
-						<div className="col-xs-3 artifactSlot" onClick={() => { this.selectArtifact(waterMasterYouber, "waterYouber") }}>{secretArtifacts[2] ? <img className="artifactImg" id="waterYouber" src={elderStorm} alt="elderStorm" /> : null }</div>
-						<div className="col-xs-3 artifactSlot" onClick={() => { this.selectArtifact(windMasterYouber, "windYouber") }}>{secretArtifacts[3] ? <img className="artifactImg" id="windYouber" src={moltenPedestal} alt="moltenPedestal" /> : null }</div>
+						<div className="col-xs-3 artifactSlot" onClick={() => { this.selectArtifact(fireMasterYouber, "fireYouber") }}>{secretArtifacts[1] ? <img className="artifactImg" id="fireYouber" src={fireArtifact} alt="fireArtifact" /> : null }</div>
+						<div className="col-xs-3 artifactSlot" onClick={() => { this.selectArtifact(waterMasterYouber, "waterYouber") }}>{secretArtifacts[2] ? <img className="artifactImg" id="waterYouber" src={waterArtifact} alt="waterArtifact" /> : null }</div>
+						<div className="col-xs-3 artifactSlot" onClick={() => { this.selectArtifact(windMasterYouber, "windYouber") }}>{secretArtifacts[3] ? <img className="artifactImg" id="windYouber" src={windArtifact} alt="windArtifact" /> : null }</div>
 					</div>
 					<div className="row artifactRow2">
-						<div className="col-xs-3 artifactSlot" id="artifact5"></div>
-						<div className="col-xs-3 artifactSlot" id="artifact6"></div>
-						<div className="col-xs-3 artifactSlot" id="artifact7"></div>
-						<div className="col-xs-3 artifactSlot" id="artifact8"></div>
+						<div className="col-xs-3 artifactSlot" id="artifact5" onClick={() => { this.selectArtifact(desertMasterYouber, "desertYouber") }}>{secretArtifacts[4] ? <img className="artifactImg" id="desertYouber" src={sarcophagus} alt="desertArtifact" /> : null }</div>
+						<div className="col-xs-3 artifactSlot" id="artifact6" onClick={() => { this.selectArtifact(lavaMasterYouber, "lavaYouber") }}>{secretArtifacts[5] ? <img className="artifactImg" id="lavaYouber" src={moltenPedestal} alt="lavaArtifact" /> : null }</div>
+						<div className="col-xs-3 artifactSlot" id="artifact7" onClick={() => { this.selectArtifact(mudMasterYouber, "mudYouber") }}>{secretArtifacts[6] ? <img className="artifactImg" id="mudYouber" src={grandGoo} alt="mudArtifact" /> : null }</div>
+						<div className="col-xs-3 artifactSlot" id="artifact8" onClick={() => { this.selectArtifact(stormMasterYouber, "stormYouber") }}>{secretArtifacts[7] ? <img className="artifactImg" id="stormYouber" src={elderStorm} alt="stormArtifact" /> : null }</div>
 					</div>
 				</div>
 				<div className="col-xs-3">
@@ -5229,17 +5230,22 @@ class GameScreen extends React.Component {
 			}
 		}
 		var newStoryText;
-		var textArray = eval(level + "Text");
-		for(var i=0; i<textArray.length; i++){
-			if(startingLevel === level){
-				if(textArray[i].type === "start" && textArray[i].timing === storyTime){
-					newStoryText = textArray[i].text;
-				}else{}
-			}else{
-				if(textArray[i].type === "regular" && textArray[i].timing === storyTime){
-					newStoryText = textArray[i].text;
-				}else{}
+		var textArray;
+		if(level.includes("Temple")){
+		}else{
+			textArray = eval(level + "Text");
+			for(var i=0; i<textArray.length; i++){
+				if(startingLevel === level){
+					if(textArray[i].type === "start" && textArray[i].timing === storyTime){
+						newStoryText = textArray[i].text;
+					}else{}
+				}else{
+					if(textArray[i].type === "regular" && textArray[i].timing === storyTime){
+						newStoryText = textArray[i].text;
+					}else{}
+				}
 			}
+			this.props.showStoryScreen(newStoryText);
 		}
 		if(level === "fire"){
 			audioEl = document.getElementsByClassName("intense")[0];
@@ -5306,7 +5312,6 @@ class GameScreen extends React.Component {
 		}else{
 			audioEl = document.getElementsByClassName("findingOut")[0];
 		}
-		this.props.showStoryScreen(newStoryText);
 		audioEl.loop = true;
 		audioEl.volume = .4;
 	    audioEl.play();
@@ -6445,7 +6450,11 @@ class GameScreen extends React.Component {
 							}else{
 								currentEnemy = 4;
 								if(stageComplete === 3){
-									this.bossCleanse();
+									if(level.includes("Temple")){
+
+									}else{
+										this.bossCleanse();
+									}
 								}else{}
 								this.enemyAttackAction(0);
 							}
@@ -6724,9 +6733,16 @@ class GameScreen extends React.Component {
 					for(var i=0; i<2; i++){
 						if(enemyArray[i].effect[1] === "orbs"){
 							console.log("free orbs");
+							var templeArray = ["earthTemple", "fireTemple", "waterTemple", "windTemple"];
 							var randElement = [earth, fire, water, wind];
+							var chosenElement;
+							for(var i=0; i<randElement.length; i++){
+								if(level === templeArray[i]){
+									chosenElement = randElement[i];
+								}else{}
+							}
 							var randNum = Math.floor(Math.random() * 4);
-							this.props.gainSupGemReward(randElement[randNum]);
+							this.props.gainSupGemReward(chosenElement);
 						}else{}
 					}
 				}else{}
@@ -8193,7 +8209,11 @@ class Enemy extends React.Component {
 				this.props.error("Patience Betsy");
 			}else{
 				lastDoorway = this.props.name;
-				document.getElementById("1image").classList.remove("prisonOrbImg");
+				if(document.getElementById("1image") === null){
+
+				}else{
+					document.getElementById("1image").classList.remove("prisonOrbImg");
+				}
 				this.props.switchEnemyArray();
 				stageComplete ++;
 			}
@@ -8379,7 +8399,7 @@ class AuxilaryScreen extends React.Component {
 			var levelArray = ["earth", "fire", "water", "wind", "desert", "lava", "mud", "storm"];
 			var scrollArray = [earthScroll, fireScroll, waterScroll, windScroll, desertScroll, lavaScroll, mudScroll, stormScroll];
 			var keyArray = [earthKey, fireKey, waterKey, windKey];
-			var artifactArray = [earthArtifact, moltenPedestal, grandGoo, elderStorm, sarcophagus];
+			var artifactArray = [earthArtifact, fireArtifact, waterArtifact, windArtifact, sarcophagus, moltenPedestal, grandGoo, elderStorm];
 			for(var i=0; i<levelArray.length; i++){
 				if(levelArray[i] === level){
 					if(rewardTier === 2){
