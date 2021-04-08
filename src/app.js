@@ -313,7 +313,7 @@ var earthText = [
 	{type: "start", timing: 0, text: "Youber recalls his grandfather talking about disappearing, as if it was inevitable. Though he never mentioned why or how. Perhaps the forest will hold some answers. Youber entered the woods, prepared for whatever perils might befall him."},
 	{type: "start", timing: 0.5, text: "Youber takes a moment to collect his thoughts. The creatures seem considerably agitated. Youber looks around and finds some interesting items. These must enhance the magic sack. A quick rest and then further into the woods."},
 	{type: "start", timing: 1, text: "Youber, feeling slightly empowered, presses through the ever thickening growth. The trees look more unnatural the farther Youber travels. Youber stumbles down an embankment and finds himself confronted by more creatures. They don't look particularly pleased..."},
-	{type: "start", timing: 1.5, text: "What's this? A Scroll covered in runes. Now Youber can imbue his magic with elemental properties. Youber looks around and sees a sign. It appears that Youber can choose to venture into the heart of the woods, take a magic chute to the Fire Fields, or follow the path South towards the Islands of Ruu. Decisions, decisions..."},
+	{type: "start", timing: 1.5, text: "What's this? Youber collects a glowing orb, he can now add the magic of the forest to his cards. Youber looks around and sees a sign. It appears that Youber can choose to venture into the heart of the woods, take a magic chute to the Fire Fields, or follow the path South towards the Islands of Ruu. Decisions, decisions..."},
 	{type: "start", timing: 2, text: "Youber is undeterred by danger and finds his way into the heart of the forest. The trees give way to a clearing and Youber quickly realizes he has been surrounded...and there's something very large looming in the distance."},
 	{type: "start", timing: 2.5, text: "With the denizens of the forest defeated, they seem to relax for just a moment. The leader hands over a key. They haven't seen Youber's family, but they have suffered disappearances of there own. West, they claim, the sickness lies West. The creatures seems to be growing agitated once more. Youber presses onward to new lands..."},
 	{type: "regular", timing: 0, text: "Youber decides his quest leads into the forests of Primafauna. He remembers hearing stories about the woods and the gentle creatures that lived there. Hopefully, Youber's journey will be unevent...what was that? The trees rustle and branches snap. Youber is not alone."},
@@ -328,28 +328,14 @@ var earthText = [
 ];
 
 var earthTempleText = [
-	{type: "start", timing: 0, text: "Youber recalls his grandfather talking about disappearing, as if it was inevitable. Though he never mentioned why or how. Perhaps the forest will hold some answers. Youber entered the woods, prepared for whatever perils might befall him."},
-	{type: "start", timing: 0.5, text: "Youber takes a moment to collect his thoughts. The creatures seem considerably agitated. Youber looks around and finds some interesting items. These must enhance the magic sack. A quick rest and then further into the woods."},
-	{type: "start", timing: 1, text: "Youber, feeling slightly empowered, presses through the ever thickening growth. The trees look more unnatural the farther Youber travels. Youber stumbles down an embankment and finds himself confronted by more creatures. They don't look particularly pleased..."},
-	{type: "start", timing: 1.5, text: "Youber looks around and sees a sign. It appears that Youber can choose to venture into the heart of the woods, take a magic chute to the Fire Fields, or follow the path South towards the Islands of Ruu. Decisions, decisions..."},
-	{type: "start", timing: 2, text: "Youber is undeterred by danger and finds his way into the heart of the forest. The trees give way to a clearing and Youber quickly realizes he has been surrounded...and there's something very large looming in the distance."},
-	{type: "start", timing: 2.5, text: "With the denizens of the forest defeated, they seem to relax for just a moment. They haven't seen Youber's family, but they have suffered disappearances of there own. West, they claim, the sickness lies West. The creatures seems to be growing agitated once more. Youber presses onward to new lands..."},
-	{type: "regular", timing: 0, text: "Youber decides his quest leads into the forests of Primafauna. He remembers hearing stories about the woods and the gentle creatures that lived there. Hopefully, Youber's journey will be unevent...what was that? The trees rustle and branches snap. Youber is not alone."},
-	{type: "regular", timing: 0.5, text: "Youber takes a moment to collect his thoughts. The creatures seem far from gentle. However, Youber will not give up, he can feel that he's getting closer. A quick rest and then further into the woods."},
-	{type: "regular", timing: 1, text: "Youber, feeling slightly empowered, presses through the ever thickening growth. Youber stumbles down an embankment and finds himself confronted by more creatures. They don't look particularly pleased..."},
-	{type: "regular", timing: 1.5, text: "Youber looks around and sees a crossroads, with paths leading out of the forest. Still, the tress are luring Youber deeper in. More secrets and power lie ahead. Decisions, decisions..."},
-	{type: "regular", timing: 2, text: "Youber is undeterred by danger and finds his way into the heart of the forest. The trees give way to a clearing and Youber quickly realizes he has been surrounded...and there's something very large looming in the distance."},
-	{type: "regular", timing: 2.5, text: "With the denizens of the forest defeated, they seem to relax for just a moment. Long enough for Youber to hear about a growing corruption in the West. The creatures seems to be growing agitated once more. Youber presses onward..."},
-	{type: "regular", timing: 3, text: "Youber can't seem to stay away from the forest for too long. Surely there is more hidden behind these Vine covered trees."},
-	{type: "regular", timing: 3.5, text: "Youber grows in the ways of the Earth. He must think that this is the power he needs to complete his quest."}
-
+	{type: "start", timing: 0, text: "The hidden path leads to a cave. Youber can sense magic thrumming in the air around him. This place is very old and surely treacherous, but great are the rewards for brave adventurers."}
 ];
 
 var fireText = [
 	{type: "start", timing: 0, text: "Youber recalls his grandfather talking about disappearing, as if it was inevitable. Though he never mentioned why or how. Perhaps the Fire Fields will hold some answers. Youber entered the burning plains, prepared for whatever perils might befall him."},
 	{type: "start", timing: 0.5, text: "Youber wipes his brow and collects his thoughts. On the ground, Youber finds some red orbs. His magic sack glows in anticipation. Youber takes a quick break to make some modifications."},
 	{type: "start", timing: 1, text: "Youber treads carefully around the fire rivers and listening for any sulfuric explosions. The sky is always dark here, even when there are no clouds. Youber is starting to understand why anything that lived here would have poor manners. Speaking of which, here come some now..."},
-	{type: "start", timing: 1.5, text: "What's this? A Scroll covered in runes. Now Youber can imbue his magic with elemental properties. A way out! The path Youber has been taking splits. Take a chute to the Primafauna Forest, travel South the the Howling Caverns, or continue to brave the smoldering wasteland. First a snack, then decisions."},
+	{type: "start", timing: 1.5, text: "What's this? Youber collects a glowing orb, he can now add fire magic to his cards. A way out! The path Youber has been taking splits. Take a chute to the Primafauna Forest, travel South the the Howling Caverns, or continue to brave the smoldering wasteland. First a snack, then decisions."},
 	{type: "start", timing: 2, text: "The fire creatures grow more numerous as Youber presses onward. Youber notices large markings, something large lives here, splendid. The ground rumbles, not a fissure. Youber steels himself for conflict."},
 	{type: "start", timing: 2.5, text: "Youber defeats the leader and presses for information. A growing terror lives in the East. A key is pressed into Youber's hand. Youber knows that his quest must lead him there. Happy to be rid of this treacherous land, Youber continues his quest elsewhere."},
 	{type: "regular", timing: 0, text: "Youber adventures into the fearsome Fire Fields. The inhabitants have a fearsome reputation. Youber will have to be ready for anything. Perhaps here he will discover some clues about his family's disappearance."},
@@ -362,11 +348,15 @@ var fireText = [
 	{type: "regular", timing: 3.5, text: "Fire is an alluring power and Youber has claimed much of its power. Perhaps a little more?"}
 ];
 
+var fireTempleText = [
+	{type: "start", timing: 0, text: "Youber descends into the hidden pit. The heat subsides and Youber sees a faint glow further down. A hidden temple, full of secrets and riches. Youber loves both, but mostly secrets."}
+];
+
 var waterText = [
 	{type: "start", timing: 0, text: "Youber recalls his grandfather talking about disappearing, as if it was inevitable. Though he never mentioned why or how. Perhaps the Islands of Ruu will hold some answers. Youber crosses into the tropical paradise, preparing for whatever perils might befall him."},
 	{type: "start", timing: 0.5, text: "Youber is taken aback at finding so much hostility in such a warm, welcoming place. At least he found some fancy looking gems. Youber instinctively feels that they will improve his magic sack in some way. Youber spends a moment discovering how."},
 	{type: "start", timing: 1, text: "Youber slowly makes his way to the larger islands. They are streaked with greys and blacks. Dull colors that feel out of place in this vibrant climate. Youber spies some monsters roaming the coast, they are headed his way..."},
-	{type: "start", timing: 1.5, text: "What's this? A Scroll covered in runes. Now Youber can imbue his magic with elemental properties. Youber find a shallow cave with two chutes inside. One leads into the forest region and the other to the Howling Caverns. Youber also feels that these islands hold more secrets. What will Youber do next?"},
+	{type: "start", timing: 1.5, text: "What's this? Youber collects a glowing orb, he can now add the magic of the islands to his cards. Youber find a shallow cave with two chutes inside. One leads into the forest region and the other to the Howling Caverns. Youber also feels that these islands hold more secrets. What will Youber do next?"},
 	{type: "start", timing: 2, text: "The largest island lies ahead, accompanied by the largest throng of monsters. The leader looms larger among them. Youber, determined to continue his quest, ventures forward, looking for answers."},
 	{type: "start", timing: 2.5, text: "The leader defeated, Youber manages to extract some useful information and a key. The dull palate is a new phenomenom here, creeping in from the North-West. Also, monsters have been disappearing from the Islands too. The monsters suddenly stop sharing and begin glaring at Youber. Youber gets the message and moves on."},
 	{type: "regular", timing: 0, text: "Youber's questing leads him to the Islands of Ruu. A tropical paradise, though Youber has never been too fond of the water."},
@@ -379,11 +369,15 @@ var waterText = [
 	{type: "regular", timing: 3.5, text: "Youber's mastery with Water grows and grows. His magic sack will hopefully be strong enough to save his family."}
 ];
 
+var waterTempleText = [
+	{type: "start", timing: 0, text: "The grotto is much larger on the inside. The moisture in the air seems to glow. Youber can smell the rot of ancient ruins. The path forward isn't clear, but Youber wants to find out what precious secrets lie within."}
+];
+
 var windText = [
 	{type: "start", timing: 0, text: "Youber recalls his grandfather talking about disappearing, as if it was inevitable. Though he never mentioned why or how. Perhaps the towering crags will hold some answers. Youber crosses into the wind-swept landscape, preparing for whatever perils might befall him."},
 	{type: "start", timing: 0.5, text: "Dueling on the cliffs is dangerous, but it appears Youber has discovered some interesting gems. Perhaps Youber can use these to make his sack more powerful. A quick moment to rest and then the climing continues."},
 	{type: "start", timing: 1, text: "These caves don't just howl, they moan. And the smell is nigh unbearable. However, Youber is confident that he will only finish his quest if he braves the caves. Speaking of danger..."},
-	{type: "start", timing: 1.5, text: "What's this? A Scroll covered in runes. Now Youber can imbue his magic with elemental properties. Chutes! Pathways to other lands. One to the Fire Fields and the other to the tropical region. These could be useful to Youber. Youber can also continue scouring the cliffs for answers and secrets."},
+	{type: "start", timing: 1.5, text: "What's this? Youber collects a glowing orb, he can now add the magic of the spires to his cards. Chutes! Pathways to other lands. One to the Fire Fields and the other to the tropical region. These could be useful to Youber. Youber can also continue scouring the cliffs for answers and secrets."},
 	{type: "start", timing: 2, text: "Youber reaches the top of the tallest spire. The howling is almost deafening, Youber enters the cavern and within moments realizes he is vastly outnumbered. Youber opens the magic sack..."},
 	{type: "start", timing: 2.5, text: "Youber has defended himself and conquered the champion of the cliffs. The champion hands over a key and tells Youber of a dark shroud that lies to the East. Creatures from the caves have been disapearing into the shroud. Youber learns all he can and then moves on."},
 	{type: "regular", timing: 0, text: "Youber scales the heights of the Howling Caverns. These caves surely hold many secrets."},
@@ -394,6 +388,10 @@ var windText = [
 	{type: "regular", timing: 2.5, text: "After the battle subsides, a key materializes in Youber's hand. Youber can see far into the distance from up here. A desert and a massive storm lingering on the horizon. Is Youber destined to visit these lands? Will the Wind magic be enough?"},
 	{type: "regular", timing : 3, text: "There are so many caverns that Youber had to return to explore. Youber is convinced that powerful magic lies dormant in these cliffs. Perhaps it is guarded by trap, like Poison Gas?"},
 	{type: "regular", timing: 3.5, text: "The rush of learning Wind magic excites Youber. Wanting to rescue his family drives him forward, but learn to fly would be really really sweet."}
+];
+
+var windTempleText = [
+	{type: "start", timing: 0, text: "The poisonous fumes drain away and a grand doorway remains. A temple, surely dangerous, but surely rewarding. Youber hopes for the best and enters boldly."}
 ];
 
 var desertText = [
@@ -3504,7 +3502,7 @@ var stormGem = storm;
 var startingLevel = null;
 var patience = false;
 var secrets = false;
-var unlockedSecrets = [false, false, false, false, false, false, false, false];
+var unlockedSecrets = [true, false, false, false, false, false, false, false];
 var elementKeys = [false, false, false, false];
 var elementScrolls = [false, false, false, false, false, false, false, false];
 var secretArtifacts = [false, false, false, false, false, false, false, false];
@@ -5305,6 +5303,7 @@ class GameScreen extends React.Component {
 		var newStoryText;
 		var textArray;
 		if(level.includes("Temple")){
+			newStoryText = eval(level + "Text")[0].text;
 		}else{
 			textArray = eval(level + "Text");
 			for(var i=0; i<textArray.length; i++){
@@ -5318,8 +5317,8 @@ class GameScreen extends React.Component {
 					}else{}
 				}
 			}
-			this.props.showStoryScreen(newStoryText);
 		}
+		this.props.showStoryScreen(newStoryText);
 		if(level === "fire"){
 			audioEl = document.getElementsByClassName("intense")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + fireBackground + ")";
