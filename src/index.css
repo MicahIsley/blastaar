@@ -2,11 +2,92 @@ body {
 	background: #232323;
 }
 
+#earthFirst {
+	position: absolute;
+	top: 50px;
+	right: 50px;
+	transition: .5s;
+}
+
+#earthFirst:hover {
+	box-shadow: -125px 105px 50px 25px green;
+}
+
+#fireFirst {
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	transition: .5s;
+}
+
+#fireFirst:hover {
+	box-shadow: 125px 105px 50px 25px red;
+}
+
+#waterFirst {
+	position: absolute;
+	top: 450px;
+	right: 50px;
+	transition: .5s;
+}
+
+#waterFirst:hover {
+	box-shadow: -125px -105px 50px 25px blue;
+}
+
+#windFirst {
+	position: absolute;
+	top: 450px;
+	left: 50px;
+	transition: .5s;
+}
+
+#windFirst:hover {
+	box-shadow: 125px -105px 50px 25px lightblue;
+}
+
+#beginButton {
+	font-size: 36px;
+	font-family: 'Metamorphous', cursive;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	background: #b35b23;
+	border-color: #a70e0e;
+	border-width: 6px;
+	border-style: ridge;
+	border-radius: 15px;
+	text-align: center;
+	margin-top: 20%;
+}
+
+#beginButton:hover {
+	background: grey;
+}
+
+#craftingButton {
+	font-size: 36px;
+	font-family: 'Metamorphous', cursive;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	background: #b35b23;
+	border-color: #a70e0e;
+	border-width: 6px;
+	border-style: ridge;
+	border-radius: 15px;
+}
+
+#craftingButton:hover {
+	background: grey;
+}
+
 #levelTitle {
 	font-size: 40px;
 	color: white;
 	text-align: center;
 	font-family: 'Metamorphous', cursive;
+	position: absolute;
+	top: 350px;
+	left: 475px;
 }
 
 .prisonOrbImg {
@@ -136,6 +217,16 @@ body {
 .titleDesigns {
 	background-image: url('assets/backgrounds/titleDesigns.png');
 	height: 100vh;
+}
+
+.fadeElements {
+	opacity: 0;
+}
+
+.beginFade {
+	-webkit-animation: fadein 8s;
+	-moz-animation: fadein 8s;
+	animation: fadein 8s;
 }
 
 #firstChoiceRow {
@@ -454,6 +545,8 @@ body {
 	height: 250px;
     width: 400px;
     margin-bottom: 25px;
+    opacity: 0;
+    margin-left: -120px;
 }
 
 .mainScore {
@@ -513,10 +606,12 @@ body {
 .firstLevelChoice {
 	background: #00000059;
 	background-size: contain;
-	border-radius: 15px;
+	border-radius: 50px;
 	border-color: black;
 	border-width: 5px;
 	border-style: solid;
+	height: 250px;
+	width: 250px;
 }
 
 .firstLevelChoice:hover {
@@ -1108,10 +1203,6 @@ body {
 	animation: CardCostAnimation 8s ease infinite;
 }
 
-#influenceOrb:hover {
-	background: orange;
-}
-
 #scoreDisplay {
 	font-size: 28px;
 	font-family: 'Metamorphous', cursive;
@@ -1166,10 +1257,6 @@ body {
 	font-size: 20px;
     padding: 0px;
     margin-top: 10px;
-}
-
-.stormlightOn {
-	box-shadow: 0px 0px 10px 15px red;
 }
 
 .spren {
@@ -1268,6 +1355,19 @@ input {
 
 .campButton:hover {
 	background: grey;
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
 @-webkit-keyframes heartPulse {
@@ -1413,7 +1513,7 @@ input {
 	border-width: 4px;
 	border-style: inset;
 	overflow: scroll;
-    height: 600px;
+    height: 580px;
     background: #ffffff38;
     border-radius: 15px;
 }
@@ -1425,7 +1525,7 @@ input {
 	border-width: 4px;
 	border-style: inset;
 	overflow: scroll;
-    height: 600px;
+    height: 580px;
 }
 
 #cardBox {
@@ -1436,6 +1536,7 @@ input {
     padding: 5px;
     padding-right: 20px;
     border-radius: 10px;
+    transition: .5s;
 }
 
 #enemySide {
