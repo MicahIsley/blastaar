@@ -68,6 +68,7 @@ import desertBackground from './assets/backgrounds/desertBackground.png';
 import stormBackground from './assets/backgrounds/stormBackground.png';
 import mudBackground from './assets/backgrounds/mudBackground.png';
 import towerBackground from './assets/backgrounds/towerBackground.png';
+import templeBackground from './assets/backgrounds/templeBackground.png';
 import boneStalker from './assets/desert/boneStalker.gif';
 import championStalker from './assets/desert/championStalker.gif';
 import desertGolem from './assets/desert/desertGolem.gif';
@@ -313,9 +314,9 @@ var earthText = [
 	{type: "start", timing: 0, text: "Youber recalls his grandfather talking about disappearing, as if it was inevitable. Though he never mentioned why or how. Perhaps the forest will hold some answers. Youber entered the woods, prepared for whatever perils might befall him."},
 	{type: "start", timing: 0.5, text: "Youber takes a moment to collect his thoughts. The creatures seem considerably agitated. Youber looks around and finds some interesting items. These must enhance the magic sack. A quick rest and then further into the woods."},
 	{type: "start", timing: 1, text: "Youber, feeling slightly empowered, presses through the ever thickening growth. The trees look more unnatural the farther Youber travels. Youber stumbles down an embankment and finds himself confronted by more creatures. They don't look particularly pleased..."},
-	{type: "start", timing: 1.5, text: "What's this? Youber collects a glowing orb, he can now add the magic of the forest to his cards. Youber looks around and sees a sign. It appears that Youber can choose to venture into the heart of the woods, take a magic chute to the Fire Fields, or follow the path South towards the Islands of Ruu. Decisions, decisions..."},
+	{type: "start", timing: 1.5, text: "What's this? Youber collects a glowing orb, he can now add the magic of the forest to his cards. The forest grow darker and more dangerous as Youber presses onward. This new power will be very useful."},
 	{type: "start", timing: 2, text: "Youber is undeterred by danger and finds his way into the heart of the forest. The trees give way to a clearing and Youber quickly realizes he has been surrounded...and there's something very large looming in the distance."},
-	{type: "start", timing: 2.5, text: "With the denizens of the forest defeated, they seem to relax for just a moment. The leader hands over a key. They haven't seen Youber's family, but they have suffered disappearances of there own. West, they claim, the sickness lies West. The creatures seems to be growing agitated once more. Youber presses onward to new lands..."},
+	{type: "start", timing: 2.5, text: "With the denizens of the forest defeated, they seem to relax for just a moment. The leader hands over a key. They haven't seen Youber's family, but they have suffered disappearances of there own. West, they claim, the sickness lies West. As Youber ventures away his bag begins to radiate a strong pink glow. Quickly, it subsides, leaving runes etched in the sides. Youber now has a magic bag."},
 	{type: "regular", timing: 0, text: "Youber decides his quest leads into the forests of Primafauna. He remembers hearing stories about the woods and the gentle creatures that lived there. Hopefully, Youber's journey will be unevent...what was that? The trees rustle and branches snap. Youber is not alone."},
 	{type: "regular", timing: 0.5, text: "Youber takes a moment to collect his thoughts. The creatures seem far from gentle. However, Youber will not give up, he can feel that he's getting closer. A quick rest and then further into the woods."},
 	{type: "regular", timing: 1, text: "Youber, feeling slightly empowered, presses through the ever thickening growth. Youber stumbles down an embankment and finds himself confronted by more creatures. They don't look particularly pleased..."},
@@ -335,9 +336,9 @@ var fireText = [
 	{type: "start", timing: 0, text: "Youber recalls his grandfather talking about disappearing, as if it was inevitable. Though he never mentioned why or how. Perhaps the Fire Fields will hold some answers. Youber entered the burning plains, prepared for whatever perils might befall him."},
 	{type: "start", timing: 0.5, text: "Youber wipes his brow and collects his thoughts. On the ground, Youber finds some red orbs. His magic sack glows in anticipation. Youber takes a quick break to make some modifications."},
 	{type: "start", timing: 1, text: "Youber treads carefully around the fire rivers and listening for any sulfuric explosions. The sky is always dark here, even when there are no clouds. Youber is starting to understand why anything that lived here would have poor manners. Speaking of which, here come some now..."},
-	{type: "start", timing: 1.5, text: "What's this? Youber collects a glowing orb, he can now add fire magic to his cards. A way out! The path Youber has been taking splits. Take a chute to the Primafauna Forest, travel South the the Howling Caverns, or continue to brave the smoldering wasteland. First a snack, then decisions."},
+	{type: "start", timing: 1.5, text: "What's this? Youber collects a glowing orb, he can now add fire magic to his cards. Youber must continue to brave the smoldering wasteland. First a snack, then onward."},
 	{type: "start", timing: 2, text: "The fire creatures grow more numerous as Youber presses onward. Youber notices large markings, something large lives here, splendid. The ground rumbles, not a fissure. Youber steels himself for conflict."},
-	{type: "start", timing: 2.5, text: "Youber defeats the leader and presses for information. A growing terror lives in the East. A key is pressed into Youber's hand. Youber knows that his quest must lead him there. Happy to be rid of this treacherous land, Youber continues his quest elsewhere."},
+	{type: "start", timing: 2.5, text: "Youber defeats the leader and presses for information. A growing terror lives in the East. A key is pressed into Youber's hand. Youber knows that his quest must lead him there. As Youber ventures away his bag begins to radiate a strong pink glow. Quickly, it subsides, leaving runes etched in the sides. Youber now has a magic bag."},
 	{type: "regular", timing: 0, text: "Youber adventures into the fearsome Fire Fields. The inhabitants have a fearsome reputation. Youber will have to be ready for anything. Perhaps here he will discover some clues about his family's disappearance."},
 	{type: "regular", timing: 0.5, text: "Although painful, this place is good for training. Youber feels his Fire powers growing. The more powerful he gets, the better chance of rescuing his family."},
 	{type: "regular", timing: 1, text: "Youber treads carefully around the fire rivers and listening for any sulfuric explosions. The sky is always dark here, even when there are no clouds. Youber is starting to understand why anything that lived here would have poor manners. Speaking of which, here come some now..."},
@@ -356,9 +357,9 @@ var waterText = [
 	{type: "start", timing: 0, text: "Youber recalls his grandfather talking about disappearing, as if it was inevitable. Though he never mentioned why or how. Perhaps the Islands of Ruu will hold some answers. Youber crosses into the tropical paradise, preparing for whatever perils might befall him."},
 	{type: "start", timing: 0.5, text: "Youber is taken aback at finding so much hostility in such a warm, welcoming place. At least he found some fancy looking gems. Youber instinctively feels that they will improve his magic sack in some way. Youber spends a moment discovering how."},
 	{type: "start", timing: 1, text: "Youber slowly makes his way to the larger islands. They are streaked with greys and blacks. Dull colors that feel out of place in this vibrant climate. Youber spies some monsters roaming the coast, they are headed his way..."},
-	{type: "start", timing: 1.5, text: "What's this? Youber collects a glowing orb, he can now add the magic of the islands to his cards. Youber find a shallow cave with two chutes inside. One leads into the forest region and the other to the Howling Caverns. Youber also feels that these islands hold more secrets. What will Youber do next?"},
+	{type: "start", timing: 1.5, text: "What's this? Youber collects a glowing orb, he can now add the magic of the islands to his cards. Youber feels that these islands hold more secrets. What will Youber do next?"},
 	{type: "start", timing: 2, text: "The largest island lies ahead, accompanied by the largest throng of monsters. The leader looms larger among them. Youber, determined to continue his quest, ventures forward, looking for answers."},
-	{type: "start", timing: 2.5, text: "The leader defeated, Youber manages to extract some useful information and a key. The dull palate is a new phenomenom here, creeping in from the North-West. Also, monsters have been disappearing from the Islands too. The monsters suddenly stop sharing and begin glaring at Youber. Youber gets the message and moves on."},
+	{type: "start", timing: 2.5, text: "The leader defeated, Youber manages to extract some useful information and a key. The dull palate is a new phenomenom here, creeping in from the North-West. Also, monsters have been disappearing from the Islands too. The monsters suddenly stop sharing and begin glaring at Youber. As Youber ventures away his bag begins to radiate a strong pink glow. Quickly, it subsides, leaving runes etched in the sides. Youber now has a magic bag."},
 	{type: "regular", timing: 0, text: "Youber's questing leads him to the Islands of Ruu. A tropical paradise, though Youber has never been too fond of the water."},
 	{type: "regular", timing: 0.5, text: "Youber is taken aback at finding so much hostility in such a warm, welcoming place. At least Youber is learning some of the Water power that permeates the islands. No family yet, but Youber know every step he gets closer."},
 	{type: "regular", timing: 1, text: "Youber slowly makes his way to the larger islands. They are streaked with greys and blacks. Dull colors that feel out of place in this vibrant climate. Youber spies some monsters roaming the coast, they are headed his way..."},
@@ -377,9 +378,9 @@ var windText = [
 	{type: "start", timing: 0, text: "Youber recalls his grandfather talking about disappearing, as if it was inevitable. Though he never mentioned why or how. Perhaps the towering crags will hold some answers. Youber crosses into the wind-swept landscape, preparing for whatever perils might befall him."},
 	{type: "start", timing: 0.5, text: "Dueling on the cliffs is dangerous, but it appears Youber has discovered some interesting gems. Perhaps Youber can use these to make his sack more powerful. A quick moment to rest and then the climing continues."},
 	{type: "start", timing: 1, text: "These caves don't just howl, they moan. And the smell is nigh unbearable. However, Youber is confident that he will only finish his quest if he braves the caves. Speaking of danger..."},
-	{type: "start", timing: 1.5, text: "What's this? Youber collects a glowing orb, he can now add the magic of the spires to his cards. Chutes! Pathways to other lands. One to the Fire Fields and the other to the tropical region. These could be useful to Youber. Youber can also continue scouring the cliffs for answers and secrets."},
+	{type: "start", timing: 1.5, text: "What's this? Youber collects a glowing orb, he can now add the magic of the spires to his cards. Youber continues to scour the cliffs for answers and secrets."},
 	{type: "start", timing: 2, text: "Youber reaches the top of the tallest spire. The howling is almost deafening, Youber enters the cavern and within moments realizes he is vastly outnumbered. Youber opens the magic sack..."},
-	{type: "start", timing: 2.5, text: "Youber has defended himself and conquered the champion of the cliffs. The champion hands over a key and tells Youber of a dark shroud that lies to the East. Creatures from the caves have been disapearing into the shroud. Youber learns all he can and then moves on."},
+	{type: "start", timing: 2.5, text: "Youber has defended himself and conquered the champion of the cliffs. The champion hands over a key and tells Youber of a dark shroud that lies to the East. Creatures from the caves have been disapearing into the shroud. As Youber ventures away his bag begins to radiate a strong pink glow. Quickly, it subsides, leaving runes etched in the sides. Youber now has a magic bag."},
 	{type: "regular", timing: 0, text: "Youber scales the heights of the Howling Caverns. These caves surely hold many secrets."},
 	{type: "regular", timing: 0.5, text: "Dueling on the cliffs is dangerous, but it appears Youber has discovered some Wind magic. A quick moment to rest and then the climing continues."},
 	{type: "regular", timing: 1, text: "These caves don't just howl, they moan. And the smell is nigh unbearable. However, Youber is confident that he will only finish his quest if he braves the caves. Speaking of danger..."},
@@ -2182,11 +2183,11 @@ const dirtDoorStats = {
 	image: dirtDoor,
 	sabCard: sabotage1,
 	element: "doorway",
-	effect: ["weakness", "wind", null]
+	effect: ["weakness", "water", null]
 };
 
 const earthMarkedDoorStats = {
-	name: "Earth Marked Door",
+	name: "Mysterious Door",
 	hp: 10,
 	attack: 0,
 	sabotage: 0,
@@ -2198,7 +2199,7 @@ const earthMarkedDoorStats = {
 };
 
 const fireMarkedDoorStats = {
-	name: "Fire Marked Door",
+	name: "Mysterious Door",
 	hp: 10,
 	attack: 0,
 	sabotage: 0,
@@ -2210,7 +2211,7 @@ const fireMarkedDoorStats = {
 };
 
 const waterMarkedDoorStats = {
-	name: "Water Marked Door",
+	name: "Mysterious Door",
 	hp: 10,
 	attack: 0,
 	sabotage: 0,
@@ -2222,7 +2223,7 @@ const waterMarkedDoorStats = {
 };
 
 const windMarkedDoorStats = {
-	name: "Wind Marked Door",
+	name: "Mysterious Door",
 	hp: 10,
 	attack: 0,
 	sabotage: 0,
@@ -2612,7 +2613,7 @@ function levelEarthTempleDistribution(randEnemyNum){
 			}else{
 				createEnemy = earthMarkedDoorStats;
 			}
-		}else if(lastDoorway === "Earth Marked Door"){
+		}else if(lastDoorway === "Mysterious Door"){
 			createEnemy = earthMarkedDoorStats;
 		}else{}
 	}else{
@@ -2658,7 +2659,7 @@ function levelEarthTempleDistribution(randEnemyNum){
 			}else{
 				createEnemy = prisonOrbStats;
 			}
-		}else if(lastDoorway === "Earth Marked Door"){
+		}else if(lastDoorway === "Mysterious Door"){
 			createEnemy = earthArtifactStats;
 		}else{}
 	}
@@ -2754,7 +2755,7 @@ function levelFireTempleDistribution(randEnemyNum){
 			}else{
 				createEnemy = fireMarkedDoorStats;
 			}
-		}else if(lastDoorway === "Earth Marked Door"){
+		}else if(lastDoorway === "Mysterious Door"){
 			createEnemy = fireMarkedDoorStats;
 		}else{}
 	}else{
@@ -2800,7 +2801,7 @@ function levelFireTempleDistribution(randEnemyNum){
 			}else{
 				createEnemy = prisonOrbStats;
 			}
-		}else if(lastDoorway === "Fire Marked Door"){
+		}else if(lastDoorway === "Mysterious Door"){
 			createEnemy = fireArtifactStats;
 		}else{}
 	}
@@ -2896,7 +2897,7 @@ function levelWaterTempleDistribution(randEnemyNum){
 			}else{
 				createEnemy = waterMarkedDoorStats;
 			}
-		}else if(lastDoorway === "Water Marked Door"){
+		}else if(lastDoorway === "Mysterious Door"){
 			createEnemy = waterMarkedDoorStats;
 		}else{}
 	}else{
@@ -2942,7 +2943,7 @@ function levelWaterTempleDistribution(randEnemyNum){
 			}else{
 				createEnemy = prisonOrbStats;
 			}
-		}else if(lastDoorway === "Water Marked Door"){
+		}else if(lastDoorway === "Mysterious Door"){
 			createEnemy = waterArtifactStats;
 		}else{}
 	}
@@ -3038,7 +3039,7 @@ function levelWindTempleDistribution(randEnemyNum){
 			}else{
 				createEnemy = windMarkedDoorStats;
 			}
-		}else if(lastDoorway === "Wind Marked Door"){
+		}else if(lastDoorway === "Mysterious Door"){
 			createEnemy = windMarkedDoorStats;
 		}else{}
 	}else{
@@ -3084,7 +3085,7 @@ function levelWindTempleDistribution(randEnemyNum){
 			}else{
 				createEnemy = prisonOrbStats;
 			}
-		}else if(lastDoorway === "Wind Marked Door"){
+		}else if(lastDoorway === "Mysterious Door"){
 			createEnemy = windArtifactStats;
 		}else{}
 	}
@@ -4704,19 +4705,19 @@ class LevelSelectScreen extends React.Component {
 		}
 		var hiddenLevels = [{hidden: true, urlShow: "url(" + earthSection + ")", urlHidden: "url(" + earthSectionHidden + ")"},{hidden: true, urlShow: "url(" + fireSection + ")", urlHidden: "url(" + fireSectionHidden + ")"},{hidden: true, urlShow: "url(" + waterSection + ")", urlHidden: "url(" + waterSectionHidden + ")"},{hidden: true, urlShow: "url(" + windSection + ")", urlHidden: "url(" + windSectionHidden + ")"},{hidden: true, urlShow: "url(" + desertSection + ")", urlHidden: "url(" + desertSectionHidden + ")"},{hidden: true, urlShow: "url(" + lavaSection + ")", urlHidden: "url(" + lavaSectionHidden + ")"},{hidden: true, urlShow: "url(" + mudSection + ")", urlHidden: "url(" + mudSectionHidden + ")"},{hidden: true, urlShow: "url(" + stormSection + ")", urlHidden: "url(" + stormSectionHidden + ")"},{hidden: true, urlShow: "url(" + towerSection + ")", urlHidden: "url(" + towerSectionHidden + ")"}];
 		var unlockLevels = this.state.levelsUnlocked;
-		if(levelCount[0] >= 1 || startingLevel === "earth" || levelCount[1] >= 2 || levelCount[2] >= 2){
+		if(levelCount[0] >= 1 || startingLevel === "earth" || levelCount[1] >= 3 || levelCount[2] >= 3){
 			unlockLevels[0] = true;
 			hiddenLevels[0].hidden = false;
 		}
-		if(levelCount[1] >= 1 || startingLevel === "fire" || levelCount[0] >= 2 || levelCount[3] >= 2){
+		if(levelCount[1] >= 1 || startingLevel === "fire" || levelCount[0] >= 3 || levelCount[3] >= 3){
 			unlockLevels[1] = true;
 			hiddenLevels[1].hidden = false;
 		}
-		if(levelCount[2] >= 1 || startingLevel === "water" || levelCount[0] >= 2 || levelCount[3] >= 2){
+		if(levelCount[2] >= 1 || startingLevel === "water" || levelCount[0] >= 3 || levelCount[3] >= 3){
 			unlockLevels[2] = true;
 			hiddenLevels[2].hidden = false;
 		}
-		if(levelCount[3] >= 1 || startingLevel === "wind" || levelCount[1] >= 2 || levelCount[2] >= 2){
+		if(levelCount[3] >= 1 || startingLevel === "wind" || levelCount[1] >= 3 || levelCount[2] >= 3){
 			unlockLevels[3] = true;
 			hiddenLevels[3].hidden = false;
 		}
@@ -5304,6 +5305,7 @@ class GameScreen extends React.Component {
 		var textArray;
 		if(level.includes("Temple")){
 			newStoryText = eval(level + "Text")[0].text;
+			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + templeBackground + ")";
 		}else{
 			textArray = eval(level + "Text");
 			for(var i=0; i<textArray.length; i++){
@@ -5322,28 +5324,28 @@ class GameScreen extends React.Component {
 		if(level === "fire"){
 			audioEl = document.getElementsByClassName("intense")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + fireBackground + ")";
-			if(unlockedSecrets[1] === true){
+			if(unlockedSecrets[1] === true || levelsBeaten.length < 3){
 			}else{
 				secrets = true;
 			}
 		}else if(level === "earth"){
 			audioEl = document.getElementsByClassName("mistyWoods")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + grassBackground + ")";
-			if(unlockedSecrets[0] === true){
+			if(unlockedSecrets[0] === true || levelsBeaten.length < 3){
 			}else{
 				secrets = true;
 			}
 		}else if(level === "water"){
 			audioEl = document.getElementsByClassName("brightStyle")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + waterBackground + ")";
-			if(unlockedSecrets[2] === true){
+			if(unlockedSecrets[2] === true || levelsBeaten.length < 3){
 			}else{
 				secrets = true;
 			}
 		}else if(level === "wind"){
 			audioEl = document.getElementsByClassName("findingOut")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + windBackground + ")";
-			if(unlockedSecrets[3] === true){
+			if(unlockedSecrets[3] === true || levelsBeaten.length < 3){
 			}else{
 				secrets = true;
 			}
@@ -6376,7 +6378,7 @@ class GameScreen extends React.Component {
 		if(enemyArray[currentEnemy].hp <= 0){
 			console.log("He's dead, pick another target.");
 		}else if(enemyArray[currentEnemy].name === "Prison Orb"){
-			if(cardElement === "neutral"){
+			if(cardElement === "earth"){
 				prisonOrbImg[0] = true;
 			}else if(cardElement === "fire"){
 				prisonOrbImg[1] = true;
@@ -6396,6 +6398,8 @@ class GameScreen extends React.Component {
 			}else if(enemyArray[currentEnemy].effect[0] === "impervious" && cardElement === enemyArray[currentEnemy].element){
 				heroAttack = 0;
 				this.props.error("It didn't have an effect.");
+			}else if(enemyArray[currentEnemy].effect[0] === "weakness" && cardElement === enemyArray[currentEnemy].effect[1]){
+				heroAttack = heroAttack * 2;
 			}else if(enemyArray[currentEnemy].effect[0] === "secret" && cardElement === enemyArray[currentEnemy].effect[2]){
 				var secretArray = ["earth", "fire", "water", "wind"];
 				for(var i=0; i<secretArray.length; i++){
@@ -6465,7 +6469,7 @@ class GameScreen extends React.Component {
 				}
 				var supCardValue = Math.floor(Math.random() * 21) + this.state.spookLevel;
 				if(supCardValue >= enemyLevel){
-					if(enemyArray[currentEnemy].effect[0] === "secret" || enemyArray[currentEnemy].element === "doorway" || enemyArray[currentEnemy].element === "object"){
+					if(enemyArray[currentEnemy].effect[0] === "secret" || enemyArray[currentEnemy].element === "doorway" || enemyArray[currentEnemy].element === "object" || this.props.magicBag === false){
 					}else{
 						this.props.gainSupCardReward(enemyArray[currentEnemy].supCard);
 						this.props.error("Gained Monster Prize!");
@@ -6842,7 +6846,11 @@ class GameScreen extends React.Component {
 				if(stageComplete === numberOfStages - 1 && this.props.bonusStage === true){
 					this.bonusStage();
 				}else if(stageComplete === numberOfStages - 1){
-					this.props.aux();
+					if(levelsBeaten.length === 0){
+						this.props.prizeChoice("cards");
+					}else if(levelsBeaten.length === 1){
+						this.props.prizeChoice("orbs");
+					}else{}
 				}else{
 					this.setState({
 						playerShield: this.props.shield,
@@ -8533,7 +8541,7 @@ class AuxilaryScreen extends React.Component {
 		}
 		if(level === 0){
 			levelCard = [neutral2, neutral3, neutral4, neutral5, neutral6];
-		}else if(this.props.prizeChoice === "cards"){
+		}else if(this.props.prizeChoice === "cards" || levelsBeaten.length === 1){
 			for(var i=0; i<rewardTier; i++){
 				for(var j=0; j<neutralCards.length; j++){
 					shuffle(neutralCards);
@@ -8575,7 +8583,7 @@ class AuxilaryScreen extends React.Component {
 		}else{
 			gemType = eval(level + "Gem");
 		}
-		if(this.props.prizeChoice === "orbs"){
+		if(this.props.prizeChoice === "orbs" || levelsBeaten.length === 2){
 			for(var i=0; i<levelGemsNum; i++){
 				levelGems.push(gemType);
 			}
