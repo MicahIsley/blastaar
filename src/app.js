@@ -3514,7 +3514,7 @@ var stormGem = storm;
 var startingLevel = null;
 var patience = false;
 var secrets = false;
-var unlockedSecrets = [true, false, false, false, false, false, false, false];
+var unlockedSecrets = [false, false, false, false, false, false, false, false];
 var elementKeys = [false, false, false, false];
 var elementScrolls = [false, false, false, false, false, false, false, false];
 var secretArtifacts = [false, false, false, false, false, false, false, false];
@@ -3575,7 +3575,8 @@ class GameScreenHub extends React.Component {
 			saveBox: false,
 			prizeChoice: null,
 			obelisk: 0,
-			magicBag: false
+			magicBag: false,
+			packCards: []
 		}
 		this.changeHero = this.changeHero.bind(this);
 		this.goToGameScreen = this.goToGameScreen.bind(this);
@@ -3625,6 +3626,7 @@ class GameScreenHub extends React.Component {
 		this.activateBonusStage = this.activateBonusStage.bind(this);
 		this.upgradeMagicBag = this.upgradeMagicBag.bind(this);
 		this.gainExtraRewards = this.gainExtraRewards.bind(this);
+		this.makePack = this.makePack.bind(this);
 	}
 	componentDidMount(){
 		collectionArray = [];
@@ -4005,6 +4007,82 @@ class GameScreenHub extends React.Component {
 			supGemRewards: []
 		});
 	}
+	makePack(element, type){
+		var packCards = [];
+		var newPack = [];
+		var packSize;
+		var rareCards;
+		for(var i=0; i<9; i++){
+			var cardTypeArray = ["neutral", "earth", "fire", "water", "wind", "desert", "lava", "mud", "storm"];
+			for(var j=1; j<20; j++){
+				if(cardTypeArray[i] === "neutral" || cardTypeArray[i] === element){	
+					var pushCard = eval(cardTypeArray[i] + j);
+					packCards.push(pushCard);
+				}
+			}
+		}
+		if(type === "basic"){
+			packSize = 5;
+			rareCards = 1;
+		}else if(type === "super"){
+			packSize = 7;
+			rareCards = 3;
+		}else if(type === "ultimate"){
+			packSize = 9;
+			rareCards = 5
+		}else{}
+		for(var i=0; i<packSize; i++){
+			shuffle(packCards);
+			var randEleNum = Math.floor(Math.random() * 2) + 1;
+			for(var j=0; j<packCards.length; j++){
+				if(packCards[j].ownedNum + packCards[j].deckNum >= 4){
+				}else{
+					if(newPack.length < packSize - rareCards){
+						if(packCards[j].rarity === 1){
+							if(randEleNum > 1){
+								newPack.push(packCards[j]);
+								var a = collectionArray.findIndex(x => x.name === packCards[j].name);
+								collectionArray[a].ownedNum ++;
+								collectionArray[a].unlocked = true;
+								break;
+							}else{
+								if(packCards[j].faction === "neutral"){
+									newPack.push(packCards[j]);
+									var a = collectionArray.findIndex(x => x.name === packCards[j].name);
+									collectionArray[a].ownedNum ++;
+									collectionArray[a].unlocked = true;
+									break;
+								}else{}
+							}
+						}else{}
+					}else if(newPack.length < packSize && newPack.length >= packSize - rareCards){
+						if(packCards[j].rarity === 2 || packCards[j].rarity === 3){
+							if(randEleNum > 1){
+								newPack.push(packCards[j]);
+								var a = collectionArray.findIndex(x => x.name === packCards[j].name);
+								collectionArray[a].ownedNum ++;
+								collectionArray[a].unlocked = true;
+								break;
+							}else{
+								if(packCards[j].faction === "neutral"){
+									newPack.push(packCards[j]);
+									var a = collectionArray.findIndex(x => x.name === packCards[j].name);
+									collectionArray[a].ownedNum ++;
+									collectionArray[a].unlocked = true;
+									break;
+								}else{}
+							}
+						}else{}
+					}else{}
+				}
+			}
+		}
+		this.setState({
+			packCards: newPack
+		}, () => {
+			console.log(this.state.packCards);
+		});
+	}
 	changeHeroHp(newHp){
 		var oldHp = this.state.heroHp;
 		var healedHp = newHp - oldHp;
@@ -4301,12 +4379,12 @@ class GameScreenHub extends React.Component {
 				numberOfStages = 4;
 			}else if(levelTier === 3){
 				enemyDistributionArray = enemyDistributionArray3;
-				stageArray = [2, 2, 2, 3, 1];
-				numberOfStages = 5;
+				stageArray = [2, 2, 3, 1];
+				numberOfStages = 4;
 			}else if(levelTier > 3){
 				enemyDistributionArray = enemyDistributionArray3;
-				stageArray = [2, 3, 2, 3, 1];
-				numberOfStages = 5;
+				stageArray = [2, 3, 3, 1];
+				numberOfStages = 4;
 			}else{}
 		}
 		if(level.includes("Temple") === true){
@@ -6887,11 +6965,9 @@ class GameScreen extends React.Component {
 		console.log(enemyArray);
 		if(enemyArray[0].hp === 0 && enemyArray[1].hp === 0 && enemyArray[2].hp === 0){
 				console.log("They're all dead. You win!");
-				//this.props.aux();
-				//stageComplete ++;
-				if(stageComplete === numberOfStages - 1 && this.props.bonusStage === true){
+				if(stageComplete === numberOfStages - 2 && this.props.bonusStage === true){
 					this.bonusStage();
-				}else if(stageComplete === numberOfStages - 1){
+				}else if(stageComplete === numberOfStages - 2){
 					if(levelsBeaten.length === 0){
 						this.props.prizeChoice("cards");
 					}else if(levelsBeaten.length === 1){
