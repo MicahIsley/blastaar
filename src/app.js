@@ -176,8 +176,10 @@ import mainTitles from './assets/audio/mainTitles3.m4a';
 import mistyWoods from './assets/audio/mistyWoods.m4a';
 import intense from './assets/audio/intense.m4a';
 import brightStyle from './assets/audio/brightStyle.m4a';
+import distantChimes from './assets/audio/distantChimes.m4a';
 import findingOut from './assets/audio/findingOut.m4a';
 import fireDestruction from './assets/audio/fireDestruction.m4a';
+import majesticLad from './assets/audio/majesticLad.m4a';
 import mysteryMud from './assets/audio/mysteryMud.m4a';
 import defeat from './assets/audio/defeat.m4a';
 import victory from './assets/audio/victory.m4a';
@@ -334,7 +336,7 @@ var earthTempleText = [
 
 var fireText = [
 	{type: "start", timing: 0, text: "Youber recalls his grandfather talking about disappearing, as if it was inevitable. Though he never mentioned why or how. Perhaps the Fire Fields will hold some answers. Youber entered the burning plains, prepared for whatever perils might befall him."},
-	{type: "start", timing: 0.5, text: "Youber wipes his brow and collects his thoughts. On the ground, Youber finds some red orbs. His magic sack glows in anticipation. Youber takes a quick break to make some modifications."},
+	{type: "start", timing: 0.5, text: "Youber wipes his brow and collects his thoughts. On the ground, Youber finds a new spell. Youber takes a quick break to make some modifications."},
 	{type: "start", timing: 1, text: "Youber treads carefully around the fire rivers and listening for any sulfuric explosions. The sky is always dark here, even when there are no clouds. Youber is starting to understand why anything that lived here would have poor manners. Speaking of which, here come some now..."},
 	{type: "start", timing: 1.5, text: "What's this? Youber collects a glowing orb, he can now add fire magic to his cards. Youber must continue to brave the smoldering wasteland. First a snack, then onward."},
 	{type: "start", timing: 2, text: "The fire creatures grow more numerous as Youber presses onward. Youber notices large markings, something large lives here, splendid. The ground rumbles, not a fissure. Youber steels himself for conflict."},
@@ -3442,7 +3444,7 @@ function CardCon(name, cost, power, text, alignment, rarity, ability1, ability2,
 	this.deckNum = deckNum;
 }
 
-const youberHero = new HeroCon("Youber", 30, 0, 3, 0, youber, true, false);
+const youberHero = new HeroCon("Youber", 40, 0, 3, 0, youber, true, false);
 var shapeshift1 = new HeroCon("Wobbleduk", 30, 3, 3, 4, wobbleduk, true, false);
 var shapeshift2 = new HeroCon("Budle Fairy", 20, 2, 5, 0, budleFairy, true, false);
 var shapeshift3 = new HeroCon("Madnado", 25, 4, 3, 2, madnado, true, false);
@@ -4474,6 +4476,12 @@ class GameScreenHub extends React.Component {
 	        <audio className="mysteryMud">
 	          <source src={mysteryMud}></source>
 	        </audio>
+	        <audio className="distantChimes">
+	          <source src={distantChimes}></source>
+	        </audio>
+	        <audio className="majesticLad">
+	          <source src={majesticLad}></source>
+	        </audio>
 	        <audio className="clickSound">
 	          <source src={click}></source>
 	        </audio>
@@ -5357,7 +5365,7 @@ class GameScreen extends React.Component {
 				secrets = true;
 			}
 		}else if(level === "storm"){
-			audioEl = document.getElementsByClassName("findingOut")[0];
+			audioEl = document.getElementsByClassName("distantChimes")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + stormBackground + ")";
 			if(unlockedSecrets[7] === true){
 			}else{
@@ -5371,7 +5379,7 @@ class GameScreen extends React.Component {
 				secrets = true;
 			}
 		}else if(level === "desert"){
-			audioEl = document.getElementsByClassName("findingOut")[0];
+			audioEl = document.getElementsByClassName("majesticLad")[0];
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + desertBackground + ")";
 			if(unlockedSecrets[4] === true){
 			}else{
@@ -5422,10 +5430,14 @@ class GameScreen extends React.Component {
 			audioEl = document.getElementsByClassName("brightStyle")[0];
 		}else if(level === "wind"){
 			audioEl = document.getElementsByClassName("findingOut")[0];
+		}else if(level === "desert"){
+			audioEl = document.getElementsByClassName("majesticLad")[0];
 		}else if(level === "lava"){
 			audioEl = document.getElementsByClassName("fireDestruction")[0];
 		}else if(level === "mud"){
 			audioEl = document.getElementsByClassName("mysteryMud")[0];
+		}else if(level === "storm"){
+			audioEl = document.getElementsByClassName("distantChimes")[0];
 		}else{
 			audioEl = document.getElementsByClassName("findingOut")[0];
 		}
@@ -8508,7 +8520,7 @@ class AuxilaryScreen extends React.Component {
 			}else if(rewardTier === 3){
 				youberHero.hp = youberHero.hp + 5;
 				rewardHp = 5;
-			}
+			}else{}
 			cardArray = cardArray2;
 			this.setState({
 				rewardCards: [],
