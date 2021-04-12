@@ -2528,7 +2528,7 @@ function tutorialLevels(){
 
 function levelEarthDistribution(randEnemyNum){
 	var randNum = Math.floor(Math.random() * 3);
-	if((numberOfStages === 4 && stageComplete < 4) || (numberOfStages === 5 && stageComplete < 4)){
+	if((numberOfStages === 4 && stageComplete < 3) || (numberOfStages === 5 && stageComplete < 4)){
 		if(randEnemyNum < enemyDistributionArray[0]){
 			createEnemy = primtreeStats;
 			return;
@@ -2553,9 +2553,9 @@ function levelEarthDistribution(randEnemyNum){
 		}else{
 			createEnemy = smallGolemArray[randNum];
 		}
-	}else if(stageComplete === 4){
+	}else if(stageComplete === 3){
 		numberOfEnemies = 1;
-		if(randEnemyNum < 250){
+		if(levelTier === 6){
 			createEnemy = kingWobbledukStats;
 			return;
 		}else{
@@ -3514,6 +3514,7 @@ var stormGem = storm;
 var startingLevel = null;
 var patience = false;
 var secrets = false;
+var levelTier;
 var unlockedSecrets = [false, false, false, false, false, false, false, false];
 var elementKeys = [false, false, false, false];
 var elementScrolls = [false, false, false, false, false, false, false, false];
@@ -3960,7 +3961,7 @@ class GameScreenHub extends React.Component {
 			var newStoryText;
 			var storyTime = .5;
 			for(var i=0; i<levelsBeaten.length; i++){
-				if(levelsBeaten[i] === level){
+				if(levelsBeaten[i] === level && storyTime < 3){
 					storyTime ++;
 				}else{}
 			}
@@ -4358,7 +4359,7 @@ class GameScreenHub extends React.Component {
 	}
 	createEnemies() {
 		enemyArray = [];
-		var levelTier = 1;
+		levelTier = 1;
 		var stageArray;
 		for(var i=0; i<levelsBeaten.length; i++){
 			if(levelsBeaten[i] === level){
@@ -4374,7 +4375,7 @@ class GameScreenHub extends React.Component {
 				stageArray = [1, 1, 1, 1];
 				numberOfStages = 4;
 			}else if(levelTier === 2){
-				enemyDistributionArray = enemyDistributionArray3;
+				enemyDistributionArray = enemyDistributionArray2;
 				stageArray = [2, 2, 2, 2];
 				numberOfStages = 4;
 			}else if(levelTier === 3){
@@ -4597,7 +4598,7 @@ class GameScreenHub extends React.Component {
 			{this.state.firstLevelChoice ? <FirstLevelChoice goToLevelScreen={this.goToLevelScreen} /> : null}
 			{this.state.levelSelectScreen ? <LevelSelectScreen error={this.displayErrorMessage} showStoryScreen={this.showStoryScreen} goToCharacterScreen={this.goToCharacterScreen} goToGameScreen={this.goToGameScreen} switchEnemyArray={this.switchEnemyArray} /> : null }
 			{this.state.gameScreen ? <GameScreen bonusStage={this.state.bonusStage} magicBag={this.state.magicBag} prizeChoice={this.prizeChoice} gainExtraRewards={this.extraRewards} showStoryScreen={this.showStoryScreen} playerDeathScreen={this.playerDeathScreen} supGemRewards={this.state.supGemRewards} supCardRewards={this.state.supCardRewards} boss={this.state.bossStats} bossEffect={this.state.bossEffect} error={this.displayErrorMessage} clearSupRewards={this.clearSupRewards} gainSupGemReward={this.gainSupGemReward} gainSupCardReward={this.gainSupCardReward} toggleInfoScreen={this.toggleInfoScreen} characterScreen={this.goToCharacterScreen} changeHeroShield={this.changeHeroShield} changeHeroAttack={this.changeHeroAttack} changeInfluence={this.changeInfluence} influence={this.state.influence} int={this.state.heroSelect.intelligence} shield={this.state.heroShield} switchEnemyArray={this.switchEnemyArray} increaseStormCounter={this.increaseStormCounter} decreaseStormCounter={this.decreaseStormCounter} stormCounter={this.state.stormCounter} changeHeroHp={this.changeHeroHp} heroHp={this.state.heroHp} score={this.state.score} setSpheres={this.setSphereCount} changeScore={this.changeScore} aux={this.auxilaryScreen} heroSelect={this.state.heroSelect} attack={this.state.attack} equipment={this.state.equipment} enemyArray={this.state.enemyArray} goToCollection={this.showCollection} /> : null }
-			{this.state.auxilaryScreen ? <AuxilaryScreen error={this.displayErrorMessage} extraRewards={this.state.extraRewards} activateBonusStage={this.activateBonusStage} obelisk={this.state.obelisk} prizeChoice={this.state.prizeChoice} changeHeroHp={this.changeHeroHp} heroHp={this.state.heroHp} clearSupRewards={this.clearSupRewards} supGemRewards={this.state.supGemRewards} supCardRewards={this.state.supCardRewards} goToEndingScreen={this.goToEndingScreen} changeInfluence={this.changeInfluence} influence={this.state.influence} setSphereCount={this.setSphereCount} score={this.state.score} resetStormCounter={this.resetStormCounter} showCollection={this.showCollection} goToCharacterScreen={this.goToCharacterScreen} /> : null }
+			{this.state.auxilaryScreen ? <AuxilaryScreen error={this.displayErrorMessage} makePack={this.makePack} packCards={this.state.packCards} extraRewards={this.state.extraRewards} activateBonusStage={this.activateBonusStage} obelisk={this.state.obelisk} prizeChoice={this.state.prizeChoice} changeHeroHp={this.changeHeroHp} heroHp={this.state.heroHp} clearSupRewards={this.clearSupRewards} supGemRewards={this.state.supGemRewards} supCardRewards={this.state.supCardRewards} goToEndingScreen={this.goToEndingScreen} changeInfluence={this.changeInfluence} influence={this.state.influence} setSphereCount={this.setSphereCount} score={this.state.score} resetStormCounter={this.resetStormCounter} showCollection={this.showCollection} goToCharacterScreen={this.goToCharacterScreen} /> : null }
 			{this.state.collectionScreen ? <CollectionScreen error={this.displayErrorMessage} toggleInfoScreen={this.toggleInfoScreen} goToCraftingScreen={this.goToCraftingScreen} checkDeckContents={this.checkDeckContents} /> : null }
 			{this.state.equipmentScreen ? <EquipmentScreen error={this.displayErrorMessage} changeScore={this.changeScore} score={this.state.score} itemArray={this.state.itemArray} heroShield={this.state.heroShield} spheres={this.state.sphereCount} setSphereCount={this.setSphereCount} playerHero={playerHero} chooseItemAction={this.chooseItemAction} attack={this.state.attack} goToCharacterScreen={this.goToCharacterScreen} /> : null }
 			{this.state.craftingScreen ? <CraftingScreen error={this.displayErrorMessage} toggleInfoScreen={this.toggleInfoScreen} showCollection={this.showCollection} /> : null}
@@ -5408,12 +5409,13 @@ class GameScreen extends React.Component {
 		var newStoryText;
 		var storyTime = 0;
 		for(var i=0; i<levelsBeaten.length; i++){
-			if(levelsBeaten[i] === level){
+			if(levelsBeaten[i] === level && storyTime < 3){
 				storyTime ++;
 			}
 		}
 		var newStoryText;
 		var textArray;
+		console.log(storyTime);
 		if(level.includes("Temple")){
 			newStoryText = eval(level + "Text")[0].text;
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + templeBackground + ")";
@@ -6965,13 +6967,17 @@ class GameScreen extends React.Component {
 		console.log(enemyArray);
 		if(enemyArray[0].hp === 0 && enemyArray[1].hp === 0 && enemyArray[2].hp === 0){
 				console.log("They're all dead. You win!");
-				if(stageComplete === numberOfStages - 2 && this.props.bonusStage === true){
+				if(stageComplete === numberOfStages - 1 && this.props.bonusStage === true){
 					this.bonusStage();
-				}else if(stageComplete === numberOfStages - 2){
+				}else if(stageComplete === numberOfStages - 1){
 					if(levelsBeaten.length === 0){
 						this.props.prizeChoice("cards");
 					}else if(levelsBeaten.length === 1){
 						this.props.prizeChoice("orbs");
+					}else if(levelsBeaten.length === 2){
+						this.props.prizeChoice("basicPack");
+					}else if(levelsBeaten.length === 5){
+						this.props.prizeChoice("superPack");
 					}else{}
 				}else{
 					this.setState({
@@ -7013,7 +7019,7 @@ class GameScreen extends React.Component {
 		this.props.error("Choose Your Prize");
 		document.getElementById("stageName").innerHTML = "Bonus Stage";
 		patience = false;
-		enemyArray = [orbPrizeStats, obeliskOfPrizesStats, cardPrizeStats];
+		enemyArray = [orbPrizeStats, obeliskOfPrizesStats];
 		this.setState({
 			enemyArray: enemyArray
 		});
@@ -8564,11 +8570,16 @@ class AuxilaryScreen extends React.Component {
 			rewardCards: [],
 			rewardGems: [],
 			rewardHp: 0,
-			extraItem: null
+			extraItem: null,
+			packReward: false,
+			showPack: false
 		}
 	this.levelRewards = this.levelRewards.bind(this);
 	this.listCardRewards = this.listCardRewards.bind(this);
 	this.listGemRewards = this.listGemRewards.bind(this);
+	this.listPackCards = this.listPackCards.bind(this);
+	this.showPack = this.showPack.bind(this);
+	this.packCheck = this.packCheck.bind(this);
 	}
 	componentDidMount(){
 		var audioEl = document.getElementsByClassName("victoryMusic")[0];
@@ -8688,6 +8699,7 @@ class AuxilaryScreen extends React.Component {
 		var levelGems = this.props.supGemRewards;
 		var levelGemsNum = rewardTier;
 		var gemType;
+		var packReward = false;
 		if(level.includes("Temple")){
 			var gemSlice = level.slice(0, -6);
 			gemType = eval(gemSlice + "Gem");
@@ -8699,6 +8711,18 @@ class AuxilaryScreen extends React.Component {
 				levelGems.push(gemType);
 			}
 		}else{}
+		if(this.props.prizeChoice === "basicPack"){
+			this.props.makePack(level, "basic");
+			packReward = true;
+		}else if(this.props.prizeChoice === "superPack"){
+			this.props.makePack(level, "super");
+			packReward = true;
+		}else if(this.props.prizeChoice === "ultimatePack"){
+			this.props.makePack(level, "ultimate");
+			packReward = true;
+		}else{
+			packReward = false;
+		}
 		if(level === 0){
 		}else{
 			for(var i=0; i<levelGems.length; i++){
@@ -8732,7 +8756,8 @@ class AuxilaryScreen extends React.Component {
 		}
 		this.setState({
 			rewardCards: levelCard,
-			rewardGems: levelGems
+			rewardGems: levelGems,
+			packReward: packReward,
 		}, () => {
 			this.props.clearSupRewards();
 		});
@@ -8755,6 +8780,22 @@ class AuxilaryScreen extends React.Component {
 				}
 			}
 		}else{}
+	}
+	showPack(){
+		this.setState({
+			showPack:true,
+			packReward: null
+		});
+	}
+	listPackCards(){
+		var cards = this.props.packCards;
+		console.log(cards);
+		const showPackCards = cards.map((card, index) =>
+			<CollectionCard className={card.alignment} key={index} id={index} ability={card.ability1} icon={card.icon} faction={card.faction} name={card.name} type={card.type} rarity={card.rarity} cost={card.cost} power={card.power} text={card.text} image={card.image} handleDrop={(name) => this.addToDeck(card.name)} />
+		);
+		return (
+			<div>{showPackCards}</div>
+		)
 	}
 	listCardRewards(){
 		var cards = this.state.rewardCards;
@@ -8780,6 +8821,13 @@ class AuxilaryScreen extends React.Component {
 			)
 		}
 	}
+	packCheck(){
+		if(this.state.packReward === null){
+			this.props.showCollection();
+		}else{
+			this.props.error("Open Your Pack");
+		}
+	}
 	render() {
 		return (
 			<div className="col-xs-12">
@@ -8803,7 +8851,15 @@ class AuxilaryScreen extends React.Component {
 					{this.state.extraItem ? <img src={this.state.extraItem} alt="extraItem" id="extraItemImg" /> : null }
 				</div>
 				<div className="row">
-					<button className="coolButton col-xs-offset-4 col-xs-4" onClick={this.props.showCollection}>Deck</button>
+					{this.state.packReward ? <img onClick={this.showPack} src={cardPrize} alt="cardPrize" id="packReward" /> : null }
+				</div>
+				<div className="row">
+					{ this.state.showPack ? <div className="col-xs-offset-2 col-xs-8" id="showPackRow">
+						{this.listPackCards()}
+					</div> : null }
+				</div>
+				<div className="row">
+					<button className="coolButton col-xs-offset-4 col-xs-4" onClick={this.packCheck}>Deck</button>
 				</div>
 			</div>
 		);

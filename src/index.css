@@ -2,6 +2,10 @@ body {
 	background: #232323;
 }
 
+#packReward {
+	height: 200px;
+}
+
 #earthFirst {
 	position: absolute;
 	top: 50px;
