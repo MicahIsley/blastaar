@@ -122,7 +122,7 @@ import walkingEruption from './assets/lava/walkingEruption.gif';
 import archmageMuckster from './assets/mud/archmageMuckster.gif';
 import bogBoar from './assets/mud/bogBoar.gif';
 import duchessWarthus from './assets/mud/duchessWarthus.gif';
-import fenBoar from '/assets/mud/fenBoar.gif';
+import fenBoar from './assets/mud/fenBoar.gif';
 import gooeyPooster from './assets/mud/gooeyPooster.gif';
 import grandGoo from './assets/artifacts/grandGoo.png';
 import greaterGalope from './assets/mud/greaterGalope.gif';
@@ -2544,7 +2544,16 @@ function tutorialLevels(){
 
 function levelEarthDistribution(randEnemyNum){
 	var randNum = Math.floor(Math.random() * 3);
-	if((numberOfStages === 4 && stageComplete < 3) || (numberOfStages === 5 && stageComplete < 4)){
+	if((levelTier === 3 || levelTier >= 6) && stageComplete === numberOfStages -1){
+		numberOfEnemies = 1;
+		if(levelTier >= 6){
+			createEnemy = kingWobbledukStats;
+			return;
+		}else{
+			createEnemy = queenPrimtreeStats;
+			return;
+		}
+	}else{
 		if(randEnemyNum < enemyDistributionArray[0]){
 			createEnemy = primtreeStats;
 			return;
@@ -2568,14 +2577,6 @@ function levelEarthDistribution(randEnemyNum){
 			return;
 		}else{
 			createEnemy = smallGolemArray[randNum];
-		}
-	}else if(stageComplete === 3){
-		numberOfEnemies = 1;
-		if(levelTier === 6){
-			createEnemy = kingWobbledukStats;
-			return;
-		}else{
-			createEnemy = queenPrimtreeStats;
 		}
 	}
 }
@@ -3469,7 +3470,7 @@ function CardCon(name, cost, power, text, alignment, rarity, ability1, ability2,
 	this.deckNum = deckNum;
 }
 
-const youberHero = new HeroCon("Youber", 40, 0, 3, 0, youber, true, false);
+const youberHero = new HeroCon("Youber", 50, 0, 3, 0, youber, true, false);
 var shapeshift1 = new HeroCon("Wobbleduk", 30, 3, 3, 4, wobbleduk, true, false);
 var shapeshift2 = new HeroCon("Budle Fairy", 20, 2, 5, 0, budleFairy, true, false);
 var shapeshift3 = new HeroCon("Madnado", 25, 4, 3, 2, madnado, true, false);
@@ -4387,21 +4388,33 @@ class GameScreenHub extends React.Component {
 			numberOfStages = 100;
 		}else{
 			if(levelTier === 1){
-				enemyDistributionArray = enemyDistributionArray2;
-				stageArray = [1, 1, 1, 1];
-				numberOfStages = 4;
+				enemyDistributionArray = enemyDistributionArray;
+				stageArray = [1, 1, 1, 1, 1];
+				numberOfStages = 5;
 			}else if(levelTier === 2){
-				enemyDistributionArray = enemyDistributionArray2;
-				stageArray = [2, 2, 2, 2];
-				numberOfStages = 4;
+				enemyDistributionArray = enemyDistributionArray;
+				stageArray = [1, 2, 1, 2, 2];
+				numberOfStages = 5;
 			}else if(levelTier === 3){
-				enemyDistributionArray = enemyDistributionArray3;
-				stageArray = [2, 2, 3, 1];
-				numberOfStages = 4;
-			}else if(levelTier > 3){
-				enemyDistributionArray = enemyDistributionArray3;
-				stageArray = [2, 3, 3, 1];
-				numberOfStages = 4;
+				enemyDistributionArray = enemyDistributionArray;
+				stageArray = [1, 2, 3, 2, 1];
+				numberOfStages = 5;
+			}else if(levelTier === 4){
+				enemyDistributionArray = enemyDistributionArray2;
+				stageArray = [2, 2, 1, 3, 2, 1];
+				numberOfStages = 6;
+			}else if(levelTier === 5){
+				enemyDistributionArray = enemyDistributionArray2;
+				stageArray = [3, 2, 1, 3, 2, 2];
+				numberOfStages = 6;
+			}else if(levelTier === 6){
+				enemyDistributionArray = enemyDistributionArray2;
+				stageArray = [3, 3, 1, 2, 3, 2, 1];
+				numberOfStages = 7;
+			}else if(levelTier > 6){
+				enemyDistributionArray = enemyDistributionArray2;
+				stageArray = [3, 3, 3, 3, 3, 3, 1];
+				numberOfStages = 7;
 			}else{}
 		}
 		if(level.includes("Temple") === true){
@@ -8587,7 +8600,7 @@ class AuxilaryScreen extends React.Component {
 			rewardGems: [],
 			rewardHp: 0,
 			extraItem: null,
-			packReward: false,
+			packReward: null,
 			showPack: false
 		}
 	this.levelRewards = this.levelRewards.bind(this);
@@ -8715,7 +8728,7 @@ class AuxilaryScreen extends React.Component {
 		var levelGems = this.props.supGemRewards;
 		var levelGemsNum = rewardTier;
 		var gemType;
-		var packReward = false;
+		var packReward = null;
 		if(level.includes("Temple")){
 			var gemSlice = level.slice(0, -6);
 			gemType = eval(gemSlice + "Gem");
@@ -8737,7 +8750,7 @@ class AuxilaryScreen extends React.Component {
 			this.props.makePack(level, "ultimate");
 			packReward = true;
 		}else{
-			packReward = false;
+			packReward = null;
 		}
 		if(level === 0){
 		}else{
