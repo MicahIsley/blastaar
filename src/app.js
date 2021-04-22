@@ -561,15 +561,21 @@ var earth20 = new CardCon("Strange Geode", 0, 0, "What's Inside?", "hero", 3, "a
 //var earth19 = new CardCon("Rumblings From Below", 2, 0, "Scheme 3.", "hero", 0, "scheme earth 3 7", 1, false, "character", placeholderImg, earth, "earth", 19, 0, 0);
 //var earth20 = new CardCon("Quicksand", 3, 0, "Scheme 5.", "hero", 0, "scheme earth 5 confuse", 1, false, "character", placeholderImg, earth, "earth", 20, 0, 0);
 
-var earth21 = new CardCon("Rock Fairy", 1, 0, "Gain 1 Earth Card.", "hero", 0, "supCards 1", 99, false, "support", rockFairy, earth, "earth", 21, 0, 0); 
-var earth22 = new CardCon("Primtree", 2, 0, "Earth cards get Weaken 1.", "hero", 0, "match/earth/weaken 1", 99, false, "support", primtree, earth, "earth", 0, 0, 0);
-var earth23 = new CardCon("King Wobbleduk", 3, 0, "Earth cards get +4 power.", "hero", 0, "supBoost earth 4", 99, false, "support", kingWobbleduk, earth, "earth", 0, 0, 0);
-var earth24 = new CardCon("Steed", 1, 0, "Heal 2 Each Turn", "hero", 0, "supHeal 2", 99, false, "support", steed, earth, "earth", 0, 0, 0);
-var earth25 = new CardCon("Stone Strider", 2, 0, "Earth Cards get Poison 2.", "hero", 0, "match/earth/poison 2", 99, false, "support", stoneStrider, earth, "earth", 0, 0, 0);
-var earth26 = new CardCon("Jewel Primtree", 2, 0, "Gain 2 Earth Gems.", "hero", 0, "supGems 2", 99, false, "support", jewelPrimtree, earth, "earth", 0, 0, 0);
-var earth27 = new CardCon("Queen Primtree", 3, 0, "Enemies have -2 Power.", "hero", 0, "supWeaken 2", 99, false, "support", queenPrimtree, earth, "earth", 0, 0, 0);
-var earth28 = new CardCon("Tough Primtree", 2, 0, "Earth Cards get Heal 5.", "hero", 0, "match/earth/heal 5", 99, false, "support", toughPrimtree, earth, "earth", 0, 0, 0);
-var earth29 = new CardCon("Wobbleduk", 1, 0, "Earth cards get +2 power.", "hero", 0, "supBoost earth 2", 99, false, "support", wobbleduk, earth, "earth", 0, 0, 0);
+var earth21 = new CardCon("Primtree", 1, 0, "Earth cards get Weaken 1.", "hero", 0, "match/earth/weaken 1", 99, false, "support", primtree, earth, "earth", 0, 0, 0); 
+var earth22 = new CardCon("Stone Strider", 1, 0, "Earth Cards get Poison 2.", "hero", 0, "match/earth/poison 2", 99, false, "support", stoneStrider, earth, "earth", 0, 0, 0);
+var earth23 = new CardCon("Spring Barklet", 1, 0, "Heal 1 Each Turn.", "hero", 0, "supHeal 1", 99, false, "support", barklet, earth, "earth", 0, 0, 0);
+var earth24 = new CardCon("Wobbleduk", 1, 0, "Earth cards get +2 power.", "hero", 0, "supBoost earth 2", 99, false, "support", wobbleduk, earth, "earth", 0, 0, 0);
+var earth25 = new CardCon("Autumn Barklet", 2, 0, "Heal 2 Each Turn.", "hero", 0, "supHeal 2", 99, false, "support", autumnBarklet, earth, "earth", 0, 0, 0);
+var earth26 = new CardCon("Grandox", 2, 0, "Gain 1 Earth Gem.", "hero", 0, "supGems 1", 99, false, "support", grandox, earth, "earth", 0, 0, 0);
+var earth27 = new CardCon("Mean Wobbleduk", 2, 0, "Earth cards get +4 power.", "hero", 0, "supBoost earth 4", 99, false, "support", meanWobbleduk, earth, "earth", 0, 0, 0);
+var earth28 = new CardCon("Primtree Defender", 2, 0, "Earth Cards get Heal 5.", "hero", 0, "match/earth/heal 5", 99, false, "support", toughPrimtree, earth, "earth", 0, 0, 0);
+var earth29 = new CardCon("Gem Strider", 3, 0, "Gain 2 Earth Gems.", "hero", 0, "supGems 2", 99, false, "support", gemStrider, earth, "earth", 21, 0, 0); 
+var earth30 = new CardCon("Rock Fairy", 3, 0, "Earth cards get Capture 3.", "hero", 0, "match/earth/capture 3", 99, false, "support", rockFairy, earth, "earth", 21, 0, 0); 
+var earth31 = new CardCon("Steed", 3, 0, "Heal 4 Each Turn", "hero", 0, "supHeal 4", 99, false, "support", steed, earth, "earth", 0, 0, 0);
+var earth32 = new CardCon("Jewel Primtree", 4, 0, "Gain 3 Earth Cards.", "hero", 0, "supCards 3", 99, false, "support", jewelPrimtree, earth, "earth", 0, 0, 0);
+var earth33 = new CardCon("King Wobbleduk", 5, 0, "Earth cards get +6 power.", "hero", 0, "supBoost earth 6", 99, false, "support", kingWobbleduk, earth, "earth", 0, 0, 0);
+var earth34 = new CardCon("Queen Primtree", 5, 0, "Enemies have -2 Power.", "hero", 0, "supWeaken 2", 99, false, "support", queenPrimtree, earth, "earth", 0, 0, 0);
+
 
 var fire1 = new CardCon("Fire Rock", 0, 2, "Purge", "hero", 1, "purge", "", false, "stormlight", placeholderImg, fire, "fire", 1, 0, 0);
 var fire2 = new CardCon("Illuminate", 0, 4, "Next +2", "hero", 1, "next 2", "", false, "stormlight", placeholderImg, fire, "fire", 2, 0, 0);
@@ -852,19 +858,6 @@ var lava99 = new CardCon("", 0, 0, "?", "hero", 0, "", "", false, "stormlight", 
 var mud99 = new CardCon("", 0, 0, "?", "hero", 0, "", "", false, "stormlight", placeholderImg, mud, "mud", 0, 0, 0);
 var storm99 = new CardCon("", 0, 0, "?", "hero", 0, "", "", false, "stormlight", placeholderImg, storm, "storm", 0, 0, 0);
 
-const wobbledukStats = {
-	name: "Wobbleduk",
-	hp: 6,
-	attack: 2,
-	sabotage: 0,
-	pointValue: 100,
-	image: wobbleduk,
-	sabCard: sabotage1,
-	element: "earth",
-	supCard: earth29,
-	effect: ["regular", null, null]
-};
-
 const angryWobbledukStats = {
 	name: "Mean Wobbleduk",
 	hp: 6,
@@ -891,6 +884,84 @@ const primtreeStats = {
 	effect: ["regular", null, null]
 };
 
+const springBarkletStats = {
+	name: "Spring Barklet",
+	hp: 7,
+	attack: 3,
+	sabotage: 0,
+	pointValue: 100,
+	image: barklet,
+	sabCard: sabotage8,
+	element: "earth",
+	supCard: earth22,
+	effect: ["regular", null, null]
+};
+
+const stoneStriderStats = {
+	name: "Stone Strider",
+	hp: 8,
+	attack: 3,
+	sabotage: 0,
+	pointValue: 100,
+	image: stoneStrider,
+	sabCard: sabotage1,
+	element: "earth",
+	supCard: earth25,
+	effect: ["regular", null, null]
+};
+
+const wobbledukStats = {
+	name: "Wobbleduk",
+	hp: 6,
+	attack: 2,
+	sabotage: 0,
+	pointValue: 100,
+	image: wobbleduk,
+	sabCard: sabotage1,
+	element: "earth",
+	supCard: earth29,
+	effect: ["regular", null, null]
+};
+
+const autumnBarkletStats = {
+	name: "Autumn Barklet",
+	hp: 8,
+	attack: 2,
+	sabotage: 2,
+	pointValue: 200,
+	image: autumnBarklet,
+	sabCard: sabotage8,
+	element: "earth",
+	supCard: earth22,
+	effect: ["regular", null, null]
+};
+
+const grandoxStats = {
+	name: "Grandox",
+	hp: 12,
+	attack: 2,
+	sabotage: 0,
+	pointValue: 200,
+	image: grandox,
+	sabCard: sabotage8,
+	element: "earth",
+	supCard: earth28,
+	effect: ["regular", null, null]
+};
+
+const meanWobbledukStats = {
+	name: "Mean Wobbleduk",
+	hp: 7,
+	attack: 4,
+	sabotage: 1,
+	pointValue: 200,
+	image: meanWobbleduk,
+	sabCard: sabotage1,
+	element: "earth",
+	supCard: earth29,
+	effect: ["regular", null, null]
+};
+
 const primtreeDefenderStats = {
 	name: "Primtree Defender",
 	hp: 10,
@@ -904,13 +975,13 @@ const primtreeDefenderStats = {
 	effect: ["regular", null, null]
 };
 
-const stoneStriderStats = {
-	name: "Stone Strider",
-	hp: 9,
-	attack: 3,
+const gemStriderStats = {
+	name: "Gem Strider",
+	hp: 10,
+	attack: 4,
 	sabotage: 0,
-	pointValue: 200,
-	image: stoneStrider,
+	pointValue: 300,
+	image: gemStrider,
 	sabCard: sabotage1,
 	element: "earth",
 	supCard: earth25,
@@ -1013,11 +1084,37 @@ const morpStats = {
 	hp: 5,
 	attack: 4,
 	sabotage: 1,
-	pointValue: 200,
+	pointValue: 100,
 	image: morp,
 	sabCard: sabotage6,
 	element: "fire",
 	supCard: fire23,
+	effect: [null, null, null]
+};
+
+const stabugStats = {
+	name: "Stabug",
+	hp: 7,
+	attack: 2,
+	sabotage: 1,
+	pointValue: 100,
+	image: stabug,
+	sabCard: sabotage6,
+	element: "fire",
+	supCard: fire23,
+	effect: [null, null, null]
+};
+
+const deathFloaterStats = {
+	name: "Death Floater",
+	hp: 5,
+	attack: 5,
+	sabotage: 0,
+	pointValue: 200,
+	image: deathFloater,
+	sabCard: sabotage1,
+	element: "fire",
+	supCard: fire25,
 	effect: [null, null, null]
 };
 
@@ -1034,16 +1131,55 @@ const kragmupStats = {
 	effect: [null, null, null]
 };
 
+const stabugStats = {
+	name: "Stalker Stabug",
+	hp: 7,
+	attack: 4,
+	sabotage: 1,
+	pointValue: 200,
+	image: stalkerStabug,
+	sabCard: sabotage6,
+	element: "fire",
+	supCard: fire23,
+	effect: [null, null, null]
+};
+
 const tipperStats = {
 	name: "Tipper",
 	hp: 9,
 	attack: 4,
 	sabotage: 0,
-	pointValue: 300,
+	pointValue: 200,
 	image: tipper,
 	sabCard: sabotage6,
 	element: "fire",
 	supCard: fire26,
+	effect: [null, null, null]
+};
+
+const flameScrablerStats = {
+	name: "Flame Scrabler",
+	hp: 11,
+	attack: 3,
+	sabotage: 1,
+	pointValue: 300,
+	image: flameScrabler,
+	sabCard: sabotage6,
+	element: "fire",
+	supCard: fire21,
+	effect: [null, null, null]
+};
+
+const hranFairyStats = {
+	name: "Hran Fairy",
+	hp: 10,
+	attack: 2,
+	sabotage: 2,
+	pointValue: 300,
+	image: hranFairy,
+	sabCard: sabotage6,
+	element: "fire",
+	supCard: fire21,
 	effect: [null, null, null]
 };
 
@@ -1060,16 +1196,16 @@ const pheonixWyrmStats = {
 	effect: [null, null, null]
 };
 
-const flameScrablerStats = {
-	name: "Flame Scrabler",
-	hp: 11,
+const novaWyrmStats = {
+	name: "Nova Wyrm",
+	hp: 14,
 	attack: 3,
-	sabotage: 1,
+	sabotage: 2,
 	pointValue: 400,
-	image: flameScrabler,
+	image: novaWyrm,
 	sabCard: sabotage6,
 	element: "fire",
-	supCard: fire21,
+	supCard: fire28,
 	effect: [null, null, null]
 };
 
@@ -2567,6 +2703,17 @@ function tutorialLevels(){
 }
 
 function levelEarthDistribution(randEnemyNum){
+	var earthMonsterArray;
+	var monsterTierOne = [primtreeStats, wobbledukStats, stoneStrider, primtreeDefenderStats, steedStats, springBarkletStats, grandoxStats];
+	var monsterTierTwo = [steedStats, springBarkletStats, grandoxStats, meanWobbledukStats, rockFairyStats, autumnBarkletStats, gemStriderStats];
+	var monsterTierThree = [ grandoxStats, meanWobbledukStats, rockFairyStats, autumnBarkletStats, gemStriderStats, primtreeRoyalStats, earthGolemStats];
+	if(levelTier < 3){
+		earthMonsterArray = monsterTierOne;
+	}else if(levelTier >=3 && levelTier < 6){
+		earthMonsterArray = monsterTierTwo;
+	}else if(levelTier >= 6){
+		earthMonsterArray = monsterTierThree;
+	}else{}
 	var randNum = Math.floor(Math.random() * 3);
 	if((levelTier === 3 || levelTier >= 6) && stageComplete === numberOfStages -1){
 		numberOfEnemies = 1;
@@ -2579,25 +2726,25 @@ function levelEarthDistribution(randEnemyNum){
 		}
 	}else{
 		if(randEnemyNum < enemyDistributionArray[0]){
-			createEnemy = primtreeStats;
+			createEnemy = earthMonsterArray[0];
 			return;
 		}else if(randEnemyNum < enemyDistributionArray[1]){
-			createEnemy = wobbledukStats;
+			createEnemy = earthMonsterArray[1];
 			return;
 		}else if(randEnemyNum < enemyDistributionArray[2]){
-			createEnemy = primtreeDefenderStats;
+			createEnemy = earthMonsterArray[2];
 			return;
 		}else if(randEnemyNum < enemyDistributionArray[3]){
-			createEnemy = stoneStriderStats;
+			createEnemy = earthMonsterArray[3];
 			return;
 		}else if(randEnemyNum < enemyDistributionArray[4]){
-			createEnemy = steedStats;
+			createEnemy = earthMonsterArray[4];
 			return;
 		}else if(randEnemyNum < enemyDistributionArray[5]){
-			createEnemy = rockFairyStats;
+			createEnemy = earthMonsterArray[5];
 			return;
 		}else if(randEnemyNum < enemyDistributionArray[6]){
-			createEnemy = primtreeRoyalStats;
+			createEnemy = earthMonsterArray[6];
 			return;
 		}else{
 			createEnemy = smallGolemArray[randNum];
@@ -2712,39 +2859,51 @@ function levelEarthTempleDistribution(randEnemyNum){
 }
 
 function levelFireDistribution(randEnemyNum){
+	var fireMonsterArray;
+	var monsterTierOne = [emberAdderStats, kragmupStats, morpStats, flameCrawlerStats, tipperStats, stabugStats, deathFloaterStats];
+	var monsterTierTwo = [tipperStats, stabugStats, deathFloaterStats, stalkerStabugStats, flameScrablerStats, hranFairyStats, pheonixWyrmStats];
+	var monsterTierThree = [deathFloaterStats, stalkerStabugStats, flameScrablerStats, hranFairyStats, pheonixWyrmStats, novaWyrmStats, fireGolemStats];
+	if(levelTier < 3){
+		fireMonsterArray = monsterTierOne;
+	}else if(levelTier >=3 && levelTier < 6){
+		fireMonsterArray = monsterTierTwo;
+	}else if(levelTier >= 6){
+		fireMonsterArray = monsterTierThree;
+	}else{}
 	var randNum = Math.floor(Math.random() * 3);
-	if((numberOfStages === 4 && stageComplete < 4) || (numberOfStages === 5 && stageComplete < 4)){
+	if((levelTier === 3 || levelTier >= 6) && stageComplete === numberOfStages -1){
+		numberOfEnemies = 1;
+		if(levelTier >= 6){
+			createEnemy = grandTipperStats;
+			return;
+		}else{
+			createEnemy = broodmotherStats;
+			return;
+		}
+	}else{
 		if(randEnemyNum < enemyDistributionArray[0]){
-			createEnemy = emberAdderStats;
+			createEnemy = fireMonsterArray[0];
 			return;
 		}else if(randEnemyNum < enemyDistributionArray[1]){
-			createEnemy = flameCrawlerStats;
+			createEnemy = fireMonsterArray[1];
 			return;
 		}else if(randEnemyNum < enemyDistributionArray[2]){
-			createEnemy = kragmupStats;
+			createEnemy = fireMonsterArray[2];
 			return;
 		}else if(randEnemyNum < enemyDistributionArray[3]){
-			createEnemy = tipperStats;
+			createEnemy = fireMonsterArray[3];
 			return;
 		}else if(randEnemyNum < enemyDistributionArray[4]){
-			createEnemy = morpStats;
+			createEnemy = fireMonsterArray[4];
 			return;
 		}else if(randEnemyNum < enemyDistributionArray[5]){
-			createEnemy = pheonixWyrmStats;
+			createEnemy = fireMonsterArray[5];
 			return;
 		}else if(randEnemyNum < enemyDistributionArray[6]){
-			createEnemy = flameScrablerStats;
+			createEnemy = fireMonsterArray[6];
 			return;
 		}else{
 			createEnemy = smallGolemArray[randNum];
-		}
-	}else if(stageComplete === 4){
-		numberOfEnemies = 1;
-		if(randEnemyNum < 250){
-			createEnemy = broodmotherStats;
-			return;
-		}else{
-			createEnemy = grandTipperStats;
 		}
 	}
 }
@@ -2856,39 +3015,51 @@ function levelFireTempleDistribution(randEnemyNum){
 }
 
 function levelWaterDistribution(randEnemyNum){
+	var waterMonsterArray;
+	var monsterTierOne = [trenchThumpStats, seaGulperStats, ghostSharkStats, marshSlapperStats, coralThumpStats, cheeryGarblerStats, skitadooStats];
+	var monsterTierTwo = [coralThumpStats, cheeryGarblerStats, skitadooStats, caveThumpStats, fanciputtyStats, budleFairyStats, snippyGarblerStats];
+	var monsterTierThree = [skitadooStats, caveThumpStats, fanciputtyStats, budleFairyStats, snippyGarblerStats, albinoSlapperStats, waterGolemStats];
+	if(levelTier < 3){
+		waterMonsterArray = monsterTierOne;
+	}else if(levelTier >=3 && levelTier < 6){
+		waterMonsterArray = monsterTierTwo;
+	}else if(levelTier >= 6){
+		waterMonsterArray = monsterTierThree;
+	}else{}
 	var randNum = Math.floor(Math.random() * 3);
-	if((numberOfStages === 4 && stageComplete < 4) || (numberOfStages === 5 && stageComplete < 4)){
+	if((levelTier === 3 || levelTier >= 6) && stageComplete === numberOfStages -1){
+		numberOfEnemies = 1;
+		if(levelTier >= 6){
+			createEnemy = kingSlapperStats;
+			return;
+		}else{
+			createEnemy = superBudleFairyStats;
+			return;
+		}
+	}else{
 		if(randEnemyNum < enemyDistributionArray[0]){
-			createEnemy = trenchThumpStats;
+			createEnemy = waterMonsterArray[0];
 			return;
 		}else if(randEnemyNum < enemyDistributionArray[1]){
-			createEnemy = marshSlapperStats;
+			createEnemy = waterMonsterArray[1];
 			return;
 		}else if(randEnemyNum < enemyDistributionArray[2]){
-			createEnemy = ghostSharkStats;
+			createEnemy = waterMonsterArray[2];
 			return;
 		}else if(randEnemyNum < enemyDistributionArray[3]){
-			createEnemy = coralThumpStats;
+			createEnemy = waterMonsterArray[3];
 			return;
 		}else if(randEnemyNum < enemyDistributionArray[4]){
-			createEnemy = caveThumpStats;
+			createEnemy = waterMonsterArray[4];
 			return;
 		}else if(randEnemyNum < enemyDistributionArray[5]){
-			createEnemy = budleFairyStats;
+			createEnemy = waterMonsterArray[5];
 			return;
 		}else if(randEnemyNum < enemyDistributionArray[6]){
-			createEnemy = albinoSlapperStats;
+			createEnemy = waterMonsterArray[6];
 			return;
 		}else{
 			createEnemy = smallGolemArray[randNum];
-		}
-	}else if(stageComplete === 4){
-		numberOfEnemies = 1;
-		if(randEnemyNum < 250){
-			createEnemy = superBudleFairyStats;
-			return;
-		}else{
-			createEnemy = kingSlapperStats;
 		}
 	}
 }
@@ -3000,39 +3171,51 @@ function levelWaterTempleDistribution(randEnemyNum){
 }
 
 function levelWindDistribution(randEnemyNum){
+	var windMonsterArray;
+	var monsterTierOne = [spookawStats, madnadoStats, maclawStats, propeloopStats, flooferStats, raaHowlerStats, shyBoongaStats];
+	var monsterTierTwo = [flooferStats, raaHowlerStats, shyBoongaStats, propelumpStats, windFlitterStats, windleFairyStats, tranceWeaverStats];
+	var monsterTierThree = [shyBoongaStats, propelumpStats, windFlitterStats, windleFairyStats, tranceWeaverStats, chainedSpookawStats, windGolemStats];
+	if(levelTier < 3){
+		windMonsterArray = monsterTierOne;
+	}else if(levelTier >=3 && levelTier < 6){
+		windMonsterArray = monsterTierTwo;
+	}else if(levelTier >= 6){
+		windMonsterArray = monsterTierThree;
+	}else{}
 	var randNum = Math.floor(Math.random() * 3);
-	if((numberOfStages === 4 && stageComplete < 4) || (numberOfStages === 5 && stageComplete < 4)){
+	if((levelTier === 3 || levelTier >= 6) && stageComplete === numberOfStages -1){
+		numberOfEnemies = 1;
+		if(levelTier >= 6){
+			createEnemy = alphaSpookawStats;
+			return;
+		}else{
+			createEnemy = empressMadnadoStats;
+			return;
+		}
+	}else{
 		if(randEnemyNum < enemyDistributionArray[0]){
-			createEnemy = maclawStats;
+			createEnemy = windMonsterArray[0];
 			return;
 		}else if(randEnemyNum < enemyDistributionArray[1]){
-			createEnemy = madnadoStats;
+			createEnemy = windMonsterArray[1];
 			return;
 		}else if(randEnemyNum < enemyDistributionArray[2]){
-			createEnemy = raaHowlerStats;
+			createEnemy = windMonsterArray[2];
 			return;
 		}else if(randEnemyNum < enemyDistributionArray[3]){
-			createEnemy = flooferStats;
+			createEnemy = windMonsterArray[3];
 			return;
 		}else if(randEnemyNum < enemyDistributionArray[4]){
-			createEnemy = windleFairyStats;
+			createEnemy = windMonsterArray[4];
 			return;
 		}else if(randEnemyNum < enemyDistributionArray[5]){
-			createEnemy = spookawStats;
+			createEnemy = windMonsterArray[5];
 			return;
 		}else if(randEnemyNum < enemyDistributionArray[6]){
-			createEnemy = windFlitterStats;
+			createEnemy = windMonsterArray[6];
 			return;
 		}else{
 			createEnemy = smallGolemArray[randNum];
-		}
-	}else if(stageComplete === 4){
-		numberOfEnemies = 1;
-		if(randEnemyNum < 250){
-			createEnemy = empressMadnadoStats;
-			return;
-		}else{
-			createEnemy = alphaSpookawStats;
 		}
 	}
 }
@@ -3144,39 +3327,51 @@ function levelWindTempleDistribution(randEnemyNum){
 }
 
 function levelDesertDistribution(randEnemyNum){
+	var desertMonsterArray;
+	var monsterTierOne = [desertMadnadoStats, sandSnippStats, drillerStats, grumpeelStats, duneStabberStats, wanderingRelicStats, doublesaurStats];
+	var monsterTierTwo = [duneStabberStats, wanderingRelicStats, doublesaurStats, boneStalkerStats, sandSquidStats, predatorSnippStats, goldStabberStats];
+	var monsterTierThree = [doublesaurStats, boneStalkerStats, sandSquidStats, predatorSnippStats, goldStabberStats, pinkLauncherStats, desertGolemStats];
+	if(levelTier < 3){
+		desertMonsterArray = monsterTierOne;
+	}else if(levelTier >=3 && levelTier < 6){
+		desertMonsterArray = monsterTierTwo;
+	}else if(levelTier >= 6){
+		desertMonsterArray = monsterTierThree;
+	}else{}
 	var randNum = Math.floor(Math.random() * 3);
-	if((numberOfStages === 4 && stageComplete < 4) || (numberOfStages === 5 && stageComplete < 4)){
-		if(randEnemyNum < enemyDistributionArray[0]){
-			createEnemy = sandSnippStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[1]){
-			createEnemy = duneStabberStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[2]){
-			createEnemy = desertMadnadoStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[3]){
-			createEnemy = wanderingRelicStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[4]){
-			createEnemy = grumpeelStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[5]){
-			createEnemy = boneStalkerStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[6]){
-			createEnemy = predatorSnippStats;
+	if((levelTier === 3 || levelTier >= 6) && stageComplete === numberOfStages -1){
+		numberOfEnemies = 1;
+		if(levelTier >= 6){
+			createEnemy = stabberConclaveStats;
 			return;
 		}else{
-			createEnemy = bigGolemArray[randNum];
-		}
-	}else if(stageComplete === 4){
-		numberOfEnemies = 1;
-		if(randEnemyNum < 250){
 			createEnemy = championStalkerStats;
 			return;
+		}
+	}else{
+		if(randEnemyNum < enemyDistributionArray[0]){
+			createEnemy = desertMonsterArray[0];
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[1]){
+			createEnemy = desertMonsterArray[1];
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[2]){
+			createEnemy = desertMonsterArray[2];
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[3]){
+			createEnemy = desertMonsterArray[3];
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[4]){
+			createEnemy = desertMonsterArray[4];
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[5]){
+			createEnemy = desertMonsterArray[5];
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[6]){
+			createEnemy = desertMonsterArray[6];
+			return;
 		}else{
-			createEnemy = stabberConclaveStats;
+			createEnemy = smallGolemArray[randNum];
 		}
 	}
 }
@@ -3209,39 +3404,51 @@ function levelDesertTempleDistribution(randEnemyNum){
 }
 
 function levelLavaDistribution(randEnemyNum){
+	var lavaMonsterArray;
+	var monsterTierOne = [emberiteStats, trekapodStats, hotWobblerStats, volcanoTramplerStats, walkingEruptionStats, lavaWalkerStats, dragonTreeStats];
+	var monsterTierTwo = [walkingEruptionStats, lavaWalkerStats, dragonTreeStats, coalSpitterStats, moltasaurusStats, nutriteStats, recluseTramplerStats];
+	var monsterTierThree = [dragonTreeStats, coalSpitterStats, moltasaurusStats, nutriteStats, recluseTramplerStats, ashDragontreeStats, lavaGolemStats];
+	if(levelTier < 3){
+		lavaMonsterArray = monsterTierOne;
+	}else if(levelTier >=3 && levelTier < 6){
+		lavaMonsterArray = monsterTierTwo;
+	}else if(levelTier >= 6){
+		lavaMonsterArray = monsterTierThree;
+	}else{}
 	var randNum = Math.floor(Math.random() * 3);
-	if((numberOfStages === 4 && stageComplete < 4) || (numberOfStages === 5 && stageComplete < 4)){
-		if(randEnemyNum < enemyDistributionArray[0]){
-			createEnemy = emberiteStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[1]){
-			createEnemy = lavaWalkerStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[2]){
-			createEnemy = trekapodStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[3]){
-			createEnemy = walkingEruptionStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[4]){
-			createEnemy = moltasaurusStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[5]){
-			createEnemy = volcanoTramplerStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[6]){
-			createEnemy = nutriteStats;
-			return;
-		}else{
-			createEnemy = bigGolemArray[randNum];
-		}
-	}else if(stageComplete === 4){
+	if((levelTier === 3 || levelTier >= 6) && stageComplete === numberOfStages -1){
 		numberOfEnemies = 1;
-		if(randEnemyNum < 250){
+		if(levelTier >= 6){
 			createEnemy = lavaLordWalkerStats;
 			return;
 		}else{
 			createEnemy = moltasaurusRexStats;
+			return;
+		}
+	}else{
+		if(randEnemyNum < enemyDistributionArray[0]){
+			createEnemy = lavaMonsterArray[0];
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[1]){
+			createEnemy = lavaMonsterArray[1];
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[2]){
+			createEnemy = lavaMonsterArray[2];
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[3]){
+			createEnemy = lavaMonsterArray[3];
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[4]){
+			createEnemy = lavaMonsterArray[4];
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[5]){
+			createEnemy = lavaMonsterArray[5];
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[6]){
+			createEnemy = lavaMonsterArray[6];
+			return;
+		}else{
+			createEnemy = smallGolemArray[randNum];
 		}
 	}
 }
@@ -3274,39 +3481,51 @@ function levelLavaTempleDistribution(randEnemyNum){
 }
 
 function levelMudDistribution(randEnemyNum){
+	var mudMonsterArray;
+	var monsterTierOne = [warthusStats, toxicRollerStats, sominusStats, lesserGalopeStats, bogBoarStats, mucksterStats, plodamanderStats];
+	var monsterTierTwo = [bogBoarStats, mucksterStats, plodamanderStats, gooeyPoosterStats, horridusStats, greaterGalopeStats, fenBoarStats];
+	var monsterTierThree = [plodamanderStats, gooeyPoosterStats, horridusStats, greaterGalopeStats, fenBoarStats, sneakamanderStats, mudGolemStats];
+	if(levelTier < 3){
+		mudMonsterArray = monsterTierOne;
+	}else if(levelTier >=3 && levelTier < 6){
+		mudMonsterArray = monsterTierTwo;
+	}else if(levelTier >= 6){
+		mudMonsterArray = monsterTierThree;
+	}else{}
 	var randNum = Math.floor(Math.random() * 3);
-	if((numberOfStages === 4 && stageComplete < 4) || (numberOfStages === 5 && stageComplete < 4)){
-		if(randEnemyNum < enemyDistributionArray[0]){
-			createEnemy = lesserGalopeStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[1]){
-			createEnemy = toxicRollerStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[2]){
-			createEnemy = warthusStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[3]){
-			createEnemy = sominusStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[4]){
-			createEnemy = mucksterStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[5]){
-			createEnemy = bogBoarStats;
-			return;
-		}else if(randEnemyNum < enemyDistributionArray[6]){
-			createEnemy = greaterGalopeStats;
+	if((levelTier === 3 || levelTier >= 6) && stageComplete === numberOfStages -1){
+		numberOfEnemies = 1;
+		if(levelTier >= 6){
+			createEnemy = duchessWarthusStats;
 			return;
 		}else{
-			createEnemy = bigGolemArray[randNum];
-		}
-	}else if(stageComplete === 4){
-		numberOfEnemies = 1;
-		if(randEnemyNum < 250){
 			createEnemy = archmageMucksterStats;
 			return;
+		}
+	}else{
+		if(randEnemyNum < enemyDistributionArray[0]){
+			createEnemy = mudMonsterArray[0];
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[1]){
+			createEnemy = mudMonsterArray[1];
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[2]){
+			createEnemy = mudMonsterArray[2];
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[3]){
+			createEnemy = mudMonsterArray[3];
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[4]){
+			createEnemy = mudMonsterArray[4];
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[5]){
+			createEnemy = mudMonsterArray[5];
+			return;
+		}else if(randEnemyNum < enemyDistributionArray[6]){
+			createEnemy = mudMonsterArray[6];
+			return;
 		}else{
-			createEnemy = duchessWarthusStats;
+			createEnemy = smallGolemArray[randNum];
 		}
 	}
 }
@@ -3339,39 +3558,51 @@ function levelMudTempleDistribution(randEnemyNum){
 }
 
 function levelStormDistribution(randEnemyNum){
+	var stormMonsterArray;
+	var monsterTierOne = [lightningBugStats, staticGliderStats, omenousStats, shelterThumpStats, shockSharkStats, brackasaurStats, rainWolfStats];
+	var monsterTierTwo = [shockSharkStats, brackasaurStats, rainWolfStats, scorchedTreeGhastStats, staticCatcherStats, starryOwlStats, worldShellStats];
+	var monsterTierThree = [rainWolfStats, scorchedTreeGhastStats, staticCatcherStats, starryOwlStats, worldShellStats, deepWolfStats, stormGolemStats];
+	if(levelTier < 3){
+		stormMonsterArray = monsterTierOne;
+	}else if(levelTier >=3 && levelTier < 6){
+		stormMonsterArray = monsterTierTwo;
+	}else if(levelTier >= 6){
+		stormMonsterArray = monsterTierThree;
+	}else{}
 	var randNum = Math.floor(Math.random() * 3);
-	if((numberOfStages === 4 && stageComplete < 4) || (numberOfStages === 5 && stageComplete < 4)){
+	if((levelTier === 3 || levelTier >= 6) && stageComplete === numberOfStages -1){
+		numberOfEnemies = 1;
+		if(levelTier >= 6){
+			createEnemy = alphaSpookawStats;
+			return;
+		}else{
+			createEnemy = empressMadnadoStats;
+			return;
+		}
+	}else{
 		if(randEnemyNum < enemyDistributionArray[0]){
-			createEnemy = shockSharkStats;
+			createEnemy = stormMonsterArray[0];
 			return;
 		}else if(randEnemyNum < enemyDistributionArray[1]){
-			createEnemy = staticGliderStats;
+			createEnemy = stormMonsterArray[1];
 			return;
 		}else if(randEnemyNum < enemyDistributionArray[2]){
-			createEnemy = lightningBugStats;
+			createEnemy = stormMonsterArray[2];
 			return;
 		}else if(randEnemyNum < enemyDistributionArray[3]){
-			createEnemy = scorchedTreeGhastStats;
+			createEnemy = stormMonsterArray[3];
 			return;
 		}else if(randEnemyNum < enemyDistributionArray[4]){
-			createEnemy = shelterThumpStats;
+			createEnemy = stormMonsterArray[4];
 			return;
 		}else if(randEnemyNum < enemyDistributionArray[5]){
-			createEnemy = rainWolfStats;
+			createEnemy = stormMonsterArray[5];
 			return;
 		}else if(randEnemyNum < enemyDistributionArray[6]){
-			createEnemy = staticCatcherStats;
+			createEnemy = stormMonsterArray[6];
 			return;
 		}else{
-			createEnemy = bigGolemArray[randNum];
-		}
-	}else if(stageComplete === 4){
-		numberOfEnemies = 1;
-		if(randEnemyNum < 250){
-			createEnemy = enlightenedRainWolfStats;
-			return;
-		}else{
-			createEnemy = greatShockSharkStats;
+			createEnemy = smallGolemArray[randNum];
 		}
 	}
 }
