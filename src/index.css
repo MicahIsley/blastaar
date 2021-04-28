@@ -3,7 +3,8 @@ body {
 }
 
 #packReward {
-	height: 200px;
+	height: 300px;
+	margin-left: 16%;
 }
 
 #earthFirst {
@@ -2053,9 +2054,8 @@ input {
 
 
 .boss {
-	height: 250px;
-	width: 250px;
-	margin-left: -5%;
+	height: 300px;
+	width: 300px;
 }
 
 .secretImage {

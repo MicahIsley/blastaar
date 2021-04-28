@@ -1,14 +1,9 @@
 Youber's Quest
 
-March Patch Notes
+April Patch Notes
 
--Treasure!
-- You now need to find a scroll for each element to craft cards of that type.
+-Getting close to finishing content.
 
--Indicator on level select screen for how many times you've beaten a region.
-
--Now you choose your rewards at the end of each level. Fighting the obelisk gives you 5 turns to do as much damage and your rewards scale accordingly.
-
--Some things move a bit.
-
--Secrets await discovery.
+- New monsters in all regions and monster cards have been redistributed.
+- Boss battles are now set and reward card packs in the victory screen.
+- Levels are long and get difficult quickly, maybe too quickly...

@@ -74,7 +74,7 @@ import championStalker from './assets/desert/championStalker.gif';
 import desertGolem from './assets/desert/desertGolem.gif';
 import desertMadnado from './assets/desert/desertMadnado.gif';
 import doublesaur from './assets/desert/doublesaur.gif';
-import driller from './ass/deser/driller.gif';
+import driller from './assets/desert/driller.gif';
 import duneStabber from './assets/desert/duneStabber.gif';
 import goldStabber from './assets/desert/goldStabber.gif';
 import grumpeel from './assets/desert/grumpeel.gif';
@@ -113,11 +113,11 @@ import morp from './assets/fire/morp.gif';
 import novaWyrm from './assets/fire/novaWyrm.gif';
 import pheonixWyrm from './assets/fire/pheonixWyrm.gif';
 import stabug from './assets/fire/stabug.gif';
-import stalkerStabug from './assets/stalkerStabug.gif';
+import stalkerStabug from './assets/fire/stalkerStabug.gif';
 import tipper from './assets/fire/tipper.gif';
-import ashDragontree from './assets/fire/ashDragontree.gif';
+import ashDragontree from './assets/lava/ashDragontree.gif';
 import coalSpitter from './assets/lava/coalSpitter.gif';
-import dragonTree from './assets/lava/dragonTree.gif';
+import dragonTree from './assets/lava/dragontree.gif';
 import emberite from './assets/lava/emberite.gif';
 import hotWobbler from './assets/lava/hotWobbler.gif';
 import lavaGolem from './assets/lava/lavaGolem.gif';
@@ -648,7 +648,7 @@ var water27 = new CardCon("Fanciputty", 2, 0,"Water Cards get Ward 4.", "hero", 
 var water28 = new CardCon("Skitadoo", 2, 0,"Water Cards get +4 power.", "hero", 0, "supBoost water 4", 99, false, "support", skitadoo, water, "water", 0, 0, 0);
 var water29 = new CardCon("Budle Fairy", 3, 0,"+3 Ward", "hero", 0, "supShield 3", 99, false, "support", budleFairy, water, "water", 0, 0, 0);
 var water30 = new CardCon("Cave Thump", 3, 0,"Gain 2 Water Cards", "hero", 0, "supCards 2", 99, false, "support", caveThump, water, "water", 0, 0, 0);
-var water31 = new CardCon("Snipy Garbler", 3, 0,"Draw +3 Every Turn.", "hero", 0, "supDraw 3", 99, false, "support", snipyGarbler, water, "water", 0, 0, 0);
+var water31 = new CardCon("Snippy Garbler", 3, 0,"Draw +3 Every Turn.", "hero", 0, "supDraw 3", 99, false, "support", snippyGarbler, water, "water", 0, 0, 0);
 var water32 = new CardCon("Albino Slapper", 4, 0,"Water Cards get Stun.", "hero", 0, "match/water/stun", 99, false, "support", albinoSlapper, water, "water", 0, 0, 0); 
 var water33 = new CardCon("King Slapper", 5, 0,"Water cards get +6 power.", "hero", 0, "supBoost water 6", 99, false, "support", kingSlapper, water, "water", 0, 0, 0);
 var water34 = new CardCon("Super Budle Fairy", 5, 0,"+5 Ward", "hero", 0, "supShield 5", 99, false, "support", superBudleFairy, water, "water", 0, 0, 0);
@@ -1077,7 +1077,7 @@ const kingWobbledukStats = {
 
 const queenPrimtreeStats = {
 	name: "Queen Primtree",
-	hp: 20,
+	hp: 14,
 	attack: 4,
 	sabotage: 4,
 	pointValue: 1000,
@@ -1249,7 +1249,7 @@ const grandTipperStats = {
 	hp: 20,
 	attack: 4,
 	sabotage: 3,
-	pointValue: 1000,
+	pointValue: 1500,
 	image: grandTipper,
 	sabCard: sabotage1,
 	element: "fire",
@@ -1259,7 +1259,7 @@ const grandTipperStats = {
 
 const broodmotherStats = {
 	name: "Broodmother",
-	hp: 21,
+	hp: 15,
 	attack: 3,
 	sabotage: 3,
 	pointValue: 1000,
@@ -1400,13 +1400,13 @@ const caveThumpStats = {
 	effect: [null, null, null]
 };
 
-const snipyGarblerStats = {
-	name: "Snipy Garbler",
+const snippyGarblerStats = {
+	name: "Snippy Garbler",
 	hp: 10,
 	attack: 4,
 	sabotage: 1,
 	pointValue: 200,
-	image: snipyGarbler,
+	image: snippyGarbler,
 	sabCard: sabotage5,
 	element: "water",
 	supCard: water31,
@@ -1428,7 +1428,7 @@ const albinoSlapperStats = {
 
 const superBudleFairyStats = {
 	name: "Super Budle Fairy",
-	hp: 20,
+	hp: 14,
 	attack: 4,
 	sabotage: 3,
 	pointValue: 1000,
@@ -1611,7 +1611,7 @@ const chainedSpookawStats = {
 
 const empressMadnadoStats = {
 	name: "Empress Madnado",
-	hp: 17,
+	hp: 12,
 	attack: 5,
 	sabotage: 2,
 	pointValue: 1000,
@@ -1819,7 +1819,7 @@ const championStalkerStats = {
 const emberiteStats = {
 	name: "Emberite",
 	hp: 8,
-	attack: 4,
+	attack: 3,
 	sabotage: 0,
 	pointValue: 100,
 	image: emberite,
@@ -1831,9 +1831,9 @@ const emberiteStats = {
 
 const hotWobblerStats = {
 	name: "Hot Wobbler",
-	hp: 9,
-	attack: 3,
-	sabotage: 2,
+	hp: 11,
+	attack: 2,
+	sabotage: 1,
 	pointValue: 100,
 	image: hotWobbler,
 	sabCard: sabotage1,
@@ -1844,7 +1844,7 @@ const hotWobblerStats = {
 
 const trekapodStats = {
 	name: "Trekapod",
-	hp: 9,
+	hp: 7,
 	attack: 3,
 	sabotage: 2,
 	pointValue: 100,
@@ -1857,9 +1857,9 @@ const trekapodStats = {
 
 const volcanoTramplerStats = {
 	name: "Volcano Trampler",
-	hp: 12,
+	hp: 7,
 	attack: 5,
-	sabotage: 1,
+	sabotage: 0,
 	pointValue: 100,
 	image: volcanoTrampler,
 	sabCard: sabotage5,
@@ -1870,9 +1870,9 @@ const volcanoTramplerStats = {
 
 const coalSpitterStats = {
 	name: "Coal Spitter",
-	hp: 16,
-	attack: 2,
-	sabotage: 0,
+	hp: 10,
+	attack: 3,
+	sabotage: 1,
 	pointValue: 200,
 	image: coalSpitter,
 	sabCard: sabotage1,
@@ -1883,9 +1883,9 @@ const coalSpitterStats = {
 
 const dragonTreeStats = {
 	name: "Dragon Tree",
-	hp: 16,
-	attack: 2,
-	sabotage: 0,
+	hp: 15,
+	attack: 3,
+	sabotage: 1,
 	pointValue: 200,
 	image: dragonTree,
 	sabCard: sabotage1,
@@ -1909,8 +1909,8 @@ const lavaWalkerStats = {
 
 const walkingEruptionStats = {
 	name: "Walking Eruption",
-	hp: 14,
-	attack: 3,
+	hp: 9,
+	attack: 5,
 	sabotage: 1,
 	pointValue: 200,
 	image: walkingEruption,
@@ -1935,9 +1935,9 @@ const moltasaurusStats = {
 
 const nutriteStats = {
 	name: "Nutrite",
-	hp: 7,
+	hp: 8,
 	attack: 3,
-	sabotage: 2,
+	sabotage: 3,
 	pointValue: 300,
 	image: nutrite,
 	sabCard: sabotage7,
@@ -1948,7 +1948,7 @@ const nutriteStats = {
 
 const recluseTramplerStats = {
 	name: "Recluse Trampler",
-	hp: 7,
+	hp: 12,
 	attack: 3,
 	sabotage: 2,
 	pointValue: 300,
@@ -1961,7 +1961,7 @@ const recluseTramplerStats = {
 
 const ashDragonTreeStats = {
 	name: "Ash Dragon Tree",
-	hp: 7,
+	hp: 17,
 	attack: 3,
 	sabotage: 2,
 	pointValue: 400,
@@ -2000,8 +2000,8 @@ const lavaLordWalkerStats = {
 const lesserGalopeStats = {
 	name: "Lesser Galope",
 	hp: 12,
-	attack: 3,
-	sabotage: 1,
+	attack: 2,
+	sabotage: 0,
 	pointValue: 100,
 	image: lesserGalope,
 	sabCard: sabotage1,
@@ -2038,9 +2038,9 @@ const toxicRollerStats = {
 
 const warthusStats = {
 	name: "Warthus",
-	hp: 20,
-	attack: 2,
-	sabotage: 0,
+	hp: 18,
+	attack: 1,
+	sabotage: 1,
 	pointValue: 100,
 	image: warthus,
 	sabCard: sabotage1,
@@ -2064,9 +2064,9 @@ const bogBoarStats = {
 
 const gooeyPoosterStats = {
 	name: "Gooey Pooster",
-	hp: 12,
-	attack: 3,
-	sabotage: 3,
+	hp: 14,
+	attack: 2,
+	sabotage: 2,
 	pointValue: 200,
 	image: gooeyPooster,
 	sabCard: sabotage1,
@@ -2090,9 +2090,9 @@ const mucksterStats = {
 
 const plodamanderStats = {
 	name: "Plodamander",
-	hp: 12,
-	attack: 3,
-	sabotage: 3,
+	hp: 9,
+	attack: 4,
+	sabotage: 2,
 	pointValue: 200,
 	image: plodamander,
 	sabCard: sabotage1,
@@ -2116,9 +2116,9 @@ const fenBoarStats = {
 
 const greaterGalopeStats = {
 	name: "Greater Galope",
-	hp: 14,
-	attack: 4,
-	sabotage: 1,
+	hp: 16,
+	attack: 3,
+	sabotage: 0,
 	pointValue: 300,
 	image: greaterGalope,
 	sabCard: sabotage1,
@@ -2129,8 +2129,8 @@ const greaterGalopeStats = {
 
 const horridusStats = {
 	name: "Horridus",
-	hp: 14,
-	attack: 4,
+	hp: 10,
+	attack: 5,
 	sabotage: 1,
 	pointValue: 300,
 	image: horridus,
@@ -2142,9 +2142,9 @@ const horridusStats = {
 
 const sneakamanderStats = {
 	name: "Sneakamander",
-	hp: 14,
-	attack: 4,
-	sabotage: 1,
+	hp: 13,
+	attack: 2,
+	sabotage: 4,
 	pointValue: 400,
 	image: sneakamander,
 	sabCard: sabotage1,
@@ -2183,7 +2183,7 @@ const lightningBugStats = {
 	name: "Lightning Bug",
 	hp: 7,
 	attack: 4,
-	sabotage: 2,
+	sabotage: 1,
 	pointValue: 100,
 	image: lightningBug,
 	sabCard: sabotage2,
@@ -2194,8 +2194,8 @@ const lightningBugStats = {
 
 const omenousStats = {
 	name: "Omenous",
-	hp: 7,
-	attack: 4,
+	hp: 9,
+	attack: 2,
 	sabotage: 2,
 	pointValue: 100,
 	image: omenous,
@@ -2209,7 +2209,7 @@ const shelterThumpStats = {
 	name: "Shelter Thump",
 	hp: 14,
 	attack: 2,
-	sabotage: 3,
+	sabotage: 2,
 	pointValue: 100,
 	image: shelterThump,
 	sabCard: sabotage1,
@@ -2231,11 +2231,11 @@ const staticGliderStats = {
 	effect: [null, null, null]
 };
 
-const brakasaurStats = {
+const brackasaurStats = {
 	name: "Brakasaur",
-	hp: 14,
-	attack: 2,
-	sabotage: 3,
+	hp: 12,
+	attack: 3,
+	sabotage: 2,
 	pointValue: 200,
 	image: brackasaur,
 	sabCard: sabotage1,
@@ -2260,8 +2260,8 @@ const rainWolfStats = {
 const scorchedTreeGhastStats = {
 	name: "Schorched Tree Ghast",
 	hp: 17,
-	attack: 3,
-	sabotage: 3,
+	attack: 2,
+	sabotage: 4,
 	pointValue: 200,
 	image: scorchedTreeGhast,
 	sabCard: sabotage1,
@@ -2274,7 +2274,7 @@ const shockSharkStats = {
 	name: "Shock Shark",
 	hp: 9,
 	attack: 5,
-	sabotage: 0,
+	sabotage: 1,
 	pointValue: 200,
 	image: shockShark,
 	sabCard: sabotage1,
@@ -2298,9 +2298,9 @@ const staticCatcherStats = {
 
 const starryOwlStats = {
 	name: "Starry Owl",
-	hp: 9,
-	attack: 5,
-	sabotage: 0,
+	hp: 13,
+	attack: 3,
+	sabotage: 4,
 	pointValue: 300,
 	image: starryOwl,
 	sabCard: sabotage1,
@@ -2311,9 +2311,9 @@ const starryOwlStats = {
 
 const worldShellStats = {
 	name: "World Shell",
-	hp: 9,
-	attack: 5,
-	sabotage: 0,
+	hp: 19,
+	attack: 3,
+	sabotage: 1,
 	pointValue: 300,
 	image: worldShell,
 	sabCard: sabotage1,
@@ -2324,9 +2324,9 @@ const worldShellStats = {
 
 const deepWolfStats = {
 	name: "Deep Wolf",
-	hp: 9,
-	attack: 5,
-	sabotage: 0,
+	hp: 15,
+	attack: 4,
+	sabotage: 3,
 	pointValue: 400,
 	image: deepWolf,
 	sabCard: sabotage1,
@@ -3830,7 +3830,7 @@ function levelLavaDistribution(randEnemyNum){
 	var lavaMonsterArray;
 	var monsterTierOne = [emberiteStats, trekapodStats, hotWobblerStats, volcanoTramplerStats, walkingEruptionStats, lavaWalkerStats, dragonTreeStats];
 	var monsterTierTwo = [walkingEruptionStats, lavaWalkerStats, dragonTreeStats, coalSpitterStats, moltasaurusStats, nutriteStats, recluseTramplerStats];
-	var monsterTierThree = [dragonTreeStats, coalSpitterStats, moltasaurusStats, nutriteStats, recluseTramplerStats, ashDragontreeStats, lavaGolemStats];
+	var monsterTierThree = [dragonTreeStats, coalSpitterStats, moltasaurusStats, nutriteStats, recluseTramplerStats, ashDragonTreeStats, lavaGolemStats];
 	if(levelTier < 3){
 		lavaMonsterArray = monsterTierOne;
 	}else if(levelTier >=3 && levelTier < 6){
@@ -4183,7 +4183,7 @@ var multiplier = 1;
 var allies = [];
 var meterArray = [meter0, meter1, meter2, meter3, meter4, meter5, meter6, meter7, meter8, meter9, meter10, meter11, meter12];
 var levelsBeaten = [];
-var keyWordList = [{id: "finesse", keyword: "Finesse", description: "Change power by X to exactly kill an enemy"}, {id: "ward", keyword: "Ward", description: "Ward blocks enemy damage and sabotages."}, {id: "purge", keyword: "Purge", description: "Removes an enemy sabotage from your deck."}, {id: "weaken", keyword: "Weaken", description: "Reduces an enemies strength"}, {id: "exhausted", keyword: "Exhausted", description: "Enemies attack twice in a row"}, {id:"stun", keyword: "Stun", description: "Stunned enemies miss their next attack"}, {id: "poison", keyword: "Poison", description: "Damage delt at the end of the turn"}, {id: "confuse", keyword: "Confuse", description: "Confused enemies attack a random enemy"}, {id: "grow", keyword: "Grow", description: "The card gains power each time it is used"}, /*{id: "scheme", keyword: "Scheme", description: "Schemes are played to one of your support areas and then are charged up over time providing an effect once completed"},*/ {id: "heal", keyword: "Heal", description: "Restore health to your character"}, {id: "reclaim", keyword: "Reclaim", description: "Increase the power of all enemy sabotages in your deck"}, {id: "int", keyword: "Draw", description: "How many extra cards your draw your next turn."}, {id: "def", keyword: "Ongoing Ward", description: "The number of shields you have at the start of every turn."}, {id: "str", keyword: "Magic", description: "Added damage to each attack"}, {id: "rummage", keyword: "Rummage", description: "Switch a card with a random card from your deck."}, {id: "multiply", keyword: "Multiply", description: "Multiply your damage by X."}, {id: "decoy", keyword: "Decoy", description: "Avoid all sabotages this turn."}, {id: "energy", keyword: "Energy", description: "Gain energy to use for other purposes."}, {id: "next", keyword: "Next", description: "Add power to next attack."}, {id: "add", keyword: "Add", description: "Shuffle a number of new cards into your deck."}, {id: "remove", keyword: "Remove", description: "The card gets removed from your deck after you select it"}, {id: "extra", keyword: "Extra", description: "Attack again after this one."}, /*{id: "deplete", keyword: "Deplete", description: "Remove a sabotage from the selected enemy."},*/ {id: "factionBoost", keyword: "Damage Boost", description: "Gains power for each card of the same type played."}, /*{id: "spooky", keyword: "Spooky", description: "Increase the chances of getting a creature's card."}, {id: "transform", keyword: "Transform", description: "Turn an emeny sabotage in your deck into another card."},*/ {id: "all", keyword: "All", description: "Deal damage to all enemies."}, {id: "clutch", keyword: "Clutch", description: "Gains extra effects when your HP is 15 or lower."}, {id: "random", keyword: "Random", description: "One of two effects."}, {id: "stash", keyword: "Energy Stash", description: "Gains extra effects when your energy is 5 or more."}, {id: "treasure", keyword: "Treasure", description: "Add gems and/or cards to your rewards."}, {id: "capture", keyword: "Capture", description: "Increase the change of gaining targeted monster's card."}, {id: "hlBoost", keyword: "Heal Boost", description: "Heal 1 for each card of the same element you've played."}, 
+var keyWordList = [{id: "finesse", keyword: "Finesse", description: "Change power by X to exactly kill an enemy"}, {id: "ward", keyword: "Ward", description: "Ward blocks enemy damage and sabotages."}, {id: "purge", keyword: "Purge", description: "Removes an enemy sabotage from your deck."}, {id: "weaken", keyword: "Weaken", description: "Reduces an enemies strength"}, {id: "exhausted", keyword: "Exhausted", description: "Enemies attack twice in a row"}, {id:"stun", keyword: "Stun", description: "Stunned enemies miss their next attack"}, {id: "poison", keyword: "Poison", description: "Damage delt at the end of the turn"}, {id: "confuse", keyword: "Confuse", description: "Confused enemies attack a random enemy"}, {id: "grow", keyword: "Grow", description: "The card gains power each time it is used"}, /*{id: "scheme", keyword: "Scheme", description: "Schemes are played to one of your support areas and then are charged up over time providing an effect once completed"},*/ {id: "heal", keyword: "Heal", description: "Restore health to your character"}, {id: "reclaim", keyword: "Reclaim", description: "Increase the power of X enemy sabotages in your deck"}, {id: "int", keyword: "Draw", description: "How many extra cards your draw your next turn."}, {id: "def", keyword: "Ongoing Ward", description: "The number of shields you have at the start of every turn."}, {id: "str", keyword: "Magic", description: "Added damage to each attack"}, {id: "rummage", keyword: "Rummage", description: "Switch a card with a random card from your deck."}, {id: "multiply", keyword: "Multiply", description: "Multiply your damage by X."}, {id: "decoy", keyword: "Decoy", description: "Avoid all sabotages this turn."}, {id: "energy", keyword: "Energy", description: "Gain energy to use for other purposes."}, {id: "next", keyword: "Next", description: "Add power to next attack."}, {id: "add", keyword: "Add", description: "Shuffle a number of new cards into your deck."}, {id: "remove", keyword: "Remove", description: "The card gets removed from your deck after you select it"}, {id: "extra", keyword: "Extra", description: "Attack again after this one."}, /*{id: "deplete", keyword: "Deplete", description: "Remove a sabotage from the selected enemy."},*/ {id: "factionBoost", keyword: "Damage Boost", description: "Gains power for each card of the same type played."}, /*{id: "spooky", keyword: "Spooky", description: "Increase the chances of getting a creature's card."}, {id: "transform", keyword: "Transform", description: "Turn an emeny sabotage in your deck into another card."},*/ {id: "all", keyword: "All", description: "Deal damage to all enemies."}, {id: "clutch", keyword: "Clutch", description: "Gains extra effects when your HP is 15 or lower."}, {id: "random", keyword: "Random", description: "One of two effects."}, {id: "stash", keyword: "Energy Stash", description: "Gains extra effects when your energy is 5 or more."}, {id: "treasure", keyword: "Treasure", description: "Add gems and/or cards to your rewards."}, {id: "capture", keyword: "Capture", description: "Increase the change of gaining targeted monster's card."}, {id: "hlBoost", keyword: "Heal Boost", description: "Heal 1 for each card of the same element you've played."}, 
 {id: "wrdBoost", keyword: "Ward Boost", description: "Gain 1 ward for each card of the same element you've played."}, {id: "supBurning", keyword: "Burning", description: "Deals damage at the end of every turn."}, {id: "supGems", keyword: "Gain Gems", description: "Add gems to your rewards."}, {id: "supCards", keyword: "Gain Cards", description: "Add cards to your rewards."}, {id: "supBoost", keyword: "Boost", description: "Increases the power of that type."}];
 var finesseAttack; 
 var attackAll = false;
@@ -5075,7 +5075,7 @@ class GameScreenHub extends React.Component {
 				numberOfStages = 5;
 			}else if(levelTier === 3){
 				enemyDistributionArray = enemyDistributionArray;
-				stageArray = [1, 2, 3, 2, 1];
+				stageArray = [1, 2, 2, 2, 1];
 				numberOfStages = 5;
 			}else if(levelTier === 4){
 				enemyDistributionArray = enemyDistributionArray2;
@@ -6129,7 +6129,7 @@ class GameScreen extends React.Component {
 		}else{
 			textArray = eval(level + "Text");
 			for(var i=0; i<textArray.length; i++){
-				if(startingLevel === level){
+				if(startingLevel === level && storyTime < 3){
 					if(textArray[i].type === "start" && textArray[i].timing === storyTime){
 						newStoryText = textArray[i].text;
 					}else{}
@@ -7700,16 +7700,16 @@ class GameScreen extends React.Component {
 		console.log(enemyArray);
 		if(enemyArray[0].hp === 0 && enemyArray[1].hp === 0 && enemyArray[2].hp === 0){
 				console.log("They're all dead. You win!");
-				if(stageComplete === numberOfStages - 1 && this.props.bonusStage === true){
+				if(stageComplete === numberOfStages - 1 && this.props.bonusStage === true && enemyArray[1].pointValue < 1000){
 					this.bonusStage();
 				}else if(stageComplete === numberOfStages - 1){
 					if(levelsBeaten.length === 0){
 						this.props.prizeChoice("cards");
 					}else if(levelsBeaten.length === 1){
 						this.props.prizeChoice("orbs");
-					}else if(levelsBeaten.length === 2){
+					}else if(levelsBeaten.length === 2 || enemyArray[1].pointValue === 1000){
 						this.props.prizeChoice("basicPack");
-					}else if(levelsBeaten.length === 5){
+					}else if(enemyArray[1].pointValue === 1500){
 						this.props.prizeChoice("superPack");
 					}else{}
 				}else{
@@ -8753,7 +8753,7 @@ class EnemySide extends React.Component {
 		const numberOfBadGuys = enemyArray;
 		const listItems = numberOfBadGuys.map((badGuy, index) => {
 			if(badGuy.hp > 0 || badGuy.effect[0] === "final" || badGuy.effect[0] === "secret" || badGuy.element === "doorway"){
-				return <Enemy key={index} id={index} aux={this.props.aux} error={this.props.error} extraRewards={this.props.extraRewards} checkPrisonOrbImg={this.props.checkPrisonOrbImg} showOrbTraderScreen={this.props.showOrbTraderScreen} gainSupCardReward={this.props.gainSupCardReward} switchEnemyArray={this.props.switchEnemyArray} prizeChoice={this.props.prizeChoice} status={this.props.status[index]} bossCleanse={this.props.bossCleanse} heroDraw={this.props.heroDraw} cardDisplay={this.props.cardDisplay} enemyId={"badGuy" + index} name={badGuy.name} eHp={badGuy.hp} attack={badGuy.attack} updateEnemySab={this.props.updateEnemySab} sab={this.props.sab[index]} sabCard={badGuy.sabCard} image={badGuy.image} element={badGuy.element} effect={badGuy.effect} />
+				return <Enemy key={index} id={index} aux={this.props.aux} error={this.props.error} extraRewards={this.props.extraRewards} checkPrisonOrbImg={this.props.checkPrisonOrbImg} showOrbTraderScreen={this.props.showOrbTraderScreen} gainSupCardReward={this.props.gainSupCardReward} switchEnemyArray={this.props.switchEnemyArray} prizeChoice={this.props.prizeChoice} status={this.props.status[index]} bossCleanse={this.props.bossCleanse} heroDraw={this.props.heroDraw} cardDisplay={this.props.cardDisplay} enemyId={"badGuy" + index} name={badGuy.name} eHp={badGuy.hp} attack={badGuy.attack} updateEnemySab={this.props.updateEnemySab} sab={this.props.sab[index]} sabCard={badGuy.sabCard} pointValue={badGuy.pointValue} image={badGuy.image} element={badGuy.element} effect={badGuy.effect} />
 			}else{
 				return <Placeholder key={index} id={index} />
 			}
@@ -9200,12 +9200,8 @@ class Enemy extends React.Component {
 	}
 	render() {
 		var newId;
-		if(stageComplete === 4){
-			if(level.includes("Temple") === true){
-				newId = null;
-			}else{
-				newId = "boss";
-			}
+		if(this.props.pointValue >= 1000){
+			newId = "boss";
 		}else if(this.props.effect[0] === "secret"){
 			newId = "secretImage";
 		}else{
@@ -9584,7 +9580,9 @@ class AuxilaryScreen extends React.Component {
 					{this.state.extraItem ? <img src={this.state.extraItem} alt="extraItem" id="extraItemImg" /> : null }
 				</div>
 				<div className="row">
-					{this.state.packReward ? <img onClick={this.showPack} src={cardPrize} alt="cardPrize" id="packReward" /> : null }
+					<div className="col-xs-offset-4 col-xs-4">
+						{this.state.packReward ? <img onClick={this.showPack} src={cardPrize} alt="cardPrize" id="packReward" /> : null }
+					</div>
 				</div>
 				<div className="row">
 					{ this.state.showPack ? <div className="col-xs-offset-2 col-xs-8" id="showPackRow">
