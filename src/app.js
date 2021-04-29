@@ -4662,7 +4662,7 @@ class GameScreenHub extends React.Component {
 			}
 			var textArray = eval(level + "Text");
 			for(var i=0; i<textArray.length; i++){
-				if(startingLevel === level){
+				if(startingLevel === level && storyTime < 3){
 					if(textArray[i].type === "start" && textArray[i].timing === storyTime){
 						newStoryText = textArray[i].text;
 					}else{}
