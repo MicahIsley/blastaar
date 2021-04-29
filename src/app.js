@@ -667,7 +667,7 @@ var wind11 = new CardCon("Momentum", 0, 2, "Next +4. Heal 1", "hero", 1, "next 4
 var wind12 = new CardCon("Whirlwind", 0, 5, "Decoy.", "hero", 2, "decoy", "", false, "stormlight", placeholderImg, wind, "wind", 12, 0, 0);
 var wind13 = new CardCon("Wild Blow", 0, 4, "Random. Finesse 2/Next +2.", "hero", 2, "random", "finesse 2/next 2", false, "stormlight", placeholderImg, wind, "wind", 13, 0, 0);
 var wind14 = new CardCon("Dissolve", 0, 3, "Stash 5. Damage +5", "hero", 2, "stash", "damage 5", false, "stormlight", placeholderImg, wind, "wind", 14, 0, 0);
-var wind15 = new CardCon("Relentless Speed", 0, 0, "+1 For Each Wind Card.", "hero", 2, "factionBoost 1", "", false, "stormlight", placeholderImg, wind, "wind", 15, 0, 0);
+var wind15 = new CardCon("Relentless Speed", 0, 0, "+1 Power Whenever a Wind Card is Played.", "hero", 2, "factionBoost 1", "", false, "stormlight", placeholderImg, wind, "wind", 15, 0, 0);
 var wind16 = new CardCon("Unfettered Attack", 1, 6, "Finesse 1. Energy 2.", "hero", 2, "finesse 1", "", false, "stormlight", placeholderImg, wind, "wind", 16, 0, 0);
 var wind17 = new CardCon("Flurrious", 1, 1, "Shuffle 3 Flurrys into your deck.", "hero", 2, "addCard 13 3", "", false, "stormlight", placeholderImg, wind, "wind", 17, 0, 0);
 var wind18 = new CardCon("Air Blessing", 1, 1, "Next +10.", "hero", 3, "next 10", "", false, "stormlight", placeholderImg, wind, "wind", 18, 0, 0);
@@ -1462,7 +1462,7 @@ const maclawStats = {
 	image: maclaw,
 	sabCard: sabotage2,
 	element: "wind",
-	supCard: wind27,
+	supCard: wind21,
 	effect: [null, null, null]
 };
 
@@ -1475,7 +1475,7 @@ const madnadoStats = {
 	image: madnado,
 	sabCard: sabotage3,
 	element: "wind",
-	supCard: wind29,
+	supCard: wind22,
 	effect: [null, null, null]
 };
 
@@ -1488,7 +1488,7 @@ const propeloopStats = {
 	image: propeloop,
 	sabCard: sabotage2,
 	element: "wind",
-	supCard: wind28,
+	supCard: wind23,
 	effect: [null, null, null]
 };
 
@@ -1501,7 +1501,7 @@ const spookawStats = {
 	image: spookaw,
 	sabCard: sabotage2,
 	element: "wind",
-	supCard: wind28,
+	supCard: wind24,
 	effect: [null, null, null]
 };
 
@@ -1514,7 +1514,7 @@ const flooferStats = {
 	image: floofer,
 	sabCard: sabotage1,
 	element: "wind",
-	supCard: wind26,
+	supCard: wind25,
 	effect: [null, null, null]
 };
 
@@ -1527,7 +1527,7 @@ const propelumpStats = {
 	image: propelump,
 	sabCard: sabotage2,
 	element: "wind",
-	supCard: wind28,
+	supCard: wind26,
 	effect: [null, null, null]
 };
 
@@ -1540,7 +1540,7 @@ const raaHowlerStats = {
 	image: raaHowler,
 	sabCard: sabotage2,
 	element: "wind",
-	supCard: wind24,
+	supCard: wind27,
 	effect: [null, null, null]
 };
 
@@ -1563,10 +1563,10 @@ const tranceWeaverStats = {
 	attack: 5,
 	sabotage: 2,
 	pointValue: 300,
-	image: windFlitter,
+	image: tranceWeaver,
 	sabCard: sabotage2,
 	element: "wind",
-	supCard: wind23,
+	supCard: wind29,
 	effect: [null, null, null]
 };
 
@@ -1579,7 +1579,7 @@ const windleFairyStats = {
 	image: windleFairy,
 	sabCard: sabotage3,
 	element: "wind",
-	supCard: wind21,
+	supCard: wind30,
 	effect: [null, null, null]
 };
 
@@ -1592,7 +1592,7 @@ const windFlitterStats = {
 	image: windFlitter,
 	sabCard: sabotage2,
 	element: "wind",
-	supCard: wind23,
+	supCard: wind31,
 	effect: [null, null, null]
 };
 
@@ -1605,7 +1605,7 @@ const chainedSpookawStats = {
 	image: chainedSpookaw,
 	sabCard: sabotage2,
 	element: "wind",
-	supCard: wind23,
+	supCard: wind32,
 	effect: [null, null, null]
 };
 
@@ -1618,7 +1618,7 @@ const empressMadnadoStats = {
 	image: empressMadnado,
 	sabCard: sabotage3,
 	element: "wind",
-	supCard: wind22,
+	supCard: wind33,
 	effect: [null, null, null]
 };
 
@@ -1631,7 +1631,7 @@ const alphaSpookawStats = {
 	image: alphaSpookaw,
 	sabCard: sabotage3,
 	element: "wind",
-	supCard: wind25,
+	supCard: wind34,
 	effect: [null, null, null]
 };
 
@@ -4184,7 +4184,7 @@ var allies = [];
 var meterArray = [meter0, meter1, meter2, meter3, meter4, meter5, meter6, meter7, meter8, meter9, meter10, meter11, meter12];
 var levelsBeaten = [];
 var keyWordList = [{id: "finesse", keyword: "Finesse", description: "Change power by X to exactly kill an enemy"}, {id: "ward", keyword: "Ward", description: "Ward blocks enemy damage and sabotages."}, {id: "purge", keyword: "Purge", description: "Removes an enemy sabotage from your deck."}, {id: "weaken", keyword: "Weaken", description: "Reduces an enemies strength"}, {id: "exhausted", keyword: "Exhausted", description: "Enemies attack twice in a row"}, {id:"stun", keyword: "Stun", description: "Stunned enemies miss their next attack"}, {id: "poison", keyword: "Poison", description: "Damage delt at the end of the turn"}, {id: "confuse", keyword: "Confuse", description: "Confused enemies attack a random enemy"}, {id: "grow", keyword: "Grow", description: "The card gains power each time it is used"}, /*{id: "scheme", keyword: "Scheme", description: "Schemes are played to one of your support areas and then are charged up over time providing an effect once completed"},*/ {id: "heal", keyword: "Heal", description: "Restore health to your character"}, {id: "reclaim", keyword: "Reclaim", description: "Increase the power of X enemy sabotages in your deck"}, {id: "int", keyword: "Draw", description: "How many extra cards your draw your next turn."}, {id: "def", keyword: "Ongoing Ward", description: "The number of shields you have at the start of every turn."}, {id: "str", keyword: "Magic", description: "Added damage to each attack"}, {id: "rummage", keyword: "Rummage", description: "Switch a card with a random card from your deck."}, {id: "multiply", keyword: "Multiply", description: "Multiply your damage by X."}, {id: "decoy", keyword: "Decoy", description: "Avoid all sabotages this turn."}, {id: "energy", keyword: "Energy", description: "Gain energy to use for other purposes."}, {id: "next", keyword: "Next", description: "Add power to next attack."}, {id: "add", keyword: "Add", description: "Shuffle a number of new cards into your deck."}, {id: "remove", keyword: "Remove", description: "The card gets removed from your deck after you select it"}, {id: "extra", keyword: "Extra", description: "Attack again after this one."}, /*{id: "deplete", keyword: "Deplete", description: "Remove a sabotage from the selected enemy."},*/ {id: "factionBoost", keyword: "Damage Boost", description: "Gains power for each card of the same type played."}, /*{id: "spooky", keyword: "Spooky", description: "Increase the chances of getting a creature's card."}, {id: "transform", keyword: "Transform", description: "Turn an emeny sabotage in your deck into another card."},*/ {id: "all", keyword: "All", description: "Deal damage to all enemies."}, {id: "clutch", keyword: "Clutch", description: "Gains extra effects when your HP is 15 or lower."}, {id: "random", keyword: "Random", description: "One of two effects."}, {id: "stash", keyword: "Energy Stash", description: "Gains extra effects when your energy is 5 or more."}, {id: "treasure", keyword: "Treasure", description: "Add gems and/or cards to your rewards."}, {id: "capture", keyword: "Capture", description: "Increase the change of gaining targeted monster's card."}, {id: "hlBoost", keyword: "Heal Boost", description: "Heal 1 for each card of the same element you've played."}, 
-{id: "wrdBoost", keyword: "Ward Boost", description: "Gain 1 ward for each card of the same element you've played."}, {id: "supBurning", keyword: "Burning", description: "Deals damage at the end of every turn."}, {id: "supGems", keyword: "Gain Gems", description: "Add gems to your rewards."}, {id: "supCards", keyword: "Gain Cards", description: "Add cards to your rewards."}, {id: "supBoost", keyword: "Boost", description: "Increases the power of that type."}];
+{id: "wrdBoost", keyword: "Ward Boost", description: "Gain 1 ward for each card of the same element you've played."}, {id: "supBurning", keyword: "Burning", description: "Deals damage at the end of every turn."}, {id: "supGems", keyword: "Gain Gems", description: "Add gems to your rewards."}, {id: "supCards", keyword: "Gain Cards", description: "Add cards to your rewards."}, {id: "supBoost", keyword: "Boost", description: "+1 Power for each played card of that type."}];
 var finesseAttack; 
 var attackAll = false;
 var levelEnemyNum = 2;
