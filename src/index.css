@@ -90,9 +90,7 @@ body {
 	color: white;
 	text-align: center;
 	font-family: 'Metamorphous', cursive;
-	position: absolute;
-	top: 350px;
-	left: 475px;
+	margin-top: 20%;
 }
 
 .prisonOrbImg {
@@ -573,7 +571,7 @@ body {
 
 #levelSelectScreen {
 	background-repeat: no-repeat; 
-	margin-left: 6%;
+	margin-left: 18%;
 	margin-top: 1%;
 	height: 680px;
 }
@@ -1213,7 +1211,7 @@ body {
 }
 
 #playArea {
-	height: 75px;
+	height: 200px;
 }
 
 #effectsRow {
@@ -2398,7 +2396,7 @@ input {
 }
 
 #levelButtonRow {
-	margin-top: 595px;
+	margin-top: 44%;
 }
 
 .levelButton {

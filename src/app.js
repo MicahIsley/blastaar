@@ -501,8 +501,13 @@ var sabotage7 = new CardCon("Mind Scramble", 0, 0, "No Card Abilities", "enemy",
 var sabotage8 = new CardCon("Leech", 0, 0, "Enemy gets +1 HP when attacked.", "enemy", 0, "siphon 1", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
 var sabotage9 = new CardCon("Big Leech", 0, 0, "Enemy gets +2 HP when attacked.", "enemy", 0, "siphon 2", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
 var sabotage10 = new CardCon("Exhaustion", 0, 0, "Get Exhausted", "enemy", 0, "enemyExhst", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
-var sabotage11 = new CardCon("Brain Dead", 0, -4, "", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
+var sabotage11 = new CardCon("Brain Dead", 0, -4, "...", "enemy", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
 var sabotage12 = new CardCon("Super Leech", 0, 0, "Enemy gets +3 HP when attacked.", "enemy", 0, "siphon 3", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0);
+var sabotage13 = new CardCon("Dizzy", 0, 0, "Lose 1 Energy", "enemy", 0, "loseEnrg 1", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0); 
+var sabotage14 = new CardCon("Forget", 0, 0, "Lose 2 Energy", "enemy", 0, "loseEnrg 2", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0); 
+var sabotage15 = new CardCon("Ouchies", 0, 0, "Explode 1", "enemy", 0, "explode 1", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0); 
+var sabotage16 = new CardCon("Blaast", 0, 0, "Explode 2", "enemy", 0, "explode 2", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0); 
+var sabotage17 = new CardCon("Fried", 0, 0, "Explode 3", "enemy", 0, "explode 3", "", false, "stormlight", placeholderImg, placeholderImg, "enemy", 0); 
 
 var crafting1 = new CardCon("------", 0, 0, " ", "hero", 0, "", "", false, "stormlight", placeholderImg, placeholderImg, "neutral", 0, 1, 0);
 
@@ -1134,7 +1139,7 @@ const stabugStats = {
 	sabotage: 1,
 	pointValue: 100,
 	image: stabug,
-	sabCard: sabotage6,
+	sabCard: sabotage15,
 	element: "fire",
 	supCard: fire24,
 	effect: [null, null, null]
@@ -1173,7 +1178,7 @@ const stalkerStabugStats = {
 	sabotage: 1,
 	pointValue: 200,
 	image: stalkerStabug,
-	sabCard: sabotage6,
+	sabCard: sabotage15,
 	element: "fire",
 	supCard: fire27,
 	effect: [null, null, null]
@@ -1238,7 +1243,7 @@ const novaWyrmStats = {
 	sabotage: 2,
 	pointValue: 400,
 	image: novaWyrm,
-	sabCard: sabotage6,
+	sabCard: sabotage16,
 	element: "fire",
 	supCard: fire32,
 	effect: [null, null, null]
@@ -1248,10 +1253,10 @@ const grandTipperStats = {
 	name: "Grand Tipper",
 	hp: 20,
 	attack: 4,
-	sabotage: 3,
+	sabotage: 2,
 	pointValue: 1500,
 	image: grandTipper,
-	sabCard: sabotage1,
+	sabCard: sabotage17,
 	element: "fire",
 	supCard: fire33,
 	effect: [null, null, null]
@@ -1264,7 +1269,7 @@ const broodmotherStats = {
 	sabotage: 3,
 	pointValue: 1000,
 	image: broodmother,
-	sabCard: sabotage1,
+	sabCard: sabotage17,
 	element: "fire",
 	supCard: fire34,
 	effect: [null, null, null]
@@ -1277,7 +1282,7 @@ const ghostSharkStats = {
 	sabotage: 1,
 	pointValue: 100,
 	image: ghostShark,
-	sabCard: sabotage5,
+	sabCard: sabotage1,
 	element: "water",
 	supCard: water21,
 	effect: [null, null, null]
@@ -1303,7 +1308,7 @@ const seaGulperStats = {
 	sabotage: 3,
 	pointValue: 100,
 	image: seaGulper,
-	sabCard: sabotage5,
+	sabCard: sabotage1,
 	element: "water",
 	supCard: water23,
 	effect: [null, null, null]
@@ -1329,7 +1334,7 @@ const cheeryGarblerStats = {
 	sabotage: 2,
 	pointValue: 200,
 	image: cheeryGarbler,
-	sabCard: sabotage5,
+	sabCard: sabotage1,
 	element: "water",
 	supCard: water25,
 	effect: [null, null, null]
@@ -1355,7 +1360,7 @@ const fanciputtyStats = {
 	sabotage: 3,
 	pointValue: 200,
 	image: fanciputty,
-	sabCard: sabotage5,
+	sabCard: sabotage1,
 	element: "water",
 	supCard: water27,
 	effect: [null, null, null]
@@ -1368,7 +1373,7 @@ const skitadooStats = {
 	sabotage: 1,
 	pointValue: 200,
 	image: skitadoo,
-	sabCard: sabotage5,
+	sabCard: sabotage1,
 	element: "water",
 	supCard: water28,
 	effect: [null, null, null]
@@ -2277,7 +2282,7 @@ const shockSharkStats = {
 	sabotage: 1,
 	pointValue: 200,
 	image: shockShark,
-	sabCard: sabotage1,
+	sabCard: sabotage13,
 	element: "storm",
 	supCard: storm28,
 	effect: [null, null, null]
@@ -2316,7 +2321,7 @@ const worldShellStats = {
 	sabotage: 1,
 	pointValue: 300,
 	image: worldShell,
-	sabCard: sabotage1,
+	sabCard: sabotage13,
 	element: "storm",
 	supCard: storm31,
 	effect: [null, null, null]
@@ -2342,7 +2347,7 @@ const greatShockSharkStats = {
 	sabotage: 2,
 	pointValue: 1000,
 	image: greatShockShark,
-	sabCard: sabotage3,
+	sabCard: sabotage14,
 	element: "storm",
 	supCard: storm33,
 	effect: [slash, 2, "countDown"]
@@ -2676,7 +2681,7 @@ const fireSecretStats = {
 	image: fireSecret,
 	sabCard: sabotage1,
 	element: "object",
-	effect: ["secret", fireSecretRevealed, "wind"]
+	effect: ["secret", fireSecretRevealed, "neutral"]
 };
 
 const waterSecretRevealedStats = {
@@ -4794,7 +4799,15 @@ class GameScreenHub extends React.Component {
 					document.getElementsByClassName("heroDamageIndicator2")[0].innerHTML="";
 					document.getElementsByClassName("heroDamageIndicator2")[0].style.display="none";
 				}, 350);
-			}else{}
+			}else{
+				document.getElementsByClassName("heroDamageIndicator2")[0].append(healedHp);
+				document.getElementsByClassName("heroDamageIndicator2")[0].style.color="red";
+				document.getElementsByClassName("heroDamageIndicator2")[0].style.display="inline";
+				setTimeout(() => {
+					document.getElementsByClassName("heroDamageIndicator2")[0].innerHTML="";
+					document.getElementsByClassName("heroDamageIndicator2")[0].style.display="none";
+				}, 350);
+			}
 		}
 		this.setState({
 			heroHp: newHp
@@ -5654,9 +5667,9 @@ class LevelSelectScreen extends React.Component {
 						{this.state.levelsUnlocked[8] ? <div className="col-xs-offset-4 col-xs-4 levelChoice" id="towerLevel" onClick={() => {this.selectLevel("tower")}}></div> : null }
 					</div>
 					<div className="row" id="levelButtonRow">
-						<div className="col-xs-offset-1 col-xs-2 levelButton" onClick={this.props.goToCharacterScreen}>Back</div>
+						<div className="col-xs-2 levelButton" onClick={this.props.goToCharacterScreen}>Back</div>
 						<div className="col-xs-offset-2 col-xs-2 levelButton" onClick={this.props.goToGameScreen}>Play</div>
-						<div className="col-xs-offset-1 col-xs-2 levelChoice levelButton" id="tutorialLevel" onClick={() => {this.selectLevel("tutorial")}}>Tutorial</div>
+						<div className="col-xs-offset-2 col-xs-2 levelChoice levelButton" id="tutorialLevel" onClick={() => {this.selectLevel("tutorial")}}>Tutorial</div>
 					</div>
 				</div>
 			</div>
@@ -6082,8 +6095,9 @@ class GameScreen extends React.Component {
 			noAbility: false,
 			showRewards: false,
 			enemyHeal: 0,
-			templeHealth: 10,
-			orbTraderScreen: false
+			templeHealth: 100,
+			orbTraderScreen: false,
+			explode: 0
 
 		}
 		this.playerAttack = this.playerAttack.bind(this);
@@ -6229,7 +6243,7 @@ class GameScreen extends React.Component {
 			1: nullHp1,
 			2: nullHp2,
 			enemyHpArray: [enemyArray[0].hp, nullHp1, nullHp2],
-			templeHealth: 10
+			templeHealth: 100
 		});
 	}
 	componentWillUnmount(){
@@ -6385,6 +6399,7 @@ class GameScreen extends React.Component {
 		var noAbility = false;
 		var enemyHeal = 0;
 		var exhausted = false;
+		var newExplode = 0;
 		for(var i=0; i<sabotages.length; i++){
 			if(sabotages[i].alignment === "enemy"){
 				if(sabotages[i].ability1 === "blockH" || sabotages[i].ability2 === "blockH"){
@@ -6402,6 +6417,16 @@ class GameScreen extends React.Component {
 					}else{
 						exhausted = true;
 					}
+				}else if(sabotages[i].ability1.indexOf("loseEnrg") >= 0){
+					var enemyEnNum = parseInt(sabotages[i].ability1.split(" ")[1]);
+					var newEnergy = this.props.influence - enemyEnNum;
+					if(newEnergy < 0){
+						newEnergy = 0;
+					}else{}
+					this.props.changeInfluence(newEnergy);
+				}else if(sabotages[i].ability1.indexOf("explode") >= 0){
+					var explodeNum = parseInt(sabotages[i].ability1.split(" ")[1]);
+					newExplode = newExplode + explodeNum;
 				}else{}
 			}else{}
 		}
@@ -6410,7 +6435,8 @@ class GameScreen extends React.Component {
 			noWard: noWard,
 			noAbility: noAbility,
 			enemyHeal: enemyHeal,
-			exhausted: exhausted
+			exhausted: exhausted,
+			explode: newExplode
 		},() => {
 			this.checkSupportAbility(card);
 		});
@@ -6520,24 +6546,18 @@ class GameScreen extends React.Component {
 			});
 	}
 	toggleRecruitState(){
-		if(this.state.cardDisplay === true){
-			if(this.state.recruit === true){
-				this.setState({
-					recruit: false
-				});
-			}else if(this.state.recruit === false){
-				this.setState({
-					recruit: true
-				});
-				document.getElementById("influenceOrb").classList.add("stormlightOn");
-				var recruitCards = this.state.cards;
-				for(var i=0; i<recruitCards.length; i++){
-					if(recruitCards[i].type === "support" || recruitCards[i].type === "character"){
-						if(recruitCards[i].cost <= this.props.influence){
-							document.getElementById(i+"card").classList.add("influenceGlow");
-						}else{}
-					}else{}
-				}
+		if(this.state.enemiesAttacking === false && this.state.cardDisplay === false){
+			if(this.props.influence >= 5){
+				var heroHp = this.props.heroHp;
+				var newHp = heroHp + 5;
+				this.props.changeHeroHp(newHp);
+				var newEnergy = this.props.influence - 5;
+				if(newEnergy < 0){
+					newEnergy = 0;
+				}else{}
+				this.props.changeInfluence(newEnergy);
+			}else{
+				this.props.error("Not enough energy");
 			}
 		}else{}
 	}
@@ -7226,6 +7246,10 @@ class GameScreen extends React.Component {
 
 		}else if(this.state.enemyHeal > 0){
 			enemyArray[currentEnemy].hp = enemyArray[currentEnemy].hp + this.state.enemyHeal;
+		}else if(this.state.explode > 0){
+			var newHp = this.props.heroHp;
+			var explodeDamage = (newHp - this.state.explode);
+			this.props.changeHeroHp(explodeDamage);
 		}else{}
 	    const x = document.getElementsByClassName("characterImage2");
 		for (var i=0; i < x.length; i ++ ){
@@ -7404,6 +7428,11 @@ class GameScreen extends React.Component {
 		const audioEl = document.getElementsByClassName("hitSound")[0];
 	    audioEl.play();
 		enemyArray[currentEnemy].hp = enemyArray[currentEnemy].hp + this.state.enemyHeal;
+		if(this.state.explode > 0){
+			var newHp = this.props.heroHp;
+			var explodeDamage = (newHp - this.state.explode);
+			this.props.changeHeroHp(explodeDamage);
+		}else{}
 		attackAll = false;
 		var heroAttack;
 		if(newAttack < 0){
@@ -7690,7 +7719,8 @@ class GameScreen extends React.Component {
 		}
 		this.setState({
 			endOfTurnDmg: removeEndDmg,
-			status: removePoison
+			status: removePoison,
+			explode: 0
 		});
 		setTimeout(() => {
 			this.enemyCleanUp();
@@ -7700,9 +7730,9 @@ class GameScreen extends React.Component {
 		console.log(enemyArray);
 		if(enemyArray[0].hp === 0 && enemyArray[1].hp === 0 && enemyArray[2].hp === 0){
 				console.log("They're all dead. You win!");
-				if(stageComplete === numberOfStages - 1 && this.props.bonusStage === true && enemyArray[1].pointValue < 1000){
+				if(stageComplete >= numberOfStages - 1 && this.props.bonusStage === true && enemyArray[1].pointValue < 1000){
 					this.bonusStage();
-				}else if(stageComplete === numberOfStages - 1){
+				}else if(stageComplete >= numberOfStages - 1){
 					if(levelsBeaten.length === 0){
 						this.props.prizeChoice("cards");
 					}else if(levelsBeaten.length === 1){
@@ -7821,11 +7851,7 @@ class GameScreen extends React.Component {
 					}
 					var selectedEnemy = enemyNumArray[Math.floor(Math.random()*enemyNumArray.length)];
 					var enemyHp = enemyArray[selectedEnemy].hp - enemyAttack;
-					document.getElementsByClassName("heroDamageIndicator")[(selectedEnemy)].append("-" + enemyAttack);
-					document.getElementsByClassName("heroDamageIndicator")[(selectedEnemy)].style.display="inline";
-					setTimeout(() => { 
-						document.getElementsByClassName("heroDamageIndicator")[(selectedEnemy)].innerHTML="";
-						document.getElementsByClassName("heroDamageIndicator")[(selectedEnemy)].style.display="none";
+					setTimeout(() => {
 						if(enemyHp <= 0){
 							enemyArray[selectedEnemy].hp = 0;
 							this.setState({
@@ -7848,18 +7874,10 @@ class GameScreen extends React.Component {
 						}else{
 							document.getElementsByClassName("heroDamageIndicator2")[0].append(shieldDamage);
 						}
-						document.getElementsByClassName("heroDamageIndicator2")[0].style.display="inline";
-						document.getElementsByClassName("heroDamageIndicator2")[0].style.color="red";
 						var extraDamage = this.props.heroHp + shieldDamage;
 						if(extraDamage <= 0){
 
-						}else{
-							setTimeout(() => {
-									//document.getElementsByClassName("shieldIcon")[0].style.background="none";
-									document.getElementsByClassName("heroDamageIndicator2")[0].innerHTML="";
-									document.getElementsByClassName("heroDamageIndicator2")[0].style.display="none";
-							}, 350);
-						}
+						}else{}
 						if(shieldDamage < 0){
 							if(extraDamage <= 0){
 								this.props.changeHeroHp(0);
@@ -7908,22 +7926,11 @@ class GameScreen extends React.Component {
 								});
 							}else{}
 						}else{}
-						if(enemyAttack <= 0){
-							document.getElementsByClassName("heroDamageIndicator2")[0].append(enemyAttack);
+						if(playerHp <= 0){
+							this.props.changeHeroHp(0);
 						}else{
-							document.getElementsByClassName("heroDamageIndicator2")[0].append("-" + enemyAttack);
+							this.props.changeHeroHp(playerHp);
 						}
-						document.getElementsByClassName("heroDamageIndicator2")[0].style.display="inline";
-						document.getElementsByClassName("heroDamageIndicator2")[0].style.color="red"
-						setTimeout(() => { 
-							document.getElementsByClassName("heroDamageIndicator2")[0].innerHTML="";
-							document.getElementsByClassName("heroDamageIndicator2")[0].style.display="none";
-							if(playerHp <= 0){
-								this.props.changeHeroHp(0);
-							}else{
-								this.props.changeHeroHp(playerHp);
-							}
-						}, 350);
 					}
 				}
 			}
@@ -8444,7 +8451,7 @@ class InfluenceCounter extends React.Component {
 	render() {
 		return (
 			<div className="col-xs-12 influenceOrbRow">
-				<div id="influenceOrb">{this.props.influence}</div>
+				<div id="influenceOrb" onClick={this.props.toggle}>{this.props.influence}</div>
 			</div>
 		)
 	}
@@ -9143,8 +9150,10 @@ class Enemy extends React.Component {
 				}else{
 					document.getElementById("1image").classList.remove("prisonOrbImg");
 				}
-				this.props.switchEnemyArray();
-				stageComplete ++;
+				if((enemyArray[0].hp === 0 || this.props.effect[1] === "revealed") && (enemyArray[1].hp === 0 || this.props.effect[1] === "revealed") && (enemyArray[2].hp === 0 || this.props.effect[1] === "revealed") || this.props.image === emptyDoor){
+					this.props.switchEnemyArray();
+					stageComplete ++;
+				}else{}
 			}
 		}else if(this.props.image === mortemus){
 			this.props.showOrbTraderScreen();
