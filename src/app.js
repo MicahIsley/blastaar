@@ -1642,7 +1642,7 @@ const alphaSpookawStats = {
 
 const desertMadnadoStats = {
 	name: "Dustnado",
-	hp: 7,
+	hp: 10,
 	attack: 5,
 	sabotage: 1,
 	pointValue: 100,
@@ -1655,7 +1655,7 @@ const desertMadnadoStats = {
 
 const drillerStats = {
 	name: "Driller",
-	hp: 9,
+	hp: 12,
 	attack: 3,
 	sabotage: 1,
 	pointValue: 100,
@@ -1668,7 +1668,7 @@ const drillerStats = {
 
 const sandSnippStats = {
 	name: "Sand Snipp",
-	hp: 10,
+	hp: 13,
 	attack: 2,
 	sabotage: 0,
 	pointValue: 100,
@@ -1681,7 +1681,7 @@ const sandSnippStats = {
 
 const wanderingRelicStats = {
 	name: "Wandering Relic",
-	hp: 8,
+	hp: 11,
 	attack: 3,
 	sabotage: 3,
 	pointValue: 100,
@@ -1694,7 +1694,7 @@ const wanderingRelicStats = {
 
 const doublesaurStats = {
 	name: "Doublesaur",
-	hp: 14,
+	hp: 17,
 	attack: 4,
 	sabotage: 1,
 	pointValue: 200,
@@ -1707,7 +1707,7 @@ const doublesaurStats = {
 
 const duneStabberStats = {
 	name: "Dune Stabber",
-	hp: 11,
+	hp: 14,
 	attack: 4,
 	sabotage: 1,
 	pointValue: 200,
@@ -1720,7 +1720,7 @@ const duneStabberStats = {
 
 const grumpeelStats = {
 	name: "Grumpeel",
-	hp: 13,
+	hp: 16,
 	attack: 3,
 	sabotage: 0,
 	pointValue: 200,
@@ -1733,7 +1733,7 @@ const grumpeelStats = {
 
 const sandSquidStats = {
 	name: "Sand Squid",
-	hp: 11,
+	hp: 14,
 	attack: 4,
 	sabotage: 3,
 	pointValue: 200,
@@ -1746,7 +1746,7 @@ const sandSquidStats = {
 
 const boneStalkerStats = {
 	name: "Bone Stalker",
-	hp: 11,
+	hp: 14,
 	attack: 5,
 	sabotage: 1,
 	pointValue: 300,
@@ -1759,7 +1759,7 @@ const boneStalkerStats = {
 
 const goldStabberStats = {
 	name: "Gold Stabber",
-	hp: 10,
+	hp: 13,
 	attack: 6,
 	sabotage: 1,
 	pointValue: 300,
@@ -1772,7 +1772,7 @@ const goldStabberStats = {
 
 const predatorSnippStats = {
 	name: "Predator Snipp",
-	hp: 7,
+	hp: 10,
 	attack: 3,
 	sabotage: 2,
 	pointValue: 300,
@@ -1784,7 +1784,7 @@ const predatorSnippStats = {
 };
 const pinkLauncherStats = {
 	name: "Pink Launcher",
-	hp: 9,
+	hp: 12,
 	attack: 5,
 	sabotage: 3,
 	pointValue: 400,
@@ -1823,7 +1823,7 @@ const championStalkerStats = {
 
 const emberiteStats = {
 	name: "Emberite",
-	hp: 8,
+	hp: 10,
 	attack: 3,
 	sabotage: 0,
 	pointValue: 100,
@@ -1836,7 +1836,7 @@ const emberiteStats = {
 
 const hotWobblerStats = {
 	name: "Hot Wobbler",
-	hp: 11,
+	hp: 13,
 	attack: 2,
 	sabotage: 1,
 	pointValue: 100,
@@ -1849,7 +1849,7 @@ const hotWobblerStats = {
 
 const trekapodStats = {
 	name: "Trekapod",
-	hp: 7,
+	hp: 10,
 	attack: 3,
 	sabotage: 2,
 	pointValue: 100,
@@ -1862,7 +1862,7 @@ const trekapodStats = {
 
 const volcanoTramplerStats = {
 	name: "Volcano Trampler",
-	hp: 7,
+	hp: 9,
 	attack: 5,
 	sabotage: 0,
 	pointValue: 100,
@@ -1875,7 +1875,7 @@ const volcanoTramplerStats = {
 
 const coalSpitterStats = {
 	name: "Coal Spitter",
-	hp: 10,
+	hp: 12,
 	attack: 3,
 	sabotage: 1,
 	pointValue: 200,
@@ -1888,7 +1888,7 @@ const coalSpitterStats = {
 
 const dragonTreeStats = {
 	name: "Dragon Tree",
-	hp: 15,
+	hp: 17,
 	attack: 3,
 	sabotage: 1,
 	pointValue: 200,
@@ -1901,7 +1901,7 @@ const dragonTreeStats = {
 
 const lavaWalkerStats = {
 	name: "Lava Walker",
-	hp: 16,
+	hp: 18,
 	attack: 2,
 	sabotage: 0,
 	pointValue: 200,
@@ -1914,7 +1914,7 @@ const lavaWalkerStats = {
 
 const walkingEruptionStats = {
 	name: "Walking Eruption",
-	hp: 9,
+	hp: 11,
 	attack: 5,
 	sabotage: 1,
 	pointValue: 200,
@@ -1927,7 +1927,7 @@ const walkingEruptionStats = {
 
 const moltasaurusStats = {
 	name: "Moltasaurus",
-	hp: 11,
+	hp: 13,
 	attack: 6,
 	sabotage: 0,
 	pointValue: 300,
@@ -1940,7 +1940,7 @@ const moltasaurusStats = {
 
 const nutriteStats = {
 	name: "Nutrite",
-	hp: 8,
+	hp: 11,
 	attack: 3,
 	sabotage: 3,
 	pointValue: 300,
@@ -1953,7 +1953,7 @@ const nutriteStats = {
 
 const recluseTramplerStats = {
 	name: "Recluse Trampler",
-	hp: 12,
+	hp: 14,
 	attack: 3,
 	sabotage: 2,
 	pointValue: 300,
@@ -1966,7 +1966,7 @@ const recluseTramplerStats = {
 
 const ashDragonTreeStats = {
 	name: "Ash Dragon Tree",
-	hp: 17,
+	hp: 19,
 	attack: 3,
 	sabotage: 2,
 	pointValue: 400,
@@ -2004,7 +2004,7 @@ const lavaLordWalkerStats = {
 
 const lesserGalopeStats = {
 	name: "Lesser Galope",
-	hp: 12,
+	hp: 15,
 	attack: 2,
 	sabotage: 0,
 	pointValue: 100,
@@ -2017,7 +2017,7 @@ const lesserGalopeStats = {
 
 const sominusStats = {
 	name: "Sominus",
-	hp: 8,
+	hp: 11,
 	attack: 3,
 	sabotage: 1,
 	pointValue: 100,
@@ -2030,7 +2030,7 @@ const sominusStats = {
 
 const toxicRollerStats = {
 	name: "Toxic Roller",
-	hp: 9,
+	hp: 12,
 	attack: 3,
 	sabotage: 2,
 	pointValue: 100,
@@ -2043,7 +2043,7 @@ const toxicRollerStats = {
 
 const warthusStats = {
 	name: "Warthus",
-	hp: 18,
+	hp: 21,
 	attack: 1,
 	sabotage: 1,
 	pointValue: 100,
@@ -2056,7 +2056,7 @@ const warthusStats = {
 
 const bogBoarStats = {
 	name: "Bog Boar",
-	hp: 12,
+	hp: 15,
 	attack: 3,
 	sabotage: 3,
 	pointValue: 200,
@@ -2069,7 +2069,7 @@ const bogBoarStats = {
 
 const gooeyPoosterStats = {
 	name: "Gooey Pooster",
-	hp: 14,
+	hp: 17,
 	attack: 2,
 	sabotage: 2,
 	pointValue: 200,
@@ -2082,7 +2082,7 @@ const gooeyPoosterStats = {
 
 const mucksterStats = {
 	name: "Muckster",
-	hp: 10,
+	hp: 13,
 	attack: 4,
 	sabotage: 3,
 	pointValue: 200,
@@ -2095,7 +2095,7 @@ const mucksterStats = {
 
 const plodamanderStats = {
 	name: "Plodamander",
-	hp: 9,
+	hp: 12,
 	attack: 4,
 	sabotage: 2,
 	pointValue: 200,
@@ -2108,7 +2108,7 @@ const plodamanderStats = {
 
 const fenBoarStats = {
 	name: "Fen Boar",
-	hp: 14,
+	hp: 17,
 	attack: 4,
 	sabotage: 1,
 	pointValue: 300,
@@ -2121,7 +2121,7 @@ const fenBoarStats = {
 
 const greaterGalopeStats = {
 	name: "Greater Galope",
-	hp: 16,
+	hp: 19,
 	attack: 3,
 	sabotage: 0,
 	pointValue: 300,
@@ -2134,7 +2134,7 @@ const greaterGalopeStats = {
 
 const horridusStats = {
 	name: "Horridus",
-	hp: 10,
+	hp: 13,
 	attack: 5,
 	sabotage: 1,
 	pointValue: 300,
@@ -2147,7 +2147,7 @@ const horridusStats = {
 
 const sneakamanderStats = {
 	name: "Sneakamander",
-	hp: 13,
+	hp: 16,
 	attack: 2,
 	sabotage: 4,
 	pointValue: 400,
@@ -2186,7 +2186,7 @@ const duchessWarthusStats = {
 
 const lightningBugStats = {
 	name: "Lightning Bug",
-	hp: 7,
+	hp: 9,
 	attack: 4,
 	sabotage: 1,
 	pointValue: 100,
@@ -2199,7 +2199,7 @@ const lightningBugStats = {
 
 const omenousStats = {
 	name: "Omenous",
-	hp: 9,
+	hp: 11,
 	attack: 2,
 	sabotage: 2,
 	pointValue: 100,
@@ -2212,7 +2212,7 @@ const omenousStats = {
 
 const shelterThumpStats = {
 	name: "Shelter Thump",
-	hp: 14,
+	hp: 16,
 	attack: 2,
 	sabotage: 2,
 	pointValue: 100,
@@ -2225,7 +2225,7 @@ const shelterThumpStats = {
 
 const staticGliderStats = {
 	name: "Static Glider",
-	hp: 8,
+	hp: 10,
 	attack: 3,
 	sabotage: 1,
 	pointValue: 100,
@@ -2238,7 +2238,7 @@ const staticGliderStats = {
 
 const brackasaurStats = {
 	name: "Brakasaur",
-	hp: 12,
+	hp: 15,
 	attack: 3,
 	sabotage: 2,
 	pointValue: 200,
@@ -2251,7 +2251,7 @@ const brackasaurStats = {
 
 const rainWolfStats = {
 	name: "Rain Wolf",
-	hp: 11,
+	hp: 14,
 	attack: 4,
 	sabotage: 3,
 	pointValue: 200,
@@ -2264,7 +2264,7 @@ const rainWolfStats = {
 
 const scorchedTreeGhastStats = {
 	name: "Schorched Tree Ghast",
-	hp: 17,
+	hp: 20,
 	attack: 2,
 	sabotage: 4,
 	pointValue: 200,
@@ -2277,7 +2277,7 @@ const scorchedTreeGhastStats = {
 
 const shockSharkStats = {
 	name: "Shock Shark",
-	hp: 9,
+	hp: 11,
 	attack: 5,
 	sabotage: 1,
 	pointValue: 200,
@@ -2290,7 +2290,7 @@ const shockSharkStats = {
 
 const staticCatcherStats = {
 	name: "Static Catcher",
-	hp: 10,
+	hp: 126,
 	attack: 3,
 	sabotage: 5,
 	pointValue: 300,
@@ -2316,7 +2316,7 @@ const starryOwlStats = {
 
 const worldShellStats = {
 	name: "World Shell",
-	hp: 19,
+	hp: 21,
 	attack: 3,
 	sabotage: 1,
 	pointValue: 300,
@@ -2329,7 +2329,7 @@ const worldShellStats = {
 
 const deepWolfStats = {
 	name: "Deep Wolf",
-	hp: 15,
+	hp: 17,
 	attack: 4,
 	sabotage: 3,
 	pointValue: 400,
@@ -2498,7 +2498,7 @@ const toogerStats = {
 
 const earthGolemStats = {
 	name: "Earth Golem",
-	hp: 10,
+	hp: 12,
 	attack: 4,
 	sabotage: 1,
 	pointValue: 500,
@@ -2511,7 +2511,7 @@ const earthGolemStats = {
 
 const fireGolemStats = {
 	name: "Fire Golem",
-	hp: 10,
+	hp: 12,
 	attack: 4,
 	sabotage: 1,
 	pointValue: 500,
@@ -2524,7 +2524,7 @@ const fireGolemStats = {
 
 const waterGolemStats = {
 	name: "Water Golem",
-	hp: 10,
+	hp: 12,
 	attack: 4,
 	sabotage: 1,
 	pointValue: 500,
@@ -2537,7 +2537,7 @@ const waterGolemStats = {
 
 const windGolemStats = {
 	name: "Wind Golem",
-	hp: 10,
+	hp: 12,
 	attack: 4,
 	sabotage: 1,
 	pointValue: 500,
@@ -2550,7 +2550,7 @@ const windGolemStats = {
 
 const desertGolemStats = {
 	name: "Desert Golem",
-	hp: 15,
+	hp: 17,
 	attack: 5,
 	sabotage: 1,
 	pointValue: 750,
@@ -2563,7 +2563,7 @@ const desertGolemStats = {
 
 const lavaGolemStats = {
 	name: "Lava Golem",
-	hp: 15,
+	hp: 17,
 	attack: 5,
 	sabotage: 1,
 	pointValue: 750,
@@ -2576,7 +2576,7 @@ const lavaGolemStats = {
 
 const mudGolemStats = {
 	name: "Mud Golem",
-	hp: 15,
+	hp: 17,
 	attack: 5,
 	sabotage: 1,
 	pointValue: 750,
@@ -2589,7 +2589,7 @@ const mudGolemStats = {
 
 const stormGolemStats = {
 	name: "Storm Golem",
-	hp: 15,
+	hp: 17,
 	attack: 5,
 	sabotage: 1,
 	pointValue: 750,
@@ -4235,7 +4235,7 @@ class GameScreenHub extends React.Component {
 		super(props);
 		Firebase.initializeApp(config);
 		this.state = {
-			openingFade: false,
+			openingFade: true,
 			bonusStage: false,
 			heroSelect: null,
 			gameScreen: false,
@@ -4278,7 +4278,8 @@ class GameScreenHub extends React.Component {
 			prizeChoice: null,
 			obelisk: 0,
 			magicBag: false,
-			packCards: []
+			packCards: [],
+			bossEffect: [null, null, null]
 		}
 		this.changeHero = this.changeHero.bind(this);
 		this.goToGameScreen = this.goToGameScreen.bind(this);
@@ -4354,7 +4355,6 @@ class GameScreenHub extends React.Component {
 			ref.once('value')
 				.then((snapshot) => {
 				var data =(snapshot.val());
-				console.log(data);
 				updatedScores.push({name: data.name, score: data.score});
 				userArray.push(data);
 				numberOfSaves ++;
@@ -4384,7 +4384,6 @@ class GameScreenHub extends React.Component {
 		})
 	}
 	loadUserSaves(){
-		console.log(userArray);
 		userSaveArray = [];
 		var user = document.getElementById("saveName").value;
 		var wholeRef = Firebase.database().ref();
@@ -4412,7 +4411,6 @@ class GameScreenHub extends React.Component {
 										saveBox: false
 									}, () => {
 										console.log(this.state.userSaveArray);
-
 									});
 								}
 							});
@@ -4432,7 +4430,6 @@ class GameScreenHub extends React.Component {
 		//var userEternal = document.getElementById("saveFileName").value + "!" + numberOfSaves;
 		var user = username;
 		var fileName = document.getElementById("saveFileName").value;
-		console.log(user);
 		var levelArray;
 		if(levelsBeaten.length === 0){
 			levelArray = ["empty"];
@@ -4506,7 +4503,6 @@ class GameScreenHub extends React.Component {
 	  let ref = Firebase.database().ref(`/${user}`);
 	  ref.on('value', snapshot => {
 	    const state = snapshot.val();
-	    console.log(state);
 	    this.setState({
 	    	developers: state
 	    }, () => {
@@ -5877,7 +5873,6 @@ class CharacterSelectScreen extends React.Component {
 			}
 		}
 		collectionArray.push(spooky1);
-		console.log(this.props.displayUserSaves);
 		stageComplete = 0;
 		//this.props.switchEnemyArray();
 		this.props.createNewCharacter();
@@ -5901,6 +5896,7 @@ class CharacterSelectScreen extends React.Component {
 		    		x[i].classList.add("beginFade");
 		    		x[i].style.opacity = "1";
 		    	}
+		    	this.props.changeOpeningFade();
 			}, 6000);
 		}else{
 			document.getElementById("mainTitle").style.opacity = "1";
@@ -5983,7 +5979,6 @@ class SaveBox extends React.Component {
 class UserSavesBox extends React.Component {
 	listUserSaves(){
 		var userSaves = this.props.userSaveArray;
-		console.log(userSaves);
 		const listUserSaves = userSaves.map((save, index) =>
 			<UserSave key={index} id={index} name={save.name} setUpPlayerSave={this.props.setUpPlayerSave} collectionArray={save.collectionArray} levelsBeaten={save.levelsBeaten} score={save.score} hp={save.hp} elementOrbs={save.elementOrbs} elementKeys={save.elementKeys} elementScrolls={save.elementScrolls} unlockedSecrets={save.unlockedSecrets} secretArtifacts={save.secretArtifacts} prisonOrbImg={save.prisonOrbImg} />
 		);
@@ -6137,7 +6132,6 @@ class GameScreen extends React.Component {
 		}
 		var newStoryText;
 		var textArray;
-		console.log(storyTime);
 		if(level.includes("Temple")){
 			newStoryText = eval(level + "Text")[0].text;
 			document.getElementById("gameScreenBackground").style.backgroundImage = "url(" + templeBackground + ")";
@@ -6245,6 +6239,8 @@ class GameScreen extends React.Component {
 			2: nullHp2,
 			enemyHpArray: [enemyArray[0].hp, nullHp1, nullHp2],
 			templeHealth: 100
+		}, () => {
+			this.checkBossEffect();
 		});
 	}
 	componentWillUnmount(){
@@ -7728,7 +7724,6 @@ class GameScreen extends React.Component {
 		}, 100);
 	}
 	enemyCleanUp() {
-		console.log(enemyArray);
 		if(enemyArray[0].hp === 0 && enemyArray[1].hp === 0 && enemyArray[2].hp === 0){
 				console.log("They're all dead. You win!");
 				if(stageComplete >= numberOfStages - 1 && this.props.bonusStage === true && enemyArray[1].pointValue < 1000){
@@ -7750,14 +7745,12 @@ class GameScreen extends React.Component {
 					});
 					if(level.includes("Temple")){
 						if(this.state.templeHealth <=0){
-							this.prosp.aux();
+							this.props.aux();
 						}
 					}else{
 						stageComplete ++;
 						this.props.switchEnemyArray();
-						if(stageComplete === 3){
-							this.checkBossEffect();
-						}else{}
+						this.checkBossEffect();
 						this.updateEnemySab();
 					}
 				}
@@ -7789,15 +7782,22 @@ class GameScreen extends React.Component {
 		});
 	}
 	checkBossEffect(){
-		var bossEffect = this.props.bossEffect;
-		if(bossEffect[0] === int){
-			this.setState({
-				playerInt: this.state.playerInt - bossEffect[1],
-			});
-		}else if(bossEffect[0] === power){
-			var newAttack = this.props.attack - bossEffect[1];
-			this.props.changeHeroAttack(newAttack);
-		}else{}
+		var changeInt = this.state.playerInt;
+		for(var i=0; i<enemyArray.length; i++){
+			var bossEffect = enemyArray[i].effect;
+			if(bossEffect[0] === int){
+				changeInt = changeInt - bossEffect[1];
+				if(changeInt <= 0){
+					changeInt = 1
+				}else{}
+			}else if(bossEffect[0] === power){
+				var newAttack = this.props.attack - bossEffect[1];
+				this.props.changeHeroAttack(newAttack);
+			}else{}
+		}
+		this.setState({
+			playerInt: changeInt,
+		});
 	}
 	enemyAttackAction(enemyNumber) {
 		patience = false;
@@ -7938,8 +7938,6 @@ class GameScreen extends React.Component {
 					console.log("triggerDeath 2");
 					this.triggerPlayerDeath();
 				}else{
-					console.log(enemyNumber);
-					console.log(document.getElementById(enemyNumber + "image"));
 					if(document.getElementById(enemyNumber + "image") === null){
 
 					}else{
@@ -8220,12 +8218,8 @@ class OrbTraderScreen extends React.Component {
 	}
 	tradingClick(option){
 		var trade = this.state.trade;
-		console.log(this.state.trade);
-		console.log(this.state.orbCount);
-		console.log(this.state.number);
 		if(option === "playerUp"){
 			if((this.state.trade[0] + 2) <= (this.state.orbCount[this.state.number[0]])){
-				console.log("hey");
 				trade[0] = trade[0] + 2;
 			}else{}
 		}else if(option === "playerDown"){
@@ -8298,7 +8292,6 @@ class OrbTraderScreen extends React.Component {
 			for(var i=0; i<this.state.trade[1]; i++){
 				elementOrbs.push(this.state.orbs[1]);
 			}
-			console.log(elementOrbs);
 		}else{}
 		this.props.showOrbTraderScreen();
 	}
@@ -9527,7 +9520,6 @@ class AuxilaryScreen extends React.Component {
 	}
 	listPackCards(){
 		var cards = this.props.packCards;
-		console.log(cards);
 		const showPackCards = cards.map((card, index) =>
 			<CollectionCard className={card.alignment} key={index} id={index} ability={card.ability1} icon={card.icon} faction={card.faction} name={card.name} type={card.type} rarity={card.rarity} cost={card.cost} power={card.power} text={card.text} image={card.image} handleDrop={(name) => this.addToDeck(card.name)} />
 		);

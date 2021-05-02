@@ -262,7 +262,8 @@ body {
 .enemyStatus {
 	position: absolute;
     z-index: 2;
-    height: 175px;
+    height: 220px;
+    width: 275px;
 }
 
 .enemyBossStatus {
@@ -2047,7 +2048,7 @@ input {
 }
 
 .supportSlotImage {
-	width: 100%;
+	width: 80%;
 }
 
 
