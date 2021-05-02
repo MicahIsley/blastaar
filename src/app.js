@@ -4221,6 +4221,7 @@ var elementScrolls = [false, false, false, false, false, false, false, false];
 var secretArtifacts = [false, false, false, false, false, false, false, false];
 var equippedArtifact;
 var prisonOrbImg = [false, false, false, false];
+var userArray = [];
 
 function shuffle(a) {
     for (let i = a.length; i; i--) {
@@ -4345,13 +4346,17 @@ class GameScreenHub extends React.Component {
 		collectionArray.push(spooky1);
 		numberOfSaves = 0;
 		updatedScores = [];
-		var ref = Firebase.database().ref('Micah/');
+		userArray = [];
+		var ref = Firebase.database().ref();
 		ref.on('value', function(snapshot) {
 			updatedScores = [];
 			numberOfSaves = 0;
-			snapshot.forEach(function(user){
-				var data =(user.val());
+			ref.once('value')
+				.then((snapshot) => {
+				var data =(snapshot.val());
+				console.log(data);
 				updatedScores.push({name: data.name, score: data.score});
+				userArray.push(data);
 				numberOfSaves ++;
 			});
 		});
@@ -4379,8 +4384,10 @@ class GameScreenHub extends React.Component {
 		})
 	}
 	loadUserSaves(){
+		console.log(userArray);
 		userSaveArray = [];
 		var user = document.getElementById("saveName").value;
+		var wholeRef = Firebase.database().ref();
 		var ref = Firebase.database().ref(`/${user}`);
 		var password = document.getElementById("password").value;
 		if(user === "" || password === ""){
@@ -4389,42 +4396,36 @@ class GameScreenHub extends React.Component {
 			var wrongPassword = false;
 			ref.once('value')
 				.then((snapshot) => {
-					numberOfSaves = 0;
-					if(snapshot.val().password === password || loggedIn === true){
-						userSaveArray = [];
-						snapshot.forEach((user) => {
-							var data =(user.val());
-							if(data.name === undefined){
-							}else{
-								userSaveArray.push({name: data.name, collectionArray: data.collectionArray, levelsBeaten: data.levels, score: data.score, elementOrbs: data.elementOrbs, hp: data.hp, elementScrolls: data.elementScrolls, elementKeys: data.elementKeys, unlockedSecrets: data.unlockedSecrets, secretArtifacts: data.secretArtifacts, prisonOrbImg: data.prisonOrbImg});
-								this.setState({
-									userSaveArray: userSaveArray,
-									displayUserSaves: true,
-									saveBox: false
-								}, () => {
-									console.log(this.state.userSaveArray);
+					var userExists = snapshot.exists();
+					if(userExists === true){
+						numberOfSaves = 0;
+						if(snapshot.val().password === password || loggedIn === true){
+							userSaveArray = [];
+							snapshot.forEach((user) => {
+								var data =(user.val());
+								if(data.name === undefined){
+								}else{
+									userSaveArray.push({name: data.name, collectionArray: data.collectionArray, levelsBeaten: data.levels, score: data.score, elementOrbs: data.elementOrbs, hp: data.hp, elementScrolls: data.elementScrolls, elementKeys: data.elementKeys, unlockedSecrets: data.unlockedSecrets, secretArtifacts: data.secretArtifacts, prisonOrbImg: data.prisonOrbImg});
+									this.setState({
+										userSaveArray: userSaveArray,
+										displayUserSaves: true,
+										saveBox: false
+									}, () => {
+										console.log(this.state.userSaveArray);
 
-								});
-							}
-						});
-						loggedIn = true;
-						username = user;
+									});
+								}
+							});
+							loggedIn = true;
+							username = user;
+						}else{
+							wrongPassword = true;
+							this.displayErrorMessage("Wrong Password");
+						}
 					}else{
-						wrongPassword = true;
+						this.displayErrorMessage("User Doesn't Exist");
 					}
 			});
-			/*if(wrongPassword === true){
-				this.displayErrorMessage("Wrong Password");
-			}else{
-				this.setState({
-					userSaveArray: userSaveArray,
-					displayUserSaves: true,
-					saveBox: false
-				}, () => {
-					console.log(this.state.userSaveArray);
-
-				});
-			}*/
 		}
 	}
 	writeUserData(){
